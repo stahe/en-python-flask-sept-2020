@@ -1,0 +1,2625 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to Python 3 and the Flask Web Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-python-flask-sept-2020/the-basics-of-python.html">
+      
+      
+        <link rel="prev" href="setting-up-a-development-environment.html">
+      
+      
+        <link rel="next" href="strings.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>3. The Basics of Python - An Introduction to Python 3 and the Flask Web Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to Python 3 and the Flask Web Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3-the-basics-of-python" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to Python 3 and the Flask Web Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3. The Basics of Python
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to Python 3 and the Flask Web Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foreword.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Foreword
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setting-up-a-development-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Setting up a development environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Basics of Python
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="the-basics-of-python.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Basics of Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31-script-bases_01-basic-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1. Script [bases_01]: Basic Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-script-bases_02-formatted-strings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2. Script [bases_02]: Formatted Strings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-script-bases_03-type-conversions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3. Script [bases_03]: Type conversions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-script-bases_04-variable-scope" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4. Script [bases_04]: variable scope
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-script-bases_05-lists-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5. Script [bases_05]: Lists - 1
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-script-bases_06-lists-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6. Script [bases_06]: lists - 2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-script-bases_07-the-dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7. script [bases_07]: the dictionary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#310-script-bases_10-links-between-strings-and-lists" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.10. Script [bases_10]: Links Between Strings and Lists
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#311-script-bases_11-regular-expressions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.11. Script [bases_11]: Regular Expressions
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="strings.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="text-files.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Text files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Application exercise – version 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="imports.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Imports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Practical Exercise: Version 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Practical Exercise: Version 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes-and-objects.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Classes and Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-generic-classes-baseentity-and-myexception.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. The generic classes [BaseEntity] and [MyException]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="layered-architecture-and-interface-based-programming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Layered architecture and interface-based programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Application Exercise - Version 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-mysql-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Using the MySQL DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-postgresql-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Using the PostgreSQL DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="writing-dbms-independent-code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Writing DBMS-Independent Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-sqlalchemy-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Using the SQLAlchemy ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Application exercise: version 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internet-functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Internet Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-services-with-the-flask-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Web services with the Flask framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practice-exercise-version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Practice Exercise: Version 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practice-exercise-version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Practice Exercise: Version 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="-application-exercise-version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Application Exercise: Version 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="from-dictionary-to-xml-and-vice-versa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. From dictionary to XML and vice versa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Application Exercise: Version 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. Application exercise: version 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. Application exercise: version 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Practical Exercise: Version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-clients-for-the-json-and-xml-services-of-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Web clients for the JSON and XML services of version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="html-mode-in-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. HTML mode in version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Application exercise: Version 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Practical Exercise: Version 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Application exercise: version 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. Application Exercise: Version 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Practical Exercise: Version 17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-18-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Practical Exercise: Version 18 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="lesbasesde"></a>
+<a id="toc48548922"></a>
+<a id="refheading382422423505"></a></p>
+<h1 id="3-the-basics-of-python">3. <span style="color: #365f91">The Basics of Python</span></h1>
+<p><img src="images/1000000100000153000001B1F1BE92A9.png" style="width:3.14cm;height:4.011cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000153000001B1F1BE92A9.png" /></p>
+<p><a id="toc48548923"></a>
+<a id="refheading382442423505"></a></p>
+<h2 id="31-script-bases_01-basic-operations">3.1. <span style="color: #4f81bd">Script [bases_01]: Basic Operations</span></h2>
+<p>The script <strong>[bases_01]</strong> introduces the basic features of Python.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># ----------------------------------</span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display(</span><span style="color:#808080">string</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># displays string</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;string=%s&quot; </span><span style="color:#000000">% </span><span style="color:#808080">string</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ----------------------------------</span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_type(</span><span style="color:#808080">variable</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># displays the variable type</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;type</span><span style="font-weight:bold;color:#a31515">[%s]</span><span style="color:#a31515">=%s&quot; </span><span style="color:#000000">% (</span><span style="color:#808080">variable</span><span style="color:#000000">, </span><span style="color:#2b91af">type</span><span style="color:#000000">(</span><span style="color:#808080">variable</span><span style="color:#000000">)))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ----------------------------------</span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">f1(</span><span style="color:#808080">param</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># adds 10 to param</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#808080">param </span><span style="color:#000000">+ 10</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ----------------------------------</span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">f2():</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># returns a tuple of 3 values</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#a31515">&quot;one&quot;</span><span style="color:#000000">, 0, 100</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># -------------------------------- main program ------------------------------------</span>
+<span class="odt-code-line"># This is a comment</span>
+<span class="odt-code-line"># variable used without being declared</span>
+<span class="odt-code-line"><span style="color:#000000">name = </span><span style="color:#a31515">&quot;dupont&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># a screen display</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;name=%s&quot; </span><span style="color:#000000">% name)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># a list with elements of different types</span>
+<span class="odt-code-line"><span style="color:#000000">list = </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;one&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;two&quot;</span><span style="font-weight:bold;color:#000000">, 3, 4]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># its number of elements</span>
+<span class="odt-code-line"><span style="color:#000000">n = len(list)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># a loop</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(n):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;list</span><span style="font-weight:bold;color:#a31515">[%d]</span><span style="color:#a31515">=%s&quot; </span><span style="color:#000000">% (i, list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># initializing 2 variables with a tuple</span>
+<span class="odt-code-line"><span style="color:#000000">(string1, string2) = (</span><span style="color:#a31515">&quot;string1&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;string2&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># concatenating the two strings</span>
+<span class="odt-code-line"><span style="color:#000000">string3 = string1 + string2</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display result</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[%s,%s,%s]</span><span style="color:#a31515">&quot; </span><span style="color:#000000">% (string1, string2, string3))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># using the function</span>
+<span class="odt-code-line"><span style="color:#000000">display(string1)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># the type of a variable can be determined</span>
+<span class="odt-code-line"><span style="color:#000000">display_type(n)</span></span>
+<span class="odt-code-line"><span style="color:#000000">display_type(string1)</span></span>
+<span class="odt-code-line"><span style="color:#000000">display_type(list)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># the type of a variable can change during execution</span>
+<span class="odt-code-line"><span style="color:#000000">n = </span><span style="color:#a31515">&quot;has changed&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">display_type(n)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># a function can return a result</span>
+<span class="odt-code-line"><span style="color:#000000">res1 = f1(4)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;res1=%s&quot; </span><span style="color:#000000">% res1)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># a function can return a list of values</span>
+<span class="odt-code-line"><span style="color:#000000">(res1, res2, res3) = f2()</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;(res1,res2,res3)=</span><span style="font-weight:bold;color:#a31515">[%s,%s,%s]</span><span style="color:#a31515">&quot; </span><span style="color:#000000">% (res1, res2, res3))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># we could have stored these values in a variable</span>
+<span class="odt-code-line"><span style="color:#000000">list = f2()</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(list)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;list</span><span style="font-weight:bold;color:#a31515">[%s]</span><span style="color:#a31515">=%s&quot; </span><span style="color:#000000">% (i, list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># some tests</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(list)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># only displays strings</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#2b91af">type</span><span style="color:#000000">(list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">) == </span><span style="color:#a31515">&quot;str&quot;</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">&quot;list</span><span style="font-weight:bold;color:#a31515">[%s]</span><span style="color:#a31515">=%s&quot; </span><span style="color:#000000">% (i, list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># more tests</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(list)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># only displays integers &gt;10</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#2b91af">type</span><span style="color:#000000">(list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">) == </span><span style="color:#a31515">&quot;int&quot; </span><span style="color:#0000ff">and </span><span style="color:#000000">list</span><span style="font-weight:bold;color:#000000">[i] </span><span style="color:#000000">&gt; 10:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">&quot;list</span><span style="font-weight:bold;color:#a31515">[%s]</span><span style="color:#a31515">=%s&quot; </span><span style="color:#000000">% (i, list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># a while loop</span>
+<span class="odt-code-line"><span style="color:#000000">list = (8, 5, 0, -2, 3, 4)</span></span>
+<span class="odt-code-line"><span style="color:#000000">i = 0</span></span>
+<span class="odt-code-line"><span style="color:#000000">sum = 0</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">while </span><span style="color:#000000">i &lt; len(list) </span><span style="color:#0000ff">and </span><span style="color:#000000">list</span><span style="font-weight:bold;color:#000000">[i] </span><span style="color:#000000">&gt; 0:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;list</span><span style="font-weight:bold;color:#a31515">[%s]</span><span style="color:#a31515">=%s&quot; </span><span style="color:#000000">% (i, list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">))</span></span>
+<span class="odt-code-line"><span style="color:#000000">    sum += list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">  </span> # sum = sum + list<span style="font-weight:bold">[i]</span></span>
+<span class="odt-code-line"><span style="color:#000000">    i += 1  </span># i=i+1</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;sum=%s&quot; </span><span style="color:#000000">% sum)</span></span>
+<span class="odt-code-line"># end of program</span>
+</code></pre></div>
+
+<p><strong>Comments</strong> </p>
+<ul>
+  <li>line 2: the keyword <b>def </b>defines a function;
+  </li>
+  <li>line 2: the function receives the parameter <b>[string]</b>. The parameter type is not specified. Python uses <b>pass-by-value</b> exclusively<b>. </b>This differs depending on the data:
+    <ul>
+      <li>for a simple type (number, boolean, etc.), this value is the <b>value </b>encapsulated by the data (4, True, etc.);
+      </li>
+      <li>for a complex type (list, class, etc.), this value is <b>the address </b>of the data;
+      </li>
+    </ul>
+  </li>
+  <li>lines 3–4: the body of the function. It is indented one tab to the right. It is this indentation, combined with the <b>:</b> character of the <i>def</i> statement, that defines the function’s body. This applies to all statements with a body: <i>if, else, while, for, try, except;</i>
+  </li>
+  <li>line 4: the syntax used here is <b>[print(&#x27;text1%F1text2%F2…&#x27; % data1, data2)]</b>:
+    <ul>
+      <li>the <b>[%Fi] </b>(here %s) are display formats:
+      </li>
+      <li>%s (string): for a string;
+      </li>
+      <li>%d (decimal): for signed decimal integers;
+      </li>
+      <li>%f (float): decimal format for real numbers;
+      </li>
+      <li>%e (exponential): exponential format for a real number;
+      </li>
+      <li>…
+      </li>
+    </ul>
+  </li>
+  <li><b>[data1, data2…] </b>are the expressions whose values you want to display:
+    <ul>
+      <li><b>[data1] </b>will be displayed using the F1 format;
+      </li>
+      <li><b>[data2] </b>will be displayed using the F2 format;
+      </li>
+      <li>…
+      </li>
+    </ul>
+  </li>
+  <li>line 10: Python manages variable types internally. You can determine a variable’s type using the <i>type(variable) </i>function, which returns a variable of type <i>&#x27;type</i>&#x27;. The expression <i>&#x27;%s&#x27; % (type(variable)) </i>is a string representing the variable’s type;
+  </li>
+  <li>line 25: the main program. This usually (but not necessarily) comes after the definition of all the script’s functions. Its content is not indented;
+  </li>
+  <li>line 28: In Python, variables are not declared. Python is case-sensitive. The variable <i>`Nom` </i>is different from the variable <i>`nom</i>`. A string can be enclosed in double quotes &quot; or single quotes &#x27;. You can therefore write `&#x27;dupont&#x27;` or `&quot;<i>dupont</i>&quot;`;
+  </li>
+  <li>line 34: there is a difference between a <b>tuple </b>(1,2,3) (note the parentheses) and a <b>list [1,2,3] </b>(note the square brackets). A tuple is <b>immutable</b>, whereas a list is mutable. In both cases, element number i is denoted <b>as [i]</b>;
+  </li>
+  <li>Line 40: <i>range(n) </i>is the tuple (0, 1, 2, …, n-1);
+  </li>
+  <li>line 41: the %d format is used for signed integers;
+  </li>
+  <li>line 74: <i>len(var) </i>is the number of elements in the <i>var</i> collection (tuple, list, dictionary, etc.);
+  </li>
+  <li>line 84: the <b>[for in …] </b>structure allows you to iterate over an iterable structure. Lists and tuples are iterable elements;
+  </li>
+  <li>line 86: the other Boolean operators are <i>or </i>and <i>not;</i>
+  </li>
+  <li>line 93: sums the numbers greater than 0 in the list;
+  </li>
+</ul>
+
+<p>The screen output is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_01.py</span>
+<span class="odt-code-line">name=dupont</span>
+<span class="odt-code-line">list<span style="font-weight:bold">[0] </span>= one</span>
+<span class="odt-code-line">list<span style="font-weight:bold">[1] </span>= two</span>
+<span class="odt-code-line">list<span style="font-weight:bold">[2] </span>= 3</span>
+<span class="odt-code-line">list<span style="font-weight:bold">[3] </span>= 4</span>
+<span class="odt-code-line"><span style="font-weight:bold">[string1, string2, string1string2]</span></span>
+<span class="odt-code-line">string = string1</span>
+<span class="odt-code-line">type<span style="font-weight:bold">[4] </span>= &lt;class &#x27;int&#x27;&gt;</span>
+<span class="odt-code-line">type<span style="font-weight:bold">[string1] </span>= &lt;class &#x27;str&#x27;&gt;</span>
+<span class="odt-code-line">type<span style="font-weight:bold">[[&#x27;one&#x27;, &#x27;two&#x27;, 3, 4]</span>] = &lt;class &#x27;list&#x27;&gt;</span>
+<span class="odt-code-line">type<span style="font-weight:bold">[has changed] </span>= &lt;class &#x27;str&#x27;&gt;</span>
+<span class="odt-code-line">res1 = 14</span>
+<span class="odt-code-line">(res1, res2, res3) = <span style="font-weight:bold">[one, 0, 100]</span></span>
+<span class="odt-code-line">list<span style="font-weight:bold">[0] </span>= one</span>
+<span class="odt-code-line">list<span style="font-weight:bold">[1] </span>= 0</span>
+<span class="odt-code-line">list<span style="font-weight:bold">[2] </span>= 100</span>
+<span class="odt-code-line">list<span style="font-weight:bold">[0] </span>= 8</span>
+<span class="odt-code-line">list<span style="font-weight:bold">[1] </span>= 5</span>
+<span class="odt-code-line">sum = 13</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="toc48548924"></a>
+<a id="refheadingtoc2520892924280206"></a></p>
+<h2 id="32-script-bases_02-formatted-strings">3.2. <span style="color: #4f81bd">Script [bases_02]: Formatted Strings</span></h2>
+<p>Python 3 introduced a new way to format strings:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># formatted strings</span>
+<span class="odt-code-line"># the formats are those of the C language</span>
+<span class="odt-code-line"># integer</span>
+<span class="odt-code-line"><span style="color:#000000">int1 = 10</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[int1={int1}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[int1={int1:4d}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[int1={int1:04d}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># float</span>
+<span class="odt-code-line"><span style="color:#000000">float1 = 8.2</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[float1={float1}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[float1={float1:8.2f}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[float1={float1:.3e}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># string</span>
+<span class="odt-code-line"><span style="color:#000000">str1=</span><span style="color:#a31515">&quot;abcd&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[str1={str1}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[str1={str1:8s}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">str2=</span><span style="color:#a31515">&quot;jean de florette&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[{str2:20.10s}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># Formatted strings can be assigned to variables</span>
+<span class="odt-code-line"><span style="color:#a31515">str3 = f&quot;</span><span style="font-weight:bold;color:#a31515">[{str2:20.10s}]</span><span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(str3)</span></span>
+</code></pre></div>
+
+<p>The syntax for the formatted string is as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>f&#39;…{expr1:format1} …. {expr2:format2} ….&#39;
+</code></pre></div></td></tr></table></div>
+<p>where:</p>
+<ul>
+  <li><b>[expr]</b>: an expression;
+  </li>
+  <li><b>[formati]</b>: the format of the expression <b>[expri]</b>. These formats are those of the C language:
+    <ul>
+      <li>%d: for integers;
+      </li>
+      <li>%f: decimal notation for real numbers;
+      </li>
+      <li>%e: exponential notation for real numbers;
+      </li>
+      <li>%s: for character strings. This is the format used when no format is specified for <b>[expr]</b>;
+      </li>
+      <li>%nd, %nf, %ns: displays <b>[expri] </b>over n characters: the string is either truncated or padded with spaces;
+      </li>
+    </ul>
+  </li>
+  <li>line 7: <b>[</b><b><span style="color: #a31515">04d</span></b><b>]</b>, 4-character integer padded on the left with zeros;
+  </li>
+  <li>line 11: <b>[</b><b><span style="color: #a31515">8.2f</span></b><b>]</b>, 8-character decimal floating-point number with 2 digits after the decimal point;
+  </li>
+  <li>line 12: <b>[</b><b><span style="color: #a31515">.3e</span></b><b>]</b>, a floating-point number in exponential form with 3 decimal places for the mantissa;
+  </li>
+  <li>line 18: <b>[</b><b><span style="color: #a31515">20.10s</span></b><b>]</b>, the first 10 characters of a string padded with spaces to make 20 characters;
+  </li>
+</ul>
+
+<p>The results of the execution are as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_02.py</span>
+<span class="odt-code-line"><span style="font-weight:bold">[int1=10]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[int1=  10]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[int1=0010]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[float1=8.2]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[float1=    8.20]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[float1=8.200e+00]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[str1=abcd]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[str1=abcd    ]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[jean de fl          ]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[jean de fl          ]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="toc48548925"></a>
+<a id="refheading37512891295936"></a></p>
+<h2 id="33-script-bases_03-type-conversions">3.3. <span style="color: #4f81bd">Script [bases_03]: Type conversions</span></h2>
+<p>Here we focus on type conversions involving data of type <strong>str</strong> (string), <strong>int</strong> (integer), <strong>float</strong> (floating-point), and <strong>bool</strong> (boolean).</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># type conversions</span>
+<span class="odt-code-line"># int --&gt; str, float, bool</span>
+<span class="odt-code-line"><span style="color:#000000">x = 4</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">str</span><span style="color:#000000">(4)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">float</span><span style="color:#000000">(4)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">bool</span><span style="color:#000000">(4)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># bool --&gt; int, float, str</span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#0000ff">True</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">int</span><span style="color:#000000">(</span><span style="color:#0000ff">True</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">float</span><span style="color:#000000">(</span><span style="color:#0000ff">True</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">str</span><span style="color:#000000">(</span><span style="color:#0000ff">True</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># str --&gt; int, float, bool</span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#a31515">&quot;4&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">int</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;4&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">float</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;4&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">bool</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;4&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># float --&gt; str, int, bool</span>
+<span class="odt-code-line"><span style="color:#000000">x = 4.32</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">str</span><span style="color:#000000">(4.32)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">int</span><span style="color:#000000">(4.32)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">bool</span><span style="color:#000000">(4.32)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Handling type conversion errors</span>
+<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    x = </span><span style="color:#2b91af">int</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;abc&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">ValueError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># various cases</span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">bool</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;abc&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">bool</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">bool</span><span style="color:#000000">(0)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#0000ff">None</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">bool</span><span style="color:#000000">(</span><span style="color:#0000ff">None</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">bool</span><span style="color:#000000">(0.0)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># All data are class instances and, as such, have methods</span>
+<span class="odt-code-line"># string</span>
+<span class="odt-code-line"><span style="color:#000000">str1 = </span><span style="color:#a31515">&quot;abc&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(str1.capitalize())</span></span>
+<span class="odt-code-line"># integer</span>
+<span class="odt-code-line"><span style="color:#000000">int1 = 4</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(int1.bit_length())</span></span>
+<span class="odt-code-line"># boolean</span>
+<span class="odt-code-line"><span style="color:#000000">bool1 = </span><span style="color:#0000ff">True</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(bool1.conjugate())</span></span>
+<span class="odt-code-line"># floating-point number</span>
+<span class="odt-code-line"><span style="color:#000000">float1 = 8.2</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(float1.is_integer())</span></span>
+</code></pre></div>
+
+<p>Many type conversions are possible. Some may fail, such as those in lines 46–47, which attempt to convert the string &#x27;abc&#x27; into an integer. We handled the error using a <em>try/except</em> block. A general form of this block</p>
+<p>is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">try:</span>
+<span class="odt-code-line">    actions</span>
+<span class="odt-code-line"><span style="font-weight:bold">except </span>Exception as ex:</span>
+<span class="odt-code-line">    actions</span>
+<span class="odt-code-line">finally:</span>
+<span class="odt-code-line">    actions</span>
+</code></pre></div>
+
+<p>If any of the actions in <strong>the try block</strong> throw an exception (signal an error), control immediately jumps to the <strong>except</strong> clause. If the actions in <strong>the try block</strong> do not throw an exception, the <strong>except</strong> clause is ignored. The <em>Exception</em> and <em>ex</em> attributes of the <em>except</em> statement are optional. When present, <em>Exception</em> specifies the type of exception intercepted by the <em>except</em> statement, and <em>ex</em> contains the exception that occurred. There can be multiple <em>except</em> statements if you want to handle different types of exceptions within the same <em>try block</em>.</p>
+<p>The <em>finally</em> statement is optional. If present, the actions in the <em>finally block</em> are <strong>always executed, regardless of whether an exception occurred or not</strong>.</p>
+<p>We’ll come back to exceptions a little later.</p>
+<p>Lines 49–61 show various attempts to convert data of type <em>str</em>, <em>int</em>, <em>float</em>, and <em>NoneType</em> to boolean. This is always possible. The rules are as follows:</p>
+<ul>
+  <li><b>bool(int i) </b>is <i>False </i>if i is 0, <i>True </i>in all other cases;
+  </li>
+  <li><b>bool(float f) </b>is <i>False </i>if f is 0.0, <i>True </i>in all other cases;
+  </li>
+  <li><b>bool(str string) </b>is <i>False </i>if string has 0 characters, <i>True </i>in all other cases;
+  </li>
+  <li><b>bool(None) </b>is False. <b>None </b>is a special value that means the variable exists but has no value.
+  </li>
+</ul>
+
+<p>The screen output is as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_03.py
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>4 &lt;class &#39;int&#39;&gt;
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>4 &lt;class &#39;str&#39;&gt;
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>4.0 &lt;class &#39;float&#39;&gt;
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>1 &lt;class &#39;int&#39;&gt;
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>1.0 &lt;class &#39;float&#39;&gt;
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>True &lt;class &#39;str&#39;&gt;
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>4 &lt;class &#39;str&#39;&gt;
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>4 &lt;class &#39;int&#39;&gt;
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>4.0 &lt;class &#39;float&#39;&gt;
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>4.32 &lt;class &#39;float&#39;&gt;
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>4.32 &lt;class &#39;str&#39;&gt;
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>4 &lt;class &#39;int&#39;&gt;
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>invalid literal for int() with base 10: &#39;abc&#39;
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>False &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>False &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>None &lt;class &#39;NoneType&#39;&gt;
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>False &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>False &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a>Abc
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>3
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a>1
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a>False
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a>Process finished with exit code 0
+</code></pre></div></td></tr></table></div>
+<p>Note that all data are objects, i.e., class instances. This means they can have methods. This is shown in lines 63–75 of the code. We are not trying here to explain what the methods do, but simply to show that they exist.</p>
+<p><a id="toc48548926"></a>
+<a id="refheadingtoc2520912924280206"></a></p>
+<h2 id="34-script-bases_04-variable-scope">3.4. <span style="color: #4f81bd">Script [bases_04]: variable scope</span></h2>
+<p>The script <strong>[bases_04]</strong> shows that Python does not have the concept of block-scoped variables:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># variable scope</span>
+<span class="odt-code-line"><span style="color:#000000">i = 4</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">if True</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    i += 1</span></span>
+<span class="odt-code-line"><span style="color:#000000">    j = 7</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;i={i}, j={j}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Results</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_04.py
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>i=5, j=7
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>Process finished with exit code 0
+</code></pre></div></td></tr></table></div>
+<p><strong>Comments</strong></p>
+<p>The results show two things:</p>
+<ul>
+  <li>line 4: the variable <b>[i] </b>in the <b>[if] </b>block is the same as the variable i used on line 2;
+  </li>
+  <li>line 6: the variable <b>[j] </b>is the one initialized in the <b>[if] </b>block;
+  </li>
+</ul>
+
+<p>In some languages, where variables are declared, a variable defined within a block (such as the one in lines 3–5) is not known outside of it. In Python, this is not the case.</p>
+<p><a id="toc48548927"></a>
+<a id="refheading382482423505"></a></p>
+<h2 id="35-script-bases_05-lists-1">3.5. <span style="color: #4f81bd">Script [bases_05]: Lists - 1</span></h2>
+<p><a id="refheading382502423505"></a>The script <strong>[bases_05]</strong> is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># 1-dimensional lists</span>
+<span class="odt-code-line"># initialization</span>
+<span class="odt-code-line"><span style="color:#000000">list1 = </span><span style="font-weight:bold;color:#000000">[0, 1, 2, 3, 4, 5]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># iteration - 1</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list1 has {len(list1)} elements&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(list1)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;list1</span><span style="font-weight:bold;color:#a31515">[{i}]</span><span style="color:#a31515">={list1</span><span style="font-weight:bold;color:#a31515">[i]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[1] </span><span style="color:#000000">= 10</span></span>
+<span class="odt-code-line"># Iteration - 2</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list1 has {len(list1)} elements&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">element </span><span style="color:#0000ff">in </span><span style="color:#000000">list1:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(element)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># adding two elements</span>
+<span class="odt-code-line"><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[len(list1):] </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#000000">[10, 11]</span></span>
+<span class="odt-code-line"># the %s format displays the list on a single line</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;%s&quot; </span><span style="color:#000000">% list1)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># removing the last two elements</span>
+<span class="odt-code-line"><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[len(list1) - 2:] </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#000000">[]</span></span>
+<span class="odt-code-line"># The default format displays the list on a single line</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Add a list to the beginning of the list</span>
+<span class="odt-code-line"><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[:0] </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#000000">[-10, -11, -12]</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Insert two elements in the middle of the list</span>
+<span class="odt-code-line"><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[3:3] </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#000000">[100, 101]</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Remove two elements from the middle of the list</span>
+<span class="odt-code-line"><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[3:4] </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#000000">[]</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>the notation array<b>[i:j] </b>refers to elements <b>i </b>through <b>j-1 </b>of the array;
+  </li>
+  <li>the notation <b>[i:] </b>refers to elements <b>i </b>and <b>subsequent </b>elements of the array;
+  </li>
+  <li>the notation <b>[:i] </b>refers to elements<b> 0 </b>through <b>i-1 </b>of the array;
+  </li>
+  <li>line 19: print (%s) % (list1) displays the string: &quot;<b>[ list1[0]</b>, list1<b>[2]</b>…, list1<b>[n-1]</b>]&quot;;
+  </li>
+  <li>line 24: the notation <i>print (&#x27;f{list1}&#x27;) </i>does the same thing;
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_05.py</span>
+<span class="odt-code-line">list1 has 6 elements</span>
+<span class="odt-code-line">list1<span style="font-weight:bold">[0] </span>= 0</span>
+<span class="odt-code-line">list1<span style="font-weight:bold">[1] </span>= 1</span>
+<span class="odt-code-line">list1<span style="font-weight:bold">[2] </span>= 2</span>
+<span class="odt-code-line">list1<span style="font-weight:bold">[3] </span>= 3</span>
+<span class="odt-code-line">list1<span style="font-weight:bold">[4] </span>= 4</span>
+<span class="odt-code-line">list1<span style="font-weight:bold">[5] </span>= 5</span>
+<span class="odt-code-line">list1 has 6 elements</span>
+<span class="odt-code-line">0</span>
+<span class="odt-code-line">10</span>
+<span class="odt-code-line">2</span>
+<span class="odt-code-line">3</span>
+<span class="odt-code-line">4</span>
+<span class="odt-code-line">5</span>
+<span class="odt-code-line"><span style="font-weight:bold">[0, 10, 2, 3, 4, 5, 10, 11]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[0, 10, 2, 3, 4, 5]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[-10, -11, -12, 0, 10, 2, 3, 4, 5]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[-10, -11, -12, 100, 101, 0, 10, 2, 3, 4, 5]</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">[-10, -11, -12, 101, 0, 10, 2, 3, 4, 5]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="toc48548928"></a>
+<a id="refheadingtoc2520932924280206"></a></p>
+<h2 id="36-script-bases_06-lists-2">3.6. <span style="color: #4f81bd">Script [bases_06]: lists - 2</span></h2>
+<p>The previous code can be written differently (<strong>bases_06</strong>) using certain list methods:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># 1-dimensional lists</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># initialization</span>
+<span class="odt-code-line"><span style="color:#000000">list1 = </span><span style="font-weight:bold;color:#000000">[0, 1, 2, 3, 4, 5]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># iteration - 1</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list1 has {len(list1)} elements&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(list1)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;list1</span><span style="font-weight:bold;color:#a31515">[{i}]</span><span style="color:#a31515">={list1</span><span style="font-weight:bold;color:#a31515">[i]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># modifying an element</span>
+<span class="odt-code-line"><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[1] </span><span style="color:#000000">= 10</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># iteration - 2</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list1 has {len(list1)} elements&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">element </span><span style="color:#0000ff">in </span><span style="color:#000000">list1:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(element)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># adding two elements</span>
+<span class="odt-code-line"><span style="color:#000000">list1.extend(</span><span style="font-weight:bold;color:#000000">[10, 11]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Remove the last two elements</span>
+<span class="odt-code-line"><span style="color:#0000ff">del </span><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[len(list1) - 2:]</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Add a tuple to the beginning of the list</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#000000">(-12, -11, -10):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    list1.insert(0, i)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Insertion in the middle of the list</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#000000">(101, 100):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    list1.insert(3, i)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># removal from the middle of the list</span>
+<span class="odt-code-line"><span style="color:#0000ff">del </span><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[3:4]</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p>The results are the same as in the previous version.</p>
+<p><a id="toc48548929"></a>
+<a id="refheading382522423505"></a></p>
+<h2 id="37-script-bases_07-the-dictionary">3.7. <span style="color: #4f81bd">script [bases_07]: the dictionary</span></h2>
+<p>The script <strong>[bases_07]</strong> shows how to define and use a dictionary, sometimes called an associative array.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># a function that checks if the key husband exists in the spouses dictionary</span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">exists(</span><span style="color:#808080">spouses</span><span style="color:#000000">, </span><span style="color:#808080">husband</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#808080">husband </span><span style="color:#0000ff">in </span><span style="color:#808080">spouses</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">f&quot;The key </span><span style="font-weight:bold;color:#a31515">[{husband}] </span><span style="color:#a31515">exists associated with the value </span><span style="font-weight:bold;color:#a31515">[{spouses[husband]</span><span style="color:#a31515">}]&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">f&quot;The key </span><span style="font-weight:bold;color:#a31515">[{husband}] </span><span style="color:#a31515">does not exist&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ----------------------------- Main</span>
+<span class="odt-code-line"># a dictionary</span>
+<span class="odt-code-line"><span style="color:#000000">spouses = {</span><span style="color:#a31515">&quot;Pierre&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Gisèle&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;Paul&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Virginie&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;Jacques&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Lucette&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;Jean&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># iteration - 1</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;Number of elements in the dictionary: {len(couples)}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">(key, value) </span><span style="color:#0000ff">in </span><span style="color:#000000">couples.items():</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;pairs</span><span style="font-weight:bold;color:#a31515">[{key}]</span><span style="color:#a31515">={value}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># list of dictionary keys</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;list of keys-------------&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">keys = conjoints.keys()</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{keys}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># list of dictionary values</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;list of values------------&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">values = conjunctions.values()</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{values}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Search for a key</span>
+<span class="odt-code-line"><span style="color:#000000">exists(spouses, </span><span style="color:#a31515">&quot;Jacques&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">exists(spouses, </span><span style="color:#a31515">&quot;Lucette&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">exists(spouses, </span><span style="color:#a31515">&quot;Jean&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Delete a key-value pair</span>
+<span class="odt-code-line"><span style="color:#0000ff">del </span><span style="color:#000000">(couples</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;Jean&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;Number of elements in the dictionary: {len(spouses)}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{spouses}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># The keys and values of a dictionary are not lists</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;Key type: {type(keys)}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;Type of values: {type(values)}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># they can be converted to lists</span>
+<span class="odt-code-line"><span style="color:#000000">keys = </span><span style="color:#2b91af">list</span><span style="color:#000000">(keys)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;keys: {type(lkeys)}, {lkeys}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">vvalues = </span><span style="color:#2b91af">list</span><span style="color:#000000">(values)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;values: {type(lvaleurs)}, {lvaleurs}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>line 11: the hard-coded definition of a dictionary;
+  </li>
+  <li>line 15: <i>conjoints.items() </i>returns the list of (key, value) pairs from the <i>conjoints</i> dictionary<i>;</i>
+  </li>
+  <li>line 20: <i>conjoints.keys() </i>returns the keys of the <i>conjoints</i> dictionary<i>;</i>
+  </li>
+  <li>line 25: <i>conjoints.values() </i>returns the values of the <i>conjoints</i> dictionary<i>;</i>
+  </li>
+  <li>line 3: <i>husband in spouses </i>returns <i>True </i>if the key <i>husband </i>exists in the <i>spouses</i> dictionary, <i>False </i>otherwise;
+  </li>
+  <li>line 36: A dictionary can be displayed on a single line.
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_07.py</span>
+<span class="odt-code-line">Number of elements in the dictionary: 4</span>
+<span class="odt-code-line">spouses<span style="font-weight:bold">[Pierre]</span>=Gisèle</span>
+<span class="odt-code-line">spouses<span style="font-weight:bold">[Paul] </span>= Virginie</span>
+<span class="odt-code-line">spouses<span style="font-weight:bold">[Jacques] </span>= Lucette</span>
+<span class="odt-code-line">spouses<span style="font-weight:bold">[Jean]</span>=</span>
+<span class="odt-code-line">list of keys-------------</span>
+<span class="odt-code-line">dict_keys(<span style="font-weight:bold">[&#x27;Pierre&#x27;, &#x27;Paul&#x27;, &#x27;Jacques&#x27;, &#x27;Jean&#x27;]</span>)</span>
+<span class="odt-code-line">list of values------------</span>
+<span class="odt-code-line">dict_values(<span style="font-weight:bold">[&#x27;Gisèle&#x27;, &#x27;Virginie&#x27;, &#x27;Lucette&#x27;, &#x27;&#x27;]</span>)</span>
+<span class="odt-code-line">The key <span style="font-weight:bold">[Jacques] </span>exists and is associated with the value <span style="font-weight:bold">[Lucette]</span></span>
+<span class="odt-code-line">The key <span style="font-weight:bold">[Lucette] </span>does not exist</span>
+<span class="odt-code-line">The key <span style="font-weight:bold">[Jean] </span>exists and is associated with the value <span style="font-weight:bold">[]</span></span>
+<span class="odt-code-line">Number of elements in the dictionary: 3</span>
+<span class="odt-code-line">{&#x27;Pierre&#x27;: &#x27;Gisèle&#x27;, &#x27;Paul&#x27;: &#x27;Virginie&#x27;, &#x27;Jacques&#x27;: &#x27;Lucette&#x27;}</span>
+<span class="odt-code-line">Key type: &lt;class &#x27;dict_keys&#x27;&gt;</span>
+<span class="odt-code-line">Value type: &lt;class &#x27;dict_values&#x27;&gt;</span>
+<span class="odt-code-line">keys: &lt;class &#x27;list&#x27;&gt;, <span style="font-weight:bold">[&#x27;Pierre&#x27;, &#x27;Paul&#x27;, &#x27;Jacques&#x27;]</span></span>
+<span class="odt-code-line">values: &lt;class &#x27;list&#x27;&gt;, <span style="font-weight:bold">[&#x27;Gisèle&#x27;, &#x27;Virginie&#x27;, &#x27;Lucette&#x27;]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>Note that in lines 16–17 of the results, the keys and values of a dictionary do not form a list but a &#x27;dict_keys&#x27; type;
+  </li>
+  <li>lines 18–19: a simple type cast converts them to a <b>[list] </b>type;
+<a id="toc48548930"></a>
+<a id="refheading382542423505"></a>
+
+## 3.8. <span style="color: #4f81bd">script [bases\_08]: tuples</span>
+
+  </li>
+</ul>
+
+<p>A <strong>tuple</strong> is similar to a list but is immutable:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># tuples</span>
+<span class="odt-code-line"># initialization</span>
+<span class="odt-code-line"><span style="color:#000000">tuple1 = (0, 1, 2, 3, 4, 5)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># iteration - 1</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;tuple1 has {len(tuple1)} elements&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(tuple1)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;tuple1</span><span style="font-weight:bold;color:#a31515">[{i}]</span><span style="color:#a31515">={tuple1</span><span style="font-weight:bold;color:#a31515">[i]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># iteration - 2</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;tuple1 has {len(tuple1)} elements&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">element </span><span style="color:#0000ff">in </span><span style="color:#000000">tuple1:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(element)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># a tuple can be displayed on a single line</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;tuple1={tuple1}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># A tuple cannot be modified</span>
+<span class="odt-code-line"><span style="color:#000000">tuple1</span><span style="font-weight:bold;color:#000000">[0] </span><span style="color:#000000">= 10</span></span>
+</code></pre></div>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_08.py</span>
+<span class="odt-code-line">tuple1 has 6 elements</span>
+<span class="odt-code-line">tuple1<span style="font-weight:bold">[0]</span>=0</span>
+<span class="odt-code-line">tuple1<span style="font-weight:bold">[1] </span>= 1</span>
+<span class="odt-code-line">tuple1<span style="font-weight:bold">[2] </span>= 2</span>
+<span class="odt-code-line">tuple1<span style="font-weight:bold">[3] </span>= 3</span>
+<span class="odt-code-line">tuple1<span style="font-weight:bold">[4] </span>= 4</span>
+<span class="odt-code-line">tuple1<span style="font-weight:bold">[5] </span>= 5</span>
+<span class="odt-code-line">tuple1 has 6 elements</span>
+<span class="odt-code-line">0</span>
+<span class="odt-code-line">1</span>
+<span class="odt-code-line">2</span>
+<span class="odt-code-line">3</span>
+<span class="odt-code-line">4</span>
+<span class="odt-code-line">5</span>
+<span class="odt-code-line">tuple1 = (0, 1, 2, 3, 4, 5)</span>
+<span class="odt-code-line">Traceback (most recent call last):</span>
+<span class="odt-code-line">  File &quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_08.py&quot;, line 19, in &lt;module&gt;</span>
+<span class="odt-code-line">    tuple1<span style="font-weight:bold">[0] </span>= 10</span>
+<span class="odt-code-line">TypeError: &#x27;tuple&#x27; object does not support item assignment</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 1</span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>Lines 17–20 of the output: show that a tuple cannot be modified.
+<a id="toc48548931"></a>
+<a id="refheading382562423505"></a>
+
+## 3.9. <span style="color: #4f81bd">Script [bases\_09]: Multidimensional lists and dictionaries</span>
+
+  </li>
+</ul>
+
+<p>The script <strong>[bases_09]</strong> demonstrates how to define and use a multidimensional list or dictionary:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># multidimensional lists</span>
+<span class="odt-code-line"># initialization</span>
+<span class="odt-code-line"><span style="color:#000000">multi = </span><span style="font-weight:bold;color:#000000">[[0, 1, 2]</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#000000">[10, 11, 12, 13]</span><span style="color:#000000">, </span><span style="font-weight:bold;color:#000000">[20, 21, 22, 23, 24]</span><span style="color:#000000">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># iteration</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i1 </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(multi)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">i2 </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(multi</span><span style="font-weight:bold;color:#000000">[i1]</span><span style="color:#000000">)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">f&quot;multi</span><span style="font-weight:bold;color:#a31515">[{i1}][{i2}]</span><span style="color:#a31515">={multi</span><span style="font-weight:bold;color:#a31515">[i1][i2]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display on one line</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;multi={multi}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Multidimensional dictionaries</span>
+<span class="odt-code-line"># initialization</span>
+<span class="odt-code-line"><span style="color:#000000">multi = {</span><span style="color:#a31515">&quot;zero&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[0, 1]</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;one&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[10, 11, 12, 13]</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;two&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[20, 21, 22, 23, 24]</span><span style="color:#000000">}</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># iteration</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">(key, value) </span><span style="color:#0000ff">in </span><span style="color:#000000">multi.items():</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">i2 </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(value)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">f&quot;multi</span><span style="font-weight:bold;color:#a31515">[{key}][{i2}]</span><span style="color:#a31515">={multi</span><span style="font-weight:bold;color:#a31515">[key][i2]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display on one line</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;multi={multi}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>line 7: multi<b>[i1] </b>is a list;
+  </li>
+  <li>line 18: value is a list;
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_09.py</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[0][0]</span>=0</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[0][1]</span>=1</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[0][2]</span>=2</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[1][0]</span>=10</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[1][1]</span>=11</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[1][2]</span>=12</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[1][3]</span>=13</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[2][0]</span>=20</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[2][1]</span>=21</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[2][2]</span>=22</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[2][3]</span>=23</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[2][4]</span>=24</span>
+<span class="odt-code-line">multi <span style="font-weight:bold">= [[0, 1, 2]</span>, <span style="font-weight:bold">[10, 11, 12, 13]</span>, <span style="font-weight:bold">[20, 21, 22, 23, 24]</span>]</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[zero][0]</span>=0</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[zero][1]</span>=1</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[one][0]</span>=10</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[one][1]</span>=11</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[one][2]</span>=12</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[one][3]</span>=13</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[two][0]</span>=20</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[two][1]</span>=21</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[two][2]</span>=22</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[two][3]</span>=23</span>
+<span class="odt-code-line">multi<span style="font-weight:bold">[two][4] </span>= 24</span>
+<span class="odt-code-line">multi={&#x27;zero&#x27;: <span style="font-weight:bold">[0, 1]</span>, &#x27;one&#x27;: <span style="font-weight:bold">[10, 11, 12, 13]</span>, &#x27;two&#x27;: <span style="font-weight:bold">[20, 21, 22, 23, 24]</span>}</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="toc48548932"></a>
+<a id="refheading382582423505"></a></p>
+<h2 id="310-script-bases_10-links-between-strings-and-lists">3.10. <span style="color: #4f81bd">Script [bases_10]: Links Between Strings and Lists</span></h2>
+<p>The <strong>[bases_10]</strong> script demonstrates how to extract elements from a string separated by a common delimiter into a list.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># string to list</span>
+<span class="odt-code-line"><span style="color:#000000">string = </span><span style="color:#a31515">&#x27;1:2:3:4&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#000000">list = string.split(</span><span style="color:#a31515">&#x27;:&#x27;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#2b91af">type</span><span style="color:#000000">(list))</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display list</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list has {len(list)} elements&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list={list}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># list to string</span>
+<span class="odt-code-line"><span style="color:#000000">string2 = </span><span style="color:#a31515">&quot;:&quot;</span><span style="color:#000000">.join(list)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;string2={string2}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># let&#x27;s add an empty field</span>
+<span class="odt-code-line"><span style="color:#000000">string += </span><span style="color:#a31515">&quot;:&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;string={string}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">list = string.split(</span><span style="color:#a31515">&quot;:&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display list</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list has {len(list)} elements&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list={list}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># let&#x27;s add an empty field again</span>
+<span class="odt-code-line"><span style="color:#000000">string += </span><span style="color:#a31515">&quot;:&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;string={string}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">list = string.split(</span><span style="color:#a31515">&quot;:&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display list</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list has {len(list)} elements&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list={list}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>line 3: the method <i>string.split(separator) </i>splits the <i>string string </i>into elements separated by <i>separator </i>and returns them as a list. Thus, the expression <i>&#x27;1:2:3:4&#x27;.split(&quot;:&quot;) </i>returns the list <i>(&#x27;1&#x27;,&#x27;2&#x27;,&#x27;3&#x27;,&#x27;4&#x27;);</i>
+  </li>
+  <li>line 11: &#x27;separator&#x27;.join(list) returns the string &#x27;list<b>[0]</b>+separator+list<b>[1]</b>+separator+…&#x27;.
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_10.py</span>
+<span class="odt-code-line">&lt;class &#x27;list&#x27;&gt;</span>
+<span class="odt-code-line">list has 4 elements</span>
+<span class="odt-code-line">list = <span style="font-weight:bold">[&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;4&#x27;]</span></span>
+<span class="odt-code-line">string2 = 1:2:3:4</span>
+<span class="odt-code-line">string = 1:2:3:4:</span>
+<span class="odt-code-line">list with 5 elements</span>
+<span class="odt-code-line">list = <span style="font-weight:bold">[&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;4&#x27;, &#x27;&#x27;]</span></span>
+<span class="odt-code-line">string = 1:2:3:4::</span>
+<span class="odt-code-line">list with 6 elements</span>
+<span class="odt-code-line">list=<span style="font-weight:bold">[&#x27;1&#x27;, &#x27;2&#x27;, &#x27;3&#x27;, &#x27;4&#x27;, &#x27;&#x27;, &#x27;&#x27;]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="toc48548933"></a>
+<a id="refheading382602423505"></a></p>
+<h2 id="311-script-bases_11-regular-expressions">3.11. <span style="color: #4f81bd">Script [bases_11]: Regular Expressions</span></h2>
+<p>The <strong>[bases_11]</strong> script demonstrates how to use regular expressions:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># import the regular expressions module</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">re</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># --------------------------------------------------------------------------</span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">compare(pattern, string):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># compares the string <span style="font-weight:bold">[string] </span>to the pattern <span style="font-weight:bold">[pattern]</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display results</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;\nResults({string},{pattern})&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    match = re.match(pattern, string)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">match:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        print(match.groups())</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">f&quot;The string </span><span style="font-weight:bold;color:#a31515">[{string}] </span><span style="color:#a31515">does not match the pattern </span><span style="font-weight:bold;color:#a31515">[{pattern}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Regular expressions in Python</span>
+<span class="odt-code-line"># extract the different fields from a string</span>
+<span class="odt-code-line"># the pattern: a sequence of digits surrounded by any characters</span>
+<span class="odt-code-line"># we only want to extract the sequence of digits</span>
+<span class="odt-code-line"><span style="color:#000000">pattern = </span><span style="color:#a31515">r&quot;^.*?(\d+).*?$&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># We match the string against the pattern</span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;xyz1234abcd&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;12 34&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;abcd&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># the pattern: a sequence of digits surrounded by any characters</span>
+<span class="odt-code-line"># We want the sequence of digits as well as the fields that follow and precede it</span>
+<span class="odt-code-line"><span style="color:#000000">pattern = </span><span style="color:#a31515">r&quot;^(.*?)(\d+)(.*?)$&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># we match the string against the pattern</span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;xyz1234abcd&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;12 34&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;abcd&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># the pattern - a date in dd/mm/yy format</span>
+<span class="odt-code-line"><span style="color:#000000">pattern = </span><span style="color:#a31515">r&quot;^\s*(\d\d)\/(\d\d)\/(\d\d)\s*$&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;10/05/97&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot; 04/04/01 &quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;5/1/01&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># the pattern - a decimal number</span>
+<span class="odt-code-line"><span style="color:#000000">pattern = </span><span style="color:#a31515">r&quot;^\s*(</span><span style="font-weight:bold;color:#a31515">[+-]</span><span style="color:#a31515">?)\s*(\d+\.\d*|\.\d+|\d+)\s*$&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;187.8&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;-0.6&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;4&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;.6&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(pattern, </span><span style="color:#a31515">&quot;4.&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">compare(model, </span><span style="color:#a31515">&quot; + 4&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># end</span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>Note the <b>[re] </b>module imported on line 2. It contains the functions for handling regular expressions;
+  </li>
+  <li>line 10: comparing a string to a regular expression (pattern) returns <i>True </i>if the string matches the pattern, <i>False </i>otherwise;
+  </li>
+  <li>line 12: <i>match.groups() </i>is a tuple whose elements are the parts of the string that match the elements of the regular expression enclosed in parentheses. In the pattern:
+    <ul>
+      <li><i>^.*?(\d+).*?</i>, <i>match.groups</i>() will be a one-element tuple because there is one set of parentheses;
+      </li>
+      <li><i>^(.*?)(\d+)(.*?)$</i>,  <i>match.groups</i>() will be a 3-element tuple because there are three parentheses;
+      </li>
+    </ul>
+  </li>
+  <li>line 21: a literal regular expression is written as r&quot;xxx&quot;. It is the r symbol that turns the string into a regular expression;
+  </li>
+</ul>
+
+<p>Regular expressions allow us to validate the format of a string. For example, we can verify that a string representing a date is in the dd/mm/yy format. To do this, we use a pattern and compare the string to that pattern. In this example, d, m, and y must be digits. The pattern for a valid date format is therefore <strong>&quot;\d\d/\d\d/\d\d&quot;,</strong> where the symbol <strong>\d</strong> represents a digit. The symbols that can be used in a pattern are as follows:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Character</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Description</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Designates the following character as a special character or literal. For example, &quot;n&quot; corresponds to the character &quot;n&quot;, while &quot;\n&quot; corresponds to a newline character. The sequence &quot;\\&quot; corresponds to &quot;\&quot;, while &quot;\(&quot; corresponds to &quot;(&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">^</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches the start of the string.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">$</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches the end of the string.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">*</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches the preceding character zero or more times. Thus, &quot;zo*&quot; matches &quot;z&quot; or &quot;zoo&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches the preceding character, one or more times. Thus, &quot;zo+&quot; matches &quot;zoo&quot;, but not &quot;z&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">?</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches the preceding character zero or one time. For example, &quot;a?ve?&quot; matches &quot;ve&quot; in &quot;lever&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">.</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches any single character, except the newline character.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>(</b>pattern<b>)</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Searches for the <i>pattern </i>and stores the match. The matching substring can be retrieved from the <b>match.groups() </b>collection<b>. </b>To find matches with characters inside parentheses ( ), use &quot;\(&quot; or &quot;\)&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">x|y</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches either <i>x </i>or <i>y</i>. For example, &quot;z|foot&quot; matches &quot;z&quot; or &quot;foot&quot;. &quot;(z|f)oo&quot; matches &quot;zoo&quot; or &quot;foo&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">{<i>n</i>}</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>n </i>is a non-negative integer. Matches exactly <i>n</i> occurrences of the character. For example, &quot;o{2}&quot; does not match &quot;o&quot; in &quot;Bob,&quot; but matches the first two &quot;o&quot;s in &quot;fooooot&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">{<i>n</i>,}</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>n </i>is a non-negative integer. Matches at least <i>n </i>occurrences of the character. For example, &quot;o{2,}&quot; does not match &quot;o&quot; in &quot;Bob,&quot; but matches all &quot;o&quot;s in &quot;fooooot.&quot; &quot;o{1,}&quot; is equivalent to &quot;o+&quot; and &quot;o{0,}&quot; is equivalent to &quot;o*&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>{</b><i>n</i><b>,</b><i>m</i><b>}</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>m </i>and <i>n </i>are non-negative integers. Matches at least <i>n </i>and at most <i>m </i>occurrences of the character. For example, &quot;o{1,3}&quot; matches the first three &quot;o&quot;s in &quot;foooooot&quot; and &quot;o{0,1}&quot; is equivalent to &quot;o?&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[</b><i><b>xyz</b></i><b>]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Character set. Matches any of the specified characters. For example, &quot;<b>[abc]</b>&quot; matches &quot;a&quot; in &quot;plat&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[</b><i><b>^xyz</b></i><b>]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Negative character set. Matches any character not listed. For example, &quot;<b>[^abc]</b>&quot; matches &quot;p&quot; in &quot;plat&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[</b><i><b>a-z</b></i><b>]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Character range. Matches any character in the specified range. For example, &quot;<b>[a-z]</b>&quot; matches any lowercase alphabetical character between &quot;a&quot; and &quot;z&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[</b><i><b>^m-z</b></i><b>]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Negative character range. Matches any character not in the specified range. For example, &quot;<b>[^m-z]</b>&quot; matches any character not between &quot;m&quot; and &quot;z&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\b</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches a word boundary, that is, the position between a word and a space. For example, &quot;er\b&quot; matches &quot;er&quot; in &quot;lever,&quot; but not &quot;er&quot; in &quot;verb.&quot;</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\B</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches a boundary that does not represent a word. &quot;en*t\B&quot; matches &quot;ent&quot; in &quot;bien entendu&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches a character representing a digit. Equivalent to <b>[0-9]</b>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\D</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches a character that is not a digit. Equivalent to <b>[^0-9]</b>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\f</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches a line break character.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\n</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Equivalent to a newline character.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\r</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Equivalent to a carriage return character.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\s</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches any whitespace, including space, tab, page break, etc. Equivalent to &quot;<b>[ \f\n\r\t\v]</b>&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\S</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches any non-whitespace character. Equivalent to &quot;<b>[^ \f\n\r\t\v]</b>&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\t</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches a tab character.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\v</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches a vertical tab character.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\w</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches any character representing a word and including an underscore. Equivalent to &quot;<b>[A-Za-z0-9_]</b>&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\W</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches any character that does not represent a word. Equivalent to &quot;<b>[^A-Za-z0-9_]</b>&quot;.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>\</b>num</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches <i>num</i>, where <i>num </i>is a positive integer. Refers to stored matches. For example, &quot;(.)\1&quot; matches two consecutive identical characters.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>\</b><i>n</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Matches <i>n</i>, where <i>n </i>is an octal escape value. Octal escape values must consist of 1, 2, or 3 digits. For example, &quot;\11&quot; and &quot;\011&quot; both match a tab character. &quot;\0011&quot; is equivalent to &quot;\001&quot; &amp; &quot;1&quot;. Octal escape values must not exceed 256. If they do, only the first two digits are taken into account in the expression. Allows ASCII codes to be used in regular expressions.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\<i>xn</i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Corresponds to <i>n</i>, where <i>n </i>is a hexadecimal escape value. Hexadecimal escape values must consist of exactly two digits. For example, &quot;\x41&quot; corresponds to &quot;A&quot;. &quot;\x041&quot; is equivalent to &quot;\x04&quot; &amp; &quot;1&quot;. Allows the use of ASCII codes in regular expressions.</div></td></tr></table>
+
+<p>An element in a pattern may appear once or multiple times. Let’s look at some examples involving the <strong>\d</strong> symbol, which represents a single digit:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>pattern</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>meaning</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a digit</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d?</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0 or 1 digit</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d*</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">0 or more digits</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">1 or more digits</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d{2}</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">2 digits</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d{3,}</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">at least 3 digits</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d{5,7}</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">between 5 and 7 digits</div></td></tr></table>
+
+<p>Now let’s imagine a model capable of describing the expected format for a string:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>target string</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>pattern</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a date in dd/mm/yy format</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d{2}/\d{2}/\d{2}</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a time in hh:mm:ss format</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d{2}:\d{2}:\d{2}</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">an unsigned integer</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\d+</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a sequence of spaces, which may be empty</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\s*</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">an unsigned integer that may be preceded or followed by spaces</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\s*\d+\s*</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">an integer that may be signed and preceded or followed by spaces</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\s*<b>[+|-]</b>?\s*\d+\s*</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">an unsigned real number that may be preceded or followed by spaces</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\s*\d+(.\d*)?\s*</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a real number that may be signed and preceded or followed by spaces</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\s*<b>[+-]</b>?\s*\d+(.\d*)?\s*</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a string containing the word &quot;just&quot;</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\bjuste\b</div></td></tr></table>
+
+<p>You can specify where to search for the pattern in the string:</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>pattern</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>meaning</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">^pattern</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the pattern starts the string</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">pattern$</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the pattern ends the string</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">^pattern$</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the pattern starts and ends the string</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">pattern</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">the pattern is searched for anywhere in the string, starting from the beginning.</div></td></tr></table>
+
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Model sought</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>pattern</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a string ending with an exclamation point</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">!$</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a string ending with a period</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\.$</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a string beginning with the sequence //</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">^//</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a string consisting of a single word, optionally preceded or followed by spaces</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">^\s*\w+\s*$</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a string consisting of two words, optionally followed or preceded by spaces</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">^\s*\w+\s*\w+\s*$</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">a string containing the word secret</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">\bsecret\b</div></td></tr></table>
+
+<p>Sub-patterns of a pattern can be &quot;extracted.&quot; Thus, not only can we verify that a string matches a particular pattern, but we can also extract from that string the elements corresponding to the sub-patterns of the pattern that have been enclosed in parentheses. For example, if we parse a string containing a date in the format dd/mm/yy and want to extract the dd, mm, and yy components of that date, we would use the pattern (\d\d)/(\d\d)/(\d\d).</p>
+<p><strong>Script results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_11.py</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(xyz1234abcd,^.*?(\d+).*?$)</span>
+<span class="odt-code-line">(&#x27;1234&#x27;,)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(12 34,^.*?(\d+).*?$)</span>
+<span class="odt-code-line">(&#x27;12&#x27;,)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(abcd,^.*?(\d+).*?$)</span>
+<span class="odt-code-line">The string <span style="font-weight:bold">[abcd] </span>does not match the pattern <span style="font-weight:bold">[^.*?(\d+).*?$]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(xyz1234abcd,^(.*?)(\d+)(.*?)$)</span>
+<span class="odt-code-line">(&#x27;xyz&#x27;, &#x27;1234&#x27;, &#x27;abcd&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(12 34,^(.*?)(\d+)(.*?)$)</span>
+<span class="odt-code-line">(&#x27;&#x27;, &#x27;12&#x27;, &#x27; 34&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(abcd,^(.*?)(\d+)(.*?)$)</span>
+<span class="odt-code-line">The string <span style="font-weight:bold">[abcd] </span>does not match the pattern <span style="font-weight:bold">[^(.*?)(\d+)(.*?)$]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(10/05/97,^\s*(\d\d)\/(\d\d)\/(\d\d)\s*$)</span>
+<span class="odt-code-line">(&#x27;10&#x27;, &#x27;05&#x27;, &#x27;97&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results( 04/04/01 ,^\s*(\d\d)\/(\d\d)\/(\d\d)\s*$)</span>
+<span class="odt-code-line">(&#x27;04&#x27;, &#x27;04&#x27;, &#x27;01&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(5/1/01,^\s*(\d\d)\/(\d\d)\/(\d\d)\s*$)</span>
+<span class="odt-code-line">The string <span style="font-weight:bold">[5/1/01] </span>does not match the pattern <span style="font-weight:bold">[^\s*(\d\d)\/(\d\d)\/(\d\d)\s*$]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(187.8,^\s*(<span style="font-weight:bold">[+-]</span>?)\s*(\d+\.\d*|\.\d+|\d+)\s*$)</span>
+<span class="odt-code-line">(&#x27;&#x27;, &#x27;187.8&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(-0.6,^\s*(<span style="font-weight:bold">[+-]</span>?)\s*(\d+\.\d*|\.\d+|\d+)\s*$)</span>
+<span class="odt-code-line">(&#x27;-&#x27;, &#x27;0.6&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(4,^\s*(<span style="font-weight:bold">[+-]</span>?)\s*(\d+\.\d*|\.\d+|\d+)\s*$)</span>
+<span class="odt-code-line">(&#x27;&#x27;, &#x27;4&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(.6, &#x27;\s*(<span style="font-weight:bold">[+-]</span>?)\s*(\d+\.\d*|\.\d+|\d+)\s*$)</span>
+<span class="odt-code-line">(&#x27;&#x27;, &#x27;.6&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results(4.,^\s*(<span style="font-weight:bold">[+-]</span>?)\s*(\d+\.\d*|\.\d+|\d+)\s*$)</span>
+<span class="odt-code-line">(&#x27;&#x27;, &#x27;4.&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Results( + 4, &#x27;\s*(<span style="font-weight:bold">[+-]</span>?)\s*(\d+\.\d*|\.\d+|\d+)\s*$)</span>
+<span class="odt-code-line">(&#x27;+&#x27;, &#x27;4&#x27;)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

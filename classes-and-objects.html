@@ -1,0 +1,2492 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to Python 3 and the Flask Web Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-python-flask-sept-2020/classes-and-objects.html">
+      
+      
+        <link rel="prev" href="practical-exercise-version-3.html">
+      
+      
+        <link rel="next" href="the-generic-classes-baseentity-and-myexception.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>12. Classes and Objects - An Introduction to Python 3 and the Flask Web Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to Python 3 and the Flask Web Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#12-classes-and-objects" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to Python 3 and the Flask Web Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              12. Classes and Objects
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to Python 3 and the Flask Web Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foreword.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Foreword
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setting-up-a-development-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Setting up a development environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-basics-of-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Basics of Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="strings.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="text-files.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Text files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Application exercise – version 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="imports.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Imports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Practical Exercise: Version 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Practical Exercise: Version 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Classes and Objects
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="classes-and-objects.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Classes and Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#121-script-classes_01-an-object-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.1. script [classes_01]: an Object class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#122-script-classes_02-a-person-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.2. Script [classes_02]: a Person class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#123-script-classes_03-the-person-class-with-a-constructor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.3. Script [classes_03]: the Person class with a constructor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#124-script-classes_04-static-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.4. Script [classes_04]: static methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#125-script-classes_05-attribute-validity-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.5. Script [classes_05]: Attribute validity checks
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#126-script-classes_06-adding-an-object-initialization-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.6. Script [classes_06]: Adding an object initialization method
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#127-script-classes_07-a-list-of-person-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.7. Script [classes_07]: a list of Person objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#128-script-classes_08-creating-a-class-derived-from-the-person-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.8. Script [classes_08]: creating a class derived from the Person class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#129-script-classes_09-second-class-derived-from-the-person-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.9. Script [classes_09]: second class derived from the Person class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1210-script-classes_10-the-__dict__-property" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12.10. Script [classes_10]: the [__dict__] property
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-generic-classes-baseentity-and-myexception.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. The generic classes [BaseEntity] and [MyException]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="layered-architecture-and-interface-based-programming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Layered architecture and interface-based programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Application Exercise - Version 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-mysql-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Using the MySQL DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-postgresql-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Using the PostgreSQL DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="writing-dbms-independent-code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Writing DBMS-Independent Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-sqlalchemy-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Using the SQLAlchemy ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Application exercise: version 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internet-functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Internet Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-services-with-the-flask-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Web services with the Flask framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practice-exercise-version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Practice Exercise: Version 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practice-exercise-version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Practice Exercise: Version 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="-application-exercise-version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Application Exercise: Version 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="from-dictionary-to-xml-and-vice-versa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. From dictionary to XML and vice versa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Application Exercise: Version 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. Application exercise: version 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. Application exercise: version 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Practical Exercise: Version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-clients-for-the-json-and-xml-services-of-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Web clients for the JSON and XML services of version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="html-mode-in-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. HTML mode in version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Application exercise: Version 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Practical Exercise: Version 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Application exercise: version 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. Application Exercise: Version 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Practical Exercise: Version 17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-18-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Practical Exercise: Version 18 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="toc48549002"></a>
+<a id="refheading382742423505"></a>
+<a id="lesclasseset"></a>
+<a id="toc48548994-copie-1"></a>
+<a id="refheadingtoc510331566649833-copie-1"></a>
+<a id="version2-copie-1"></a>
+<a id="toc48548993-copie-1"></a>
+<a id="exercicedapplication1-copie-1"></a>
+<a id="toc48548982-copie-1"></a>
+<a id="lesimports-copie-1"></a>
+<a id="toc48548962-copie-1"></a>
+<a id="refheading382662423505-copie-1"></a>
+<a id="toc48548956-copie-1"></a>
+<a id="refheadingtoc2521212924280206-copie-1"></a>
+<a id="lesfichierstexte-copie-1"></a>
+<a id="toc48548943-copie-1"></a>
+<a id="refheadingtoc2521012924280206-copie-1"></a>
+<a id="lesfonctions-copie-1"></a>
+<a id="toc48548939-copie-1"></a>
+<a id="refheading352241169597484-copie-1"></a>
+<a id="lesexceptions-copie-1"></a>
+<a id="toc48548934-copie-1"></a>
+<a id="refheadingtoc3282143081319169-copie-1"></a>
+<a id="leschainesde-copie-1"></a>
+<a id="toc48548922-copie-1"></a>
+<a id="refheading382422423505-copie-1"></a>
+<a id="lesbasesde-copie-1"></a>
+<a id="toc48548915-copie-1"></a>
+<a id="refheading382362423505-copie-1"></a>
+<a id="installationdunenvironnement-copie-1"></a>
+<a id="toc48548914-copie-1"></a>
+<a id="refheading382342423505-copie-1"></a>
+<a id="avant-propos-copie-1"></a></p>
+<h1 id="12-classes-and-objects">12. <span style="color: #365f91">Classes and Objects</span></h1>
+<p>A <strong>class</strong> is the template from which <strong>objects</strong> are created. An object is said to be <strong>an instance</strong> of a class.</p>
+<p><img src="images/100000000000010E000001D257FE4F52.png" style="width:3.12cm;height:5.387cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010E000001D257FE4F52.png" /></p>
+<p><strong>Note</strong>: The <strong>[shared]</strong> folder has been placed in the project&#x27;s <strong>[Root Sources]</strong>.</p>
+<p><a id="refheading382762423505"></a>
+<a id="toc48549003"></a></p>
+<h2 id="121-script-classes_01-an-object-class">12.1. <span style="color: #4f81bd">script [classes_01]: an Object class</span></h2>
+<p>The <strong>[classes_01]</strong> script demonstrates an obsolete use of classes:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># a class</span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">Object</span><span style="color:#000000">(</span><span style="color:#2b91af">object</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#009010">&quot;&quot;&quot;an empty Object class&quot;&quot;&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># any variable of type <span style="font-weight:bold">[Object] </span>can have attributes by default</span>
+<span class="odt-code-line"><span style="color:#000000">obj1 = </span><span style="color:#2b91af">Object</span><span style="color:#000000">()</span></span>
+<span class="odt-code-line"><span style="color:#000000">obj1.attr1 = </span><span style="color:#a31515">&quot;one&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">obj1.attr2 = 100</span></span>
+<span class="odt-code-line"># displays the object</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object1=</span><span style="font-weight:bold;color:#a31515">[{obj1}, {type(obj1)},{id(obj1)},{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># modifies the object</span>
+<span class="odt-code-line"><span style="color:#000000">obj1.attr2 += 100</span></span>
+<span class="odt-code-line"># displays the object</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object1=</span><span style="font-weight:bold;color:#a31515">[{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># assigns the reference obj1 to obj2</span>
+<span class="odt-code-line"><span style="color:#000000">obj2 = obj1</span></span>
+<span class="odt-code-line"># modifies the object pointed to by obj2</span>
+<span class="odt-code-line"><span style="color:#000000">obj2.attr2 = 0</span></span>
+<span class="odt-code-line"># displays both objects - obj1 now points to a modified object</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object1=</span><span style="font-weight:bold;color:#a31515">[{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object2=</span><span style="font-weight:bold;color:#a31515">[{obj2.attr1},{obj2.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># obj1 and obj2 point to the same object</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object1=</span><span style="font-weight:bold;color:#a31515">[{obj1}, {id(obj1)},{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object2=</span><span style="font-weight:bold;color:#a31515">[{obj2}, {id(obj2)},{obj2.attr1},{obj2.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(obj1 == obj2)</span></span>
+<span class="odt-code-line"># type of the obj1 instance</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;type(obj1)={type(obj1)}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;isinstance(obj1, Object) = {isinstance(obj1, Object)}, isinstance(obj1, object) = {isinstance(obj1, object)}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># Every type is an object in Python</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;type(4)={type(4)}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;isinstance(4, int)={isinstance(4, int)}, isinstance(4, object)={isinstance(4, object)}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>lines 2-3: an empty <b>[Object] </b>class;
+  </li>
+  <li>Line 2: The class can be declared in three forms:
+    <ul>
+      <li>class Object;
+      </li>
+      <li>class Object();
+      </li>
+      <li>class Object(object);
+      </li>
+    </ul>
+  </li>
+  <li>line 3: another form of comment. This one, preceded by three &quot;&quot;, can span multiple lines;
+  </li>
+  <li>line 7: instantiation of the <i>Object</i> class. The result is an address, as shown in lines 24–26;
+  </li>
+  <li>lines 8–9: direct initialization of two attributes of the object;
+  </li>
+  <li>line 17: copying references. The variables <i>obj1 </i>and <i>obj2 </i>are two pointers (references) to the same object;
+  </li>
+  <li>line 19: we modify the object pointed to <b>by [obj2]</b>. Since <b>[obj1] </b>and <b>[obj2] </b>point to the same object, the displays of the objects <b>[obj1, obj2] </b>in lines 21 and 22 will show that the object pointed to by <b>[obj1] </b>has changed;
+  </li>
+  <li>lines 24–26: these lines are intended to demonstrate that the variables <b>[obj1] </b>and <b>[obj2] </b>are equal. The output of line 26 will confirm this. In this comparison, it is the addresses <b>of [obj1] </b>and <b>[obj2] </b>that are equal;
+  </li>
+  <li>Every Python object is identified by a unique ID obtained using the expression <b>[id(object)]</b>. Lines 24 and 25 will show that the IDs of the objects pointed to by <b>[obj1] </b>and <b>[obj2] </b>are identical, thereby demonstrating that these two references point to the same object;
+  </li>
+  <li>Lines 27–29: The function <b>[isinstance(expr, Type)] </b>returns the Boolean value True if the expression <b>[expr] </b>is of type <b>[Type]</b>. Here, we will see that <b>[obj1] </b>is of type <b>[Object]</b>, which seems natural, but also of type <b>[object]</b>. The <b>[object] </b>class is the <b>parent class </b>of all Python classes. By the property of class inheritance, a <b>child class F </b>has all the properties of its <b>parent class P</b>, and the function <b>[isinstance(instance of F, P)] </b>returns True;
+  </li>
+  <li>lines 30–32: show that type <b>[int] </b>is also a type <b>[object]</b>. All Python types derive from the <b>[object] </b>class;
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_01.py</span>
+<span class="odt-code-line">object1=<span style="font-weight:bold">[&lt;__main__.Object object at 0x0000025C3F469BB0&gt;, &lt;class &#x27;__main__.Object&#x27;&gt;,2595221838768,one,100]</span></span>
+<span class="odt-code-line">object1 = <span style="font-weight:bold">[1, 200]</span></span>
+<span class="odt-code-line">object1 = <span style="font-weight:bold">[1, 0]</span></span>
+<span class="odt-code-line">object2 = <span style="font-weight:bold">[1, 0]</span></span>
+<span class="odt-code-line">object1 = <span style="font-weight:bold">[&lt;__main__.Object object at 0x0000025C3F469BB0&gt;, 2595221838768, one, 0]</span></span>
+<span class="odt-code-line">object2=<span style="font-weight:bold">[&lt;__main__.Object object at 0x0000025C3F469BB0&gt;, 2595221838768,one,0]</span></span>
+<span class="odt-code-line">True</span>
+<span class="odt-code-line">type(obj1) = &lt;class &#x27;__main__.Object&#x27;&gt;</span>
+<span class="odt-code-line">isinstance(obj1, Object) = True, isinstance(obj1, object) = True</span>
+<span class="odt-code-line">type(4) = &lt;class &#x27;int&#x27;&gt;</span>
+<span class="odt-code-line">isinstance(4, int)=True, isinstance(4, object)=True</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="refheading382782423505"></a>
+<a id="toc48549004"></a></p>
+<h2 id="122-script-classes_02-a-person-class">12.2. <span style="color: #4f81bd">Script [classes_02]: a Person class</span></h2>
+<p>The <strong>[classes_02]</strong> script demonstrates that a class&#x27;s attributes are public: they can be accessed directly from outside the class. This is another example of a class usage that is not recommended. We include it, however, because you may occasionally encounter this type of code (Python allows it), and you need to be able to understand it.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># Person class</span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">Person</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># class attributes</span>
+<span class="odt-code-line"><span style="color:#000000">    </span># undeclared - can be created dynamically</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># method</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">identity(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># by default, uses non-existent attributes</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[{self.first_name},{self.last_name},{self.age}]</span><span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ---------------------------------- main</span>
+<span class="odt-code-line"># attributes are public and can be created dynamically</span>
+<span class="odt-code-line"># class instantiation</span>
+<span class="odt-code-line"><span style="color:#000000">p = </span><span style="color:#2b91af">Person</span><span style="color:#000000">()</span></span>
+<span class="odt-code-line"># direct initialization of class attributes</span>
+<span class="odt-code-line"><span style="color:#000000">p.first_name = </span><span style="color:#a31515">&quot;Paul&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">p.last_name = </span><span style="color:#a31515">&quot;de la Hûche&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">p.age = 48</span></span>
+<span class="odt-code-line"># calling a class method</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;person={p.identity()}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># type of the p instance</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;type(p)={type(p)}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;isinstance(Person) = {isinstance(p, Person)}, isinstance(object) = {isinstance(p, object)}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>lines 2–9: a class with a method;
+  </li>
+  <li>line 7: every method of a class must have the <i><b>self</b></i> object, which refers to the current object, as its first parameter. The <b>[identity] </b>method returns a string;
+  </li>
+  <li>line 15: instantiation of a <b>[Person] </b>object;
+  </li>
+  <li>lines 16–19: show that the object’s attributes can be created dynamically (they do not exist in the class definition);
+  </li>
+  <li>line 9: the class’s attributes are denoted by the notation <b>[self.attribute]</b>;
+  </li>
+  <li>lines 23–24 demonstrate that the object <b>[p] </b>is both an instance of the <b>[Person] </b>class and of the <b>[object] </b>class;
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_02.py</span>
+<span class="odt-code-line">person = <span style="font-weight:bold">[Paul, de la Hûche, 48]</span></span>
+<span class="odt-code-line">type(p) = &lt;class &#x27;__main__.Personne&#x27;&gt;</span>
+<span class="odt-code-line">isinstance(Person) = True, isinstance(object) = True</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="refheading382802423505"></a>
+<a id="toc48549005"></a></p>
+<h2 id="123-script-classes_03-the-person-class-with-a-constructor">12.3. <span style="color: #4f81bd">Script [classes_03]: the Person class with a constructor</span></h2>
+<p>The script <strong>[classes_03]</strong> demonstrates the standard use of a class:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># Person class</span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">Person</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># constructor - initializes three attributes</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">__init__(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">first_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">last_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">age</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># first_name: the person&#x27;s first name</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># name: person&#x27;s name</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># age: person&#x27;s age</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.first_name = </span><span style="color:#808080">first_name</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.last_name = </span><span style="color:#808080">last_name</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.age = </span><span style="color:#808080">age</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># returns the class attributes as a string</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">identity(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[{self.first_name},{self.last_name},{self.age}]</span><span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ---------------------------------- main</span>
+<span class="odt-code-line"># a Person object</span>
+<span class="odt-code-line"><span style="color:#000000">p = </span><span style="color:#2b91af">Person</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;Paul&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;de la Hûche&quot;</span><span style="color:#000000">, 48)</span></span>
+<span class="odt-code-line"># calling a method</span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;person={p.identity()}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>line 4: the class constructor is called <b>__init__</b>. As with other methods, its first parameter is <b>self;</b>
+  </li>
+  <li>line 20: a <i>Person</i> object is created using the class constructor;
+  </li>
+  <li>lines 13–15: the <b>[identity] </b>method returns a string representing the object’s content;
+  </li>
+  <li>line 22: displays the person&#x27;s identity;
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_03.py</span>
+<span class="odt-code-line">person=<span style="font-weight:bold">[Paul, de la Hûche, 48]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="refheading382822423505"></a>
+<a id="toc48549006"></a></p>
+<h2 id="124-script-classes_04-static-methods">12.4. <span style="color: #4f81bd">Script [classes_04]: static methods</span></h2>
+<p>We define the following <strong>[Utils]</strong> class (utils.py) in the <strong>[modules]</strong> folder:</p>
+<p><img src="images/100000000000011900000106A9D0BD48.png" style="width:3.24cm;height:3.022cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000011900000106A9D0BD48.png" /></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">class <span style="color:#2b91af">Utils</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># static method</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2b91af">@staticmethod</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span>def <span style="color:#000000">is_string_ok(</span><span style="color:#808080">string</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">bool</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># Is string a string?</span></span>
+<span class="odt-code-line"><span style="color:#000000">        error = </span>not <span style="color:#000000">isinstance(</span><span style="color:#808080">string</span><span style="color:#000000">, </span><span style="color:#2b91af">str</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span>if not <span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># Is the string empty?</span></span>
+<span class="odt-code-line"><span style="color:#000000">            error = </span><span style="color:#808080">string</span><span style="color:#000000">.strip() == </span><span style="color:#a31515">&#x27;&#x27;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># result</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span>return not <span style="color:#000000">error</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong></p>
+<ul>
+  <li>Line 3: The <b>[</b><b><span style="color: #2b91af">@staticmethod</span></b><b>] </b>annotation indicates that the method marked with it is a class method, not an instance method. This is evident from the fact that the first parameter of the annotated method is not the <b>[self] </b>keyword. Therefore, the static method does not have access to the object&#x27;s attributes. Instead of writing:
+  </li>
+</ul>
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">u</span> <span class="o">=</span> <span class="n">Utils</span><span class="p">()</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="n">u</span><span class="o">.</span><span class="n">is_string_ok</span><span class="p">(</span><span class="s2">&quot;abcd&quot;</span><span class="p">))</span>
+</code></pre></div></td></tr></table></div>
+<p>we write</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">print</span><span class="p">(</span><span class="n">Utils</span><span class="o">.</span><span class="n">is_string_ok</span><span class="p">(</span><span class="s2">&quot;abcd&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+<p>Because we wrote <strong>[Utils.is_string_ok]</strong> above, the <strong>[is_string_ok]</strong> method is called a class method (the Utils class in this case). To achieve this, the <strong>[Utils.is_string_ok]</strong> method must be annotated with the <strong>[</strong><strong><span style="color: #2b91af">@staticmethod</span></strong><strong>]</strong> keyword.</p>
+<p>The static method <strong>[Utils.is_string_ok]</strong> allows us to verify here that a piece of data is a non-empty string.</p>
+<p>The <strong>[classes_04]</strong> script uses the <strong>[Utils]</strong> class as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># configure the application</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#6f008a">config</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#6f008a">config </span><span style="color:#000000">= </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># the syspath is configured - we can now import</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">utilitaires </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Utils</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#2b91af">Utils</span><span style="color:#000000">.is_string_ok(</span><span style="color:#a31515">&quot;  &quot;</span><span style="color:#000000">))</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#2b91af">Utils</span><span style="color:#000000">.is_string_ok(47))</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#2b91af">Utils</span><span style="color:#000000">.is_string_ok(</span><span style="color:#a31515">&quot; q &quot;</span><span style="color:#000000">))</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Lines 1-4: We use a configuration script;
+  </li>
+</ul>
+
+<p>The configuration script <strong>[config.py]</strong> is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">def </span>configure():</span>
+<span class="odt-code-line">    <span style="color:#0000ff">import </span><span style="color:#6f008a">os</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># directory of the configuration file</span></span>
+<span class="odt-code-line">    script_dir = <span style="color:#6f008a">os</span>.<span style="color:#6f008a">path</span>.dirname(<span style="color:#6f008a">os</span>.<span style="color:#6f008a">path</span>.abspath(__file__))</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># absolute paths of directories to add to the syspath</span></span>
+<span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">f&quot;{script_dir}/shared&quot;</span><span style="font-weight:bold">,</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages&quot;</span><span style="font-weight:bold">,</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">&quot;C:/myprograms/Python38/lib&quot;</span><span style="font-weight:bold">,</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">&quot;C:/myprograms/Python38/DLLs&quot;</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># Update the syspath</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span><span style="color:#6f008a">myutils </span><span style="color:#0000ff">import </span>set_syspath</span>
+<span class="odt-code-line">    set_syspath(absolute_dependencies)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># return the configuration</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">return </span>{}</span>
+</code></pre></div>
+
+<ul>
+  <li>Line 9: The <b>[shared] </b>folder will be added to the Python Path;
+  </li>
+</ul>
+
+<p>The result of the execution is as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nx">C</span><span class="o">:</span><span class="err">\</span><span class="nx">Data</span><span class="err">\</span><span class="nx">st</span><span class="o">-</span><span class="mf">2020</span><span class="err">\</span><span class="nx">dev</span><span class="err">\</span><span class="nx">python</span><span class="err">\</span><span class="nx">cours</span><span class="o">-</span><span class="mf">2020</span><span class="err">\</span><span class="nx">python3</span><span class="o">-</span><span class="nx">flask</span><span class="o">-</span><span class="mf">2020</span><span class="err">\</span><span class="nx">venv</span><span class="err">\</span><span class="nx">Scripts</span><span class="err">\</span><span class="nx">python</span><span class="p">.</span><span class="nx">exe</span><span class="w"> </span><span class="nx">C</span><span class="o">:</span><span class="err">/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_04.py</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nx">False</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nx">False</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nx">True</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nx">Process</span><span class="w"> </span><span class="nx">completed</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">exit</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="mf">0</span>
+</code></pre></div></td></tr></table></div>
+<p><a id="refheadingtoc2521592924280206"></a>
+<a id="toc48549007"></a></p>
+<h2 id="125-script-classes_05-attribute-validity-checks">12.5. <span style="color: #4f81bd">Script [classes_05]: Attribute validity checks</span></h2>
+<p>The <strong>[classes_05]</strong> script introduces new concepts:</p>
+<ul>
+  <li>definition of a custom exception type;
+  </li>
+  <li>definition of the <b>[_str_] </b>method, which is the default identity method for classes;
+  </li>
+  <li>definition of properties;
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># configuring the application</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#6f008a">config</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#6f008a">config </span><span style="color:#000000">= </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># the syspath is configured - we can now import</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">utilities </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Utils</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># A custom exception class derived from <span style="font-weight:bold">[BaseException]</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">MyException</span><span style="color:#000000">(</span><span style="color:#2b91af">BaseException</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># We do nothing: empty class</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">pass</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Person class</span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">Person</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># constructor</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">__init__(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">first_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#808080">last_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#808080">age</span><span style="color:#000000">: </span><span style="color:#2b91af">int </span><span style="color:#000000">= 0):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># first_name: the person&#x27;s first name</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># last_name: the person&#x27;s last name</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># age: the person&#x27;s age</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># storing parameters</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># initialization will be done via setters</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.first_name = </span><span style="color:#808080">first_name</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.last_name = </span><span style="color:#808080">last_name</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.age = </span><span style="color:#808080">age</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># toString method of the class</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">__str__(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[{self.__first_name},{self.__last_name},{self.__age}]</span><span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># getters</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2b91af">@property</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">first_name(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#808080">self</span><span style="color:#000000">.__first_name</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2b91af">@property</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">name(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#808080">self</span><span style="color:#000000">.__name</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2b91af">@property</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">age(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#808080">self</span><span style="color:#000000">.__age</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># setters</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#808080">@first_name</span><span style="color:#000000">.setter</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#808080">first_name</span><span style="color:#000000">(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">first_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># the first_name must not be empty</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">Utils.is_string_ok(</span><span style="color:#808080">first_name</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#808080">self</span><span style="color:#000000">.__first_name = </span><span style="color:#808080">first_name</span><span style="color:#000000">.strip()</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#2b91af">MyException</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;The first name must be a non-empty string&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#808080">@surname</span><span style="color:#000000">.setter</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#808080">last_name</span><span style="color:#000000">(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">last_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># the first_name must not be empty</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">Utils.is_string_ok(</span><span style="color:#808080">name</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#808080">self</span><span style="color:#000000">.__name = </span><span style="color:#808080">name</span><span style="color:#000000">.strip()</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#2b91af">MyException</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;The name must be a non-empty string&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#808080">@age</span><span style="color:#000000">.setter</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#808080">age</span><span style="color:#000000">(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">age</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># age must be an integer &gt;= 0</span>
+<span class="odt-code-line"><span style="color:#000000">        error = </span><span style="color:#0000ff">False</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">isinstance(</span><span style="color:#808080">age</span><span style="color:#000000">, </span><span style="color:#2b91af">int</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#808080">age </span><span style="color:#000000">&gt;= 0:</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#808080">self</span><span style="color:#000000">.__age = </span><span style="color:#808080">age</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">                error = </span><span style="color:#0000ff">True</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            error = </span><span style="color:#0000ff">True</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># error?</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#2b91af">MyException</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;Age must be an integer &gt;= 0&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ---------------------------------- main</span>
+<span class="odt-code-line"># a Person object</span>
+<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># instantiating the Person class</span>
+<span class="odt-code-line"><span style="color:#000000">    p = </span><span style="color:#2b91af">Person</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;Paul&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;de la Hûche&quot;</span><span style="color:#000000">, 48)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display object p</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;person={p}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display error</span>
+<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># another Person object</span>
+<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># instantiate the Person class</span>
+<span class="odt-code-line"><span style="color:#000000">    p = </span><span style="color:#2b91af">Person</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;xx&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;yy&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;zz&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display object p</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;person={p}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display error</span>
+<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># another person, this time without parameters</span>
+<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># instantiate the Person class</span>
+<span class="odt-code-line"><span style="color:#000000">    p = </span><span style="color:#2b91af">Person</span><span style="color:#000000">()</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display object p</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;person={p}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
+<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># cannot access the class&#x27;s private attributes __attr</span>
+<span class="odt-code-line"><span style="color:#000000">p.__first_name = </span><span style="color:#a31515">&quot;Gaëlle&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;p.first_name={p.first_name}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;p.__first_name={p.__first_name}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">p.first_name = </span><span style="color:#a31515">&quot;Sébastien&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;p.first_name={p.first_name}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;p.__first_name={p.__first_name}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>lines 10–13: a <i>MyException</i> class derived from the <i>BaseException</i> class (we’ll cover this point a bit later). It adds no functionality to the latter. It’s only there to provide a custom exception;
+  </li>
+  <li>line 19: the constructor has default values for its parameters. Thus, the operation <i>p = Person() </i>is equivalent to <i>p = Person(&quot;x&quot;, &quot;y&quot;, 0)</i>;
+  </li>
+  <li>lines 34–45: the class properties. These are methods annotated with the <b>[</b><b><span style="color: #2b91af">@property</span></b><b>] </b>keyword. They are used to set the values of the attributes;
+  </li>
+  <li>lines 47–77: the class’s setters. These are methods annotated with the <b>[</b><b><span style="color: #2b91af">@attributsetter</span></b><b>] </b>keyword. They are used to set the value of the attributes;
+  </li>
+  <li>lines 48–54: the setter for the <b>[first_name] </b>attribute. This method will be called every time a value is assigned to the <b>[first_name] </b>attribute:
+  </li>
+</ul>
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>p = Person(…)
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>p.firstName = value
+</code></pre></div></td></tr></table></div>
+<p>Line 2 will trigger the call <strong>[p.firstName(value)]</strong>. The advantage of using a setter to assign a value to an attribute is that, since the setter is a function, we can verify the validity of the value assigned to the attribute;</p>
+<ul>
+  <li>line 51: we verify that the value assigned to the <b>[first_name] </b>attribute is a non-empty string. To do this, we use the static method <b>[</b><b><span style="color: #2b91af">Utils</span></b><b><span style="color: #000000">.isStringOk</span></b><b>] </b>seen earlier;
+  </li>
+  <li>line 52: the value assigned to the <b>[first_name] </b>attribute is stripped of its leading and trailing whitespace and assigned to the <b>[</b><b><span style="color: #808080">self</span></b><b><span style="color: #000000">.__first_name</span></b><b>] </b>attribute. Therefore, the <b>[first_name] </b>attribute itself is not used here. We could not have done otherwise, or we would have had an infinite recursive call. We could have used any attribute name. The fact that we used the attribute <b>[__prénom] </b>with two underscores at the beginning of the identifier has a special meaning: attributes preceded by two underscores are <b>private </b>to the class. This means they are not visible from outside the class. Therefore, we cannot write:
+  </li>
+</ul>
+
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>p = Person(…)
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>p.__first_name=value
+</code></pre></div></td></tr></table></div>
+<p>In fact, we’ll soon see that you can write it, but it doesn’t change the first name. It does something else;</p>
+<ul>
+  <li>lines 53–54: if the value assigned to first_name is incorrect, an exception is thrown. This way, the calling code will know that its call is incorrect;
+  </li>
+  <li>lines 35–37: the <b>[first_name] </b>property. It will be called every time <b>[p.first_name] </b>is written in an expression. The <b>[p.first_name()] </b>method will then be called. Line 37: We return the value of the <b>[__first_name] </b>attribute, since we saw that the setter for the <b>[first_name] </b>attribute assigns its value to the private <b>[__first_name] </b>attribute;
+  </li>
+  <li>Lines 56–62: The setter for the <b>[last_name] </b>attribute is constructed similarly to that of the <b>[first_name] </b>attribute. The same applies to the setter for the <b>[age] </b>attribute on lines 64–77;
+  </li>
+  <li>although the properties <b>[first_name, last_name, value] </b>are not the actual attributes—which are in fact <b>[__first_name, __last_name, __age]</b>—we will continue to refer to them as the class attributes, since they are used as such;
+  </li>
+  <li>lines 19–28: The class constructor implicitly uses the setters for the attributes <b>[first_name, last_name, age]</b>. In fact, by writing <b>[</b><b><span style="color: #808080">self</span></b><b><span style="color: #000000">.first_name = </span></b><b><span style="color: #808080">first_name</span></b><b>] </b>on line 26, the method <b>[first_name(self, first_name)] </b>is implicitly called. The validity of the <b>[first_name] </b>parameter will then be checked. The same applies to the other two attributes <b>[last_name, age]</b>;
+  </li>
+  <li>with this model, we cannot assign incorrect values to the class attributes <b>[first_name, last_name, age]</b>;
+  </li>
+  <li>lines 30–32: the <i>__str__</i> function replaces the method previously called <i>identity</i>. The name <b>[__str__] </b>(two underscores before and after) is not insignificant. We will see this later;
+  </li>
+  <li>lines 83–86: instantiation of a person, followed by display of their identity;
+  </li>
+  <li>line 84: instantiation;
+  </li>
+  <li>Line 86: Display. The operation requires displaying the object <i>p </i>as a string. The Python interpreter <b>automatically</b> calls the method <i>p.__str__() </i>if it exists. This method serves the same purpose as the <i>toString()</i> method in Java or .NET languages;
+  </li>
+  <li>lines 87–89: Handling a potential <i>MyException</i>. Then displays the error;
+  </li>
+  <li>lines 91–99: same as above for a second person instantiated with incorrect parameters;
+  </li>
+  <li>lines 102–109: same as above for a third person instantiated with default parameters: no parameters are passed. The default values of these parameters in the constructor are then used here;
+  </li>
+  <li>lines 112–117: we said that the <b>[__first_name] </b>attribute was private and therefore normally inaccessible from outside the class. We want to verify this;
+  </li>
+  <li>lines 112–114: we assign a value to the <b>[__first_name] </b>attribute, then check the values of the <b>[__first_name] </b>and <b>[first_name] </b>attributes, which should normally be the same;
+  </li>
+  <li>lines 115–117: We repeat the operation, this time initializing the <b>[first_name] </b>attribute;
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_05.py</span>
+<span class="odt-code-line">person=<span style="font-weight:bold">[Paul,de la Hûche,48]</span></span>
+<span class="odt-code-line">Age must be an integer &gt;= 0</span>
+<span class="odt-code-line">person = <span style="font-weight:bold">[x, y, 0]</span></span>
+<span class="odt-code-line">p.first_name = x</span>
+<span class="odt-code-line">p.first_name = Gaëlle</span>
+<span class="odt-code-line">p.first_name = Sébastien</span>
+<span class="odt-code-line">p.first_name=Gaëlle</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><strong>Notes</strong></p>
+<ul>
+  <li>lines 5-6: we see that the assignment <b>[</b><b><span style="color: #000000">p.__first_name = </span></b><b><span style="color: #a31515">&quot;Gaëlle&quot;</span></b><b>] </b>did not change the value of the <b>[first_name] </b>attribute, line 5;
+  </li>
+  <li>lines 7-8: we see that the assignment <b>[</b><b><span style="color: #000000">p.first_name = </span></b><b><span style="color: #a31515">&quot;Sébastien&quot;</span></b><b>] </b>has not changed the value of the <b>[__first_name] </b>attribute, line 8;
+  </li>
+</ul>
+
+<p>What can we conclude from this? That likely, the operation <strong>[</strong><strong><span style="color: #000000">p.__first_name = </span></strong><strong><span style="color: #a31515">&quot;Gaëlle&quot;</span></strong><strong>]</strong> created a public attribute <strong>[</strong><strong><span style="color: #000000">__first_name</span></strong><strong>]</strong> for the class, but that this is different from the private attribute <strong>[</strong><strong><span style="color: #000000">__first_name</span></strong><strong>]</strong> manipulated within it;</p>
+<p><a id="refheading382842423505"></a>
+<a id="toc48549008"></a></p>
+<h2 id="126-script-classes_06-adding-an-object-initialization-method">12.6. <span style="color: #4f81bd">Script [classes_06]: Adding an object initialization method</span></h2>
+<p>The script <strong>[classes_06]</strong> adds a method to the <strong>[Person]</strong> class:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># configure the application</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#6f008a">config</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#6f008a">config </span><span style="color:#000000">= </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># The syspath is configured—we can now import modules</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">utilities </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Utils</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># A custom exception class derived from <span style="font-weight:bold">[BaseException]</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">MyException</span><span style="color:#000000">(</span><span style="color:#2b91af">BaseException</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># We do nothing: empty class</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">pass</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Person class</span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">Person</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># constructor</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">__init__(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">first_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#808080">last_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#808080">age</span><span style="color:#000000">: </span><span style="color:#2b91af">int </span><span style="color:#000000">= 0):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># first_name: the person&#x27;s first name</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># last_name: the person&#x27;s last name</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># age: the person&#x27;s age</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># storing parameters</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># initialization will be done via setters</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.first_name = </span><span style="color:#808080">first_name</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.last_name = </span><span style="color:#808080">last_name</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.age = </span><span style="color:#808080">age</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># another initialization method</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">init_with_person(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">p</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># initializes the current object with a person p</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.__init__(</span><span style="color:#808080">p</span><span style="color:#000000">.first_name, </span><span style="color:#808080">p</span><span style="color:#000000">.last_name, </span><span style="color:#808080">p</span><span style="color:#000000">.age)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># toString method of the class</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">__str__(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[{self.__first_name},{self.__last_name},{self.__age}]</span><span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># getters</span>
+<span class="odt-code-line"><span style="color:#000000">    …</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># setters</span>
+<span class="odt-code-line"><span style="color:#000000">    …</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ---------------------------------- main</span>
+<span class="odt-code-line"># a Person object</span>
+<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># instantiating the Person class</span>
+<span class="odt-code-line"><span style="color:#000000">    p = </span><span style="color:#2b91af">Person</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;Paul&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;de la Hûche&quot;</span><span style="color:#000000">, 48)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display object p</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;person={p}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
+<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># another Person object</span>
+<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># instantiate the Person class</span>
+<span class="odt-code-line"><span style="color:#000000">    p = </span><span style="color:#2b91af">Person</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;xx&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;yy&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;zz&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display object p</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;p={p}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
+<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># another person, this time without parameters</span>
+<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># instantiate the Person class</span>
+<span class="odt-code-line"><span style="color:#000000">    p = </span><span style="color:#2b91af">Person</span><span style="color:#000000">()</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display object p</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;p={p}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
+<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># another Person object created by copying</span>
+<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># instantiate the Person class</span>
+<span class="odt-code-line"><span style="color:#000000">    p2 = </span><span style="color:#2b91af">Person</span><span style="color:#000000">()</span></span>
+<span class="odt-code-line"><span style="color:#000000">    p2.init_with_Person(p)</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display object p2</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;p2={p2}&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
+<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>The difference from the previous script is in lines 30–33. We have added the <i>initWithPerson</i> method<i>. </i>This method calls the <i>__init__</i> constructor. Unlike in typed languages, it is not possible to have methods with the same name that are distinguished by the nature of their parameters or their return values. Therefore, it is not possible to have multiple constructors that would create the object from different parameters, in this case an object of type <i>Person</i>;
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_06.py</span>
+<span class="odt-code-line">person=<span style="font-weight:bold">[Paul, de la Hûche, 48]</span></span>
+<span class="odt-code-line">age must be an integer &gt;= 0</span>
+<span class="odt-code-line">p = <span style="font-weight:bold">[x, y, 0]</span></span>
+<span class="odt-code-line">p2 = <span style="font-weight:bold">[x, y, 0]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="refheading382862423505"></a>
+<a id="toc48549009"></a></p>
+<h2 id="127-script-classes_07-a-list-of-person-objects">12.7. <span style="color: #4f81bd">Script [classes_07]: a list of Person objects</span></h2>
+<p>We will now place the <strong>[MyException]</strong> and <strong>[Person]</strong> classes in a module so we can use them without having to copy their code:</p>
+<p><img src="images/100000000000015F00000148B85B5F11.png" style="width:4.052cm;height:3.785cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015F00000148B85B5F11.png" /></p>
+<p>Both classes will be in the <strong>[myclasses.py]</strong> module above.</p>
+<p>The <strong>[classes_07]</strong> script shows that we can have a list of objects:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># configure the application</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#6f008a">config</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#6f008a">config </span><span style="color:#000000">= </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># the syspath is configured - we can do the imports</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">myclasses </span><span style="color:#0000ff">import </span><span style="color:#000000">Person</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ---------------------------------- main</span>
+<span class="odt-code-line"># create a list of Person objects</span>
+<span class="odt-code-line"><span style="color:#000000">group = </span><span style="font-weight:bold;color:#000000">[Person(</span><span style="font-weight:bold;color:#a31515">&quot;Paul&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;Langevin&quot;</span><span style="font-weight:bold;color:#000000">, 48), Person(</span><span style="font-weight:bold;color:#a31515">&quot;Sylvie&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;Lefur&quot;</span><span style="font-weight:bold;color:#000000">, 70)]</span></span>
+<span class="odt-code-line"># identities of these people</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(group)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;group</span><span style="font-weight:bold;color:#a31515">[{i}]</span><span style="color:#a31515">={group</span><span style="font-weight:bold;color:#a31515">[i]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>line 7: we import the <b>[</b><b><span style="color: #2b91af">Person</span></b><b>] </b>class;
+  </li>
+  <li>line 11: a list of objects of type <b>[Person]</b>;
+  </li>
+  <li>lines 13–14: we iterate through this list to display each of its elements;
+  </li>
+  <li>line 14: the <b>[print] </b>function will display the string representing the object <b>[</b><b><span style="color: #a31515">group[i</span></b><b>]</b>]. By default, the <b>[__str__] </b>method of these objects will be called;
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Users\serge\.virtualenvs\cours-python-v02\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/v-02/classes/01/classes_07.py</span>
+<span class="odt-code-line">group<span style="font-weight:bold">[0] </span>= <span style="font-weight:bold">[Paul, Langevin, 48]</span></span>
+<span class="odt-code-line">group<span style="font-weight:bold">[1] </span>= <span style="font-weight:bold">[Sylvie, Lefur, 70]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="refheading382882423505"></a>
+<a id="toc48549010"></a></p>
+<h2 id="128-script-classes_08-creating-a-class-derived-from-the-person-class">12.8. <span style="color: #4f81bd">Script [classes_08]: creating a class derived from the Person class</span></h2>
+<p>We define the following <strong>[Teacher]</strong> class in the <strong>[myclasses]</strong> module:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"># Teacher class</span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">Teacher</span><span style="color:#000000">(</span><span style="color:#2b91af">Person</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># constructor</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">__init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">first_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#808080">last_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#808080">age</span><span style="color:#000000">: </span><span style="color:#2b91af">int </span><span style="color:#000000">= 0, </span><span style="color:#808080">subject</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># first_name: the person&#x27;s first name</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># last_name: person&#x27;s last name</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># age: person&#x27;s age</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># subject: subject taught</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># Initialization of the parent</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#2b91af">Person</span><span style="color:#000000">.__init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">first_name</span><span style="color:#000000">, </span><span style="color:#808080">last_name</span><span style="color:#000000">, </span><span style="color:#808080">age</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># other initializations</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.subject = </span><span style="color:#808080">subject</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># toString</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">__str__(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#a31515">f&quot;teacher</span><span style="font-weight:bold;color:#a31515">[{super().__str__()},{self.subject}]</span><span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># properties</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2b91af">@property</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">discipline(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#808080">self</span><span style="color:#000000">.__discipline</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#808080">@discipline</span><span style="color:#000000">.setter</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#808080">discipline</span><span style="color:#000000">(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">discipline</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># the discipline must be a non-empty string</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#2b91af">Utils</span><span style="color:#000000">.is_string_ok(</span><span style="color:#808080">discipline</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#808080">self</span><span style="color:#000000">.__discipline = </span><span style="color:#808080">discipline</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#2b91af">MyException</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;The discipline must be a non-empty string&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Line 2: declares the <i>Teacher</i> class as a subclass of the <i>Person</i> class. A subclass has all the properties (attributes and methods) of its parent class plus its own;
+  </li>
+  <li>line 13: the <b>[Teacher] </b>class defines a new attribute <b>[subject]</b>;
+  </li>
+  <li>line 11: the constructor of the derived <i>Teacher</i> class must call the constructor of the parent <i>Person</i> class, passing it the parameters it expects;
+  </li>
+  <li>line 17: the <b>[super()] </b>function calls the parent class. Here, we call the <b>[__str__] </b>function of the parent class;
+  </li>
+  <li>lines 19–30: the getter and setter for the new <b>[subject] </b>attribute are defined;
+  </li>
+</ul>
+
+<p>The <strong>[classes_08]</strong> script uses the <strong>[Teacher]</strong> class as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># configure the application</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#6f008a">config</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#6f008a">config </span><span style="color:#000000">= </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># The syspath is configured—we can now import</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">myclasses </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Person</span><span style="color:#000000">, </span><span style="color:#2b91af">Teacher</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ---------------------------------- main</span>
+<span class="odt-code-line"># create an array of Person objects and derivatives</span>
+<span class="odt-code-line"><span style="color:#000000">group = </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#2b91af">Teacher</span><span style="font-weight:bold;color:#000000">(</span><span style="font-weight:bold;color:#a31515">&quot;Paul&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;Langevin&quot;</span><span style="font-weight:bold;color:#000000">, 48, </span><span style="font-weight:bold;color:#a31515">&quot;English&quot;</span><span style="font-weight:bold;color:#000000">), </span><span style="font-weight:bold;color:#2b91af">Person</span><span style="font-weight:bold;color:#000000">(</span><span style="font-weight:bold;color:#a31515">&quot;Sylvie&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;Lefur&quot;</span><span style="font-weight:bold;color:#000000">, 70)]</span></span>
+<span class="odt-code-line"># identities of these people</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(group)):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;group</span><span style="font-weight:bold;color:#a31515">[{i}]</span><span style="color:#a31515">={group</span><span style="font-weight:bold;color:#a31515">[i]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>line 7: we import the <b>[Person] </b>and <b>[Teacher] </b>classes defined in the <b>[myclasses.py] </b>file;
+  </li>
+  <li>lines 11–14: we define a group of people and then display their identities;
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_08.py</span>
+<span class="odt-code-line">group<span style="font-weight:bold">[0] </span>= teacher<span style="font-weight:bold">[[Paul, Langevin, 48]</span>, English]</span>
+<span class="odt-code-line">group<span style="font-weight:bold">[1] </span>= <span style="font-weight:bold">[Sylvie, Lefur, 70]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="refheading382902423505"></a>
+<a id="toc48549011"></a></p>
+<h2 id="129-script-classes_09-second-class-derived-from-the-person-class">12.9. <span style="color: #4f81bd">Script [classes_09]: second class derived from the Person class</span></h2>
+<p>The script <strong>[classes_09]</strong> introduces the class <strong>[Student]</strong> derived from the class <strong>[Person]</strong>. This is defined as follows in the module <strong>[myclasses]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"># Student class</span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">Student</span><span style="color:#000000">(</span><span style="color:#2b91af">Person</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># constructor</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">__init__(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">first_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#808080">last_name</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#808080">age</span><span style="color:#000000">: </span><span style="color:#2b91af">int </span><span style="color:#000000">= 0, </span><span style="color:#808080">major</span><span style="color:#000000">: </span><span style="color:#2b91af">str </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#2b91af">Person</span><span style="color:#000000">.__init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">first_name</span><span style="color:#000000">, </span><span style="color:#808080">last_name</span><span style="color:#000000">, </span><span style="color:#808080">age</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.education = </span><span style="color:#808080">education</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># toString</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">__str__(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#a31515">f&quot;student</span><span style="font-weight:bold;color:#a31515">[{super().__str__()},{self.education}]</span><span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># properties</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#2b91af">@property</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">education(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">str</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#808080">self</span><span style="color:#000000">.__formation</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#808080">@formation</span><span style="color:#000000">.setter</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#808080">training</span><span style="color:#000000">(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">training</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># the training must be a non-empty string</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#2b91af">Utils</span><span style="color:#000000">.is_string_ok(</span><span style="color:#808080">training</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#808080">self</span><span style="color:#000000">.__training = </span><span style="color:#808080">training</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#2b91af">MyException</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;The course must be a non-empty string&quot;</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p>The <strong>[classes_09]</strong> script uses the <strong>[Student]</strong> class as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># configure the application</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#6f008a">config</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#6f008a">config </span><span style="color:#000000">= </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># The syspath is configured—we can now import</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">myclasses </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Person</span><span style="color:#000000">, </span><span style="color:#2b91af">Teacher</span><span style="color:#000000">, </span><span style="color:#2b91af">Student</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ---------------------------------- main</span>
+<span class="odt-code-line"># create an array of Person objects and derived classes</span>
+<span class="odt-code-line"><span style="color:#000000">group = </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#2b91af">Teacher</span><span style="font-weight:bold;color:#000000">(</span><span style="font-weight:bold;color:#a31515">&quot;Paul&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;Langevin&quot;</span><span style="font-weight:bold;color:#000000">, 48, </span><span style="font-weight:bold;color:#a31515">&quot;English&quot;</span><span style="font-weight:bold;color:#000000">), </span><span style="font-weight:bold;color:#2b91af">Person</span><span style="font-weight:bold;color:#000000">(</span><span style="font-weight:bold;color:#a31515">&quot;Sylvie&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;Lefur&quot;</span><span style="font-weight:bold;color:#000000">, 70),</span></span>
+<span class="odt-code-line"><span style="font-weight:bold;color:#000000">          </span><span style="font-weight:bold;color:#2b91af">Student</span><span style="font-weight:bold;color:#000000">(</span><span style="font-weight:bold;color:#a31515">&quot;Steve&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;Boer&quot;</span><span style="font-weight:bold;color:#000000">, 22, </span><span style="font-weight:bold;color:#a31515">&quot;iup2 quality&quot;</span><span style="font-weight:bold;color:#000000">)]</span></span>
+<span class="odt-code-line"># identities of these people</span>
+<span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">person </span><span style="color:#0000ff">in </span><span style="color:#000000">group:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># Display person</span>
+<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">person</span><span style="color:#000000">)</span></span>
+</code></pre></div>
+
+<p><strong>Notes</strong>:</p>
+<ul>
+  <li>This script is similar to the previous one.
+  </li>
+</ul>
+
+<p><strong>Results</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_09.py</span>
+<span class="odt-code-line">teacher<span style="font-weight:bold">[[Paul,Langevin,48]</span>,English]</span>
+<span class="odt-code-line"><span style="font-weight:bold">[Sylvie,Lefur,70]</span></span>
+<span class="odt-code-line">student<span style="font-weight:bold">[[Steve,Boer,22]</span>,iup2 quality]</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">Process finished with exit code 0</span>
+</code></pre></div>
+
+<p><a id="toc48549012"></a></p>
+<h2 id="1210-script-classes_10-the-__dict__-property">12.10. <span style="color: #4f81bd">Script [classes_10]: the [__dict__] property</span></h2>
+<p>The <strong>[classes_10]</strong> script introduces the <strong>[__dict__]</strong> property, which we will use frequently later on:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># configure the application</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#6f008a">config</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#6f008a">config </span><span style="color:#000000">= </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># The syspath is configured—we can now import modules</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">myclasses </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Student</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># ---------------------------------- main</span>
+<span class="odt-code-line"># Create a student</span>
+<span class="odt-code-line"><span style="color:#2b91af">student = Student</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;Steve&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;Boer&quot;</span><span style="color:#000000">, 22, </span><span style="color:#a31515">&quot;iup2 quality&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"># dictionary of properties</span>
+<span class="odt-code-line"><span style="color:#000000">print(student.__dict__)</span></span>
+</code></pre></div>
+
+<p><strong>Comments</strong></p>
+<ul>
+  <li>lines 1-4: the application is set up;
+  </li>
+  <li>line 7: the <b>[Student] </b>class is imported;
+  </li>
+  <li>line 11: instantiation of a student;
+  </li>
+  <li>line 13: use of the predefined method <b>[__dict__] </b>(two underscores before and after the identifier);
+  </li>
+</ul>
+
+<p>The results are as follows:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_10.py
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>{&#39;_Person__first_name&#39;: &#39;Steve&#39;, &#39;<span class="ge">_Person__last_</span>name&#39;: &#39;Boer&#39;, &#39;<span class="ge">_Person__age&#39;: 22, &#39;_</span>Student__program&#39;: &#39;iup2 quality&#39;}
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>Process finished with exit code 0
+</code></pre></div></td></tr></table></div>
+<ul>
+  <li>line 2, we obtain a dictionary whose keys are the object’s properties prefixed by the name of the class to which they belong. We will use this dictionary to create a bridge between the object and the dictionary;
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

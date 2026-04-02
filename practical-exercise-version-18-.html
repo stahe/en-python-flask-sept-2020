@@ -1,0 +1,1838 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to Python 3 and the Flask Web Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-python-flask-sept-2020/practical-exercise-version-18-.html">
+      
+      
+        <link rel="prev" href="practical-exercise-version-17.html">
+      
+      
+        <link rel="next" href="conclusion.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>38. Practical Exercise: Version 18 - An Introduction to Python 3 and the Flask Web Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to Python 3 and the Flask Web Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#38-practical-exercise-version-18" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to Python 3 and the Flask Web Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              38. Practical Exercise: Version 18 
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to Python 3 and the Flask Web Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foreword.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Foreword
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setting-up-a-development-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Setting up a development environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-basics-of-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Basics of Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="strings.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="text-files.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Text files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Application exercise – version 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="imports.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Imports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Practical Exercise: Version 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Practical Exercise: Version 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes-and-objects.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Classes and Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-generic-classes-baseentity-and-myexception.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. The generic classes [BaseEntity] and [MyException]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="layered-architecture-and-interface-based-programming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Layered architecture and interface-based programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Application Exercise - Version 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-mysql-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Using the MySQL DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-postgresql-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Using the PostgreSQL DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="writing-dbms-independent-code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Writing DBMS-Independent Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-sqlalchemy-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Using the SQLAlchemy ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Application exercise: version 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internet-functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Internet Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-services-with-the-flask-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Web services with the Flask framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practice-exercise-version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Practice Exercise: Version 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practice-exercise-version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Practice Exercise: Version 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="-application-exercise-version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Application Exercise: Version 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="from-dictionary-to-xml-and-vice-versa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. From dictionary to XML and vice versa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Application Exercise: Version 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. Application exercise: version 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. Application exercise: version 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Practical Exercise: Version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-clients-for-the-json-and-xml-services-of-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Web clients for the JSON and XML services of version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="html-mode-in-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. HTML mode in version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Application exercise: Version 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Practical Exercise: Version 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Application exercise: version 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. Application Exercise: Version 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Practical Exercise: Version 17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Practical Exercise: Version 18 
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="practical-exercise-version-18-.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Practical Exercise: Version 18 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#381-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        38.1. Implementation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#382-console-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        38.2. Console tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="toc48549351"></a>
+<a id="exercicedapplication14"></a></p>
+<h1 id="38-practical-exercise-version-18">38. <span style="color: #365f91">Practical Exercise: Version 18</span></h1>
+<p><a id="toc48549352"></a></p>
+<h2 id="381-implementation">38.1. <span style="color: #4f81bd">Implementation</span></h2>
+<p><img src="images/1000000000000118000001AD67D1DE88.png" style="width:3.24cm;height:4.965cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000118000001AD67D1DE88.png" /></p>
+<p>The <strong>[impots/http-servers/13]</strong> folder is initially created by copying the <strong>[impots/http-servers/12]</strong> folder and then partially modified.</p>
+<p>We start by adding a new parameter to the <strong>[configs/parameters]</strong> file:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line">…        </span>
+<span class="odt-code-line"><span style="color:#008000">        # csrf token</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;with_csrftoken&quot;</span>: <span style="color:#0000ff">False</span>,</span>
+<span class="odt-code-line">        <span style="color:#008000"># supported databases MySQL (mysql), PostgreSQL (pgres)</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;databases&quot;</span>: <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;mysql&quot;</span><span style="font-weight:bold">, </span><span style="font-weight:bold;color:#a31515">&quot;pgres&quot;</span><span style="font-weight:bold">]</span>,</span>
+<span class="odt-code-line">        <span style="color:#008000"># application URL prefix</span></span>
+<span class="odt-code-line">        <span style="color:#008000"># set the string to empty if no prefix is desired, or use /prefix otherwise</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;prefix_url&quot;</span>: <span style="color:#a31515">&quot;/do&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#008000"># Apache server root URL - set to an empty string for execution outside of Apache</span></span>
+<span class="odt-code-line">        <span style="background-color:#fff2cc;color:#a31515">&quot;application_root&quot;</span><span style="background-color:#fff2cc">: </span><span style="background-color:#fff2cc;color:#a31515">&quot;/taxes&quot;</span></span>
+<span class="odt-code-line"><span style="color:#a31515">…</span></span>
+</code></pre></div>
+
+<p>Line 10: The <strong>[application_root]</strong> parameter will represent the WSGI alias of the Apache virtual server.</p>
+<p>With this parameter, we can correct the <strong>[responses/HtmlResponse]</strong> directive that caused the error:</p>
+<p><img src="images/100000000000016C000000C643BF36F2.png" style="width:4.21cm;height:2.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016C000000C643BF36F2.png" /></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
+<span class="odt-code-line">…</span>
+<span class="odt-code-line"># now we need to generate the redirect URL without forgetting the CSRF token if it is required</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold">]</span>:</span>
+<span class="odt-code-line">            csrf_token = <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span>{generate_csrf()}<span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">else</span>:</span>
+<span class="odt-code-line">            csrf_token = <span style="color:#a31515">&quot;&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        # redirect response</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>redirect(<span style="background-color:#fff2cc;color:#0000ff">f</span><span style="background-color:#fff2cc;color:#a31515">&quot;</span><span style="background-color:#fff2cc">{config</span><span style="font-weight:bold;background-color:#fff2cc">[</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold;background-color:#fff2cc">][</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;application_root&#x27;</span><span style="font-weight:bold;background-color:#fff2cc">]</span><span style="background-color:#fff2cc">}</span>{config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;prefix_url&#x27;</span><span style="font-weight:bold">]</span>}{ads<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;to&#x27;</span><span style="font-weight:bold">]</span>}{csrf_token}<span style="color:#a31515">&quot;</span>)</span>
+<span class="odt-code-line">, status.HTTP_302_FOUND</span>
+</code></pre></div>
+
+<ul>
+  <li>line 9: we added the application root to the beginning of the redirect target URL;
+  </li>
+</ul>
+
+<p>We also need to correct all fragments so that the URLs they contain start with the application root (or WSGI alias):</p>
+<p><img src="images/10000000000001BB00000148EACBA41E.png" style="width:5.112cm;height:3.784cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BB00000148EACBA41E.png" /></p>
+<p><strong>The [v-authentication] fragment</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;!-- HTML form - we post its values with the <span style="font-weight:bold">[authenticate-user] </span>action --&gt;</span>
+<span class="odt-code-line"><span style="color:#800000">&lt;form </span><span style="color:#000000">method=</span><span style="color:#0000ff">&quot;post&quot; </span><span style="color:#000000">action=</span><span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{model.application_root}}</span><span style="color:#0000ff">{{model.prefix_url}}/authenticate-user{{model.csrf_token}}&quot;</span></span>
+<span class="odt-code-line"><span style="color:#800000">&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- title --&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;alert alert-primary&quot; </span><span style="color:#000000">role=</span><span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;h4&gt;</span><span style="color:#000000">Please log in</span><span style="color:#800000">&lt;/h4&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#800000">&lt;/form&gt;</span></span>
+</code></pre></div>
+
+<p><strong>The [v-calcul-impot] fragment</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">&lt;!-- HTML form submitted --&gt;</span>
+<span class="odt-code-line"><span style="color:#800000">&lt;form </span><span style="color:#000000">method=</span><span style="color:#0000ff">&quot;post&quot; </span><span style="color:#000000">action=</span><span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{model.application_root}}</span><span style="color:#0000ff">{{model.prefix_url}}/calculate-tax{{model.csrf_token}}&quot;</span><span style="color:#800000">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- 12-column message on a blue background --&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">…</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#800000">&lt;/form&gt;</span></span>
+</code></pre></div>
+
+<p><strong>The [v-liste-simulations] fragment</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line">…</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">{% if model.simulations is defined and model.simulations.length!=0 %}</span>
+<span class="odt-code-line"><span style="color:#008000">…</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#008000">&lt;!-- simulation table --&gt;</span></span>
+<span class="odt-code-line"><span style="color:#800000">&lt;table </span>class=<span style="color:#0000ff">&quot;table table-sm table-hover table-striped&quot;</span><span style="color:#800000">&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#008000">…</span></span>
+<span class="odt-code-line">    <span style="color:#800000">&lt;tr&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;th </span>scope=<span style="color:#0000ff">&quot;row&quot;</span><span style="color:#800000">&gt;</span>{{simulation.id}}<span style="color:#800000">&lt;/th&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.married}}<span style="color:#800000">&lt;/td&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.children}}<span style="color:#800000">&lt;/td&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.salary}}<span style="color:#800000">&lt;/td&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.tax}}<span style="color:#800000">&lt;/td&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.surcharge}}<span style="color:#800000">&lt;/td&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.discount}}<span style="color:#800000">&lt;/td&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.reduction}}<span style="color:#800000">&lt;/td&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.rate}}<span style="color:#800000">&lt;/td&gt;</span></span>
+<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;&lt;a </span>href=<span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.application_root}}</span><span style="color:#0000ff">{{modèle.prefix_url}}/supprimer-simulation/{{simulation.id}}{{modèle.csrf_token}}&quot;</span><span style="color:#800000">&gt;</span>Delete<span style="color:#800000">&lt;/a&gt;&lt;/td&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#800000">&lt;/tr&gt;</span></span>
+<span class="odt-code-line">    {% endfor %}</span>
+<span class="odt-code-line">    <span style="color:#800000">&lt;/tr&gt;</span></span>
+<span class="odt-code-line">    <span style="color:#800000">&lt;/tbody&gt;</span></span>
+<span class="odt-code-line"><span style="color:#800000">&lt;/table&gt;</span></span>
+<span class="odt-code-line">{% endif %}</span>
+</code></pre></div>
+
+<p><strong>The [v-menu] fragment</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
+<span class="odt-code-line">&lt;!-- Bootstrap menu --&gt;</span>
+<span class="odt-code-line"><span style="color:#800000">&lt;nav </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;nav flex-column&quot;</span><span style="color:#800000">&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Displaying a list of HTML links --&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    {% for optionMenu in model.optionsMenu %}</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line"><span style="color:#000000">    {% endfor %}</span></span>
+<span class="odt-code-line"><span style="color:#800000">&lt;/nav&gt;</span></span>
+</code></pre></div>
+
+<p>The fragments above all use the <strong>[</strong><strong><span style="color: #0000ff"><mark style="background-color: #fff2cc">model.application_root</mark></span></strong><strong>]</strong> model. Currently, the <strong>[application_root]</strong> key does not exist in the models generated by the model classes.</p>
+<p><img src="images/10000000000001D50000011BCFEDFB3E.png" style="width:5.42cm;height:3.27cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D50000011BCFEDFB3E.png" /></p>
+<p>The <strong>[AbstractBaseModelForView]</strong> class, which is the parent class of all classes that generate a template, becomes the following:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">from </span>abc <span style="color:#0000ff">import </span>abstractmethod</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask <span style="color:#0000ff">import </span>Request</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_wtf.csrf <span style="color:#0000ff">import </span>generate_csrf</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>werkzeug.local <span style="color:#0000ff">import </span>LocalProxy</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>InterfaceModelForView <span style="color:#0000ff">import </span>InterfaceModelForView</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span>AbstractBaseModelForView(InterfaceModelForView):</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    @abstractmethod</span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>get_model_for_view(self, request: Request, session: LocalProxy, config: dict, result: dict) -&gt; dict:</span>
+<span class="odt-code-line">        <span style="color:#0000ff">pass</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span><span style="background-color:#fff2cc">update_model</span>(self, model: dict, config: dict):</span>
+<span class="odt-code-line">        <span style="color:#008000"># Calculate the CSRF token</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold">]</span>:</span>
+<span class="odt-code-line">            csrf_token = <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span>{generate_csrf()}<span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">else</span>:</span>
+<span class="odt-code-line">            csrf_token = <span style="color:#a31515">&quot;&quot;</span></span>
+<span class="odt-code-line">        <span style="color:#008000"># Update the model passed as a parameter</span></span>
+<span class="odt-code-line">        model.update({</span>
+<span class="odt-code-line">            <span style="color:#008000"># CSRF token</span></span>
+<span class="odt-code-line">            <span style="background-color:#fff2cc;color:#a31515">&#x27;csrf_token</span>&#x27;: csrf_token,</span>
+<span class="odt-code-line">            <span style="color:#008000"># prefix_url</span></span>
+<span class="odt-code-line">            <span style="background-color:#fff2cc;color:#a31515">&#x27;prefix_url</span>&#x27;: config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;parameters&quot;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&quot;prefix_url&quot;</span><span style="font-weight:bold">]</span>,</span>
+<span class="odt-code-line">            <span style="color:#008000"># application_root</span></span>
+<span class="odt-code-line">            <span style="background-color:#fff2cc;color:#a31515">&#x27;application_root</span>&#x27;: config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;parameters&quot;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&quot;application_root&quot;</span><span style="font-weight:bold">]</span>,</span>
+<span class="odt-code-line">        })</span>
+</code></pre></div>
+
+<ul>
+  <li>line 15: the <b>[update_model] </b>method is responsible for adding the following to the view template:
+    <ul>
+      <li>line 24: the CSRF token;
+      </li>
+      <li>line 26: the URL prefix;
+      </li>
+      <li>line 28: the application root or WSGI alias;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The four child classes call the parent class with the following code:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line">…</span>
+<span class="odt-code-line">        <span style="color:#008000"># possible actions from the view</span></span>
+<span class="odt-code-line">        model<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;possible_actions&#x27;</span><span style="font-weight:bold">] </span>= <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;display-authentication-view&quot;</span><span style="font-weight:bold">, </span><span style="font-weight:bold;color:#a31515">&quot;authenticate-user&quot;</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># finalize the model via the parent class</span></span>
+<span class="odt-code-line">        <span style="background-color:#fff2cc">super().update_model(model, config)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># return the model</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>model</span>
+</code></pre></div>
+
+<ul>
+  <li>line 6: each child class calls its parent class to update the model it created;
+  </li>
+</ul>
+
+<p>Version 18 is ready. We reuse the two Apache virtual servers from version 17 and modify them:</p>
+<p><img src="images/10000000000002D30000012FDB676CCF.png" style="width:8.363cm;height:3.505cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D30000012FDB676CCF.png" /></p>
+<p>The two <strong>[flask-impots-withXX.conf]</strong> files are modified in only one place:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"># .wsgi script directory</span>
+<span class="odt-code-line"><span style="color:#000000">define ROOT </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/http-servers/13/apache&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># name of the website configured by this file</span>
+<span class="odt-code-line"># here it will be called flask-impots-withmysql</span>
+<span class="odt-code-line"># URLs will be of the form http(s)://flask-impots-withmysql/path</span>
+<span class="odt-code-line"><span style="color:#000000">define SITE </span><span style="color:#a31515">&quot;flask-impots-withmysql&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># add the IP address 127.0.0.1 for the SITE &quot;flask-impots-withmysql&quot; to c:/windows/system32/drivers/etc/hosts</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Enter the paths to the Python libraries to be used here—separate them with commas</span>
+<span class="odt-code-line"># Here are the libraries for a Python virtual environment</span>
+<span class="odt-code-line"><span style="color:#000000">WSGIPythonPath  </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Python Home - required only if multiple versions of Python are installed</span>
+<span class="odt-code-line"># WSGIPythonHome &quot;C:/Program Files/Python38&quot;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># HTTP URL</span>
+<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:80&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will take the form /{url_prefix}/action/...</span>
+<span class="odt-code-line"><span style="color:#000000">    </span># with the alias /taxes, URLs will be in the form /taxes/{url_prefix}/action/...</span>
+<span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
+<span class="odt-code-line"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/taxes </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    …</span></span>
+<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Secure URLs with HTTPS</span>
+<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will be in the form /{url_prefix}/action/...</span>
+<span class="odt-code-line"><span style="color:#000000">    </span># with the alias /taxes, URLs will be in the form /taxes/{url_prefix}/action/...</span>
+<span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
+<span class="odt-code-line"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/taxes </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">    ..</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+</code></pre></div>
+
+<ul>
+  <li>Line 12: We are now using the <b>[taxes/http-servers/13/apache] </b>directory.
+  </li>
+</ul>
+
+<p>We are ready to test version 18 running on Apache. The configuration is as follows:</p>
+<ul>
+  <li>the WSGI alias is /impots in both virtual server configuration files;
+  </li>
+  <li>in the configuration file <b>[configs/parameters]</b>, the parameters are as follows:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span style="color:#000000">        </span># csrf token</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">with_csrftoken</span><span style="color:#a31515">&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">False</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># application URL prefix</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># set the string to empty if no prefix is desired, or /prefix otherwise</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">prefix_url</span><span style="color:#a31515">&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/do&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># Apache server root URL - set to an empty string for execution outside of Apache</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">application_root</span><span style="color:#a31515">&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/impots&quot;</span></span>
+</code></pre></div>
+
+<p>We start the Apache server and the two DBMSs. We request the URL <strong>[https://flask-impots-withmysql/impots/do]</strong>. The server&#x27;s response is as follows:</p>
+<p><img src="images/10000000000005550000031920FB5EEA.png" style="width:15.782cm;height:9.169cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005550000031920FB5EEA.png" /></p>
+<p>We successfully see the authentication page, which we were unable to access in the previous version. The rest of the application works normally.</p>
+<p>Now we test the other virtual server. We request the URL <strong>[https://flask-impots-withpgres/impots/do]</strong>. The server’s response is as follows:</p>
+<p><img src="images/10000000000005550000034336E21669.png" style="width:15.769cm;height:9.647cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005550000034336E21669.png" /></p>
+<p>The concepts of WSGI aliases and URL prefixes serve the same purpose. One of these two concepts is redundant. Thus, to prefix Apache server URLs with the string <strong>[/impots/do]</strong>, there are three ways to do this:</p>
+<p>1 – <strong>[WGSIAlias /impots]</strong> and <strong>[prefix_url=’/do’]</strong>;</p>
+<p>2 – <strong>[WGSIAlias /]</strong> and <strong>[prefix_url=’/impots/do’]</strong>;</p>
+<p>3 – <strong>[WGSIAlias /impots/do]</strong> and <strong>[prefix_url=’’]</strong>;</p>
+<p><a id="toc48549353"></a></p>
+<h2 id="382-console-tests">38.2. <span style="color: #4f81bd">Console tests</span></h2>
+<p>We use the client console tests <strong>[http-clients/09]</strong> again:</p>
+<p><img src="images/100000000000020E00000241F37F82D2.png" style="width:6.07cm;height:6.659cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020E00000241F37F82D2.png" /></p>
+<ul>
+  <li>the server URL must be modified in configurations <b>[1] </b>and <b>[3]</b>;
+  </li>
+  <li>a change must be made to the <b>[dao] </b>layer so that it supports the Apache server’s HTTPS protocol;
+  </li>
+</ul>
+
+<p>In the <strong>[config]</strong> files, the server URL becomes the following:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span style="color:#000000">        </span>&quot;server&quot;<span style="color:#000000">: {</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># &quot;urlServer&quot;: &quot;http://127.0.0.1:5000&quot;,</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># &quot;urlServer&quot;: &quot;http://127.0.0.1:5000/do&quot;,</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="background-color:#fff2cc">&quot;urlServer&quot;</span><span style="background-color:#fff2cc;color:#000000">: </span><span style="background-color:#fff2cc">&quot;https://flask-impots-withmysql/impots/do&quot;</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span>&quot;user&quot;<span style="color:#000000">: {</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span>&quot;login&quot;<span style="color:#000000">: </span>&quot;admin&quot;<span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span>&quot;password&quot;<span style="color:#000000">: </span>&quot;admin&quot;</span>
+<span class="odt-code-line"><span style="color:#000000">            },</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span>&quot;url_services&quot;<span style="color:#000000">: {</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span>…</span>
+<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># debug mode</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span>&quot;debug&quot;<span style="color:#000000">: </span><span style="color:#0000ff">True</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># csrf_token</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#fff2cc">&quot;with_csrftoken&quot;</span><span style="background-color:#fff2cc;color:#000000">: </span><span style="background-color:#fff2cc;color:#0000ff">False</span><span style="background-color:#fff2cc;color:#000000">,</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 4: the new server URL. For the first time in this document, the client uses the HTTPS protocol;
+  </li>
+</ul>
+
+<p>The <strong>[ImpôtsDaoWihHttpSession]</strong> class in the <strong>[dao]</strong> layer evolves as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span style="color:#000000">…    </span></span>
+<span class="odt-code-line">    # request/response step</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="background-color:#fff2cc;color:#000000">get_response</span><span style="color:#000000">(self, method: str, url_service: str, data_value: dict = </span><span style="color:#0000ff">None</span><span style="color:#000000">, </span><span style="color:#0000ff">json_value=None</span><span style="color:#000000">):</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[method]</span>: HTTP GET or POST method</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[url_service]</span>: service URL</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[data]</span>: POST parameters in x-www-form-urlencoded format</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[json]</span>: POST parameters in JSON</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[cookies]</span>: cookies to include in the request</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># We must have an XML or JSON session; otherwise, we won&#x27;t be able to handle the response</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if self</span><span style="color:#000000">.__session_type </span><span style="color:#0000ff">not in </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;json&#x27;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&#x27;xml&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#000000">ImpôtsError(</span><span style="color:#098658">73</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;There is no valid session currently active&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># Add the CSRF token to the service URL</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if self</span><span style="color:#000000">.__csrf_token:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            url_service = </span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{url_service}</span><span style="color:#a31515">/</span><span style="color:#000000">{</span><span style="color:#0000ff">self</span><span style="color:#000000">.__csrf_token}</span><span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># execute the request</span>
+<span class="odt-code-line"><span style="color:#000000">        response = </span><span style="background-color:#fff2cc;color:#000000">requests</span><span style="color:#000000">.request(method,</span></span>
+<span class="odt-code-line"><span style="color:#000000">                                    service_url,</span></span>
+<span class="odt-code-line"><span style="color:#000000">                                    data=data_value,</span></span>
+<span class="odt-code-line"><span style="color:#000000">                                    json=json_value,</span></span>
+<span class="odt-code-line"><span style="color:#000000">                                    </span><span style="color:#0000ff">cookies=self</span><span style="color:#000000">.__cookies,</span></span>
+<span class="odt-code-line"><span style="color:#000000">                                    </span><span style="color:#0000ff">allow_redirects=True</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">                                    </span># for the HTTPS protocol</span>
+<span class="odt-code-line"><span style="color:#000000">                                    </span><span style="background-color:#fff2cc;color:#0000ff">verify=False</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># debug mode?</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if self</span><span style="color:#000000">.__debug:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span># logger</span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if not self</span><span style="color:#000000">.__logger:</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">self</span><span style="color:#000000">.__logger = </span><span style="color:#0000ff">self</span><span style="color:#000000">.__config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;logger&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span># logging</span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">self</span><span style="color:#000000">.__logger.write(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{response.text}\n</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span>…</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># return the result</span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">result</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;response&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
+</code></pre></div>
+
+<ul>
+  <li>On line 26, we add the <b>[verify=False] </b>parameter because of the HTTPS protocol used by the Apache server. The <b>[requests] </b>module (line 19) natively supports the HTTPS protocol. By default, it verifies the validity of the security certificate sent by the HTTPS server and raises an exception if the received certificate is invalid. This is the case here, where Laragon’s Apache server sends a self-signed certificate. To avoid the exception, we use the <b>[verify=False] </b>parameter to tell the <b>[requests] </b>module not to raise an exception. <b>[requests] </b>then simply displays a warning on the console.
+  </li>
+</ul>
+
+<p>With these changes made, all console tests should work.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>

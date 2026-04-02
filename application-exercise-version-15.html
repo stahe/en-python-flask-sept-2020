@@ -1,0 +1,2432 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to Python 3 and the Flask Web Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-python-flask-sept-2020/application-exercise-version-15.html">
+      
+      
+        <link rel="prev" href="practical-exercise-version-14.html">
+      
+      
+        <link rel="next" href="application-exercise-version-16.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>35. Application exercise: version 15 - An Introduction to Python 3 and the Flask Web Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to Python 3 and the Flask Web Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#35-application-exercise-version-15" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to Python 3 and the Flask Web Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              35. Application exercise: version 15
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to Python 3 and the Flask Web Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foreword.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Foreword
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setting-up-a-development-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Setting up a development environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-basics-of-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Basics of Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="strings.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="text-files.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Text files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Application exercise – version 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="imports.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Imports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Practical Exercise: Version 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Practical Exercise: Version 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes-and-objects.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Classes and Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-generic-classes-baseentity-and-myexception.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. The generic classes [BaseEntity] and [MyException]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="layered-architecture-and-interface-based-programming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Layered architecture and interface-based programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Application Exercise - Version 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-mysql-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Using the MySQL DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-postgresql-dbms.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Using the PostgreSQL DBMS
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="writing-dbms-independent-code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Writing DBMS-Independent Code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-the-sqlalchemy-orm.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Using the SQLAlchemy ORM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Application exercise: version 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internet-functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Internet Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-services-with-the-flask-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Web services with the Flask framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practice-exercise-version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Practice Exercise: Version 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practice-exercise-version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Practice Exercise: Version 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="-application-exercise-version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Application Exercise: Version 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="from-dictionary-to-xml-and-vice-versa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. From dictionary to XML and vice versa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Application Exercise: Version 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. Application exercise: version 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. Application exercise: version 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Practical Exercise: Version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-clients-for-the-json-and-xml-services-of-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Web clients for the JSON and XML services of version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="html-mode-in-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. HTML mode in version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Application exercise: Version 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-14.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Practical Exercise: Version 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Application exercise: version 15
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="application-exercise-version-15.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Application exercise: version 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#351-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#352-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.2. Implementation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="35.2. Implementation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3521-the-new-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.2.1. The new routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3522-the-new-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.2.2. The new controllers
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3524-the-new-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.2.4. The new models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3525-the-new-main-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.2.5. The new main controller
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. Application Exercise: Version 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Practical Exercise: Version 17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-18-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Practical Exercise: Version 18 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><a id="toc48549324"></a>
+<a id="exercicedapplication11"></a></p>
+<h1 id="35-application-exercise-version-15">35. <span style="color: #365f91">Application exercise: version 15</span></h1>
+<p><a id="toc48549325"></a></p>
+<h2 id="351-introduction">35.1. <span style="color: #4f81bd">Introduction</span></h2>
+<p>This version aims to resolve issues related to refreshing the application’s pages in the browser (F5). Let’s take an example. The user has just deleted the simulation with id=3:</p>
+<p><img src="images/10000000000005BF0000026D6053DA9E.png" style="width:16.97cm;height:7.165cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005BF0000026D6053DA9E.png" /></p>
+<p>After deletion, the URL in the browser is <strong>[/delete-simulation/3/…]</strong>. If the user refreshes the page (F5), the URL <strong>[1]</strong> is replayed. We therefore request the deletion of the simulation with id=3 again. The result is as follows:</p>
+<p><img src="images/10000000000004710000022510AE0224.png" style="width:13.139cm;height:6.345cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004710000022510AE0224.png" /></p>
+<p>Here is another example. The user has just calculated a tax:</p>
+<ul>
+  <li>in <b>[1]</b>, the URL <b>[/calculate-tax] </b>that was just queried with a POST request;
+
+<img src="images/100000000000054A000003ADADB5C962.png" style="width:15.649cm;height:10.876cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000054A000003ADADB5C962.png" />
+
+
+  </li>
+</ul>
+
+<p>If the user refreshes the page (F5), they receive a warning message:</p>
+<p><img src="images/10000000000002D40000011C5B0E676C.png" style="width:8.35cm;height:3.276cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D40000011C5B0E676C.png" /></p>
+<p>The page refresh operation re-executes the last request made by the browser, in this case a <strong>[POST /calculate-tax]</strong>. When asked to re-execute a POST, browsers display a warning similar to the one above. This warns that it is re-executing an action that has already been performed. Suppose this POST completed a purchase; it would be unfortunate to repeat it.</p>
+<p>Additionally, we will limit the user’s ability to type URLs into their browser. Let’s take one of the previous views as an example:</p>
+<p><img src="images/100000000000054A000003ADADB5C962.png" style="width:15.649cm;height:10.876cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000054A000003ADADB5C962.png" /></p>
+<p>The links provided by this page are:</p>
+<ul>
+  <li><b>[List of simulations] </b>associated with the URL <b>[/lister-simulations]</b>;
+  </li>
+  <li><b>[End of session] </b>associated with the URL <b>[/end-session]</b>;
+  </li>
+  <li><b>[Submit] </b>associated with the URL (not shown above) <b>[/calculate-tax]</b>;
+  </li>
+</ul>
+
+<p>When the tax calculation view is displayed, we will only accept the actions <strong>[/list-simulations, /end-session, /calculate-tax]</strong>. If the user enters another action in their browser, an error will be thrown. We will perform this type of validation for all four views of the application.</p>
+<p>We propose to solve the page refresh issue as follows:</p>
+<ul>
+  <li>we will distinguish between two types of actions:
+    <ul>
+      <li>ADS (Action Do Something) actions that modify the application’s state. ADS actions generally have parameters in the URL or the request body;
+      </li>
+      <li>ASV (Action Show View) actions that display a view without changing the application’s state. There will be as many ASV actions as there are views V. ASV actions have no parameters;
+      </li>
+    </ul>
+  </li>
+  <li>Until now, ADS actions were executed and then completed by displaying a view V after preparing its model M. From now on, they will place the view’s model M into the session and instruct the browser to redirect to the ASV action responsible for displaying the view V;
+  </li>
+  <li>V views will only be displayed following an ASV action. They will retrieve their model from the session;
+  </li>
+</ul>
+
+<p>The advantage of this method is that the browser will display the ASV URL in its address bar. Refreshing the page will then re-execute the ASV action. This action does not modify the application’s state and uses a session model. Therefore, the same page will be re-displayed without any side effects. Finally, due to the redirects, the user will only see ASV action URLs in their browser and will feel as though they are navigating from page to page;</p>
+<p><a id="toc48549326"></a></p>
+<h2 id="352-implementation">35.2. <span style="color: #4f81bd">Implementation</span></h2>
+<p><img src="images/100000000000013800000146F0CE2B83.png" style="width:3.602cm;height:3.762cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000013800000146F0CE2B83.png" /></p>
+<p>The <strong>[impots/http-servers/10]</strong> directory is initially created by copying the <strong>[impots/http-servers/09]</strong> directory. It is then modified.</p>
+<p><a id="toc48549327"></a></p>
+<h3 id="3521-the-new-routes">35.2.1. <span style="color: #4f81bd">The new routes</span></h3>
+<p><img src="images/100000000000019B000001C6F398E1E6.png" style="width:4.75cm;height:5.248cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000019B000001C6F398E1E6.png" /></p>
+<p>In both the <strong>[routes_with_csrftoken]</strong> and <strong>[routes_without_csrftoken]</strong> files, we need to create the four routes for the four ASV actions that display the four views. The other routes remain unchanged.</p>
+<p>In <strong>[routes_with_csrftoken]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># display-tax-calculation-view</span>
+<span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/display-tax-calculation-view/&lt;string:csrf_token&gt;&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_tax_calculation_view(csrf_token: str) -&gt; tuple:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># execute the controller associated with the action</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">front_controller()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display-authentication-view</span>
+<span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/display-authentication-view/&lt;string:csrf_token&gt;&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_authentication_view(csrf_token: str) -&gt; tuple:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># execute the controller associated with the action</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">front_controller()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display-simulation-list-view</span>
+<span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/display-simulation-list-view/&lt;string:csrf_token&gt;&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_simulation_list_view(csrf_token: str) -&gt; tuple:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># execute the controller associated with the action</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">front_controller()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display-error-list-view</span>
+<span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/display-error-list-view/&lt;string:csrf_token&gt;&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_error_list_view(csrf_token: str) -&gt; tuple:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># execute the controller associated with the action</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">front_controller()</span></span>
+</code></pre></div>
+
+<p>Lines 1–23: We have created four routes for four ASV actions:</p>
+<ul>
+  <li><b>[/display-authentication-view]</b>, line 8, displays the authentication view;
+  </li>
+  <li><b>[/display-tax-calculation-view]</b>, line 2, displays the tax calculation view;
+  </li>
+  <li><b>[/display-simulation-list-view]</b>, line 14, displays the simulation view;
+  </li>
+  <li><b>[/display-error-list-view]</b>, line 20, displays the unexpected errors view;
+  </li>
+</ul>
+
+<p>We do the same in the <strong>[routes_with_csrftoken]</strong> file for routes without a token:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># ASV routes -------------------------</span>
+<span class="odt-code-line"># display-tax-calculation-view</span>
+<span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/display-tax-calculation-view&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_tax_calculation_view() -&gt; tuple:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># execute the controller associated with the action</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">front_controller()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display-authentication-view</span>
+<span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/display-authentication-view&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_authentication_view() -&gt; tuple:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># execute the controller associated with the action</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">front_controller()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display-simulation-list-view</span>
+<span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/display-simulation-list-view&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_simulation_list_view() -&gt; tuple:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># execute the controller associated with the action</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">front_controller()</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># display-error-list-view</span>
+<span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/display-error-list-view&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_error_list_view() -&gt; tuple:</span></span>
+<span class="odt-code-line"><span style="color:#000000">    </span># execute the controller associated with the action</span>
+<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">front_controller()</span></span>
+</code></pre></div>
+
+<p><a id="toc48549328"></a></p>
+<h3 id="3522-the-new-controllers">35.2.2. <span style="color: #4f81bd">The new controllers</span></h3>
+<p><img src="images/100000000000021300000153E76C55DB.png" style="width:6.13cm;height:3.914cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021300000153E76C55DB.png" /></p>
+<p>The <strong>[AuthenticationViewController]</strong> executes the ASV action <strong>[/display-authentication-view]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_api <span style="color:#0000ff">import </span>status</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>werkzeug.local <span style="color:#0000ff">import </span>LocalProxy</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>InterfaceController <span style="color:#0000ff">import </span>InterfaceController</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span>ShowAuthenticationViewController(InterfaceController):</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>execute(self, request: LocalProxy, session: LocalProxy, config: dict) -&gt; (dict, int):</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># retrieve the path elements</span>
+<span class="odt-code-line">        params = request.path.split(<span style="color:#a31515">&#x27;/&#x27;</span>)</span>
+<span class="odt-code-line">        action = params<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#098658">1</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># change view - just set a status code</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>{<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;status&quot;</span>:<span style="color:#098658"> 1100</span>, <span style="color:#a31515">&quot;response&quot;</span>: <span style="color:#a31515">&quot;&quot;</span>}, status.HTTP_200_OK</span>
+</code></pre></div>
+
+<p>We mentioned that ASV actions have no parameters and do not modify the application’s state. We simply display the desired view by setting a status code on line 14.</p>
+<p>The <strong>[AfficherVueCalculImpotController]</strong> controller executes the ASV action <strong>[/afficher-vue-calcul-impot]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_api <span style="color:#0000ff">import </span>status</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>werkzeug.local <span style="color:#0000ff">import </span>LocalProxy</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>InterfaceController <span style="color:#0000ff">import </span>InterfaceController</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span>DisplayTaxCalculationViewController(InterfaceController):</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>execute(self, request: LocalProxy, session: LocalProxy, config: dict) -&gt; (dict, int):</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># retrieve the path elements</span>
+<span class="odt-code-line">        params = request.path.split(<span style="color:#a31515">&#x27;/&#x27;</span>)</span>
+<span class="odt-code-line">        action = params<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#098658">1</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># change view - just set the status code</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>{<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;status&quot;</span>:<span style="color:#098658"> 1400</span>, <span style="color:#a31515">&quot;response&quot;</span>: <span style="color:#a31515">&quot;&quot;</span>}, status.HTTP_200_OK</span>
+</code></pre></div>
+
+<p>The <strong>[AfficherVueListeSimulationsController]</strong> controller executes the ASV action <strong>[/afficher-vue-liste-simulations]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_api <span style="color:#0000ff">import </span>status</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>werkzeug.local <span style="color:#0000ff">import </span>LocalProxy</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>InterfaceController <span style="color:#0000ff">import </span>InterfaceController</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span>DisplaySimulationListViewController(InterfaceController):</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>execute(self, request: LocalProxy, session: LocalProxy, config: dict) -&gt; (dict, int):</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># retrieve the path elements</span>
+<span class="odt-code-line">        params = request.path.split(<span style="color:#a31515">&#x27;/&#x27;</span>)</span>
+<span class="odt-code-line">        action = params<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#098658">1</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># change view - just set a status code</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>{<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;status&quot;</span>:<span style="color:#098658"> 1200</span>, <span style="color:#a31515">&quot;response&quot;</span>: <span style="color:#a31515">&quot;&quot;</span>}, status.HTTP_200_OK</span>
+</code></pre></div>
+
+<p>The <strong>[AfficherVueListeErreursController]</strong> controller executes the ASV action <strong>[/afficher-vue-liste-erreurs]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_api <span style="color:#0000ff">import </span>status</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>werkzeug.local <span style="color:#0000ff">import </span>LocalProxy</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>InterfaceController <span style="color:#0000ff">import </span>InterfaceController</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span>DisplayErrorListViewController(InterfaceController):</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>execute(self, request: LocalProxy, session: LocalProxy, config: dict) -&gt; (dict, int):</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># retrieve the path elements</span>
+<span class="odt-code-line">        params = request.path.split(<span style="color:#a31515">&#x27;/&#x27;</span>)</span>
+<span class="odt-code-line">        action = params<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#098658">1</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># change view - just set a status code</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>{<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;status&quot;</span>:<span style="color:#098658"> 1300</span>, <span style="color:#a31515">&quot;response&quot;</span>: <span style="color:#a31515">&quot;&quot;</span>}, status.HTTP_200_OK</span>
+</code></pre></div>
+
+<p>Let’s summarize the status codes:</p>
+<ul>
+  <li>code 1100 should display the authentication view;
+  </li>
+  <li>code 1400 should display the tax calculation view;
+  </li>
+  <li>code 1200 should display the simulation view;
+  </li>
+  <li>code 1300 should display the unexpected errors view;
+<a id="toc48549329"></a>
+
+### 35.2.3. <span style="color: #4f81bd">The new MVC configuration</span>
+
+  </li>
+</ul>
+
+<p>Because it had become too large, the MVC configuration has been split into four files:</p>
+<ul>
+  <li><b>[controllers]</b>: the list of C controllers for the MVC application;
+  </li>
+  <li><b>[ads_actions]</b>: lists the ADS (Action Do Something) actions;
+  </li>
+  <li><b>[asv_actions]</b>: lists the ASV (Action Show View) actions;
+  </li>
+  <li><b>[responses]</b>: lists the application’s HTTP response classes;
+  </li>
+</ul>
+
+<p>Let’s start with the simplest one, the HTTP response file <strong>[responses]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">def </span>configure(config: dict) -&gt; dict:</span>
+<span class="odt-code-line">    <span style="color:#008000"># MVC application configuration</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># HTTP responses</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>HtmlResponse <span style="color:#0000ff">import </span>HtmlResponse</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>JsonResponse <span style="color:#0000ff">import </span>JsonResponse</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>XmlResponse <span style="color:#0000ff">import </span>XmlResponse</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># Different response types (json, xml, html)</span></span>
+<span class="odt-code-line">    responses = {</span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;json&quot;</span>: JsonResponse(),</span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;html&quot;</span>: HtmlResponse(),</span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;xml&quot;</span>: XmlResponse()</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># Return the HTTP response dictionary</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
+<span class="odt-code-line">        <span style="color:#008000"># HTTP responses</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;responses&quot;</span>: responses,</span>
+<span class="odt-code-line">    }</span>
+</code></pre></div>
+
+<p>No surprises here.</p>
+<p>The <strong>[controllers]</strong> file is also unsurprising. We simply added the new controllers for the ASV actions.</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">def </span>configure(config: dict) -&gt; dict:</span>
+<span class="odt-code-line">    <span style="color:#008000"># MVC application configuration</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># the main controller</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>MainController <span style="color:#0000ff">import </span>MainController</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># ADS action controllers</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>UserAuthController <span style="color:#0000ff">import </span>UserAuthController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>CalculateTaxController <span style="color:#0000ff">import </span>CalculateTaxController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>CalculateTaxesController <span style="color:#0000ff">import </span>CalculateTaxesController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>FinSessionController <span style="color:#0000ff">import </span>FinSessionController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>GetAdminDataController <span style="color:#0000ff">import </span>GetAdminDataController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>InitSessionController <span style="color:#0000ff">import </span>InitSessionController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>ListSimulationsController <span style="color:#0000ff">import </span>ListSimulationsController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>DeleteSimulationController <span style="color:#0000ff">import </span>DeleteSimulationController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>DisplayTaxCalculationController <span style="color:#0000ff">import </span>DisplayTaxCalculationController</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="background-color:#fff2cc;color:#008000"># ASV action controllers</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>DisplayTaxCalculationViewController <span style="color:#0000ff">import </span>DisplayTaxCalculationViewController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>DisplayAuthenticationViewController <span style="color:#0000ff">import </span>DisplayAuthenticationViewController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>DisplayErrorListViewController <span style="color:#0000ff">import </span>DisplayErrorListViewController</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>DisplaySimulationListViewController <span style="color:#0000ff">import </span>DisplaySimulationListViewController</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># Authorized actions and their controllers</span></span>
+<span class="odt-code-line">    controllers = {</span>
+<span class="odt-code-line">        <span style="color:#008000"># initialization of a calculation session</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;init-session&quot;</span>: InitSessionController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># user authentication</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;authenticate-user&quot;</span>: AuthenticateUserController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># link to tax calculation view</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;display-tax-calculation&quot;</span>: DisplayTaxCalculationController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># calculate tax in individual mode</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;calculate-tax&quot;</span>: CalculateTaxController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># tax calculation in batch mode</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;calculate-taxes&quot;</span>: CalculateTaxesController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># list of simulations</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;list-simulations&quot;</span>: ListSimulationsController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># delete a simulation</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;delete-simulation&quot;</span>: DeleteSimulationController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># end of calculation session</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;end-session&quot;</span>: EndSessionController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># retrieve data from the tax administration</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;get-admindata&quot;</span>: GetAdminDataController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># main controller</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;main-controller&quot;</span>: MainController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># display the authentication view</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">display-authentication-view</span><span style="color:#a31515">&quot;</span>: DisplayAuthenticationViewController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># display the tax calculation view</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">display-tax-calculation-view</span><span style="color:#a31515">&quot;</span>: DisplayTaxCalculationViewController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># display the simulation view</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">display-simulation-list-view</span><span style="color:#a31515">&quot;</span>: DisplaySimulationListViewController(),</span>
+<span class="odt-code-line">        <span style="color:#008000"># Display the errors view</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">display-error-list-view</span><span style="color:#a31515">&quot;</span>: DisplayErrorListViewController()</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># Return the controller configuration</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
+<span class="odt-code-line">        <span style="color:#008000"># controllers</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;controllers&quot;</span>: controllers,</span>
+<span class="odt-code-line">    }</span>
+</code></pre></div>
+
+<p>The <strong>[asv_actions]</strong> configuration for ASV actions is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">def </span>configure(config: dict) -&gt; dict:</span>
+<span class="odt-code-line">    <span style="color:#008000"># MVC application configuration</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># HTML views and their models depend on the state returned by the controller</span></span>
+<span class="odt-code-line">    <span style="color:#008000"># ASV actions (Action Show view)</span></span>
+<span class="odt-code-line">    asv = <span style="font-weight:bold">[</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#008000"># Authentication view</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;states&quot;</span><span style="font-weight:bold">: [</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">1100</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /display-authentication-view</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            ]</span>,</span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;view_name&quot;</span>: <span style="color:#a31515">&quot;views/authentication-view.html&quot;</span>,</span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000"># tax calculation view</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;statements&quot;</span>: <span style="font-weight:bold">[</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">1400</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /display-tax-calculation-view</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            ]</span>,</span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;view_name&quot;</span>: <span style="color:#a31515">&quot;views/tax-calculation-view.html&quot;</span>,</span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000"># simulation list view</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;statements&quot;</span>: <span style="font-weight:bold">[</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">1200</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /display-simulation-list-view</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            ]</span>,</span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;view_name&quot;</span>: <span style="color:#a31515">&quot;views/simulation-list-view.html&quot;</span>,</span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#008000"># error list view</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;statuses&quot;</span>: <span style="font-weight:bold">[</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">1300</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /display-error-list-view</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            ]</span>,</span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;view_name&quot;</span>: <span style="color:#a31515">&quot;views/error-list.html&quot;</span>,</span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">    ]</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># return the ASV configuration</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
+<span class="odt-code-line">        <span style="color:#008000"># views and templates</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;asv&quot;</span>: asv,</span>
+<span class="odt-code-line">    }</span>
+</code></pre></div>
+
+<ul>
+  <li>The <b>[asv_actions] </b>file contains the four new actions, whose functionality is summarized below:
+    <ul>
+      <li>they have no parameters;
+      </li>
+      <li>they display a specific view whose template is in session;
+      </li>
+    </ul>
+  </li>
+  <li>The <b>[asv] </b>list in lines 6–35 associates a view with each ASV action;
+  </li>
+</ul>
+
+<p>The <strong>[ads_actions]</strong> file contains the ADS actions:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">def </span>configure(config: dict) -&gt; dict:</span>
+<span class="odt-code-line">    <span style="color:#008000"># MVC application configuration</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># view models</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>ModelForAuthentificationView <span style="color:#0000ff">import </span>ModelForAuthentificationView</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>ModelForTaxCalculationView <span style="color:#0000ff">import </span>ModelForTaxCalculationView</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>ModelForErrorView <span style="color:#0000ff">import </span>ModelForErrorView</span>
+<span class="odt-code-line">    <span style="color:#0000ff">from </span>ModelForSimulationListView <span style="color:#0000ff">import </span>ModelForSimulationListView</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># ADS (Action Do Something) actions</span></span>
+<span class="odt-code-line">    ads = <span style="font-weight:bold">[</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;statuses&quot;</span><span style="font-weight:bold">: [</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">400</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /successful session end</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            ]</span>,</span>
+<span class="odt-code-line">            <span style="color:#008000"># redirect to ADS action</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;to&quot;</span>: <span style="color:#a31515">&quot;/init-session/html&quot;</span>,</span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;status&quot;</span>: <span style="font-weight:bold">[</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">700</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /init-session - success</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">201</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /authenticate-user failure</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            ]</span>,</span>
+<span class="odt-code-line">            <span style="color:#008000"># redirect to ASV action</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;to&quot;</span>: <span style="color:#a31515">&quot;/display-authentication-view&quot;</span>,</span>
+<span class="odt-code-line">            <span style="color:#008000"># template for the following view</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;model_for_view&quot;</span>: ModelForAuthentificationView()</span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;statuses&quot;</span>: <span style="font-weight:bold">[</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">200</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /authenticate-user success</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">300</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /calculate-tax success</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">301</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /calculate-tax failure</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">800</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /display-tax-calculation link</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            ]</span>,</span>
+<span class="odt-code-line">            <span style="color:#008000"># redirect to ASV action</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;to&quot;</span>: <span style="color:#a31515">&quot;/display-tax-calculation-view&quot;</span>,</span>
+<span class="odt-code-line">            <span style="color:#008000"># template for the following view</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;model_for_view&quot;</span>: ModelForCalculImpotView()</span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;status&quot;</span>: <span style="font-weight:bold">[</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">500</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /list-successful-simulations</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">600</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /delete-simulation success</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">            ]</span>,</span>
+<span class="odt-code-line">            <span style="color:#008000"># redirect to ASV action</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;to&quot;</span>: <span style="color:#a31515">&quot;/display-simulation-list-view&quot;</span>,</span>
+<span class="odt-code-line">            <span style="color:#008000"># model for the following view</span></span>
+<span class="odt-code-line">            <span style="color:#a31515">&quot;model_for_view&quot;</span>: ModelForListeSimulationsView()</span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">    ]</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># unexpected errors view</span></span>
+<span class="odt-code-line">    view_errors = {</span>
+<span class="odt-code-line">        <span style="color:#008000"># Redirect to ASV action</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;to&quot;</span>: <span style="color:#a31515">&quot;/display-error-list-view&quot;</span>,</span>
+<span class="odt-code-line">        <span style="color:#008000"># model for the following view</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;model_for_view&quot;</span>: ModelForErrorsView()</span>
+<span class="odt-code-line">    }</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># Return the MVC configuration</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
+<span class="odt-code-line">        <span style="color:#008000"># ADS actions</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;ads&quot;</span>: ads,</span>
+<span class="odt-code-line">        <span style="color:#008000"># view for unexpected errors</span></span>
+<span class="odt-code-line">        <span style="color:#a31515">&quot;error_view&quot;</span>: error_view,</span>
+<span class="odt-code-line">    }</span>
+</code></pre></div>
+
+<ul>
+  <li>lines 11–51: the list of ADS (Action Do Something) actions. All actions from previous versions are included. However, their behavior has changed:
+    <ul>
+      <li>they do not display a view V. They only prepare the model M for this view V;
+      </li>
+      <li>they request the display of view V via a redirect to the ASV action associated with view V;
+      </li>
+    </ul>
+  </li>
+  <li>not all ADS actions lead to a redirection to an ASV action: lines 12–18, the ADS action <b>[/fin-session] </b>leads to a redirection to the ADS action <b>[/init-session/html]</b>. To distinguish between ADS -&gt; ADS and ADS -&gt; ASV redirects, we can use the <b>[model_for_view] </b>template. This does not exist for ADS -&gt; ADS redirects;
+  </li>
+</ul>
+
+<p>The <strong>[main/config]</strong> file, which contains all configurations, changes as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">def </span>configure(config: dict) -&gt; dict:</span>
+<span class="odt-code-line">    <span style="color:#008000"># syspath configuration</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">import </span>syspath</span>
+<span class="odt-code-line">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;syspath&#x27;</span><span style="font-weight:bold">] </span>= syspath.configure(config)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># application settings</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">import </span>parameters</span>
+<span class="odt-code-line">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">] </span>= parameters.configure(config)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># database configuration</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">import </span>database</span>
+<span class="odt-code-line">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;database&quot;</span><span style="font-weight:bold">] </span>= database.configure(config)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># instantiate the application layers</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">import </span>layers</span>
+<span class="odt-code-line">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;layers&#x27;</span><span style="font-weight:bold">] </span>= layers.configure(config)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># </span><span style="background-color:#fff2cc;color:#008000">MVC configuration for the </span><span style="font-weight:bold;background-color:#fff2cc;color:#008000">[web] </span><span style="background-color:#fff2cc;color:#008000">layer</span></span>
+<span class="odt-code-line">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">] </span>= {}</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># </span><span style="font-weight:bold;background-color:#fff2cc;color:#008000">[web] </span><span style="background-color:#fff2cc;color:#008000">layer controller configuration</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">import </span>controllers</span>
+<span class="odt-code-line">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">]</span>.update(controllers.configure(config))</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># </span><span style="background-color:#fff2cc;color:#008000">ASV actions (Action Show View)</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">import </span>asv_actions</span>
+<span class="odt-code-line">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">]</span>.update(asv_actions.configure(config))</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># </span><span style="background-color:#fff2cc;color:#008000">ADS (Action Do Something) actions</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">import </span>ads_actions</span>
+<span class="odt-code-line">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">]</span>.update(ads_actions.configure(config))</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># </span><span style="background-color:#fff2cc;color:#008000">HTTP response configuration</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">import </span>responses</span>
+<span class="odt-code-line">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">]</span>.update(responses.configure(config))</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#008000"># return the configuration</span></span>
+<span class="odt-code-line">    <span style="color:#0000ff">return </span>config</span>
+</code></pre></div>
+
+<p><a id="toc48549330"></a></p>
+<h3 id="3524-the-new-models">35.2.4. <span style="color: #4f81bd">The new models</span></h3>
+<p><img src="images/10000000000001AC000001E163AC4D3B.png" style="width:4.949cm;height:5.563cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AC000001E163AC4D3B.png" /></p>
+<p>The models will generate new information. Let’s take, for example, the authentication view model:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask <span style="color:#0000ff">import </span>Request</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>werkzeug.local <span style="color:#0000ff">import </span>LocalProxy</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>AbstractBaseModelForView <span style="color:#0000ff">import </span>AbstractBaseModelForView</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span>ModelForAuthenticationView(AbstractBaseModelForView):</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>get_model_for_view(self, request: Request, session: LocalProxy, config: dict, result: dict) -&gt; dict:</span>
+<span class="odt-code-line">        <span style="color:#008000"># encapsulate the page data in a model</span></span>
+<span class="odt-code-line">        model = {}</span>
+<span class="odt-code-line">        <span style="color:#008000">…</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># CSRF token</span></span>
+<span class="odt-code-line">        model<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;csrf_token&#x27;</span><span style="font-weight:bold">] </span>= super().get_csrftoken(config)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># Possible actions from the view</span></span>
+<span class="odt-code-line">        model<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;possible_actions&#x27;</span><span style="font-weight:bold">] </span>= <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;display-authentication-view&quot;</span><span style="font-weight:bold">, </span><span style="font-weight:bold;color:#a31515">&quot;authenticate-user&quot;</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># return the model</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>model</span>
+</code></pre></div>
+
+<ul>
+  <li>The new feature is on line 17: each model will generate a list of possible actions when the view V, for which it is the model M, is displayed. To see these actions, we need to return to the view V. In the case of the authentication view:
+  </li>
+</ul>
+
+<p><img src="images/1000000000000434000002F135E4756E.png" style="width:12.43cm;height:8.7cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000434000002F135E4756E.png" /></p>
+<ul>
+  <li>we see that the authentication view offers only one action, that of the <b>[Validate] </b>button. This action is <b>[/authenticate-user]</b>;
+  </li>
+</ul>
+
+<p>We wrote:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">        # possible actions from the view</span>
+<span class="odt-code-line">        model<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;possible_actions&#x27;</span><span style="font-weight:bold">] </span>= <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;display-authentication-view&quot;</span><span style="font-weight:bold">, </span><span style="font-weight:bold;color:#a31515">&quot;authenticate-user&quot;</span><span style="font-weight:bold">]</span></span>
+</code></pre></div>
+
+<p>In the view above, we see that if the user refreshes the view, action <strong>[1] [/display-authentication-view]</strong> will be replayed. It must therefore be authorized. We could have chosen not to authorize it, in which case the user would have encountered an error every time they reloaded the page. We determined that this was not desirable.</p>
+<p>The possible actions are placed in the view model. We know that this model will be stored in the session.</p>
+<p>We do this for each of the four views. The possible actions are then as follows:</p>
+<p><u><strong>Authentication view</strong></u></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line">model<span style="font-weight:bold">[&#x27;possible_actions&#x27;] </span>= <span style="font-weight:bold">[&quot;display-authentication-view&quot;, &quot;authenticate-user&quot;]</span></span>
+</code></pre></div>
+
+<p><u><strong>Tax calculation view</strong></u></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># Available actions from the view</span>
+<span class="odt-code-line"><span style="color:#000000">model</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;possible_actions&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;display-tax-calculation-view&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;calculate-tax&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;list-simulations&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;end-session&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
+</code></pre></div>
+
+<p><u><strong>Simulation list view</strong></u></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># Possible actions from the view</span>
+<span class="odt-code-line"><span style="color:#000000">possible_actions = </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;display-simulation-list-view&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;display-tax-calculation&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;end-session&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">len(model</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;simulations&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">) !=</span><span style="color:#098658"> 0</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">  possible_actions.append(</span><span style="color:#a31515">&quot;delete-simulation&quot;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">model</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;possible_actions&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= possible_actions</span></span>
+</code></pre></div>
+
+<p><u><strong>Error list view</strong></u></p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># possible actions from the view</span>
+<span class="odt-code-line"><span style="color:#000000">model</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;possible_actions&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;display-error-list-view&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;display-tax-calculation&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;list-simulations&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;end-session&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
+</code></pre></div>
+
+<p><a id="toc48549331"></a></p>
+<h3 id="3525-the-new-main-controller">35.2.5. <span style="color: #4f81bd">The new main controller</span></h3>
+<p><img src="images/100000000000020B00000246374424F9.png" style="width:6.04cm;height:6.72cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020B00000246374424F9.png" /></p>
+<p>The <strong>[MainController]</strong> undergoes a few changes:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># Import dependencies</span>
+<span class="odt-code-line"><span style="color:#0000ff">import </span>threading</span>
+<span class="odt-code-line">import <span style="color:#000000">time</span></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>random <span style="color:#0000ff">import </span>randint</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_api <span style="color:#0000ff">import </span>status</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_wtf.csrf <span style="color:#0000ff">import </span>generate_csrf, validate_csrf</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>werkzeug.local <span style="color:#0000ff">import </span>LocalProxy</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>wtforms <span style="color:#0000ff">import </span>ValidationError</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>InterfaceController <span style="color:#0000ff">import </span>InterfaceController</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>Logger <span style="color:#0000ff">import </span>Logger</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>SendAdminMail <span style="color:#0000ff">import </span>SendAdminMail</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">def </span>send_adminmail(config: dict, message: str):</span>
+<span class="odt-code-line"><span style="color:#000000">    </span># Send an email to the application administrator</span>
+<span class="odt-code-line">    config_mail = config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;adminMail&#x27;</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line">    config_mail<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;logger&quot;</span><span style="font-weight:bold">] </span>= config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;logger&#x27;</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line">    SendAdminMail.send(config_mail, message)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"># Main controller of the application</span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span>MainController(InterfaceController):</span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>execute(self, request: LocalProxy, session: LocalProxy, config: dict) -&gt; (dict, int):</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># Processing the request</span>
+<span class="odt-code-line">        type_response1 = <span style="color:#0000ff">None</span></span>
+<span class="odt-code-line">        logger = <span style="color:#0000ff">None</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">try</span>:</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># retrieve the path elements</span>
+<span class="odt-code-line">            params = request.path.split(<span style="color:#a31515">&#x27;/&#x27;</span>)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">            </span># the action is the first element</span>
+<span class="odt-code-line">            action = params<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#098658">1</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">            <span style="color:#008000"># logger</span></span>
+<span class="odt-code-line">            logger = Logger(config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;logsFilename&#x27;</span><span style="font-weight:bold">]</span>)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">            </span>…</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">            </span># The /display-error-list-view action is special</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># no checks are performed, otherwise there is a risk of entering an infinite loop of redirects</span>
+<span class="odt-code-line">            error = <span style="color:#0000ff">False</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="background-color:#fff2cc;color:#000000">action != </span><span style="background-color:#fff2cc">&quot;display-error-list-view</span>&quot;<span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span># if error, [result] is the result to send to the client</span>
+<span class="odt-code-line">                (error, result, response_type1) = <span style="background-color:#fff2cc">MainController.check_action</span>(params, session, config)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">            </span># if no error - the action is executed</span>
+<span class="odt-code-line">            <span style="color:#0000ff">if not </span>error:</span>
+<span class="odt-code-line"><span style="color:#000000">                </span># execute the controller associated with the action</span>
+<span class="odt-code-line">                controller = config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;controllers&#x27;</span><span style="font-weight:bold">][action]</span></span>
+<span class="odt-code-line">                result, status_code = controller.execute(request, session, config)</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#0000ff">except </span>BaseException <span style="color:#0000ff">as </span>exception:</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># (unexpected) exceptions</span>
+<span class="odt-code-line">            result = {<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;status&quot;</span>:<span style="color:#098658"> 131</span>, <span style="color:#a31515">&quot;response&quot;</span>: <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{exception}</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">]</span>}</span>
+<span class="odt-code-line">            error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#0000ff">finally</span>:</span>
+<span class="odt-code-line">            <span style="color:#0000ff">pass</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># runtime error</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>error:</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># invalid request</span>
+<span class="odt-code-line">            status_code = status.HTTP_400_BAD_REQUEST</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="background-color:#fff2cc;color:#000000">config</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">[</span><span style="font-weight:bold;background-color:#fff2cc">&#x27;parameters&#x27;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">][</span><span style="font-weight:bold;background-color:#fff2cc">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">]</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span># add the csrf_token to the result</span>
+<span class="odt-code-line">            result<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;csrf_token&#x27;</span><span style="font-weight:bold">] </span>= generate_csrf()</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span>….</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># send the HTTP response</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>response, status_code</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    @staticmethod</span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>check_action(params: list, session: LocalProxy, config: dict) -&gt; (bool, dict, str):</span>
+<span class="odt-code-line"><span style="color:#000000">        </span>…</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># Result of the method</span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>error, result, response_type1</span>
+</code></pre></div>
+
+<ul>
+  <li>lines 39–44: the first checks are performed on the action. We’ll come back to this. The static method <b>[</b><b><span style="color: #000000"><mark style="background-color: #fff2cc">MainController.check_action</mark></span></b><b>] </b>returns a tuple of three elements:
+    <ul>
+      <li><b>[error]</b>: True if an error was detected, False otherwise;
+      </li>
+      <li><b>[result]</b>: an error result if (error == True), None otherwise;
+      </li>
+      <li><b>[response_type1]</b>: the type (json, xml, html, None) of the session, as found in the session;
+      </li>
+    </ul>
+  </li>
+  <li>line 39: no check is performed if the action is the ASV action <b>[display-error-list-view], </b>which displays the list of errors. Indeed, if an error were found during this action, we would be redirected back to the <b>[/display-error-list-view] </b>action and enter an infinite loop of redirects;
+  </li>
+  <li>The static method <b>[check_action] </b>is as follows:
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line">    @staticmethod</span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>check_action(params: list, session: LocalProxy, config: dict) -&gt; (bool, dict, str):</span>
+<span class="odt-code-line">        <span style="color:#008000"># retrieve the current action</span></span>
+<span class="odt-code-line">        action = params<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#098658">1</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># no error and no result initially</span></span>
+<span class="odt-code-line">        error = <span style="color:#0000ff">False</span></span>
+<span class="odt-code-line">        result = <span style="color:#0000ff">None</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># The session type must be known before certain ADS actions</span></span>
+<span class="odt-code-line">        response_type1 = session.get(<span style="color:#a31515">&#x27;response_type&#x27;</span>)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>type_response1 <span style="color:#0000ff">is None and </span>action != <span style="color:#a31515">&quot;init-session&quot;</span>:</span>
+<span class="odt-code-line">            <span style="color:#008000"># log the error</span></span>
+<span class="odt-code-line">            result = {<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;status&quot;</span>:<span style="color:#098658"> 101</span>,</span>
+<span class="odt-code-line">                        <span style="color:#a31515">&quot;response&quot;</span>: <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;No session in progress. Start with action [init-session</span><span style="font-weight:bold">]</span><span style="color:#a31515">&quot;</span>]}</span>
+<span class="odt-code-line">            error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># For certain ADS actions, you must be authenticated</span></span>
+<span class="odt-code-line">        user = session.get(<span style="color:#a31515">&#x27;user&#x27;</span>)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>user <span style="color:#0000ff">is None and </span>action <span style="color:#0000ff">is not in </span><span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;init-session&quot;</span><span style="font-weight:bold">,</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                                           </span><span style="font-weight:bold;color:#a31515">&quot;authenticate-user&quot;</span><span style="font-weight:bold">,</span></span>
+<span class="odt-code-line"><span style="font-weight:bold">                                           </span><span style="font-weight:bold;color:#a31515">&quot;display-authentication-view&quot;</span><span style="font-weight:bold">]</span>:</span>
+<span class="odt-code-line">            <span style="color:#008000"># Log the error</span></span>
+<span class="odt-code-line">            result = {<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;status&quot;</span>:<span style="color:#098658"> 101</span>,</span>
+<span class="odt-code-line">                        <span style="color:#a31515">&quot;response&quot;</span>: <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;action [</span><span style="font-weight:bold">{action}] </span><span style="color:#a31515">requested by unauthenticated user&quot;</span>]}</span>
+<span class="odt-code-line">            error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># From a view, only certain actions are possible</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if not </span><span style="color:#000000">error </span><span style="color:#0000ff">and </span><span style="color:#000000">action != </span><span style="color:#a31515">&quot;init-session&quot;</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># no actions are possible at this time</span></span>
+<span class="odt-code-line"><span style="color:#000000">            possible_actions = </span><span style="color:#0000ff">None</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># retrieve the model for the future view from the session if it exists</span></span>
+<span class="odt-code-line"><span style="color:#000000">            model = session.get(</span><span style="color:#a31515">&#x27;model&#x27;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># if a model was found, retrieve its possible actions</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">model:</span></span>
+<span class="odt-code-line"><span style="color:#000000">                possible_actions = model.get(</span><span style="color:#a31515">&#x27;possible_actions&#x27;</span><span style="color:#000000">)</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># if we have a list of possible actions, check if the current action is among them</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">possible_actions </span><span style="color:#0000ff">and </span><span style="color:#000000">action </span><span style="color:#0000ff">not in </span><span style="color:#000000">possible_actions:</span></span>
+<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#008000"># log the error</span></span>
+<span class="odt-code-line"><span style="color:#000000">                result = {</span><span style="color:#a31515">&quot;action&quot;</span><span style="color:#000000">: action, </span><span style="color:#a31515">&quot;status&quot;</span><span style="color:#000000">:</span><span style="color:#098658"> 151</span><span style="color:#000000">,</span></span>
+<span class="odt-code-line"><span style="color:#000000">                            </span><span style="color:#a31515">&quot;response&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="color:#a31515">Incorrect </span><span style="font-weight:bold;color:#a31515">action [</span><span style="font-weight:bold;color:#000000">{action}] </span><span style="color:#a31515">in the current environment&quot;</span><span style="color:#000000">]}</span></span>
+<span class="odt-code-line"><span style="color:#000000">                error = </span><span style="color:#0000ff">True</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># error?</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">if not </span>error <span style="color:#0000ff">and </span>config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold">]</span>:</span>
+<span class="odt-code-line">            <span style="color:#008000"># check the validity of the CSRF token</span></span>
+<span class="odt-code-line">            <span style="color:#008000"># the csrf_token is the last element of the path</span></span>
+<span class="odt-code-line">            csrf_token = params.pop()</span>
+<span class="odt-code-line">            <span style="color:#0000ff">try</span>:</span>
+<span class="odt-code-line">                <span style="color:#008000"># An exception will be raised if the csrf_token is invalid</span></span>
+<span class="odt-code-line">                validate_csrf(csrf_token)</span>
+<span class="odt-code-line">            <span style="color:#0000ff">except </span>ValidationError <span style="color:#0000ff">as </span>exception:</span>
+<span class="odt-code-line">                <span style="color:#008000"># invalid CSRF token</span></span>
+<span class="odt-code-line">                result = {<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;status&quot;</span>:<span style="color:#098658"> 121</span>, <span style="color:#a31515">&quot;response&quot;</span>: <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{exception}</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">]</span>}</span>
+<span class="odt-code-line">                <span style="color:#008000"># Log the error</span></span>
+<span class="odt-code-line">                error = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">        <span style="color:#008000"># result of the method</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">return </span>error, result, response_type1</span>
+</code></pre></div>
+
+<ul>
+  <li>line 2: the <b>[check_action] </b>method performs several checks on the validity of the current action;
+  </li>
+  <li>lines 6–26, 45–57: previous versions already performed these checks;
+  </li>
+  <li>lines 28–42: a new check is added. We verify whether the current action is possible given the application’s current state. If the current action is not possible, we generate a status code 151 (line 40), which ensures that the current action will be redirected to the unexpected errors view;
+<a id="toc48549332"></a>
+
+### 35.2.6. <span style="color: #4f81bd">The new HTML response</span>
+
+  </li>
+</ul>
+
+<p><img src="images/100000000000018F000000C50A5589CA.png" style="width:4.6cm;height:2.272cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018F000000C50A5589CA.png" /></p>
+<p>The current changes apply only to HTML sessions. JSON or XML sessions are not affected. The <strong>[HtmlResponse]</strong> class is updated as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"># dependencies</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask <span style="color:#0000ff">import </span>make_response, redirect, render_template</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask.wrappers <span style="color:#0000ff">import </span>Response</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_api <span style="color:#0000ff">import </span>status</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_wtf.csrf <span style="color:#0000ff">import </span>generate_csrf</span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>werkzeug.local <span style="color:#0000ff">import </span>LocalProxy</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">from </span>InterfaceResponse <span style="color:#0000ff">import </span>InterfaceResponse</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#0000ff">class </span>HtmlResponse(InterfaceResponse):</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">    <span style="color:#0000ff">def </span>build_http_response(self, request: LocalProxy, session: LocalProxy, config: dict, status_code: int,</span>
+<span class="odt-code-line">                            result: dict) -&gt; (Response, int):</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># The HTML response depends on the status code returned by the controller</span>
+<span class="odt-code-line">        status = result<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;status&quot;</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># check if the status was generated by an ASV action</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># in which case, a view must be displayed</span>
+<span class="odt-code-line">        asv_configs = config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&quot;asv&quot;</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line">        found = <span style="color:#0000ff">False</span></span>
+<span class="odt-code-line">        i =<span style="color:#098658"> 0</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># iterate through the list of views</span>
+<span class="odt-code-line">        nb_views = len(asv_configs)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">while not </span>found <span style="color:#0000ff">and </span>i &lt; nb_views:</span>
+<span class="odt-code-line">            <span style="color:#008000"># view #i</span></span>
+<span class="odt-code-line">            asv_config = asv_configs<span style="font-weight:bold">[i]</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span># states associated with view #i</span>
+<span class="odt-code-line">            states = asv_config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;states&quot;</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"><span style="color:#000000">            </span># Is the state being searched for among the states associated with view #i</span>
+<span class="odt-code-line">            <span style="color:#0000ff">if </span>state <span style="color:#0000ff">in </span>states:</span>
+<span class="odt-code-line">                found = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">else</span>:</span>
+<span class="odt-code-line">                <span style="color:#008000"># next view</span></span>
+<span class="odt-code-line">                i +=<span style="color:#098658"> 1</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># found?</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>found:</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># this is an ASV action - we need to display a view whose model is already in session</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># generate the HTML code for the response</span>
+<span class="odt-code-line">            html = render_template(asv_config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;view_name&quot;</span><span style="font-weight:bold">]</span>, template=session<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;template&#x27;</span><span style="font-weight:bold">]</span>)</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># we construct the HTTP response</span>
+<span class="odt-code-line">            response = make_response(html)</span>
+<span class="odt-code-line"><span style="color:#000000">            response.headers</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold">&#x27;Content-Type&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span>&#x27;text/html; charset=utf-8&#x27;</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># Return the result</span>
+<span class="odt-code-line">            <span style="color:#0000ff">return </span>response, status_code</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># Not found - this is an ADS action status code</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># This will be followed by a redirect</span>
+<span class="odt-code-line">        redirected = <span style="color:#0000ff">False</span></span>
+<span class="odt-code-line">        <span style="color:#0000ff">for </span>ads <span style="color:#0000ff">in </span>config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;ads&#x27;</span><span style="font-weight:bold">]</span>:</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># states requiring a redirect</span>
+<span class="odt-code-line">            states = ads<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;states&quot;</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line">            <span style="color:#0000ff">if </span>status <span style="color:#0000ff">in </span>statuses:</span>
+<span class="odt-code-line"><span style="color:#000000">                </span># there is a redirect</span>
+<span class="odt-code-line">                redirected = <span style="color:#0000ff">True</span></span>
+<span class="odt-code-line">                <span style="color:#0000ff">break</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># Redirect dictionary for unexpected errors</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if not </span>redirected:</span>
+<span class="odt-code-line">            ads = config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;error_view&#x27;</span><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">        </span># Is this a redirect to an ASD or ASV action?</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># if there is a template, then it is a redirect to an ASV action</span>
+<span class="odt-code-line"><span style="color:#000000">        </span># we must then calculate the model for the V view that will be displayed by the ASV action</span>
+<span class="odt-code-line">        model_for_view = ads.get(<span style="color:#a31515">&quot;model_for_view&quot;</span>)</span>
+<span class="odt-code-line">        <span style="color:#0000ff">if </span>model_for_view:</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># Calculate the model for the next view</span>
+<span class="odt-code-line">            model = model_for_view.get_model_for_view(request, session, config, result)</span>
+<span class="odt-code-line"><span style="color:#000000">            </span># the model is set in the session for the next view</span>
+<span class="odt-code-line">            session<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;model&#x27;</span><span style="font-weight:bold">] </span>= model</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># now we need to generate the redirect URL, including the CSRF token if required</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            csrf_token = </span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span><span style="color:#000000">{generate_csrf()}</span><span style="color:#a31515">&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
+<span class="odt-code-line"><span style="color:#000000">            csrf_token = </span><span style="color:#a31515">&quot;&quot;</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># Redirect response</span></span>
+<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">redirect(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{ads</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;to&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}{csrf_token}</span><span style="color:#a31515">&quot;</span><span style="color:#000000">), status.HTTP_302_FOUND</span></span>
+</code></pre></div>
+
+<ul>
+  <li>lines 18–35: check if the status returned by the last executed action is that of an ASV action;
+  </li>
+  <li>lines 36–46: if so, the V view associated with the ASV action is displayed using the model <b>found in the session </b>associated with the <b>[‘model’] </b>key;
+  </li>
+  <li>lines 48-60: when we reach this point, we know that the status produced by the last executed action is that of an ADS action. It will then trigger a redirect. We search the configuration file for its definition;
+  </li>
+  <li>line 62: when we reach this point, we have the configuration for the redirect to be performed. There are two cases:
+    <ul>
+      <li>it is a redirection to another ADS action. In this case, there is no view model to calculate;
+      </li>
+      <li>it is a redirect to an ASV action. In this case, a view model must be calculated (lines 67–68). This model is then added to the session (line 70);
+      </li>
+    </ul>
+  </li>
+  <li>lines 72–76: the redirect URL is calculated;
+  </li>
+  <li>lines 78–79: the redirect response is sent to the client;
+<a id="toc48549333"></a>
+
+## 35.3. <span style="color: #4f81bd">Tests</span>
+
+  </li>
+</ul>
+
+<p>Perform the following tests using a browser:</p>
+<ul>
+  <li>Use the application as usual. Verify that the only URLs displayed by the browser are ASV URLs <b>[/display-view-view_name]</b>;
+  </li>
+  <li>refresh the pages (F5) and verify that the same page is displayed again. There are no side effects;
+  </li>
+</ul>
+
+<p>Additionally, use the client <strong>[impots/http-clients/09]</strong>. Since the changes made only affect HTML sessions, the clients <strong>[main, main2, main3, Test1HttpClientDaoWithSession, Test2HttpClientDaoWithSession]</strong> should continue to function.</p>
+<p>Now let’s look at a case where an action is impossible. The following view is displayed:</p>
+<p><img src="images/100000000000054800000309B0820BC0.png" style="width:15.619cm;height:8.976cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000054800000309B0820BC0.png" /></p>
+<p>Instead of <strong>[1]</strong>, enter the URL <strong>[/delete-simulation/1]</strong>. The action <strong>[/delete-simulation]</strong> is not among the actions offered by the view, which are actions 1–4. It will therefore be rejected. The server response is as follows:</p>
+<p><img src="images/100000000000058D0000021D6D70A545.png" style="width:16.422cm;height:6.251cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058D0000021D6D70A545.png" /></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://tahe.developpez.com" target="_blank">
+          https://tahe.developpez.com
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
