@@ -1141,6 +1141,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#293-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29.3. Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#294-the-main-script-main" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1152,10 +1163,82 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#295-controllers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29.5. Controllers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#296-postman-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29.6. Postman Tests
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#297-the-web-client" class="md-nav__link">
     <span class="md-ellipsis">
       
         29.7. The web client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="29.7. The web client">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2971-client-layer-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29.7.1. Client Layer Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2972-implementation-of-the-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29.7.2. Implementation of the [dao] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#298-the-main-main2-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29.8. The [main, main2] scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#299-client-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29.9. Client tests
       
     </span>
   </a>
@@ -1487,13 +1570,10 @@
 <p><img src="images/1000000000000213000002CD6E21E5B2.png" style="width:5.519cm;height:7.454cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000213000002CD6E21E5B2.png" /></p>
 <ul>
   <li>The <b>[http-servers/06] </b>directory is initially created by copying the <b>[http-servers/05] </b>directory. We will indeed retain the features of the previous version 10. We will simply add a new feature to it. This is implemented by the presence of a new controller <b>[get_admindata_controller] [1]</b>. The other controller <b>[calculate_tax_controller] </b>is none other than the old <b>[index_controller] </b>that has been renamed;
-<a id="toc48549229"></a>
-
-## 29.3. <span style="color: #4f81bd">Configuration</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549229"></a></p>
+<h2 id="293-configuration">29.3. <span style="color: #4f81bd">Configuration</span></h2>
 <p>The server will offer two service URLs:</p>
 <ul>
   <li><b>[/calculate-tax] </b>to calculate the tax for a list of taxpayers passed in the body of a POST request. It therefore corresponds to the <b>[/] </b>URL from the previous version 10;
@@ -1640,13 +1720,10 @@
     </ul>
   </li>
   <li>lines 62-63: once the URL action has been retrieved, we know which controller to use to handle the URL. This information is in the configuration <b>[config]</b>;
-<a id="toc48549231"></a>
-
-## 29.5. <span style="color: #4f81bd">Controllers</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549231"></a></p>
+<h2 id="295-controllers">29.5. <span style="color: #4f81bd">Controllers</span></h2>
 <p>The <strong>[calculate_tax_controller]</strong> is none other than the <strong>[index_controller]</strong> from the previous version.</p>
 <p>The <strong>[get_admindata_controller]</strong> controller is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1662,13 +1739,10 @@
   <li>The URL <b>[/get-admindata] </b>must return the JSON string of the tax administration data;
   </li>
   <li>line 6: this data was retrieved by the main script <b>[main] </b>and placed in the dictionary <b>[config] </b>as an <b>[AdminData] </b>object. We return the dictionary of this object;
-<a id="toc48549232"></a>
-
-## 29.6. <span style="color: #4f81bd">Postman Tests</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549232"></a></p>
+<h2 id="296-postman-tests">29.6. <span style="color: #4f81bd">Postman Tests</span></h2>
 <p>We start the web server, the DBMS, and the mail server <strong>[hMailServer]</strong>. Then, using a Postman client, we calculate the tax for several taxpayers:</p>
 <p><img src="images/10000000000003F7000002A033324B17.png" style="width:11.719cm;height:7.759cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003F7000002A033324B17.png" /></p>
 <p>In the Postman console, the client/server dialogue is as follows:</p>
@@ -1742,13 +1816,10 @@
   <li>adding a new method to the <b>[dao] </b>layer;
   </li>
   <li>writing a script <b>[main2] </b>that will rely on the client’s <b>[business] </b>layer to calculate taxpayers’ taxes;
-<a id="toc48549234"></a>
-
-### 29.7.1. <span style="color: #4f81bd">Client Layer Configuration</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549234"></a></p>
+<h3 id="2971-client-layer-configuration">29.7.1. <span style="color: #4f81bd">Client Layer Configuration</span></h3>
 <p>Layer configuration occurs in two places:</p>
 <ul>
   <li>in the <b>[config] </b>configuration, which must include the folder containing the <b>[business] </b>layer implementation in the client’s dependencies. This folder was already included in the dependencies:
@@ -1803,13 +1874,10 @@
   <li>lines 4–6: instantiation of the <b>[business] </b>layer;
   </li>
   <li>lines 13-16: the <b>[business] </b>layer is returned in the layer dictionary;
-<a id="toc48549235"></a>
-
-### 29.7.2. <span style="color: #4f81bd">Implementation of the [dao] layer</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549235"></a></p>
+<h3 id="2972-implementation-of-the-dao-layer">29.7.2. <span style="color: #4f81bd">Implementation of the [dao] layer</span></h3>
 <p><img src="images/100000000000023B0000010ECF4FA858.png" style="width:5.93cm;height:2.805cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000023B0000010ECF4FA858.png" /></p>
 <p>The <strong>[dao]</strong> layer will implement the following <strong>[InterfaceImpôtsDaoWithHttpClient]</strong> interface:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1947,13 +2015,10 @@
   <li>lines 58–60: if the HTTP status of the response is not 200, then an exception is thrown;
   </li>
   <li>lines 61-62: the <b>[AdminData] </b>object encapsulating the tax administration data sent by the server is returned;
-<a id="toc48549236"></a>
-
-## 29.8. <span style="color: #4f81bd">The [main, main2] scripts</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549236"></a></p>
+<h2 id="298-the-main-main2-scripts">29.8. <span style="color: #4f81bd">The [main, main2] scripts</span></h2>
 <p>The <strong>[main]</strong> script is the one from the previous version. It uses the <strong>[</strong><strong><span style="color: #000000">calculate_tax_in_bulk_mode</span></strong><strong>]</strong> method from the <strong>[dao]</strong> layer and therefore uses the server’s <strong>[business]</strong> layer;</p>
 <p>The <strong>[main2]</strong> script does the same thing as the <strong>[main]</strong> script but uses the client’s <strong>[business]</strong> layer:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2008,13 +2073,10 @@
   <li>lines 26-27: retrieve data from the tax authority’s server;
   </li>
   <li>lines 28-31: then the taxpayers&#x27; tax is calculated locally;
-<a id="toc48549237"></a>
-
-## 29.9. <span style="color: #4f81bd">Client tests</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549237"></a></p>
+<h2 id="299-client-tests">29.9. <span style="color: #4f81bd">Client tests</span></h2>
 <p>In each of the scripts <strong>[main, main2],</strong> we log the start and end of the script. This allows us to calculate the script’s execution time. Let’s make some predictions:</p>
 <ul>
   <li>the <b>[main] </b>script from the previous version:
@@ -2099,6 +2161,8 @@
   <li>line 14: the last response to the client <b>[main]</b>. There are 6 milliseconds and 647 nanoseconds between the two;
   </li>
   <li>lines 15–16: the single request from client <b>[main2]</b>. The response is instantaneous;
+  </li>
+</ul>
 
 
 

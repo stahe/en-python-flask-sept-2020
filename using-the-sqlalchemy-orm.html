@@ -872,6 +872,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#1921-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.1. Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1922-demo-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.2.2. [demo] script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1923-the-main-script" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -892,6 +914,17 @@
     <span class="md-ellipsis">
       
         19.3. Scripts 02: [sqlalchemy] mappings
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#194-scripts-03-manipulating-session-entities-sqlalchemy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.4. Scripts 03: manipulating session entities [sqlalchemy]
       
     </span>
   </a>
@@ -933,6 +966,28 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#1962-the-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.6.2. The databases
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1963-entities-handled-by-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.6.3. Entities handled by the application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1964-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -955,10 +1010,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#1966-database-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.6.6. Database Initialization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1967-the-dao-layer-2" class="md-nav__link">
     <span class="md-ellipsis">
       
         19.6.7. The [dao] layer – 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1968-the-main_joined_queries-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19.6.8. The [main_joined_queries] script
       
     </span>
   </a>
@@ -1581,13 +1658,10 @@
 <p><img src="images/10000000000004730000018C58EFD1D0.png" style="width:13.139cm;height:4.568cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004730000018C58EFD1D0.png" /></p>
 <ul>
   <li>in <b>[1]</b>, the scripts that will be studied. These scripts will use the classes from <b>[2]</b>: BaseEntity, MyException, Person, Utils;
-<a id="toc48549074"></a>
-
-### 19.2.1. <span style="color: #4f81bd">Configuration</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549074"></a></p>
+<h3 id="1921-configuration">19.2.1. <span style="color: #4f81bd">Configuration</span></h3>
 <p>The <strong>[config]</strong> file configures the application as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">def </span>configure():</span>
@@ -1619,13 +1693,10 @@
   <li>lines 12-13: we set the application’s Python Path;
   </li>
   <li>lines 16-17: you may recall that the |BaseEntity| class has a class attribute named <b>[excluded_keys]</b>. This attribute is a list in which we place the class properties that we do not want to appear in the class dictionary (asdict function). Here we exclude the <b>[</b><b><span style="color: #a31515">_sa_instance_state</span></b><b>] </b>property from the state of the <b>[Person] </b>class. We’ll see why shortly;
-<a id="toc48549075"></a>
-
-### 19.2.2. <span style="color: #4f81bd">[demo] script</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549075"></a></p>
+<h3 id="1922-demo-script">19.2.2. <span style="color: #4f81bd">[demo] script</span></h3>
 <p>The <strong>[demo]</strong> script shows an initial use of the <strong>[sqlalchemy]</strong> ORM:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># Load the application configuration</span>
@@ -2167,13 +2238,10 @@
   <li>in <b>[8]</b>, we see that the <b>[id] </b>column is the primary key;
   </li>
   <li>In <b>[9]</b>, we see the uniqueness constraint on the <b>[last_name, first_name] </b>fields;
-<a id="toc48549078"></a>
-
-## 19.4. <span style="color: #4f81bd">Scripts 03: manipulating session entities [sqlalchemy]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549078"></a></p>
+<h2 id="194-scripts-03-manipulating-session-entities-sqlalchemy">19.4. <span style="color: #4f81bd">Scripts 03: manipulating session entities [sqlalchemy]</span></h2>
 <p><img src="images/1000000000000136000001BB2902EAD6.png" style="width:3.581cm;height:5.117cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000136000001BB2902EAD6.png" /></p>
 <p>The configuration file <strong>[config]</strong> is the same as in the previous example. In the <strong>[main]</strong> script, we perform standard operations <strong>[INSERT, UPDATE, DELETE, SELECT]</strong> on the <strong>[people]</strong> table using <strong>[SQLAlchemy]</strong> methods:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2444,13 +2512,10 @@
   <li>In <b>[1-3]</b>, we find the layers <b>[UI, Business, DAO] </b>already present in the example |troiscouches-v01|. The <b>[DAO] </b>layer now communicates with the <b>[ORM] </b>layer;
   </li>
   <li>layers <b>[1-5] </b>are implemented using Python code;
-<a id="toc48549082"></a>
-
-### 19.6.2. <span style="color: #4f81bd">The databases</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549082"></a></p>
+<h3 id="1962-the-databases">19.6.2. <span style="color: #4f81bd">The databases</span></h3>
 <p>We are creating a MySQL database named <strong>[dbecole]</strong> owned by the user <strong>[admecole]</strong> with the password <strong>[mdpecole]</strong>. To do this, we follow the procedure described in the section <a href="#creationdunebase"><u><span style="color: #0563c1">|Creating a</span></u></a> Database|:</p>
 <p><img src="images/1000000000000473000001C3AB170B89.png" style="width:13.13cm;height:5.198cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000473000001C3AB170B89.png" /></p>
 <p><img src="images/10000000000005EA000001D05278D0D1.png" style="width:17.51cm;height:5.368cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005EA000001D05278D0D1.png" /></p>
@@ -2469,13 +2534,10 @@
   <li>in <b>[2]</b>, the user <b>[admecole]</b>;
   </li>
   <li>in <b>[3-4]</b>, the database <b>[dbecole] </b>is owned by the user <b>[admecole]</b>;
-<a id="toc48549083"></a>
-
-### 19.6.3. <span style="color: #4f81bd">Entities handled by the application</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549083"></a></p>
+<h3 id="1963-entities-handled-by-the-application">19.6.3. <span style="color: #4f81bd">Entities handled by the application</span></h3>
 <p>In the <a href="#exemple1"><u><span style="color: #0563c1">|troiscouches</span></u></a> v01| application, the entities handled were as follows (see |entities|). These are the entities that will be stored in the previous databases. We will not duplicate these entities in the new application. We will retrieve them from where they are already defined.</p>
 <p>The <strong>[Class]</strong> class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -3280,13 +3342,10 @@
   <li>line 43: the <b>[sqlalchemy] </b>session is committed. After this operation, we can be sure that all data in the session has been synchronized with the database. In short, the data has been inserted into the tables. This was made possible by the mappings defined in the <b>[sqlalchemy] </b>configuration. <b>[sqlalchemy] </b>knows how each entity should be stored in the tables. <b>[sqlalchemy] </b>also generated any foreign keys that the tables may have;
   </li>
   <li>lines 44–49: if a problem is encountered, the <b>[sqlalchemy] </b>session is rolled back, and on line 49, an exception is raised; 
-<a id="toc48549086"></a>
-
-### 19.6.6. <span style="color: #4f81bd">Database Initialization</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549086"></a></p>
+<h3 id="1966-database-initialization">19.6.6. <span style="color: #4f81bd">Database Initialization</span></h3>
 <p><img src="images/10000000000001C200000247D61944EA.png" style="width:4.673cm;height:6.054cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C200000247D61944EA.png" /></p>
 <p>The <strong>[main_init_database]</strong> script initializes the database with the contents of the <strong>[data.py]</strong> script. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -3516,15 +3575,12 @@
       <li>find a class, lines 71–89;
       </li>
       <li>retrieve a subject, lines 91–109;
-<a id="toc48549088"></a>
-
-### 19.6.8. <span style="color: #4f81bd">The [main\_joined\_queries] script</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="toc48549088"></a></p>
+<h3 id="1968-the-main_joined_queries-script">19.6.8. <span style="color: #4f81bd">The [main_joined_queries] script</span></h3>
 <p><img src="images/10000000000001B2000001A573DA45F8.png" style="width:4.51cm;height:4.376cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B2000001A573DA45F8.png" /></p>
 <p>The <strong>[main_joined_queries]</strong> script is so named because it aims to highlight the queries implicitly made by <strong>[sqlalchemy]</strong> to retrieve information from multiple tables. These queries, hidden from the programmer, are made whenever a property of an entity has been associated with the <strong>[relationship]</strong> function in the entity’s mapping. For example:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">

@@ -695,7 +695,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="13.1. The MyException class">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#132-the-baseentity-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2. The [BaseEntity] class
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2. The [BaseEntity] class">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -719,7 +730,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="13.2.1.1. Definition">
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13212-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.1.2. Examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="13.2.1.2. Examples">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -738,6 +760,39 @@
     <span class="md-ellipsis">
       
         13.2.1.2.2. The [Person] class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132123-the-teacher-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.1.2.3. The [Teacher] class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132124-the-config-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.1.2.4. The [config] configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132125-the-fromdict_01-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.1.2.5. The [fromdict_01] script
       
     </span>
   </a>
@@ -810,8 +865,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#13222-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.2.2. Examples
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1323-the-baseentityasjson-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13.2.3. The [BaseEntity.asjson] method
+      
+    </span>
+  </a>
   
 </li>
         
@@ -1572,8 +1649,6 @@
 <p><a id="toc48549013"></a>
 <a id="lesclassesgeneriques"></a></p>
 <h1 id="13-the-generic-classes-baseentity-and-myexception">13. <span style="color: #365f91">The generic classes [BaseEntity] and [MyException]</span></h1>
-<p></li>
-</ul></p>
 <p>We will now define two classes that we will use regularly going forward.</p>
 <p><img src="images/100000000000015F000001ED11B0338D.png" style="width:4.052cm;height:5.69cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015F000001ED11B0338D.png" /></p>
 <p><a id="toc48549014"></a>
@@ -1628,14 +1703,11 @@
   <li>lines 14–27: the <b>[code] </b>attribute is accessed via a getter/setter;
   </li>
   <li>lines 23–24: the validity of the <b>[code] </b>attribute is checked: it must be an integer greater than 0;
-<a id="toc48549015"></a>
-<a id="laclassebaseentity"></a>
-
-## 13.2. <span style="color: #4f81bd">The [BaseEntity] class</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549015"></a>
+<a id="laclassebaseentity"></a></p>
+<h2 id="132-the-baseentity-class">13.2. <span style="color: #4f81bd">The [BaseEntity] class</span></h2>
 <p>The <strong>[BaseEntity]</strong> class will be the parent class of most of the classes we create to encapsulate information about an object. Moving forward, we will primarily use two types of classes:</p>
 <ul>
   <li>classes whose sole purpose is to encapsulate information about a single object in one place. These will have no behaviors (methods) other than getters/setters and a display function (__str__). If there are N objects to manage, these classes are instantiated N times. <b>[BaseEntity] </b>will be the parent class of this type of class;
@@ -1773,11 +1845,9 @@
   <li>line 14: if the key is among the object’s properties, then it is assigned to the object <b>[self] </b>using the predefined function <b>[setattr]</b>;
   </li>
   <li>line 16: the function returns the initialized object;
-#### 13.2.1.2. <span style="color: #4f81bd">Examples</span>
-
   </li>
 </ul>
-
+<h4 id="13212-examples">13.2.1.2. <span style="color: #4f81bd">Examples</span></h4>
 <p><img src="images/10000000000001160000018995EC20FD.png" style="width:3.223cm;height:4.554cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001160000018995EC20FD.png" /></p>
 <h5 id="132121-the-utils-class">13.2.1.2.1. <span style="color: #243f60">The [Utils] class</span></h5>
 <p>The <strong>[Utils]</strong> class (Utils.py) is as follows:</p>
@@ -1878,13 +1948,11 @@
       <li>it has a static method, <b>[get_allowed_keys]</b>, lines 17–20, which defines the list of its properties. The properties specific to the <b>[Person] </b>class are added to those of the parent class <b>[BaseEntity]</b>;
       </li>
       <li>it has a static list <b>[excluded_keys], </b>which we will return to later;
-##### 13.2.1.2.3. <span style="color: #243f60">The [Teacher] class</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<h5 id="132123-the-teacher-class">13.2.1.2.3. <span style="color: #243f60">The [Teacher] class</span></h5>
 <p>The <strong>[Teacher]</strong> class (Teacher.py) derives from the <strong>[Person]</strong> class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># imports</span>
@@ -1933,11 +2001,9 @@
   <li>lines 18–21: define the list of properties for the class;
   </li>
   <li>lines 37–38: the <b>[show] </b>method displays the teacher’s identity;
-##### 13.2.1.2.4. <span style="color: #243f60">The [config] configuration</span>
-
   </li>
 </ul>
-
+<h5 id="132124-the-config-configuration">13.2.1.2.4. <span style="color: #243f60">The [config] configuration</span></h5>
 <p>The example scripts use the following <strong>[config]</strong> configuration:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">def </span>configure():</span>
@@ -1966,11 +2032,9 @@
   <li>lines 14–15: the Python Path is constructed;
   </li>
   <li>line 18: returns an empty dictionary (there are no other configurations besides the syspath);
-##### 13.2.1.2.5. <span style="color: #243f60">The [fromdict\_01] script</span>
-
   </li>
 </ul>
-
+<h5 id="132125-the-fromdict_01-script">13.2.1.2.5. <span style="color: #243f60">The [fromdict_01] script</span></h5>
 <p>The <strong>[fromdict_01]</strong> script is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># configure the application</span>
@@ -2266,11 +2330,9 @@
   <li>line 2: the method receives a dictionary and returns a dictionary;
   </li>
   <li>lines 5-6: each value in the dictionary passed as a parameter is replaced with the value returned by the static method <b>[BaseEntity.check_value]</b>. This is therefore a recursive call. The static method <b>[BaseEntity.check_value] </b>is called until its parameter <b>[value] </b>is a simple type (not a BaseEntity, list, or dict);
-#### 13.2.2.2. <span style="color: #4f81bd">Examples</span>
-
   </li>
 </ul>
-
+<h4 id="13222-examples">13.2.2.2. <span style="color: #4f81bd">Examples</span></h4>
 <p>The script <strong>[asdict_01]</strong> demonstrates various uses of the <strong>[asdict]</strong> method:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># configure the application</span>
@@ -2334,17 +2396,14 @@
           <li>there are more properties to include than to exclude: use the single <b>[excluded_keys] </b>parameter;
           </li>
           <li>There are fewer properties to include than to exclude: we will use only the <b>[included_keys] </b>parameter;
-<a id="toc48549018"></a>
-
-### 13.2.3. <span style="color: #4f81bd">The [BaseEntity.asjson] method</span>
-
           </li>
         </ul>
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="toc48549018"></a></p>
+<h3 id="1323-the-baseentityasjson-method">13.2.3. <span style="color: #4f81bd">The [BaseEntity.asjson] method</span></h3>
 <p>This method returns the JSON string of a <strong>[BaseEntity]</strong> object or its derived classes. It outputs the JSON string of the dictionary returned by the <strong>[asdict]</strong> method. Its code is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">def </span>asjson(<span style="color:#808080">self</span>, <span style="color:#808080">included_keys</span>: <span style="color:#2b91af">list </span>= <span style="color:#0000ff">None</span>, <span style="color:#808080">excluded_keys</span>: <span style="color:#2b91af">list </span>= <span style="font-weight:bold">[]</span>) -&gt; <span style="color:#2b91af">str</span>:</span>

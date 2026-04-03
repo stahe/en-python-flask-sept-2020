@@ -1045,6 +1045,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#2522-the-main-script-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.2.2. The main script [main]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2523-the-index_controller-controller" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1054,6 +1065,23 @@
   </a>
   
 </li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#253-the-web-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3. The web client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="25.3. The web client">
+      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#2531-the-dao-layer" class="md-nav__link">
@@ -1089,8 +1117,52 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#25313-the-impotsdaowithhttpsessionfactory-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.1.3. The [ImpôtsDaoWithHttpSessionFactory] class
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2532-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.2. Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2533-the-clients-main-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.3. The client’s main script
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2534-client-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25.3.4. Client execution
+      
+    </span>
+  </a>
   
 </li>
         
@@ -1558,13 +1630,10 @@
   <li>line 17: we will rewrite a controller for the <b>[index] </b>function that handles the / URL;
   </li>
   <li>line 21: we use the utilities from the <a href="#lesutilitaires"><u><span style="color: #0563c1">|previous</span></u></a> version|;
-<a id="toc48549200"></a>
-
-### 25.2.2. <span style="color: #4f81bd">The main script [main]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549200"></a></p>
+<h3 id="2522-the-main-script-main">25.2.2. <span style="color: #4f81bd">The main script [main]</span></h3>
 <p>The new <strong>[main]</strong> script introduces a few changes to the main <strong>[main]</strong> script from the previous version:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"># The Flask application can start</span>
@@ -1707,15 +1776,12 @@
       <li>line 38: we retrieve the administration’s tax data from the session;
       </li>
       <li>line 40: we log the fact that the client has obtained the administration’s tax data from the session;
-<a id="toc48549202"></a>
-
-## 25.3. <span style="color: #4f81bd">The web client</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="toc48549202"></a></p>
+<h2 id="253-the-web-client">25.3. <span style="color: #4f81bd">The web client</span></h2>
 <p><img src="images/1000000000000208000001F24E91AAF1.png" style="width:6.01cm;height:5.756cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000208000001F24E91AAF1.png" /></p>
 <p><a id="toc48549203"></a></p>
 <h3 id="2531-the-dao-layer">25.3.1. <span style="color: #4f81bd">The [dao] layer</span></h3>
@@ -1906,11 +1972,9 @@
 
 <ul>
   <li>Line 1: You must be in the <b>[packages] </b>folder to enter this command;
-#### 25.3.1.3. <span style="color: #4f81bd">The [ImpôtsDaoWithHttpSessionFactory] class</span>
-
   </li>
 </ul>
-
+<h4 id="25313-the-impotsdaowithhttpsessionfactory-class">25.3.1.3. <span style="color: #4f81bd">The [ImpôtsDaoWithHttpSessionFactory] class</span></h4>
 <p>The <strong>[</strong><strong><span style="color: #2b91af">ImpôtsDaoWithHttpSessionFactory</span></strong><strong>]</strong> class is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">from </span>ImpôtsDaoWithHttpSession <span style="color:#0000ff">import </span><span style="color:#2b91af">ImpôtsDaoWithHttpSession</span></span>
@@ -1929,13 +1993,10 @@
 
 <ul>
   <li>The <b>[</b><b><span style="color: #2b91af">ImpôtsDaoWithHttpSessionFactory</span></b><b>] </b>class allows us to create a new implementation of the <b>[dao] </b>layer using the <b>[</b><b><span style="color: #000000">new_instance</span></b><b>] </b>method in lines 10–12;
-<a id="toc48549204"></a>
-
-### 25.3.2. <span style="color: #4f81bd">Configuration</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549204"></a></p>
+<h3 id="2532-configuration">25.3.2. <span style="color: #4f81bd">Configuration</span></h3>
 <p>The <strong>[config_layers]</strong> script, which configures the web client layers, is modified as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">def </span>configure(<span style="color:#808080">config</span>: <span style="color:#2b91af">dict</span>) -&gt; <span style="color:#2b91af">dict</span>:</span>
@@ -1955,13 +2016,10 @@
   <li>lines 5-6: instead of instantiating a single <b>[DAO] </b>layer as was done previously, we instantiate a ‘factory’ for this layer (factory = object production factory, in this case the <b>[DAO] </b>layer);
   </li>
   <li>lines 9-11: we return the layer configuration;
-<a id="toc48549205"></a>
-
-### 25.3.3. <span style="color: #4f81bd">The client’s main script</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549205"></a></p>
+<h3 id="2533-the-clients-main-script">25.3.3. <span style="color: #4f81bd">The client’s main script</span></h3>
 <p>The <strong>[main]</strong> script has changed as follows compared to the previous version:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># configure the application</span>
@@ -2017,13 +2075,10 @@
 
 <ul>
   <li>lines 29-30: each thread has its own <b>[dao] </b>layer;
-<a id="toc48549206"></a>
-
-### 25.3.4. <span style="color: #4f81bd">Client execution</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549206"></a></p>
+<h3 id="2534-client-execution">25.3.4. <span style="color: #4f81bd">Client execution</span></h3>
 <p>The web server is launched, the DBMS is launched, the mail server <strong>[hMailServer]</strong> is launched. Then we launch the web client&#x27;s <strong>[main]</strong> script. The execution logs in <strong>[data/logs/logs.txt]</strong> are then as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">2020-07-25 10:21:46.478511, Thread-1: start of thread <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">Thread-1</span><span style="font-weight:bold">] </span>with 1 taxpayer(s)</span>

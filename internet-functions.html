@@ -937,6 +937,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#2113-the-client-server-relationship" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.1.3. The client-server relationship
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2114-client-architecture" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1120,10 +1131,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#2152-creating-a-gmail-address" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.5.2. Creating a [Gmail] address
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2153-installing-an-smtp-server" class="md-nav__link">
     <span class="md-ellipsis">
       
         21.5.3. Installing an SMTP server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2154-installing-an-email-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.5.4. Installing an email client
       
     </span>
   </a>
@@ -1174,6 +1207,56 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#216-the-pop3-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.6. The POP3 protocol
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="21.6. The POP3 protocol">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#2161-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.6.1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2162-exploring-the-pop3-protocol" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.6.2. Exploring the POP3 protocol
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2163-scripts-pop301-a-basic-pop3-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.6.3. scripts [pop3/01]: a basic POP3 client
+      
+    </span>
+  </a>
+  
+</li>
+        
           <li class="md-nav__item">
   <a href="#2164-scripts-pop302-pop3-client-with-the-poplib-and-email-modules" class="md-nav__link">
     <span class="md-ellipsis">
@@ -1207,6 +1290,17 @@
     <span class="md-ellipsis">
       
         21.7.1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2172-script-imapmain-imap-client-with-the-imaplib-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21.7.2. script [imap/main]: IMAP client with the [imaplib] module
       
     </span>
   </a>
@@ -1774,14 +1868,11 @@
   <li>If, after a certain amount of time, the TCP protocol that sent a segment does not receive an acknowledgment, it retransmits the segment in question, thereby ensuring the quality of the information delivery service;
   </li>
   <li>The virtual circuit established between the two communicating processes is <i>full-duplex</i>: this means that information can flow in both directions. Thus, the destination process can send acknowledgments even while the source process continues to send information. This allows, for example, the source TCP protocol to send multiple segments without waiting for an acknowledgment. If, after a certain amount of time, it realizes it has not received an acknowledgment for a specific segment No. <i>n</i>, it will resume sending segments from that point;
-<a id="refheading10403111168783983"></a>
-<a id="toc48549110"></a>
-
-### 21.1.3. <span style="color: #4f81bd">The client-server relationship</span>
-
   </li>
 </ul>
-
+<p><a id="refheading10403111168783983"></a>
+<a id="toc48549110"></a></p>
+<h3 id="2113-the-client-server-relationship">21.1.3. <span style="color: #4f81bd">The client-server relationship</span></h3>
 <p>Communication over the Internet is often asymmetric: machine A initiates a connection to request a service from machine B, specifying that it wants to establish a connection with service SB1 on machine B. Machine B either accepts or refuses. If it accepts, machine A can send its requests to service SB1. These requests must comply with the communication protocol understood by service SB1. A request-response dialogue is thus established between machine A, known as the <strong>client</strong> machine, and machine B, known as the <strong>server</strong> machine. One of the two partners will close the connection.</p>
 <p><a id="refheading10403131168783983"></a>
 <a id="toc48549111"></a></p>
@@ -3867,17 +3958,14 @@
       <li>a Python script that emulates the SMTP protocol of the <b>[RawTcpClient] </b>client;
       </li>
       <li>a Python script using the <b>[smtplib] </b>module to send all kinds of emails;
-<a id="toc48549126"></a>
-<a id="refheadingtoc95375381407536"></a>
-<a id="creationduneadresse"></a>
-
-### 21.5.2. <span style="color: #4f81bd">Creating a [Gmail] address</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="toc48549126"></a>
+<a id="refheadingtoc95375381407536"></a>
+<a id="creationduneadresse"></a></p>
+<h3 id="2152-creating-a-gmail-address">21.5.2. <span style="color: #4f81bd">Creating a [Gmail] address</span></h3>
 <p>To perform our SMTP tests, we’ll need an email address to send to. To do this, we’ll create a Gmail address [<a href="https://www.google.com/intl/fr/gmail/about/"><u><span style="color: #0563c1">https://www.google.com/intl/fr/gmail/about/</span></u></a>]:</p>
 <p><img src="images/1000000000000260000002E4CDEBD503.png" style="width:7.01cm;height:8.532cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000260000002E4CDEBD503.png" /></p>
 <p><strong>Note</strong>: Send a few emails to the address you created. Do not proceed until you are sure that the account you created is able to receive emails.</p>
@@ -4053,14 +4141,11 @@
 
 <ul>
   <li>line 4, we received the welcome message from the IMAP server;
-<a id="toc48549128"></a>
-<a id="installationdunlecteur"></a>
-
-### 21.5.4. <span style="color: #4f81bd">Installing an email client</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549128"></a>
+<a id="installationdunlecteur"></a></p>
+<h3 id="2154-installing-an-email-client">21.5.4. <span style="color: #4f81bd">Installing an email client</span></h3>
 <p>To read the email we are going to send, we need an email client. For those who don’t have one, we’ll show you how to install and configure <strong>[Thunderbird]</strong>:</p>
 <ul>
   <li>Step <b>[1]</b>: Download <b>[Thunderbird] </b>and install it;
@@ -5323,21 +5408,16 @@
           <li><b>[attached file.pdf]</b>;
           </li>
         </ul>
-<a id="refheadingtoc1357202222329424"></a>
-<a id="toc48549133"></a>
-
-## 21.6. <span style="color: #4f81bd">The POP3 protocol</span>
-
-<a id="refheadingtoc1357222222329424"></a>
-<a id="toc48549134"></a>
-
-### 21.6.1. <span style="color: #4f81bd">Introduction</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="refheadingtoc1357202222329424"></a>
+<a id="toc48549133"></a></p>
+<h2 id="216-the-pop3-protocol">21.6. <span style="color: #4f81bd">The POP3 protocol</span></h2>
+<p><a id="refheadingtoc1357222222329424"></a>
+<a id="toc48549134"></a></p>
+<h3 id="2161-introduction">21.6.1. <span style="color: #4f81bd">Introduction</span></h3>
 <p>To read emails stored on a mail server, two protocols exist:</p>
 <ul>
   <li>the POP3 (Post Office Protocol) protocol, historically the first protocol but rarely used today;
@@ -5364,16 +5444,13 @@
       <li>a Python script that emulates the POP3 protocol of the <b>[RawTcpClient] </b>client;
       </li>
       <li>a Python script using Python modules to handle attachments and establish an encrypted and authenticated connection when required by the POP3 server;
-<a id="refheadingtoc1357242222329424"></a>
-<a id="toc48549135"></a>
-
-### 21.6.2. <span style="color: #4f81bd">Exploring the POP3 protocol</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="refheadingtoc1357242222329424"></a>
+<a id="toc48549135"></a></p>
+<h3 id="2162-exploring-the-pop3-protocol">21.6.2. <span style="color: #4f81bd">Exploring the POP3 protocol</span></h3>
 <p>As we did with the SMTP protocol, we will explore the POP3 protocol using the logs from the <strong>[hMailServer]</strong> mail server. We need to start this server.</p>
 <p>Using Thunderbird, we will:</p>
 <ul>
@@ -5542,16 +5619,13 @@
       <li>the first line begins with <b>[+OK]</b>;
       </li>
       <li>the last line consists of a single period;
-<a id="refheadingtoc1357262222329424"></a>
-<a id="toc48549136"></a>
-
-### 21.6.3. <span style="color: #4f81bd">scripts [pop3/01]: a basic POP3 client</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="refheadingtoc1357262222329424"></a>
+<a id="toc48549136"></a></p>
+<h3 id="2163-scripts-pop301-a-basic-pop3-client">21.6.3. <span style="color: #4f81bd">scripts [pop3/01]: a basic POP3 client</span></h3>
 <p><img src="images/1000000000000143000001A3C17B9BCA.png" style="width:3.722cm;height:4.828cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000143000001A3C17B9BCA.png" /></p>
 <p>Since the POP3 protocol has the same structure as the SMTP protocol, the script <strong>[pop3/01/main.py]</strong> is a port of the script <strong>[smtp/01/main.py]</strong>. It will have the following configuration file <strong>[pop3/01/config.py]</strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -7043,14 +7117,11 @@
   <li>create the folder <b>[folder1]</b>;
   </li>
   <li>move messages into this folder;
-<a id="refheadingtoc3282283081319169"></a>
-<a id="toc48549140"></a>
-
-### 21.7.2. <span style="color: #4f81bd">script [imap/main]: IMAP client with the [imaplib] module</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc3282283081319169"></a>
+<a id="toc48549140"></a></p>
+<h3 id="2172-script-imapmain-imap-client-with-the-imaplib-module">21.7.2. <span style="color: #4f81bd">script [imap/main]: IMAP client with the [imaplib] module</span></h3>
 <p><img src="images/1000000000000114000000E1ECECCBD2.png" style="width:3.18cm;height:2.593cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000114000000E1ECECCBD2.png" /></p>
 <p>The <strong>[imap/main]</strong> script is configured by the following <strong>[imap/config]</strong> script:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">

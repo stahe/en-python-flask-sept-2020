@@ -1136,6 +1136,28 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2823-the-index_controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        28.2.3. The [index_controller]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2824-server-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        28.2.4. Server Testing
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1169,6 +1191,17 @@
     <span class="md-ellipsis">
       
         28.3.2. The main script [main]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2833-client-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        28.3.3. Client Execution
       
     </span>
   </a>
@@ -1549,14 +1582,11 @@
 
 <ul>
   <li>line 2: the / URL is now accessed via a POST request;
-<a id="toc48549219"></a>
-<a id="lecontroleurindexcontroller"></a>
-
-### 28.2.3. <span style="color: #4f81bd">The [index\_controller]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549219"></a>
+<a id="lecontroleurindexcontroller"></a></p>
+<h3 id="2823-the-index_controller">28.2.3. <span style="color: #4f81bd">The [index_controller]</span></h3>
 <p>The <strong>[index_controller]</strong> evolves as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># import dependencies</span>
@@ -1705,13 +1735,10 @@
   <li>line 91: we know that <b>[taxpayer] </b>has been modified by the tax calculation. We convert it into a dictionary and add it to a list of results;
   </li>
   <li>line 93: this list of results is sent to the client;
-<a id="toc48549220"></a>
-
-### 28.2.4. <span style="color: #4f81bd">Server Testing</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549220"></a></p>
+<h3 id="2824-server-testing">28.2.4. <span style="color: #4f81bd">Server Testing</span></h3>
 <p>We will test the server using a Postman client:</p>
 <ul>
   <li>We start the web server, the DBMS, and the mail server <b>[hMailServer]</b>;
@@ -2169,13 +2196,10 @@
 
 <ul>
   <li>lines 9–10: whereas previously we had a loop that passed each taxpayer in turn to the <b>[dao.calculate_tax] </b>method, here we make a single call to the <b>[</b><b><span style="color: #808080">dao</span></b><b><span style="color: #000000">.calculate_tax_in_bulk_mode</span></b><b>] </b>method, passing all taxpayers to it;
-<a id="toc48549224"></a>
-
-### 28.3.3. <span style="color: #4f81bd">Client Execution</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549224"></a></p>
+<h3 id="2833-client-execution">28.3.3. <span style="color: #4f81bd">Client Execution</span></h3>
 <p>We will compare the execution times of versions:</p>
 <ul>
   <li>7, where each taxpayer is the subject of an HTTP request;

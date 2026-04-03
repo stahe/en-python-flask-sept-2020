@@ -1028,11 +1028,50 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#243-the-web-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.3. The web server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="24.3. The web server">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#2431-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         24.3.1. Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2432-the-main-script-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.3.2. The main script [main]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2433-the-controller-index_controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.3.3. The controller [index_controller]
       
     </span>
   </a>
@@ -1050,11 +1089,39 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#244-the-web-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.4. The web client
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="24.4. The web client">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#2441-the-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         24.4.1. The configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2442-the-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.4.2. The [dao] layer
       
     </span>
   </a>
@@ -1072,8 +1139,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#2444-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.4.4. Execution
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#245-dao-layer-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24.5. [DAO] Layer Tests
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1725,13 +1814,10 @@
   <li>lines 24-54: this is the code already covered in example |smtp/02|;
   </li>
   <li>line 20: we retrieve the reference of a logger. This is used on lines 45 and 49;
-<a id="toc48549185"></a>
-
-## 24.3. <span style="color: #4f81bd">The web server</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549185"></a></p>
+<h2 id="243-the-web-server">24.3. <span style="color: #4f81bd">The web server</span></h2>
 <p><a id="toc48549186"></a>
 <a id="configuration1"></a></p>
 <h3 id="2431-configuration">24.3.1. <span style="color: #4f81bd">Configuration</span></h3>
@@ -1824,13 +1910,10 @@
   <li>line 65: to better see the threads in action, we will force some of them to pause. <b>[sleep_time] </b>is the duration of the pause expressed in seconds;
   </li>
   <li>lines 27–28: Note that we are using the <b>[index_controller] </b>from the previous version 6;
-<a id="toc48549187"></a>
-
-### 24.3.2. <span style="color: #4f81bd">The main script [main]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549187"></a></p>
+<h3 id="2432-the-main-script-main">24.3.2. <span style="color: #4f81bd">The main script [main]</span></h3>
 <p>The main script <strong>[main]</strong> is as follows:<a id="hlk46322996"></a></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># Expects a mysql or pgres parameter</span>
@@ -2102,13 +2185,10 @@
   <li>lines 39–40: if the logger exists, we log the error that occurred;
   </li>
   <li>lines 47–48: we close the logger if it exists. Ultimately, the thread creates a logger at the start of the request and closes it once the request has been processed;
-<a id="toc48549188"></a>
-
-### 24.3.3. <span style="color: #4f81bd">The controller [index\_controller]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549188"></a></p>
+<h3 id="2433-the-controller-index_controller">24.3.3. <span style="color: #4f81bd">The controller [index_controller]</span></h3>
 <p>The controller <strong>[index_controller]</strong> that executes the requests is the one from the previous version:</p>
 <p><img src="images/100000000000017E000001F38548F1CF.png" style="width:4.41cm;height:5.761cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017E000001F38548F1CF.png" /></p>
 <p><a id="toc48549189"></a></p>
@@ -2148,13 +2228,10 @@
   <li>lines 1-4: note that the server starts twice because the <b>[Debug=True] </b>mode triggers a second startup;
   </li>
   <li>lines 5-6: the logs give us an idea of the execution time of a request, here 2.293 milliseconds;
-<a id="toc48549190"></a>
-
-## 24.4. <span style="color: #4f81bd">The web client</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549190"></a></p>
+<h2 id="244-the-web-client">24.4. <span style="color: #4f81bd">The web client</span></h2>
 <p><img src="images/1000000000000207000002166A13AA26.png" style="width:6.003cm;height:6.175cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000207000002166A13AA26.png" /></p>
 <p>The <strong>[http-clients/02]</strong> directory is created by copying the <strong>[http-clients/01]</strong> directory. We then make a few modifications.</p>
 <p><a id="toc48549191"></a></p>
@@ -2239,13 +2316,10 @@
   <li>line 49: the absolute path to the log file;
   </li>
   <li>line 60: the <b>[debug=True] </b>mode is used to write the web server&#x27;s responses to the log file;
-<a id="toc48549192"></a>
-
-### 24.4.2. <span style="color: #4f81bd">The [dao] layer</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549192"></a></p>
+<h3 id="2442-the-dao-layer">24.4.2. <span style="color: #4f81bd">The [dao] layer</span></h3>
 <p>The code for the <strong>[</strong><strong><span style="color: #2b91af">ImpôtsDaoWithHttpClient</span></strong><strong>]</strong> class changes slightly:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># imports</span>
@@ -2499,13 +2573,10 @@
   <li>lines 8–14: calculation of taxpayers&#x27; taxes;
   </li>
   <li>line 16: log the end of the thread;
-<a id="toc48549194"></a>
-
-### 24.4.4. <span style="color: #4f81bd">Execution</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549194"></a></p>
+<h3 id="2444-execution">24.4.4. <span style="color: #4f81bd">Execution</span></h3>
 <p>Let’s start the web server as described in the previous section (web server, DBMS, hMailServer, Thunderbird), then run the client’s <strong>[main]</strong> script. In the files <strong>[data/output/errors.txt, data/output/results.json],</strong> we get the same results as in the previous version. In the file <strong>[data/logs/logs.txt]</strong>, we have the following logs:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">2020-07-24 10:05:20.942404, Thread-1: start of thread <span style="font-weight:bold">[Thread-1] </span>with 1 taxpayer(s)</span>
@@ -2606,14 +2677,11 @@
   <li>We can see that 11 threads processed the 11 taxpayers;
   </li>
   <li>some threads were put on hold (lines 6, 8, 12, 14, 20, 22) and others were not (lines 9, 23, 25, 29, 31);
-<a id="toc48549195"></a>
-<a id="testsdela1"></a>
-
-## 24.5. <span style="color: #4f81bd">[DAO] Layer Tests</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549195"></a>
+<a id="testsdela1"></a></p>
+<h2 id="245-dao-layer-tests">24.5. <span style="color: #4f81bd">[DAO] Layer Tests</span></h2>
 <p>As we did in <a href="#testsdela"><u><span style="color: #0563c1">the |previous</span></u></a> version|, we are testing the client’s <strong>[DAO]</strong> layer. The principle is exactly the same:</p>
 <p><img src="images/1000000000000390000003C89110DD1E.png" style="width:10.522cm;height:11.167cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000390000003C89110DD1E.png" /></p>
 <p>The test class will be executed in the following environment:</p>

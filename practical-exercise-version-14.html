@@ -1265,6 +1265,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#342-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.2. Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#343-csrf-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1314,6 +1325,17 @@
     <span class="md-ellipsis">
       
         34.3.4. Routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3435-the-maincontroller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.3.5. The [MainController]
       
     </span>
   </a>
@@ -1558,13 +1580,10 @@
   <li>for HTML pages containing a form, it can send the form with a hidden field <b>[input type=&#x27;hidden&#x27;] </b>containing the CSRF token. This will then be automatically submitted with the form when Alice submits the page. Site A will retrieve the CSRF token from the body of the request;
   </li>
   <li>other techniques are possible;
-<a id="toc48549315"></a>
-
-## 34.2. <span style="color: #4f81bd">Configuration</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549315"></a></p>
+<h2 id="342-configuration">34.2. <span style="color: #4f81bd">Configuration</span></h2>
 <p><img src="images/1000000000000127000000E642E6C9B2.png" style="width:3.41cm;height:2.658cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000127000000E642E6C9B2.png" /></p>
 <p>We add two booleans to the application’s <strong>[parameters]</strong> configuration:</p>
 <ul>
@@ -1879,13 +1898,10 @@
 
 <ul>
   <li>lines 9–13: selecting routes depending on whether the application uses CSRF tokens;
-<a id="toc48549321"></a>
-
-### 34.3.5. <span style="color: #4f81bd">The [MainController]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549321"></a></p>
+<h3 id="3435-the-maincontroller">34.3.5. <span style="color: #4f81bd">The [MainController]</span></h3>
 <p>For each request, the server must verify the presence of the CSRF token. We will do this in the main controller <strong>[MainController],</strong> which handles all requests:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="background-color:#fff2cc;color:#0000ff">from </span><span style="background-color:#fff2cc">flask_wtf.csrf </span><span style="background-color:#fff2cc;color:#0000ff">import </span><span style="background-color:#fff2cc">generate_csrf, validate_csrf</span></span>

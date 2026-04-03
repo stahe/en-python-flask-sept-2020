@@ -1173,6 +1173,29 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#311-the-directory-structure-of-the-client-scripts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31.1. The directory structure of the client scripts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#312-the-clients-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31.2. The clients&#x27; [dao] layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="31.2. The clients&#39; [dao] layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#3121-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1182,8 +1205,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#3122-implementation" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1193,12 +1216,39 @@
   </a>
   
 </li>
+        
+          <li class="md-nav__item">
+  <a href="#3123-the-dao-layer-factory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31.2.3. The [dao] layer factory
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
       
         <li class="md-nav__item">
   <a href="#313-client-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
         31.3. Client configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#314-the-main-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31.4. The [main] client
       
     </span>
   </a>
@@ -1221,6 +1271,17 @@
     <span class="md-ellipsis">
       
         31.6. The client [main3]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#317-the-test2httpclientdaowithsession-test-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31.7. The [Test2HttpClientDaoWithSession] test class
       
     </span>
   </a>
@@ -1477,13 +1538,10 @@
   <li>the <b>[main] </b>and <b>[main3] </b>scripts will use the server’s <b>[business] </b>layer;
   </li>
   <li>the <b>[main2] </b>script will use the client’s <b>[business] </b>layer;
-<a id="toc48549258"></a>
-
-## 31.1. <span style="color: #4f81bd">The directory structure of the client scripts</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549258"></a></p>
+<h2 id="311-the-directory-structure-of-the-client-scripts">31.1. <span style="color: #4f81bd">The directory structure of the client scripts</span></h2>
 <p>The <strong>[http-clients/07]</strong> folder is initially created by copying the <strong>[http-clients/06]</strong> folder. It is then modified.</p>
 <p><img src="images/10000000000005AB000001A8BBA86335.png" style="width:16.752cm;height:4.895cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005AB000001A8BBA86335.png" /></p>
 <ul>
@@ -1494,13 +1552,10 @@
   <li>in <b>[3]</b>, the client’s <b>[dao] </b>layer;
   </li>
   <li>in <b>[4]</b>, the test folder for the client’s <b>[dao] </b>layer;
-<a id="toc48549259"></a>
-
-## 31.2. <span style="color: #4f81bd">The clients&#x27; [dao] layer</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549259"></a></p>
+<h2 id="312-the-clients-dao-layer">31.2. <span style="color: #4f81bd">The clients&#x27; [dao] layer</span></h2>
 <p><img src="images/100000000000031C000002E26779CBAC.png" style="width:9.2cm;height:8.53cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000031C000002E26779CBAC.png" /></p>
 <p><img src="images/10000000000001F000000130004DC856.png" style="width:5.74cm;height:3.517cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F000000130004DC856.png" /></p>
 <p><a id="toc48549260"></a></p>
@@ -1952,13 +2007,10 @@
   <li>lines 13–25: creation of a <b>[result2] </b>dictionary with numeric values from the <b>[result] </b>dictionary with string-type values;
   </li>
   <li>line 29: the dictionary <b>[result2] </b>is used to initialize a <b>[AdminData] </b>type;
-<a id="toc48549262"></a>
-
-### 31.2.3. <span style="color: #4f81bd">The [dao] layer factory</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549262"></a></p>
+<h3 id="3123-the-dao-layer-factory">31.2.3. <span style="color: #4f81bd">The [dao] layer factory</span></h3>
 <p>Our clients will be multi-threaded. Since the <strong>[dao]</strong> layer is implemented by a class with read/write state (= read/write properties), each thread must have its own <strong>[dao]</strong> layer, or else access to shared data between threads must be synchronized. Here we choose the first solution. We use a <strong>[ImpôtsDaoWithHttpSessionFactory]</strong> class capable of creating instances of the <strong>[dao]</strong> layer:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">from </span>ImpôtsDaoWithHttpSession <span style="color:#0000ff">import </span>ImpôtsDaoWithHttpSession</span>
@@ -2082,13 +2134,10 @@
 
 <ul>
   <li>Clients will not have direct access to the <b>[dao] </b>layer. To gain access, they must go through the <b>[dao] </b>layer&#x27;s factory;
-<a id="toc48549264"></a>
-
-## 31.4. <span style="color: #4f81bd">The [main] client</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549264"></a></p>
+<h2 id="314-the-main-client">31.4. <span style="color: #4f81bd">The [main] client</span></h2>
 <p>The <strong>[main]</strong> client allows you to test the URLs <strong>[/init-session, /authenticate-user, /calculate-taxes, /end-session]</strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># Expects a JSON or XML parameter</span>
@@ -2524,13 +2573,10 @@
   <li>line 6: we have 11 simulations;
   </li>
   <li>line 12: after the various deletions, there are only 5 left;
-<a id="toc48549267"></a>
-
-## 31.7. <span style="color: #4f81bd">The [Test2HttpClientDaoWithSession] test class</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549267"></a></p>
+<h2 id="317-the-test2httpclientdaowithsession-test-class">31.7. <span style="color: #4f81bd">The [Test2HttpClientDaoWithSession] test class</span></h2>
 <p><img src="images/10000000000001F30000014473BE1068.png" style="width:5.763cm;height:3.741cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001F30000014473BE1068.png" /></p>
 <p>The <strong>[Test2HttpClientDaoWithSession]</strong> class tests the <strong>[dao]</strong> layer of the clients as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">

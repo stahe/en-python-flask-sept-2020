@@ -1326,6 +1326,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#3523-the-new-mvc-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.2.3. The new MVC configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#3524-the-new-models" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1347,8 +1358,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3526-the-new-html-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.2.6. The new HTML response
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#353-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35.3. Tests
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1697,13 +1730,10 @@
   <li>code 1200 should display the simulation view;
   </li>
   <li>code 1300 should display the unexpected errors view;
-<a id="toc48549329"></a>
-
-### 35.2.3. <span style="color: #4f81bd">The new MVC configuration</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549329"></a></p>
+<h3 id="3523-the-new-mvc-configuration">35.2.3. <span style="color: #4f81bd">The new MVC configuration</span></h3>
 <p>Because it had become too large, the MVC configuration has been split into four files:</p>
 <ul>
   <li><b>[controllers]</b>: the list of C controllers for the MVC application;
@@ -2234,13 +2264,10 @@
   <li>lines 6–26, 45–57: previous versions already performed these checks;
   </li>
   <li>lines 28–42: a new check is added. We verify whether the current action is possible given the application’s current state. If the current action is not possible, we generate a status code 151 (line 40), which ensures that the current action will be redirected to the unexpected errors view;
-<a id="toc48549332"></a>
-
-### 35.2.6. <span style="color: #4f81bd">The new HTML response</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549332"></a></p>
+<h3 id="3526-the-new-html-response">35.2.6. <span style="color: #4f81bd">The new HTML response</span></h3>
 <p><img src="images/100000000000018F000000C50A5589CA.png" style="width:4.6cm;height:2.272cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018F000000C50A5589CA.png" /></p>
 <p>The current changes apply only to HTML sessions. JSON or XML sessions are not affected. The <strong>[HtmlResponse]</strong> class is updated as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2343,13 +2370,10 @@
   <li>lines 72–76: the redirect URL is calculated;
   </li>
   <li>lines 78–79: the redirect response is sent to the client;
-<a id="toc48549333"></a>
-
-## 35.3. <span style="color: #4f81bd">Tests</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549333"></a></p>
+<h2 id="353-tests">35.3. <span style="color: #4f81bd">Tests</span></h2>
 <p>Perform the following tests using a browser:</p>
 <ul>
   <li>Use the application as usual. Verify that the only URLs displayed by the browser are ASV URLs <b>[/display-view-view_name]</b>;

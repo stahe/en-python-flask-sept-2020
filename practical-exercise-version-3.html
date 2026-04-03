@@ -644,6 +644,61 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#112-main-script-mainpy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.2. Main script [main.py]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#113-the-module-impotsv02modulesimpots_module_02" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.3. The module [impots.v02.modules.impôts_module_02]
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#114-reading-data-from-the-tax-administration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.4. Reading data from the tax administration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#115-saving-the-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.5. Saving the results
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#116-function-modifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11.6. Function Modifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#117-results" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1538,14 +1593,11 @@
 
 <ul>
   <li>Line 8: Add the <b>[shared] </b>folder to the Python Path. This folder contains the <b>[impôts_module_02] </b>module used by the main script;
-<a id="toc48548996"></a>
-<a id="refheadingtoc2521492924280206"></a>
-
-## 11.2. <span style="color: #4f81bd">Main script [main.py]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48548996"></a>
+<a id="refheadingtoc2521492924280206"></a></p>
+<h2 id="112-main-script-mainpy">11.2. <span style="color: #4f81bd">Main script [main.py]</span></h2>
 <p>The main script for version 3 is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># configure the application</span>
@@ -1603,27 +1655,21 @@
   <li>line 32: the tax calculation results are placed in the JSON file <b>[./data/results.json]</b>;
   </li>
   <li>line 7: the functions in version 3 are located in the module <b>[</b><b><span style="color: #6f008a">impots</span></b><b><span style="color: #000000">.</span></b><b><span style="color: #6f008a">modules</span></b><b><span style="color: #000000">.</span></b><b><span style="color: #6f008a">impôts_module_02</span></b><b>]</b>;
-<a id="lemoduleimpotsv02modulesimpot"></a>
-<a id="toc48548997"></a>
-<a id="refheadingtoc563792181887516"></a>
-
-## 11.3. <span style="color: #4f81bd">The module [impots<span style="color: #000000">.</span>v02<span style="color: #000000">.</span>modules<span style="color: #000000">.</span>impôts\_module\_02]</span>
-
   </li>
 </ul>
-
+<p><a id="lemoduleimpotsv02modulesimpot"></a>
+<a id="toc48548997"></a>
+<a id="refheadingtoc563792181887516"></a></p>
+<h2 id="113-the-module-impotsv02modulesimpots_module_02">11.3. <span style="color: #4f81bd">The module [impots<span style="color: #000000">.</span>v02<span style="color: #000000">.</span>modules<span style="color: #000000">.</span>impôts_module_02]</span></h2>
 <p>The module <strong>[</strong><strong><span style="color: #6f008a">impots</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">v02</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">modules</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">impôts_module_02</span></strong><strong>]</strong> has the following structure:</p>
 <p><img src="images/10000000000005CD000001BF94176D17.png" style="width:17.14cm;height:5.159cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005CD000001BF94176D17.png" /></p>
 <ul>
   <li>The module contains functions already present in the module used by version 1, with one difference. When the version 2 module reuses a function from the version 1 module, it does so with an additional parameter: <b>[adminData] </b>(lines 29, 51, 77, 127). This parameter represents the dictionary of tax data from the JSON file <b>[adminData.json]</b>. In the Version 1 module, this data did not need to be passed to the functions because it was globally defined for them, meaning the functions were already aware of it;
-<a id="toc48548998"></a>
-<a id="refheadingtoc2521512924280206"></a>
-
-## 11.4. <span style="color: #4f81bd">Reading data from the tax administration</span>
-
   </li>
 </ul>
-
+<p><a id="toc48548998"></a>
+<a id="refheadingtoc2521512924280206"></a></p>
+<h2 id="114-reading-data-from-the-tax-administration">11.4. <span style="color: #4f81bd">Reading data from the tax administration</span></h2>
 <p>The <strong>[</strong><strong><span style="color: #000000">get_admindata</span></strong><strong>]</strong> function is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># reading tax administration data from a JSON file</span>
@@ -1647,14 +1693,11 @@
 
 <ul>
   <li>line 9: retrieve the image dictionary from the read JSON file;
-<a id="toc48548999"></a>
-<a id="refheadingtoc2521532924280206"></a>
-
-## 11.5. <span style="color: #4f81bd">Saving the results</span>
-
   </li>
 </ul>
-
+<p><a id="toc48548999"></a>
+<a id="refheadingtoc2521532924280206"></a></p>
+<h2 id="115-saving-the-results">11.5. <span style="color: #4f81bd">Saving the results</span></h2>
 <p>The <strong>[</strong><strong><span style="color: #000000">record_results_in_json_file</span></strong><strong>]</strong> function is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># Writing results to a JSON file</span>
@@ -1676,14 +1719,11 @@
   <li>line 7: create a UTF-8 encoded file;
   </li>
   <li>line 9: write the <b>[results] </b>list to the JSON file. UTF-8 characters are not escaped (<span style="color: #0000ff">ensure_ascii=False</span>);
-<a id="toc48549000"></a>
-<a id="refheadingtoc2521552924280206"></a>
-
-## 11.6. <span style="color: #4f81bd">Function Modifications</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549000"></a>
+<a id="refheadingtoc2521552924280206"></a></p>
+<h2 id="116-function-modifications">11.6. <span style="color: #4f81bd">Function Modifications</span></h2>
 <p>Some functions now receive an additional <strong>[</strong><strong><span style="color: #808080">admin_data</span></strong><strong>]</strong> parameter. This slightly changes their syntax. Take, for example, the <strong>[</strong><strong><span style="color: #000000">calcul_impôt</span></strong><strong>]</strong> function:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># tax calculation - step 1</span>

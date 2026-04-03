@@ -1227,6 +1227,17 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#331-refactoring-the-application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33.1. Refactoring the application configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#332-refactoring-the-main-script-main" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1239,6 +1250,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#3321-the-flask_session-and-redis-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33.2.1. The [flask_session] and [redis] modules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#3322-the-redis-server" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1249,8 +1271,41 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#3323-managing-the-redis-server-in-the-main-script-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33.2.3. Managing the Redis server in the main script [main]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3324-route-management-in-the-main-script-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33.2.4. Route management in the main script [main]
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#333-refactoring-the-main-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33.3. Refactoring the main controller
+      
+    </span>
+  </a>
   
 </li>
       
@@ -1491,13 +1546,10 @@
   <li>in <b>[5]</b>, the authentication controller will be modified since user passwords will now be encrypted;
   </li>
   <li>in <b>[6]</b>, the main controller will incorporate code previously present in the main script <b>[main]</b>;
-<a id="toc48549304"></a>
-
-## 33.1. <span style="color: #4f81bd">Refactoring the application configuration</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549304"></a></p>
+<h2 id="331-refactoring-the-application-configuration">33.1. <span style="color: #4f81bd">Refactoring the application configuration</span></h2>
 <p><img src="images/10000000000005BA00000152D171FD8C.png" style="width:16.949cm;height:3.909cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005BA00000152D171FD8C.png" /></p>
 <p>Three new configuration files are created:</p>
 <ul>
@@ -1889,13 +1941,10 @@
   <li>lines 56–73: a Redis server and its client are introduced;
   </li>
   <li>lines 102–104: the application’s routes have been externalized into the <b>[routes] </b>script;
-<a id="toc48549306"></a>
-
-### 33.2.1. <span style="color: #4f81bd">The [flask\_session] and [redis] modules</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549306"></a></p>
+<h3 id="3321-the-flask_session-and-redis-modules">33.2.1. <span style="color: #4f81bd">The [flask_session] and [redis] modules</span></h3>
 <p>The <strong>[Redis]</strong> server will be used to store user sessions. We will use the <strong>[flask_session]</strong> module to manage these sessions. This module can store user sessions in several locations. Redis is one of them, and we will use it.</p>
 <p>The <strong>[flask_session]</strong> module must be installed in a PyCharm terminal:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
@@ -1949,13 +1998,10 @@
 <p><img src="images/100000000000052F000002ED3DD2CE2D.png" style="width:15.332cm;height:8.654cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052F000002ED3DD2CE2D.png" /></p>
 <ul>
   <li>in <b>[1-4]</b>, one of the sessions stored on the Redis server;
-<a id="toc48549308"></a>
-
-### 33.2.3. <span style="color: #4f81bd">Managing the Redis server in the main script [main]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549308"></a></p>
+<h3 id="3323-managing-the-redis-server-in-the-main-script-main">33.2.3. <span style="color: #4f81bd">Managing the Redis server in the main script [main]</span></h3>
 <p>The <strong>[main]</strong> script checks for the presence of the Redis server as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">import </span>redis</span>
@@ -1988,13 +2034,10 @@
   <li>lines 9–17: if the ping fails, the error is logged and the server is stopped;
   </li>
   <li>line 20: the Redis client reference is stored in the configuration;
-<a id="toc48549309"></a>
-
-### 33.2.4. <span style="color: #4f81bd">Route management in the main script [main]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549309"></a></p>
+<h3 id="3324-route-management-in-the-main-script-main">33.2.4. <span style="color: #4f81bd">Route management in the main script [main]</span></h3>
 <p>Route handling in <strong>[main]</strong> is limited to the following lines:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"># Import the web application routes</span>
@@ -2125,13 +2168,10 @@
   <li>line 85: the <b>[Flask-Session] </b>is associated with the Flask application;
   </li>
   <li>lines 86–89: if the <b>[name] </b>parameter on line 79 is the string <b>[__main__]</b>, then the Flask application is launched;
-<a id="toc48549310"></a>
-
-## 33.3. <span style="color: #4f81bd">Refactoring the main controller</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549310"></a></p>
+<h2 id="333-refactoring-the-main-controller">33.3. <span style="color: #4f81bd">Refactoring the main controller</span></h2>
 <p>The code that was previously in the <strong>[front_controller]</strong> function of the <strong>[main]</strong> script has been moved to the main controller:</p>
 <p><img src="images/10000000000001A40000017CC273E1B7.png" style="width:4.842cm;height:4.38cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A40000017CC273E1B7.png" /></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">

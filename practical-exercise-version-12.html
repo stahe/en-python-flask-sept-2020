@@ -1168,6 +1168,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#303-the-server-code-directory-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.3. The server code directory structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#304-the-applications-service-urls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.4. The application’s service URLs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#305-server-configuration" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1176,7 +1198,18 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="30.5. Server Configuration">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#306-the-path-of-a-client-request-within-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.6. The path of a client request within the server
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="30.6. The path of a client request within the server">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1207,6 +1240,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#307-action-specific-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.7. Action-specific processing
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#308-generating-the-servers-http-response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.8. Generating the server’s HTTP response
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#309-initial-tests" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1229,6 +1284,17 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#3011-the-calculate_tax-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.11. The [calculate_tax] action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3012-the-list-simulations-action" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1240,10 +1306,32 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#3013-the-delete-simulation-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.13. The [delete-simulation] action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#3014-the-end-session-action" class="md-nav__link">
     <span class="md-ellipsis">
       
         30.14. The [end-session] action
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3015-the-get-admindata-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30.15. The [get-admindata] action
       
     </span>
   </a>
@@ -1532,8 +1620,6 @@
 <p><a id="toc48549238"></a>
 <a id="exercicedapplication8"></a></p>
 <h1 id="30-practical-exercise-version-12">30. <span style="color: #365f91">Practical Exercise: Version 12</span></h1>
-<p></li>
-</ul></p>
 <p>In this chapter, we will write a web application following the MVC (Model-View-Controller) architecture. The application will be able to return responses in three formats: JSON, XML, and HTML. There is a significant increase in complexity between what we are about to do and what we have done previously. We will reuse most of the concepts covered so far and will detail all the steps leading to the final application.</p>
 <p><a id="refheadingtoc1446193519745392"></a>
 <a id="toc48549239"></a>
@@ -1635,13 +1721,10 @@
   <li>then we will move on to the XML version of the server. We have seen that switching from JSON to XML is straightforward;
   </li>
   <li>finally, we will move on to the HTML version of the server. We will build an MVC architecture and define the views to be displayed. The HTML application will be tested using both the Postman client and a standard browser;
-<a id="toc48549241"></a>
-
-## 30.3. <span style="color: #4f81bd">The server code directory structure</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549241"></a></p>
+<h2 id="303-the-server-code-directory-structure">30.3. <span style="color: #4f81bd">The server code directory structure</span></h2>
 <p><img src="images/100000000000052E00000191E4FCA526.png" style="width:15.302cm;height:4.627cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000052E00000191E4FCA526.png" /></p>
 <ul>
   <li>in <b>[1: the web server as a whole;</b>
@@ -1670,13 +1753,10 @@
   <li>in <b>[7]</b>, the HTML application templates broken down into views <b>[9] </b>and view fragments <b>[8]</b>;
   </li>
   <li>in <b>[9]</b>, the classes implementing the view models;
-<a id="toc48549242"></a>
-
-## 30.4. <span style="color: #4f81bd">The application’s service URLs</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549242"></a></p>
+<h2 id="304-the-applications-service-urls">30.4. <span style="color: #4f81bd">The application’s service URLs</span></h2>
 <p>To build the web server, we will proceed as follows:</p>
 <ul>
   <li>Based on the views of the HTML application, we will define the actions that the web application must implement. We will use the actual views here, but these could simply be views on paper;
@@ -2020,13 +2100,10 @@
     </ul>
   </li>
   <li>lines 191–202: we have already encountered these lines in previous versions;
-<a id="toc48549244"></a>
-
-## 30.6. <span style="color: #4f81bd">The path of a client request within the server</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549244"></a></p>
+<h2 id="306-the-path-of-a-client-request-within-the-server">30.6. <span style="color: #4f81bd">The path of a client request within the server</span></h2>
 <p><img src="images/100000010000033200000102272A12E0.png" style="width:13.831cm;height:4.362cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000033200000102272A12E0.png" /></p>
 <p>We will follow the path of a client request arriving at the server through to the HTTP response sent back. It follows the MVC server’s flow.</p>
 <p><a id="toc48549245"></a></p>
@@ -2451,13 +2528,10 @@
   <li>put everything in the <b>[front_controller] </b>function and eliminate the <b>[MainController] </b>class;
   </li>
   <li>put everything in the <b>[MainController] </b>class and eliminate the <b>[front_controller] </b>function. I would tend to choose this solution because it has the advantage of streamlining the code of the main script <b>[main]</b>;
-<a id="toc48549247"></a>
-
-## 30.7. <span style="color: #4f81bd">Action-specific processing</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549247"></a></p>
+<h2 id="307-action-specific-processing">30.7. <span style="color: #4f81bd">Action-specific processing</span></h2>
 <p>Let’s return to the application’s MVC architecture:</p>
 <p><img src="images/100000010000033200000102272A12E0.png" style="width:13.831cm;height:4.362cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000033200000102272A12E0.png" /></p>
 <p>We are still at step 1 above. If there were no errors, step 2 will begin. The request has been forwarded to the controller specific to the action requested by the request. Let’s assume this action is <strong>[/init-session]</strong> defined by the route:</p>
@@ -2540,13 +2614,10 @@
   <li>line 25: the success response is returned to the caller;
   </li>
   <li>line 27: if an error occurred, the error response is returned to the caller;
-<a id="toc48549248"></a>
-
-## 30.8. <span style="color: #4f81bd">Generating the server’s HTTP response</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549248"></a></p>
+<h2 id="308-generating-the-servers-http-response">30.8. <span style="color: #4f81bd">Generating the server’s HTTP response</span></h2>
 <p>Let’s return to the application’s MVC architecture:</p>
 <p><img src="images/100000010000033200000102272A12E0.png" style="width:13.831cm;height:4.362cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000033200000102272A12E0.png" /></p>
 <p>We have just covered steps 1 and 2. We encountered three status codes:</p>
@@ -2996,13 +3067,10 @@
 
   </li>
   <li>in <b>[5]</b>, the success response;
-<a id="toc48549251"></a>
-
-## 30.11. <span style="color: #4f81bd">The [calculate\_tax] action</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549251"></a></p>
+<h2 id="3011-the-calculate_tax-action">30.11. <span style="color: #4f81bd">The [calculate_tax] action</span></h2>
 <p>The <strong>[calculate_tax]</strong> action calculates a taxpayer’s tax. Its route is defined as follows in the <strong>[main]</strong> script:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># calculate-tax</span>
@@ -3255,13 +3323,10 @@
 <p><img src="images/10000000000002CB000003893204E1AE.png" style="width:8.26cm;height:10.456cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002CB000003893204E1AE.png" /></p>
 <ul>
   <li>in <b>[4]</b>, the user&#x27;s list of simulations;
-<a id="toc48549253"></a>
-
-## 30.13. <span style="color: #4f81bd">The [delete-simulation] action</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549253"></a></p>
+<h2 id="3013-the-delete-simulation-action">30.13. <span style="color: #4f81bd">The [delete-simulation] action</span></h2>
 <p>The <strong>[delete-simulation]</strong> action allows a user to delete one of the simulations from their simulation list. Its route is defined as follows in the <strong>[main]</strong> script:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># delete-simulation</span>
@@ -3440,15 +3505,12 @@
       <li>lines 19–21: if <b>[type_response2] </b>exists—the response type in the session after the action—then that is the type to use;
       </li>
       <li>lines 22–23: otherwise, <b>[type_response1]</b>, the response type before the action (which must be <b>[end-session]</b>), is the one to use;
-<a id="toc48549255"></a>
-
-## 30.15. <span style="color: #4f81bd">The [get-admindata] action</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="toc48549255"></a></p>
+<h2 id="3015-the-get-admindata-action">30.15. <span style="color: #4f81bd">The [get-admindata] action</span></h2>
 <p>We will now discuss the two URLs reserved for the JSON and XML services:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Action</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Execution context</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><mark style="background-color: #fff5ce">/get-admindata</mark></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Returns the tax data used to calculate the tax</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">GET request.</div><div style="margin:0 0 0.5em 0">Used only if the session type is json or xml. The user must be authenticated</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><mark style="background-color: #fff5ce">/calculate-taxes</mark></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Calculates the tax for a list of taxpayers posted in JSON</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">GET request.</div><div style="margin:0 0 0.5em 0">Used only if the session type is json or xml. The user must be authenticated</div></td></tr></table>
 

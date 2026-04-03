@@ -876,6 +876,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#201-application-1-database-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.1. Application 1: Database Initialization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="20.1. Application 1: Database Initialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#2011-the-admindatajson-file" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -885,8 +897,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2012-creating-the-databases" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -896,8 +908,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#2013-entities-mapped-by-sqlalchemy" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -905,6 +917,55 @@
       
     </span>
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2014-the-sqlalchemy-configuration-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.1.4. The [sqlalchemy] configuration file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2015-the-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.1.5. The [dao] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2016-application-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.1.6. Application Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2017-the-applications-main-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.1.7. The application’s [main] script
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -936,6 +997,28 @@
     <span class="md-ellipsis">
       
         20.2.2. Application Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2023-the-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.2.3. The [DAO] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2024-testing-the-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20.2.4. Testing the [dao] layer
       
     </span>
   </a>
@@ -1518,13 +1601,10 @@
   <li>Application 2 will calculate taxes in batch mode;
   </li>
   <li>Application 3 will calculate taxes in interactive mode;
-<a id="toc48549091"></a>
-
-## 20.1. <span style="color: #4f81bd">Application 1: Database Initialization</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549091"></a></p>
+<h2 id="201-application-1-database-initialization">20.1. <span style="color: #4f81bd">Application 1: Database Initialization</span></h2>
 <p>Application 1 will have the following architecture:</p>
 <p><img src="images/1000000000000474000002D64D661730.png" style="width:13.139cm;height:8.368cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000474000002D64D661730.png" /></p>
 <p>This is an evolution of the Version 4 architecture (see the <a href="#exercicedapplication-"><u><span style="color: #0563c1">|Version</span></u></a> 4| section): tax data will be stored in a database instead of a JSON file. The <strong>[DAO]</strong> layer will be updated to implement this change.</p>
@@ -1689,15 +1769,12 @@
 
 <ul>
   <li>The mappings are defined on lines 24–29. We have omitted the mappings between the properties of the mapped entities and the database tables. This is possible when the names of the table columns are the same as those of the properties they are to be associated with. For this reason, we have included the names of the mapped entities’ properties in the tables. This makes the code easier to write and understand;
-<a id="refheadingtoc822323439697744"></a>
-<a id="toc48549095"></a>
-<a id="lefichierde"></a>
-
-### 20.1.4. <span style="color: #4f81bd">The [sqlalchemy] configuration file</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc822323439697744"></a>
+<a id="toc48549095"></a>
+<a id="lefichierde"></a></p>
+<h3 id="2014-the-sqlalchemy-configuration-file">20.1.4. <span style="color: #4f81bd">The [sqlalchemy] configuration file</span></h3>
 <p><img src="images/10000000000001AB000002060FD6F2A5.png" style="width:4.429cm;height:5.375cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AB000002060FD6F2A5.png" /></p>
 <p>We have just detailed part of the <strong>[sqlalchemy]</strong> configuration. The complete <strong>[config_database]</strong> file is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1771,13 +1848,10 @@
   <li>lines 46–51: create the application’s working session <b>[session]</b>;
   </li>
   <li>lines 53–58: the relevant information is placed in the configuration dictionary, which is then returned;
-<a id="toc48549096"></a>
-
-### 20.1.5. <span style="color: #4f81bd">The [dao] layer</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549096"></a></p>
+<h3 id="2015-the-dao-layer">20.1.5. <span style="color: #4f81bd">The [dao] layer</span></h3>
 <p>Let’s return to the architecture of Application 1 to be built:</p>
 <p><img src="images/1000000000000474000002D64D661730.png" style="width:13.139cm;height:8.368cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000474000002D64D661730.png" /></p>
 <p>The <strong>[dao]</strong> layer <strong>[1]</strong> must read the <strong>[admindata.json]</strong> file <strong>[2]</strong> and transfer its contents to one of the databases <strong>[3, 4]</strong>;</p>
@@ -1906,13 +1980,10 @@
   <li>lines 68–70: error handling;
   </li>
   <li>lines 71–74: the session is closed. This is possible because the <b>[dao] </b>layer is used only once;
-<a id="toc48549097"></a>
-
-### 20.1.6. <span style="color: #4f81bd">Application Configuration</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549097"></a></p>
+<h3 id="2016-application-configuration">20.1.6. <span style="color: #4f81bd">Application Configuration</span></h3>
 <p><img src="images/1000000000000185000002053F5226B4.png" style="width:4.48cm;height:5.955cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000185000002053F5226B4.png" /></p>
 <p>The application is configured by three files <strong>[1]</strong>:</p>
 <ul>
@@ -2016,13 +2087,10 @@
   <li>line 4: the reference to the <b>[dao] </b>layer is added to the configuration;
   </li>
   <li>line 7: return the configuration;
-<a id="toc48549098"></a>
-
-### 20.1.7. <span style="color: #4f81bd">The application’s [main] script</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549098"></a></p>
+<h3 id="2017-the-applications-main-script">20.1.7. <span style="color: #4f81bd">The application’s [main] script</span></h3>
 <p><img src="images/100000000000018E000002054838D98A.png" style="width:4.142cm;height:5.38cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018E000002054838D98A.png" /></p>
 <p><img src="images/100000010000032E00000215DF1A35C4.png" style="width:13.831cm;height:9.056cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000032E00000215DF1A35C4.png" /></p>
 <p>The main <strong>[main]</strong> script is as follows:</p>
@@ -2154,14 +2222,11 @@
   <li>lines 3-4: the <b>[dao] </b>layer is now implemented by the <b>[TaxDaoWithAdminDataInDatabase] </b>class. This class is new but implements the same <b>[DaoInterface] </b>interface as <a href="#linterfaceinterfaceimpotsdao"><u><span style="color: #0563c1">version 4 of the application exercise</span></u></a>;
   </li>
   <li>lines 7-8: the <b>[business] </b>layer is implemented by the <b>[ImpôtsMétier] </b>class. This is the class used in version 4 of the application exercise;
-<a id="toc48549102"></a>
-<a id="lacouchedao"></a>
-
-### 20.2.3. <span style="color: #4f81bd">The [DAO] layer</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549102"></a>
+<a id="lacouchedao"></a></p>
+<h3 id="2023-the-dao-layer">20.2.3. <span style="color: #4f81bd">The [DAO] layer</span></h3>
 <p>The implementation class <strong>[</strong><strong><span style="color: #2b91af">ImpotsDaoWithAdminDataInDatabase</span></strong><strong>]</strong> for the interface <strong>[</strong><strong><span style="color: #2b91af">InterfaceImpôtsDao</span></strong><strong>]</strong> will be as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># imports</span>
@@ -2274,15 +2339,12 @@
   <li>lines 61–63: error handling;
   </li>
   <li>lines 64–67: the database is only queried once. We can therefore close the <b>[sqlalchemy] </b>session;
-<a id="refheadingtoc822343439697744"></a>
-<a id="toc48549103"></a>
-<a id="lescriptprincipal1"></a>
-
-### 20.2.4. <span style="color: #4f81bd">Testing the [dao] layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc822343439697744"></a>
+<a id="toc48549103"></a>
+<a id="lescriptprincipal1"></a></p>
+<h3 id="2024-testing-the-dao-layer">20.2.4. <span style="color: #4f81bd">Testing the [dao] layer</span></h3>
 <p>In version 4 of this application, we created a <a href="#testsdescouches"><u><span style="color: #0563c1">test class</span></u></a> for the <strong>[business]</strong> layer. More specifically, it tested both the <strong>[business]</strong> and <strong>[DAO]</strong> layers. We are reusing this test to verify that the <strong>[DAO]</strong> layer is functioning as expected. The <strong>[business]</strong> layer, however, remains unchanged.</p>
 <p><img src="images/100000000000017E000001A74483DEE4.png" style="width:3.979cm;height:4.406cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017E000001A74483DEE4.png" /></p>
 <p><img src="images/100000000000047B00000345B54A307A.png" style="width:13.25cm;height:9.67cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000047B00000345B54A307A.png" /></p>

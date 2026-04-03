@@ -586,10 +586,32 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#813-calculation-of-the-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.3. Calculation of the reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#814-calculation-of-the-tax-reduction" class="md-nav__link">
     <span class="md-ellipsis">
       
         8.1.4. Calculation of the tax reduction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#815-calculation-of-net-tax" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.5. Calculation of Net Tax
       
     </span>
   </a>
@@ -613,6 +635,17 @@
     <span class="md-ellipsis">
       
         8.1.6.1. Cap on the 10% reduction on annual income
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8162-family-quotient-cap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1.6.2. Family Quotient Cap
       
     </span>
   </a>
@@ -668,6 +701,28 @@
     <span class="md-ellipsis">
       
         8.2.2. The [impots.v01.shared.impôts_module_01] module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#823-the-function-get_taxpayers_data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.3. The function [get_taxpayers_data]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#824-the-calcul_impot-function" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2.4. The [calcul_impôt] function
       
     </span>
   </a>
@@ -1693,15 +1748,12 @@
   <li><b>[tax1]</b>: is the gross tax calculated including children;
   </li>
   <li><b>[tax2]</b>: is the gross tax calculated without children and reduced by the maximum credit (here 1,551 euros per half-share) related to children;
-<a id="calculdela"></a>
-<a id="toc48548966"></a>
-<a id="refheadingtoc185627971629160"></a>
-
-### 8.1.3. <span style="color: #4f81bd">Calculation of the reduction</span>
-
   </li>
 </ul>
-
+<p><a id="calculdela"></a>
+<a id="toc48548966"></a>
+<a id="refheadingtoc185627971629160"></a></p>
+<h3 id="813-calculation-of-the-reduction">8.1.3. <span style="color: #4f81bd">Calculation of the reduction</span></h3>
 <p><img src="images/100000010000032A0000011298E98FA1.png" style="width:13.852cm;height:4.685cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000032A0000011298E98FA1.png" /></p>
 <p>Still using the example of a married employee with two children and an annual salary S of <strong>50,000</strong> euros:</p>
 <p>The gross tax (2,115) from the previous step is less than 2,627 euros for a couple (1,595 euros for a single person): the reduction therefore applies. It is calculated as follows:</p>
@@ -1729,14 +1781,11 @@
   <li>he is therefore entitled to a 20% reduction in his tax: 1,731 * 0.2 = 346.2 euros, rounded to 347 euros;
   </li>
   <li>the taxpayer’s gross tax becomes: 1,731 – 347 =<b> 1,384 </b>euros;
-<a id="toc48548968"></a>
-<a id="refheadingtoc185631971629160"></a>
-
-### 8.1.5. <span style="color: #4f81bd">Calculation of Net Tax</span>
-
   </li>
 </ul>
-
+<p><a id="toc48548968"></a>
+<a id="refheadingtoc185631971629160"></a></p>
+<h3 id="815-calculation-of-net-tax">8.1.5. <span style="color: #4f81bd">Calculation of Net Tax</span></h3>
 <p>Our calculation ends here: the net tax due will be <strong>1,384</strong> euros. In reality, the taxpayer may be eligible for other deductions, particularly for donations to public or general interest organizations.</p>
 <p><a id="casdeshauts"></a>
 <a id="toc48548969"></a>
@@ -1756,13 +1805,10 @@
 <p>Let’s consider the case of an unmarried employee with no children and an annual salary of 200,000 euros:</p>
 <ul>
   <li>the 10% reduction is 200,000 euros &gt; 12,502 euros. It is therefore capped at 12,502 euros;
-<a id="refheadingtoc185637971629160"></a>
-
-#### 8.1.6.2. <span style="color: #4f81bd">Family Quotient Cap</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc185637971629160"></a></p>
+<h4 id="8162-family-quotient-cap">8.1.6.2. <span style="color: #4f81bd">Family Quotient Cap</span></h4>
 <p>Let’s consider a case where the family cap described in the section <a href="#plafonnementduquotient"><u><span style="color: #0563c1">|Family Quotient</span></u></a> Cap| applies. Let’s take the case of a couple with three children and an annual income of 100,000 euros. Let’s go through the calculation steps again:</p>
 <ul>
   <li>the 10% deduction is 10,000 euros &lt; 12,502 euros. The taxable income <b>R </b>is therefore 100,000 - 10,000 = 90,000 euros;
@@ -1955,14 +2001,11 @@
   <li>in <b>[1]</b>: definition of tax calculation constants;
   </li>
   <li>in <b>[2]</b>: the list of functions in the module;
-<a id="toc48548974"></a>
-<a id="refheadingtoc2521332924280206"></a>
-
-### 8.2.3. <span style="color: #4f81bd">The function [<span style="color: #000000">get\_taxpayers\_data</span>]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48548974"></a>
+<a id="refheadingtoc2521332924280206"></a></p>
+<h3 id="823-the-function-get_taxpayers_data">8.2.3. <span style="color: #4f81bd">The function [<span style="color: #000000">get_taxpayers_data</span>]</span></h3>
 <p>The <strong>[</strong><strong><span style="color: #000000">get_taxpayers_data</span></strong><strong>]</strong> function is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># imports</span>
@@ -2012,14 +2055,11 @@
   <li>Lines 10–30: Note that no <b>[catch] </b>clause was added to the<b> [try] </b>block on line 10. The <b>[catch] </b>clause is not mandatory. On line 27, a <b>[finally] </b>clause was added to close the text file in all cases, whether an error occurs or not;
   </li>
   <li>this try/finally structure allows a potential exception to escape (there is no catch). This exception will propagate to the main script <b>[main]</b>, which will stop and display the exception (see section |The Main Script|). This mechanism has been used for most of the module’s functions;
-<a id="toc48548975"></a>
-<a id="refheadingtoc2521352924280206"></a>
-
-### 8.2.4. <span style="color: #4f81bd">The [<span style="color: #000000">calcul\_impôt</span>] function</span>
-
   </li>
 </ul>
-
+<p><a id="toc48548975"></a>
+<a id="refheadingtoc2521352924280206"></a></p>
+<h3 id="824-the-calcul_impot-function">8.2.4. <span style="color: #4f81bd">The [<span style="color: #000000">calcul_impôt</span>] function</span></h3>
 <p>The <strong>[</strong><strong><span style="color: #000000">calcul_impôt</span></strong><strong>]</strong> function is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># imports</span>

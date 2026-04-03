@@ -840,6 +840,17 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#1741-pgres_module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.4.1. [pgres_module]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#1742-script-pgres_01" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -877,6 +888,17 @@
     <span class="md-ellipsis">
       
         17.4.5. script [pgres_04]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1746-script-pgres_05" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17.4.6. script [pgres_05]
       
     </span>
   </a>
@@ -1522,8 +1544,6 @@
 <a id="refheadingtoc2522132924280206"></a>
 <a id="utilisationdusgbd1"></a></p>
 <h1 id="17-using-the-postgresql-dbms">17. <span style="color: #365f91">Using the PostgreSQL DBMS</span></h1>
-<p></li>
-</ul></p>
 <p>The PostgreSQL DBMS is freely available. It is an alternative to the &quot;community&quot; version of MySQL.</p>
 <p>We are using it here to demonstrate that it is fairly simple to migrate Python/MySQL scripts to Python/PostgreSQL scripts.</p>
 <p>With the MySQL DBMS, the architecture of our scripts was as follows:</p>
@@ -1658,14 +1678,11 @@
 <p><img src="images/10000000000004CC0000021C60DF9970.png" style="width:14.199cm;height:6.244cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004CC0000021C60DF9970.png" /></p>
 <ul>
   <li>The folder <b>[1] </b>containing the MySQL scripts is duplicated (Ctrl-C / Ctrl-V), then the file names are changed to match their contents;
-<a id="refheadingtoc2522172924280206"></a>
-<a id="toc48549063"></a>
-
-### 17.4.1. <span style="color: #4f81bd">[pgres\_module]</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc2522172924280206"></a>
+<a id="toc48549063"></a></p>
+<h3 id="1741-pgres_module">17.4.1. <span style="color: #4f81bd">[pgres_module]</span></h3>
 <p>This module is a copy of the <strong>[mysql_module]</strong> module (see section <u><span style="color: #0563c1">|script </span></u><strong>[mysql-04]</strong><u><span style="color: #0563c1">: executing an SQL command </span></u>file|). Change the imports:</p>
 <p>Instead of:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2009,14 +2026,11 @@
   <li>MySQL does not roll back the <b>[drop table] </b>and <b>[create table] </b>commands. We end up with an empty <b>[people] </b>table;
   </li>
   <li>PostgreSQL rolls back the <b>[drop table] </b>and <b>[create table] </b>commands. The table is restored to the state it was in before the script was executed with a transaction;
-<a id="refheadingtoc2522272924280206"></a>
-<a id="toc48549068"></a>
-
-### 17.4.6. <span style="color: #4f81bd">script [pgres\_05]</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc2522272924280206"></a>
+<a id="toc48549068"></a></p>
+<h3 id="1746-script-pgres_05">17.4.6. <span style="color: #4f81bd">script [pgres_05]</span></h3>
 <p>The script <strong>[pgres_05]</strong> is a copy of the script <strong>[mysql_05]</strong> (see section <u><span style="color: #0563c1">|script </span></u><strong>[mysql-05]</strong><u><span style="color: #0563c1">: using parameterized </span></u>queries|). The script is modified as follows:</p>
 <p>Instead of:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">

@@ -797,6 +797,23 @@
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1512-the-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1.2. The [dao] layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.1.2. The [dao] layer">
+      <ul class="md-nav__list">
+        
           <li class="md-nav__item">
   <a href="#15121-the-interfaceimpotsdao-interface" class="md-nav__link">
     <span class="md-ellipsis">
@@ -809,6 +826,45 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#15122-the-abstractimpotsdao-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1.2.2. The [AbstractImpôtsDao] class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15123-class-impotsdaowithadmindatainjsonfile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1.2.3. Class [ImpôtsDaoWithAdminDataInJsonFile]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1513-the-business-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1.3. The [business] layer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="15.1.3. The [business] layer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#15131-the-interfaceimpotsmetier-interface" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -819,8 +875,30 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#15132-the-businesstaxes-class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1.3.2. The [BusinessTaxes] class
+      
+    </span>
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1514-tests-for-the-dao-and-business-layers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.1.4. Tests for the [dao] and [business] layers
+      
+    </span>
+  </a>
   
 </li>
         
@@ -868,6 +946,17 @@
     <span class="md-ellipsis">
       
         15.2.2. The [ImpôtsConsole] class
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1523-the-main-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15.2.3. The main script
       
     </span>
   </a>
@@ -1841,14 +1930,11 @@
   <li>lines 27–58: getters for the class attributes;
   </li>
   <li>lines 60–161: the setters for the class’s attributes. Recall that the advantage of a class encapsulating data over a simple dictionary is that the class can verify the validity of its properties using its setters;
-<a id="refheading93739200241464"></a>
-<a id="toc48549040"></a>
-
-### 15.1.2. <span style="color: #4f81bd">The [dao] layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheading93739200241464"></a>
+<a id="toc48549040"></a></p>
+<h3 id="1512-the-dao-layer">15.1.2. <span style="color: #4f81bd">The [dao] layer</span></h3>
 <p><img src="images/1000000100000257000000DAE081E99C.png" style="width:10.119cm;height:3.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000257000000DAE081E99C.png" /></p>
 <p>We will group the layer implementations in a <strong>[services]</strong> folder. These classes will implement interfaces defined in the <strong>[interfaces]</strong> folder.</p>
 <p><img src="images/100000000000023B00000216ED994750.png" style="width:6.579cm;height:6.154cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000023B00000216ED994750.png" /></p>
@@ -1889,14 +1975,11 @@
   <li><b>[</b><b><span style="color: #000000">get_taxpayers_data</span></b><b>]</b>: is the method that retrieves taxpayer data. Again, we do not specify where it will be found. We will only handle the case where it is in a text file;
   </li>
   <li><b>[</b><b><span style="color: #000000">write_taxpayers_results</span></b><b>]</b>: is the method that will persist the tax calculation results. We do not specify where. We will only handle the case where the results are persisted in a text file. The <b>[</b><b><span style="color: #808080">taxpayers_results</span></b><b>] </b>parameter will be the list of results to be persisted;
-<a id="refheadingtoc757923318110371"></a>
-<a id="laclasseabstractimpotsdao"></a>
-
-#### 15.1.2.2. <span style="color: #4f81bd">The [AbstractImpôtsDao] class</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc757923318110371"></a>
+<a id="laclasseabstractimpotsdao"></a></p>
+<h4 id="15122-the-abstractimpotsdao-class">15.1.2.2. <span style="color: #4f81bd">The [AbstractImpôtsDao] class</span></h4>
 <p>The <strong>[dao]</strong> layer will be implemented by two classes:</p>
 <ul>
   <li>one will retrieve the data (taxpayers, results, tax brackets) from text files;
@@ -2211,13 +2294,10 @@
   <li>lines 15–17: any type of exception is caught and wrapped in an <b>[</b><b><span style="color: #000000">ImpôtsError</span></b><b>] </b>before being rethrown (line 17);
   </li>
   <li>lines 19–21: in all cases, whether successful or not, the results file is closed if it was opened;
-<a id="refheadingtoc2521972924280206"></a>
-
-#### 15.1.2.3. <span style="color: #4f81bd">Class [ImpôtsDaoWithAdminDataInJsonFile]</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc2521972924280206"></a></p>
+<h4 id="15123-class-impotsdaowithadmindatainjsonfile">15.1.2.3. <span style="color: #4f81bd">Class [ImpôtsDaoWithAdminDataInJsonFile]</span></h4>
 <p>The <strong>[</strong><strong><span style="color: #2b91af">ImpôtsDaoWithAdminDataInJsonFile</span></strong><strong>]</strong> class will derive from the <strong>[AbstractImpôtsDao]</strong> class and implement the <strong>[getAdminData]</strong> method that its parent class has not implemented. It will retrieve tax administration data from a JSON file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">{</span>
@@ -2302,15 +2382,12 @@
   <li>lines 32–34: the file is closed if it was opened;
   </li>
   <li>lines 42–43: implementation of the <b>[</b><b><span style="color: #000000">get_admindata</span></b><b>] </b>method of the <b>[InterfaceImpôtsDao] </b>interface;
-<a id="refheadingtoc2521992924280206"></a>
-<a id="toc48549041"></a>
-<a id="lacouchemetier"></a>
-
-### 15.1.3. <span style="color: #4f81bd">The [business] layer</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc2521992924280206"></a>
+<a id="toc48549041"></a>
+<a id="lacouchemetier"></a></p>
+<h3 id="1513-the-business-layer">15.1.3. <span style="color: #4f81bd">The [business] layer</span></h3>
 <p><img src="images/1000000100000257000000DAE081E99C.png" style="width:10.119cm;height:3.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000257000000DAE081E99C.png" /></p>
 <p><a id="refheadingtoc2522012924280206"></a></p>
 <h4 id="15131-the-interfaceimpotsmetier-interface">15.1.3.1. <span style="color: #4f81bd">The [InterfaceImpôtsMétier] interface</span></h4>
@@ -2337,14 +2414,11 @@
   <li>line 12: the <b>[</b><b><span style="color: #000000">calculate_tax</span></b><b>] </b>method calculates the tax for a single taxpayer <b>[</b><b><span style="color: #808080">taxpayer</span></b><b>]</b>. <b>[</b><b><span style="color: #808080">admindata</span></b><b>] </b>is the <b>[AdminData] </b>object encapsulating the tax administration data;
   </li>
   <li>Line 12: The <b>[</b><b><span style="color: #000000">calculate_tax</span></b><b>] </b>method does not return a result. The data obtained (tax, surcharge, discount, reduction, rate) are included in the <b>[taxpayer] </b>parameter: before the call, these attributes are empty; after the call, they have been initialized;
-<a id="refheadingtoc2522032924280206"></a>
-<a id="laclasseimpotsmetier"></a>
-
-#### 15.1.3.2. <span style="color: #4f81bd">The [BusinessTaxes] class</span>
-
   </li>
 </ul>
-
+<p><a id="refheadingtoc2522032924280206"></a>
+<a id="laclasseimpotsmetier"></a></p>
+<h4 id="15132-the-businesstaxes-class">15.1.3.2. <span style="color: #4f81bd">The [BusinessTaxes] class</span></h4>
 <p>The <strong>[ImpôtsMétier]</strong> class implements the <strong>[InterfaceImpôtsMétier]</strong> interface as follows:</p>
 <p><img src="images/10000000000003DF0000039527DE6C80.png" style="width:11.449cm;height:10.596cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003DF0000039527DE6C80.png" /></p>
 <p>The class methods are derived from <a href="#lemoduleimpotsv02modulesimpot"><u><span style="color: #0563c1">the</span></u></a> <strong>[impôts_module_02]</strong> module in <a href="#lemoduleimpotsv02modulesimpot"><u><span style="color: #0563c1">the</span></u></a> section <a href="#lemoduleimpotsv02modulesimpot"><u><span style="color: #0563c1">|The [impots.v02.modules.impôts_module_02]</span></u></a> module|. We have limited the method parameters to just two:</p>
@@ -2417,17 +2491,14 @@
       <li><b>[admindata]</b>: the object encapsulating the tax administration data;
       </li>
       <li>the results of the calculation are encapsulated in the <b>[taxpayer] </b>parameter (lines 40–50). The content of this object is therefore not the same before and after the method is called;
-<a id="refheadingtoc2522052924280206"></a>
-<a id="toc48549042"></a>
-<a id="testsdescouches"></a>
-
-### 15.1.4. <span style="color: #4f81bd">Tests for the [dao] and [business] layers</span>
-
       </li>
     </ul>
   </li>
 </ul>
-
+<p><a id="refheadingtoc2522052924280206"></a>
+<a id="toc48549042"></a>
+<a id="testsdescouches"></a></p>
+<h3 id="1514-tests-for-the-dao-and-business-layers">15.1.4. <span style="color: #4f81bd">Tests for the [dao] and [business] layers</span></h3>
 <p><img src="images/1000000000000170000002065376CC8F.png" style="width:4.249cm;height:5.981cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000170000002065376CC8F.png" /></p>
 <ul>
   <li><b>[TestDaoMétier] </b>is the UnitTest class for testing the <b>[dao] </b>and <b>[business] </b>layers;
@@ -3002,15 +3073,12 @@
   <li>lines 48–50: using this information, the <b>[business] </b>layer calculates the taxpayer’s tax;
   </li>
   <li>line 52: the tax amount is displayed;
-<a id="toc48549047"></a>
-<a id="refheadingtoc2522112924280206"></a>
-<a id="lescriptprincipal4"></a>
-
-### 15.2.3. <span style="color: #4f81bd">The main script</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549047"></a>
+<a id="refheadingtoc2522112924280206"></a>
+<a id="lescriptprincipal4"></a></p>
+<h3 id="1523-the-main-script">15.2.3. <span style="color: #4f81bd">The main script</span></h3>
 <p>The main script <strong>[main]</strong> is configured by the following <strong>[config]</strong> file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">def </span>configure():</span>

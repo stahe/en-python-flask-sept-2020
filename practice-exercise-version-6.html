@@ -991,6 +991,17 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#2322-version-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23.2.2. Version 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#2323-version-3" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1034,6 +1045,39 @@
     <span class="md-ellipsis">
       
         23.3.2. Web Client Configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2333-the-main-script-main" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23.3.3. The main script [main]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2334-implementation-of-the-dao-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23.3.4. Implementation of the [dao] layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2335-execution" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23.3.5. Execution
       
     </span>
   </a>
@@ -2128,13 +2172,10 @@
   <li>line 1: an incorrect URL is requested;
   </li>
   <li>line 10: the server responds with status 400 BAD REQUEST;
-<a id="toc48549171"></a>
-
-### 23.2.2. <span style="color: #4f81bd">Version 2</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549171"></a></p>
+<h3 id="2322-version-2">23.2.2. <span style="color: #4f81bd">Version 2</span></h3>
 <p><img src="images/100000000000014000000170F726DD2A.png" style="width:3.694cm;height:4.247cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000014000000170F726DD2A.png" /></p>
 <p>Version 2 of the server isolates URL processing in the <strong>[index_controller]</strong> module <strong>[5]</strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2730,13 +2771,10 @@
   <li>lines 4–6: the <b>[dao] </b>layer is instantiated. On line 6, we pass it the application configuration, where it will find the information it needs;
   </li>
   <li>lines 8–11: a dictionary is returned containing the reference to the <b>[dao] </b>layer;
-<a id="toc48549176"></a>
-
-### 23.3.3. <span style="color: #4f81bd">The main script [main]</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549176"></a></p>
+<h3 id="2333-the-main-script-main">23.3.3. <span style="color: #4f81bd">The main script [main]</span></h3>
 <p>The main script <strong>[main]</strong> is a variant of the one from <a href="#lescriptprincipal5"><u><span style="color: #0563c1">|version</span></u></a> 5|:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># configure the application</span>
@@ -2778,13 +2816,10 @@
   <li>line 21: the <b>[dao] </b>layer calculates the tax for each of them;
   </li>
   <li>line 23: the results are saved to a JSON file;
-<a id="toc48549177"></a>
-
-### 23.3.4. <span style="color: #4f81bd">Implementation of the [dao] layer</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549177"></a></p>
+<h3 id="2334-implementation-of-the-dao-layer">23.3.4. <span style="color: #4f81bd">Implementation of the [dao] layer</span></h3>
 <p><img src="images/100000000000021600000111FE33D106.png" style="width:6.181cm;height:3.159cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000021600000111FE33D106.png" /></p>
 <p>Let’s revisit the client/server architecture used:</p>
 <p><img src="images/10000000000003D1000002955314F81B.png" style="width:11.269cm;height:7.625cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003D1000002955314F81B.png" /></p>
@@ -2952,13 +2987,10 @@
   <li>lines 51–53: if the status code is not 200, then an exception is thrown with the error messages included in the response;
   </li>
   <li>line 56: retrieve the dictionary produced by the tax calculation and use it to update the <b>[taxpayer] </b>input parameter; 
-<a id="toc48549178"></a>
-
-### 23.3.5. <span style="color: #4f81bd">Execution</span>
-
   </li>
 </ul>
-
+<p><a id="toc48549178"></a></p>
+<h3 id="2335-execution">23.3.5. <span style="color: #4f81bd">Execution</span></h3>
 <p>To run the client:</p>
 <ul>
   <li>start the server <b>[server_03] </b>with the DBMS of your choice;
