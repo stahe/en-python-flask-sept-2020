@@ -1641,9 +1641,9 @@
 
 
 
-<p><a id="refheading382922423505"></a>
+<p><a id="exercicedapplication-"></a>
 <a id="toc48549037"></a>
-<a id="exercicedapplication-"></a></p>
+<a id="refheading382922423505"></a></p>
 <h1 id="15-application-exercise-version-4">15. <span style="color: #365f91">Application Exercise - Version 4</span></h1>
 <p><img src="images/10000000000001B2000002EA4F206E66.png" style="width:5.009cm;height:8.611cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B2000002EA4F206E66.png" /></p>
 <p>Here we revisit the exercise described in the <a href="#exercicedapplication"><u><span style="color: #0563c1">|Version</span></u></a> 3| section and now implement it using classes and interfaces. We will write two applications:</p>
@@ -1678,14 +1678,14 @@
 </ul>
 
 <p>In the following, the <strong>[dao]</strong>, <strong>[business]</strong>, and <strong>[ui]</strong> layers will each be implemented using a class. The <strong>[business]</strong> and <strong>[dao]</strong> layers will be the same for both applications. This is why they have been combined into a single version of the application exercise.</p>
-<p><a id="toc48549038"></a>
+<p><a id="version3"></a>
 <a id="refheadingtoc647742267290417"></a>
-<a id="version3"></a></p>
+<a id="toc48549038"></a></p>
 <h2 id="151-version-4-application-1">15.1. <span style="color: #4f81bd">Version 4 – Application 1</span></h2>
 <p>Version 4 calculates the tax for a list of taxpayers stored in a text file. It has the following architecture:</p>
 <p><img src="images/1000000100000257000000DAE081E99C.png" style="width:10.119cm;height:3.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000257000000DAE081E99C.png" /></p>
-<p><a id="refheadingtoc77696559221927"></a>
-<a id="toc48549039"></a></p>
+<p><a id="toc48549039"></a>
+<a id="refheadingtoc77696559221927"></a></p>
 <h3 id="1511-entities">15.1.1. <span style="color: #4f81bd">Entities</span></h3>
 <p><img src="images/1000000000000152000002069D0947DC.png" style="width:3.902cm;height:5.978cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000152000002069D0947DC.png" /></p>
 <p>Entities are data classes. Their role is to encapsulate data and provide getters/setters that allow the data’s validity to be verified. Entities are exchanged between layers. A single entity can travel from the <strong>[ui]</strong> layer to the <strong>[dao]</strong> layer and vice versa.</p>
@@ -1703,15 +1703,15 @@
 </code></pre></div>
 
 <p>As soon as the <strong>[business]</strong> and <strong>[DAO]</strong> layers encounter a problem, they will raise this exception. It derives from the <strong>[MyException]</strong> class. It is therefore used as follows: <strong>[raise ImpôtsError(error_code, error_message)]</strong>.</p>
-<p><a id="refheadingtoc2521932924280206"></a>
-<a id="laclasseadmindata"></a></p>
+<p><a id="laclasseadmindata"></a>
+<a id="refheadingtoc2521932924280206"></a></p>
 <h4 id="15112-the-admindata-class">15.1.1.2. <span style="color: #4f81bd">The [AdminData] class</span></h4>
 <p>The <strong>[AdminData]</strong> class encapsulates the constants used in tax calculations:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">BaseEntity </span><span style="color:#0000ff">import </span>BaseEntity</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># tax administration data</span></span>
+<span class="odt-code-line"># tax administration data</span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">AdminData</span>(BaseEntity):</span>
 <span class="odt-code-line">    <span style="color:#008000"># keys excluded from the class state</span></span>
 <span class="odt-code-line">    excluded_keys = <span style="font-weight:bold">[]</span></span>
@@ -1733,7 +1733,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;single_tax_ceiling_for_discount&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;maximum_10_percent_deduction&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;minimum_10_percent_deduction&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        ]</span></span>
+<span class="odt-code-line">        ]</span>
 </code></pre></div>
 
 <ul>
@@ -1748,8 +1748,8 @@
 </ul>
 
 <p>We did not use setters to validate the data used to initialize an <strong>[AdminData]</strong> object. This is because this object is unique and defined by configuration, and therefore unlikely to contain errors.</p>
-<p><a id="refheadingtoc43322925428164"></a>
-<a id="laclassetaxpayer"></a></p>
+<p><a id="laclassetaxpayer"></a>
+<a id="refheadingtoc43322925428164"></a></p>
 <h4 id="15113-the-taxpayer-class">15.1.1.3. <span style="color: #4f81bd">The [TaxPayer] class</span></h4>
 <p>The <strong>[TaxPayer]</strong> class will model a taxpayer:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1932,14 +1932,14 @@
   <li>lines 60–161: the setters for the class’s attributes. Recall that the advantage of a class encapsulating data over a simple dictionary is that the class can verify the validity of its properties using its setters;
   </li>
 </ul>
-<p><a id="refheading93739200241464"></a>
-<a id="toc48549040"></a></p>
+<p><a id="toc48549040"></a>
+<a id="refheading93739200241464"></a></p>
 <h3 id="1512-the-dao-layer">15.1.2. <span style="color: #4f81bd">The [dao] layer</span></h3>
 <p><img src="images/1000000100000257000000DAE081E99C.png" style="width:10.119cm;height:3.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000257000000DAE081E99C.png" /></p>
 <p>We will group the layer implementations in a <strong>[services]</strong> folder. These classes will implement interfaces defined in the <strong>[interfaces]</strong> folder.</p>
 <p><img src="images/100000000000023B00000216ED994750.png" style="width:6.579cm;height:6.154cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000023B00000216ED994750.png" /></p>
-<p><a id="refheadingtoc2521952924280206"></a>
-<a id="linterfaceinterfaceimpotsdao"></a></p>
+<p><a id="linterfaceinterfaceimpotsdao"></a>
+<a id="refheadingtoc2521952924280206"></a></p>
 <h4 id="15121-the-interfaceimpotsdao-interface">15.1.2.1. <span style="color: #4f81bd">The [InterfaceImpôtsDao] interface</span></h4>
 <p>The <strong>[dao]</strong> layer will implement the following <strong>[InterfaceImpôtsDao]</strong> interface (file <em>InterfaceImpôtsDao.py</em>):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1953,17 +1953,17 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">TaxDaoInterface</span><span style="color:#000000">(</span><span style="color:#2b91af">ABC</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of tax brackets</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_admindata(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; AdminData:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of taxpayer data</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_taxpayers_data(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Writing the results of the tax calculation</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">write_taxpayers_results(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">taxpayers_results</span><span style="color:#000000">: </span><span style="color:#2b91af">list</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -1977,8 +1977,8 @@
   <li><b>[</b><b><span style="color: #000000">write_taxpayers_results</span></b><b>]</b>: is the method that will persist the tax calculation results. We do not specify where. We will only handle the case where the results are persisted in a text file. The <b>[</b><b><span style="color: #808080">taxpayers_results</span></b><b>] </b>parameter will be the list of results to be persisted;
   </li>
 </ul>
-<p><a id="refheadingtoc757923318110371"></a>
-<a id="laclasseabstractimpotsdao"></a></p>
+<p><a id="laclasseabstractimpotsdao"></a>
+<a id="refheadingtoc757923318110371"></a></p>
 <h4 id="15122-the-abstractimpotsdao-class">15.1.2.2. <span style="color: #4f81bd">The [AbstractImpôtsDao] class</span></h4>
 <p>The <strong>[dao]</strong> layer will be implemented by two classes:</p>
 <ul>
@@ -2036,7 +2036,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span>…</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># reading tax brackets</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_admindata(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; AdminData:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -2079,32 +2079,32 @@
 <span class="odt-code-line"><span style="color:#000000">            </span># Open the data file</span>
 <span class="odt-code-line"><span style="color:#000000">            datafile = open(</span><span style="color:#808080">self</span><span style="color:#000000">.</span><span style="color:#2b91af">taxpayers_filename</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;r&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># process the current line of the file</span>
-<span class="odt-code-line"><span style="color:#000000">            line = datafile.readline()</span></span>
+<span class="odt-code-line">            line = datafile.readline()</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># line number</span>
-<span class="odt-code-line"><span style="color:#000000">            line_number = 0</span></span>
+<span class="odt-code-line">            line_number = 0</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">while </span><span style="color:#000000">line != </span><span style="color:#a31515">&#x27;&#x27;</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span># increment the line number</span>
-<span class="odt-code-line"><span style="color:#000000">                lineNumber += 1</span></span>
+<span class="odt-code-line">                lineNumber += 1</span>
 <span class="odt-code-line"><span style="color:#000000">                </span># remove whitespace</span>
-<span class="odt-code-line"><span style="color:#000000">                line = line.strip()</span></span>
+<span class="odt-code-line">                line = line.strip()</span>
 <span class="odt-code-line"><span style="color:#000000">                </span># ignore empty lines and comments</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">if </span><span style="color:#000000">line != </span><span style="color:#a31515">&quot;&quot; </span><span style="color:#0000ff">and </span><span style="color:#000000">line</span><span style="font-weight:bold;color:#000000">[0] </span><span style="color:#000000">!= </span><span style="color:#a31515">&quot;#&quot;</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        </span># retrieve the 4 fields id, married, children, salary that make up the taxpayer line</span>
 <span class="odt-code-line"><span style="color:#000000">                        (id, married, children, salary) = line.split(</span><span style="color:#a31515">&quot;,&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        </span># create a new TaxPayer</span>
-<span class="odt-code-line"><span style="color:#000000">                        taxpayers_data.append(</span></span>
+<span class="odt-code-line">                        taxpayers_data.append(</span>
 <span class="odt-code-line"><span style="color:#000000">                            TaxPayer().fromdict({&#x27;id&#x27;: id, &#x27;married&#x27;: married, &#x27;children&#x27;: children, </span><span style="color:#a31515">&#x27;salary</span><span style="color:#000000">&#x27;: salary}))</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        </span># log the error</span>
 <span class="odt-code-line"><span style="color:#000000">                        errors.append(</span><span style="color:#a31515">f&quot;Line {linenumber}, {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span># read a new taxpayer line</span>
-<span class="odt-code-line"><span style="color:#000000">                line = datafile.readline()</span></span>
+<span class="odt-code-line">                line = datafile.readline()</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># record any errors</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">errors:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                text = </span><span style="color:#a31515">f&quot;Analyzing file {self.taxpayers_filename}\n\n&quot; </span><span style="color:#000000">+ </span><span style="color:#a31515">&quot;\n&quot;</span><span style="color:#000000">.join(errors)</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">with </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(</span><span style="color:#808080">self</span><span style="color:#000000">.</span><span style="color:#2b91af">errors_filename</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;w&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf-8&quot;</span><span style="color:#000000">) </span><span style="color:#0000ff">as </span><span style="color:#000000">fd:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    fd.write(text)</span></span>
+<span class="odt-code-line">                    fd.write(text)</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Return the result</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span><span style="color:#a31515">&quot;taxpayers&quot;</span><span style="color:#000000">: taxpayers_data, </span><span style="color:#a31515">&quot;errors&quot;</span><span style="color:#000000">: errors}</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
@@ -2113,7 +2113,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># close the file</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">datafile:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                datafile.close()</span></span>
+<span class="odt-code-line">                datafile.close()</span>
 </code></pre></div>
 
 <ul>
@@ -2209,8 +2209,8 @@
 
 <p>The <strong>[</strong><strong><span style="color: #000000">write_taxpayers_results</span></strong><strong>]</strong> method must produce a JSON file in the following format:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">  {</span></span>
+<span class="odt-code-line">[</span>
+<span class="odt-code-line">  {</span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;id&quot;</span><span style="font-weight:bold">: 1,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;married&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;yes&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;children&quot;</span><span style="font-weight:bold">: 2,</span></span>
@@ -2220,8 +2220,8 @@
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;rate&quot;</span><span style="font-weight:bold">: 0.14,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;discount&quot;</span><span style="font-weight:bold">: 0,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;reduction&quot;</span><span style="font-weight:bold">: 0</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">  },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">  {</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  {</span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;id&quot;</span><span style="font-weight:bold">: 2,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;married&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;yes&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;children&quot;</span><span style="font-weight:bold">: 2,</span></span>
@@ -2231,8 +2231,8 @@
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;rate&quot;</span><span style="font-weight:bold">: 0.14,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;discount&quot;</span><span style="font-weight:bold">: 384,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;reduction&quot;</span><span style="font-weight:bold">: 347</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">  },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">  {</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  {</span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;id&quot;</span><span style="font-weight:bold">: 3,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;married&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;yes&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;children&quot;</span><span style="font-weight:bold">: 3,</span></span>
@@ -2242,9 +2242,9 @@
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;rate&quot;</span><span style="font-weight:bold">: 0.14,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;discount&quot;</span><span style="font-weight:bold">: 720,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;discount&quot;</span><span style="font-weight:bold">: 0</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">  },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">  …</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line">  },</span>
+<span class="odt-code-line">  …</span>
+<span class="odt-code-line">]</span>
 </code></pre></div>
 
 <p>The <strong>[</strong><strong><span style="color: #000000">write_taxpayers_results</span></strong><strong>]</strong> method is as follows:</p>
@@ -2269,7 +2269,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># close the file if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">file:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                file.close()</span></span>
+<span class="odt-code-line">                file.close()</span>
 </code></pre></div>
 
 <ul>
@@ -2352,7 +2352,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Close the file if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">file:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                file.close()</span></span>
+<span class="odt-code-line">                file.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># -------------</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># interface</span>
@@ -2384,9 +2384,9 @@
   <li>lines 42–43: implementation of the <b>[</b><b><span style="color: #000000">get_admindata</span></b><b>] </b>method of the <b>[InterfaceImpôtsDao] </b>interface;
   </li>
 </ul>
-<p><a id="refheadingtoc2521992924280206"></a>
+<p><a id="lacouchemetier"></a>
 <a id="toc48549041"></a>
-<a id="lacouchemetier"></a></p>
+<a id="refheadingtoc2521992924280206"></a></p>
 <h3 id="1513-the-business-layer">15.1.3. <span style="color: #4f81bd">The [business] layer</span></h3>
 <p><img src="images/1000000100000257000000DAE081E99C.png" style="width:10.119cm;height:3.683cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000257000000DAE081E99C.png" /></p>
 <p><a id="refheadingtoc2522012924280206"></a></p>
@@ -2403,7 +2403,7 @@
 <span class="odt-code-line"># BusinessTaxInterface</span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">BusinessTaxInterface</span><span style="color:#000000">(</span><span style="color:#2b91af">ABC</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Calculate tax for 1 taxpayer</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">calculate_tax(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">taxpayer</span><span style="color:#000000">: TaxPayer, </span><span style="color:#808080">admindata</span><span style="color:#000000">: AdminData):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -2416,8 +2416,8 @@
   <li>Line 12: The <b>[</b><b><span style="color: #000000">calculate_tax</span></b><b>] </b>method does not return a result. The data obtained (tax, surcharge, discount, reduction, rate) are included in the <b>[taxpayer] </b>parameter: before the call, these attributes are empty; after the call, they have been initialized;
   </li>
 </ul>
-<p><a id="refheadingtoc2522032924280206"></a>
-<a id="laclasseimpotsmetier"></a></p>
+<p><a id="laclasseimpotsmetier"></a>
+<a id="refheadingtoc2522032924280206"></a></p>
 <h4 id="15132-the-businesstaxes-class">15.1.3.2. <span style="color: #4f81bd">The [BusinessTaxes] class</span></h4>
 <p>The <strong>[ImpôtsMétier]</strong> class implements the <strong>[InterfaceImpôtsMétier]</strong> interface as follows:</p>
 <p><img src="images/10000000000003DF0000039527DE6C80.png" style="width:11.449cm;height:10.596cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003DF0000039527DE6C80.png" /></p>
@@ -2446,13 +2446,13 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># Calculate tax without children</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.children != 0:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># calculate tax for the same taxpayer without children</span>
-<span class="odt-code-line"><span style="color:#000000">            taxpayer2 = TaxPayer().fromdict(</span></span>
+<span class="odt-code-line">            taxpayer2 = TaxPayer().fromdict(</span>
 <span class="odt-code-line"><span style="color:#000000">                {&#x27;id&#x27;: 0, &#x27;</span><span style="color:#a31515">m</span><span style="color:#000000">arried&#x27;: </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.married, </span><span style="color:#a31515">&#x27;children</span><span style="color:#000000">&#x27;: 0, </span><span style="color:#a31515">&#x27;salary</span><span style="color:#000000">&#x27;: </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.salary})</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#808080">self</span><span style="color:#000000">.calculate_tax_2(taxpayer2, </span><span style="color:#808080">admindata</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># the results are in taxpayer2</span>
-<span class="odt-code-line"><span style="color:#000000">            rate2 = taxpayer2.rate</span></span>
-<span class="odt-code-line"><span style="color:#000000">            surcharge2 = taxpayer2.surcharge</span></span>
-<span class="odt-code-line"><span style="color:#000000">            tax2 = taxpayer2.tax</span></span>
+<span class="odt-code-line">            rate2 = taxpayer2.rate</span>
+<span class="odt-code-line">            surcharge2 = taxpayer2.surcharge</span>
+<span class="odt-code-line">            tax2 = taxpayer2.tax</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Apply the family quotient cap</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.children &lt; 3:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span># FAMILY QUOTIENT CAP (HALF-PART) in euros for the first 2 children</span>
@@ -2463,11 +2463,11 @@
 <span class="odt-code-line"><span style="color:#000000">                         * 2 * </span><span style="color:#808080">admindata</span><span style="color:#000000">.half_share_ceiling</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># if the taxpayer has no children, then tax2 = tax1</span>
-<span class="odt-code-line"><span style="color:#000000">            tax2 = tax1</span></span>
+<span class="odt-code-line">            tax2 = tax1</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># take the higher tax amount with the corresponding rate and surcharge</span>
 <span class="odt-code-line"><span style="color:#000000">        (tax, surcharge, rate) = (tax1, surcharge1, rate1) </span><span style="color:#0000ff">if </span><span style="color:#000000">tax1 &gt;= tax2 </span><span style="color:#0000ff">else </span><span style="color:#000000">(</span></span>
-<span class="odt-code-line"><span style="color:#000000">            tax2, tax2 - tax1 + surcharge2, rate2)</span></span>
+<span class="odt-code-line">            tax2, tax2 - tax1 + surcharge2, rate2)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># partial results</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.tax = tax</span></span>
@@ -2495,9 +2495,9 @@
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc2522052924280206"></a>
+<p><a id="testsdescouches"></a>
 <a id="toc48549042"></a>
-<a id="testsdescouches"></a></p>
+<a id="refheadingtoc2522052924280206"></a></p>
 <h3 id="1514-tests-for-the-dao-and-business-layers">15.1.4. <span style="color: #4f81bd">Tests for the [dao] and [business] layers</span></h3>
 <p><img src="images/1000000000000170000002065376CC8F.png" style="width:4.249cm;height:5.981cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000170000002065376CC8F.png" /></p>
 <ul>
@@ -2527,7 +2527,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../interfaces&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../services&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/02/entities&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Set the syspath</span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -2581,7 +2581,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># Executed before each test method</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">setUp(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#0000ff">None</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># retrieve the test configuration</span></span>
-<span class="odt-code-line"><span style="color:#000000">        config = get_config()</span></span>
+<span class="odt-code-line">        config = get_config()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># store some information</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.business = config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;business&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.admindata = config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;dao&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">.get_admindata()</span></span>
@@ -2779,20 +2779,28 @@
 
 <p>Running the tests yields the following results:</p>
 <p><img src="images/1000000000000260000002BB45DA0CBB.png" style="width:7.02cm;height:8.072cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000260000002BB45DA0CBB.png" /></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">Testing started at 16:08 ...</span>
-<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe &quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.1.2\plugins\python-ce\helpers\pycharm\_jb_unittest_runner.py&quot; --path C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/v04/tests/TestDaoMétier.py</span>
-<span class="odt-code-line">Launching unit tests with arguments python -m unittest C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/v04/tests/TestDaoMétier.py in C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\v04\tests</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Ran 11 tests in 0.055s</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">OK</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">Process finished with exit code 0</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>Testing started at 16:08 ...
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe &quot;C:\Program Files\JetBrains\PyCharm Community Edition 2020.1.2\plugins\python-ce\helpers\pycharm\_jb_unittest_runner.py&quot; --path C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/v04/tests/TestDaoMétier.py
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>Launching unit tests with arguments python -m unittest C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/v04/tests/TestDaoMétier.py in C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\v04\tests
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>Ran 11 tests in 0.055s
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>OK
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>Process finished with exit code 0
+</code></pre></div></td></tr></table></div>
 <p><a id="toc48549043"></a></p>
 <h3 id="1515-main-script">15.1.5. <span style="color: #4f81bd">Main script</span></h3>
 <p><img src="images/10000000000001B20000027E72AAE6FF.png" style="width:5.009cm;height:7.364cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B20000027E72AAE6FF.png" /></p>
@@ -2817,7 +2825,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../../interfaces&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../../services&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/02/entities&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Set the syspath</span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -2865,7 +2873,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Retrieve tax brackets</span>
-<span class="odt-code-line"><span style="color:#000000">    admindata = dao.get_admindata()</span></span>
+<span class="odt-code-line">    admindata = dao.get_admindata()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># read taxpayer data</span>
 <span class="odt-code-line"><span style="color:#000000">    taxpayers = dao.get_taxpayers_data()</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;taxpayers&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># any taxpayers?</span>
@@ -2875,9 +2883,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">taxpayer </span><span style="color:#0000ff">in </span><span style="color:#000000">taxpayers:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># taxpayer is both an input and output parameter</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># taxpayer will be modified</span>
-<span class="odt-code-line"><span style="color:#000000">        business.calculate_tax(taxpayer, admindata)</span></span>
+<span class="odt-code-line">        business.calculate_tax(taxpayer, admindata)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># writing results to a text file</span>
-<span class="odt-code-line"><span style="color:#000000">    dao.write_taxpayers_results(taxpayers)</span></span>
+<span class="odt-code-line">    dao.write_taxpayers_results(taxpayers)</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">ImpôtsError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>
@@ -2918,39 +2926,57 @@
 </code></pre></div>
 
 <p>The erroneous lines were as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"># valid data: id, married, children, salary</span>
-<span class="odt-code-line">1,yes,2,55555</span>
-<span class="odt-code-line">2,yes,2,50000</span>
-<span class="odt-code-line">3,yes,3,50000</span>
-<span class="odt-code-line">4,no,2,100000</span>
-<span class="odt-code-line">5,no,3,100000</span>
-<span class="odt-code-line">6,yes,3,100000</span>
-<span class="odt-code-line">7,yes,5,100000</span>
-<span class="odt-code-line">8,no,0,100000</span>
-<span class="odt-code-line">9,yes,2,30000</span>
-<span class="odt-code-line">10,no,0,200,000</span>
-<span class="odt-code-line">11,yes,3,200000</span>
-<span class="odt-code-line"># there may be empty rows</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># we create erroneous lines</span>
-<span class="odt-code-line"># Not enough values</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">11,12</span></span>
-<span class="odt-code-line"># too many values</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">12,yes,3,200000, x, y</span></span>
-<span class="odt-code-line"># incorrect values</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">x,x,x,x</span></span>
-</code></pre></div>
-
-<p><a id="toc48549044"></a>
-<a id="version4-"></a></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="gh"># valid data: id, married, children, salary</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>1,yes,2,55555
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>2,yes,2,50000
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>3,yes,3,50000
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>4,no,2,100000
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>5,no,3,100000
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>6,yes,3,100000
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>7,yes,5,100000
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>8,no,0,100000
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>9,yes,2,30000
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>10,no,0,200,000
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>11,yes,3,200000
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="gh"># there may be empty rows</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="gh"># we create erroneous lines</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="gh"># Not enough values</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>11,12
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="gh"># too many values</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>12,yes,3,200000, x, y
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="gh"># incorrect values</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>x,x,x,x
+</code></pre></div></td></tr></table></div>
+<p><a id="version4-"></a>
+<a id="toc48549044"></a></p>
 <h2 id="152-version-4-application-2">15.2. <span style="color: #4f81bd">Version 4 – Application 2</span></h2>
 <p>In this version, the user enters the list of taxpayers via the keyboard. The application architecture will be as follows:</p>
 <p><img src="images/1000000100000301000000E71A0FC164.png" style="width:10.38cm;height:3.119cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000301000000E71A0FC164.png" /></p>
 <p>A new module appears: the <strong>[ui]</strong> (User Interface) layer, which will interact with the user. This layer will have an interface and will be implemented by a class.</p>
 <p><img src="images/10000000000002350000034FDD3FB621.png" style="width:5.87cm;height:8.802cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002350000034FDD3FB621.png" /></p>
-<p><a id="refheadingtoc2522072924280206"></a>
-<a id="toc48549045"></a></p>
+<p><a id="toc48549045"></a>
+<a id="refheadingtoc2522072924280206"></a></p>
 <h3 id="1521-the-interfaceimpotsui-interface">15.2.1. <span style="color: #4f81bd">The [InterfaceImpôtsUi] interface</span></h3>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># imports</span>
@@ -2960,7 +2986,7 @@
 <span class="odt-code-line"># interface InterfaceImpôtsUI</span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#000000">InterfaceImpôtsUi(ABC):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># execution of the class implementing the interface</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">run(self):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -2976,9 +3002,9 @@
 </ul>
 
 <p>This method allows for a very general interface that is specified by the parameters of the constructors of each implementation class. This method was already used for modular version #1.</p>
-<p><a id="toc48549046"></a>
+<p><a id="laclasseimpotsconsole"></a>
 <a id="refheadingtoc2522092924280206"></a>
-<a id="laclasseimpotsconsole"></a></p>
+<a id="toc48549046"></a></p>
 <h3 id="1522-the-impotsconsole-class">15.2.2. <span style="color: #4f81bd">The [ImpôtsConsole] class</span></h3>
 <p>The <strong>[</strong><strong><span style="color: #2b91af">ImpôtsConsole</span></strong><strong>]</strong> class implements the <strong>[</strong><strong><span style="color: #000000">InterfaceImpôtsUi</span></strong><strong>]</strong> interface as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -3075,9 +3101,9 @@
   <li>line 52: the tax amount is displayed;
   </li>
 </ul>
-<p><a id="toc48549047"></a>
+<p><a id="lescriptprincipal4"></a>
 <a id="refheadingtoc2522112924280206"></a>
-<a id="lescriptprincipal4"></a></p>
+<a id="toc48549047"></a></p>
 <h3 id="1523-the-main-script">15.2.3. <span style="color: #4f81bd">The main script</span></h3>
 <p>The main script <strong>[main]</strong> is configured by the following <strong>[config]</strong> file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -3100,7 +3126,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../../interfaces&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../../services&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/02/entities&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">    <span style="color:#008000"># Set the syspath</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -3149,7 +3175,7 @@
 <span class="odt-code-line"># code</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># execute the <span style="font-weight:bold">[ui] </span>layer</span>
-<span class="odt-code-line"><span style="color:#000000">    ui.run()</span></span>
+<span class="odt-code-line">    ui.run()</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">ImpôtsError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error message</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>

@@ -1823,17 +1823,17 @@
 
 
 
-<p><a id="toc48549106"></a>
+<p><a id="fonctionsreseau"></a>
 <a id="refheadingtoc2522432924280206"></a>
-<a id="fonctionsreseau"></a></p>
+<a id="toc48549106"></a></p>
 <h1 id="21-internet-functions">21. <span style="color: #365f91">Internet Functions</span></h1>
 <p>We will now discuss Python’s Internet functions, which allow us to perform TCP/IP (Transmission Control Protocol/Internet Protocol) programming.</p>
 <p><img src="images/10000000000000D80000015987C8E4F7.png" style="width:2.499cm;height:3.993cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000D80000015987C8E4F7.png" /></p>
-<p><a id="refheading10403051168783983"></a>
-<a id="toc48549107"></a></p>
+<p><a id="toc48549107"></a>
+<a id="refheading10403051168783983"></a></p>
 <h2 id="211-the-basics-of-internet-programming">21.1. <span style="color: #4f81bd">The basics of internet programming</span></h2>
-<p><a id="refheading10403071168783983"></a>
-<a id="toc48549108"></a></p>
+<p><a id="toc48549108"></a>
+<a id="refheading10403071168783983"></a></p>
 <h3 id="2111-general-overview">21.1.1. <span style="color: #4f81bd">General Overview</span></h3>
 <p>Consider communication between two remote machines, A and B:</p>
 <p><img src="images/10000001000001FA000000E91A417E3C.png" style="width:6.892cm;height:3.173cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001FA000000E91A417E3C.png" /></p>
@@ -1850,8 +1850,8 @@
 </ul>
 
 <p>Therefore, the two communicating applications must agree on the type of communication they will use. For example, communication with an <em>FTP</em> service is not the same as with a <em>POP</em> service: these two services do not accept the same commands.  They have a different communication protocol;</p>
-<p><a id="refheading10403091168783983"></a>
-<a id="toc48549109"></a></p>
+<p><a id="toc48549109"></a>
+<a id="refheading10403091168783983"></a></p>
 <h3 id="2112-characteristics-of-the-tcp-protocol">21.1.2. <span style="color: #4f81bd">Characteristics of the TCP Protocol</span></h3>
 <p>Here, we will only examine network communications using the TCP transport protocol, whose main characteristics are as follows:</p>
 <ul>
@@ -1870,12 +1870,12 @@
   <li>The virtual circuit established between the two communicating processes is <i>full-duplex</i>: this means that information can flow in both directions. Thus, the destination process can send acknowledgments even while the source process continues to send information. This allows, for example, the source TCP protocol to send multiple segments without waiting for an acknowledgment. If, after a certain amount of time, it realizes it has not received an acknowledgment for a specific segment No. <i>n</i>, it will resume sending segments from that point;
   </li>
 </ul>
-<p><a id="refheading10403111168783983"></a>
-<a id="toc48549110"></a></p>
+<p><a id="toc48549110"></a>
+<a id="refheading10403111168783983"></a></p>
 <h3 id="2113-the-client-server-relationship">21.1.3. <span style="color: #4f81bd">The client-server relationship</span></h3>
 <p>Communication over the Internet is often asymmetric: machine A initiates a connection to request a service from machine B, specifying that it wants to establish a connection with service SB1 on machine B. Machine B either accepts or refuses. If it accepts, machine A can send its requests to service SB1. These requests must comply with the communication protocol understood by service SB1. A request-response dialogue is thus established between machine A, known as the <strong>client</strong> machine, and machine B, known as the <strong>server</strong> machine. One of the two partners will close the connection.</p>
-<p><a id="refheading10403131168783983"></a>
-<a id="toc48549111"></a></p>
+<p><a id="toc48549111"></a>
+<a id="refheading10403131168783983"></a></p>
 <h3 id="2114-client-architecture">21.1.4. <span style="color: #4f81bd">Client Architecture</span></h3>
 <p>The architecture of a network program requesting the services of a server application will be as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
@@ -1898,8 +1898,8 @@
 <a id="__codelineno-0-9" name="__codelineno-0-9"></a>end
 <a id="__codelineno-0-10" name="__codelineno-0-10"></a>close the connection
 </code></pre></div></td></tr></table></div>
-<p><a id="refheading10403151168783983"></a>
-<a id="toc48549112"></a></p>
+<p><a id="toc48549112"></a>
+<a id="refheading10403151168783983"></a></p>
 <h3 id="2115-server-architecture">21.1.5. <span style="color: #4f81bd">Server architecture</span></h3>
 <p>The architecture of a program offering services will be as follows:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
@@ -1926,12 +1926,12 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>end while
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a>release the service port
 </code></pre></div></td></tr></table></div>
-<p><a id="refheading10403171168783983"></a>
-<a id="toc48549113"></a>
+<p><a id="toc48549113"></a>
+<a id="refheading10403171168783983"></a>
 <a id="protocoles-communication-tcp"></a></p>
 <h2 id="212-learn-about-the-communication-protocols-of-the-internet">21.2. <span style="color: #4f81bd">Learn about the communication protocols of the Internet</span></h2>
-<p><a id="refheading10403191168783983"></a>
-<a id="toc48549114"></a></p>
+<p><a id="toc48549114"></a>
+<a id="refheading10403191168783983"></a></p>
 <h3 id="2121-introduction">21.2.1. <span style="color: #4f81bd">Introduction</span></h3>
 <p>When a client connects to a server, a dialogue is established between them. The nature of this dialogue forms what is known as the server’s communication protocol. Among the most common Internet protocols are the following:</p>
 <ul>
@@ -1958,8 +1958,8 @@
 </ul>
 
 <p>then we are able to communicate with a TCP server using a text-based protocol, provided we know the rules of that protocol.</p>
-<p><a id="refheadingtoc116171425309931"></a>
-<a id="toc48549115"></a></p>
+<p><a id="toc48549115"></a>
+<a id="refheadingtoc116171425309931"></a></p>
 <h3 id="2122-tcp-utilities">21.2.2. <span style="color: #4f81bd">TCP Utilities</span></h3>
 <p><img src="images/10000000000001A0000000E5A6BD6321.png" style="width:4.791cm;height:2.637cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A0000000E5A6BD6321.png" /></p>
 <p>In the code associated with this document, there are two TCP communication utilities:</p>
@@ -2196,8 +2196,8 @@
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[hello from server]</span></span>
 </code></pre></div>
 
-<p><a id="refheading399321881943603"></a>
-<a id="toc48549116"></a></p>
+<p><a id="toc48549116"></a>
+<a id="refheading399321881943603"></a></p>
 <h2 id="213-obtaining-the-name-or-ip-address-of-a-machine-on-the-internet">21.3. <span style="color: #4f81bd">Obtaining the name or IP address of a machine on the Internet</span></h2>
 <p><img src="images/10000000000000F60000009B904B6DE3.png" style="width:2.842cm;height:1.79cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000F60000009B904B6DE3.png" /></p>
 <p>Computers on the Internet are identified by an IP address (IPv4 or IPv6) and, more often than not, by a name. However, ultimately only the IP address is used by Internet communication protocols. Therefore, you need to know the IP address of a computer identified by its name.</p>
@@ -2237,7 +2237,7 @@
 <span class="odt-code-line"># IP addresses of HOST machines</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">host </span><span style="color:#0000ff">in </span><span style="color:#000000">hosts:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;-------------------------------------&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    get_ip_and_name(host)</span></span>
+<span class="odt-code-line">    get_ip_and_name(host)</span>
 <span class="odt-code-line"># end</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;Done...&quot;</span><span style="color:#000000">)</span></span>
 </code></pre></div>
@@ -2288,12 +2288,12 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="toc48549117"></a>
+<p><a id="leprotocolehttp"></a>
 <a id="refheadingtoc113039843107739"></a>
-<a id="leprotocolehttp"></a></p>
+<a id="toc48549117"></a></p>
 <h2 id="214-the-http-hypertext-transfer-protocol">21.4. <span style="color: #4f81bd">The HTTP (HyperText Transfer Protocol)</span></h2>
-<p><a id="toc48549118"></a>
-<a id="refheadingtoc1356962222329424"></a></p>
+<p><a id="refheadingtoc1356962222329424"></a>
+<a id="toc48549118"></a></p>
 <h3 id="2141-example-1">21.4.1. <span style="color: #4f81bd">Example 1</span></h3>
 <p>When a browser displays a URL, it acts as the client of a web server, or in other words, an HTTP server. It takes the initiative and begins by sending a number of commands to the server. For this first example:</p>
 <ul>
@@ -2370,12 +2370,12 @@
 <span class="odt-code-line">client 1: <span style="font-weight:bold">[]</span></span>
 <span class="odt-code-line">server: Client 3-DESKTOP-30FF5FB-51441 connected...</span>
 <span class="odt-code-line">server: Waiting for a client...</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">quit</span></span>
+<span class="odt-code-line">quit</span>
 <span class="odt-code-line">server: service ended</span>
 </code></pre></div>
 
-<p><a id="refheadingtoc1356982222329424"></a>
-<a id="toc48549119"></a></p>
+<p><a id="toc48549119"></a>
+<a id="refheadingtoc1356982222329424"></a></p>
 <h3 id="2142-example-2">21.4.2. <span style="color: #4f81bd">Example 2</span></h3>
 <p>Now that we know the commands sent by a browser to request a URL, we will request this URL using our TCP client <strong>[RawTcpClient]</strong>. The Apache server in Laragon (section <a href="#installationdelaragon"><u><span style="color: #0563c1">|Installing</span></u></a> Laragon|) will be our web server.</p>
 <p>Let’s launch Laragon and then the Apache web server:</p>
@@ -2408,7 +2408,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>style<span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>html<span style="color:#000000">, </span>body <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">height</span><span style="color:#000000">:</span><span style="color:#0000ff"> 100%</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>body <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">margin</span><span style="color:#000000">:</span><span style="color:#0000ff"> 0</span><span style="color:#000000">;</span></span>
@@ -2417,35 +2417,35 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">display</span><span style="color:#000000">: </span><span style="color:#0000ff">table</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">font-weight</span><span style="color:#000000">:</span><span style="color:#0000ff"> 100</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">font-family</span><span style="color:#000000">: </span><span style="color:#0000ff">&#x27;Karla&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>.container <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">text-align</span><span style="color:#000000">: </span><span style="color:#0000ff">center</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">display</span><span style="color:#000000">: </span><span style="color:#0000ff">table-cell</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">vertical-align</span><span style="color:#000000">: </span><span style="color:#0000ff">middle</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>.content <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">text-align</span><span style="color:#000000">: </span><span style="color:#0000ff">center</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">display</span><span style="color:#000000">: </span><span style="color:#0000ff">inline-block</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>.title <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">font-size</span><span style="color:#000000">:</span><span style="color:#0000ff"> 96px</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>.opt <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">margin-top</span><span style="color:#000000">:</span><span style="color:#0000ff"> 30px</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">            </span>.opt a <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">text-decoration</span><span style="color:#000000">: </span><span style="color:#0000ff">none</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">font-size</span><span style="color:#000000">:</span><span style="color:#0000ff"> 150%</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>a:hover <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#ff0000">color</span><span style="color:#000000">: </span><span style="color:#0000ff">red</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>/style<span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/head<span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>body<span style="color:#0000ff">&gt;</span></span>
@@ -2678,8 +2678,8 @@
 </ul>
 
 <p>We now have the basics to program a TCP client that would request a URL.</p>
-<p><a id="refheadingtoc1357002222329424"></a>
-<a id="toc48549120"></a></p>
+<p><a id="toc48549120"></a>
+<a id="refheadingtoc1357002222329424"></a></p>
 <h3 id="2143-example-3">21.4.3. <span style="color: #4f81bd">Example 3</span></h3>
 <p><img src="images/10000000000001340000014D64AA422E.png" style="width:3.56cm;height:3.849cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001340000014D64AA422E.png" /></p>
 <p>The script <strong>[http/01/main.py]</strong> is an HTTP client configured by the file <strong>[config.py]</strong>. Its contents are as follows:</p>
@@ -2694,7 +2694,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># endOfLine: line break character in the sent HTTP headers</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># encoding: encoding of the server response</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># timeout: maximum wait time for a server response</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;site&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;localhost&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;port&quot;</span><span style="font-weight:bold">: 80,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;GET&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;/&quot;</span><span style="font-weight:bold">,</span></span>
@@ -2703,12 +2703,12 @@
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;User-Agent&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;Python client&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;Accept&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;text/HTML&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;Accept-Language&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;fr&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            },</span></span>
+<span class="odt-code-line">            },</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;endOfLine&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;\r\n&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;encoding&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;utf-8&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold">: 0.5</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;site&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;sergetahe.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;port&quot;</span><span style="font-weight:bold">: 80,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;GET&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;/&quot;</span><span style="font-weight:bold">,</span></span>
@@ -2717,12 +2717,12 @@
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;User-Agent&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;Python client&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;Accept&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;text/HTML&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;Accept-Language&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;fr&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            },</span></span>
+<span class="odt-code-line">            },</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;endOfLine&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;\r\n&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;encoding&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;utf-8&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold">: 5</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;site&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;tahe.developpez.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;port&quot;</span><span style="font-weight:bold">: 443,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;GET&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;/&quot;</span><span style="font-weight:bold">,</span></span>
@@ -2731,12 +2731,12 @@
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;User-Agent&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;Python client&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;Accept&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;text/HTML&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;Accept-Language&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;fr&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            },</span></span>
+<span class="odt-code-line">            },</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;endOfLine&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;\r\n&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;encoding&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;utf-8&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold">: 2</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;site&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;www.sergetahe.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;port&quot;</span><span style="font-weight:bold">: 80,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;GET&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;/programming-tutorials/&quot;</span><span style="font-weight:bold">,</span></span>
@@ -2745,12 +2745,12 @@
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;User-Agent&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;Python client&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;Accept&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;text/HTML&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;Accept-Language&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;fr&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            },</span></span>
+<span class="odt-code-line">            },</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;endOfLine&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;\r\n&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;encoding&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;utf-8&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold">: 5</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        }</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line">    <span style="color:#008000"># return the configuration</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
 <span class="odt-code-line">        <span style="color:#a31515">&quot;urls&quot;</span>: urls</span>
@@ -2836,14 +2836,14 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># Read the socket as if it were a text file</span>
 <span class="odt-code-line"><span style="color:#000000">        encoding = </span><span style="color:#a31515">f&quot;{url</span><span style="font-weight:bold;color:#a31515">[&#x27;encoding&#x27;]</span><span style="color:#a31515">}&quot; </span><span style="color:#0000ff">if </span><span style="color:#808080">url</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;encoding&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#0000ff">else None</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">encoding:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            file = sock.makefile(encoding=encoding)</span></span>
+<span class="odt-code-line">            file = sock.makefile(encoding=encoding)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            file = sock.makefile()</span></span>
+<span class="odt-code-line">            file = sock.makefile()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># process this file line by line</span>
 <span class="odt-code-line"><span style="color:#000000">        finished = </span><span style="color:#0000ff">False</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">while not </span><span style="color:#000000">finished:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># read current line</span>
-<span class="odt-code-line"><span style="color:#000000">            line = file.readline().strip()</span></span>
+<span class="odt-code-line">            line = file.readline().strip()</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Is the line non-empty?</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">line:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">if </span><span style="color:#808080">follow</span><span style="color:#000000">:</span></span>
@@ -2854,20 +2854,20 @@
 <span class="odt-code-line"><span style="color:#000000">                finished = </span><span style="color:#0000ff">True</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># read the HTML document that follows the empty line</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># read current line</span>
-<span class="odt-code-line"><span style="color:#000000">        line = file.readline()</span></span>
+<span class="odt-code-line">        line = file.readline()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">while </span><span style="color:#000000">line:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># write to the log file</span>
 <span class="odt-code-line"><span style="color:#000000">            html.write(</span><span style="color:#2b91af">str</span><span style="color:#000000">(line))</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># next line</span>
-<span class="odt-code-line"><span style="color:#000000">            line = file.readline()</span></span>
+<span class="odt-code-line">            line = file.readline()</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># the loop ends when the server closes the connection</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># the client closes the connection</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">sock:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            sock.close()</span></span>
+<span class="odt-code-line">            sock.close()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Close the HTML file</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">html:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            html.close()</span></span>
+<span class="odt-code-line">            html.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># -------------------main</span>
@@ -2883,7 +2883,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;-------------------------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Read the URL of the <span style="font-weight:bold">[site] </span>site</span>
-<span class="odt-code-line"><span style="color:#000000">        get_url(url)</span></span>
+<span class="odt-code-line">        get_url(url)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
@@ -2947,7 +2947,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/inet/http/01/main.py</span>
 <span class="odt-code-line">-------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">localhost</span></span>
+<span class="odt-code-line">localhost</span>
 <span class="odt-code-line">-------------------------</span>
 <span class="odt-code-line">Client: Starting communication with the server <span style="font-weight:bold">[localhost]</span></span>
 <span class="odt-code-line">--&gt; GET / HTTP/1.1</span>
@@ -2964,7 +2964,7 @@
 <span class="odt-code-line">&lt;-- Connection: close</span>
 <span class="odt-code-line">&lt;-- Content-Type: text/html; charset=UTF-8</span>
 <span class="odt-code-line">-------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">sergetahe.com</span></span>
+<span class="odt-code-line">sergetahe.com</span>
 <span class="odt-code-line">-------------------------</span>
 <span class="odt-code-line">Client: Start of communication with the server <span style="font-weight:bold">[sergetahe.com]</span></span>
 <span class="odt-code-line">--&gt; GET / HTTP/1.1</span>
@@ -2984,7 +2984,7 @@
 <span class="odt-code-line">&lt;-- Set-Cookie: SERVERID68971=2620178|XwH/h|XwH/h; path=/</span>
 <span class="odt-code-line">&lt;-- X-IPLB-Instance: 17106</span>
 <span class="odt-code-line">-------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">tahe.developpez.com</span></span>
+<span class="odt-code-line">tahe.developpez.com</span>
 <span class="odt-code-line">-------------------------</span>
 <span class="odt-code-line">Client: Start of communication with the server <span style="font-weight:bold">[tahe.developpez.com]</span></span>
 <span class="odt-code-line">--&gt; GET / HTTP/1.1</span>
@@ -3000,7 +3000,7 @@
 <span class="odt-code-line">&lt;-- Connection: close</span>
 <span class="odt-code-line">&lt;-- Content-Type: text/html; charset=iso-8859-1</span>
 <span class="odt-code-line">-------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">www.sergetahe.com</span></span>
+<span class="odt-code-line">www.sergetahe.com</span>
 <span class="odt-code-line">-------------------------</span>
 <span class="odt-code-line">Client: Start of communication with the server <span style="font-weight:bold">[www.sergetahe.com]</span></span>
 <span class="odt-code-line">--&gt; GET /programming-tutorials/ HTTP/1.1</span>
@@ -3050,7 +3050,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span>style<span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span>html<span style="color:#000000">, </span>body <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">height</span><span style="color:#000000">:</span><span style="color:#0000ff"> 100%</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">            </span>body <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">margin</span><span style="color:#000000">:</span><span style="color:#0000ff"> 0</span><span style="color:#000000">;</span></span>
@@ -3059,42 +3059,42 @@
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">display</span><span style="color:#000000">: </span><span style="color:#0000ff">table</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">font-weight</span><span style="color:#000000">:</span><span style="color:#0000ff"> 100</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">font-family</span><span style="color:#000000">: </span><span style="color:#0000ff">&#x27;Karla&#x27;</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">            </span>.container <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">text-align</span><span style="color:#000000">: </span><span style="color:#0000ff">center</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">display</span><span style="color:#000000">: </span><span style="color:#0000ff">table-cell</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">vertical-align</span><span style="color:#000000">: </span><span style="color:#0000ff">middle</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">            </span>.content <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">text-align</span><span style="color:#000000">: </span><span style="color:#0000ff">center</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">display</span><span style="color:#000000">: </span><span style="color:#0000ff">inline-block</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">            </span>.title <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">font-size</span><span style="color:#000000">:</span><span style="color:#0000ff"> 96px</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">            </span>.opt <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#ff0000">margin-top</span><span style="color:#000000">:</span><span style="color:#0000ff"> 30px</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">            </span>.opt a <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#ff0000">text-decoration</span><span style="color:#000000">: </span><span style="color:#0000ff">none</span><span style="color:#000000">;</span></span>
 <span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#ff0000">font-size</span><span style="color:#000000">:</span><span style="color:#0000ff"> 150%</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">            </span>
 <span class="odt-code-line"><span style="color:#000000">            </span>a:hover <span style="color:#000000">{</span></span>
 <span class="odt-code-line"><span style="color:#000000">              </span><span style="color:#ff0000">color</span><span style="color:#000000">: </span><span style="color:#0000ff">red</span><span style="color:#000000">;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
+<span class="odt-code-line">            }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span>/style<span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>/head<span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>body<span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">&lt;</span>div <span style="color:#0000ff">class=&quot;container&quot;&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">&lt;</span>div <span style="color:#0000ff">class=&quot;content&quot;&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;</span>div <span style="color:#0000ff">class=&quot;title&quot; title=&quot;Laragon&quot;&gt;</span><span style="color:#000000">Laragon</span><span style="color:#0000ff">&lt;</span>/div<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">     </span></span>
+<span class="odt-code-line">     </span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">&lt;</span>div <span style="color:#0000ff">class=&quot;info&quot;&gt;&lt;</span>br <span style="color:#0000ff">/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                      Apache/2.4.35 (Win64) OpenSSL/1.1.1b PHP/7.2.19</span><span style="color:#0000ff">&lt;br/&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                      PHP version: 7.2.19   </span><span style="color:#0000ff">&lt;</span>span<span style="color:#0000ff">&gt;&lt;</span>a <span style="color:#0000ff">title=&quot;phpinfo()&quot; href=&quot;/?q=info&quot;&gt;</span><span style="color:#000000">info</span><span style="color:#0000ff">&lt;</span>/a<span style="color:#0000ff">&gt;&lt;</span>/span<span style="color:#0000ff">&gt;&lt;</span>br <span style="color:#0000ff">/&gt;</span></span>
@@ -3512,8 +3512,8 @@
 <span class="odt-code-line">               2 Reps  892,385,628,160 free bytes</span>
 </code></pre></div>
 
-<p><a id="refheadingtoc112763843107739"></a>
-<a id="toc48549122"></a></p>
+<p><a id="toc48549122"></a>
+<a id="refheadingtoc112763843107739"></a></p>
 <h3 id="2145-example-5">21.4.5. <span style="color: #4f81bd">Example 5</span></h3>
 <p>Python has a module called <strong>[pyccurl]</strong> that allows you to use the capabilities of the <strong>[curl]</strong> tool in a Python program. We install this module:</p>
 <p><img src="images/100000000000055500000198AD4257EA.png" style="width:15.769cm;height:4.715cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000055500000198AD4257EA.png" /></p>
@@ -3528,31 +3528,31 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># timeout: maximum time to wait for a response from the server</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># target: URL to request</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># encoding: encoding of the server response</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;site&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;sergetahe.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold">: 2000,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;target&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;http://sergetahe.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;encoding&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;utf-8&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;site&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;tahe.developpez.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold">: 500,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;target&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;https://tahe.developpez.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;encoding&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;iso-8859-1&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;site&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;www.polytech-angers.fr&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold">: 500,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;target&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;http://www.polytech-angers.fr&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;encoding&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;utf-8&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;site&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;localhost&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold">: 500,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;target&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;http://localhost&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;encoding&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;utf-8&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        }</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line">    <span style="color:#008000"># return the configuration</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
 <span class="odt-code-line">        <span style="color:#a31515">&#x27;urls</span>&#x27;: urls</span>
@@ -3604,41 +3604,41 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># binary stream</span>
 <span class="odt-code-line"><span style="color:#000000">        stream = </span><span style="color:#2b91af">BytesIO</span><span style="color:#000000">()</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># curl options</span>
-<span class="odt-code-line"><span style="color:#000000">        options = {</span></span>
+<span class="odt-code-line">        options = {</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># URL</span>
-<span class="odt-code-line"><span style="color:#000000">            curl.URL: target,</span></span>
+<span class="odt-code-line">            curl.URL: target,</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># WRITEDATA: where the received data will be stored</span>
-<span class="odt-code-line"><span style="color:#000000">            curl.WRITEDATA: stream,</span></span>
+<span class="odt-code-line">            curl.WRITEDATA: stream,</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># verbose mode</span>
 <span class="odt-code-line"><span style="color:#000000">            curl.VERBOSE: </span><span style="color:#808080">tracking</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># new connection - no cache</span>
 <span class="odt-code-line"><span style="color:#000000">            curl.FRESH_CONNECT: </span><span style="color:#0000ff">True</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># request timeout (in seconds)</span>
-<span class="odt-code-line"><span style="color:#000000">            curl.TIMEOUT: timeout,</span></span>
-<span class="odt-code-line"><span style="color:#000000">            curl.CONNECTTIMEOUT: timeout,</span></span>
+<span class="odt-code-line">            curl.TIMEOUT: timeout,</span>
+<span class="odt-code-line">            curl.CONNECTTIMEOUT: timeout,</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># do not verify SSL certificates</span>
 <span class="odt-code-line"><span style="color:#000000">            curl.SSL_VERIFYPEER: </span><span style="color:#0000ff">False</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># follow redirects</span>
 <span class="odt-code-line"><span style="color:#000000">            curl.FOLLOWLOCATION: </span><span style="color:#0000ff">True</span></span>
-<span class="odt-code-line"><span style="color:#000000">        }</span></span>
+<span class="odt-code-line">        }</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># curl configuration</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">for </span><span style="color:#000000">option, value </span><span style="color:#0000ff">in </span><span style="color:#000000">options.items():</span></span>
-<span class="odt-code-line"><span style="color:#000000">            curl.setopt(option, value)</span></span>
+<span class="odt-code-line">            curl.setopt(option, value)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Execute the CURL request with these settings</span>
-<span class="odt-code-line"><span style="color:#000000">        curl.perform()</span></span>
+<span class="odt-code-line">        curl.perform()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Create the server.html file - replace the problematic characters with a filename</span>
 <span class="odt-code-line"><span style="color:#000000">        server2 = server.replace(</span><span style="color:#a31515">&quot;/&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;_&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        server2 = server2.replace(</span><span style="color:#a31515">&quot;.&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;_&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        html_filename = </span><span style="color:#a31515">f&#x27;{server2}.html&#x27;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        html = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(</span><span style="color:#a31515">f&quot;output/{html_filename}&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;w&quot;</span><span style="color:#000000">, encoding)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Save the received document to the HTML file</span>
-<span class="odt-code-line"><span style="color:#000000">        html.write(flux.getvalue().decode(encoding))</span></span>
+<span class="odt-code-line">        html.write(flux.getvalue().decode(encoding))</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Release resources</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">curl:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            curl.close()</span></span>
+<span class="odt-code-line">            curl.close()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">html:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            html.close()</span></span>
+<span class="odt-code-line">            html.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># -------------------main</span>
@@ -3653,7 +3653,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;-------------------------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Read the URL of the <span style="font-weight:bold">[site] </span>site</span>
-<span class="odt-code-line"><span style="color:#000000">        get_url(url)</span></span>
+<span class="odt-code-line">        get_url(url)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># except BaseException as error:</span>
 <span class="odt-code-line"><span style="color:#000000">    </span>#     print(f&quot;The following error occurred: {error}&quot;)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
@@ -3799,7 +3799,7 @@
 <span class="odt-code-line">&lt; </span>
 <span class="odt-code-line">* Connection #1 to host sergetahe.com left intact</span>
 <span class="odt-code-line">-------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">tahe.developpez.com</span></span>
+<span class="odt-code-line">tahe.developpez.com</span>
 <span class="odt-code-line">-------------------------</span>
 <span class="odt-code-line">Client: Starting communication with the server <span style="font-weight:bold">[tahe.developpez.com]</span></span>
 <span class="odt-code-line">*   Trying 87.98.130.52:443...</span>
@@ -3833,7 +3833,7 @@
 <span class="odt-code-line">&lt; </span>
 <span class="odt-code-line">* Connection #0 to host tahe.developpez.com remains open</span>
 <span class="odt-code-line">-------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">www.polytech-angers.fr</span></span>
+<span class="odt-code-line">www.polytech-angers.fr</span>
 <span class="odt-code-line">-------------------------</span>
 <span class="odt-code-line">Client: Starting communication with the server <span style="font-weight:bold">[www.polytech-angers.fr]</span></span>
 <span class="odt-code-line">*   Trying 193.49.144.41:80...</span>
@@ -3882,7 +3882,7 @@
 <span class="odt-code-line">&lt; </span>
 <span class="odt-code-line">* Connection #0 to host www.polytech-angers.fr left intact</span>
 <span class="odt-code-line">-------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">localhost</span></span>
+<span class="odt-code-line">localhost</span>
 <span class="odt-code-line">-------------------------</span>
 <span class="odt-code-line">Client: Starting communication with the server <span style="font-weight:bold">[localhost]</span></span>
 <span class="odt-code-line">*   Trying ::1:80...</span>
@@ -3937,15 +3937,15 @@
   </li>
 </ul>
 
-<p><a id="refheadingtoc1357062222329424"></a>
-<a id="toc48549123"></a></p>
+<p><a id="toc48549123"></a>
+<a id="refheadingtoc1357062222329424"></a></p>
 <h3 id="2146-conclusion">21.4.6. <span style="color: #4f81bd">Conclusion</span></h3>
 <p>In this section, we explored the HTTP protocol and wrote a script <strong>[http/02/main.py]</strong> capable of downloading a URL from the web.</p>
-<p><a id="refheadingtoc1357082222329424"></a>
-<a id="toc48549124"></a></p>
+<p><a id="toc48549124"></a>
+<a id="refheadingtoc1357082222329424"></a></p>
 <h2 id="215-the-smtp-simple-mail-transfer-protocol">21.5. <span style="color: #4f81bd">The SMTP (Simple Mail Transfer Protocol)</span></h2>
-<p><a id="toc48549125"></a>
-<a id="refheadingtoc1357102222329424"></a></p>
+<p><a id="refheadingtoc1357102222329424"></a>
+<a id="toc48549125"></a></p>
 <h3 id="2151-introduction">21.5.1. <span style="color: #4f81bd">Introduction</span></h3>
 <p>In this chapter:</p>
 <ul>
@@ -3962,16 +3962,16 @@
     </ul>
   </li>
 </ul>
-<p><a id="toc48549126"></a>
+<p><a id="creationduneadresse"></a>
 <a id="refheadingtoc95375381407536"></a>
-<a id="creationduneadresse"></a></p>
+<a id="toc48549126"></a></p>
 <h3 id="2152-creating-a-gmail-address">21.5.2. <span style="color: #4f81bd">Creating a [Gmail] address</span></h3>
 <p>To perform our SMTP tests, we’ll need an email address to send to. To do this, we’ll create a Gmail address [<a href="https://www.google.com/intl/fr/gmail/about/"><u><span style="color: #0563c1">https://www.google.com/intl/fr/gmail/about/</span></u></a>]:</p>
 <p><img src="images/1000000000000260000002E4CDEBD503.png" style="width:7.01cm;height:8.532cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000260000002E4CDEBD503.png" /></p>
 <p><strong>Note</strong>: Send a few emails to the address you created. Do not proceed until you are sure that the account you created is able to receive emails.</p>
-<p><a id="toc48549127"></a>
+<p><a id="installationdunserveur"></a>
 <a id="refheadingtoc1357122222329424"></a>
-<a id="installationdunserveur"></a></p>
+<a id="toc48549127"></a></p>
 <h3 id="2153-installing-an-smtp-server">21.5.3. <span style="color: #4f81bd">Installing an SMTP server</span></h3>
 <p>For our tests, we will install the <strong>[hMailServer]</strong> mail server, which is both an SMTP server for sending emails, a POP3 (Post Office Protocol) server for reading emails stored on the server, and an IMAP (Internet Message Access Protocol) server that also allows you to read emails stored on the server but goes beyond that. In particular, it allows you to manage email storage on the server.</p>
 <p>The <strong>[hMailServer]</strong> mail server is available at the URL <strong>[https://www.hmailserver.com/]</strong> (May 2019).</p>
@@ -4027,13 +4027,14 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">ValidLanguages=english,swedish</span>
-<span class="odt-code-line"><span style="font-weight:bold">[Security]</span></span>
-<span class="odt-code-line">AdministratorPassword=</span>
-<span class="odt-code-line"><span style="font-weight:bold">[Database]</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>ValidLanguages=english,swedish
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>[Security]
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>AdministratorPassword=
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>[Database]
+</code></pre></div></td></tr></table></div>
 <p>Let’s continue configuring the server:</p>
 <p><img src="images/10000000000004700000013BABC05ED4.png" style="width:13.13cm;height:3.641cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004700000013BABC05ED4.png" /></p>
 <ul>
@@ -4143,8 +4144,8 @@
   <li>line 4, we received the welcome message from the IMAP server;
   </li>
 </ul>
-<p><a id="toc48549128"></a>
-<a id="installationdunlecteur"></a></p>
+<p><a id="installationdunlecteur"></a>
+<a id="toc48549128"></a></p>
 <h3 id="2154-installing-an-email-client">21.5.4. <span style="color: #4f81bd">Installing an email client</span></h3>
 <p>To read the email we are going to send, we need an email client. For those who don’t have one, we’ll show you how to install and configure <strong>[Thunderbird]</strong>:</p>
 <ul>
@@ -4296,8 +4297,8 @@
 <p><img src="images/10000000000002DC0000030A140C6FF8.png" style="width:8.43cm;height:8.961cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002DC0000030A140C6FF8.png" /></p>
 <p><img src="images/10000000000005140000029F88008B07.png" style="width:15.02cm;height:7.752cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005140000029F88008B07.png" /></p>
 <p>We now have the tools to explore the SMTP, POP3, and IMAP protocols. We’ll start with the SMTP protocol.</p>
-<p><a id="refheadingtoc1357142222329424"></a>
-<a id="toc48549129"></a></p>
+<p><a id="toc48549129"></a>
+<a id="refheadingtoc1357142222329424"></a></p>
 <h3 id="2155-the-smtp-protocol">21.5.5. <span style="color: #4f81bd">The SMTP Protocol</span></h3>
 <p><img src="images/1000000100000206000000DDB8B1A924.png" style="width:8.751cm;height:3.734cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000206000000DDB8B1A924.png" /></p>
 <p>We will explore the SMTP protocol by examining the logs of the <strong>[hMailServer]</strong> server. To do this, we enable them using the <strong>[hMailServerAdministrator]</strong> tool:</p>
@@ -4493,8 +4494,8 @@
 </ul>
 
 <p>The first example gave us the basics for building a basic SMTP client in Python. The second showed us that some SMTP servers (most, in fact) require authentication via an encrypted connection.</p>
-<p><a id="refheadingtoc1357162222329424"></a>
-<a id="toc48549130"></a></p>
+<p><a id="toc48549130"></a>
+<a id="refheadingtoc1357162222329424"></a></p>
 <h3 id="2156-scripts-smtp01-a-basic-smtp-client">21.5.6. <span style="color: #4f81bd">scripts [smtp/01]: a basic SMTP client</span></h3>
 <p>We are going to implement in Python what we learned earlier about the SMTP protocol.</p>
 <p><img src="images/100000000000012800000166A0353B31.png" style="width:3.42cm;height:4.138cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000012800000166A0353B31.png" /></p>
@@ -4510,7 +4511,7 @@
 <span class="odt-code-line">        <span style="color:#008000"># subject: email subject</span></span>
 <span class="odt-code-line">        <span style="color:#008000"># message: email message</span></span>
 <span class="odt-code-line">        <span style="color:#a31515">&quot;mails&quot;</span>: <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;description&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;email to localhost via localhost&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-server&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;localhost&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-port&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;25&quot;</span><span style="font-weight:bold">,</span></span>
@@ -4521,8 +4522,8 @@
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;content-type&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&#x27;text/plain; charset=&quot;utf-8&quot;&#x27;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#008000"># testing accented characters</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;message&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;aglaë séléné\ngoes to the market\nto buy flowers&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            {</span></span>
+<span class="odt-code-line">            },</span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;description&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;email to Gmail via Gmail&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-server&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;smtp.gmail.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-port&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;587&quot;</span><span style="font-weight:bold">,</span></span>
@@ -4534,7 +4535,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#008000"># testing accented characters</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;message&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;aglaë séléné\ngoes to the market\nto buy flowers&quot;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            }</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        ]</span></span>
+<span class="odt-code-line">        ]</span>
 <span class="odt-code-line">    }</span>
 </code></pre></div>
 
@@ -4612,7 +4613,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># close connection</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">connection:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            connection.close()</span></span>
+<span class="odt-code-line">            connection.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># --------------------------------------------------------------------------</span>
@@ -4636,7 +4637,7 @@
 <span class="odt-code-line"><span style="color:#000000">        response = </span><span style="color:#2b91af">str</span><span style="color:#000000">(</span><span style="color:#808080">connection</span><span style="color:#000000">.recv(1000), </span><span style="color:#a31515">&#x27;utf-8&#x27;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># print response</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#808080">verbose</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            display(response, 2)</span></span>
+<span class="odt-code-line">            display(response, 2)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># retrieve error code</span>
 <span class="odt-code-line"><span style="color:#000000">        errorCode = </span><span style="color:#2b91af">int</span><span style="color:#000000">(response</span><span style="font-weight:bold;color:#000000">[0:3]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Error returned by the server?</span>
@@ -4808,9 +4809,9 @@
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[220 Welcome to the localhost.com SMTP server]</span></span>
 <span class="odt-code-line">--&gt; <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">MAIL FROM</span><span style="font-weight:bold">: &lt;guest@localhost.com&gt;]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[250-DESKTOP-30FF5FB</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">250-SIZE 20480000</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">250-AUTH LOGIN</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">250 HELP]</span></span>
+<span class="odt-code-line">250-SIZE 20480000</span>
+<span class="odt-code-line">250-AUTH LOGIN</span>
+<span class="odt-code-line">250 HELP]</span>
 <span class="odt-code-line">--&gt; <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">RCPT TO</span><span style="font-weight:bold">: &lt;guest@localhost.com&gt;]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[250 OK]</span></span>
 <span class="odt-code-line">--&gt; <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">DATA</span><span style="font-weight:bold">]</span></span>
@@ -4820,13 +4821,13 @@
 <span class="odt-code-line"><span style="font-weight:bold;background-color:#fff2cc">Subject</span><span style="font-weight:bold">: to localhost via localhost</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;background-color:#fff2cc">Content-type</span><span style="font-weight:bold">: text/plain; charset=&quot;utf-8&quot;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold">Aglaë Séléné</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">go to the market</span></span>
+<span class="odt-code-line">Aglaë Séléné</span>
+<span class="odt-code-line">go to the market</span>
 <span class="odt-code-line"><span style="font-weight:bold">to buy flowers]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[354 OK, send.]</span></span>
 <span class="odt-code-line">--&gt; <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">.</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line">.</span>
+<span class="odt-code-line">]</span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[250 Queued (0.000 seconds)]</span></span>
 <span class="odt-code-line">--&gt; <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">QUIT</span><span style="font-weight:bold">]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[221 goodbye]</span></span>
@@ -4846,7 +4847,7 @@
 <span class="odt-code-line">250 SMTPUTF8]</span>
 <span class="odt-code-line">--&gt; <span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">RCPT TO</span><span style="font-weight:bold">: &lt;pymailparlexemple@gmail.com&gt;]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[530 5.7.0 Must issue a STARTTLS command first. u1sm1364433wrb.78 - gsmtp]</span></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">The following error occurred: 5.7.0 Must issue a STARTTLS command first. u1sm1364433wrb.78 - gsmtp</span></span>
+<span class="odt-code-line">The following error occurred: 5.7.0 Must issue a STARTTLS command first. u1sm1364433wrb.78 - gsmtp</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
@@ -4861,9 +4862,9 @@
 
 <p>The results in Thunderbird are as follows:</p>
 <p><img src="images/100000000000047200000262D27CE93C.png" style="width:13.152cm;height:7.049cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000047200000262D27CE93C.png" /></p>
-<p><a id="toc48549131"></a>
+<p><a id="scriptssmtp02"></a>
 <a id="refheadingtoc1357182222329424"></a>
-<a id="scriptssmtp02"></a></p>
+<a id="toc48549131"></a></p>
 <h3 id="2157-scripts-smtp02-an-smtp-client-written-using-the-smtplib-library">21.5.7. <span style="color: #4f81bd">scripts [smtp/02]: an SMTP client written using the [smtplib] library</span></h3>
 <p><img src="images/10000000000001260000015A7EFDE191.png" style="width:3.403cm;height:4.004cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001260000015A7EFDE191.png" /></p>
 <p>The previous client has at least two shortcomings:</p>
@@ -4887,7 +4888,7 @@
 <span class="odt-code-line">        <span style="color:#008000"># subject: email subject</span></span>
 <span class="odt-code-line">        <span style="color:#008000"># message: email message</span></span>
 <span class="odt-code-line">        <span style="color:#a31515">&quot;mails&quot;</span>: <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;description&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;Email to localhost via localhost using smtplib&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-server&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;localhost&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-port&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;25&quot;</span><span style="font-weight:bold">,</span></span>
@@ -4896,8 +4897,8 @@
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;subject&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;to localhost via localhost using smtplib&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#008000"># testing accented characters</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;message&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;aglaë séléné\ngoes to the market\nto buy flowers&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            {</span></span>
+<span class="odt-code-line">            },</span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;description&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;email to Gmail via Gmail using smtplib&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-server&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;smtp.gmail.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-port&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;587&quot;</span><span style="font-weight:bold">,</span></span>
@@ -4909,8 +4910,8 @@
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#008000"># SMTP with authentication</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;pymail2parlexemple@gmail.com&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;password&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;#6prIlh@1QZ3TG&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            }</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        ]</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ]</span>
 <span class="odt-code-line">    }</span>
 </code></pre></div>
 
@@ -4946,7 +4947,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># Secure connection?</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#a31515">&quot;user&quot; </span><span style="color:#0000ff">in </span><span style="color:#808080">mail</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># secure connection</span>
-<span class="odt-code-line"><span style="color:#000000">        server.starttls()</span></span>
+<span class="odt-code-line">        server.starttls()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># EHLO command + authentication</span>
 <span class="odt-code-line"><span style="color:#000000">        server.login(</span><span style="color:#808080">mail</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#808080">mail</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;password&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
@@ -4957,9 +4958,9 @@
 <span class="odt-code-line"><span style="color:#000000">    msg</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;date&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= formatdate(</span><span style="color:#0000ff">localtime=True</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    msg</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;subject&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#808080">mail</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;subject&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># send the message</span>
-<span class="odt-code-line"><span style="color:#000000">    server.send_message(msg)</span></span>
+<span class="odt-code-line">    server.send_message(msg)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># exit</span>
-<span class="odt-code-line"><span style="color:#000000">    server.quit()</span></span>
+<span class="odt-code-line">    server.quit()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># main ----------------------------------------------------------------</span>
@@ -5125,8 +5126,8 @@
 
 <p>If we check the Gmail account of the user <strong>[pymail2parlexemple],</strong> we see the following:</p>
 <p><img src="images/10000000000004830000027B835BC393.png" style="width:13.36cm;height:7.345cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004830000027B835BC393.png" /></p>
-<p><a id="refheadingtoc3282263081319169"></a>
-<a id="toc48549132"></a></p>
+<p><a id="toc48549132"></a>
+<a id="refheadingtoc3282263081319169"></a></p>
 <h3 id="2158-scripts-smtp03-handling-attached-files">21.5.8. <span style="color: #4f81bd">scripts [smtp/03]: handling attached files</span></h3>
 <p>We complete the <strong>[smtp/02/main]</strong> script so that the sent email can have attachments.</p>
 <p><img src="images/10000000000001D2000001EA1A87D15F.png" style="width:5.382cm;height:5.659cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D2000001EA1A87D15F.png" /></p>
@@ -5148,7 +5149,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># subject: email subject</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># message: email message</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;mails&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;description&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;Send email to Gmail via Gmail using smtplib&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-server&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;smtp.gmail.com&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-port&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;587&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
@@ -5164,10 +5165,10 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;attachments&quot;</span><span style="font-weight:bold;color:#000000">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;color:#a31515">f&quot;{script_dir}/attachments/attached_file.docx&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;color:#a31515">f&quot;{script_dir}/attachments/attached_file.pdf&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        ]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">                ]</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ]</span>
+<span class="odt-code-line">    }</span>
 </code></pre></div>
 
 <p>The <strong>[smtp/03/config]</strong> file differs from the <strong>[smtp/02/config]</strong> file used previously only in the optional presence of an <strong>[attachments]</strong> list (lines 30–32), which specifies the list of files to attach to the message to be sent.</p>
@@ -5203,7 +5204,7 @@
 <span class="odt-code-line"><span style="color:#000000">    server.set_debuglevel(</span><span style="color:#808080">verbose</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># secure connection?</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#a31515">&quot;user&quot; </span><span style="color:#0000ff">in </span><span style="color:#808080">mail</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        server.starttls()</span></span>
+<span class="odt-code-line">        server.starttls()</span>
 <span class="odt-code-line"><span style="color:#000000">        server.login(</span><span style="color:#808080">mail</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#808080">mail</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;password&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># constructing a multipart message - this is the message that will be sent</span>
@@ -5246,16 +5247,16 @@
 <span class="odt-code-line"><span style="color:#000000">            </span># other cases</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">with </span><span style="color:#000000">open(path, </span><span style="color:#a31515">&#x27;rb&#x27;</span><span style="color:#000000">) </span><span style="color:#0000ff">as </span><span style="color:#000000">fp:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                part = </span><span style="color:#2b91af">MIMEBase</span><span style="color:#000000">(maintype, subtype)</span></span>
-<span class="odt-code-line"><span style="color:#000000">                part.set_payload(fp.read())</span></span>
+<span class="odt-code-line">                part.set_payload(fp.read())</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Encode the payload using Base64</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#6f008a">encoders</span><span style="color:#000000">.encode_base64(part)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Set the filename parameter</span>
 <span class="odt-code-line"><span style="color:#000000">        basename = </span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.basename(path)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        part.add_header(</span><span style="color:#a31515">&#x27;Content-Disposition&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;attachment&#x27;</span><span style="color:#000000">, filename=basename)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Attach the file to the message to be sent</span>
-<span class="odt-code-line"><span style="color:#000000">        msg.attach(part)</span></span>
+<span class="odt-code-line">        msg.attach(part)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># All attachments have been added—send the message as a string</span>
-<span class="odt-code-line"><span style="color:#000000">    server.send_message(msg)</span></span>
+<span class="odt-code-line">    server.send_message(msg)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># main ----------------------------------------------------------------</span>
@@ -5358,7 +5359,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># subject: email subject</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># message: email message</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;mails&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;description&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;send email to Gmail via Gmail using smtplib&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-server&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;smtp.gmail.com&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-port&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;587&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
@@ -5375,10 +5376,10 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;color:#a31515">f&quot;{script_dir}/attachments/attached_file.docx&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;color:#a31515">f&quot;{script_dir}/attachments/attached_file.pdf&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">f&quot;{script_dir}/attachments/attached-email-1.eml&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        ]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">                ]</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ]</span>
+<span class="odt-code-line">    }</span>
 </code></pre></div>
 
 <ul>
@@ -5412,11 +5413,11 @@
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc1357202222329424"></a>
-<a id="toc48549133"></a></p>
+<p><a id="toc48549133"></a>
+<a id="refheadingtoc1357202222329424"></a></p>
 <h2 id="216-the-pop3-protocol">21.6. <span style="color: #4f81bd">The POP3 protocol</span></h2>
-<p><a id="refheadingtoc1357222222329424"></a>
-<a id="toc48549134"></a></p>
+<p><a id="toc48549134"></a>
+<a id="refheadingtoc1357222222329424"></a></p>
 <h3 id="2161-introduction">21.6.1. <span style="color: #4f81bd">Introduction</span></h3>
 <p>To read emails stored on a mail server, two protocols exist:</p>
 <ul>
@@ -5448,8 +5449,8 @@
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc1357242222329424"></a>
-<a id="toc48549135"></a></p>
+<p><a id="toc48549135"></a>
+<a id="refheadingtoc1357242222329424"></a></p>
 <h3 id="2162-exploring-the-pop3-protocol">21.6.2. <span style="color: #4f81bd">Exploring the POP3 protocol</span></h3>
 <p>As we did with the SMTP protocol, we will explore the POP3 protocol using the logs from the <strong>[hMailServer]</strong> mail server. We need to start this server.</p>
 <p>Using Thunderbird, we will:</p>
@@ -5538,15 +5539,15 @@
 <span class="odt-code-line">Client <span style="font-weight:bold">[DESKTOP-30FF5FB:63762] </span>connected to server <span style="font-weight:bold">[localhost-110]</span></span>
 <span class="odt-code-line">Type your commands (quit to exit):</span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[+OK Welcome to the localhost.com POP3 server]</span></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">USER guest</span></span>
+<span class="odt-code-line">USER guest</span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[+OK Enter your password]</span></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">PASS guest</span></span>
+<span class="odt-code-line">PASS guest</span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[+OK Mailbox locked and ready]</span></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">LIST</span></span>
+<span class="odt-code-line">LIST</span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[+OK 1 message (612 bytes)]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[1 612]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[.]</span></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">RETR 1</span></span>
+<span class="odt-code-line">RETR 1</span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[+OK 612 bytes]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[Return-Path: guest@localhost.com]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[Received: from [127.0.0.1] </span>(DESKTOP-30FF5FB <span style="font-weight:bold">[127.0.0.1]</span>)]</span>
@@ -5567,7 +5568,7 @@
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[This is a test to check the POP3 protocol]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[]</span></span>
 <span class="odt-code-line">&lt;-- <span style="font-weight:bold">[.]</span></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">QUIT</span></span>
+<span class="odt-code-line">QUIT</span>
 <span class="odt-code-line">End of connection with the server</span>
 </code></pre></div>
 
@@ -5623,8 +5624,8 @@
     </ul>
   </li>
 </ul>
-<p><a id="refheadingtoc1357262222329424"></a>
-<a id="toc48549136"></a></p>
+<p><a id="toc48549136"></a>
+<a id="refheadingtoc1357262222329424"></a></p>
 <h3 id="2163-scripts-pop301-a-basic-pop3-client">21.6.3. <span style="color: #4f81bd">scripts [pop3/01]: a basic POP3 client</span></h3>
 <p><img src="images/1000000000000143000001A3C17B9BCA.png" style="width:3.722cm;height:4.828cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000143000001A3C17B9BCA.png" /></p>
 <p>Since the POP3 protocol has the same structure as the SMTP protocol, the script <strong>[pop3/01/main.py]</strong> is a port of the script <strong>[smtp/01/main.py]</strong>. It will have the following configuration file <strong>[pop3/01/config.py]</strong>:</p>
@@ -5642,7 +5643,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># delete: if True, emails are deleted from the mailbox</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># once they have been downloaded locally</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;server&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;localhost&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;port&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;110&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;guest&quot;</span><span style="font-weight:bold">,</span></span>
@@ -5651,8 +5652,8 @@
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold">: 1.0,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;encoding&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;utf-8&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;delete&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#0000ff">False</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        }</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line">    <span style="color:#008000"># return the configuration</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>{</span>
 <span class="odt-code-line">        <span style="color:#a31515">&quot;mailboxes&quot;</span>: mailboxes</span>
@@ -5740,7 +5741,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># console output</span>
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">&quot;----------------------------------&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(</span></span>
+<span class="odt-code-line">        print(</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">f&quot;Reading POP3 mailbox {mailbox</span><span style="font-weight:bold;color:#a31515">[&#x27;user&#x27;]</span><span style="color:#a31515">}@{mailbox</span><span style="font-weight:bold;color:#a31515">[&#x27;server&#x27;]</span><span style="color:#a31515">}:{mailbox</span><span style="font-weight:bold;color:#a31515">[&#x27;port&#x27;]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Read the mailbox in verbose mode</span>
 <span class="odt-code-line"><span style="color:#000000">        readmails(mailbox, </span><span style="color:#0000ff">True</span><span style="color:#000000">)</span></span>
@@ -5799,7 +5800,7 @@
 <span class="odt-code-line"><span style="color:#000000">        match = </span><span style="color:#6f008a">re</span><span style="color:#000000">.match(</span><span style="color:#800000">r&quot;^\+OK (\d+)&quot;</span><span style="color:#000000">, first_line)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        number_of_messages = </span><span style="color:#2b91af">int</span><span style="color:#000000">(match.groups()</span><span style="font-weight:bold;color:#000000">[0]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># loop through the messages</span>
-<span class="odt-code-line"><span style="color:#000000">        imessage = 0</span></span>
+<span class="odt-code-line">        imessage = 0</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">while </span><span style="color:#000000">imessage &lt; nbmessages </span><span style="color:#0000ff">and </span><span style="color:#000000">imessage &lt; maxmails:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># RETR command</span>
 <span class="odt-code-line"><span style="color:#000000">            send_command(</span><span style="color:#808080">mailbox</span><span style="color:#000000">, connection, </span><span style="color:#a31515">f&quot;RETR {imessage + 1}&quot;</span><span style="color:#000000">, </span><span style="color:#808080">verbose</span><span style="color:#000000">, </span><span style="color:#0000ff">True</span><span style="color:#000000">)</span></span>
@@ -5807,14 +5808,14 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">delete:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                send_command(</span><span style="color:#808080">mailbox</span><span style="color:#000000">, connection, </span><span style="color:#a31515">f&quot;DELE {imessage + 1}&quot;</span><span style="color:#000000">, </span><span style="color:#808080">verbose</span><span style="color:#000000">, </span><span style="color:#0000ff">True</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># next message</span>
-<span class="odt-code-line"><span style="color:#000000">            message += 1</span></span>
+<span class="odt-code-line">            message += 1</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># QUIT command</span>
 <span class="odt-code-line"><span style="color:#000000">        send_command(</span><span style="color:#808080">mailbox</span><span style="color:#000000">, connection, </span><span style="color:#a31515">&quot;QUIT&quot;</span><span style="color:#000000">, </span><span style="color:#808080">verbose</span><span style="color:#000000">, </span><span style="color:#0000ff">True</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># end</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># close connection</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">connection:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            connection.close()</span></span>
+<span class="odt-code-line">            connection.close()</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -5870,10 +5871,10 @@
 <span class="odt-code-line"><span style="color:#000000">    file = </span><span style="color:#808080">connection</span><span style="color:#000000">.makefile(encoding=encoding)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># process this file line by line</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># read first line</span>
-<span class="odt-code-line"><span style="color:#000000">    first_line = response = file.readline().strip()</span></span>
+<span class="odt-code-line">    first_line = response = file.readline().strip()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># verbose mode?</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#808080">verbose</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(first_line, 2)</span></span>
+<span class="odt-code-line">        print(first_line, 2)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># retrieve error code</span>
 <span class="odt-code-line"><span style="color:#000000">    error_code = response</span><span style="font-weight:bold;color:#000000">[0]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">error_code == </span><span style="color:#a31515">&quot;-&quot;</span><span style="color:#000000">:</span></span>
@@ -5886,10 +5887,10 @@
 <span class="odt-code-line"><span style="color:#000000">        last_line = </span><span style="color:#0000ff">False</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">while not </span><span style="color:#000000">last_line:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># read next line</span>
-<span class="odt-code-line"><span style="color:#000000">            next_line = file.readline().strip()</span></span>
+<span class="odt-code-line">            next_line = file.readline().strip()</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># verbose mode?</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#808080">verbose</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                print(next_line, 2)</span></span>
+<span class="odt-code-line">                print(next_line, 2)</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># last line?</span>
 <span class="odt-code-line"><span style="color:#000000">            last_line = next_line == </span><span style="color:#a31515">&quot;.&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># done - return the first line</span>
@@ -5975,10 +5976,10 @@
 </ol>
 
 <p>We will implement these two features with a new script, which will be more complex this time.</p>
-<p><a id="toc48549137"></a>
-<a id="refheadingtoc1357282222329424"></a>
+<p><a id="scriptspop302"></a>
 <a id="scriptpop3-02"></a>
-<a id="scriptspop302"></a></p>
+<a id="refheadingtoc1357282222329424"></a>
+<a id="toc48549137"></a></p>
 <h3 id="2164-scripts-pop302-pop3-client-with-the-poplib-and-email-modules">21.6.4. <span style="color: #4f81bd">scripts [pop3/02]: POP3 client with the [poplib] and [email] modules</span></h3>
 <p>We will write a POP3 client capable of handling attachments and communicating with secure servers. Additionally, we will save messages and their attachments to files.</p>
 <p>We will use two Python modules:</p>
@@ -6006,7 +6007,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">def <span style="color:#000000">configure() -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># app configuration</span></span>
-<span class="odt-code-line"><span style="color:#000000">    config = {</span></span>
+<span class="odt-code-line">    config = {</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># list of mailboxes to manage</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;mailboxes&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">            </span><span style="font-weight:bold;color:#008000"># server: POP3 server</span></span>
@@ -6019,7 +6020,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">            </span><span style="font-weight:bold;color:#008000"># ssl: set to true if emails are retrieved via a secure connection</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">            </span><span style="font-weight:bold;color:#008000"># output: the folder where downloaded messages are stored</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;server&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;pop.gmail.com&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;port&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;995&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;pymail2parlexemple@gmail.com&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
@@ -6029,9 +6030,9 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;ssl&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold">True</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold;color:#000000">: 2.0,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;output&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;output&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">        ]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ]</span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># absolute path to the script directory</span></span>
 <span class="odt-code-line"><span style="color:#000000">    script_dir = </span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.dirname(</span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.abspath(__file__))</span></span>
 <span class="odt-code-line"></span>
@@ -6039,11 +6040,11 @@
 <span class="odt-code-line"><span style="color:#000000">    absolute_dependencies = </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#008000"># local directory</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{script_dir}/../../shared&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">   ]</span></span>
+<span class="odt-code-line">   ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># syspath configuration</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>from <span style="color:#6f008a">myutils </span>import <span style="color:#000000">set_syspath</span></span>
-<span class="odt-code-line"><span style="color:#000000">    set_syspath(absolute_dependencies)</span></span>
+<span class="odt-code-line">    set_syspath(absolute_dependencies)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># restore the configuration</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>return <span style="color:#000000">config</span></span>
@@ -6095,7 +6096,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># console output</span>
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">&quot;----------------------------------&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(</span></span>
+<span class="odt-code-line">        print(</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">f&quot;Reading POP3 mailbox {mailbox</span><span style="font-weight:bold;color:#a31515">[&#x27;user&#x27;]</span><span style="color:#a31515">}@{mailbox</span><span style="font-weight:bold;color:#a31515">[&#x27;server&#x27;]</span><span style="color:#a31515">}:{mailbox</span><span style="font-weight:bold;color:#a31515">[&#x27;port&#x27;]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Read the mailbox in verbose mode</span>
 <span class="odt-code-line"><span style="color:#000000">        readmails(mailbox, </span><span style="color:#0000ff">True</span><span style="color:#000000">)</span></span>
@@ -6161,15 +6162,15 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># verbose mode</span>
 <span class="odt-code-line"><span style="color:#000000">        pop3.set_debuglevel(2 </span><span style="color:#0000ff">if </span><span style="color:#808080">verbose </span><span style="color:#0000ff">else</span><span style="color:#000000"> 0)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># read welcome message</span>
-<span class="odt-code-line"><span style="color:#000000">        pop3.getwelcome(    )</span></span>
+<span class="odt-code-line">        pop3.getwelcome(    )</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># USER command</span>
-<span class="odt-code-line"><span style="color:#000000">        response = pop3.user(user)</span></span>
+<span class="odt-code-line">        response = pop3.user(user)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># PASS command</span>
-<span class="odt-code-line"><span style="color:#000000">        response = pop3.pass_(password)</span></span>
+<span class="odt-code-line">        response = pop3.pass_(password)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># command LIST</span>
-<span class="odt-code-line"><span style="color:#000000">        list = pop3.list()</span></span>
+<span class="odt-code-line">        list = pop3.list()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># the emails are in list<span style="font-weight:bold">[1]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        email = 0</span></span>
+<span class="odt-code-line">        email = 0</span>
 <span class="odt-code-line"><span style="color:#000000">        number_of_emails = len(list</span><span style="font-weight:bold;color:#000000">[1]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        finished = if imail == maxmails </span><span style="color:#0000ff">or </span><span style="color:#000000">imail == nb_mails</span></span>
 <span class="odt-code-line"><span style="color:#000000">        items = list</span><span style="font-weight:bold;color:#000000">[1]</span></span>
@@ -6177,7 +6178,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span># current element</span>
 <span class="odt-code-line"><span style="color:#000000">            element = elements</span><span style="font-weight:bold;color:#000000">[imail]</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># element is a list of bytes that we decode into a string</span>
-<span class="odt-code-line"><span style="color:#000000">            desc = element.decode()</span></span>
+<span class="odt-code-line">            desc = element.decode()</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># we have a string separated by spaces</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># the first element is the message ID</span>
 <span class="odt-code-line"><span style="color:#000000">            num = desc.split()</span><span style="font-weight:bold;color:#000000">[0]</span></span>
@@ -6196,16 +6197,16 @@
 <span class="odt-code-line"><span style="color:#000000">            </span># email.message.Message object</span>
 <span class="odt-code-line"><span style="color:#000000">            save_message(dir3, </span><span style="color:#6f008a">email</span><span style="color:#000000">.message_from_string(str_message), 0)</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># another email</span>
-<span class="odt-code-line"><span style="color:#000000">            imail += 1</span></span>
+<span class="odt-code-line">            imail += 1</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Have we reached the maximum?</span>
 <span class="odt-code-line"><span style="color:#000000">            done = imail == maxmails </span><span style="color:#0000ff">or </span><span style="color:#000000">imail == nb_mails</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># QUIT command</span>
-<span class="odt-code-line"><span style="color:#000000">        pop3.quit()</span></span>
+<span class="odt-code-line">        pop3.quit()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Close connection</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">pop3:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            pop3.close()</span></span>
+<span class="odt-code-line">            pop3.close()</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -6308,7 +6309,7 @@
 <span class="odt-code-line"><span style="color:#000000">    part = </span><span style="color:#808080">email_message</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># The <span style="font-weight:bold">[From, To, Subject] </span>headers are found in one of the multipart parts</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># or in a <span style="font-weight:bold">[text/*] </span>part when there is no <span style="font-weight:bold">[multipart] </span>part</span>
-<span class="odt-code-line"><span style="color:#000000">    keys = part.keys()</span></span>
+<span class="odt-code-line">    keys = part.keys()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># &quot;From&quot; must be among the headers; otherwise, the part does not contain the headers we are looking for</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#a31515">&quot;From&quot; </span><span style="color:#0000ff">in </span><span style="color:#000000">keys:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># retrieve certain headers</span>
@@ -6325,7 +6326,7 @@
 <span class="odt-code-line"><span style="color:#000000">            file.write(</span><span style="color:#a31515">f&quot;{string}\r\n&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Part type <span style="font-weight:bold">[part]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    main_type = part.get_content_maintype()</span></span>
+<span class="odt-code-line">    main_type = part.get_content_maintype()</span>
 <span class="odt-code-line">   …</span>
 </code></pre></div>
 
@@ -6450,7 +6451,7 @@
 <span class="odt-code-line"><span style="color:#000000">    part = </span><span style="color:#808080">email_message</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># The <span style="font-weight:bold">[From, To, Subject] </span>headers are found in one of the multipart parts</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># or in a <span style="font-weight:bold">[text/*] </span>part when there is no <span style="font-weight:bold">[multipart] </span>part</span>
-<span class="odt-code-line"><span style="color:#000000">    keys = part.keys()</span></span>
+<span class="odt-code-line">    keys = part.keys()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># From must be part of the headers; otherwise, the part does not contain the headers we are looking for</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#a31515">&quot;From&quot; is </span><span style="color:#0000ff">in </span><span style="color:#000000">keys:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># retrieve certain headers</span>
@@ -6467,8 +6468,8 @@
 <span class="odt-code-line"><span style="color:#000000">            file.write(</span><span style="color:#a31515">f&quot;{string}\r\n&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># type of the part <span style="font-weight:bold">[part]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    main_type = part.get_content_maintype()</span></span>
-<span class="odt-code-line"><span style="color:#000000">    sub_type = part.get_content_subtype()</span></span>
+<span class="odt-code-line">    main_type = part.get_content_maintype()</span>
+<span class="odt-code-line">    sub_type = part.get_content_subtype()</span>
 <span class="odt-code-line"><span style="color:#000000">    type_of_part = </span><span style="color:#a31515">f&quot;{main_type}/{sub_type}&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># if the message is of type text/plain</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">type_of_part == </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">:</span></span>
@@ -6550,7 +6551,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># save the message</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">with </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(filename, </span><span style="color:#a31515">&quot;w&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf-8&quot;</span><span style="color:#000000">) </span><span style="color:#0000ff">as </span><span style="color:#000000">file:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># write to file</span>
-<span class="odt-code-line"><span style="color:#000000">        file.write(msg)</span></span>
+<span class="odt-code-line">        file.write(msg)</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -6610,7 +6611,7 @@
 <span class="odt-code-line"><span style="color:#000000">    part = </span><span style="color:#808080">email_message</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># The <span style="font-weight:bold">[From, To, Subject] </span>headers are found in one of the multipart sections</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># or in a <span style="font-weight:bold">[text/*] </span>part when there is no <span style="font-weight:bold">[multipart] </span>part</span>
-<span class="odt-code-line"><span style="color:#000000">    keys = part.keys()</span></span>
+<span class="odt-code-line">    keys = part.keys()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># &quot;From&quot; must be among the headers; otherwise, the part does not contain the headers we are looking for</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#a31515">&quot;From&quot; </span><span style="color:#0000ff">in </span><span style="color:#000000">keys:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># we retrieve certain headers</span>
@@ -6627,8 +6628,8 @@
 <span class="odt-code-line"><span style="color:#000000">            file.write(</span><span style="color:#a31515">f&quot;{string}\r\n&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># type of the part <span style="font-weight:bold">[part]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    main_type = part.get_content_maintype()</span></span>
-<span class="odt-code-line"><span style="color:#000000">    sub_type = part.get_content_subtype()</span></span>
+<span class="odt-code-line">    main_type = part.get_content_maintype()</span>
+<span class="odt-code-line">    sub_type = part.get_content_subtype()</span>
 <span class="odt-code-line"><span style="color:#000000">    type_of_part = </span><span style="color:#a31515">f&quot;{main_type}/{sub_type}&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># if the message is of type text/plain</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">type_of_part == </span><span style="color:#a31515">&quot;text/plain&quot;</span><span style="color:#000000">:</span></span>
@@ -6651,7 +6652,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span># save the subparts of the irfc822 message to output2</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">for </span><span style="color:#000000">subpart </span><span style="color:#0000ff">in </span><span style="color:#000000">part.get_payload():</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span># In the new irfc822 directory, restart at 0</span>
-<span class="odt-code-line"><span style="color:#000000">                save_message(output2, subpart, 0)</span></span>
+<span class="odt-code-line">                save_message(output2, subpart, 0)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># this is not an email with an attachment</span>
@@ -6703,7 +6704,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># the filename may be encoded</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># for example =?utf-8?Q?Tutorials-Serge-Tah=C3=A9-1568x268=2Ep</span>
-<span class="odt-code-line"><span style="color:#000000">    filename = decode_header(filename)</span></span>
+<span class="odt-code-line">    filename = decode_header(filename)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># save the attached file</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">with </span><span style="color:#000000">open(</span><span style="color:#a31515">f&quot;{output}/{filename}&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;wb&quot;</span><span style="color:#000000">) </span><span style="color:#0000ff">as </span><span style="color:#000000">file:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        file.write(</span><span style="color:#808080">part</span><span style="color:#000000">.get_payload(</span><span style="color:#0000ff">decode=True</span><span style="color:#000000">))</span></span>
@@ -6814,7 +6815,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span># save the subparts of the irfc822 message to output2</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">for </span><span style="color:#000000">subpart </span><span style="color:#0000ff">in </span><span style="color:#000000">part.get_payload():</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span># in the new irfc822 directory, restart at 0</span>
-<span class="odt-code-line"><span style="color:#000000">                save_message(output2, subpart, 0)</span></span>
+<span class="odt-code-line">                save_message(output2, subpart, 0)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># this is not an email with an attachment</span>
@@ -6824,7 +6825,7 @@
 <span class="odt-code-line"><span style="color:#000000">                </span># save_message returns the last value of irfc822</span>
 <span class="odt-code-line"><span style="color:#000000">                </span># incremented by 1 if subpart=&quot;message/rfc822&quot;, not incremented otherwise</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#808080">irfc822 </span><span style="color:#000000">= save_message(</span><span style="color:#808080">output</span><span style="color:#000000">, subpart, </span><span style="color:#808080">irfc822</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span><span style="color:#808080">irfc822</span></span>
 </code></pre></div>
 
@@ -6892,7 +6893,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">def <span style="color:#000000">configure() -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># app configuration</span></span>
-<span class="odt-code-line"><span style="color:#000000">    config = {</span></span>
+<span class="odt-code-line">    config = {</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># list of mailboxes to manage</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;mailboxes&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">            </span><span style="font-weight:bold;color:#008000"># server: POP3 server</span></span>
@@ -6905,7 +6906,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">            </span><span style="font-weight:bold;color:#008000"># ssl: set to true if emails are retrieved via a secure connection</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">            </span><span style="font-weight:bold;color:#008000"># output: the folder where downloaded messages are stored</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;server&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;pop.gmail.com&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;port&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;995&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;pymail2parlexemple@gmail.com&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
@@ -6915,9 +6916,9 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;ssl&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold">True</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold;color:#000000">: 2.0,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;output&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;output&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">        ]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ]</span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># absolute path to the script directory</span></span>
 <span class="odt-code-line"><span style="color:#000000">    script_dir = </span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.dirname(</span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.abspath(__file__))</span></span>
 <span class="odt-code-line"></span>
@@ -6925,11 +6926,11 @@
 <span class="odt-code-line"><span style="color:#000000">    absolute_dependencies = </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#008000"># local directory</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{script_dir}/../../shared&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># syspath configuration</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>from <span style="color:#6f008a">myutils </span>import <span style="color:#000000">set_syspath</span></span>
-<span class="odt-code-line"><span style="color:#000000">    set_syspath(absolute_dependencies)</span></span>
+<span class="odt-code-line">    set_syspath(absolute_dependencies)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># restore the configuration</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>return <span style="color:#000000">config</span></span>
@@ -6982,7 +6983,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># subject: email subject</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># message: email message</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;mails&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;description&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;send email to Gmail via Gmail using smtplib&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-server&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;smtp.gmail.com&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;smtp-port&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;587&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
@@ -6999,10 +7000,10 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">f&quot;{script_dir}/attachments/attached_file.docx&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">f&quot;{script_dir}/attachments/attached_file.pdf&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">f&quot;{script_dir}/attachments/attached-email-1.eml&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        ]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">                ]</span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ]</span>
+<span class="odt-code-line">    }</span>
 </code></pre></div>
 
 <ul>
@@ -7027,11 +7028,11 @@
 
 <p><strong>Conclusion</strong></p>
 <p>The <strong>[mail_parser.py]</strong> module is particularly complex. This is due to the complexity of the emails themselves. We will reuse this module for the IMAP protocol.</p>
-<p><a id="refheadingtoc1357302222329424"></a>
-<a id="toc48549138"></a></p>
+<p><a id="toc48549138"></a>
+<a id="refheadingtoc1357302222329424"></a></p>
 <h2 id="217-the-imap-protocol">21.7. <span style="color: #4f81bd">The IMAP protocol</span></h2>
-<p><a id="refheadingtoc13572222223294241"></a>
-<a id="toc48549139"></a></p>
+<p><a id="toc48549139"></a>
+<a id="refheadingtoc13572222223294241"></a></p>
 <h3 id="2171-introduction">21.7.1. <span style="color: #4f81bd">Introduction</span></h3>
 <p>To read emails stored on a mail server, two protocols exist:</p>
 <ul>
@@ -7119,8 +7120,8 @@
   <li>move messages into this folder;
   </li>
 </ul>
-<p><a id="refheadingtoc3282283081319169"></a>
-<a id="toc48549140"></a></p>
+<p><a id="toc48549140"></a>
+<a id="refheadingtoc3282283081319169"></a></p>
 <h3 id="2172-script-imapmain-imap-client-with-the-imaplib-module">21.7.2. <span style="color: #4f81bd">script [imap/main]: IMAP client with the [imaplib] module</span></h3>
 <p><img src="images/1000000000000114000000E1ECECCBD2.png" style="width:3.18cm;height:2.593cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000114000000E1ECECCBD2.png" /></p>
 <p>The <strong>[imap/main]</strong> script is configured by the following <strong>[imap/config]</strong> script:</p>
@@ -7130,7 +7131,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">def <span style="color:#000000">configure() -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># app configuration</span></span>
-<span class="odt-code-line"><span style="color:#000000">    config = {</span></span>
+<span class="odt-code-line">    config = {</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># list of mailboxes to manage</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;mailboxes&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">            </span><span style="font-weight:bold;color:#008000"># server: IMAP server</span></span>
@@ -7143,7 +7144,7 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">            </span><span style="font-weight:bold;color:#008000"># ssl: set to true if emails are retrieved via a secure connection</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">            </span><span style="font-weight:bold;color:#008000"># output: the folder where downloaded messages are stored</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;server&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;imap.gmail.com&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;port&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;993&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;pymail2parlexemple@gmail.com&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
@@ -7152,9 +7153,9 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;ssl&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold">True</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;timeout&quot;</span><span style="font-weight:bold;color:#000000">: 2.0,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;output&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold;color:#a31515">&quot;output&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">        ]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ]</span>
+<span class="odt-code-line">    }</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># absolute path to the script directory</span></span>
 <span class="odt-code-line"><span style="color:#000000">    script_dir = </span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.dirname(</span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.abspath(__file__))</span></span>
 <span class="odt-code-line"></span>
@@ -7162,11 +7163,11 @@
 <span class="odt-code-line"><span style="color:#000000">    absolute_dependencies = </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#008000"># local directory</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{script_dir}/../shared&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># syspath configuration</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>from <span style="color:#6f008a">myutils </span>import <span style="color:#000000">set_syspath</span></span>
-<span class="odt-code-line"><span style="color:#000000">    set_syspath(absolute_dependencies)</span></span>
+<span class="odt-code-line">    set_syspath(absolute_dependencies)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># restore the configuration</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>return <span style="color:#000000">config</span></span>
@@ -7219,10 +7220,10 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># console output</span>
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">&quot;----------------------------------&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(</span></span>
+<span class="odt-code-line">        print(</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">f&quot;Reading POP3 mailbox {mailbox</span><span style="font-weight:bold;color:#a31515">[&#x27;user&#x27;]</span><span style="color:#a31515">} / {mailbox</span><span style="font-weight:bold;color:#a31515">[&#x27;server&#x27;]</span><span style="color:#a31515">}:{mailbox</span><span style="font-weight:bold;color:#a31515">[&#x27;port&#x27;]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># reading the mailbox</span>
-<span class="odt-code-line"><span style="color:#000000">        readmails(mailbox)</span></span>
+<span class="odt-code-line">        readmails(mailbox)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># end</span>
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">&quot;Reading complete...&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># except BaseException as error:</span>

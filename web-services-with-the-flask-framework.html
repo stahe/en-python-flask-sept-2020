@@ -1718,13 +1718,13 @@
 
 
 
-<p><a id="toc48549141"></a>
-<a id="serviceswebavec"></a></p>
+<p><a id="serviceswebavec"></a>
+<a id="toc48549141"></a></p>
 <h1 id="22-web-services-with-the-flask-framework">22. <span style="color: #365f91">Web services with the Flask framework</span></h1>
 <p>By <em>web service</em>, we mean here any web application that delivers raw data consumed by a client, often a console script in the examples that follow. We are not concerned with a specific technology, such as REST (REpresentational State Transfer) or SOAP (Simple Object Access Protocol), which deliver more or less raw data in a well-defined format. REST returns JSON, while for SOAP returns XML. Each of these technologies precisely describes how the client must query the server and the format the server’s response must take. In this course, we will be much more flexible regarding the nature of the client’s request and the server’s response. However, the scripts written and the tools used are similar to those of REST technology.</p>
 <p><a id="toc48549142"></a></p>
 <h2 id="221-introduction">22.1. <span style="color: #4f81bd">Introduction</span></h2>
-<p><span style="color: #000000">Python scripts can be executed by a web server. Such a script becomes a server program capable of serving multiple clients. From the client’s perspective, calling a web service amounts to requesting the URL of that </span><span style="color: #000000">service. The client can be written in any language, including Python. In the latter case, we use the internet functions we just covered. We also need to know how to “communicate” with a web service, that is, understand the HTTP protocol for communication between a web server and its clients. That was the purpose of the section on</span><a href="#leprotocolehttp"><u><span style="color: #0563c1"> the</span></u></a><span style="color: #000000"> HTTP</span><a href="#leprotocolehttp"><u><span style="color: #0563c1"> protocol</span></u></a><span style="color: #000000">. The web clients described in this part of the course have allowed us to explore part of the HTTP protocol.</span></p>
+<p><span style="color: #000000">Python scripts can be executed by a web server. Such a script becomes a server program capable of serving multiple clients. From the client’s perspective, calling a web service amounts to requesting the URL of that service. The client can be written in any language, including Python. In the latter case, we use the internet functions we just covered. We also need to know how to “communicate” with a web service, that is, </span><span style="color: #000000">understand the HTTP protocol for communication between a web server and its clients. That was the purpose of the section on</span><a href="#leprotocolehttp"><u><span style="color: #0563c1"> the</span></u></a><span style="color: #000000"> HTTP</span><a href="#leprotocolehttp"><u><span style="color: #0563c1"> protocol</span></u></a><span style="color: #000000">. The web clients described in this part of the course have allowed us to explore part of the HTTP protocol.</span></p>
 <p><img src="images/10000000000004C0000000D8D0B12F00.png" style="width:14.011cm;height:2.489cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004C0000000D8D0B12F00.png" /></p>
 <p>In their simplest form, client/server exchanges proceed as follows:</p>
 <ul>
@@ -1891,19 +1891,25 @@
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/html<span style="color:#0000ff">&gt;</span></span>
 </code></pre></div>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><u><b>HTML</b></u></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><u><b>HTML tags and examples</b></u></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">document title</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><span style="color: #000000">&lt;</span><span style="color: #800080">title</span><span style="color: #000000">&gt;Some HTML tags&lt;</span><span style="color: #800080">/title</span><span style="color: #000000">&gt; </span>(line 5)</div><div style="margin:0 0 0.5em 0">The text <b>[Some HTML tags] </b>will appear in the browser&#x27;s title bar when the document is displayed</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">horizontal bar</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i><span style="color: #000000">&lt;</span></i><i><span style="color: #800080">hr </span></i><i><span style="color: #000000">/&gt;</span></i>: displays a horizontal line (line 10)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">table</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>&lt;table attributes&gt;….&lt;/table&gt;</i>: to define the table (lines 12, 32)</div><div style="margin:0 0 0.5em 0"><i>&lt;thead&gt;…&lt;/thead&gt;</i>: to define the column headers (lines 13, 19)</div><div style="margin:0 0 0.5em 0"><i>&lt;tbody&gt;…&lt;/tbody&gt;</i>: to define the table content (lines 20, 31)</div><div style="margin:0 0 0.5em 0"><i>&lt;tr attributes&gt;…&lt;/tr&gt;</i>: to define a row (lines 21, 25)</div><div style="margin:0 0 0.5em 0"><i>&lt;td attributes&gt;…&lt;/td&gt;</i>: to define a cell (line 22)</div><div style="margin:0 0 0.5em 0"><b>examples</b>:</div><div style="margin:0 0 0.5em 0"><i>&lt;table border=&quot;1&quot;&gt;…&lt;/table&gt;</i>: the border attribute defines the thickness of the table border</div><div style="margin:0 0 0.5em 0"><i><span style="color: #000000">&lt;</span></i><i><span style="color: #800080">td </span></i><i><span style="color: #000000">style=</span></i><i><span style="color: #000080">&quot;text-align: center;&quot;</span></i><i><span style="color: #000000">&gt;cell(1,2)&lt;</span></i><i><span style="color: #800080">/td</span></i><i><span style="color: #000000">&gt; </span></i>(line 23): defines a cell whose content will be <b>cell(1,2)</b>. This content will be horizontally centered (text-align: center).</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">image</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i><span style="color: #000000">&lt;</span></i><i><span style="color: #800080">img </span></i><i><span style="color: #000000">border=</span></i><i><span style="color: #000080">&quot;0&quot; </span></i><i><span style="color: #000000">src=</span></i><i><span style="color: #000080">&quot;/static/images/cherrytree.jpg&quot;</span></i><i><span style="color: #000000">/&gt; </span></i>(line 38): defines an image with no border (border=&quot;0&quot;) whose source file is <i><b>[/static/images/cherrytree.jpg] </b></i>on the web server (src=&quot;/static/images/cherrytree.jpg&quot;). If this link is in a web document accessible via the URL <b>[http://server/chemin/balises.html]</b>, then the browser will request the URL <b>[http://server/static/images/cherry-tree.jpg] </b>to retrieve the image referenced here.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">link</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>&lt;a href=&quot;</i><i><span style="color: #000080">http://www.polytech-angers.fr/fr/index.html</span></i><i>&quot;&gt;here&lt;/a&gt; </i>(line 43): makes the text <i>&quot;here</i>&quot; serve as a link to the URL<i><span style="color: #000080"> http://www.polytech-angers.fr/fr/index.html</span></i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="color:#000000">page background</span></span>
-</code></pre></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i><span style="color: #000000">&lt;</span></i><i><span style="color: #800080">body </span></i><i><span style="color: #000000">style=</span></i><i><span style="color: #000080">&quot;background-image: url(/static/images/standard.jpg)&quot;</span></i><i><span style="color: #000000">&gt; </span></i><i>(line 8)</i>: indicates that the image to be used as the page background is located at the URL <b>[/static/images/standard.jpg] </b>on the web server. In the context of our example, the browser will request the URL <b>[http://server/static/images/standard.jpg] </b>to retrieve this background image.</div></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><u><b>HTML</b></u></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><u><b>HTML tags and examples</b></u></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>document title
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><span style="color: #000000">&lt;</span><span style="color: #800080">title</span><span style="color: #000000">&gt;Some HTML tags&lt;</span><span style="color: #800080">/title</span><span style="color: #000000">&gt; </span>(line 5)</div><div style="margin:0 0 0.5em 0">The text <b>[Some HTML tags] </b>will appear in the browser&#x27;s title bar when the document is displayed</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>horizontal bar
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i><span style="color: #000000">&lt;</span></i><i><span style="color: #800080">hr </span></i><i><span style="color: #000000">/&gt;</span></i>: displays a horizontal line (line 10)</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>table
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>&lt;table attributes&gt;….&lt;/table&gt;</i>: to define the table (lines 12, 32)</div><div style="margin:0 0 0.5em 0"><i>&lt;thead&gt;…&lt;/thead&gt;</i>: to define the column headers (lines 13, 19)</div><div style="margin:0 0 0.5em 0"><i>&lt;tbody&gt;…&lt;/tbody&gt;</i>: to define the table content (lines 20, 31)</div><div style="margin:0 0 0.5em 0"><i>&lt;tr attributes&gt;…&lt;/tr&gt;</i>: to define a row (lines 21, 25)</div><div style="margin:0 0 0.5em 0"><i>&lt;td attributes&gt;…&lt;/td&gt;</i>: to define a cell (line 22)</div><div style="margin:0 0 0.5em 0"><b>examples</b>:</div><div style="margin:0 0 0.5em 0"><i>&lt;table border=&quot;1&quot;&gt;…&lt;/table&gt;</i>: the border attribute defines the thickness of the table border</div><div style="margin:0 0 0.5em 0"><i><span style="color: #000000">&lt;</span></i><i><span style="color: #800080">td </span></i><i><span style="color: #000000">style=</span></i><i><span style="color: #000080">&quot;text-align: center;&quot;</span></i><i><span style="color: #000000">&gt;cell(1,2)&lt;</span></i><i><span style="color: #800080">/td</span></i><i><span style="color: #000000">&gt; </span></i>(line 23): defines a cell whose content will be <b>cell(1,2)</b>. This content will be horizontally centered (text-align: center).</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>image
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i><span style="color: #000000">&lt;</span></i><i><span style="color: #800080">img </span></i><i><span style="color: #000000">border=</span></i><i><span style="color: #000080">&quot;0&quot; </span></i><i><span style="color: #000000">src=</span></i><i><span style="color: #000080">&quot;/static/images/cherrytree.jpg&quot;</span></i><i><span style="color: #000000">/&gt; </span></i>(line 38): defines an image with no border (border=&quot;0&quot;) whose source file is <i><b>[/static/images/cherrytree.jpg] </b></i>on the web server (src=&quot;/static/images/cherrytree.jpg&quot;). If this link is in a web document accessible via the URL <b>[http://server/chemin/balises.html]</b>, then the browser will request the URL <b>[http://server/static/images/cherry-tree.jpg] </b>to retrieve the image referenced here.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>link
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i>&lt;a href=&quot;</i><i><span style="color: #000080">http://www.polytech-angers.fr/fr/index.html</span></i><i>&quot;&gt;here&lt;/a&gt; </i>(line 43): makes the text <i>&quot;here</i>&quot; serve as a link to the URL<i><span style="color: #000080"> http://www.polytech-angers.fr/fr/index.html</span></i>.</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div markdown="block">
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>page background
+</code></pre></div>
+</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><i><span style="color: #000000">&lt;</span></i><i><span style="color: #800080">body </span></i><i><span style="color: #000000">style=</span></i><i><span style="color: #000080">&quot;background-image: url(/static/images/standard.jpg)&quot;</span></i><i><span style="color: #000000">&gt; </span></i><i>(line 8)</i>: indicates that the image to be used as the page background is located at the URL <b>[/static/images/standard.jpg] </b>on the web server. In the context of our example, the browser will request the URL <b>[http://server/static/images/standard.jpg] </b>to retrieve this background image.</div></td></tr></table>
 
 <p>We can see in this simple example that to build the entire document, the browser must make three requests to the server:</p>
 <ul>
@@ -1932,22 +1938,22 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">from <span style="color:#6f008a">flask </span>import <span style="color:#000000">Flask, make_response, render_template</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Flask application</span></span>
+<span class="odt-code-line"># Flask application</span>
 <span class="odt-code-line"><span style="color:#000000">script_dir = </span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.dirname(</span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.abspath(__file__))</span></span>
 <span class="odt-code-line"><span style="color:#000000">app = Flask(__name__, </span><span style="color:#a31515">template_folder=f&quot;{script_dir}/../templates&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">static_folder=f&quot;{script_dir}/../static&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Home URL</span></span>
+<span class="odt-code-line"># Home URL</span>
 <span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line">def <span style="color:#000000">index():</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># Display the page</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>return <span style="color:#000000">make_response(render_template(</span><span style="color:#a31515">&quot;tags.html&quot;</span><span style="color:#000000">))</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># main</span></span>
+<span class="odt-code-line"># main</span>
 <span class="odt-code-line">if <span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span>DEBUG=True<span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -2068,12 +2074,12 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">flask </span><span style="color:#0000ff">import </span>Flask, make_response, render_template</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Flask application</span></span>
+<span class="odt-code-line"># Flask application</span>
 <span class="odt-code-line">script_dir = <span style="color:#6f008a">os</span>.<span style="color:#6f008a">path</span>.dirname(<span style="color:#6f008a">os</span>.<span style="color:#6f008a">path</span>.abspath(__file__))</span>
 <span class="odt-code-line">app = Flask(__name__, <span style="color:#a31515">template_folder=f&quot;{script_dir}/../templates&quot;</span>, <span style="color:#a31515">static_folder=f&quot;{script_dir}/../static&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Home URL</span></span>
+<span class="odt-code-line"># Home URL</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/&#x27;</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>index():</span>
 <span class="odt-code-line">    <span style="color:#008000"># page content as a dictionary</span></span>
@@ -2082,7 +2088,7 @@
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>make_response(render_template(<span style="color:#a31515">&quot;example_02.html&quot;</span>, page=page))</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># main</span></span>
+<span class="odt-code-line"># main</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span>__name__ == <span style="color:#a31515">&#x27;__main__</span>&#x27;:</span>
 <span class="odt-code-line">    app.config.update(ENV=<span style="color:#a31515">&quot;development&quot;</span>, <span style="color:#0000ff">DEBUG=True</span>)</span>
 <span class="odt-code-line">    app.run()</span>
@@ -2148,9 +2154,9 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>!DOCTYPE <span style="color:#ff0000">html</span><span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>html <span style="color:#0000ff">lang=&quot;fr&quot;&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">{% include &quot;fragments/fragment_01.html&quot; %}</span></span>
+<span class="odt-code-line">{% include &quot;fragments/fragment_01.html&quot; %}</span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>body<span style="color:#0000ff">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">{% include &quot;fragments/fragment_02.html&quot; %}</span></span>
+<span class="odt-code-line">{% include &quot;fragments/fragment_02.html&quot; %}</span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/body<span style="color:#0000ff">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">&lt;</span>/html<span style="color:#0000ff">&gt;</span></span>
 </code></pre></div>
@@ -2197,12 +2203,12 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">from <span style="color:#6f008a">flask </span>import <span style="color:#000000">Flask, make_response, render_template</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Flask application</span></span>
+<span class="odt-code-line"># Flask application</span>
 <span class="odt-code-line"><span style="color:#000000">script_dir = </span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.dirname(</span><span style="color:#6f008a">os</span><span style="color:#000000">.</span><span style="color:#6f008a">path</span><span style="color:#000000">.abspath(__file__))</span></span>
 <span class="odt-code-line"><span style="color:#000000">app = Flask(__name__, </span><span style="color:#a31515">template_folder=f&quot;{script_dir}/../templates&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">static_folder=f&quot;{script_dir}/../static&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Home URL</span></span>
+<span class="odt-code-line"># Home URL</span>
 <span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line">def <span style="color:#000000">index():</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># page content</span></span>
@@ -2211,17 +2217,17 @@
 <span class="odt-code-line"><span style="color:#000000">    </span>return <span style="color:#000000">make_response(render_template(</span><span style="color:#a31515">&quot;views/example_03.html&quot;</span><span style="color:#000000">, page=page))</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># main</span></span>
+<span class="odt-code-line"># main</span>
 <span class="odt-code-line">if <span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span>DEBUG=True<span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <p>The code is similar to that in <strong>[example_02.py]</strong>. Line 16 shows how to reference documents located in subfolders of <strong>[template_folder]</strong> from line 7.</p>
 <p>Running the <strong>[example_03.py]</strong> script produces the following results in the browser:</p>
 <p><img src="images/10000000000002BD0000013796E39F0B.png" style="width:8.089cm;height:3.59cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BD0000013796E39F0B.png" /></p>
-<p><a id="toc48549147"></a>
-<a id="scriptsflask02"></a></p>
+<p><a id="scriptsflask02"></a>
+<a id="toc48549147"></a></p>
 <h2 id="223-flask02-scripts-date-and-time-web-service">22.3. <span style="color: #4f81bd">[flask/02] scripts: date and time web service</span></h2>
 <p><img src="images/10000000000001B20000014487040A34.png" style="width:5.009cm;height:3.739cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001B20000014487040A34.png" /></p>
 <p>The document <strong>[date_time_server.html]</strong> is as follows:</p>
@@ -2277,7 +2283,7 @@
 <span class="odt-code-line"><span style="color:#000000">    document = render_template(</span><span style="color:#a31515">&quot;date_time_server.html&quot;</span><span style="color:#000000">, page=page)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;document&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">type</span><span style="color:#000000">(document), document)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># HTTP response to the client</span>
-<span class="odt-code-line"><span style="color:#000000">    response = make_response(document)</span></span>
+<span class="odt-code-line">    response = make_response(document)</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;response&quot;</span><span style="color:#000000">, </span><span style="color:#2b91af">type</span><span style="color:#000000">(response), response)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">response</span></span>
 <span class="odt-code-line"></span>
@@ -2285,7 +2291,7 @@
 <span class="odt-code-line"># main only</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -2385,7 +2391,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># Person, Utils, MyException</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">f&quot;{rootDir}/classes/02/entities&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line">    <span style="color:#008000"># Set the syspath</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span><span style="color:#6f008a">myutils </span><span style="color:#0000ff">import </span>set_syspath</span>
 <span class="odt-code-line">    set_syspath(absolute_dependencies)</span>
@@ -2409,7 +2415,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">Personne </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Personne</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Flask application (no static files here)</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Home URL</span>
@@ -2429,7 +2435,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># start the server</span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -2469,7 +2475,7 @@
 <span class="odt-code-line">Requirement already satisfied: MarkupSafe&gt;=0.23 in c:\data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\lib\site-packages (from Jinja2&gt;=2.10.1-&gt;Flask&gt;=1.1-&gt;flask_api) (1.1.1</span>
 <span class="odt-code-line">)</span>
 <span class="odt-code-line">Installing collected packages: flask-api</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Successfully installed flask-api-2.0</span></span>
+<span class="odt-code-line">Successfully installed flask-api-2.0</span>
 </code></pre></div>
 
 <p>When running the web script <strong>[main_01]</strong>, the following results are displayed in a browser:</p>
@@ -2501,8 +2507,8 @@
   <li>in <b>[8]</b>, select the <b>[Response] </b>tab to access the document sent by the web service, in this case a simple JSON string;
   </li>
 </ul>
-<p><a id="toc48549150"></a>
-<a id="postman"></a></p>
+<p><a id="postman"></a>
+<a id="toc48549150"></a></p>
 <h3 id="2242-postman">22.4.2. <span style="color: #4f81bd">Postman</span></h3>
 <p><strong>[Postman]</strong> is the tool that will allow us to query the various URLs of a web application. It allows us to:</p>
 <ul>
@@ -2610,34 +2616,34 @@
 
 <p>To make the explanations easier to follow, we will number the lines obtained from the Postman console.</p>
 <p>For the client:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.1</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="mf">70e2</span><span class="n">acaa</span><span class="o">-</span><span class="n">b3e5</span><span class="o">-</span><span class="mi">46</span><span class="n">f6</span><span class="o">-</span><span class="mi">8375</span><span class="o">-</span><span class="mf">989e6</span><span class="n">b94e694</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span>
+<span class="normal"><a href="#__codelineno-6-6">6</a></span>
+<span class="normal"><a href="#__codelineno-6-7">7</a></span>
+<span class="normal"><a href="#__codelineno-6-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.1</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="mf">70e2</span><span class="n">acaa</span><span class="o">-</span><span class="n">b3e5</span><span class="o">-</span><span class="mi">46</span><span class="n">f6</span><span class="o">-</span><span class="mi">8375</span><span class="o">-</span><span class="mf">989e6</span><span class="n">b94e694</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
 </code></pre></div></td></tr></table></div>
 <p>For the server:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>HTTP/1.0 200 OK
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>Content-type: application/json; charset=utf8
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>Content-Length: 56
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>Server: Werkzeug/1.0.1 Python/3.8.1
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>Date: Mon, Jul 13, 2020 5:19:56 PM GMT
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>{&quot;first_name&quot;: &quot;Aglaë&quot;, &quot;last_name&quot;: &quot;de la Hûche&quot;, &quot;age&quot;: 87}
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>HTTP/1.0 200 OK
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>Content-type: application/json; charset=utf8
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>Content-Length: 56
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>Server: Werkzeug/1.0.1 Python/3.8.1
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>Date: Mon, Jul 13, 2020 5:19:56 PM GMT
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>{&quot;first_name&quot;: &quot;Aglaë&quot;, &quot;last_name&quot;: &quot;de la Hûche&quot;, &quot;age&quot;: 87}
 </code></pre></div></td></tr></table></div>
 <p>From now on, we will mainly use:</p>
 <ul>
@@ -2664,7 +2670,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">Personne </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Personne</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Flask application</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Home URL</span>
@@ -2684,7 +2690,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># start the server</span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -2715,21 +2721,26 @@
 
 <p>The Postman console displays the following logs:</p>
 <p>Client request:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="background-color:#fff2cc">GET / HTTP/1.1</span></span>
-<span class="odt-code-line">User-Agent: PostmanRuntime/7.26.1</span>
-<span class="odt-code-line">Accept: */*</span>
-<span class="odt-code-line">Cache-Control: no-cache</span>
-<span class="odt-code-line">Postman-Token: 7c7fc9f3-8df8-49ae-9dc8-53c2d87d111a</span>
-<span class="odt-code-line">Host: localhost:5000</span>
-<span class="odt-code-line">Accept-Encoding: gzip, deflate, br</span>
-<span class="odt-code-line">Connection: keep-alive</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.1</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="mi">7</span><span class="n">c7fc9f3</span><span class="o">-</span><span class="mi">8</span><span class="n">df8</span><span class="o">-</span><span class="mi">49</span><span class="n">ae</span><span class="o">-</span><span class="mi">9</span><span class="n">dc8</span><span class="o">-</span><span class="mi">53</span><span class="n">c2d87d111a</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+</code></pre></div></td></tr></table></div>
 <p>Server response:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">HTTP/1.0 200 OK</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Content-Type: text/plain; charset=utf8</span></span>
+<span class="odt-code-line">Content-Type: text/plain; charset=utf8</span>
 <span class="odt-code-line">Content-Length: 34</span>
 <span class="odt-code-line">Server: Werkzeug/1.0.1 Python/3.8.1</span>
 <span class="odt-code-line">Date: Mon, Jul 13, 2020 5:34:22 PM GMT</span>
@@ -2755,7 +2766,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">Person </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Person</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Flask application</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Home URL</span>
@@ -2769,11 +2780,11 @@
 <span class="odt-code-line"><span style="color:#000000">        error_message = </span><span style="color:#a31515">f&quot;{error}&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># error?</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">error_message:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        response = make_response(error_message)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        status_code = status.HTTP_500_INTERNAL_SERVER_ERROR</span></span>
+<span class="odt-code-line">        response = make_response(error_message)</span>
+<span class="odt-code-line">        status_code = status.HTTP_500_INTERNAL_SERVER_ERROR</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        response = make_response(</span><span style="color:#a31515">f&quot;person</span><span style="font-weight:bold;color:#a31515">[{person.first_name}, {person.last_name}, {person.age}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        status_code = status.HTTP_200_OK</span></span>
+<span class="odt-code-line">        status_code = status.HTTP_200_OK</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># HTTP headers</span>
 <span class="odt-code-line"><span style="color:#000000">    response.headers.set(</span><span style="color:#a31515">&quot;Content-Type&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;text/plain; charset=utf8&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># HTTP response</span>
@@ -2784,7 +2795,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># start the server</span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -2823,35 +2834,35 @@
 
 <p>In the Postman console, the results in <strong>[raw]</strong> mode are as follows:</p>
 <p>Client request:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span>
-<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.1</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="mi">925</span><span class="n">ff036</span><span class="o">-</span><span class="n">a360</span><span class="o">-</span><span class="mi">47</span><span class="n">af</span><span class="o">-</span><span class="n">adf6</span><span class="o">-</span><span class="mi">78173</span><span class="n">c01a247</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.1</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="mi">925</span><span class="n">ff036</span><span class="o">-</span><span class="n">a360</span><span class="o">-</span><span class="mi">47</span><span class="n">af</span><span class="o">-</span><span class="n">adf6</span><span class="o">-</span><span class="mi">78173</span><span class="n">c01a247</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
 </code></pre></div></td></tr></table></div>
 <p>Server response:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="background-color:#fff2cc">HTTP/1.0 500 INTERNAL SERVER ERROR</span></span>
+<span class="odt-code-line">HTTP/1.0 500 INTERNAL SERVER ERROR</span>
 <span class="odt-code-line">Content-Type: text/plain; charset=utf8</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Content-Length: 74</span></span>
+<span class="odt-code-line">Content-Length: 74</span>
 <span class="odt-code-line">Server: Werkzeug/1.0.1 Python/3.8.1</span>
 <span class="odt-code-line">Date: Mon, Jul 13, 2020 5:39:24 PM GMT</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="background-color:#fff2cc">MyException</span><span style="font-weight:bold;background-color:#fff2cc">[11, The first name must be a non-empty string]</span></span>
 </code></pre></div>
 
-<p><a id="toc48549153"></a>
-<a id="scriptsflask04"></a></p>
+<p><a id="scriptsflask04"></a>
+<a id="toc48549153"></a></p>
 <h2 id="225-scripts-flask04-information-encapsulated-in-the-request">22.5. <span style="color: #4f81bd">scripts [flask/04]: information encapsulated in the request</span></h2>
 <p><img src="images/1000000000000129000000E646EF8C1E.png" style="width:3.433cm;height:2.658cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000129000000E646EF8C1E.png" /></p>
 <p>The script <strong>[request_parameters.py]</strong> demonstrates that the web service has access to various pieces of information encapsulated in a web client’s request. The code is as follows:</p>
@@ -2860,14 +2871,14 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">flask </span><span style="color:#0000ff">import </span><span style="color:#000000">Flask, make_response, request</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">flask_api </span><span style="color:#0000ff">import </span><span style="color:#000000">status</span></span>
 <span class="odt-code-line"># Flask application</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Home URL</span>
 <span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&#x27;POST&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">index():</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Request parameters</span>
-<span class="odt-code-line"><span style="color:#000000">    request_data = {}</span></span>
+<span class="odt-code-line">    request_data = {}</span>
 <span class="odt-code-line"><span style="color:#000000">    request_data</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;environ&quot;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#a31515">f&quot;{request.environ}&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    request_data</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;path&quot;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= request.path</span></span>
 <span class="odt-code-line"><span style="color:#000000">    request_data</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;full_path&quot;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= request.full_path</span></span>
@@ -2897,7 +2908,7 @@
 <span class="odt-code-line"><span style="color:#000000">    request_data</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;user_agent&quot;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#a31515">f&quot;{request.user_agent}&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    request_data</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;values&quot;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= request.values</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># HTTP response</span>
-<span class="odt-code-line"><span style="color:#000000">    response = make_response(request_data)</span></span>
+<span class="odt-code-line">    response = make_response(request_data)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># HTTP headers</span>
 <span class="odt-code-line"><span style="color:#000000">    response.headers</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;Content-Type&quot;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#a31515">&quot;application/json; charset=utf-8&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Send HTTP response</span>
@@ -2907,7 +2918,7 @@
 <span class="odt-code-line"># main</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -3003,21 +3014,30 @@
 
 <p>In the Postman console, the logs are as follows:</p>
 <p>Client request:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">GET /?param1=value1&amp;param2=value2 HTTP/1.1</span>
-<span class="odt-code-line">User-Agent: PostmanRuntime/7.26.1</span>
-<span class="odt-code-line">Accept: */*</span>
-<span class="odt-code-line">Cache-Control: no-cache</span>
-<span class="odt-code-line">Postman-Token: cbfac6aa-71a0-4076-a0c3-91d36d74a4c0</span>
-<span class="odt-code-line">Host: localhost:5000</span>
-<span class="odt-code-line">Accept-Encoding: gzip, deflate, br</span>
-<span class="odt-code-line">Connection: keep-alive</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Content-Type: application/x-www-form-urlencoded</span></span>
-<span class="odt-code-line">Content-Length: 60</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">last_name=s%C3%A9l%C3%A9n%C3%A9&amp;first_name=agla%C3%AB&amp;%C3%A2ge=77</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="n">GET</span> <span class="o">/</span><span class="err">?</span><span class="n">param1</span><span class="o">=</span><span class="n">value1</span><span class="o">&amp;</span><span class="n">param2</span><span class="o">=</span><span class="n">value2</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.1</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="n">cbfac6aa</span><span class="o">-</span><span class="mi">71</span><span class="n">a0</span><span class="o">-</span><span class="mi">4076</span><span class="o">-</span><span class="n">a0c3</span><span class="o">-</span><span class="mi">91</span><span class="n">d36d74a4c0</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">x</span><span class="o">-</span><span class="n">www</span><span class="o">-</span><span class="n">form</span><span class="o">-</span><span class="n">urlencoded</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">60</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="n">last_name</span><span class="o">=</span><span class="n">s</span><span class="o">%</span><span class="n">C3</span><span class="o">%</span><span class="n">A9l</span><span class="o">%</span><span class="n">C3</span><span class="o">%</span><span class="n">A9n</span><span class="o">%</span><span class="n">C3</span><span class="o">%</span><span class="n">A9</span><span class="o">&amp;</span><span class="n">first_name</span><span class="o">=</span><span class="n">agla</span><span class="o">%</span><span class="n">C3</span><span class="o">%</span><span class="n">AB</span><span class="o">&amp;%</span><span class="n">C3</span><span class="o">%</span><span class="n">A2ge</span><span class="o">=</span><span class="mi">77</span>
+</code></pre></div></td></tr></table></div>
 <ul>
   <li>line 9: the type of document sent to the server on line 12;
   </li>
@@ -3038,25 +3058,25 @@
 <span class="odt-code-line">{</span>
 <span class="odt-code-line">  &quot;accept_charsets&quot;: <span style="font-weight:bold">[]</span>, </span>
 <span class="odt-code-line">  &quot;accept_encodings&quot;: <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    [</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">      &quot;gzip&quot;, </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">      1</span></span>
+<span class="odt-code-line">    [</span>
+<span class="odt-code-line">      &quot;gzip&quot;, </span>
+<span class="odt-code-line">      1</span>
 <span class="odt-code-line"><span style="font-weight:bold">    ]</span>, </span>
 <span class="odt-code-line">    <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">      &quot;deflate&quot;, </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">      1</span></span>
+<span class="odt-code-line">      &quot;deflate&quot;, </span>
+<span class="odt-code-line">      1</span>
 <span class="odt-code-line"><span style="font-weight:bold">    ]</span>, </span>
 <span class="odt-code-line">    <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">      &quot;br&quot;, </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">      1</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">      &quot;br&quot;, </span>
+<span class="odt-code-line">      1</span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line">  ], </span>
 <span class="odt-code-line">  &quot;accept_languages&quot;: <span style="font-weight:bold">[]</span>, </span>
 <span class="odt-code-line">  &quot;accept_mimetypes&quot;: <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    [</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">      &quot;*/*&quot;, </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">      1</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    [</span>
+<span class="odt-code-line">      &quot;*/*&quot;, </span>
+<span class="odt-code-line">      1</span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line">  ], </span>
 <span class="odt-code-line">  &quot;args&quot;: {</span>
 <span class="odt-code-line">    &quot;param1&quot;: &quot;value1&quot;, </span>
@@ -3213,7 +3233,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># we put something in the session</span>
 <span class="odt-code-line"><span style="color:#000000">    session</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;name&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#a31515">&#x27;selene&#x27;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># send an empty response</span>
-<span class="odt-code-line"><span style="color:#000000">    response = make_response()</span></span>
+<span class="odt-code-line">    response = make_response()</span>
 <span class="odt-code-line"><span style="color:#000000">    response.headers</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;Content-Length&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= 0</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">response, status.HTTP_200_OK</span></span>
 <span class="odt-code-line"></span>
@@ -3229,7 +3249,7 @@
 <span class="odt-code-line"># main only</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -3241,10 +3261,10 @@
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"><span style="color:#000000">    </span># set the configuration</span>
-<span class="odt-code-line"><span style="color:#000000">    config = {</span></span>
+<span class="odt-code-line">    config = {</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Flask configuration</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;SECRET_KEY&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;vibnFfrdWYUp?*LQ&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">    }</span>
 </code></pre></div>
 
 <ul>
@@ -3292,7 +3312,7 @@
 <span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># Person, Utils, MyException</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">f&quot;{root_dir}/classes/02/entities&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line">    <span style="color:#008000"># Set the syspath</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span><span style="color:#6f008a">myutils </span><span style="color:#0000ff">import </span>set_syspath</span>
 <span class="odt-code-line">    set_syspath(absolute_dependencies)</span>
@@ -3387,27 +3407,42 @@
 </ul>
 
 <p>Now let&#x27;s request the URL <strong>[/get-session]</strong>:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line">GET /get-session HTTP/1.1</span>
-<span class="odt-code-line">User-Agent: PostmanRuntime/7.26.1</span>
-<span class="odt-code-line">Accept: */*</span>
-<span class="odt-code-line">Cache-Control: no-cache</span>
-<span class="odt-code-line">Postman-Token: ce991398-2d9a-46d0-9ccd-c7ff3c7f4d6d</span>
-<span class="odt-code-line">Host: localhost:5000</span>
-<span class="odt-code-line">Accept-Encoding: gzip, deflate, br</span>
-<span class="odt-code-line">Connection: keep-alive</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Cookie: session=eyJub20iOiJzXHUwMGU5bFx1MDBlOW5cdTAwZTkifQ.Xw6jGQ.y5Icu70wTIN-B0o_hwx0xDH247I</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">HTTP/1.0 200 OK</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Content-Type: application/json; charset=utf-8</span></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Content-Length: 20</span></span>
-<span class="odt-code-line">Vary: Cookie</span>
-<span class="odt-code-line">Server: Werkzeug/1.0.1 Python/3.8.1</span>
-<span class="odt-code-line">Date: Wed, Jul 15, 2020 6:36:52 AM GMT</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">{&quot;name&quot;: &quot;selene&quot;}</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span>
+<span class="normal"><a href="#__codelineno-11-12">12</a></span>
+<span class="normal"><a href="#__codelineno-11-13">13</a></span>
+<span class="normal"><a href="#__codelineno-11-14">14</a></span>
+<span class="normal"><a href="#__codelineno-11-15">15</a></span>
+<span class="normal"><a href="#__codelineno-11-16">16</a></span>
+<span class="normal"><a href="#__codelineno-11-17">17</a></span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="n">GET</span> <span class="o">/</span><span class="n">get</span><span class="o">-</span><span class="n">session</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.1</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="n">ce991398</span><span class="o">-</span><span class="mi">2</span><span class="n">d9a</span><span class="o">-</span><span class="mi">46</span><span class="n">d0</span><span class="o">-</span><span class="mi">9</span><span class="n">ccd</span><span class="o">-</span><span class="n">c7ff3c7f4d6d</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="n">Cookie</span><span class="p">:</span> <span class="n">session</span><span class="o">=</span><span class="n">eyJub20iOiJzXHUwMGU5bFx1MDBlOW5cdTAwZTkifQ</span><span class="o">.</span><span class="n">Xw6jGQ</span><span class="o">.</span><span class="n">y5Icu70wTIN</span><span class="o">-</span><span class="n">B0o_hwx0xDH247I</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.0</span> <span class="mi">200</span> <span class="n">OK</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">20</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="n">Vary</span><span class="p">:</span> <span class="n">Cookie</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="n">Server</span><span class="p">:</span> <span class="n">Werkzeug</span><span class="o">/</span><span class="mf">1.0.1</span> <span class="n">Python</span><span class="o">/</span><span class="mf">3.8.1</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="n">Date</span><span class="p">:</span> <span class="n">Wed</span><span class="p">,</span> <span class="n">Jul</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2020</span> <span class="mi">6</span><span class="p">:</span><span class="mi">36</span><span class="p">:</span><span class="mi">52</span> <span class="n">AM</span> <span class="n">GMT</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17"></a>
+<a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="p">{</span><span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;selene&quot;</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <ul>
   <li>line 9: the Postman client sent the session cookie it had received back to the server;
   </li>
@@ -3436,7 +3471,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">flask_api </span><span style="color:#0000ff">import </span><span style="color:#000000">status</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Flask application</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># session secret key</span>
 <span class="odt-code-line"><span style="color:#000000">app.secret_key = </span><span style="color:#6f008a">os</span><span style="color:#000000">.urandom(12).hex()</span></span>
@@ -3461,7 +3496,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># counter dictionary</span>
 <span class="odt-code-line"><span style="color:#000000">    counters = {</span><span style="color:#a31515">&quot;n1&quot;</span><span style="color:#000000">: session</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;n1&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;n2&quot;</span><span style="color:#000000">: session</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;n2&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;n3&quot;</span><span style="color:#000000">: session</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;n3&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># send the response</span>
-<span class="odt-code-line"><span style="color:#000000">    response = make_response(counters)</span></span>
+<span class="odt-code-line">    response = make_response(counters)</span>
 <span class="odt-code-line"><span style="color:#000000">    response.headers</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;Content-Type&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#a31515">&#x27;application/json; charset=utf-8&#x27;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">response, status.HTTP_200_OK</span></span>
 <span class="odt-code-line"></span>
@@ -3469,7 +3504,7 @@
 <span class="odt-code-line"># main</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -3579,7 +3614,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">Person </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Person</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Flask application</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># session secret key</span>
 <span class="odt-code-line"><span style="color:#000000">app.secret_key = </span><span style="color:#6f008a">os</span><span style="color:#000000">.urandom(12).hex()</span></span>
@@ -3621,7 +3656,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># subsequent requests</span>
 <span class="odt-code-line"><span style="color:#000000">        person = </span><span style="color:#2b91af">Person</span><span style="color:#000000">().fromjson(person_json)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        person.age += 1</span></span>
+<span class="odt-code-line">        person.age += 1</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># put the person back into the session</span>
 <span class="odt-code-line"><span style="color:#000000">    session</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;person&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= person.asjson()</span></span>
 <span class="odt-code-line"></span>
@@ -3637,7 +3672,7 @@
 <span class="odt-code-line"># main</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -3742,7 +3777,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">flask_api </span><span style="color:#0000ff">import </span><span style="color:#000000">status</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Flask application</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Home URL</span>
@@ -3759,7 +3794,7 @@
 <span class="odt-code-line"><span style="color:#000000">    results = {</span><span style="color:#a31515">&quot;config&quot;</span><span style="color:#000000">: </span><span style="color:#6f008a">config</span><span style="color:#000000">}</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># send the response</span>
-<span class="odt-code-line"><span style="color:#000000">    response = make_response(results)</span></span>
+<span class="odt-code-line">    response = make_response(results)</span>
 <span class="odt-code-line"><span style="color:#000000">    response.headers</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;Content-Type&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#a31515">&#x27;application/json; charset=utf-8&#x27;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">response, status.HTTP_200_OK</span></span>
 <span class="odt-code-line"></span>
@@ -3770,7 +3805,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;App launched&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># launch the web application</span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -3806,41 +3841,41 @@
 <p>Now using the Firefox browser:</p>
 <p><img src="images/10000000000002BD00000133B8E0A113.png" style="width:8.08cm;height:3.538cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002BD00000133B8E0A113.png" /></p>
 <p>Now using the Postman client:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span>
-<span class="normal"><a href="#__codelineno-3-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.1</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="mf">51e75099</span><span class="o">-</span><span class="mi">8</span><span class="n">ecb</span><span class="o">-</span><span class="mi">4</span><span class="n">f27</span><span class="o">-</span><span class="n">ae3b</span><span class="o">-</span><span class="mf">9386e982</span><span class="n">ede4</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.0</span> <span class="mi">200</span> <span class="n">OK</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">39</span>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="n">Server</span><span class="p">:</span> <span class="n">Werkzeug</span><span class="o">/</span><span class="mf">1.0.1</span> <span class="n">Python</span><span class="o">/</span><span class="mf">3.8.1</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="n">Date</span><span class="p">:</span> <span class="n">Wed</span><span class="p">,</span> <span class="n">Jul</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2020</span> <span class="mi">10</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">26</span> <span class="n">GMT</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="p">{</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="s2">&quot;SECRET_KEY&quot;</span><span class="p">:</span> <span class="s2">&quot;vibnFfrdWYUp?*LQ&quot;</span>
-<a id="__codelineno-3-18" name="__codelineno-3-18"></a><span class="p">}</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-12-10">10</a></span>
+<span class="normal"><a href="#__codelineno-12-11">11</a></span>
+<span class="normal"><a href="#__codelineno-12-12">12</a></span>
+<span class="normal"><a href="#__codelineno-12-13">13</a></span>
+<span class="normal"><a href="#__codelineno-12-14">14</a></span>
+<span class="normal"><a href="#__codelineno-12-15">15</a></span>
+<span class="normal"><a href="#__codelineno-12-16">16</a></span>
+<span class="normal"><a href="#__codelineno-12-17">17</a></span>
+<span class="normal"><a href="#__codelineno-12-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.1</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="mf">51e75099</span><span class="o">-</span><span class="mi">8</span><span class="n">ecb</span><span class="o">-</span><span class="mi">4</span><span class="n">f27</span><span class="o">-</span><span class="n">ae3b</span><span class="o">-</span><span class="mf">9386e982</span><span class="n">ede4</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">localhost</span><span class="p">:</span><span class="mi">5000</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9"></a>
+<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.0</span> <span class="mi">200</span> <span class="n">OK</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">application</span><span class="o">/</span><span class="n">json</span><span class="p">;</span> <span class="n">charset</span><span class="o">=</span><span class="n">utf</span><span class="o">-</span><span class="mi">8</span>
+<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">39</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="n">Server</span><span class="p">:</span> <span class="n">Werkzeug</span><span class="o">/</span><span class="mf">1.0.1</span> <span class="n">Python</span><span class="o">/</span><span class="mf">3.8.1</span>
+<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="n">Date</span><span class="p">:</span> <span class="n">Wed</span><span class="p">,</span> <span class="n">Jul</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">2020</span> <span class="mi">10</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">26</span> <span class="n">GMT</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16"></a><span class="p">{</span>
+<a id="__codelineno-12-17" name="__codelineno-12-17"></a><span class="s2">&quot;SECRET_KEY&quot;</span><span class="p">:</span> <span class="s2">&quot;vibnFfrdWYUp?*LQ&quot;</span>
+<a id="__codelineno-12-18" name="__codelineno-12-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Now, let’s go back to the Pycharm <strong>[Run]</strong> console:</p>
 <p><img src="images/10000000000003D0000001EC8893BB2B.png" style="width:11.261cm;height:5.676cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003D0000001EC8893BB2B.png" /></p>
@@ -3862,12 +3897,12 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">flask_api </span><span style="color:#0000ff">import </span><span style="color:#000000">status</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Flask application</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># application scope data</span>
-<span class="odt-code-line"><span style="color:#000000">config = {</span></span>
+<span class="odt-code-line">config = {</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&quot;counter&quot;</span><span style="color:#000000">: 0</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Home URL</span>
@@ -3879,7 +3914,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># we increment the counter</span>
 <span class="odt-code-line"><span style="color:#000000">    config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;counter&quot;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">+= 1</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># we send the response</span>
-<span class="odt-code-line"><span style="color:#000000">    response = make_response(config)</span></span>
+<span class="odt-code-line">    response = make_response(config)</span>
 <span class="odt-code-line"><span style="color:#000000">    response.headers</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;Content-Type&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#a31515">&#x27;application/json; charset=utf-8&#x27;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">response, status.HTTP_200_OK</span></span>
 <span class="odt-code-line"></span>
@@ -3887,7 +3922,7 @@
 <span class="odt-code-line"># main</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span><span style="color:#0000ff">DEBUG=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>
@@ -3920,12 +3955,12 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">flask_api </span><span style="color:#0000ff">import </span><span style="color:#000000">status</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Flask application</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Application-scope data</span>
-<span class="odt-code-line"><span style="color:#000000">config = {</span></span>
+<span class="odt-code-line">config = {</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&quot;counter&quot;</span><span style="color:#000000">: 0</span></span>
-<span class="odt-code-line"><span style="color:#000000">}</span></span>
+<span class="odt-code-line">}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Home URL</span>
@@ -3940,13 +3975,13 @@
 <span class="odt-code-line"><span style="color:#000000">    counter = config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;counter&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Counter read: {counter}, by thread {thread_name}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># pause for 5 seconds—so other clients can be served</span>
-<span class="odt-code-line"><span style="color:#000000">    sleep(5)</span></span>
+<span class="odt-code-line">    sleep(5)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Increment the counter in the configuration</span>
 <span class="odt-code-line"><span style="color:#000000">    config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;counter&quot;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= counter + 1</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># log</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Counter written: {config</span><span style="font-weight:bold;color:#a31515">[&#x27;counter&#x27;]</span><span style="color:#a31515">}, by thread {thread_name}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># send the response</span>
-<span class="odt-code-line"><span style="color:#000000">    response = make_response(config)</span></span>
+<span class="odt-code-line">    response = make_response(config)</span>
 <span class="odt-code-line"><span style="color:#000000">    response.headers</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;Content-Type&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#a31515">&#x27;application/json; charset=utf-8&#x27;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">response, status.HTTP_200_OK</span></span>
 <span class="odt-code-line"></span>
@@ -4030,11 +4065,11 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">flask </span><span style="color:#0000ff">import </span>Flask, make_response</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">flask_api </span><span style="color:#0000ff">import </span>status</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Flask application</span></span>
+<span class="odt-code-line"># Flask application</span>
 <span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># sending the response</span></span>
+<span class="odt-code-line"># sending the response</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>send_plain_response(<span style="color:#808080">response</span>: <span style="color:#2b91af">str</span>):</span>
 <span class="odt-code-line">    <span style="color:#008000"># send the response</span></span>
 <span class="odt-code-line">    response = make_response(<span style="color:#808080">response</span>)</span>
@@ -4042,56 +4077,56 @@
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>response, status.HTTP_200_OK</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># /last_name/first_name</span></span>
+<span class="odt-code-line"># /last_name/first_name</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/&lt;string:last_name&gt;/&lt;string:first_name&gt;&#x27;</span>, methods=<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold">]</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>index(<span style="color:#808080">last_name</span>, <span style="color:#808080">first_name</span>):</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_plain_response(<span style="color:#a31515">f&quot;{first_name} {last_name}&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># init-session</span></span>
+<span class="odt-code-line"># init-session</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/init-session/&lt;string:type&gt;&#x27;</span>, methods=<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold">]</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>init_session(<span style="color:#808080">type</span>: <span style="color:#2b91af">str</span>):</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_plain_response(<span style="color:#a31515">f&quot;/init-session/{type}&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># authenticate-user</span></span>
+<span class="odt-code-line"># authenticate-user</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/authenticate-user&#x27;</span>, methods=<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;POST&#x27;</span><span style="font-weight:bold">]</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>authenticate_user():</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_plain_response(<span style="color:#a31515">&quot;/authenticate-user&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># calculate-tax</span></span>
+<span class="odt-code-line"># calculate-tax</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/calculate-tax&#x27;</span>, methods=<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;POST&#x27;</span><span style="font-weight:bold">]</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>calculate_tax():</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_plain_response(<span style="color:#a31515">&quot;/calculate-tax&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># list-simulations</span></span>
+<span class="odt-code-line"># list-simulations</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/list-simulations&#x27;</span>, methods=<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold">]</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>list_simulations():</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_plain_response(<span style="color:#a31515">&quot;/list-simulations&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># delete-simulation</span></span>
+<span class="odt-code-line"># delete-simulation</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/delete-simulation/&lt;int:number&gt;&#x27;</span>, methods=<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold">]</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>delete_simulation(<span style="color:#808080">number</span>: <span style="color:#2b91af">int</span>):</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_plain_response(<span style="color:#a31515">f&quot;/delete-simulation/{number}&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># end-session</span></span>
+<span class="odt-code-line"># end-session</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/end-session&#x27;</span>, methods=<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold">]</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>end_session():</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_plain_response(<span style="color:#a31515">f&quot;/end-session&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># main</span></span>
+<span class="odt-code-line"># main</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span>__name__ == <span style="color:#a31515">&#x27;__main__</span>&#x27;:</span>
 <span class="odt-code-line">    app.config.update(ENV=<span style="color:#a31515">&quot;development&quot;</span>, <span style="color:#0000ff">DEBUG=True</span>)</span>
 <span class="odt-code-line">    app.run()</span>
@@ -4135,43 +4170,43 @@
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>response, status.HTTP_200_OK</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Home URL</span></span>
+<span class="odt-code-line"># Home URL</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>index(<span style="color:#808080">last_name</span>, <span style="color:#808080">first_name</span>):</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_response(<span style="color:#a31515">f&quot;{first_name} {last_name}&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># init-session</span></span>
+<span class="odt-code-line"># init-session</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>init_session(<span style="color:#808080">type</span>: <span style="color:#2b91af">str</span>):</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_response(<span style="color:#a31515">f&quot;/init-session/{type}&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># authenticate-user</span></span>
+<span class="odt-code-line"># authenticate-user</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>authenticate_user():</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_response(<span style="color:#a31515">&quot;/authenticate-user&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># calculate-tax</span></span>
+<span class="odt-code-line"># calculate-tax</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>calculate_tax():</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_response(<span style="color:#a31515">&quot;/calculate-tax&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># list-simulations</span></span>
+<span class="odt-code-line"># list-simulations</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>list_simulations():</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_response(<span style="color:#a31515">&quot;/list-simulations&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># delete-simulation</span></span>
+<span class="odt-code-line"># delete-simulation</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>delete_simulation(<span style="color:#808080">number</span>: <span style="color:#2b91af">int</span>):</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_response(<span style="color:#a31515">f&quot;/delete-simulation/{number}&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># end-session</span></span>
+<span class="odt-code-line"># end-session</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>end_session():</span>
 <span class="odt-code-line">    <span style="color:#008000"># response</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>send_response(<span style="color:#a31515">f&quot;/end-session&quot;</span>)</span>
@@ -4181,13 +4216,13 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">from <span style="color:#6f008a">flask </span>import <span style="color:#000000">Flask</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># we move the route functions into their own script</span></span>
+<span class="odt-code-line"># we move the route functions into their own script</span>
 <span class="odt-code-line">import <span style="color:#6f008a">routes_02</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Flask application</span></span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line"># Flask application</span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># route/function mappings</span></span>
+<span class="odt-code-line"># route/function mappings</span>
 <span class="odt-code-line"><span style="color:#000000">app.add_url_rule(</span><span style="color:#a31515">&#x27;/&lt;string:last_name&gt;/&lt;string:first_name&gt;&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#6f008a">view_func=routes_02</span><span style="color:#000000">.index)</span></span>
 <span class="odt-code-line"><span style="color:#000000">app.add_url_rule(</span><span style="color:#a31515">&#x27;/init-session/&lt;string:type&gt;&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#6f008a">view_func=routes_02</span><span style="color:#000000">.init_session)</span></span>
 <span class="odt-code-line"><span style="color:#000000">app.add_url_rule(</span><span style="color:#a31515">&#x27;/authenticate-user&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;POST&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#6f008a">view_func=routes_02</span><span style="color:#000000">.authenticate_user)</span></span>
@@ -4196,10 +4231,10 @@
 <span class="odt-code-line"><span style="color:#000000">app.add_url_rule(</span><span style="color:#a31515">&#x27;/delete-simulation/&lt;int:number&gt;&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#6f008a">view_func=routes_02</span><span style="color:#000000">.delete_simulation)</span></span>
 <span class="odt-code-line"><span style="color:#000000">app.add_url_rule(</span><span style="color:#a31515">&#x27;/end-session&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#6f008a">view_func=routes_02</span><span style="color:#000000">.end_session)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># main</span></span>
+<span class="odt-code-line"># main</span>
 <span class="odt-code-line">if <span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    app.config.update(ENV=</span><span style="color:#a31515">&quot;development&quot;</span><span style="color:#000000">, </span>DEBUG=True<span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    app.run()</span></span>
+<span class="odt-code-line">    app.run()</span>
 </code></pre></div>
 
 <ul>

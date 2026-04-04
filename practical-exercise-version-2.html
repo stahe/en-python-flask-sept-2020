@@ -1376,8 +1376,8 @@
 
 
 
-<p><a id="exercicedapplication1"></a>
-<a id="toc48548993"></a></p>
+<p><a id="toc48548993"></a>
+<a id="exercicedapplication1"></a></p>
 <h1 id="10-practical-exercise-version-2">10. <span style="color: #365f91">Practical Exercise: Version 2</span></h1>
 <p><img src="images/10000001000001CD0000019780DE825C.png" style="width:4.872cm;height:4.3cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001CD0000019780DE825C.png" /></p>
 <p>This new version introduces the following <strong>[config.py]</strong> file:</p>
@@ -1394,7 +1394,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># application dependencies</span>
 <span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/v01/shared&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># application configuration</span>
 <span class="odt-code-line">    config = {</span>
@@ -1445,7 +1445,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># read taxpayer data</span>
-<span class="odt-code-line"><span style="color:#000000">    taxpayers = get_taxpayers_data(taxpayers_filename)</span></span>
+<span class="odt-code-line">    taxpayers = get_taxpayers_data(taxpayers_filename)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of results</span>
 <span class="odt-code-line"><span style="color:#000000">    results = </span><span style="font-weight:bold;color:#000000">[]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Calculate taxpayers&#x27; taxes</span>
@@ -1454,9 +1454,9 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[&#x27;married&#x27;, &#x27;children&#x27;, &#x27;salary&#x27;, &#x27;tax&#x27;, &#x27;surcharge&#x27;, &#x27;rebate&#x27;, &#x27;deduction&#x27;, &#x27;rate&#x27;]</span></span>
 <span class="odt-code-line"><span style="color:#000000">        result = calculate_tax(taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;married&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;children&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;salary&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># the dictionary is added to the list of results</span>
-<span class="odt-code-line"><span style="color:#000000">        results.append(result)</span></span>
+<span class="odt-code-line">        results.append(result)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># We save the results</span>
-<span class="odt-code-line"><span style="color:#000000">    save_results(results_filename, results)</span></span>
+<span class="odt-code-line">    save_results(results_filename, results)</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># There may be various errors: file not found, incorrect file content</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error and exit the application</span>

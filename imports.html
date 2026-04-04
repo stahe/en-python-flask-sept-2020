@@ -1529,8 +1529,8 @@
 
 
 
-<p><a id="lesimports"></a>
-<a id="toc48548982"></a></p>
+<p><a id="toc48548982"></a>
+<a id="lesimports"></a></p>
 <h1 id="9-imports">9. <span style="color: #365f91">Imports</span></h1>
 <p>The error encountered in version 1 of the application exercise leads us to explore the role of the <strong>[import]</strong> statement in greater depth.</p>
 <p><img src="images/10000001000000D10000012D4D95DD64.png" style="width:1.923cm;height:2.768cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000000D10000012D4D95DD64.png" /></p>
@@ -1543,7 +1543,7 @@
 <span class="odt-code-line"># this statement will be executed every time the module is imported</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;2&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># variable belonging to the imported module</span>
-<span class="odt-code-line"><span style="color:#000000">x=4</span></span>
+<span class="odt-code-line">x=4</span>
 </code></pre></div>
 
 <p>A module is <strong>executed</strong> when it is imported. So when the <strong>[imported]</strong> module is imported:</p>
@@ -1613,7 +1613,7 @@
 <span class="odt-code-line"># Import the variable x from the imported module</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">imported </span><span style="color:#0000ff">import </span><span style="color:#000000">x</span></span>
 <span class="odt-code-line"># display it</span>
-<span class="odt-code-line"><span style="color:#000000">print(x)</span></span>
+<span class="odt-code-line">print(x)</span>
 </code></pre></div>
 
 <ul>
@@ -1639,7 +1639,7 @@
 <span class="odt-code-line"># import everything visible from the imported module</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">imported </span><span style="color:#0000ff">import </span><span style="color:#000000">*</span></span>
 <span class="odt-code-line"># use the variable x from the imported module</span>
-<span class="odt-code-line"><span style="color:#000000">print(x)</span></span>
+<span class="odt-code-line">print(x)</span>
 </code></pre></div>
 
 <p>The <strong>[import *]</strong> notation on line 2 means that we import all visible objects from the imported module (variables, functions).</p>
@@ -1660,7 +1660,7 @@
 <span class="odt-code-line"># and rename it to y</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">imported </span><span style="color:#0000ff">import </span><span style="color:#000000">x </span><span style="color:#0000ff">as </span><span style="color:#000000">y</span></span>
 <span class="odt-code-line"># display the variable y</span>
-<span class="odt-code-line"><span style="color:#000000">print(y) </span></span>
+<span class="odt-code-line">print(y) </span>
 </code></pre></div>
 
 <p>Line 3 shows that we can import an object from the imported module and give it an alias. Here, the variable <strong>[imported.x]</strong> becomes the variable <strong>[main_04.y]</strong>. The results are the same as before.</p>
@@ -1707,7 +1707,7 @@
 <span class="odt-code-line"># import</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">module1 </span><span style="color:#0000ff">import </span><span style="color:#000000">f1</span></span>
 <span class="odt-code-line"># execute f1</span>
-<span class="odt-code-line"><span style="color:#000000">f1()</span></span>
+<span class="odt-code-line">f1()</span>
 </code></pre></div>
 
 <ul>
@@ -1770,7 +1770,7 @@
 <span class="odt-code-line"># Import the f2 function from the dir1.module2 module</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">dir1</span><span style="color:#000000">.</span><span style="color:#6f008a">module2 </span><span style="color:#0000ff">import </span><span style="color:#000000">f2</span></span>
 <span class="odt-code-line"># execute f2</span>
-<span class="odt-code-line"><span style="color:#000000">f2()</span></span>
+<span class="odt-code-line">f2()</span>
 </code></pre></div>
 
 <p>This time, on line 2, we import only the <strong>[f2]</strong> function, which then becomes a function of the <strong>[main_03]</strong> script (line 4).</p>
@@ -1790,9 +1790,9 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">from <span style="color:#6f008a">module3 </span>import <span style="color:#000000">f3</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># a function</span></span>
+<span class="odt-code-line"># a function</span>
 <span class="odt-code-line">def <span style="color:#000000">f4():</span></span>
-<span class="odt-code-line"><span style="color:#000000">    f3()</span></span>
+<span class="odt-code-line">    f3()</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;f4&quot;</span><span style="color:#000000">)</span></span>
 </code></pre></div>
 
@@ -1808,7 +1808,7 @@
 <span class="odt-code-line"># import module4</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">module4 </span><span style="color:#0000ff">import </span><span style="color:#000000">f4</span></span>
 <span class="odt-code-line"># execute f4</span>
-<span class="odt-code-line"><span style="color:#000000">f4()</span></span>
+<span class="odt-code-line">f4()</span>
 </code></pre></div>
 
 <ul>
@@ -1864,15 +1864,15 @@
 <p>The <strong>[main_01]</strong> script becomes the following:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line">import <span style="color:#6f008a">sys</span></span>
-<span class="odt-code-line"><span style="color:#008000"># we modify sys.path to include the folders</span></span>
-<span class="odt-code-line"><span style="color:#008000"># containing the classes to be imported</span></span>
+<span class="odt-code-line"># we modify sys.path to include the folders</span>
+<span class="odt-code-line"># containing the classes to be imported</span>
 <span class="odt-code-line"><span style="color:#6f008a">sys</span><span style="color:#000000">.path.append(</span><span style="color:#a31515">&quot;.&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#6f008a">sys</span><span style="color:#000000">.path.append(</span><span style="color:#a31515">&quot;./dir1&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#6f008a">sys</span><span style="color:#000000">.path.append(</span><span style="color:#a31515">&quot;./dir2&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#008000"># Import module4</span></span>
+<span class="odt-code-line"># Import module4</span>
 <span class="odt-code-line">from <span style="color:#6f008a">module4 </span>import <span style="color:#000000">f4</span></span>
-<span class="odt-code-line"><span style="color:#008000"># Run f4</span></span>
-<span class="odt-code-line"><span style="color:#000000">f4()</span></span>
+<span class="odt-code-line"># Run f4</span>
+<span class="odt-code-line">f4()</span>
 </code></pre></div>
 
 <p>We’re trying to solve the Python Path issue. We want one that works just as well in PyCharm as it does in a Python terminal. To do this, we’ll set it up ourselves.</p>
@@ -1910,7 +1910,7 @@
 <span class="odt-code-line">Traceback (most recent call last):</span>
 <span class="odt-code-line">  File &quot;05/main_01.py&quot;, line 8, in &lt;module&gt;</span>
 <span class="odt-code-line">    from module4 import f4</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">ModuleNotFoundError: No module named &#x27;module4&#x27;</span></span>
+<span class="odt-code-line">ModuleNotFoundError: No module named &#x27;module4&#x27;</span>
 </code></pre></div>
 
 <ul>
@@ -1932,7 +1932,7 @@
 <span class="odt-code-line">  <span style="color:#2e75b6">&quot;dependencies&quot;</span>: <span style="font-weight:bold">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/import/05/dir1&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/import/05/dir2&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">  ]</span></span>
+<span class="odt-code-line">  ]</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
@@ -1943,20 +1943,20 @@
 <span class="odt-code-line">import <span style="color:#6f008a">json</span></span>
 <span class="odt-code-line">import <span style="color:#6f008a">sys</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># configuration file</span></span>
+<span class="odt-code-line"># configuration file</span>
 <span class="odt-code-line"><span style="color:#000000">config_filename=</span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/import/05/config.json&quot;</span></span>
-<span class="odt-code-line"><span style="color:#008000"># read the JSON configuration file</span></span>
+<span class="odt-code-line"># read the JSON configuration file</span>
 <span class="odt-code-line">with <span style="color:#6f008a">codecs</span><span style="color:#000000">.open(config_filename, </span><span style="color:#a31515">&quot;r&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf-8&quot;</span><span style="color:#000000">) </span>as <span style="color:#000000">file:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    config = </span><span style="color:#6f008a">json</span><span style="color:#000000">.load(file)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Modify sys.path</span></span>
+<span class="odt-code-line"># Modify sys.path</span>
 <span class="odt-code-line">for <span style="color:#000000">directory </span>in <span style="color:#000000">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;dependencies&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#6f008a">sys</span><span style="color:#000000">.path.append(directory)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># import module4</span></span>
+<span class="odt-code-line"># import module4</span>
 <span class="odt-code-line">from <span style="color:#6f008a">module4 </span>import <span style="color:#000000">f4</span></span>
-<span class="odt-code-line"><span style="color:#008000"># Run f4</span></span>
-<span class="odt-code-line"><span style="color:#000000">f4()</span></span>
+<span class="odt-code-line"># Run f4</span>
+<span class="odt-code-line">f4()</span>
 <span class="odt-code-line"></span>
 </code></pre></div>
 
@@ -2001,7 +2001,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#a31515">&quot;dir2&quot;</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">  ]</span>,</span>
 <span class="odt-code-line">  <span style="color:#2e75b6">&quot;absoluteDependencies&quot;</span>: <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">   ]</span></span>
+<span class="odt-code-line">   ]</span>
 <span class="odt-code-line">}</span>
 </code></pre></div>
 
@@ -2077,7 +2077,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;{msg}------------------------------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># sys.path</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">path </span><span style="color:#0000ff">in </span><span style="color:#6f008a">sys</span><span style="color:#000000">.path:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(path)</span></span>
+<span class="odt-code-line">        print(path)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># main -------------</span>
@@ -2089,7 +2089,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># import module4</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">from </span><span style="color:#6f008a">module4 </span><span style="color:#0000ff">import </span><span style="color:#000000">f4</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># execute f4</span>
-<span class="odt-code-line"><span style="color:#000000">    f4()</span></span>
+<span class="odt-code-line">    f4()</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
@@ -2200,8 +2200,8 @@
   <li>we use a module visible to all Python projects on the machine;
   </li>
 </ul>
-<p><a id="installationdunmodule"></a>
-<a id="toc48548990"></a></p>
+<p><a id="toc48548990"></a>
+<a id="installationdunmodule"></a></p>
 <h3 id="971-installing-a-machine-wide-module">9.7.1. <span style="color: #4f81bd">Installing a machine-wide module</span></h3>
 <p><img src="images/1000000100000128000000D56ECC7998.png" style="width:2.769cm;height:1.993cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000128000000D56ECC7998.png" /></p>
 <p>Above, we create a folder <strong>[packages/myutils]</strong> in the PyCharm project (the names don’t matter).</p>
@@ -2280,7 +2280,7 @@
 <span class="odt-code-line">    Uninstalling myutils-0.1:</span>
 <span class="odt-code-line">      Successfully uninstalled myutils-0.1</span>
 <span class="odt-code-line">    Running setup.py install for myutils ... done</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Successfully installed myutils-0.1</span></span>
+<span class="odt-code-line">Successfully installed myutils-0.1</span>
 </code></pre></div>
 
 <p>From now on, any script on the machine can import the <strong>[myutils]</strong> module without it being in the project code.</p>
@@ -2299,7 +2299,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># local directories</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/dir1&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/dir2&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line">    <span style="color:#008000"># Update the syspath</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
 <span class="odt-code-line">    set_syspath(absolute_dependencies)</span>
@@ -2334,7 +2334,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># main -------------</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    f4()</span></span>
+<span class="odt-code-line">    f4()</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>

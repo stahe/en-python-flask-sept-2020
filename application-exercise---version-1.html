@@ -1662,12 +1662,12 @@
 
 
 
-<p><a id="refheading382662423505"></a>
-<a id="toc48548962"></a></p>
+<p><a id="toc48548962"></a>
+<a id="refheading382662423505"></a></p>
 <h1 id="8-application-exercise-version-1">8. <span style="color: #365f91">Application exercise – version 1</span></h1>
-<p><a id="leprobleme"></a>
+<p><a id="refheadingtoc2333623032778139"></a>
 <a id="toc48548963"></a>
-<a id="refheadingtoc2333623032778139"></a></p>
+<a id="leprobleme"></a></p>
 <h2 id="81-the-problem">8.1. <span style="color: #4f81bd">The problem</span></h2>
 <p>The table above allows us to calculate the tax in the simplified case of a taxpayer who has only their salary to report. As indicated in note (1), the tax calculated this way is the tax before three mechanisms:</p>
 <ul>
@@ -1680,9 +1680,9 @@
 <p>Thus, the tax calculation involves the following steps <strong>[http://impotsurlerevenu.org/comprendre-le-calcul-de-l-impot/1217-calcul-de-l-impot-2019.php]</strong>:</p>
 <p><img src="images/10000001000003180000010D0C81DCD5.png" style="width:13.139cm;height:4.463cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003180000010D0C81DCD5.png" /></p>
 <p>We propose to write a program to calculate a taxpayer’s tax in the simplified case of a taxpayer who has only their salary to report:</p>
-<p><a id="calculdelimpot"></a>
+<p><a id="refheadingtoc185625971629160"></a>
 <a id="toc48548964"></a>
-<a id="refheadingtoc185625971629160"></a></p>
+<a id="calculdelimpot"></a></p>
 <h3 id="811-calculation-of-gross-tax">8.1.1. <span style="color: #4f81bd">Calculation of Gross Tax</span></h3>
 <p>The gross tax can be calculated as follows:</p>
 <p>First, we calculate the taxpayer’s number of shares:</p>
@@ -1728,9 +1728,9 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    0    0.45    20,163.45
 </code></pre></div>
 <p>which gives the gross tax <strong>I</strong> = <strong>0.45*R – 20163.45*nbParts</strong>.</p>
-<p><a id="plafonnementduquotient"></a>
+<p><a id="refheadingtoc1594583098701287"></a>
 <a id="toc48548965"></a>
-<a id="refheadingtoc1594583098701287"></a></p>
+<a id="plafonnementduquotient"></a></p>
 <h3 id="812-family-quotient-cap">8.1.2. <span style="color: #4f81bd">Family Quotient Cap</span></h3>
 <p>To determine whether the family quotient (QF) cap applies, we recalculate the gross tax without the children. Again, for the married employee with two children and an annual salary S of <strong>50,000</strong> euros:</p>
 <p>Taxable income: R = 0.9 * S = 45,000</p>
@@ -1750,9 +1750,9 @@
   <li><b>[tax2]</b>: is the gross tax calculated without children and reduced by the maximum credit (here 1,551 euros per half-share) related to children;
   </li>
 </ul>
-<p><a id="calculdela"></a>
+<p><a id="refheadingtoc185627971629160"></a>
 <a id="toc48548966"></a>
-<a id="refheadingtoc185627971629160"></a></p>
+<a id="calculdela"></a></p>
 <h3 id="813-calculation-of-the-reduction">8.1.3. <span style="color: #4f81bd">Calculation of the reduction</span></h3>
 <p><img src="images/100000010000032A0000011298E98FA1.png" style="width:13.852cm;height:4.685cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000032A0000011298E98FA1.png" /></p>
 <p>Still using the example of a married employee with two children and an annual salary S of <strong>50,000</strong> euros:</p>
@@ -1760,9 +1760,9 @@
 <p>discount = threshold (couple = 1,970 / single = 1,196) - 0.75 * gross tax</p>
 <p><strong>discount</strong> = 1,970 – 0.75 * 2,115 = 383.75, rounded to <strong>384</strong> euros.</p>
 <p><strong>New</strong> gross <strong>tax</strong> = 2,115 – 384 = <strong>1,731</strong> euros</p>
-<p><a id="calculdela1"></a>
+<p><a id="refheadingtoc185629971629160"></a>
 <a id="toc48548967"></a>
-<a id="refheadingtoc185629971629160"></a></p>
+<a id="calculdela1"></a></p>
 <h3 id="814-calculation-of-the-tax-reduction">8.1.4. <span style="color: #4f81bd">Calculation of the tax reduction</span></h3>
 <p><img src="images/100000010000032A0000011677A64931.png" style="width:13.831cm;height:4.747cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000032A0000011677A64931.png" /></p>
 <p>Below a certain threshold, a 20% reduction is applied to the gross tax resulting from the previous calculations. In 2019, the thresholds are as follows:</p>
@@ -1783,13 +1783,13 @@
   <li>the taxpayer’s gross tax becomes: 1,731 – 347 =<b> 1,384 </b>euros;
   </li>
 </ul>
-<p><a id="toc48548968"></a>
-<a id="refheadingtoc185631971629160"></a></p>
+<p><a id="refheadingtoc185631971629160"></a>
+<a id="toc48548968"></a></p>
 <h3 id="815-calculation-of-net-tax">8.1.5. <span style="color: #4f81bd">Calculation of Net Tax</span></h3>
 <p>Our calculation ends here: the net tax due will be <strong>1,384</strong> euros. In reality, the taxpayer may be eligible for other deductions, particularly for donations to public or general interest organizations.</p>
-<p><a id="casdeshauts"></a>
+<p><a id="refheadingtoc185633971629160"></a>
 <a id="toc48548969"></a>
-<a id="refheadingtoc185633971629160"></a></p>
+<a id="casdeshauts"></a></p>
 <h3 id="816-high-income-cases">8.1.6. <span style="color: #4f81bd">High-Income Cases</span></h3>
 <p>Our previous example applies to the majority of employees. However, the tax calculation differs for high-income earners.</p>
 <p><a id="refheadingtoc185635971629160"></a></p>
@@ -1832,9 +1832,9 @@
 </ul>
 
 <p>This couple will receive neither a tax credit nor a reduction, and their final tax will be <strong>9,200</strong> euros.</p>
-<p><a id="chiffresofficiels"></a>
+<p><a id="refheadingtoc185639971629160"></a>
 <a id="toc48548970"></a>
-<a id="refheadingtoc185639971629160"></a></p>
+<a id="chiffresofficiels"></a></p>
 <h3 id="817-official-figures">8.1.7. <span style="color: #4f81bd">Official figures</span></h3>
 <p>Calculating taxes is complex. Throughout this document, calculations will be based on the following examples. The results are from the tax authority’s simulator |<a href="https://www3.impots.gouv.fr/simulateur/calcul_impot/2019/simplifie/index.htm"><u><span style="color: #0563c1">https://www3.impots.gouv.fr/simulateur/calcul_impot/2019/simplifie/index.htm</span></u></a>|:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Taxpayer</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Official results</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Results from the document’s algorithm</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Couple with 2 children and an annual income of 55,555 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Tax</b> = 2,<b>815 </b>euros</div><div style="margin:0 0 0.5em 0">Tax rate = 14%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Tax</b> = 2,<b>814 </b>euros</div><div style="margin:0 0 0.5em 0">Tax rate = 14%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Couple with 2 children and an annual income of 50,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Tax</b> = 1,<b>385 </b>euros</div><div style="margin:0 0 0.5em 0">Tax credit = €720</div><div style="margin:0 0 0.5em 0">Reduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 14%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Tax</b> = €1,<b>384</b></div><div style="margin:0 0 0.5em 0">Discount = 384 euros</div><div style="margin:0 0 0.5em 0">Credit=347 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 14%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Couple with 3 children and an annual income of 50,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax =<b> 0 </b>euros</div><div style="margin:0 0 0.5em 0">Tax credit = 384 euros</div><div style="margin:0 0 0.5em 0">Reduction = 346 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 14%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax =<b> 0 </b>euros</div><div style="margin:0 0 0.5em 0">Discount=720 euros</div><div style="margin:0 0 0.5em 0">Deduction=0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 14%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Single with 2 children and an annual income of 100,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = 19,<b>884 </b>euros</div><div style="margin:0 0 0.5em 0">Tax credit = 0 euros</div><div style="margin:0 0 0.5em 0">Deduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 41%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = €19,<b>884</b></div><div style="margin:0 0 0.5em 0">Surcharge = 4,480 euros</div><div style="margin:0 0 0.5em 0">Discount=0 euros</div><div style="margin:0 0 0.5em 0">Reduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 41%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Single with 3 children and an annual income of 100,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = €16,<b>782</b></div><div style="margin:0 0 0.5em 0">Tax credit=0 euros</div><div style="margin:0 0 0.5em 0">Deduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 41%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = €16,<b>782</b></div><div style="margin:0 0 0.5em 0">Surcharge = 7,176 euros</div><div style="margin:0 0 0.5em 0">Discount=0 euros</div><div style="margin:0 0 0.5em 0">Reduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 41%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Couple with 3 children and an annual income of 100,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = €<b>9,200</b></div><div style="margin:0 0 0.5em 0">Tax credit=0 euros</div><div style="margin:0 0 0.5em 0">Deduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 30%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = €<b>9,200</b></div><div style="margin:0 0 0.5em 0">Surcharge = 2,180 euros</div><div style="margin:0 0 0.5em 0">Discount=0 euros</div><div style="margin:0 0 0.5em 0">Reduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 30%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Couple with 5 children and an annual income of 100,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = €4,<b>230</b></div><div style="margin:0 0 0.5em 0">Tax credit=0 euros</div><div style="margin:0 0 0.5em 0">Deduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 14%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = €4,<b>230</b></div><div style="margin:0 0 0.5em 0">Discount = 0 euros</div><div style="margin:0 0 0.5em 0">Deduction=0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 14%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Single, no children, and annual income of 100,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = 22,<b>986 </b>euros</div><div style="margin:0 0 0.5em 0">Tax credit=0 euros</div><div style="margin:0 0 0.5em 0">Deduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 41%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax =<b> 22,986 </b>euros</div><div style="margin:0 0 0.5em 0">Surcharge = 0 euros</div><div style="margin:0 0 0.5em 0">Discount = 0 euros</div><div style="margin:0 0 0.5em 0">Reduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 41%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Couple with 2 children and an annual income of 30,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax =<b> 0 </b>euros</div><div style="margin:0 0 0.5em 0">Tax credit=0 euros</div><div style="margin:0 0 0.5em 0">Deduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 0%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax =<b> 0 </b>euros</div><div style="margin:0 0 0.5em 0">Discount=0 euros</div><div style="margin:0 0 0.5em 0">Reduction=0 euro</div><div style="margin:0 0 0.5em 0">Tax rate = 0%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Single with no children and an annual income of 200,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Tax</b> =<b> 64,211 </b>euros</div><div style="margin:0 0 0.5em 0">Tax credit=0 euros</div><div style="margin:0 0 0.5em 0">Deduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 45%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Tax = €64,<b>210</b></div><div style="margin:0 0 0.5em 0">Surcharge = 7,498 euros</div><div style="margin:0 0 0.5em 0">Discount=0 euros</div><div style="margin:0 0 0.5em 0">Reduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 45%</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Couple with 3 children and an annual income of 200,000 euros</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Tax</b> = €42,<b>843</b></div><div style="margin:0 0 0.5em 0">Tax credit=0 euros</div><div style="margin:0 0 0.5em 0">Deduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 41%</div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Tax</b> = €42,842</div><div style="margin:0 0 0.5em 0">Surcharge = 17,283 euros</div><div style="margin:0 0 0.5em 0">Discount=0 euros</div><div style="margin:0 0 0.5em 0">Reduction = 0 euros</div><div style="margin:0 0 0.5em 0">Tax rate = 41%</div></td></tr></table>
@@ -1857,14 +1857,14 @@
 </ul>
 
 <p>We will develop several versions of the tax calculation application.</p>
-<p><a id="version1"></a>
+<p><a id="refheading398861881943603"></a>
 <a id="toc48548971"></a>
-<a id="refheading398861881943603"></a></p>
+<a id="version1"></a></p>
 <h2 id="82-version-1">8.2. <span style="color: #4f81bd">Version 1</span></h2>
 <p><img src="images/10000001000001E80000014EC2F618ED.png" style="width:6.451cm;height:4.415cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001E80000014EC2F618ED.png" /></p>
-<p><a id="lescriptprincipal"></a>
+<p><a id="refheadingtoc1882273931965946"></a>
 <a id="toc48548972"></a>
-<a id="refheadingtoc1882273931965946"></a></p>
+<a id="lescriptprincipal"></a></p>
 <h3 id="821-the-main-script">8.2.1. <span style="color: #4f81bd">The main script</span></h3>
 <p>We present an initial program where:</p>
 <ul>
@@ -1893,7 +1893,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Read taxpayer data</span>
-<span class="odt-code-line"><span style="color:#000000">    tax_payers = get_taxpayers_data(DATA)</span></span>
+<span class="odt-code-line">    tax_payers = get_taxpayers_data(DATA)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of results</span>
 <span class="odt-code-line"><span style="color:#000000">    results = </span><span style="font-weight:bold;color:#000000">[]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># calculate the tax for each taxpayer</span>
@@ -1902,9 +1902,9 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[&#x27;married&#x27;, &#x27;children&#x27;, &#x27;salary&#x27;, &#x27;tax&#x27;, &#x27;surcharge&#x27;, &#x27;discount&#x27;, &#x27;reduction&#x27;, &#x27;rate&#x27;]</span></span>
 <span class="odt-code-line"><span style="color:#000000">        result = calculate_tax(tax_payer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;married&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, tax_payer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;children&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, tax_payer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;salary&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># the dictionary is added to the list of results</span>
-<span class="odt-code-line"><span style="color:#000000">        results.append(result)</span></span>
+<span class="odt-code-line">        results.append(result)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># We save the results</span>
-<span class="odt-code-line"><span style="color:#000000">    record_results(RESULTS, results)</span></span>
+<span class="odt-code-line">    record_results(RESULTS, results)</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># There may be various errors: file not found, incorrect file content</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error and exit the application</span>
@@ -1992,8 +1992,8 @@
 </ul>
 
 <p>All these functions are located in the <strong>[</strong><strong><span style="color: #6f008a">impots</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">modules</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">impôts_module_01</span></strong><strong>]</strong> module.</p>
-<p><a id="toc48548973"></a>
-<a id="refheadingtoc2521312924280206"></a></p>
+<p><a id="refheadingtoc2521312924280206"></a>
+<a id="toc48548973"></a></p>
 <h3 id="822-the-impotsv01sharedimpots_module_01-module">8.2.2. <span style="color: #4f81bd">The [impots<span style="color: #000000">.</span>v01<span style="color: #000000">.</span>shared<span style="color: #000000">.</span>impôts_module_01] module</span></h3>
 <p>The functions required for tax calculation have been grouped in the <strong>[</strong><strong><span style="color: #6f008a">impots</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">v01</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">shared</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">impôts_module_01</span></strong><strong>]</strong> module:</p>
 <p><img src="images/10000000000005A80000034C7B8390E7.png" style="width:16.739cm;height:9.758cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005A80000034C7B8390E7.png" /></p>
@@ -2003,8 +2003,8 @@
   <li>in <b>[2]</b>: the list of functions in the module;
   </li>
 </ul>
-<p><a id="toc48548974"></a>
-<a id="refheadingtoc2521332924280206"></a></p>
+<p><a id="refheadingtoc2521332924280206"></a>
+<a id="toc48548974"></a></p>
 <h3 id="823-the-function-get_taxpayers_data">8.2.3. <span style="color: #4f81bd">The function [<span style="color: #000000">get_taxpayers_data</span>]</span></h3>
 <p>The <strong>[</strong><strong><span style="color: #000000">get_taxpayers_data</span></strong><strong>]</strong> function is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2023,7 +2023,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># Open the file</span>
 <span class="odt-code-line"><span style="color:#000000">        file = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(</span><span style="color:#808080">taxpayers_filename</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;r&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf8&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Read the first line of the taxpayer file</span>
-<span class="odt-code-line"><span style="color:#000000">        line = file.readline().strip()</span></span>
+<span class="odt-code-line">        line = file.readline().strip()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># as long as there is a line left to process</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">while </span><span style="color:#000000">line != </span><span style="color:#a31515">&#x27;&#x27;</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># retrieve the three fields (married, children, salary) that make up the line</span>
@@ -2031,13 +2031,13 @@
 <span class="odt-code-line"><span style="color:#000000">            </span># add them to the list of taxpayers</span>
 <span class="odt-code-line"><span style="color:#000000">            taxpayers.append({</span><span style="color:#a31515">&#x27;married</span><span style="color:#000000">&#x27;: married.strip().lower(), </span><span style="color:#a31515">&#x27;children</span><span style="color:#000000">&#x27;: </span><span style="color:#2b91af">int</span><span style="color:#000000">(children), </span><span style="color:#a31515">&#x27;salary</span><span style="color:#000000">&#x27;: </span><span style="color:#2b91af">int</span><span style="color:#000000">(salary)})</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># read a new line from the taxpayers file</span>
-<span class="odt-code-line"><span style="color:#000000">            line = file.readline().strip()</span></span>
+<span class="odt-code-line">            line = file.readline().strip()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># return the result</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">taxpayers</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># close the file if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">file:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            file.close()</span></span>
+<span class="odt-code-line">            file.close()</span>
 </code></pre></div>
 
 <p><strong>Notes</strong></p>
@@ -2057,8 +2057,8 @@
   <li>this try/finally structure allows a potential exception to escape (there is no catch). This exception will propagate to the main script <b>[main]</b>, which will stop and display the exception (see section |The Main Script|). This mechanism has been used for most of the module’s functions;
   </li>
 </ul>
-<p><a id="toc48548975"></a>
-<a id="refheadingtoc2521352924280206"></a></p>
+<p><a id="refheadingtoc2521352924280206"></a>
+<a id="toc48548975"></a></p>
 <h3 id="824-the-calcul_impot-function">8.2.4. <span style="color: #4f81bd">The [<span style="color: #000000">calcul_impôt</span>] function</span></h3>
 <p>The <strong>[</strong><strong><span style="color: #000000">calcul_impôt</span></strong><strong>]</strong> function is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2072,16 +2072,16 @@
 <span class="odt-code-line"><span style="color:#000000">coeffn = </span><span style="font-weight:bold;color:#000000">[0, 1394.96, 5798, 13913.69, 20163.45]</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># constants for calculating 2019 taxes</span>
-<span class="odt-code-line"><span style="color:#000000">HALF-SHARE_INCOME_THRESHOLD = 1551</span></span>
-<span class="odt-code-line"><span style="color:#000000">INCOME_THRESHOLD_SINGLE_FOR_REDUCTION = 21037</span></span>
-<span class="odt-code-line"><span style="color:#000000">INCOME_THRESHOLD_COUPLE_FOR_REDUCTION = 42074</span></span>
-<span class="odt-code-line"><span style="color:#000000">REDUCTION_VALUE_HALF_PORTION = 3797</span></span>
-<span class="odt-code-line"><span style="color:#000000">SINGLE_TAX_DEDUCTION_LIMIT = 1196</span></span>
+<span class="odt-code-line">HALF-SHARE_INCOME_THRESHOLD = 1551</span>
+<span class="odt-code-line">INCOME_THRESHOLD_SINGLE_FOR_REDUCTION = 21037</span>
+<span class="odt-code-line">INCOME_THRESHOLD_COUPLE_FOR_REDUCTION = 42074</span>
+<span class="odt-code-line">REDUCTION_VALUE_HALF_PORTION = 3797</span>
+<span class="odt-code-line">SINGLE_TAX_DEDUCTION_LIMIT = 1196</span>
 <span class="odt-code-line"><span style="color:#000000">COUPLE_DEDUCTION_LIMIT = 1970</span></span>
-<span class="odt-code-line"><span style="color:#000000">COUPLE_TAX_THRESHOLD_FOR_DEDUCTION = 2627</span></span>
-<span class="odt-code-line"><span style="color:#000000">SINGLE_TAX_THRESHOLD_FOR_DEDUCTION = 1595</span></span>
-<span class="odt-code-line"><span style="color:#000000">MAXIMUM_10_PERCENT_DEDUCTION = 12502</span></span>
-<span class="odt-code-line"><span style="color:#000000">MINIMUM_10_PERCENT_DEDUCTION = 437</span></span>
+<span class="odt-code-line">COUPLE_TAX_THRESHOLD_FOR_DEDUCTION = 2627</span>
+<span class="odt-code-line">SINGLE_TAX_THRESHOLD_FOR_DEDUCTION = 1595</span>
+<span class="odt-code-line">MAXIMUM_10_PERCENT_DEDUCTION = 12502</span>
+<span class="odt-code-line">MINIMUM_10_PERCENT_DEDUCTION = 437</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">…</span>
 <span class="odt-code-line"># tax calculation</span>
@@ -2107,25 +2107,25 @@
 <span class="odt-code-line"><span style="color:#000000">            </span># HALF-PART_QF_CAP euros for the first 2 children, double that for subsequent children</span>
 <span class="odt-code-line"><span style="color:#000000">            tax2 = tax2 - 2 * HALF_QUOTA_CAP - (</span><span style="color:#808080">children </span><span style="color:#000000">- 2) * 2 * HALF_QUOTA_CAP</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        tax2 = tax1</span></span>
-<span class="odt-code-line"><span style="color:#000000">        result2 = result1</span></span>
+<span class="odt-code-line">        tax2 = tax1</span>
+<span class="odt-code-line">        result2 = result1</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># take the higher tax amount with the corresponding rate and surcharge</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">tax1 &gt; tax2:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        tax = tax1</span></span>
+<span class="odt-code-line">        tax = tax1</span>
 <span class="odt-code-line"><span style="color:#000000">        rate = result1</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;rate&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"><span style="color:#000000">        surcharge = result1</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;surcharge&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        surcharge = tax2 - tax1 + result2</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;surcharge&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        tax = tax2</span></span>
+<span class="odt-code-line">        tax = tax2</span>
 <span class="odt-code-line"><span style="color:#000000">        rate = result2</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;rate&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># calculate any discount</span>
 <span class="odt-code-line"><span style="color:#000000">    discount = get_discount(</span><span style="color:#808080">married</span><span style="color:#000000">, </span><span style="color:#808080">salary</span><span style="color:#000000">, tax)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    tax -= discount</span></span>
+<span class="odt-code-line">    tax -= discount</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># calculate any tax credit</span>
 <span class="odt-code-line"><span style="color:#000000">    tax_credit = get_tax_credit(</span><span style="color:#808080">married</span><span style="color:#000000">, </span><span style="color:#808080">salary</span><span style="color:#000000">, </span><span style="color:#808080">children</span><span style="color:#000000">, tax)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    tax -= reduction</span></span>
+<span class="odt-code-line">    tax -= reduction</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># result</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span><span style="color:#a31515">&quot;married&quot;</span><span style="color:#000000">: </span><span style="color:#808080">married</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;children&quot;</span><span style="color:#000000">: </span><span style="color:#808080">children</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;salary&quot;</span><span style="color:#000000">: </span><span style="color:#808080">salary</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;tax&quot;</span><span style="color:#000000">: </span><span style="color:#6f008a">math</span><span style="color:#000000">.floor(tax), </span><span style="color:#a31515">&quot;surcharge&quot;</span><span style="color:#000000">: surcharge,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;discount&quot;</span><span style="color:#000000">: discount, </span><span style="color:#a31515">&quot;reduction&quot;</span><span style="color:#000000">: reduction, </span><span style="color:#a31515">&quot;rate&quot;</span><span style="color:#000000">: rate}</span></span>
@@ -2164,8 +2164,8 @@
 </ul>
 
 <p>The algorithm is quite complex, and we will not go into more detail than what is provided in the comments. The algorithm implements the tax calculation method as described in the section <a href="#leprobleme"><u><span style="color: #0563c1">|The</span></u></a> Problem|.</p>
-<p><a id="toc48548976"></a>
-<a id="refheadingtoc2521372924280206"></a></p>
+<p><a id="refheadingtoc2521372924280206"></a>
+<a id="toc48548976"></a></p>
 <h3 id="825-the-calcul_tax_2-function">8.2.5. <span style="color: #4f81bd">The [calcul_tax_2] function</span></h3>
 <p>The function <strong>[calcul_impôt]</strong> calls the following function <strong>[calcul_impôt_2]</strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2213,15 +2213,15 @@
 </code></pre></div>
 
 <p>This algorithm was described in Section 8.1.1.</p>
-<p><a id="toc48548977"></a>
-<a id="refheadingtoc2521392924280206"></a></p>
+<p><a id="refheadingtoc2521392924280206"></a>
+<a id="toc48548977"></a></p>
 <h3 id="826-the-get_discount-function">8.2.6. <span style="color: #4f81bd">The [get_discount] function</span></h3>
 <p>The <strong>[</strong><strong><span style="color: #000000">get_discount</span></strong><strong>]</strong> function implements the calculation of any tax discount (section <a href="#calculdela"><u><span style="color: #0563c1">|Calculation of the</span></u></a> discount|):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># calculates a possible tax discount</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">get_discount(</span><span style="color:#808080">married</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">salary</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">taxes</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># initially, a zero discount</span>
-<span class="odt-code-line"><span style="color:#000000">    tax_discount = 0</span></span>
+<span class="odt-code-line">    tax_discount = 0</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># maximum tax amount to qualify for the deduction</span>
 <span class="odt-code-line"><span style="color:#000000">    tax_threshold_for_discount = COUPLE_TAX_THRESHOLD_FOR_DISCOUNT </span><span style="color:#0000ff">if </span><span style="color:#808080">married </span><span style="color:#000000">== </span><span style="color:#a31515">&quot;yes&quot; </span><span style="color:#0000ff">else </span><span style="color:#000000">SINGLE_TAX_THRESHOLD_FOR_DISCOUNT</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#808080">taxes </span><span style="color:#000000">&lt; tax_threshold_for_discount:</span></span>
@@ -2235,14 +2235,14 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># no discount &lt;0</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">discount &lt; 0:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            discount = 0</span></span>
+<span class="odt-code-line">            discount = 0</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># result</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#6f008a">math</span><span style="color:#000000">.ceil(discount)</span></span>
 </code></pre></div>
 
-<p><a id="toc48548978"></a>
-<a id="refheadingtoc2521412924280206"></a></p>
+<p><a id="refheadingtoc2521412924280206"></a>
+<a id="toc48548978"></a></p>
 <h3 id="827-the-get_reduction-function">8.2.7. <span style="color: #4f81bd">The [get_reduction] function</span></h3>
 <p>The <strong>[get_reduction]</strong> function implements the calculation of any tax reduction (section <a href="#calculdela1"><u><span style="color: #0563c1">|Calculation of the tax</span></u></a> reduction|):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2257,7 +2257,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># taxable income</span>
 <span class="odt-code-line"><span style="color:#000000">    taxable_income = get_taxable_income(</span><span style="color:#808080">salary</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># reduction</span>
-<span class="odt-code-line"><span style="color:#000000">    reduction = 0</span></span>
+<span class="odt-code-line">    reduction = 0</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">taxable_income &lt; income_threshold_for_reduction:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># 20% reduction</span>
 <span class="odt-code-line"><span style="color:#000000">        reduction = 0.2 * </span><span style="color:#808080">taxes</span></span>
@@ -2266,8 +2266,8 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#6f008a">math</span><span style="color:#000000">.ceil(reduction)</span></span>
 </code></pre></div>
 
-<p><a id="toc48548979"></a>
-<a id="refheadingtoc2521432924280206"></a></p>
+<p><a id="refheadingtoc2521432924280206"></a>
+<a id="toc48548979"></a></p>
 <h3 id="828-the-get_taxable_income-function">8.2.8. <span style="color: #4f81bd">The [get_taxable_income] function</span></h3>
 <p>The <strong>[get_taxable_income]</strong> function calculates taxable income based on annual salary:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2279,11 +2279,11 @@
 <span class="odt-code-line"><span style="color:#000000">    allowance = 0.1 * </span><span style="color:#808080">salary</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># this deduction cannot exceed MAX_10_PERCENT_DEDUCTION</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">deduction &gt; MAX_10_PERCENT_DEDUCTION:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        allowance = MAX_10_PERCENT_ALLOWANCE</span></span>
+<span class="odt-code-line">        allowance = MAX_10_PERCENT_ALLOWANCE</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># the deduction cannot be less than ABATTEMENT_DIXPOURCENT_MIN</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">deduction &lt; DEDUCTION_MIN:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        allowance = TEN-PERCENT_MIN_ALLOWANCE</span></span>
+<span class="odt-code-line">        allowance = TEN-PERCENT_MIN_ALLOWANCE</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># taxable income</span>
 <span class="odt-code-line"><span style="color:#000000">    taxable_income = </span><span style="color:#808080">salary </span><span style="color:#000000">- deduction</span></span>
@@ -2291,8 +2291,8 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#6f008a">math</span><span style="color:#000000">.floor(taxable_income)</span></span>
 </code></pre></div>
 
-<p><a id="toc48548980"></a>
-<a id="refheadingtoc2521452924280206"></a></p>
+<p><a id="refheadingtoc2521452924280206"></a>
+<a id="toc48548980"></a></p>
 <h3 id="829-the-record_results-function">8.2.9. <span style="color: #4f81bd">The [record_results] function</span></h3>
 <p>The <strong>[record_results]</strong> function saves the tax calculation results to a text file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
@@ -2314,11 +2314,11 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># close the file if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">results:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            results.close()</span></span>
+<span class="odt-code-line">            results.close()</span>
 </code></pre></div>
 
-<p><a id="toc48548981"></a>
-<a id="refheadingtoc2521472924280206"></a></p>
+<p><a id="refheadingtoc2521472924280206"></a>
+<a id="toc48548981"></a></p>
 <h3 id="8210-the-results">8.2.10. <span style="color: #4f81bd">The results</span></h3>
 <p>As previously mentioned, with the following taxpayer file <strong>[taxpayersdata.txt]</strong>:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>

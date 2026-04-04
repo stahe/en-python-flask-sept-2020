@@ -1523,45 +1523,45 @@
 
 
 
-<p><a id="toc48549002"></a>
-<a id="refheading382742423505"></a>
-<a id="lesclasseset"></a>
-<a id="toc48548994-copie-1"></a>
-<a id="refheadingtoc510331566649833-copie-1"></a>
-<a id="version2-copie-1"></a>
-<a id="toc48548993-copie-1"></a>
-<a id="exercicedapplication1-copie-1"></a>
-<a id="toc48548982-copie-1"></a>
-<a id="lesimports-copie-1"></a>
-<a id="toc48548962-copie-1"></a>
-<a id="refheading382662423505-copie-1"></a>
-<a id="toc48548956-copie-1"></a>
-<a id="refheadingtoc2521212924280206-copie-1"></a>
-<a id="lesfichierstexte-copie-1"></a>
-<a id="toc48548943-copie-1"></a>
-<a id="refheadingtoc2521012924280206-copie-1"></a>
-<a id="lesfonctions-copie-1"></a>
-<a id="toc48548939-copie-1"></a>
-<a id="refheading352241169597484-copie-1"></a>
-<a id="lesexceptions-copie-1"></a>
-<a id="toc48548934-copie-1"></a>
-<a id="refheadingtoc3282143081319169-copie-1"></a>
-<a id="leschainesde-copie-1"></a>
-<a id="toc48548922-copie-1"></a>
-<a id="refheading382422423505-copie-1"></a>
-<a id="lesbasesde-copie-1"></a>
-<a id="toc48548915-copie-1"></a>
-<a id="refheading382362423505-copie-1"></a>
-<a id="installationdunenvironnement-copie-1"></a>
-<a id="toc48548914-copie-1"></a>
+<p><a id="avant-propos-copie-1"></a>
 <a id="refheading382342423505-copie-1"></a>
-<a id="avant-propos-copie-1"></a></p>
+<a id="toc48548914-copie-1"></a>
+<a id="installationdunenvironnement-copie-1"></a>
+<a id="refheading382362423505-copie-1"></a>
+<a id="toc48548915-copie-1"></a>
+<a id="lesbasesde-copie-1"></a>
+<a id="refheading382422423505-copie-1"></a>
+<a id="toc48548922-copie-1"></a>
+<a id="leschainesde-copie-1"></a>
+<a id="refheadingtoc3282143081319169-copie-1"></a>
+<a id="toc48548934-copie-1"></a>
+<a id="lesexceptions-copie-1"></a>
+<a id="refheading352241169597484-copie-1"></a>
+<a id="toc48548939-copie-1"></a>
+<a id="lesfonctions-copie-1"></a>
+<a id="refheadingtoc2521012924280206-copie-1"></a>
+<a id="toc48548943-copie-1"></a>
+<a id="lesfichierstexte-copie-1"></a>
+<a id="refheadingtoc2521212924280206-copie-1"></a>
+<a id="toc48548956-copie-1"></a>
+<a id="refheading382662423505-copie-1"></a>
+<a id="toc48548962-copie-1"></a>
+<a id="lesimports-copie-1"></a>
+<a id="toc48548982-copie-1"></a>
+<a id="exercicedapplication1-copie-1"></a>
+<a id="toc48548993-copie-1"></a>
+<a id="version2-copie-1"></a>
+<a id="refheadingtoc510331566649833-copie-1"></a>
+<a id="toc48548994-copie-1"></a>
+<a id="lesclasseset"></a>
+<a id="refheading382742423505"></a>
+<a id="toc48549002"></a></p>
 <h1 id="12-classes-and-objects">12. <span style="color: #365f91">Classes and Objects</span></h1>
 <p>A <strong>class</strong> is the template from which <strong>objects</strong> are created. An object is said to be <strong>an instance</strong> of a class.</p>
 <p><img src="images/100000000000010E000001D257FE4F52.png" style="width:3.12cm;height:5.387cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000010E000001D257FE4F52.png" /></p>
 <p><strong>Note</strong>: The <strong>[shared]</strong> folder has been placed in the project&#x27;s <strong>[Root Sources]</strong>.</p>
-<p><a id="refheading382762423505"></a>
-<a id="toc48549003"></a></p>
+<p><a id="toc48549003"></a>
+<a id="refheading382762423505"></a></p>
 <h2 id="121-script-classes_01-an-object-class">12.1. <span style="color: #4f81bd">script [classes_01]: an Object class</span></h2>
 <p>The <strong>[classes_01]</strong> script demonstrates an obsolete use of classes:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1573,24 +1573,24 @@
 <span class="odt-code-line"># any variable of type <span style="font-weight:bold">[Object] </span>can have attributes by default</span>
 <span class="odt-code-line"><span style="color:#000000">obj1 = </span><span style="color:#2b91af">Object</span><span style="color:#000000">()</span></span>
 <span class="odt-code-line"><span style="color:#000000">obj1.attr1 = </span><span style="color:#a31515">&quot;one&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">obj1.attr2 = 100</span></span>
+<span class="odt-code-line">obj1.attr2 = 100</span>
 <span class="odt-code-line"># displays the object</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object1=</span><span style="font-weight:bold;color:#a31515">[{obj1}, {type(obj1)},{id(obj1)},{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># modifies the object</span>
-<span class="odt-code-line"><span style="color:#000000">obj1.attr2 += 100</span></span>
+<span class="odt-code-line">obj1.attr2 += 100</span>
 <span class="odt-code-line"># displays the object</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object1=</span><span style="font-weight:bold;color:#a31515">[{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># assigns the reference obj1 to obj2</span>
-<span class="odt-code-line"><span style="color:#000000">obj2 = obj1</span></span>
+<span class="odt-code-line">obj2 = obj1</span>
 <span class="odt-code-line"># modifies the object pointed to by obj2</span>
-<span class="odt-code-line"><span style="color:#000000">obj2.attr2 = 0</span></span>
+<span class="odt-code-line">obj2.attr2 = 0</span>
 <span class="odt-code-line"># displays both objects - obj1 now points to a modified object</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object1=</span><span style="font-weight:bold;color:#a31515">[{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object2=</span><span style="font-weight:bold;color:#a31515">[{obj2.attr1},{obj2.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># obj1 and obj2 point to the same object</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object1=</span><span style="font-weight:bold;color:#a31515">[{obj1}, {id(obj1)},{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;object2=</span><span style="font-weight:bold;color:#a31515">[{obj2}, {id(obj2)},{obj2.attr1},{obj2.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(obj1 == obj2)</span></span>
+<span class="odt-code-line">print(obj1 == obj2)</span>
 <span class="odt-code-line"># type of the obj1 instance</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;type(obj1)={type(obj1)}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;isinstance(obj1, Object) = {isinstance(obj1, Object)}, isinstance(obj1, object) = {isinstance(obj1, object)}&quot;</span><span style="color:#000000">)</span></span>
@@ -1651,8 +1651,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="refheading382782423505"></a>
-<a id="toc48549004"></a></p>
+<p><a id="toc48549004"></a>
+<a id="refheading382782423505"></a></p>
 <h2 id="122-script-classes_02-a-person-class">12.2. <span style="color: #4f81bd">Script [classes_02]: a Person class</span></h2>
 <p>The <strong>[classes_02]</strong> script demonstrates that a class&#x27;s attributes are public: they can be accessed directly from outside the class. This is another example of a class usage that is not recommended. We include it, however, because you may occasionally encounter this type of code (Python allows it), and you need to be able to understand it.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1674,7 +1674,7 @@
 <span class="odt-code-line"># direct initialization of class attributes</span>
 <span class="odt-code-line"><span style="color:#000000">p.first_name = </span><span style="color:#a31515">&quot;Paul&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">p.last_name = </span><span style="color:#a31515">&quot;de la Hûche&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">p.age = 48</span></span>
+<span class="odt-code-line">p.age = 48</span>
 <span class="odt-code-line"># calling a class method</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;person={p.identity()}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># type of the p instance</span>
@@ -1708,8 +1708,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="refheading382802423505"></a>
-<a id="toc48549005"></a></p>
+<p><a id="toc48549005"></a>
+<a id="refheading382802423505"></a></p>
 <h2 id="123-script-classes_03-the-person-class-with-a-constructor">12.3. <span style="color: #4f81bd">Script [classes_03]: the Person class with a constructor</span></h2>
 <p>The script <strong>[classes_03]</strong> demonstrates the standard use of a class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1757,8 +1757,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="refheading382822423505"></a>
-<a id="toc48549006"></a></p>
+<p><a id="toc48549006"></a>
+<a id="refheading382822423505"></a></p>
 <h2 id="124-script-classes_04-static-methods">12.4. <span style="color: #4f81bd">Script [classes_04]: static methods</span></h2>
 <p>We define the following <strong>[Utils]</strong> class (utils.py) in the <strong>[modules]</strong> folder:</p>
 <p><img src="images/100000000000011900000106A9D0BD48.png" style="width:3.24cm;height:3.022cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000011900000106A9D0BD48.png" /></p>
@@ -1825,7 +1825,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">&quot;C:/myprograms/Python38/lib&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">&quot;C:/myprograms/Python38/DLLs&quot;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">    <span style="color:#008000"># Update the syspath</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span><span style="color:#6f008a">myutils </span><span style="color:#0000ff">import </span>set_syspath</span>
@@ -1853,8 +1853,8 @@
 <a id="__codelineno-2-5" name="__codelineno-2-5"></a>
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nx">Process</span><span class="w"> </span><span class="nx">completed</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">exit</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="mf">0</span>
 </code></pre></div></td></tr></table></div>
-<p><a id="refheadingtoc2521592924280206"></a>
-<a id="toc48549007"></a></p>
+<p><a id="toc48549007"></a>
+<a id="refheadingtoc2521592924280206"></a></p>
 <h2 id="125-script-classes_05-attribute-validity-checks">12.5. <span style="color: #4f81bd">Script [classes_05]: Attribute validity checks</span></h2>
 <p>The <strong>[classes_05]</strong> script introduces new concepts:</p>
 <ul>
@@ -1955,7 +1955,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;person={p}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display error</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># another Person object</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
@@ -1965,7 +1965,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;person={p}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display error</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># another person, this time without parameters</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
@@ -1975,7 +1975,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;person={p}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># cannot access the class&#x27;s private attributes __attr</span>
 <span class="odt-code-line"><span style="color:#000000">p.__first_name = </span><span style="color:#a31515">&quot;Gaëlle&quot;</span></span>
@@ -2075,8 +2075,8 @@
 </ul>
 
 <p>What can we conclude from this? That likely, the operation <strong>[</strong><strong><span style="color: #000000">p.__first_name = </span></strong><strong><span style="color: #a31515">&quot;Gaëlle&quot;</span></strong><strong>]</strong> created a public attribute <strong>[</strong><strong><span style="color: #000000">__first_name</span></strong><strong>]</strong> for the class, but that this is different from the private attribute <strong>[</strong><strong><span style="color: #000000">__first_name</span></strong><strong>]</strong> manipulated within it;</p>
-<p><a id="refheading382842423505"></a>
-<a id="toc48549008"></a></p>
+<p><a id="toc48549008"></a>
+<a id="refheading382842423505"></a></p>
 <h2 id="126-script-classes_06-adding-an-object-initialization-method">12.6. <span style="color: #4f81bd">Script [classes_06]: Adding an object initialization method</span></h2>
 <p>The script <strong>[classes_06]</strong> adds a method to the <strong>[Person]</strong> class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2119,10 +2119,10 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[{self.__first_name},{self.__last_name},{self.__age}]</span><span style="color:#a31515">&quot;</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># getters</span>
-<span class="odt-code-line"><span style="color:#000000">    …</span></span>
+<span class="odt-code-line">    …</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># setters</span>
-<span class="odt-code-line"><span style="color:#000000">    …</span></span>
+<span class="odt-code-line">    …</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># ---------------------------------- main</span>
@@ -2134,7 +2134,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;person={p}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># another Person object</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
@@ -2144,7 +2144,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;p={p}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># another person, this time without parameters</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
@@ -2154,18 +2154,18 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;p={p}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># another Person object created by copying</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># instantiate the Person class</span>
 <span class="odt-code-line"><span style="color:#000000">    p2 = </span><span style="color:#2b91af">Person</span><span style="color:#000000">()</span></span>
-<span class="odt-code-line"><span style="color:#000000">    p2.init_with_Person(p)</span></span>
+<span class="odt-code-line">    p2.init_with_Person(p)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display object p2</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;p2={p2}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display error message</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 </code></pre></div>
 
 <p><strong>Notes</strong>:</p>
@@ -2185,8 +2185,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="refheading382862423505"></a>
-<a id="toc48549009"></a></p>
+<p><a id="toc48549009"></a>
+<a id="refheading382862423505"></a></p>
 <h2 id="127-script-classes_07-a-list-of-person-objects">12.7. <span style="color: #4f81bd">Script [classes_07]: a list of Person objects</span></h2>
 <p>We will now place the <strong>[MyException]</strong> and <strong>[Person]</strong> classes in a module so we can use them without having to copy their code:</p>
 <p><img src="images/100000000000015F00000148B85B5F11.png" style="width:4.052cm;height:3.785cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015F00000148B85B5F11.png" /></p>
@@ -2230,8 +2230,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="refheading382882423505"></a>
-<a id="toc48549010"></a></p>
+<p><a id="toc48549010"></a>
+<a id="refheading382882423505"></a></p>
 <h2 id="128-script-classes_08-creating-a-class-derived-from-the-person-class">12.8. <span style="color: #4f81bd">Script [classes_08]: creating a class derived from the Person class</span></h2>
 <p>We define the following <strong>[Teacher]</strong> class in the <strong>[myclasses]</strong> module:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
@@ -2315,8 +2315,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="refheading382902423505"></a>
-<a id="toc48549011"></a></p>
+<p><a id="toc48549011"></a>
+<a id="refheading382902423505"></a></p>
 <h2 id="129-script-classes_09-second-class-derived-from-the-person-class">12.9. <span style="color: #4f81bd">Script [classes_09]: second class derived from the Person class</span></h2>
 <p>The script <strong>[classes_09]</strong> introduces the class <strong>[Student]</strong> derived from the class <strong>[Person]</strong>. This is defined as follows in the module <strong>[myclasses]</strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
@@ -2375,7 +2375,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_09.py</span>
 <span class="odt-code-line">teacher<span style="font-weight:bold">[[Paul,Langevin,48]</span>,English]</span>
-<span class="odt-code-line"><span style="font-weight:bold">[Sylvie,Lefur,70]</span></span>
+<span class="odt-code-line">[Sylvie,Lefur,70]</span>
 <span class="odt-code-line">student<span style="font-weight:bold">[[Steve,Boer,22]</span>,iup2 quality]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
@@ -2397,7 +2397,7 @@
 <span class="odt-code-line"># Create a student</span>
 <span class="odt-code-line"><span style="color:#2b91af">student = Student</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;Steve&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;Boer&quot;</span><span style="color:#000000">, 22, </span><span style="color:#a31515">&quot;iup2 quality&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># dictionary of properties</span>
-<span class="odt-code-line"><span style="color:#000000">print(student.__dict__)</span></span>
+<span class="odt-code-line">print(student.__dict__)</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>

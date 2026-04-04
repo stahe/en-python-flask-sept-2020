@@ -1463,8 +1463,8 @@
 
 
 
-<p><a id="toc48549209"></a>
-<a id="exercicedapplication5"></a></p>
+<p><a id="exercicedapplication5"></a>
+<a id="toc48549209"></a></p>
 <h1 id="27-application-exercise-version-9">27. <span style="color: #365f91">Application Exercise: Version 9</span></h1>
 <p>We return to version 7 of the application exercise, and instead of the client and web server exchanging JSON strings, they will now exchange XML.</p>
 <p>The architecture remains the same:</p>
@@ -1494,10 +1494,10 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># index_controller</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#a31515">f&quot;{root_dir}/impots/http-servers/01/controllers&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># scripts [config_database, config_layers</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        script_dir,</span></span>
+<span class="odt-code-line">        script_dir,</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Logger, SendAdminMail</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#a31515">f&quot;{root_dir}/impots/http-servers/02/utilities&quot;</span><span style="background-color:#fff2cc;color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 </code></pre></div>
 
 <ul>
@@ -1509,7 +1509,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># Home URL</span>
 <span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">@auth.login_required</span></span>
+<span class="odt-code-line">@auth.login_required</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">index():</span></span>
 <span class="odt-code-line"><span style="color:#000000">    logger = </span><span style="color:#0000ff">None</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
@@ -1541,7 +1541,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Close the log file if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">logger:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            logger.close()</span></span>
+<span class="odt-code-line">            logger.close()</span>
 </code></pre></div>
 
 <ul>
@@ -1557,7 +1557,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># result: the dictionary to be converted into an XML string</span></span>
 <span class="odt-code-line"><span style="color:#000000">    xmlString = </span><span style="background-color:#fff2cc">xmltodict</span><span style="background-color:#fff2cc;color:#000000">.unparse</span><span style="color:#000000">(</span><span style="color:#808080">result</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># return the HTTP response</span></span>
-<span class="odt-code-line"><span style="color:#000000">    response = make_response(xmlString)</span></span>
+<span class="odt-code-line">    response = make_response(xmlString)</span>
 <span class="odt-code-line"><span style="color:#000000">    response.headers</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;Content-Type&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">= </span><span style="color:#a31515">&#x27;application/xml; charset=utf-8&#x27;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">response, </span><span style="color:#808080">status_code</span></span>
 </code></pre></div>
@@ -1616,7 +1616,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">calculate_tax(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">taxpayer</span><span style="color:#000000">: </span><span style="color:#2b91af">TaxPayer</span><span style="color:#000000">, </span><span style="color:#808080">admindata</span><span style="color:#000000">: </span><span style="color:#2b91af">AdminData </span><span style="color:#000000">= </span><span style="color:#0000ff">None</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>….</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># HTTP response status code</span>
-<span class="odt-code-line"><span style="color:#000000">        status_code = response.status_code</span></span>
+<span class="odt-code-line">        status_code = response.status_code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Put the XML response into a dictionary</span>
 <span class="odt-code-line"><span style="color:#000000">        result = </span><span style="background-color:#fff2cc;color:#6f008a">xmltodict</span><span style="background-color:#fff2cc;color:#000000">.parse</span><span style="color:#000000">(response.text</span><span style="font-weight:bold;color:#000000">[39:]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># error if status code is not 200 OK</span>
@@ -1630,7 +1630,7 @@
 
 <div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-xml">
 <span class="odt-code-line">2020-07-27 15:53:47.886283, Thread-2: <span style="background-color:#bdd6ee">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">&lt;response&gt;&lt;result&gt;&lt;married&gt;no&lt;/married&gt;&lt;children&gt;2&lt;/children&gt;&lt;salary&gt;100000&lt;/salary&gt;&lt;tax&gt;19884&lt;/tax&gt;&lt;surcharge&gt;4480&lt;/surcharge&gt;&lt;rate&gt;0.41&lt;/rate&gt;&lt;discount&gt;0&lt;/discount&gt;&lt;reduction&gt;0&lt;/reduction&gt;&lt;/result&gt;&lt;/response&gt;</span></span>
+<span class="odt-code-line">&lt;response&gt;&lt;result&gt;&lt;married&gt;no&lt;/married&gt;&lt;children&gt;2&lt;/children&gt;&lt;salary&gt;100000&lt;/salary&gt;&lt;tax&gt;19884&lt;/tax&gt;&lt;surcharge&gt;4480&lt;/surcharge&gt;&lt;rate&gt;0.41&lt;/rate&gt;&lt;discount&gt;0&lt;/discount&gt;&lt;reduction&gt;0&lt;/reduction&gt;&lt;/result&gt;&lt;/response&gt;</span>
 </code></pre></div>
 
 <p>The string <strong>[&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;]</strong> is 38 characters long. Furthermore, if we look at the log file with a hex editor, we see that after this string there is a newline character \n. Then comes the response &lt;response&gt;…&lt;/response&gt;. The XML string we need to convert therefore begins after the first 39 characters of the XML string. It starts at character #39, with the first character numbered 0. This string is obtained using the expression <strong>[</strong><strong><span style="color: #000000">response.text[39:</span></strong><strong>]</strong>].</p>

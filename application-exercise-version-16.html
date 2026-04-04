@@ -1490,8 +1490,8 @@
 
 
 
-<p><a id="toc48549334"></a>
-<a id="exercicedapplication12"></a></p>
+<p><a id="exercicedapplication12"></a>
+<a id="toc48549334"></a></p>
 <h1 id="36-application-exercise-version-16">36. <span style="color: #365f91">Application Exercise: Version 16</span></h1>
 <p><img src="images/10000000000001100000012E4F46BBF8.png" style="width:3.14cm;height:3.485cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001100000012E4F46BBF8.png" /></p>
 <p><a id="toc48549335"></a></p>
@@ -1566,7 +1566,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#000000">flask_api </span><span style="color:#0000ff">import </span><span style="color:#000000">status</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># application configuration</span>
-<span class="odt-code-line"><span style="color:#000000">config = {}</span></span>
+<span class="odt-code-line">config = {}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the front controller</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">front_controller() -&gt; tuple:</span></span>
@@ -1607,7 +1607,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#000000">flask_wtf.csrf </span><span style="color:#0000ff">import </span><span style="color:#000000">generate_csrf</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># configuration</span>
-<span class="odt-code-line"><span style="color:#000000">config = {}</span></span>
+<span class="odt-code-line">config = {}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the front controller</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">front_controller() -&gt; tuple:</span></span>
@@ -1636,7 +1636,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="background-color:#fff2cc;color:#000000">init_session_without_csrftoken</span><span style="color:#000000">(type_response: str) -&gt; tuple:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Redirect to /init-session/type_response</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">redirect(url_for(</span><span style="color:#a31515">&quot;init_session&quot;</span><span style="color:#000000">, type_response=type_response, csrf_token=generate_csrf()),</span></span>
-<span class="odt-code-line"><span style="color:#000000">                    status.HTTP_302_FOUND)</span></span>
+<span class="odt-code-line">                    status.HTTP_302_FOUND)</span>
 </code></pre></div>
 
 <p>Routes are calculated by the following <strong>[configs/routes]</strong> module:</p>
@@ -1819,7 +1819,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">        <span style="color:#008000"># possible actions from the view</span></span>
 <span class="odt-code-line">        model<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;possible_actions&#x27;</span><span style="font-weight:bold">] </span>= <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">…</span><span style="font-weight:bold">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line">    </span>
 <span class="odt-code-line"><span style="color:#000000">        </span># URL prefix</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#000000">model</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">[</span><span style="font-weight:bold;background-color:#fff2cc">&quot;prefix_url&quot;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">] </span><span style="color:#000000">= config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold">&quot;parameters&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold">&quot;prefix_url&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"></span>
@@ -1840,9 +1840,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;alert alert-primary&quot; </span><span style="color:#000000">role=</span><span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;h4&gt;</span><span style="color:#000000">Please log in</span><span style="color:#800000">&lt;/h4&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/form&gt;</span></span>
+<span class="odt-code-line">&lt;/form&gt;</span>
 </code></pre></div>
 
 <p><strong>The [v-calcul-impot] fragment</strong></p>
@@ -1852,7 +1852,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- 12-column message on a blue background --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">…</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/form&gt;</span></span>
+<span class="odt-code-line">&lt;/form&gt;</span>
 </code></pre></div>
 
 <p><strong>The [v-liste-simulations] fragment</strong></p>
@@ -1860,9 +1860,9 @@
 <span class="odt-code-line">…</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">{% if model.simulations is defined and model.simulations.length!=0 %}</span>
-<span class="odt-code-line"><span style="color:#008000">…</span></span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">&lt;!-- simulation table --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- simulation table --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;table </span>class=<span style="color:#0000ff">&quot;table table-sm table-hover table-striped&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#008000">…</span></span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;tr&gt;</span></span>
@@ -1880,7 +1880,7 @@
 <span class="odt-code-line">    {% endfor %}</span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;/tr&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;/tbody&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/table&gt;</span></span>
+<span class="odt-code-line">&lt;/table&gt;</span>
 <span class="odt-code-line">{% endif %}</span>
 </code></pre></div>
 
@@ -1889,10 +1889,10 @@
 <span class="odt-code-line">&lt;!-- Bootstrap menu --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;nav </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;nav flex-column&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Displaying a list of HTML links --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    {% for optionMenu in model.optionsMenu %}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
-<span class="odt-code-line"><span style="color:#000000">    {% endfor %}</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/nav&gt;</span></span>
+<span class="odt-code-line">    {% for optionMenu in model.optionsMenu %}</span>
+<span class="odt-code-line">    </span>
+<span class="odt-code-line">    {% endfor %}</span>
+<span class="odt-code-line">&lt;/nav&gt;</span>
 </code></pre></div>
 
 <p><a id="toc48549340"></a></p>
@@ -1940,7 +1940,7 @@
 <p><img src="images/100000000000018F0000015F12F2CE26.png" style="width:4.6cm;height:4.046cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018F0000015F12F2CE26.png" /></p>
 <p>Let&#x27;s add the following prefix to the <strong>[parameters]</strong> configuration file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># csrf token</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;with_csrftoken&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">True</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># supported databases MySQL (mysql), PostgreSQL (pgres)</span>
@@ -1948,7 +1948,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># application URL prefix</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># set the string to empty if no prefix is desired, or use /prefix otherwise</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#a31515">&quot;prefix_url&quot;</span><span style="background-color:#fff2cc;color:#000000">: </span><span style="background-color:#fff2cc;color:#a31515">&quot;/do&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">…</span>
 </code></pre></div>
 
 <p>Let’s launch the application and then request the URL <strong>[http://localhost:5000/do]</strong>; the response is as follows:</p>

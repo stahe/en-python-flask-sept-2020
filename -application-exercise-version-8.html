@@ -1585,8 +1585,8 @@
 
 
 
-<p><a id="toc48549196"></a>
-<a id="exercicedapplication4"></a></p>
+<p><a id="exercicedapplication4"></a>
+<a id="toc48549196"></a></p>
 <h1 id="25-application-exercise-version-8">25. <span style="color: #365f91">Application Exercise: Version 8</span></h1>
 <p><a id="toc48549197"></a></p>
 <h2 id="251-introduction">25.1. <span style="color: #4f81bd">Introduction</span></h2>
@@ -1620,10 +1620,10 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># index_controller</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">f&quot;{script_dir}/../controllers&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># scripts [config_database, config_layers</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        script_dir,</span></span>
+<span class="odt-code-line">        script_dir,</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Logger, SendAdminMail</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#a31515">f&quot;{root_dir}/impots/http-servers/02/utilities&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 </code></pre></div>
 
 <ul>
@@ -1637,7 +1637,7 @@
 <p>The new <strong>[main]</strong> script introduces a few changes to the main <strong>[main]</strong> script from the previous version:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"># The Flask application can start</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"># session secret key</span>
 <span class="odt-code-line"><span style="background-color:#fff2cc;color:#000000">app.secret_key </span><span style="color:#000000">= </span><span style="color:#6f008a">os</span><span style="color:#000000">.urandom(12).hex()</span></span>
 </code></pre></div>
@@ -1662,7 +1662,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># error log</span>
 <span class="odt-code-line"><span style="color:#000000">    log = </span><span style="color:#a31515">f&quot;The following error occurred: {ex}&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># console</span>
-<span class="odt-code-line"><span style="color:#000000">    print(log)</span></span>
+<span class="odt-code-line">    print(log)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># log file</span>
 <span class="odt-code-line"><span style="color:#000000">    logger.write(</span><span style="color:#a31515">f&quot;{log}\n&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># email to the administrator</span>
@@ -1834,9 +1834,9 @@
 <span class="odt-code-line"><span style="color:#000000">                </span># URL of the server being queried</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#808080">self</span><span style="color:#000000">.__config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;urlServer&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span># URL parameters</span>
-<span class="odt-code-line"><span style="color:#000000">                params=params,</span></span>
+<span class="odt-code-line">                params=params,</span>
 <span class="odt-code-line"><span style="color:#000000">                </span># Basic authentication</span>
-<span class="odt-code-line"><span style="color:#000000">                auth=(</span></span>
+<span class="odt-code-line">                auth=(</span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#808080">self</span><span style="color:#000000">.__config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;login&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#808080">self</span><span style="color:#000000">.__config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;password&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#808080">cookies=self</span><span style="color:#000000">.__cookies)</span></span>
@@ -1865,9 +1865,9 @@
 <span class="odt-code-line"><span style="color:#000000">            </span># logging</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#808080">self</span><span style="color:#000000">.__logger.write(</span><span style="color:#a31515">f&quot;{response.text}\n&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># HTTP response status code</span>
-<span class="odt-code-line"><span style="color:#000000">        status_code = response.status_code</span></span>
+<span class="odt-code-line">        status_code = response.status_code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># put the JSON response into a dictionary</span>
-<span class="odt-code-line"><span style="color:#000000">        result = response.json()</span></span>
+<span class="odt-code-line">        result = response.json()</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># error if status code is not 200 OK</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">status_code != status.HTTP_200_OK:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># we know that errors have been associated with the <span style="font-weight:bold">[errors] </span>key in the response</span>
@@ -2055,9 +2055,9 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># create the thread</span>
 <span class="odt-code-line"><span style="color:#000000">        thread = </span><span style="color:#6f008a">threading</span><span style="color:#000000">.</span><span style="color:#2b91af">Thread</span><span style="color:#000000">(target=thread_function, args=(</span><span style="background-color:#fff2cc;color:#000000">thread_dao</span><span style="color:#000000">, logger, thread_taxpayers))</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># add it to the list of threads in the main script</span>
-<span class="odt-code-line"><span style="color:#000000">        threads.append(thread)</span></span>
+<span class="odt-code-line">        threads.append(thread)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Start the thread—this operation is asynchronous—we do not wait for the thread&#x27;s result</span>
-<span class="odt-code-line"><span style="color:#000000">        thread.start()</span></span>
+<span class="odt-code-line">        thread.start()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># The main thread waits for all the threads it has started to finish</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">…</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
@@ -2066,7 +2066,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># close the logger</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">logger:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        logger.close()</span></span>
+<span class="odt-code-line">        logger.close()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># we&#x27;re done</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Work completed...&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Terminate any threads that might still be running if we stopped due to an error</span>
@@ -2242,14 +2242,14 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># {&#x27;married&#x27;: &#x27;yes&#x27;, &#x27;children&#x27;: 2, &#x27;salary&#x27;: 55555,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># &#x27;tax&#x27;: 2814, &#x27;surcharge&#x27;: 0, &#x27;discount&#x27;: 0, &#x27;reduction&#x27;: 0, &#x27;rate&#x27;: 0.14}</span></span>
 <span class="odt-code-line"><span style="color:#000000">        taxpayer = </span><span style="color:#2b91af">TaxPayer</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;married&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;yes&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;children&quot;</span><span style="color:#000000">: 2, </span><span style="color:#a31515">&quot;salary&quot;</span><span style="color:#000000">: 55555})</span></span>
-<span class="odt-code-line"><span style="color:#000000">        dao.calculate_tax(taxpayer)</span></span>
+<span class="odt-code-line">        dao.calculate_tax(taxpayer)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertAlmostEqual(taxpayer.tax, 2815, delta=1)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(taxpayer.discount, 0)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(taxpayer.reduction, 0)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertAlmostEqual(taxpayer.rate, 0.14, delta=0.01)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(taxpayer.surcharge, 0)</span></span>
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">__name__ == </span><span style="color:#a31515">&#x27;__main__</span><span style="color:#000000">&#x27;:</span></span>
@@ -2264,7 +2264,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># retrieve the </span><span style="font-weight:bold;color:#008000">[DAO] </span><span style="color:#008000">layer factory</span></span>
 <span class="odt-code-line"><span style="color:#000000">    dao_factory = </span>config<span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;layers&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;dao_factory&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># create an instance of the </span><span style="font-weight:bold;color:#008000">[dao] </span><span style="color:#008000">layer</span></span>
-<span class="odt-code-line"><span style="color:#000000">    dao = dao_factory.new_instance()</span></span>
+<span class="odt-code-line">    dao = dao_factory.new_instance()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># run the test methods</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Tests in progress...&quot;</span><span style="color:#000000">)</span></span>
@@ -2288,7 +2288,7 @@
 <span class="odt-code-line">----------------------------------------------------------------------</span>
 <span class="odt-code-line"><span style="background-color:#bdd6ee">Ran 11 tests </span>in 3.392s</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">OK</span></span>
+<span class="odt-code-line">OK</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>

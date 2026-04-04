@@ -1774,12 +1774,12 @@
 
 
 
-<p><a id="toc48549021"></a>
+<p><a id="architectureencouches"></a>
 <a id="refheading408941886864318"></a>
-<a id="architectureencouches"></a></p>
+<a id="toc48549021"></a></p>
 <h1 id="14-layered-architecture-and-interface-based-programming">14. <span style="color: #365f91">Layered architecture and interface-based programming</span></h1>
-<p><a id="refheading408961886864318"></a>
-<a id="toc48549022"></a></p>
+<p><a id="toc48549022"></a>
+<a id="refheading408961886864318"></a></p>
 <h2 id="141-introduction">14.1. <span style="color: #4f81bd">Introduction</span></h2>
 <p>We propose to write an application that displays the grades of middle school students. This application can have a multi-layer architecture:</p>
 <p><img src="images/1000000100000366000000ABACEE5922.png" style="width:11.882cm;height:2.335cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000366000000ABACEE5922.png" /></p>
@@ -1811,8 +1811,8 @@
 </ul>
 
 <p>We could call this structure an <strong>orchestral</strong> organization.</p>
-<p><a id="toc48549023"></a>
-<a id="exemple1"></a></p>
+<p><a id="exemple1"></a>
+<a id="toc48549023"></a></p>
 <h2 id="142-example-1">14.2. <span style="color: #4f81bd">Example 1</span></h2>
 <p>We will illustrate the layered architecture using a simple console application:</p>
 <ul>
@@ -1830,9 +1830,9 @@
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000100000128000002B09A9C5A86.png" style="display:inline-block; margin:4px;width:2.76cm;height:6.417cm;" class="odt-zoomable" data-zoom-src="images/1000000100000128000002B09A9C5A86.png" /></td></tr></table>
 
 <p><strong>Note</strong>: The folders in blue are part of the <strong>[Root Sources]</strong> of the PyCharm project.</p>
-<p><a id="toc48549024"></a>
+<p><a id="lesentitesde"></a>
 <a id="refheading408981886864318"></a>
-<a id="lesentitesde"></a></p>
+<a id="toc48549024"></a></p>
 <h3 id="1421-the-applications-entities">14.2.1. <span style="color: #4f81bd">The application&#x27;s entities</span></h3>
 <p>We will refer to classes whose sole role is to encapsulate data as entities. Dictionaries could be used for this purpose. The advantage of a class is that it allows us to test the validity of the data stored in the object and to provide a method that returns the object’s identity as a string.</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001230000011048549434.png" style="display:inline-block; margin:4px;width:3.36cm;height:3.141cm;" class="odt-zoomable" data-zoom-src="images/10000000000001230000011048549434.png" /></td></tr></table>
@@ -2002,7 +2002,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#000000">MyException(42, </span><span style="color:#a31515">f&quot;The first name of student {self.id} must be a non-empty string&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    @class.setter</span></span>
+<span class="odt-code-line">    @class.setter</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">class(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">value</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Expects a Class type</span>
@@ -2075,7 +2075,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#000000">MyException(31,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                              </span><span style="color:#a31515">f&quot;The {value} attribute of grade {self.id} must be a number in the range </span><span style="font-weight:bold;color:#a31515">[0,20]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    @student.setter</span></span>
+<span class="odt-code-line">    @student.setter</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">student(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">value</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># we expect a Student type</span>
@@ -2091,7 +2091,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#000000">MyException(32,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                              </span><span style="color:#a31515">f&quot;The </span><span style="font-weight:bold;color:#a31515">[{value}] </span><span style="color:#a31515">attribute of grade {self.id} must be of type Student, dict, or json. Error: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    @subject.setter</span></span>
+<span class="odt-code-line">    @subject.setter</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">subject(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">value</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># we expect a Subject type</span>
@@ -2117,8 +2117,8 @@
   <li>lines 22–75: getters/setters for the class attributes;
   </li>
 </ul>
-<p><a id="refheadingtoc2521692924280206"></a>
-<a id="toc48549025"></a></p>
+<p><a id="toc48549025"></a>
+<a id="refheadingtoc2521692924280206"></a></p>
 <h3 id="1422-application-configuration">14.2.2. <span style="color: #4f81bd">Application Configuration</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000012F00000195977BC3C4.png" style="display:inline-block; margin:4px;width:3.505cm;height:4.683cm;" class="odt-zoomable" data-zoom-src="images/100000000000012F00000195977BC3C4.png" /></td></tr></table>
 
@@ -2139,7 +2139,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../entities&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../interfaces&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../services&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># update the syspath</span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -2178,7 +2178,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">import </span>unittest</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># configure the application</span></span>
+<span class="odt-code-line"># configure the application</span>
 <span class="odt-code-line"><span style="color:#0000ff">import </span>config</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">config <span style="color:#000000">= </span>config<span style="color:#000000">.configure()</span></span>
@@ -2193,7 +2193,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">from </span>Class <span style="color:#0000ff">import </span><span style="color:#000000">Class</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">from </span>Subject <span style="color:#0000ff">import </span><span style="color:#000000">Subject</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># constructing a grade from a JSON string</span></span>
-<span class="odt-code-line"><span style="color:#000000">        note = Note().fromjson(</span></span>
+<span class="odt-code-line">        note = Note().fromjson(</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&#x27;{&quot;id&quot;: 8, &quot;score&quot;: 12, &quot;student&quot;: {&quot;id&quot;: 42, &quot;last_name&quot;: &quot;last_name4&quot;, &quot;first_name&quot;: &quot;first_name4&quot;, &quot;class&quot;: {&quot;id&quot;: 2, &quot;name&quot;: &quot;class2&quot;}}, &quot;subject&quot;: {&quot;id&quot;: 2, &quot;name&quot;: &quot;subject2&quot;, &quot;weight&quot;: 2}}&#x27;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># validations</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertIsInstance(grade, Grade)</span></span>
@@ -2209,7 +2209,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">from </span>Class <span style="color:#0000ff">import </span><span style="color:#000000">Class</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">from </span>Subject <span style="color:#0000ff">import </span><span style="color:#000000">Subject</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># Creating a grade from a dictionary</span></span>
-<span class="odt-code-line"><span style="color:#000000">        grade = Grade().fromdict(</span></span>
+<span class="odt-code-line">        grade = Grade().fromdict(</span>
 <span class="odt-code-line"><span style="color:#000000">            {</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 8, </span><span style="color:#a31515">&quot;score&quot;</span><span style="color:#000000">: 12, </span><span style="color:#a31515">&quot;student&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 42, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;last_name4&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;first_name4&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                              </span><span style="color:#a31515">&quot;class&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 2, </span><span style="color:#a31515">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;class2&quot;</span><span style="color:#000000">}},</span></span>
 <span class="odt-code-line"><span style="color:#000000">             </span><span style="color:#a31515">&quot;subject&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 2, </span><span style="color:#a31515">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;subject2&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;weight&quot;</span><span style="color:#000000">: 2}})</span></span>
@@ -2265,7 +2265,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">import </span>unittest</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># configure the application</span></span>
+<span class="odt-code-line"># configure the application</span>
 <span class="odt-code-line"><span style="color:#0000ff">import </span>config</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">config <span style="color:#000000">= </span>config<span style="color:#000000">.configure()</span></span>
@@ -2396,7 +2396,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Student().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;z&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;class&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;t&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nerror code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 1)</span></span>
 <span class="odt-code-line"></span>
@@ -2412,7 +2412,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Student().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;z&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;class&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;t&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nerror code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 41)</span></span>
 <span class="odt-code-line"></span>
@@ -2427,7 +2427,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Student().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;class&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;t&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nerror code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 42)</span></span>
 <span class="odt-code-line"></span>
@@ -2442,7 +2442,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Student().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;z&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;class&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;t&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nerror code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 43)</span></span>
 <span class="odt-code-line"></span>
@@ -2457,7 +2457,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Class().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nError code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 1)</span></span>
 <span class="odt-code-line"></span>
@@ -2472,7 +2472,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># invalid name</span></span>
 <span class="odt-code-line"><span style="color:#000000">            Class().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 11)</span></span>
 <span class="odt-code-line"></span>
@@ -2488,7 +2488,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Subject().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;coefficient&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;t&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nError code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 1)</span></span>
 <span class="odt-code-line"></span>
@@ -2503,7 +2503,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Subject().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;1&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;coefficient&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;t&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nError code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 21)</span></span>
 <span class="odt-code-line"></span>
@@ -2518,7 +2518,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Subject().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;coefficient&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;t&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nError code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 22)</span></span>
 <span class="odt-code-line"></span>
@@ -2533,7 +2533,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Note().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;value&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;student&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;subject&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;z&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nerror code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 1)</span></span>
 <span class="odt-code-line"></span>
@@ -2549,7 +2549,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Note().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;value&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;student&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;subject&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;z&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nerror code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 31)</span></span>
 <span class="odt-code-line"></span>
@@ -2565,7 +2565,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Note().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;score&quot;</span><span style="color:#000000">: 10, </span><span style="color:#a31515">&quot;student&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;subject&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;z&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nError code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 32)</span></span>
 <span class="odt-code-line"></span>
@@ -2585,7 +2585,7 @@
 <span class="odt-code-line"><span style="color:#000000">            Grade().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;score&quot;</span><span style="color:#000000">: 10, </span><span style="color:#a31515">&quot;student&quot;</span><span style="color:#000000">: student, </span><span style="color:#a31515">&quot;subject&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;z&quot;</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">except </span><span style="color:#000000">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">f&quot;\nerror code={ex.code}, message={ex}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">            code = ex.code</span></span>
+<span class="odt-code-line">            code = ex.code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># verification</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.assertEqual(code, 33)</span></span>
 <span class="odt-code-line"></span>
@@ -2666,7 +2666,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Ran<span style="background-color:#fff2cc"> 14 </span>tests in 0.040s</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">OK</span></span>
+<span class="odt-code-line">OK</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
@@ -2676,8 +2676,8 @@
 <h3 id="1424-the-dao-layer">14.2.4. <span style="color: #4f81bd">The [dao] layer</span></h3>
 <p><img src="images/1000000000000523000002CDB342C812.png" style="width:15.169cm;height:8.271cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000523000002CDB342C812.png" /></p>
 <p>The <strong>[dao]</strong> layer implements the <strong>[InterfaceDao]</strong> interface <strong>[1]</strong>. This is implemented by the <strong>[Dao]</strong> class (2). The <strong>[tests_dao]</strong> script (3) tests the methods of the <strong>[dao]</strong> layer.</p>
-<p><a id="refheadingtoc2521712924280206"></a>
-<a id="interfaceinterfacedao"></a></p>
+<p><a id="interfaceinterfacedao"></a>
+<a id="refheadingtoc2521712924280206"></a></p>
 <h4 id="14241-interface-interfacedao">14.2.4.1. <span style="color: #4f81bd">Interface [<span style="color: #2b91af">InterfaceDao</span>]</span></h4>
 <p>An interface is a contract between calling code and called code. It is the called code that provides the interface:</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000038A000000E37692A18F.png" style="display:inline-block; margin:4px;width:11.95cm;height:2.993cm;" class="odt-zoomable" data-zoom-src="images/100000000000038A000000E37692A18F.png" /></td></tr></table>
@@ -2806,7 +2806,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># -----------</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># IDao interface</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># -----------</span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line">    </span>
 <span class="odt-code-line"></span>
 </code></pre></div>
 
@@ -2842,23 +2842,23 @@
 <span class="odt-code-line"># instantiate the <span style="font-weight:bold">[dao] </span>layer</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">Dao </span><span style="color:#0000ff">import </span><span style="color:#000000">Dao</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">daoImpl = Dao()</span></span>
+<span class="odt-code-line">daoImpl = Dao()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of classes</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">class </span><span style="color:#0000ff">in </span><span style="color:#000000">daoImpl.get_classes():</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(class)</span></span>
+<span class="odt-code-line">    print(class)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of subjects</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">subject </span><span style="color:#0000ff">in </span><span style="color:#000000">daoImpl.get_subjects():</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(subject)</span></span>
+<span class="odt-code-line">    print(subject)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of classes</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">student </span><span style="color:#0000ff">in </span><span style="color:#000000">daoImpl.get_students():</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(student)</span></span>
+<span class="odt-code-line">    print(student)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of grades</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">grade </span><span style="color:#0000ff">in </span><span style="color:#000000">daoImpl.get_grades():</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(grade)</span></span>
+<span class="odt-code-line">    print(grade)</span>
 </code></pre></div>
 
 <p><strong>Note</strong>: The <strong>[tests-dao.py]</strong> script is not a <strong>[unittest]</strong> because it does not contain any methods whose names begin with <strong>[test_]</strong>.</p>
@@ -2917,7 +2917,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># -----------</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># interface IDao</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># -----------</span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line">    </span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of classes</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_classes(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">list</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#808080">self</span><span style="color:#000000">.classes</span></span>
@@ -3009,29 +3009,29 @@
 <span class="odt-code-line"># instantiate the <span style="font-weight:bold">[dao] </span>layer</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">Dao </span><span style="color:#0000ff">import </span><span style="color:#000000">Dao</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">daoImpl = Dao()</span></span>
+<span class="odt-code-line">daoImpl = Dao()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of classes</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">class </span><span style="color:#0000ff">in </span><span style="color:#000000">daoImpl.get_classes():</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(class)</span></span>
+<span class="odt-code-line">    print(class)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of subjects</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">subject </span><span style="color:#0000ff">in </span><span style="color:#000000">daoImpl.get_subjects():</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(subject)</span></span>
+<span class="odt-code-line">    print(subject)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of classes</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">student </span><span style="color:#0000ff">in </span><span style="color:#000000">daoImpl.get_students():</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(student)</span></span>
+<span class="odt-code-line">    print(student)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of grades</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">grade </span><span style="color:#0000ff">in </span><span style="color:#000000">daoImpl.get_grades():</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(grade)</span></span>
+<span class="odt-code-line">    print(grade)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a specific student</span>
-<span class="odt-code-line"><span style="color:#000000">print(daoImpl.get_student_by_id(11))</span></span>
+<span class="odt-code-line">print(daoImpl.get_student_by_id(11))</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># list of their grades</span></span>
-<span class="odt-code-line"><span style="color:#000000">dict1 = daoImpl.get_grades_for_student_by_id(11)</span></span>
+<span class="odt-code-line"># list of their grades</span>
+<span class="odt-code-line">dict1 = daoImpl.get_grades_for_student_by_id(11)</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;Student #11 = {dict1</span><span style="font-weight:bold;color:#a31515">[&#x27;student&#x27;]</span><span style="color:#a31515">}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">grade </span><span style="color:#0000ff">in </span><span style="color:#000000">dict1</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;grades&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Grade for student #11 = {note}&quot;</span><span style="color:#000000">)</span></span>
@@ -3073,8 +3073,8 @@
 </ul>
 
 <p>This result is produced by the <strong>[BaseEntity.asdict]</strong> function (see the &quot;<a href="#laclassebaseentity"><u><span style="color: #0563c1">link&quot;</span></u></a> section).</p>
-<p><a id="refheading409021886864318"></a>
-<a id="toc48549028"></a></p>
+<p><a id="toc48549028"></a>
+<a id="refheading409021886864318"></a></p>
 <h3 id="1425-the-business-layer">14.2.5. <span style="color: #4f81bd">The [business] layer</span></h3>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/1000000100000250000000E58BD3428D.png" style="display:inline-block; margin:4px;width:7.063cm;height:2.732cm;" class="odt-zoomable" data-zoom-src="images/1000000100000250000000E58BD3428D.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000019E0000029B19CC59FA.png" style="display:inline-block; margin:4px;width:4.309cm;height:6.944cm;" class="odt-zoomable" data-zoom-src="images/100000000000019E0000029B19CC59FA.png" /></td></tr></table>
 
@@ -3099,7 +3099,7 @@
 <span class="odt-code-line"># Business interface</span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">BusinessInterface</span><span style="color:#000000">(</span><span style="color:#2b91af">ABC</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Calculate statistics for a student</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_stats_for_student(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">student_id</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; StudentStats:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -3210,25 +3210,25 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">return </span><span style="color:#000000">StatsForStudent().fromdict({</span><span style="color:#a31515">&quot;student&quot;</span><span style="color:#000000">: student, </span><span style="color:#a31515">&quot;grades&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[]</span><span style="color:#000000">})</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># process the student&#x27;s grades</span>
-<span class="odt-code-line"><span style="color:#000000">        weighted_sum = 0</span></span>
-<span class="odt-code-line"><span style="color:#000000">        weighted_sum = 0</span></span>
-<span class="odt-code-line"><span style="color:#000000">        max = -1</span></span>
-<span class="odt-code-line"><span style="color:#000000">        min = 21</span></span>
+<span class="odt-code-line">        weighted_sum = 0</span>
+<span class="odt-code-line">        weighted_sum = 0</span>
+<span class="odt-code-line">        max = -1</span>
+<span class="odt-code-line">        min = 21</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">for </span><span style="color:#000000">grade </span><span style="color:#0000ff">in </span><span style="color:#000000">grades:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># grade value</span>
-<span class="odt-code-line"><span style="color:#000000">            value = note.value</span></span>
+<span class="odt-code-line">            value = note.value</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># subject weight</span>
-<span class="odt-code-line"><span style="color:#000000">            coeff = note.subject.coefficient</span></span>
+<span class="odt-code-line">            coeff = note.subject.coefficient</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># sum of coefficients</span>
-<span class="odt-code-line"><span style="color:#000000">            sum_coeff += coeff</span></span>
+<span class="odt-code-line">            sum_coeff += coeff</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># weighted sum</span>
-<span class="odt-code-line"><span style="color:#000000">            weighted_sum += value * coeff</span></span>
+<span class="odt-code-line">            weighted_sum += value * coeff</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># find the minimum</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">value &lt; min:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                min = value</span></span>
+<span class="odt-code-line">                min = value</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Find the maximum</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">value &gt; max:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                max = value</span></span>
+<span class="odt-code-line">                max = value</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Calculate missing indicators</span>
 <span class="odt-code-line"><span style="color:#000000">        weighted_average = </span><span style="color:#2b91af">float</span><span style="color:#000000">(weighted_sum) / sum_coeff</span></span>
 <span class="odt-code-line"></span>
@@ -3287,8 +3287,8 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">from </span><span style="color:#6f008a">Dao </span><span style="color:#0000ff">import </span><span style="color:#000000">Dao</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">from </span><span style="color:#6f008a">Business </span><span style="color:#0000ff">import </span><span style="color:#000000">Business</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># testing the metrics for student 11</span>
-<span class="odt-code-line"><span style="color:#000000">        dao = Dao()</span></span>
-<span class="odt-code-line"><span style="color:#000000">        stats_for_student = Business(dao).get_stats_for_student(11)</span></span>
+<span class="odt-code-line">        dao = Dao()</span>
+<span class="odt-code-line">        stats_for_student = Business(dao).get_stats_for_student(11)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># display</span>
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">f&quot;\nstats={stats_for_student}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># checks</span>
@@ -3329,15 +3329,15 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Ran 1 test in 0.015s</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">OK</span></span>
+<span class="odt-code-line">OK</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">stats=Student={&quot;id&quot;: 11, &quot;last_name&quot;: &quot;last_name1&quot;, &quot;first_name&quot;: &quot;first_name1&quot;, &quot;class&quot;: {&quot;id&quot;: 1, &quot;name&quot;: &quot;class1&quot;}}, grades=<span style="font-weight:bold">[10 6]</span>, <span style="background-color:#fff2cc">max=10, min=6, weighted_average=7.33</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="refheading409041886864318"></a>
-<a id="toc48549029"></a></p>
+<p><a id="toc48549029"></a>
+<a id="refheading409041886864318"></a></p>
 <h3 id="1426-the-ui-layer">14.2.6. <span style="color: #4f81bd">The [ui] layer</span></h3>
 <p><img src="images/100000000000053C00000277D270FF4C.png" style="width:15.469cm;height:7.285cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000053C00000277D270FF4C.png" /></p>
 <ul>
@@ -3359,7 +3359,7 @@
 <span class="odt-code-line"># UI interface</span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">InterfaceUi</span><span style="color:#000000">(</span><span style="color:#2b91af">ABC</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Execution of the UI layer</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">run(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -3409,7 +3409,7 @@
 <span class="odt-code-line"><span style="color:#000000">            ok = </span><span style="color:#0000ff">False</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                student_id = </span><span style="color:#2b91af">int</span><span style="color:#000000">(response, 10)</span></span>
-<span class="odt-code-line"><span style="color:#000000">                ok = student_id &gt;= 1</span></span>
+<span class="odt-code-line">                ok = student_id &gt;= 1</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">except </span><span style="color:#2b91af">ValueError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">pass</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Is the data correct?</span>
@@ -3451,9 +3451,9 @@
   <li>line 46: the <b>[</b><b><span style="color: #000000">get_stats_for_student</span></b><b>] </b>method from the <b>[business] </b>layer is used. This method throws an exception if the student does not exist. This exception is handled on lines 47–48. We know that the <b>[DAO] </b>and <b>[business] </b>layers throw the <b>[MyException] </b>exception;
   </li>
 </ul>
-<p><a id="toc48549030"></a>
+<p><a id="lescriptprincipal3"></a>
 <a id="refheadingtoc2521872924280206"></a>
-<a id="lescriptprincipal3"></a></p>
+<a id="toc48549030"></a></p>
 <h2 id="143-the-main-script-main">14.3. <span style="color: #4f81bd">The main script [main]</span></h2>
 <p>The main script <strong>[main]</strong> is as follows (main.py):</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -3470,13 +3470,13 @@
 <span class="odt-code-line"># ----------- layer <span style="font-weight:bold">[console]</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># instantiate layer <span style="font-weight:bold">[dao]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    dao = Dao()</span></span>
+<span class="odt-code-line">    dao = Dao()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># instantiate layer <span style="font-weight:bold">[business]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    business = Business(dao)</span></span>
+<span class="odt-code-line">    business = Business(dao)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># instantiate the <span style="font-weight:bold">[UI] </span>layer</span>
-<span class="odt-code-line"><span style="color:#000000">    console = Console(business)</span></span>
+<span class="odt-code-line">    console = Console(business)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># executing the <span style="font-weight:bold">[console] </span>layer</span>
-<span class="odt-code-line"><span style="color:#000000">    console.run()</span></span>
+<span class="odt-code-line">    console.run()</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {ex}&quot;</span><span style="color:#000000">)</span></span>
@@ -3532,7 +3532,7 @@
 <span class="odt-code-line"># Dao interface</span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">InterfaceDao</span><span style="color:#000000">(</span><span style="color:#2b91af">ABC</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># a single method</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">do_something_in_dao_layer(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">x</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">y</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -3576,7 +3576,7 @@
 <span class="odt-code-line"># business interface</span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">BusinessInterface</span><span style="color:#000000">(</span><span style="color:#2b91af">ABC</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># a single method</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="background-color:#fff2cc;color:#000000">do_something_in_business_layer</span><span style="color:#000000">(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">x</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">y</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -3607,7 +3607,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.__dao = </span><span style="color:#808080">dao</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># implementation of the <span style="font-weight:bold">[BusinessInterface] </span>interface</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">do_something_in_business_layer(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">x</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">y</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -3679,7 +3679,7 @@
 <span class="odt-code-line"># Ui interface</span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">InterfaceUi</span><span style="color:#000000">(</span><span style="color:#2b91af">ABC</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># a single method</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">do_something_in_ui_layer(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">x</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">y</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -3710,7 +3710,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.__business = </span><span style="color:#808080">business</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># implementation of the <span style="font-weight:bold">[InterfaceUI] </span>interface</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">do_something_in_ui_layer(</span><span style="color:#808080">self</span><span style="color:#000000">: InterfaceUi, </span><span style="color:#808080">x</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">y</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -3831,7 +3831,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../dao&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../ui&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../business&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Configure the syspath</span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -3861,8 +3861,8 @@
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>config</span>
 </code></pre></div>
 
-<p><a id="toc48549036"></a>
-<a id="lescriptprincipal2"></a></p>
+<p><a id="lescriptprincipal2"></a>
+<a id="toc48549036"></a></p>
 <h3 id="1445-the-main-script-main">14.4.5. <span style="color: #4f81bd">The main script [main]</span></h3>
 <p><img src="images/100000000000015500000175811D8558.png" style="width:3.54cm;height:3.874cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015500000175811D8558.png" /></p>
 <p>The main script is as follows:</p>
@@ -3881,7 +3881,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># application configuration</span>
 <span class="odt-code-line"><span style="color:#000000">module = </span><span style="color:#6f008a">importlib</span><span style="color:#000000">.import_module(</span><span style="color:#6f008a">sys</span><span style="color:#000000">.argv</span><span style="font-weight:bold;color:#000000">[1]</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">config = module.configure()</span></span>
+<span class="odt-code-line">config = module.configure()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Run the <span style="font-weight:bold">[ui] </span>layer</span>
 <span class="odt-code-line"><span style="color:#000000">print(config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;ui&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">.do_something_in_ui_layer(10, 20))</span></span>
@@ -3942,11 +3942,11 @@
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"># business</span>
-<span class="odt-code-line"><span style="color:#000000">    business = BusinessImpl1()</span></span>
-<span class="odt-code-line"><span style="color:#000000">    business.dao = dao</span></span>
+<span class="odt-code-line">    business = BusinessImpl1()</span>
+<span class="odt-code-line">    business.dao = dao</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># ui</span>
-<span class="odt-code-line"><span style="color:#000000">    ui = UiImpl1()</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ui.business = business</span></span>
+<span class="odt-code-line">    ui = UiImpl1()</span>
+<span class="odt-code-line">    ui.business = business</span>
 </code></pre></div>
 
 <ul>
@@ -3972,10 +3972,10 @@
 <p>However, in the <strong>[config1]</strong> configuration, the following was written:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"># dao</span>
-<span class="odt-code-line"><span style="color:#000000">    dao = DaoImpl1()</span></span>
+<span class="odt-code-line">    dao = DaoImpl1()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># business</span>
-<span class="odt-code-line"><span style="color:#000000">    business = BusinessImpl1()</span></span>
-<span class="odt-code-line"><span style="color:#000000">    business.dao = dao</span></span>
+<span class="odt-code-line">    business = BusinessImpl1()</span>
+<span class="odt-code-line">    business.dao = dao</span>
 </code></pre></div>
 
 <ul>
@@ -4020,7 +4020,7 @@
 <p>With <strong>[config1]</strong>, running <strong>[main]</strong> yields the following results:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/troiscouches/v02/main/main.py <span style="background-color:#fff2cc">config1</span></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">34</span></span>
+<span class="odt-code-line">34</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
@@ -4028,7 +4028,7 @@
 <p>With <strong>[config2]</strong>, running <strong>[main]</strong> yields the following results:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/troiscouches/v02/main/main.py <span style="background-color:#fff2cc">config2</span></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">-10</span></span>
+<span class="odt-code-line">-10</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>

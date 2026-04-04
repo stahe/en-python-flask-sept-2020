@@ -1540,9 +1540,9 @@
 
 
 
-<p><a id="toc48549058"></a>
+<p><a id="utilisationdusgbd1"></a>
 <a id="refheadingtoc2522132924280206"></a>
-<a id="utilisationdusgbd1"></a></p>
+<a id="toc48549058"></a></p>
 <h1 id="17-using-the-postgresql-dbms">17. <span style="color: #365f91">Using the PostgreSQL DBMS</span></h1>
 <p>The PostgreSQL DBMS is freely available. It is an alternative to the &quot;community&quot; version of MySQL.</p>
 <p>We are using it here to demonstrate that it is fairly simple to migrate Python/MySQL scripts to Python/PostgreSQL scripts.</p>
@@ -1550,9 +1550,9 @@
 <p><img src="images/100000010000030B000000835DDD29BD.png" style="width:11.839cm;height:1.991cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000030B000000835DDD29BD.png" /></p>
 <p>With the PostgreSQL DBMS, it will be as follows:</p>
 <p><img src="images/10000001000003050000007C8CC0D4B2.png" style="width:11.852cm;height:1.901cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003050000007C8CC0D4B2.png" /></p>
-<p><a id="toc48549059"></a>
+<p><a id="installationdu"></a>
 <a id="refheadingtoc822383439697744"></a>
-<a id="installationdu"></a></p>
+<a id="toc48549059"></a></p>
 <h2 id="171-installing-the-postgresql-dbms">17.1. <span style="color: #4f81bd">Installing the PostgreSQL DBMS</span></h2>
 <p>PostgreSQL DBMS distributions are available at the URL <strong>[https://www.postgresql.org/download/]</strong> (May 2019). We demonstrate the installation of the 64-bit Windows version:</p>
 <p><img src="images/10000001000003CD000000F6CE4428BA.png" style="width:16.431cm;height:4.154cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003CD000000F6CE4428BA.png" /></p>
@@ -1611,9 +1611,9 @@
 </ul>
 
 <p>When you want to start the DBMS manually, return to the <strong>[services]</strong> application, right-click on the <strong>[postgresql]</strong> service (34), and start it (35).</p>
-<p><a id="toc48549060"></a>
+<p><a id="administrerpostgresqlavec"></a>
 <a id="refheadingtoc900783955410047"></a>
-<a id="administrerpostgresqlavec"></a></p>
+<a id="toc48549060"></a></p>
 <h2 id="172-administering-postgresql-with-the-pgadmin-tool">17.2. <span style="color: #4f81bd">Administering PostgreSQL with the [pgAdmin] tool</span></h2>
 <p>Start the Windows service for the PostgreSQL DBMS (see previous paragraph). Then, in the same way you launched the <strong>[Services]</strong> tool, launch the <strong>[pgAdmin]</strong> tool, which allows you to administer the PostgreSQL DBMS <strong>[1-3]</strong>:</p>
 <p><img src="images/1000000100000348000001C7000F1039.png" style="width:14.61cm;height:7.915cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000348000001C7000F1039.png" /></p>
@@ -1659,8 +1659,8 @@
 </ul>
 
 <p>We will use the <strong>[dbpersonnes]</strong> database with Python scripts.</p>
-<p><a id="toc48549061"></a>
-<a id="refheadingtoc2522152924280206"></a></p>
+<p><a id="refheadingtoc2522152924280206"></a>
+<a id="toc48549061"></a></p>
 <h2 id="173-installing-the-python-connector-for-the-postgresql-dbms">17.3. <span style="color: #4f81bd">Installing the Python Connector for the PostgreSQL DBMS</span></h2>
 <p><img src="images/10000001000003050000007C8CC0D4B2.png" style="width:11.852cm;height:1.901cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003050000007C8CC0D4B2.png" /></p>
 <p>The diagram above shows a connector linking Python scripts to the PostgreSQL DBMS. There are several available. We will install the <strong>[psycopg2]</strong> connector. This is done in a Python terminal (regardless of the directory in which the terminal is open). The connector is installed using the command <strong>[pip install psycopg2]</strong>:</p>
@@ -1680,8 +1680,8 @@
   <li>The folder <b>[1] </b>containing the MySQL scripts is duplicated (Ctrl-C / Ctrl-V), then the file names are changed to match their contents;
   </li>
 </ul>
-<p><a id="refheadingtoc2522172924280206"></a>
-<a id="toc48549063"></a></p>
+<p><a id="toc48549063"></a>
+<a id="refheadingtoc2522172924280206"></a></p>
 <h3 id="1741-pgres_module">17.4.1. <span style="color: #4f81bd">[pgres_module]</span></h3>
 <p>This module is a copy of the <strong>[mysql_module]</strong> module (see section <u><span style="color: #0563c1">|script </span></u><strong>[mysql-04]</strong><u><span style="color: #0563c1">: executing an SQL command </span></u>file|). Change the imports:</p>
 <p>Instead of:</p>
@@ -1722,8 +1722,8 @@
 </code></pre></div>
 
 <p>Otherwise, nothing else changes.</p>
-<p><a id="refheadingtoc2522192924280206"></a>
-<a id="toc48549064"></a></p>
+<p><a id="toc48549064"></a>
+<a id="refheadingtoc2522192924280206"></a></p>
 <h3 id="1742-script-pgres_01">17.4.2. <span style="color: #4f81bd">script [pgres_01]</span></h3>
 <p>The <strong>[pgres_01]</strong> script is a copy of the <strong>[mysql_01]</strong> script (see section <u><span style="color: #0563c1">|script </span></u><strong>[mysql-01]</strong><u><span style="color: #0563c1">: connecting to a MySQL database -</span></u> 1|). The following changes are made:</p>
 <p>Instead of:</p>
@@ -1739,8 +1739,8 @@
 </code></pre></div>
 
 <p>The rest remains unchanged. The results are the same as with MySQL.</p>
-<p><a id="refheadingtoc2522212924280206"></a>
-<a id="toc48549065"></a></p>
+<p><a id="toc48549065"></a>
+<a id="refheadingtoc2522212924280206"></a></p>
 <h3 id="1743-script-pgres_02">17.4.3. <span style="color: #4f81bd">script [pgres_02]</span></h3>
 <p>The <strong>[pgres_02]</strong> script is a copy of the <strong>[mysql_02]</strong> script (see section <u><span style="color: #0563c1">|script </span></u><strong>[mysql-02]</strong><u><span style="color: #0563c1">: connecting to a MySQL database -</span></u> 2|). Make the following changes:</p>
 <p>Instead of:</p>
@@ -1780,12 +1780,12 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># connection</span>
 <span class="odt-code-line"><span style="color:#000000">        connection = connect(</span><span style="color:#808080">host=host</span><span style="color:#000000">, </span><span style="color:#808080">user=login</span><span style="color:#000000">, </span><span style="color:#808080">password=pwd</span><span style="color:#000000">, </span><span style="color:#808080">database=database</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(</span></span>
+<span class="odt-code-line">        print(</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">f&quot;Connection successful to database={database}, host={host} as user={login}, passwd={pwd}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Close the connection if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">connection:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            connection.close()</span></span>
+<span class="odt-code-line">            connection.close()</span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">&quot;Logout successful\n&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
@@ -1798,17 +1798,17 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Log in an existing user</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    connect(host=HOST, login=USER, pwd=PASSWD, database=DATABASE)</span></span>
+<span class="odt-code-line">    connect(host=HOST, login=USER, pwd=PASSWD, database=DATABASE)</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># connection for a non-existent user</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    connect(host=HOST, login=</span><span style="color:#a31515">&quot;xx&quot;</span><span style="color:#000000">, pwd=</span><span style="color:#a31515">&quot;yy&quot;</span><span style="color:#000000">, database=DATABASE)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 </code></pre></div>
 
 <p>Although lines 36–41 should have displayed an error message indicating that the connection to the DBMS failed, nothing is displayed. In fact, upon further investigation, we see that the code does indeed enter the <strong>[except]</strong> block in lines 35–37, but the <strong>[error]</strong> variable is set to <strong>[None]</strong>. This occurs with version 2.8.4 of the <strong>[</strong><strong><span style="color: #6f008a">psycopg2</span></strong><strong>]</strong> connector.</p>
@@ -1833,8 +1833,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="refheadingtoc2522232924280206"></a>
-<a id="toc48549066"></a></p>
+<p><a id="toc48549066"></a>
+<a id="refheadingtoc2522232924280206"></a></p>
 <h3 id="1744-script-pgres_03">17.4.4. <span style="color: #4f81bd">script [pgres_03]</span></h3>
 <p>The script <strong>[pgres_03]</strong> is a copy of the script <strong>[mysql_03]</strong> (see section <u><span style="color: #0563c1">|script </span></u><strong>[mysql-03]</strong><u><span style="color: #0563c1">: creating a MySQL </span></u>table|). The following changes are made to it:</p>
 <p>Instead of:</p>
@@ -1869,8 +1869,8 @@
 
 <p>You can verify the existence of the <strong>[people]</strong> table using the <strong>[pgAdmin]</strong> administration tool:</p>
 <p><img src="images/10000000000004DE0000046766E0BCA6.png" style="width:14.79cm;height:13.377cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DE0000046766E0BCA6.png" /></p>
-<p><a id="refheadingtoc2522252924280206"></a>
-<a id="toc48549067"></a></p>
+<p><a id="toc48549067"></a>
+<a id="refheadingtoc2522252924280206"></a></p>
 <h3 id="1745-script-pgres_04">17.4.5. <span style="color: #4f81bd">script [pgres_04]</span></h3>
 <p>The <strong>[pgres_04]</strong> script is a copy of the <strong>[mysql_04]</strong> script (see section <u><span style="color: #0563c1">|script </span></u><strong>[mysql-04]</strong><u><span style="color: #0563c1">: executing an SQL command </span></u>file|). It uses the <strong>[</strong><strong><span style="color: #6f008a">pgres_module</span></strong><strong>]</strong> module:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1959,7 +1959,7 @@
 <span class="odt-code-line">--------------------------------------------------------------------</span>
 <span class="odt-code-line">Execution complete</span>
 <span class="odt-code-line">--------------------------------------------------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">There was 1 error</span></span>
+<span class="odt-code-line">There was 1 error</span>
 <span class="odt-code-line">xx: Error (ERROR: syntax error at or near &quot;xx&quot;</span>
 <span class="odt-code-line">LINE 1: xx</span>
 <span class="odt-code-line">        ^</span>
@@ -2002,7 +2002,7 @@
 <span class="odt-code-line">--------------------------------------------------------------------</span>
 <span class="odt-code-line">Execution complete</span>
 <span class="odt-code-line">--------------------------------------------------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">There was 1 error(s)</span></span>
+<span class="odt-code-line">There was 1 error(s)</span>
 <span class="odt-code-line">xx: Error (ERROR: syntax error at or near &quot;xx&quot;</span>
 <span class="odt-code-line">LINE 1: xx</span>
 <span class="odt-code-line">        ^</span>
@@ -2028,8 +2028,8 @@
   <li>PostgreSQL rolls back the <b>[drop table] </b>and <b>[create table] </b>commands. The table is restored to the state it was in before the script was executed with a transaction;
   </li>
 </ul>
-<p><a id="refheadingtoc2522272924280206"></a>
-<a id="toc48549068"></a></p>
+<p><a id="toc48549068"></a>
+<a id="refheadingtoc2522272924280206"></a></p>
 <h3 id="1746-script-pgres_05">17.4.6. <span style="color: #4f81bd">script [pgres_05]</span></h3>
 <p>The script <strong>[pgres_05]</strong> is a copy of the script <strong>[mysql_05]</strong> (see section <u><span style="color: #0563c1">|script </span></u><strong>[mysql-05]</strong><u><span style="color: #0563c1">: using parameterized </span></u>queries|). The script is modified as follows:</p>
 <p>Instead of:</p>
@@ -2047,8 +2047,8 @@
 <p>The rest remains unchanged.</p>
 <p>The results obtained in <strong>[pgAdmin]</strong> are as follows:</p>
 <p><img src="images/10000000000003F50000029C1102C03E.png" style="width:11.689cm;height:7.708cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003F50000029C1102C03E.png" /></p>
-<p><a id="refheadingtoc2522292924280206"></a>
-<a id="toc48549069"></a></p>
+<p><a id="toc48549069"></a>
+<a id="refheadingtoc2522292924280206"></a></p>
 <h2 id="175-conclusion">17.5. <span style="color: #4f81bd">Conclusion</span></h2>
 <p>Porting the MySQL scripts to PostgreSQL scripts was relatively easy. This is an exception. The two DBMSs do not support the same naming conventions for SQL objects (databases, tables, columns, constraints, data types, etc.), and have incompatible SQL extensions… To ensure a simple port, one must adhere to the SQL standard in both cases without attempting to use the DBMS’s proprietary extensions. This comes at the expense of performance.</p>
 

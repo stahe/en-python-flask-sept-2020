@@ -1540,8 +1540,8 @@
 
 
 
-<p><a id="toc48549226"></a>
-<a id="exercicedapplication7"></a></p>
+<p><a id="exercicedapplication7"></a>
+<a id="toc48549226"></a></p>
 <h1 id="29-application-exercise-version-11">29. <span style="color: #365f91">Application exercise: version 11</span></h1>
 <p><a id="toc48549227"></a></p>
 <h2 id="291-introduction">29.1. <span style="color: #4f81bd">Introduction</span></h2>
@@ -1603,14 +1603,14 @@
 <span class="odt-code-line"><span style="color:#000000">    error = dbsystem != </span><span style="color:#a31515">&quot;mysql&quot; </span><span style="color:#0000ff">and </span><span style="color:#000000">dbsystem != </span><span style="color:#a31515">&quot;pgres&quot;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;syntax: </span><span style="color:#000000">{syntax}</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    sys.exit()</span></span>
+<span class="odt-code-line">    sys.exit()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># configure the application</span>
 <span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">config</span></span>
 <span class="odt-code-line"><span style="color:#000000">config = config.configure({</span><span style="color:#a31515">&#x27;db</span><span style="color:#000000">&#x27;: db})</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># dependencies</span>
-<span class="odt-code-line"><span style="color:#0000ff">…</span></span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Retrieve data from the tax authority</span>
 <span class="odt-code-line"><span style="color:#000000">error = </span><span style="color:#0000ff">False</span></span>
@@ -1621,14 +1621,14 @@
 <span class="odt-code-line"><span style="color:#000000">    logger.write(</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[server] </span><span style="color:#a31515">Successful database connection\n&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">ImpôtsError </span><span style="color:#0000ff">as </span><span style="color:#000000">ex:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># log the error</span>
-<span class="odt-code-line"><span style="color:#000000">    …</span></span>
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">    …</span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line"># if there was an error, stop</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    sys.exit(</span><span style="color:#098658">2</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the Flask application can start</span>
-<span class="odt-code-line"><span style="color:#000000">app = Flask(__name__)</span></span>
+<span class="odt-code-line">app = Flask(__name__)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># main controller</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">main_controller() -&gt; tuple:</span></span>
@@ -1640,7 +1640,7 @@
 <span class="odt-code-line"><span style="color:#000000">        logger = Logger(config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;logsFilename&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># store it in a thread-specific configuration</span>
 <span class="odt-code-line"><span style="color:#000000">        thread_config = {</span><span style="color:#a31515">&quot;logger&quot;</span><span style="color:#000000">: logger}</span></span>
-<span class="odt-code-line"><span style="color:#000000">        thread_name = threading.current_thread().name</span></span>
+<span class="odt-code-line">        thread_name = threading.current_thread().name</span>
 <span class="odt-code-line"><span style="color:#000000">        config</span><span style="font-weight:bold;color:#000000">[thread_name] </span><span style="color:#000000">= {</span><span style="color:#a31515">&quot;config&quot;</span><span style="color:#000000">: thread_config}</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># log the request</span>
 <span class="odt-code-line"><span style="color:#000000">        logger.write(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[index] </span><span style="color:#a31515">request: </span><span style="color:#000000">{request}\n</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
@@ -1653,7 +1653,7 @@
 <span class="odt-code-line"><span style="color:#000000">                </span># log before pause</span>
 <span class="odt-code-line"><span style="color:#000000">                logger.write(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[index] </span><span style="color:#a31515">thread paused for </span><span style="color:#000000">{sleep_time} </span><span style="color:#a31515">second(s)</span><span style="color:#000000">\n</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span># pause</span>
-<span class="odt-code-line"><span style="color:#000000">                time.sleep(sleep_time)</span></span>
+<span class="odt-code-line">                time.sleep(sleep_time)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># have the request executed by the request controller</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#000000">controller = config</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">[</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;controllers&#x27;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">][action]</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#000000">result, status_code = controller.execute(request, config)</span></span>
@@ -1666,7 +1666,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># Log the response</span>
 <span class="odt-code-line"><span style="color:#000000">        logger.write(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[index] </span><span style="color:#000000">{result}\n</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># send the response</span>
-<span class="odt-code-line"><span style="color:#000000">        print(result)</span></span>
+<span class="odt-code-line">        print(result)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">json_response(result, status_code)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">except </span><span style="color:#000000">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># log the error if possible</span>
@@ -1679,18 +1679,18 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Close the log file if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">logger:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            logger.close()</span></span>
+<span class="odt-code-line">            logger.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># calculate the tax</span>
 <span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/calculate-tax&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;POST&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">@auth.login_required</span></span>
+<span class="odt-code-line">@auth.login_required</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="background-color:#fff2cc;color:#000000">calculate_tax</span><span style="color:#000000">():</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Pass control to the main controller</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">main_controller()</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># retrieve data from the tax administration</span>
 <span class="odt-code-line"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/get-admindata&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">@auth.login_required</span></span>
+<span class="odt-code-line">@auth.login_required</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="background-color:#fff2cc;color:#000000">get_admindata</span><span style="color:#000000">():</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Pass control to the main controller</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">main_controller()</span></span>
@@ -1747,7 +1747,7 @@
 <p><img src="images/10000000000003F7000002A033324B17.png" style="width:11.719cm;height:7.759cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003F7000002A033324B17.png" /></p>
 <p>In the Postman console, the client/server dialogue is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="background-color:#bdd6ee">POST /calculate-tax HTTP/1.1</span></span>
+<span class="odt-code-line">POST /calculate-tax HTTP/1.1</span>
 <span class="odt-code-line">Authorization: Basic YWRtaW46YWRtaW4=</span>
 <span class="odt-code-line">Content-Type: application/json</span>
 <span class="odt-code-line">User-Agent: PostmanRuntime/7.26.2</span>
@@ -1759,22 +1759,22 @@
 <span class="odt-code-line">Connection: keep-alive</span>
 <span class="odt-code-line">Content-Length: 824</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="font-weight:bold">[ </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">{ </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">&quot;married&quot;: &quot;yes&quot;, </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">&quot;children&quot;: 2, </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">&quot;salary&quot;: 55555 </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">}, </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">…</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">{ </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">&quot;married&quot;: &quot;yes&quot;, </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">&quot;children&quot;: 3, </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">&quot;salary&quot;: 200,000 </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">} </span></span>
-<span class="odt-code-line"><span style="font-weight:bold">]</span></span>
+<span class="odt-code-line">[ </span>
+<span class="odt-code-line">{ </span>
+<span class="odt-code-line">&quot;married&quot;: &quot;yes&quot;, </span>
+<span class="odt-code-line">&quot;children&quot;: 2, </span>
+<span class="odt-code-line">&quot;salary&quot;: 55555 </span>
+<span class="odt-code-line">}, </span>
+<span class="odt-code-line">…</span>
+<span class="odt-code-line">{ </span>
+<span class="odt-code-line">&quot;married&quot;: &quot;yes&quot;, </span>
+<span class="odt-code-line">&quot;children&quot;: 3, </span>
+<span class="odt-code-line">&quot;salary&quot;: 200,000 </span>
+<span class="odt-code-line">} </span>
+<span class="odt-code-line">]</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">HTTP/1.0 200 OK</span></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">Content-Type: application/json; charset=utf-8</span></span>
+<span class="odt-code-line">HTTP/1.0 200 OK</span>
+<span class="odt-code-line">Content-Type: application/json; charset=utf-8</span>
 <span class="odt-code-line">Content-Length: 1461</span>
 <span class="odt-code-line">Server: Werkzeug/1.0.1 Python/3.8.1</span>
 <span class="odt-code-line">Date: Wed, 29 Jul 2020 07:02:07 GMT</span>
@@ -1786,7 +1786,7 @@
 <p><img src="images/10000000000002F9000000C1F96A179D.png" style="width:8.772cm;height:2.224cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002F9000000C1F96A179D.png" /></p>
 <p>The client/server dialogue in the Postman console is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="background-color:#bdd6ee">GET /get-admindata HTTP/1.1</span></span>
+<span class="odt-code-line">GET /get-admindata HTTP/1.1</span>
 <span class="odt-code-line">Authorization: Basic YWRtaW46YWRtaW4=</span>
 <span class="odt-code-line">User-Agent: PostmanRuntime/7.26.2</span>
 <span class="odt-code-line">Accept: */*</span>
@@ -1796,8 +1796,8 @@
 <span class="odt-code-line">Accept-Encoding: gzip, deflate, br</span>
 <span class="odt-code-line">Connection: keep-alive</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">HTTP/1.0 200 OK</span></span>
-<span class="odt-code-line"><span style="background-color:#bdd6ee">Content-Type: application/json; charset=utf-8</span></span>
+<span class="odt-code-line">HTTP/1.0 200 OK</span>
+<span class="odt-code-line">Content-Type: application/json; charset=utf-8</span>
 <span class="odt-code-line">Content-Length: 596</span>
 <span class="odt-code-line">Server: Werkzeug/1.0.1 Python/3.8.1</span>
 <span class="odt-code-line">Date: Wed, 29 Jul 2020 07:07:24 GMT</span>
@@ -1844,10 +1844,10 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># TaxDaoWithHttpClient</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../services&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># configuration scripts</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        script_dir,</span></span>
+<span class="odt-code-line">        script_dir,</span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># Logger</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/http-servers/02/utilities&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 </code></pre></div>
 
 <p>Then the <strong>[config_layers]</strong> file must be modified:</p>
@@ -1940,12 +1940,12 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># connection</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;authBasic&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            response = requests.get(url_service,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                    auth=(</span></span>
+<span class="odt-code-line">            response = requests.get(url_service,</span>
+<span class="odt-code-line">                                    auth=(</span>
 <span class="odt-code-line"><span style="color:#000000">                                        config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;login&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                        config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;user&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;password&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">))</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            response = requests.get(url_service)</span></span>
+<span class="odt-code-line">            response = requests.get(url_service)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># debug mode?</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if self</span><span style="color:#000000">.__debug:</span></span>
@@ -1956,9 +1956,9 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">self</span><span style="color:#000000">.__logger.write(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{response.text}\n</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># status code</span>
-<span class="odt-code-line"><span style="color:#000000">        status_code = response.status_code</span></span>
+<span class="odt-code-line">        status_code = response.status_code</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># result as a dictionary</span>
-<span class="odt-code-line"><span style="color:#000000">        result = json.loads(response.text)</span></span>
+<span class="odt-code-line">        result = json.loads(response.text)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># if status code is not 200 OK</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">status_code != status.HTTP_200_OK:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#000000">ImpôtsError(</span><span style="color:#098658">58</span><span style="color:#000000">, result</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;response&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;errors&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
@@ -1991,12 +1991,12 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;user&quot;</span><span style="color:#000000">: {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;login&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;admin&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;password&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;admin&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            },</span></span>
+<span class="odt-code-line">            },</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;url_services&quot;</span><span style="color:#000000">: {</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;calculate-tax&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/calculate-tax&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;get-admindata&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/get-admindata&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        },</span>
 </code></pre></div>
 
 <ul>
@@ -2025,7 +2025,7 @@
 <span class="odt-code-line"># configure the application</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#000000">config</span></span>
-<span class="odt-code-line"><span style="color:#000000">config = config.configure({})</span></span>
+<span class="odt-code-line">config = config.configure({})</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># dependencies</span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#000000">ImpôtsError </span><span style="color:#0000ff">import </span><span style="color:#000000">ImpôtsError</span></span>
@@ -2048,13 +2048,13 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if not </span><span style="color:#000000">taxpayers:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">raise </span><span style="color:#000000">ImpôtsError(</span><span style="color:#098658">36</span><span style="color:#000000">, </span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;No valid taxpayers in the file </span><span style="color:#000000">{config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;taxpayersFilename&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># retrieve data from the tax authority</span>
-<span class="odt-code-line"><span style="color:#000000">    admindata = dao.get_admindata()</span></span>
+<span class="odt-code-line">    admindata = dao.get_admindata()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Calculate taxpayers&#x27; taxes using the <span style="font-weight:bold">[business] </span>layer</span>
 <span class="odt-code-line"><span style="color:#000000">    business = config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;layers&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;business&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">taxpayer </span><span style="color:#0000ff">in </span><span style="color:#000000">taxpayers:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        business.calculate_tax(taxpayer, admindata)</span></span>
+<span class="odt-code-line">        business.calculate_tax(taxpayer, admindata)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Save the results to the JSON file</span>
-<span class="odt-code-line"><span style="color:#000000">    dao.write_taxpayers_results(taxpayers)</span></span>
+<span class="odt-code-line">    dao.write_taxpayers_results(taxpayers)</span>
 <span class="odt-code-line"># except BaseException as error:</span>
 <span class="odt-code-line">#     # display the error</span>
 <span class="odt-code-line">#     print(f&quot;The following error occurred: {error}&quot;)</span>
@@ -2064,7 +2064,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># End log</span>
 <span class="odt-code-line"><span style="color:#000000">        logger.write(</span><span style="color:#a31515">&quot;End of taxpayer tax calculation\n&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Close the logger</span>
-<span class="odt-code-line"><span style="color:#000000">        logger.close()</span></span>
+<span class="odt-code-line">        logger.close()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># we&#x27;re done</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Work completed...&quot;</span><span style="color:#000000">)</span></span>
 </code></pre></div>

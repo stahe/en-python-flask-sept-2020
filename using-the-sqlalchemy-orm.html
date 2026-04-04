@@ -1623,8 +1623,8 @@
 
 
 
-<p><a id="toc48549071"></a>
-<a id="utilisationdelorm"></a></p>
+<p><a id="utilisationdelorm"></a>
+<a id="toc48549071"></a></p>
 <h1 id="19-using-the-sqlalchemy-orm">19. <span style="color: #365f91">Using the SQLAlchemy ORM</span></h1>
 <p>The previous chapter showed that in some cases, we can write code independent of the DBMS used with the following architecture:</p>
 <p><img src="images/10000000000003B4000000E6700B9C1D.png" style="width:10.95cm;height:2.656cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B4000000E6700B9C1D.png" /></p>
@@ -1672,7 +1672,7 @@
 <span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># BaseEntity, MyException, Person, Utils</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold">&quot;</span><span style="font-weight:bold;color:#000000">{root_dir}</span><span style="font-weight:bold">/classes/02/entities&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Set the syspath</span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -1711,7 +1711,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">Person </span><span style="color:#0000ff">import </span><span style="color:#2b91af">Person</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># metadata</span>
-<span class="odt-code-line"><span style="color:#000000">metadata = MetaData()</span></span>
+<span class="odt-code-line">metadata = MetaData()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the table</span>
 <span class="odt-code-line"><span style="color:#000000">people_table = Table(</span><span style="color:#a31515">&quot;people&quot;</span><span style="color:#000000">, metadata,</span></span>
@@ -1720,7 +1720,7 @@
 <span class="odt-code-line"><span style="color:#000000">                        Column(</span><span style="color:#a31515">&quot;name&quot;</span><span style="color:#000000">, String(30), </span><span style="color:#0000ff">nullable=False</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        Column(</span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">, Integer, </span><span style="color:#0000ff">nullable=False</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        UniqueConstraint(</span><span style="color:#a31515">&#x27;last_name&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;first_name&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">name=&#x27;uix_1&#x27;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">                        )</span></span>
+<span class="odt-code-line">                        )</span>
 <span class="odt-code-line"># the Person class before mapping</span>
 <span class="odt-code-line"><span style="color:#000000">person1 = </span><span style="color:#2b91af">Person</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 67, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 10})</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;person1={person1.__dict__}&quot;</span><span style="color:#000000">)</span></span>
@@ -1731,7 +1731,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&#x27;first_name</span><span style="color:#000000">&#x27;: people_table.c.first_name,</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&#x27;last_name</span><span style="color:#000000">&#x27;: people_table.c.last_name,</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&#x27;age</span><span style="color:#000000">&#x27;: people_table.c.age</span></span>
-<span class="odt-code-line"><span style="color:#000000">})</span></span>
+<span class="odt-code-line">})</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># person1 has not been modified</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;person1={person1.__dict__}&quot;</span><span style="color:#000000">)</span></span>
@@ -1863,7 +1863,7 @@
 <span class="odt-code-line"><span style="color:#000000">engine = create_engine(</span><span style="color:#a31515">&quot;mysql+mysqlconnector://admpersonnes:nobody@localhost/dbpersonnes&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># metadata</span>
-<span class="odt-code-line"><span style="color:#000000">metadata = MetaData()</span></span>
+<span class="odt-code-line">metadata = MetaData()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the table</span>
 <span class="odt-code-line"><span style="color:#000000">people_table = Table(</span><span style="color:#a31515">&quot;people&quot;</span><span style="color:#000000">, metadata,</span></span>
@@ -1872,7 +1872,7 @@
 <span class="odt-code-line"><span style="color:#000000">                        Column(</span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">, String(30), </span><span style="color:#0000ff">nullable=False</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        Column(</span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">, Integer, </span><span style="color:#0000ff">nullable=False</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">                        UniqueConstraint(</span><span style="color:#a31515">&#x27;last_name&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;first_name&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">name=&#x27;uix_1&#x27;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">                        )</span></span>
+<span class="odt-code-line">                        )</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the mapping</span>
 <span class="odt-code-line"><span style="color:#000000">mapper(</span><span style="color:#2b91af">Person</span><span style="color:#000000">, people_table, properties={</span></span>
@@ -1880,22 +1880,22 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&#x27;first_name</span><span style="color:#000000">&#x27;: people_table.c.first_name,</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&#x27;last_name</span><span style="color:#000000">&#x27;: people_table.c.last_name,</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#a31515">&#x27;age</span><span style="color:#000000">&#x27;: people_table.c.age</span></span>
-<span class="odt-code-line"><span style="color:#000000">})</span></span>
+<span class="odt-code-line">})</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the session factory</span>
-<span class="odt-code-line"><span style="color:#000000">Session = sessionmaker()</span></span>
-<span class="odt-code-line"><span style="color:#000000">Session.configure(bind=engine)</span></span>
+<span class="odt-code-line">Session = sessionmaker()</span>
+<span class="odt-code-line">Session.configure(bind=engine)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">session = </span><span style="color:#0000ff">None</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># a session</span>
-<span class="odt-code-line"><span style="color:#000000">    session = Session()</span></span>
+<span class="odt-code-line">    session = Session()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Delete the <span style="font-weight:bold">[people] </span>table</span>
 <span class="odt-code-line"><span style="color:#000000">    session.execute(</span><span style="color:#a31515">&quot;drop table if exists people&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># recreate the table from the mapping</span>
-<span class="odt-code-line"><span style="color:#000000">    metadata.create_all(engine)</span></span>
+<span class="odt-code-line">    metadata.create_all(engine)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># an insertion</span>
 <span class="odt-code-line"><span style="color:#000000">    session.add(</span><span style="color:#2b91af">Person</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 67, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 10}))</span></span>
@@ -1907,7 +1907,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;List of people ---------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">person </span><span style="color:#0000ff">in </span><span style="color:#000000">people:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(person)</span></span>
+<span class="odt-code-line">        print(person)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># two more insertions, the second of which fails due to the uniqueness constraint (first_name, last_name)</span>
 <span class="odt-code-line"><span style="color:#000000">    session.add(</span><span style="color:#2b91af">Person</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 68, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x1&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y1&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 10}))</span></span>
@@ -1919,10 +1919,10 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;List of people ---------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">person </span><span style="color:#0000ff">in </span><span style="color:#000000">people:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(person)</span></span>
+<span class="odt-code-line">        print(person)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># commit the session</span>
-<span class="odt-code-line"><span style="color:#000000">    session.commit()</span></span>
+<span class="odt-code-line">    session.commit()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, IntegrityError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
@@ -1930,11 +1930,11 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># rollback the last session</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">session:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">&quot;rollback...&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        session.rollback()</span></span>
+<span class="odt-code-line">        session.rollback()</span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># release session resources</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">session:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        session.close()</span></span>
+<span class="odt-code-line">        session.close()</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -2030,8 +2030,8 @@
 <span class="odt-code-line">{&quot;last_name&quot;: &quot;y&quot;, &quot;first_name&quot;: &quot;x&quot;, &quot;id&quot;: 67, &quot;age&quot;: 10}</span>
 <span class="odt-code-line">The following error occurred: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)</span>
 <span class="odt-code-line">(<span style="background-color:#fff2cc">mysql.connector.errors.IntegrityError</span>) 1062 (23000): <span style="background-color:#fff2cc">Duplicate entry &#x27;y1-x1&#x27; for key &#x27;uix_1&#x27;</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[SQL: INSERT INTO people (id, first_name, last_name, age) VALUES (%(id)s, %(first_name)s, %(last_name)s, %(age)s)]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[parameters: ({&#x27;id&#x27;: 68, &#x27;first_name&#x27;: &#x27;x1&#x27;, &#x27;last_name&#x27;: &#x27;y1&#x27;, &#x27;age&#x27;: 10}, {&#x27;id&#x27;: 69, &#x27;first_name&#x27;: &#x27;x1&#x27;, &#x27;last_name&#x27;: &#x27;y1&#x27;, &#x27;age&#x27;: 10})]</span></span>
+<span class="odt-code-line">[SQL: INSERT INTO people (id, first_name, last_name, age) VALUES (%(id)s, %(first_name)s, %(last_name)s, %(age)s)]</span>
+<span class="odt-code-line">[parameters: ({&#x27;id&#x27;: 68, &#x27;first_name&#x27;: &#x27;x1&#x27;, &#x27;last_name&#x27;: &#x27;y1&#x27;, &#x27;age&#x27;: 10}, {&#x27;id&#x27;: 69, &#x27;first_name&#x27;: &#x27;x1&#x27;, &#x27;last_name&#x27;: &#x27;y1&#x27;, &#x27;age&#x27;: 10})]</span>
 <span class="odt-code-line">(Background on this error at: http://sqlalche.me/e/13/gkpj)</span>
 <span class="odt-code-line">rollback...</span>
 <span class="odt-code-line"></span>
@@ -2060,8 +2060,8 @@
 <p>After adding a person on line 2, we uncomment line 3. The <strong>[session.commit]</strong> operation will commit the underlying transaction, and a new transaction will begin. After execution, the contents of the <strong>[people]</strong> table are as follows:</p>
 <p><img src="images/10000000000005EB00000225B4EB43EE.png" style="width:17.521cm;height:6.348cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005EB00000225B4EB43EE.png" /></p>
 <p>We can see in <strong>[6]</strong> that the first insertion was retained. This is because it was performed within transaction 1, and the subsequent error occurred within transaction 2.</p>
-<p><a id="toc48549077"></a>
-<a id="scripts02"></a></p>
+<p><a id="scripts02"></a>
+<a id="toc48549077"></a></p>
 <h2 id="193-scripts-02-sqlalchemy-mappings">19.3. <span style="color: #4f81bd">Scripts 02: [sqlalchemy] mappings</span></h2>
 <p><img src="images/1000000000000137000001D285EAF188.png" style="width:3.59cm;height:5.38cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000137000001D285EAF188.png" /></p>
 <p>Scripts 02 are a variation of Scripts 01. We try to configure as much as possible in <strong>[config.py]</strong>. We now configure the application’s <strong>[sqlalchemy]</strong> environment there:</p>
@@ -2073,7 +2073,7 @@
 <span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># BaseEntity, MyException, Person, Utils</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold">&quot;</span><span style="font-weight:bold;color:#000000">{root_dir}</span><span style="font-weight:bold">/classes/02/entities&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Set the syspath</span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -2166,10 +2166,10 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># two inserts</span>
 <span class="odt-code-line"><span style="color:#000000">    session.add(</span><span style="color:#2b91af">Person</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 10}))</span></span>
 <span class="odt-code-line"><span style="color:#000000">    person = </span><span style="color:#2b91af">Person</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x1&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y1&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 7})</span></span>
-<span class="odt-code-line"><span style="color:#000000">    session.add(person)</span></span>
+<span class="odt-code-line">    session.add(person)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># commit both inserts</span>
-<span class="odt-code-line"><span style="color:#000000">    session.commit()</span></span>
+<span class="odt-code-line">    session.commit()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># a query</span>
 <span class="odt-code-line"><span style="color:#000000">    people = session.query(</span><span style="color:#2b91af">Person</span><span style="color:#000000">).all()</span></span>
@@ -2177,7 +2177,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;List of people-----------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">person </span><span style="color:#0000ff">in </span><span style="color:#000000">people:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(person)</span></span>
+<span class="odt-code-line">        print(person)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># two more insertions, the second of which fails</span>
 <span class="odt-code-line"><span style="color:#000000">    session.add(</span><span style="color:#2b91af">Person</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;x2&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;y2&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 10}))</span></span>
@@ -2189,10 +2189,10 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;List of people-----------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">person </span><span style="color:#0000ff">in </span><span style="color:#000000">people:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(person)</span></span>
+<span class="odt-code-line">        print(person)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># commit the session</span>
-<span class="odt-code-line"><span style="color:#000000">    session.commit()</span></span>
+<span class="odt-code-line">    session.commit()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(FlushError, DatabaseError, InterfaceError, IntegrityError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
@@ -2200,13 +2200,13 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># rollback the last session</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">session:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">&quot;rollback...&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        session.rollback()</span></span>
+<span class="odt-code-line">        session.rollback()</span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Work completed...&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># release session resources</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">session:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        session.close()</span></span>
+<span class="odt-code-line">        session.close()</span>
 </code></pre></div>
 
 <p>The results of the execution are as follows:</p>
@@ -2217,8 +2217,8 @@
 <span class="odt-code-line">{&quot;age&quot;: 7, &quot;last_name&quot;: &quot;y1&quot;, &quot;first_name&quot;: &quot;x1&quot;, &quot;id&quot;: 2}</span>
 <span class="odt-code-line">The following error occurred: (raised as a result of Query-invoked autoflush; consider using a session.no_autoflush block if this flush is occurring prematurely)</span>
 <span class="odt-code-line">(<span style="background-color:#fff2cc">mysql.connector.errors.IntegrityError</span>) 1062 (23000): Duplicate entry &#x27;y2-x2&#x27; for key &#x27;uix_1&#x27;</span>
-<span class="odt-code-line"><span style="font-weight:bold">[SQL: INSERT INTO people (first_name, last_name, age) VALUES (%(first_name)s, %(last_name)s, %(age)s)]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[parameters: {&#x27;first_name&#x27;: &#x27;x2&#x27;, &#x27;last_name&#x27;: &#x27;y2&#x27;, &#x27;age&#x27;: 10}]</span></span>
+<span class="odt-code-line">[SQL: INSERT INTO people (first_name, last_name, age) VALUES (%(first_name)s, %(last_name)s, %(age)s)]</span>
+<span class="odt-code-line">[parameters: {&#x27;first_name&#x27;: &#x27;x2&#x27;, &#x27;last_name&#x27;: &#x27;y2&#x27;, &#x27;age&#x27;: 10}]</span>
 <span class="odt-code-line">(Background on this error at: http://sqlalche.me/e/13/gkpj)</span>
 <span class="odt-code-line">rollback...</span>
 <span class="odt-code-line">Job completed...</span>
@@ -2262,14 +2262,14 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># a query</span>
 <span class="odt-code-line"><span style="color:#000000">    people = </span><span style="color:#808080">session</span><span style="color:#000000">.query(</span><span style="color:#2b91af">Person</span><span style="color:#000000">).all()</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
-<span class="odt-code-line"><span style="color:#000000">    display_people(people)</span></span>
+<span class="odt-code-line">    display_people(people)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># displays a list of people</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">display_people(</span><span style="color:#808080">people</span><span style="color:#000000">: </span><span style="color:#2b91af">list</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;----------------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">person </span><span style="color:#0000ff">in </span><span style="color:#808080">people</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(person)</span></span>
+<span class="odt-code-line">        print(person)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># main ---------------------------</span>
@@ -2291,13 +2291,13 @@
 <span class="odt-code-line"><span style="color:#000000">    session.add(</span><span style="color:#2b91af">Person</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Paulette&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Girondé&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 56}))</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the contents of the session</span>
-<span class="odt-code-line"><span style="color:#000000">    display_table(session)</span></span>
+<span class="odt-code-line">    display_table(session)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of people in alphabetical order by last name, and for those with the same last name, in alphabetical order by first name</span>
 <span class="odt-code-line"><span style="color:#000000">    people = session.query(</span><span style="color:#2b91af">Person</span><span style="color:#000000">).order_by(</span><span style="color:#2b91af">Person</span><span style="color:#000000">.last_name.desc(), </span><span style="color:#2b91af">Person</span><span style="color:#000000">.first_name.desc())</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
-<span class="odt-code-line"><span style="color:#000000">    display_people(people)</span></span>
+<span class="odt-code-line">    display_people(people)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of people aged between<span style="font-weight:bold"> 20 and 40, </span>sorted by age in descending order</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># then, for people of the same age, in alphabetical order by last name, and for people with the same last name, in alphabetical order by first name</span>
@@ -2306,13 +2306,13 @@
 <span class="odt-code-line"><span style="color:#000000">        order_by(</span><span style="color:#2b91af">Person</span><span style="color:#000000">.age.desc(), </span><span style="color:#2b91af">Person</span><span style="color:#000000">.last_name.asc(), </span><span style="color:#2b91af">Person</span><span style="color:#000000">.first_name.asc())</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
-<span class="odt-code-line"><span style="color:#000000">    display_people(people)</span></span>
+<span class="odt-code-line">    display_people(people)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># insert Mrs. Bruneau</span>
 <span class="odt-code-line"><span style="color:#000000">    bruneau = </span><span style="color:#2b91af">Person</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Josette&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Bruneau&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 46})</span></span>
-<span class="odt-code-line"><span style="color:#000000">    session.add(bruneau)</span></span>
+<span class="odt-code-line">    session.add(bruneau)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># changing her age</span>
-<span class="odt-code-line"><span style="color:#000000">    bruneau.age = 47</span></span>
+<span class="odt-code-line">    bruneau.age = 47</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># List of people with the last name Bruneau</span>
 <span class="odt-code-line"><span style="color:#000000">    person = session.query(</span><span style="color:#2b91af">Person</span><span style="color:#000000">).filter(func.lower(</span><span style="color:#2b91af">Person</span><span style="color:#000000">.lastName) == </span><span style="color:#a31515">&quot;bruneau&quot;</span><span style="color:#000000">).first()</span></span>
@@ -2321,13 +2321,13 @@
 <span class="odt-code-line"><span style="color:#000000">    display_people(</span><span style="font-weight:bold;color:#000000">[person]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Delete Ms. Bruneau</span>
-<span class="odt-code-line"><span style="color:#000000">    session.delete(person)</span></span>
+<span class="odt-code-line">    session.delete(person)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of people with the last name Bruneau</span>
 <span class="odt-code-line"><span style="color:#000000">    people = session.query(</span><span style="color:#2b91af">Person</span><span style="color:#000000">).filter(func.lower(</span><span style="color:#2b91af">Person</span><span style="color:#000000">.last_name) == </span><span style="color:#a31515">&quot;bruneau&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
-<span class="odt-code-line"><span style="color:#000000">    display_people(people)</span></span>
+<span class="odt-code-line">    display_people(people)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># commit the session</span>
 <span class="odt-code-line"><span style="color:#000000">    session.commit()</span></span>
@@ -2337,14 +2337,14 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># rollback the last session</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">session:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        session.rollback()</span></span>
+<span class="odt-code-line">        session.rollback()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Work completed...&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># release session resources</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">session:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        session.close()</span></span>
+<span class="odt-code-line">        session.close()</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -2626,7 +2626,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#000000">MyException(42, </span><span style="color:#a31515">f&quot;The first name of student {self.id} must be a non-empty string&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    @class.setter</span></span>
+<span class="odt-code-line">    @class.setter</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">class(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">value</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Expects a Class type</span>
@@ -2742,7 +2742,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#000000">MyException(31,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">f&quot;The {value} attribute of the {self.id} grade must be a number in the range </span><span style="font-weight:bold;color:#a31515">[0,20]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    @student.setter</span></span>
+<span class="odt-code-line">    @student.setter</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">student(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">value</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># we expect a Student type</span>
@@ -2758,7 +2758,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#000000">MyException(32,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">f&quot;The </span><span style="font-weight:bold;color:#a31515">[{value}] </span><span style="color:#a31515">attribute of grade {self.id} must be of type Student, dict, or json. Error: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    @subject.setter</span></span>
+<span class="odt-code-line">    @subject.setter</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">subject(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">value</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># we expect a Subject type</span>
@@ -2775,8 +2775,8 @@
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">f&quot;The </span><span style="font-weight:bold;color:#a31515">[{value}] </span><span style="color:#a31515">attribute of note {self.id} must be of type Subject or dict or json. Error: {error}&quot;</span><span style="color:#000000">)</span></span>
 </code></pre></div>
 
-<p><a id="toc48549084"></a>
-<a id="configuration"></a></p>
+<p><a id="configuration"></a>
+<a id="toc48549084"></a></p>
 <h3 id="1964-configuration">19.6.4. <span style="color: #4f81bd">Configuration</span></h3>
 <p><img src="images/1000000000000193000001C3ED33463B.png" style="width:4.65cm;height:5.203cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000193000001C3ED33463B.png" /></p>
 <p>The configuration has been split across several files:</p>
@@ -2811,9 +2811,9 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold">&quot;</span><span style="font-weight:bold;color:#000000">{root_dir}</span><span style="font-weight:bold">/troiscouches/v01/services&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold">&quot;</span><span style="font-weight:bold;color:#000000">{root_dir}</span><span style="font-weight:bold">/three-layers/v01/entities&quot;</span><span style="font-weight:bold;color:#000000">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># folders for this project</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        script_dir,</span></span>
+<span class="odt-code-line">        script_dir,</span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../services&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># update the syspath</span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -3149,32 +3149,32 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">class </span><span style="color:#2b91af">InterfaceDao</span><span style="color:#000000">(</span><span style="color:#2b91af">ABC</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of classes</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_classes(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">list</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of students</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_students(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">list</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of subjects</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_subjects(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">list</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of grades</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_grades(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">list</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># list of a student&#x27;s grades</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_grades_for_student_by_id(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">student_id</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">list</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># search for a student by their ID</span>
-<span class="odt-code-line"><span style="color:#000000">    @abstractmethod</span></span>
+<span class="odt-code-line">    @abstractmethod</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">get_student_by_id(</span><span style="color:#808080">self</span><span style="color:#000000">: </span><span style="color:#2b91af">object</span><span style="color:#000000">, </span><span style="color:#808080">student_id</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; Student:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span>
 </code></pre></div>
@@ -3200,7 +3200,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">    <span style="color:#0000ff">def </span>init_database(<span style="color:#808080">self</span>, <span style="color:#808080">data</span>: <span style="color:#2b91af">dict</span>):</span>
 <span class="odt-code-line">        <span style="color:#008000">…</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">…</span></span>
+<span class="odt-code-line">…</span>
 </code></pre></div>
 
 <ul>
@@ -3590,7 +3590,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&#x27;value</span><span style="color:#000000">&#x27;: notes_table.c.value,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&#x27;student</span><span style="color:#000000">&#x27;: relationship(Student, backref=</span><span style="color:#a31515">&quot;notes&quot;</span><span style="color:#000000">, lazy=</span><span style="color:#a31515">&quot;select&quot;</span><span style="color:#000000">),</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&#x27;subject</span><span style="color:#000000">&#x27;: relationship(Subject, backref=</span><span style="color:#a31515">&quot;grades&quot;</span><span style="color:#000000">, lazy=</span><span style="color:#a31515">&quot;select&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    })</span></span>
+<span class="odt-code-line">    })</span>
 </code></pre></div>
 
 <p>Above is the mapping between the <strong>[Note]</strong> entity and the <strong>[notes]</strong> table:</p>
@@ -3629,10 +3629,10 @@
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># student by id</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;student id=11 -----------&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    student = dao.get_student_by_id(11)</span></span>
+<span class="odt-code-line">    student = dao.get_student_by_id(11)</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;student={student}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># the student&#x27;s class (lazy loading)</span>
-<span class="odt-code-line"><span style="color:#000000">    class = student.class</span></span>
+<span class="odt-code-line">    class = student.class</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;student&#x27;s class: {class}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># students in the same class (lazy loading)</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;students in the same class:&quot;</span><span style="color:#000000">)</span></span>
@@ -3648,7 +3648,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># a student&#x27;s grades</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;grades for student id=11 -----------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># first, the student</span>
-<span class="odt-code-line"><span style="color:#000000">    student = dao.get_student_by_id(11)</span></span>
+<span class="odt-code-line">    student = dao.get_student_by_id(11)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># then their grades (lazy loading)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">grade </span><span style="color:#0000ff">in </span><span style="color:#000000">student.grades:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># the grade</span>
@@ -3662,13 +3662,13 @@
 <span class="odt-code-line"><span style="color:#000000">    class = dao.get_class_by_name(</span><span style="color:#a31515">&#x27;class1&#x27;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># then the students (lazy loading)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">student </span><span style="color:#0000ff">in </span><span style="color:#000000">class.students:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(student)</span></span>
+<span class="odt-code-line">        print(student)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># same for <span style="font-weight:bold">[class2]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;students in the class named &#x27;class2&#x27; -----------&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    class = dao.get_class_by_name(</span><span style="color:#a31515">&#x27;class2&#x27;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">student </span><span style="color:#0000ff">in </span><span style="color:#000000">class.students:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(student)</span></span>
+<span class="odt-code-line">        print(student)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># grades in a subject</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;subject named &#x27;subject1&#x27; -----------&quot;</span><span style="color:#000000">)</span></span>
@@ -3678,7 +3678,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># then the grades in that subject (lazy loading)</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Grades in the subject: &quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">grade </span><span style="color:#0000ff">in </span><span style="color:#000000">subject.grades:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(grade)</span></span>
+<span class="odt-code-line">        print(grade)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># same for subject2</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;subject with name=&#x27;subject2&#x27; -----------&quot;</span><span style="color:#000000">)</span></span>
@@ -3817,7 +3817,7 @@
 <span class="odt-code-line"><span style="color:#000000">ui = </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;ui&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># executing the <span style="font-weight:bold">[ui] </span>layer</span>
-<span class="odt-code-line"><span style="color:#000000">    ui.run()</span></span>
+<span class="odt-code-line">    ui.run()</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">ex1:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {ex1}&quot;</span><span style="color:#000000">)</span></span>

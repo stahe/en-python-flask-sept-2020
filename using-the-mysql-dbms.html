@@ -1518,19 +1518,19 @@
 
 
 
-<p><a id="toc48549048"></a>
+<p><a id="utilisationdusgbd"></a>
 <a id="refheading382942423505"></a>
-<a id="utilisationdusgbd"></a></p>
+<a id="toc48549048"></a></p>
 <h1 id="16-using-the-mysql-dbms">16. <span style="color: #365f91">Using the MySQL DBMS</span></h1>
 <p><img src="images/1000000000000168000001EB3E9DBFEB.png" style="width:3.731cm;height:5.089cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000168000001EB3E9DBFEB.png" /></p>
-<p><a id="toc48549049"></a>
+<p><a id="intallationdusgbd"></a>
 <a id="refheading382982423505"></a>
-<a id="intallationdusgbd"></a></p>
+<a id="toc48549049"></a></p>
 <h2 id="161-installing-the-mysql-dbms">16.1. <span style="color: #4f81bd">Installing the MySQL DBMS</span></h2>
 <p>To use the MySQL DBMS, we will install the Laragon software.</p>
-<p><a id="toc48549050"></a>
+<p><a id="installationdelaragon"></a>
 <a id="refheadingtoc45843531951845"></a>
-<a id="installationdelaragon"></a></p>
+<a id="toc48549050"></a></p>
 <h3 id="1611-installing-laragon">16.1.1. <span style="color: #4f81bd">Installing Laragon</span></h3>
 <p>Laragon is a package that combines several software components:</p>
 <ul>
@@ -1578,9 +1578,9 @@
   <li><b>[6]</b>: The <b>[Root] </b>button opens a Windows Explorer window positioned on the <b>[&lt;laragon&gt;/www] </b>folder, which is the root directory of the <b>[http://localhost] </b>website. This is where you should place the static web applications managed by Laragon’s Apache server;
   </li>
 </ul>
-<p><a id="toc48549051"></a>
+<p><a id="creationdunebase"></a>
 <a id="refheadingtoc837491549297239"></a>
-<a id="creationdunebase"></a></p>
+<a id="toc48549051"></a></p>
 <h3 id="1612-creating-a-database">16.1.2. <span style="color: #4f81bd">Creating a Database</span></h3>
 <p>We will now show you how to create a database and a MySQL user using the Laragon tool.</p>
 <p><img src="images/10000001000002F50000027CED1AB67B.png" style="width:11.282cm;height:9.477cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002F50000027CED1AB67B.png" /></p>
@@ -1680,8 +1680,8 @@
   <li>a user <b>[admpersonnes/nobody] </b>who has full privileges on this database;
   </li>
 </ul>
-<p><a id="refheading382962423505"></a>
-<a id="toc48549052"></a></p>
+<p><a id="toc48549052"></a>
+<a id="refheading382962423505"></a></p>
 <h2 id="162-installing-the-mysql-connector-python-package">16.2. <span style="color: #4f81bd">Installing the [mysql-connector-python] package</span></h2>
 <p>We will write Python scripts to use the database created earlier with the following architecture:</p>
 <p><img src="images/100000010000030B000000835DDD29BD.png" style="width:11.839cm;height:1.991cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000030B000000835DDD29BD.png" /></p>
@@ -1786,10 +1786,10 @@
 </ul>
 
 <p>To learn how to use the <strong>[mysql-connector-python]</strong> package to manage a MySQL database, visit the package’s website |<a href="https://dev.mysql.com/doc/connector-python/en/"><u><span style="color: #0563c1">https://dev.mysql.com/doc/connector-python/en/</span></u></a>|. The following section presents a series of examples.</p>
-<p><a id="toc48549053"></a>
-<a id="refheading383002423505"></a>
+<p><a id="scriptmysql01"></a>
 <a id="scriptmysql-01"></a>
-<a id="scriptmysql01"></a></p>
+<a id="refheading383002423505"></a>
+<a id="toc48549053"></a></p>
 <h2 id="163-script-mysql_01-connecting-to-a-mysql-database-1">16.3. <span style="color: #4f81bd">script [mysql_01]: connecting to a MySQL database - 1</span></h2>
 <p>The <strong>[mysql_01]</strong> script demonstrates the first step in using a database. It will allow us to verify that we can connect to the <strong>[dbpersonnes]</strong> database created earlier.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1808,9 +1808,9 @@
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Connecting to the MySQL DBMS...&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># connection</span>
-<span class="odt-code-line"><span style="color:#000000">    connection = connect(host=HOST, user=USER, password=PWD, database=DATABASE)</span></span>
+<span class="odt-code-line">    connection = connect(host=HOST, user=USER, password=PWD, database=DATABASE)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># tracking</span>
-<span class="odt-code-line"><span style="color:#000000">    print(</span></span>
+<span class="odt-code-line">    print(</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">f&quot;MySQL connection successful to database={DATABASE}, host={HOST} using user={USER}, password={PWD}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error</span>
@@ -1818,7 +1818,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># close the connection if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">connection:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        connection.close()</span></span>
+<span class="odt-code-line">        connection.close()</span>
 </code></pre></div>
 
 <p><strong>Notes</strong></p>
@@ -1864,10 +1864,10 @@
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a>Process finished with exit code 0
 </code></pre></div></td></tr></table></div>
-<p><a id="toc48549054"></a>
-<a id="refheading383022423505"></a>
+<p><a id="scriptmysql02"></a>
 <a id="scriptmysql-02"></a>
-<a id="scriptmysql02"></a></p>
+<a id="refheading383022423505"></a>
+<a id="toc48549054"></a></p>
 <h2 id="164-script-mysql_02-connecting-to-a-mysql-database-2">16.4. <span style="color: #4f81bd">script [mysql_02]: connecting to a MySQL database - 2</span></h2>
 <p>In this new script, the database connection is encapsulated in a function:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1883,12 +1883,12 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># connection</span>
 <span class="odt-code-line"><span style="color:#000000">        connection = connect(</span><span style="color:#808080">host=host</span><span style="color:#000000">, </span><span style="color:#808080">user=login</span><span style="color:#000000">, </span><span style="color:#808080">password=pwd</span><span style="color:#000000">, </span><span style="color:#808080">database=database</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(</span></span>
+<span class="odt-code-line">        print(</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">f&quot;Connection successful to database={database}, host={host} as user={login}, passwd={pwd}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Close the connection if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">connection:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            connection.close()</span></span>
+<span class="odt-code-line">            connection.close()</span>
 <span class="odt-code-line"><span style="color:#000000">            print(</span><span style="color:#a31515">&quot;Disconnection successful\n&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
@@ -1901,17 +1901,17 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Log in an existing user</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    connect(host=HOST, login=USER, pwd=PASSWD, database=DATABASE)</span></span>
+<span class="odt-code-line">    connect(host=HOST, login=USER, pwd=PASSWD, database=DATABASE)</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># connection for a non-existent user</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    connect(host=HOST, login=</span><span style="color:#a31515">&quot;xx&quot;</span><span style="color:#000000">, pwd=</span><span style="color:#a31515">&quot;xx&quot;</span><span style="color:#000000">, database=DATABASE)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error</span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 </code></pre></div>
 
 <p><strong>Notes</strong>:</p>
@@ -1937,10 +1937,10 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a>
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">Process</span><span class="w"> </span><span class="n">finished</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">exit</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="mi">0</span>
 </code></pre></div></td></tr></table></div>
-<p><a id="toc48549055"></a>
-<a id="refheading383042423505"></a>
+<p><a id="scriptmysql03"></a>
 <a id="scriptmysql-03"></a>
-<a id="scriptmysql03"></a></p>
+<a id="refheading383042423505"></a>
+<a id="toc48549055"></a></p>
 <h2 id="165-script-mysql_03-creating-a-mysql-table">16.5. <span style="color: #4f81bd">script [mysql_03]: creating a MySQL table</span></h2>
 <p>Now that we know how to establish a connection with a MySQL DBMS, we can start issuing SQL commands over this connection. To do this, we will connect to the created database <strong>[dbpersonnes]</strong> and use the connection to create a table in the database.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1963,7 +1963,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Close the cursor if it was obtained</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">cursor:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            cursor.close()</span></span>
+<span class="odt-code-line">            cursor.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># ---------------------------------------------- main</span>
@@ -1979,7 +1979,7 @@
 <span class="odt-code-line"># Let&#x27;s take it step by step</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># connection</span>
-<span class="odt-code-line"><span style="color:#000000">    connection = connect(host=HOST, user=ID, password=PWD, database=DATABASE)</span></span>
+<span class="odt-code-line">    connection = connect(host=HOST, user=ID, password=PWD, database=DATABASE)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># AUTOCOMMIT mode</span>
 <span class="odt-code-line"><span style="color:#000000">    connection.autocommit = </span><span style="color:#0000ff">True</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
@@ -1992,7 +1992,7 @@
 <span class="odt-code-line"># if it doesn&#x27;t exist, an error will occur—we ignore it</span>
 <span class="odt-code-line"><span style="color:#000000">query = </span><span style="color:#a31515">&quot;drop table people&quot;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    execute_sql(connection, query)</span></span>
+<span class="odt-code-line">    execute_sql(connection, query)</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, DatabaseError):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">pass</span></span>
 <span class="odt-code-line"></span>
@@ -2001,7 +2001,7 @@
 <span class="odt-code-line"><span style="color:#000000">          </span><span style="color:#a31515">&quot;unique(last_name, first_name)) &quot;</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># execute query</span>
-<span class="odt-code-line"><span style="color:#000000">    execute_sql(connection, query)</span></span>
+<span class="odt-code-line">    execute_sql(connection, query)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;{query}: query successful&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
@@ -2009,7 +2009,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># disconnect</span></span>
-<span class="odt-code-line"><span style="color:#000000">    connection.close()</span></span>
+<span class="odt-code-line">    connection.close()</span>
 </code></pre></div>
 
 <p><strong>Notes</strong>:</p>
@@ -2071,10 +2071,10 @@
   <li>the database <b>[dbpersonnes] [1] </b>has a table <b>[personnes] [2] </b>with the structure <b>[3-4]</b>, the primary key <b>[5], </b>and the uniqueness constraint <b>[6]</b>;
   </li>
 </ul>
-<p><a id="toc48549056"></a>
-<a id="refheading383062423505"></a>
+<p><a id="scriptmysql04"></a>
 <a id="scriptmysql-04"></a>
-<a id="scriptmysql04"></a></p>
+<a id="refheading383062423505"></a>
+<a id="toc48549056"></a></p>
 <h2 id="166-script-mysql_04-executing-an-sql-command-file">16.6. <span style="color: #4f81bd">script [mysql_04]: executing an SQL command file</span></h2>
 <p>After previously creating the <strong>[personnes]</strong> table, we now populate it and then query it using SQL statements.</p>
 <p>We want to execute the SQL statements from a text file:</p>
@@ -2317,7 +2317,7 @@
 <span class="odt-code-line"><span style="color:#000000">        row = </span><span style="color:#808080">cursor</span><span style="color:#000000">.fetchone()</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">while </span><span style="color:#000000">row:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># display it</span>
-<span class="odt-code-line"><span style="color:#000000">            print(row)</span></span>
+<span class="odt-code-line">            print(row)</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># next row of the select</span>
 <span class="odt-code-line"><span style="color:#000000">            row = </span><span style="color:#808080">cursor</span><span style="color:#000000">.fetchone()</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># separator row</span>
@@ -2365,7 +2365,7 @@
 <span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># local directories</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#a31515">f&quot;{script_dir}/shared&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">    <span style="color:#008000"># Setting the syspath</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span><span style="color:#6f008a">myutils </span><span style="color:#0000ff">import </span>set_syspath</span>
@@ -2399,7 +2399,7 @@
 <span class="odt-code-line"># Checking the syntax of the command</span>
 <span class="odt-code-line"># argv<span style="font-weight:bold">[0] </span>true / false</span>
 <span class="odt-code-line"><span style="color:#000000">args = </span><span style="color:#6f008a">sys</span><span style="color:#000000">.argv</span></span>
-<span class="odt-code-line"><span style="color:#000000">error = len(args) != 2</span></span>
+<span class="odt-code-line">error = len(args) != 2</span>
 <span class="odt-code-line"><span style="color:#0000ff">if not </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    with_transaction = args</span><span style="font-weight:bold;color:#000000">[1]</span><span style="color:#000000">.lower()</span></span>
 <span class="odt-code-line"><span style="color:#000000">    error = if with_transaction != </span><span style="color:#a31515">&quot;true&quot; </span><span style="color:#0000ff">and </span><span style="color:#000000">with_transaction != </span><span style="color:#a31515">&quot;false&quot;</span></span>
@@ -2428,16 +2428,16 @@
 <span class="odt-code-line"><span style="color:#000000">                        database=config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;database&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># execute the SQL command file</span>
 <span class="odt-code-line"><span style="color:#000000">    errors = execute_file_of_commands(connection, config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;commands_filename&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#0000ff">tracking=True</span><span style="color:#000000">, </span><span style="color:#0000ff">stop=False</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                       with_transaction=with_transaction)</span></span>
+<span class="odt-code-line">                                       with_transaction=with_transaction)</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(InterfaceError, DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    # display the error</span></span>
+<span class="odt-code-line">    # display the error</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following fatal error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># exit</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#6f008a">sys</span><span style="color:#000000">.exit()</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Close the connection if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">connection:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        connection.close()</span></span>
+<span class="odt-code-line">        connection.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># display number of errors</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;--------------------------------------------------------------------&quot;</span><span style="color:#000000">)</span></span>
@@ -2446,7 +2446,7 @@
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;There were {len(errors)} error(s)&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># display errors</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">error </span><span style="color:#0000ff">in </span><span style="color:#000000">errors:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 </code></pre></div>
 
 <p><strong>Notes</strong></p>
@@ -2568,7 +2568,7 @@
 <span class="odt-code-line">--------------------------------------------------------------------</span>
 <span class="odt-code-line">Execution complete</span>
 <span class="odt-code-line">--------------------------------------------------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">There was 1 error</span></span>
+<span class="odt-code-line">There was 1 error</span>
 <span class="odt-code-line">xx: Error (1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the correct syntax to use near &#x27;xx&#x27; at line 1)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
@@ -2607,7 +2607,7 @@
 <span class="odt-code-line">--------------------------------------------------------------------</span>
 <span class="odt-code-line">Execution complete</span>
 <span class="odt-code-line">--------------------------------------------------------------------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">There was 1 error</span></span>
+<span class="odt-code-line">There was 1 error</span>
 <span class="odt-code-line">xx: Error (1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the correct syntax to use near &#x27;xx&#x27; at line 1)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
@@ -2625,10 +2625,10 @@
   <li>in <b>[5]</b>, we see that the <b>[people] </b>table <b>[2] </b>is empty;
   </li>
 </ul>
-<p><a id="toc48549057"></a>
-<a id="refheading383082423505"></a>
+<p><a id="scriptmysql05"></a>
 <a id="scriptmysql-05"></a>
-<a id="scriptmysql05"></a></p>
+<a id="refheading383082423505"></a>
+<a id="toc48549057"></a></p>
 <h2 id="167-script-mysql_05-use-of-parameterized-queries">16.7. <span style="color: #4f81bd">script [mysql_05]: use of parameterized queries</span></h2>
 <p>The  <strong>[mysql_05]</strong> script  introduces the concept of parameterized queries:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2658,9 +2658,9 @@
 <span class="odt-code-line"><span style="color:#000000">connection = </span><span style="color:#0000ff">None</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># connection</span>
-<span class="odt-code-line"><span style="color:#000000">    connection = connect(host=HOST, user=ID, password=PWD, database=BASE)</span></span>
+<span class="odt-code-line">    connection = connect(host=HOST, user=ID, password=PWD, database=BASE)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># cursor</span>
-<span class="odt-code-line"><span style="color:#000000">    cursor = connection.cursor()</span></span>
+<span class="odt-code-line">    cursor = connection.cursor()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Delete existing records</span>
 <span class="odt-code-line"><span style="color:#000000">    cursor.execute(</span><span style="color:#a31515">&quot;delete from people&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># insert records one by one using a prepared statement</span>
@@ -2669,17 +2669,17 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># Bulk insertion of a list of people</span>
 <span class="odt-code-line"><span style="color:#000000">    cursor.executemany(</span><span style="color:#a31515">&quot;insert into people(id,lastName,firstName,age) values(%s, %s,%s,%s)&quot;</span><span style="color:#000000">, otherPeople)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># commit the transaction</span>
-<span class="odt-code-line"><span style="color:#000000">    connection.commit()</span></span>
+<span class="odt-code-line">    connection.commit()</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(DatabaseError, InterfaceError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Display error</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># rollback transaction</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">connection:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        connection.rollback()</span></span>
+<span class="odt-code-line">        connection.rollback()</span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># close connection</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">connection:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        connection.close()</span></span>
+<span class="odt-code-line">        connection.close()</span>
 </code></pre></div>
 
 <p><strong>Notes</strong></p>

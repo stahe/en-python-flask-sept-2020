@@ -1507,8 +1507,8 @@
 
 
 
-<p><a id="toc48549342"></a>
-<a id="exercicedapplication13"></a></p>
+<p><a id="exercicedapplication13"></a>
+<a id="toc48549342"></a></p>
 <h1 id="37-practical-exercise-version-17">37. <span style="color: #365f91">Practical Exercise: Version 17</span></h1>
 <p><img src="images/1000000000000114000001AD0792667B.png" style="width:3.193cm;height:4.962cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000114000001AD0792667B.png" /></p>
 <p>This new version introduces the following changes:</p>
@@ -1550,7 +1550,7 @@
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># Logger, SendAdminMail</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/http-servers/02/utilities&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># main script directory</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        script_dir,</span></span>
+<span class="odt-code-line">        script_dir,</span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># configurations [database, layers, parameters, controllers, views</span><span style="font-weight:bold">]</span></span>
 <span class="odt-code-line">        <span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../configs&quot;</span>,</span>
 <span class="odt-code-line">        <span style="color:#008000"># controllers</span></span>
@@ -1645,8 +1645,8 @@
 <p>At this point, version 17 should work. Verify it.</p>
 <p><a id="toc48549345"></a></p>
 <h2 id="373-porting-a-pythonflask-application-to-an-apachewindows-server">37.3. <span style="color: #4f81bd">Porting a Python/Flask application to an Apache/Windows server</span></h2>
-<p><a id="toc48549346"></a>
-<a id="sources"></a></p>
+<p><a id="sources"></a>
+<a id="toc48549346"></a></p>
 <h3 id="3731-sources">37.3.1. <span style="color: #4f81bd">Sources</span></h3>
 <p>To port a Flask application to Apache/Windows, I had to search the Internet. Here is the link that helped me get started: [<a href="https://medium.com/@madumalt/flask-app-deployment-in-windows-apache-server-mod-wsgi-82e1cfeeb2ed"><u><span style="color: #0563c1">https://medium.com/@madumalt/flask-app-deployment-in-windows-apache-server-mod-wsgi-82e1cfeeb2ed</span></u></a>];</p>
 <p>I used the information from this link except for the Apache server configuration. For that, I used a sample Apache server configuration from Laragon.</p>
@@ -1666,7 +1666,7 @@
 <span class="odt-code-line">Using legacy setup.py install for mod-wsgi, since the &#x27;wheel&#x27; package is not installed.</span>
 <span class="odt-code-line">Installing collected packages: mod-wsgi</span>
 <span class="odt-code-line">    Running setup.py install for mod-wsgi ... done</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Successfully installed mod-wsgi-4.7.1</span></span>
+<span class="odt-code-line">Successfully installed mod-wsgi-4.7.1</span>
 </code></pre></div>
 
 <ul>
@@ -1752,30 +1752,30 @@
 <span class="odt-code-line"><span style="color:#000000">define ROOT </span>&quot;C:/MyPrograms/laragon/www/test-project/&quot;</span>
 <span class="odt-code-line"><span style="color:#000000">define SITE </span>&quot;test-project.test&quot;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:80&gt; </span></span>
+<span class="odt-code-line">&lt;VirtualHost *:80&gt; </span>
 <span class="odt-code-line"><span style="color:#000000">    DocumentRoot </span>&quot;${ROOT}&quot;</span>
-<span class="odt-code-line"><span style="color:#000000">    ServerName ${SITE}</span></span>
+<span class="odt-code-line">    ServerName ${SITE}</span>
+<span class="odt-code-line">    ServerAlias *.${SITE}</span>
+<span class="odt-code-line"><span style="color:#000000">    &lt;Directory </span>&quot;${ROOT}&quot;<span style="color:#000000">&gt;</span></span>
+<span class="odt-code-line">        AllowOverride All</span>
+<span class="odt-code-line">        Require all granted</span>
+<span class="odt-code-line">    &lt;/Directory&gt;</span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
+<span class="odt-code-line"></span>
+<span class="odt-code-line">&lt;VirtualHost *:443&gt;</span>
+<span class="odt-code-line"><span style="color:#000000">    DocumentRoot </span>&quot;${ROOT}&quot;</span>
+<span class="odt-code-line">    ServerName ${SITE}</span>
 <span class="odt-code-line"><span style="color:#000000">    ServerAlias *.${SITE}</span></span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;Directory </span>&quot;${ROOT}&quot;<span style="color:#000000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        AllowOverride All</span></span>
-<span class="odt-code-line"><span style="color:#000000">        Require all granted</span></span>
-<span class="odt-code-line"><span style="color:#000000">    &lt;/Directory&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">        AllowOverride All</span>
+<span class="odt-code-line">        Require all granted</span>
+<span class="odt-code-line">    &lt;/Directory&gt;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:443&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    DocumentRoot </span>&quot;${ROOT}&quot;</span>
-<span class="odt-code-line"><span style="color:#000000">    ServerName ${SITE}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerAlias *.${SITE}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    &lt;Directory </span>&quot;${ROOT}&quot;<span style="color:#000000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        AllowOverride All</span></span>
-<span class="odt-code-line"><span style="color:#000000">        Require all granted</span></span>
-<span class="odt-code-line"><span style="color:#000000">    &lt;/Directory&gt;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLEngine on</span></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLCertificateKeyFile   C:/MyPrograms/laragon/etc/ssl/laragon.key</span></span>
-<span class="odt-code-line"><span style="color:#000000"> </span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">    SSLEngine on</span>
+<span class="odt-code-line">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span>
+<span class="odt-code-line">    SSLCertificateKeyFile   C:/MyPrograms/laragon/etc/ssl/laragon.key</span>
+<span class="odt-code-line"> </span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
 </code></pre></div>
 
 <ul>
@@ -1811,32 +1811,52 @@
 
 <p>Creating the virtual server <strong>[test-project.test]</strong> created a new entry in the file <strong>[&lt;windows&gt;/system32/drivers/etc/hosts]</strong>:</p>
 <p><img src="images/100000000000035500000233AB323C45.png" style="width:9.85cm;height:6.502cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000035500000233AB323C45.png" /></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"># Copyright (c) 1993-2009 Microsoft Corp.</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line"># This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line"># This file contains the mappings of IP addresses to host names. Each</span>
-<span class="odt-code-line"># entry should be kept on a separate line. The IP address should</span>
-<span class="odt-code-line"># be placed in the first column, followed by the corresponding host name.</span>
-<span class="odt-code-line"># The IP address and the host name should be separated by at least one</span>
-<span class="odt-code-line"># space.</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line"># Additionally, comments (such as these) may be inserted on individual</span>
-<span class="odt-code-line"># lines or after the machine name, denoted by a &#x27;#&#x27; symbol.</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line"># For example:</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line">#      102.54.94.97     rhino.acme.com          # source server</span>
-<span class="odt-code-line">#       38.25.63.10     x.acme.com              # x client host</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># Localhost name resolution is handled within DNS itself.</span>
-<span class="odt-code-line">#    127.0.0.1       localhost</span>
-<span class="odt-code-line">#    ::1             localhost</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">127.0.0.1      test-project.test     #Laragon magic!   </span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="gh"># Copyright (c) 1993-2009 Microsoft Corp.</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="gh">#</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="gh"># This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="gh">#</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="gh"># This file contains the mappings of IP addresses to host names. Each</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="gh"># entry should be kept on a separate line. The IP address should</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="gh"># be placed in the first column, followed by the corresponding host name.</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="gh"># The IP address and the host name should be separated by at least one</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="gh"># space.</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="gh">#</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="gh"># Additionally, comments (such as these) may be inserted on individual</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="gh"># lines or after the machine name, denoted by a &#39;#&#39; symbol.</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a><span class="gh">#</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a><span class="gh"># For example:</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a><span class="gh">#</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a><span class="gh">#      102.54.94.97     rhino.acme.com          # source server</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a><span class="gh">#       38.25.63.10     x.acme.com              # x client host</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a><span class="gh"># Localhost name resolution is handled within DNS itself.</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a><span class="gh">#    127.0.0.1       localhost</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a><span class="gh">#    ::1             localhost</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>127.0.0.1      test-project.test     <span class="ni">#Laragon</span> magic!   
+</code></pre></div></td></tr></table></div>
 <ul>
   <li>Line 23: The IP address for the name <b>[test-project.test] </b>is 127.0.0.1, i.e., the address of <b>[localhost] </b>(line 20), the local machine. So when you type the URL <b>[http://projet-test.test/chemin] </b>into a browser, the request is sent to the address 127.0.0.1 on port 80. The Apache server on the local machine (localhost) then responds.
   </li>
@@ -1856,25 +1876,38 @@
 <p>We click on the link <strong>[5]</strong> to disable SSL (Secure Sockets Layer) verification. SSL/TLS (Transport Layer Security) is a security protocol that creates a secure communication channel between two machines on the internet. This is the protocol used here by Apache. The response is as follows:</p>
 <p><img src="images/10000000000002D4000001E194E1D0AF.png" style="width:8.37cm;height:5.562cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D4000001E194E1D0AF.png" /></p>
 <p>We receive the same page as with a traditional browser. Now let’s look at the client/server dialogue in the Postman console (Ctrl-Alt-C):</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="background-color:#fff2cc">GET / HTTP/1.1</span></span>
-<span class="odt-code-line">User-Agent: PostmanRuntime/7.26.2</span>
-<span class="odt-code-line">Accept: */*</span>
-<span class="odt-code-line">Cache-Control: no-cache</span>
-<span class="odt-code-line">Postman-Token: d153f711-ad99-4e1d-93c3-61c25374d1be</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Host: test-project.test</span></span>
-<span class="odt-code-line">Accept-Encoding: gzip, deflate, br</span>
-<span class="odt-code-line">Connection: keep-alive</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">HTTP/1.1 200 OK</span>
-<span class="odt-code-line">Date: Fri, Aug 14, 2020 9:19:24 AM GMT</span>
-<span class="odt-code-line">Server: Apache/2.4.35 (Win64) OpenSSL/1.1.1b PHP/7.2.19 mod_wsgi/4.7.1 Python/3.8</span>
-<span class="odt-code-line">Content-Length: 161</span>
-<span class="odt-code-line">Keep-Alive: timeout=5, max=100</span>
-<span class="odt-code-line">Connection: Keep-Alive</span>
-<span class="odt-code-line">Content-Type: text/html;charset=UTF-8</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.2</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="n">d153f711</span><span class="o">-</span><span class="n">ad99</span><span class="o">-</span><span class="mf">4e1</span><span class="n">d</span><span class="o">-</span><span class="mi">93</span><span class="n">c3</span><span class="o">-</span><span class="mi">61</span><span class="n">c25374d1be</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">test</span><span class="o">-</span><span class="n">project</span><span class="o">.</span><span class="n">test</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span> <span class="mi">200</span> <span class="n">OK</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="n">Date</span><span class="p">:</span> <span class="n">Fri</span><span class="p">,</span> <span class="n">Aug</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">2020</span> <span class="mi">9</span><span class="p">:</span><span class="mi">19</span><span class="p">:</span><span class="mi">24</span> <span class="n">AM</span> <span class="n">GMT</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">Server</span><span class="p">:</span> <span class="n">Apache</span><span class="o">/</span><span class="mf">2.4.35</span> <span class="p">(</span><span class="n">Win64</span><span class="p">)</span> <span class="n">OpenSSL</span><span class="o">/</span><span class="mf">1.1.1</span><span class="n">b</span> <span class="n">PHP</span><span class="o">/</span><span class="mf">7.2.19</span> <span class="n">mod_wsgi</span><span class="o">/</span><span class="mf">4.7.1</span> <span class="n">Python</span><span class="o">/</span><span class="mf">3.8</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="n">Content</span><span class="o">-</span><span class="n">Length</span><span class="p">:</span> <span class="mi">161</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">Keep</span><span class="o">-</span><span class="n">Alive</span><span class="p">:</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="nb">max</span><span class="o">=</span><span class="mi">100</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">Keep</span><span class="o">-</span><span class="n">Alive</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="n">Content</span><span class="o">-</span><span class="n">Type</span><span class="p">:</span> <span class="n">text</span><span class="o">/</span><span class="n">html</span><span class="p">;</span><span class="n">charset</span><span class="o">=</span><span class="n">UTF</span><span class="o">-</span><span class="mi">8</span>
+</code></pre></div></td></tr></table></div>
 <ul>
   <li>Line 6: The HTTP <b>[Host] </b>header specifies the name of the server targeted by the web client. This is the principle behind virtual servers. At a single IP address (here 127.0.0.1), a web server can host multiple websites with different names. The HTTP <b>[Host] </b>header allows the client to specify which server (here, the one at address 127.0.0.1) it is addressing;
   </li>
@@ -1887,21 +1920,26 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#000000">define ROOT </span>&quot;C:/MyPrograms/laragon/www/test-project/&quot;</span>
 <span class="odt-code-line"><span style="background-color:#fff2cc;color:#000000">define SITE </span><span style="background-color:#fff2cc">&quot;test-project.test&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">…</span>
 </code></pre></div>
 
 <p>Line 2 defines the <strong>[test-project.test]</strong> virtual server. The <strong>[auto.projet-test.test.conf]</strong> file is the configuration for this virtual server. Because it reads all configuration files in the <strong>[&lt;laragon&gt;\etc\apache2\sites-enabled]</strong> folder at startup, the Apache server knows that a virtual server named <strong>[projet-test.test]</strong> exists. Thus, when it receives the following HTTPS request from the Postman client:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="background-color:#fff2cc">GET / HTTP/1.1</span></span>
-<span class="odt-code-line">User-Agent: PostmanRuntime/7.26.2</span>
-<span class="odt-code-line">Accept: */*</span>
-<span class="odt-code-line">Cache-Control: no-cache</span>
-<span class="odt-code-line">Postman-Token: d153f711-ad99-4e1d-93c3-61c25374d1be</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">Host: test-project.test</span></span>
-<span class="odt-code-line">Accept-Encoding: gzip, deflate, br</span>
-<span class="odt-code-line">Connection: keep-alive</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span>
+<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="n">GET</span> <span class="o">/</span> <span class="n">HTTP</span><span class="o">/</span><span class="mf">1.1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="n">User</span><span class="o">-</span><span class="n">Agent</span><span class="p">:</span> <span class="n">PostmanRuntime</span><span class="o">/</span><span class="mf">7.26.2</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="n">Accept</span><span class="p">:</span> <span class="o">*/*</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="n">Cache</span><span class="o">-</span><span class="n">Control</span><span class="p">:</span> <span class="n">no</span><span class="o">-</span><span class="n">cache</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="n">Postman</span><span class="o">-</span><span class="n">Token</span><span class="p">:</span> <span class="n">d153f711</span><span class="o">-</span><span class="n">ad99</span><span class="o">-</span><span class="mf">4e1</span><span class="n">d</span><span class="o">-</span><span class="mi">93</span><span class="n">c3</span><span class="o">-</span><span class="mi">61</span><span class="n">c25374d1be</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="n">Host</span><span class="p">:</span> <span class="n">test</span><span class="o">-</span><span class="n">project</span><span class="o">.</span><span class="n">test</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">:</span> <span class="n">gzip</span><span class="p">,</span> <span class="n">deflate</span><span class="p">,</span> <span class="n">br</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="n">Connection</span><span class="p">:</span> <span class="n">keep</span><span class="o">-</span><span class="n">alive</span>
+</code></pre></div></td></tr></table></div>
 <p>It recognizes that the request is addressed to the virtual server <strong>[test-project.test]</strong> (line 6) and that it exists. It then uses the configuration of the virtual server <strong>[test-project.test]</strong> to respond to the Postman client.</p>
 <p><a id="toc48549349"></a></p>
 <h2 id="374-creating-your-first-apache-virtual-server">37.4. <span style="color: #4f81bd">Creating Your First Apache Virtual Server</span></h2>
@@ -1991,35 +2029,35 @@
 <span class="odt-code-line"># Add the IP address 127.0.0.1 for the SITE website to c:/windows/system32/drivers/etc/hosts</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># HTTP URL</span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:80&gt;</span></span>
+<span class="odt-code-line">&lt;VirtualHost *:80&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will be in the format http(s)://date-time-server/path/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="background-color:#fff2cc;color:#000000">WSGIScriptAlias / </span><span style="background-color:#fff2cc;color:#a31515">&quot;${ROOT}/date_time_server.py&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerName ${SITE}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line">    ServerName ${SITE}</span>
+<span class="odt-code-line">    ServerAlias *.${SITE}</span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        AllowOverride All</span></span>
-<span class="odt-code-line"><span style="color:#000000">        Require all granted</span></span>
-<span class="odt-code-line"><span style="color:#000000">    &lt;/Directory&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">        AllowOverride All</span>
+<span class="odt-code-line">        Require all granted</span>
+<span class="odt-code-line">    &lt;/Directory&gt;</span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Secure URLs with HTTPS</span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line">&lt;VirtualHost *:443&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># with the alias, URLs will be in the form http(s)://date-time-server/path/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="background-color:#fff2cc;color:#000000">WSGIScriptAlias / </span><span style="background-color:#fff2cc;color:#a31515">&quot;${ROOT}/date_time_server.py&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerName ${SITE}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line">    ServerName ${SITE}</span>
+<span class="odt-code-line">    ServerAlias *.${SITE}</span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        AllowOverride All</span></span>
-<span class="odt-code-line"><span style="color:#000000">        Require all granted</span></span>
-<span class="odt-code-line"><span style="color:#000000">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line">        AllowOverride All</span>
+<span class="odt-code-line">        Require all granted</span>
+<span class="odt-code-line">    &lt;/Directory&gt;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLEngine on</span></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLCertificateKeyFile   C:/myprograms/laragon/etc/ssl/laragon.key</span></span>
+<span class="odt-code-line">    SSLEngine on</span>
+<span class="odt-code-line">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span>
+<span class="odt-code-line">    SSLCertificateKeyFile   C:/myprograms/laragon/etc/ssl/laragon.key</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
 </code></pre></div>
 
 <ul>
@@ -2036,35 +2074,58 @@
 </ul>
 
 <p>We also need to add a line to the <strong>[&lt;windows&gt;/system32/drivers/etc/hosts]</strong> file:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"># Copyright (c) 1993-2009 Microsoft Corp.</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line"># This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line"># This file contains the mappings of IP addresses to host names. Each</span>
-<span class="odt-code-line"># entry should be kept on a separate line. The IP address should</span>
-<span class="odt-code-line"># be placed in the first column, followed by the corresponding host name.</span>
-<span class="odt-code-line"># The IP address and the host name should be separated by at least one</span>
-<span class="odt-code-line"># space.</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line"># Additionally, comments (such as these) may be inserted on individual</span>
-<span class="odt-code-line"># lines or after the machine name, denoted by a &#x27;#&#x27; symbol.</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line"># For example:</span>
-<span class="odt-code-line">#</span>
-<span class="odt-code-line">#      102.54.94.97     rhino.acme.com          # source server</span>
-<span class="odt-code-line">#       38.25.63.10     x.acme.com              # x client host</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># Localhost name resolution is handled within DNS itself.</span>
-<span class="odt-code-line">#    127.0.0.1       localhost</span>
-<span class="odt-code-line">#    ::1             localhost</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">127.0.0.1    flask-taxes-with-mysql        # Python course - tax app with MySQL</span>
-<span class="odt-code-line">127.0.0.1    flask-taxes-withpgres        # Python course - tax app with PostgreSQL</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">127.0.0.1    date-time-server            # Python course - current time and date</span></span>
-<span class="odt-code-line">127.0.0.1           test-project.test                # Laragon magic!</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span>
+<span class="normal"><a href="#__codelineno-3-18">18</a></span>
+<span class="normal"><a href="#__codelineno-3-19">19</a></span>
+<span class="normal"><a href="#__codelineno-3-20">20</a></span>
+<span class="normal"><a href="#__codelineno-3-21">21</a></span>
+<span class="normal"><a href="#__codelineno-3-22">22</a></span>
+<span class="normal"><a href="#__codelineno-3-23">23</a></span>
+<span class="normal"><a href="#__codelineno-3-24">24</a></span>
+<span class="normal"><a href="#__codelineno-3-25">25</a></span>
+<span class="normal"><a href="#__codelineno-3-26">26</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="gh"># Copyright (c) 1993-2009 Microsoft Corp.</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="gh">#</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="gh"># This is a sample HOSTS file used by Microsoft TCP/IP for Windows.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="gh">#</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="gh"># This file contains the mappings of IP addresses to host names. Each</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="gh"># entry should be kept on a separate line. The IP address should</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="gh"># be placed in the first column, followed by the corresponding host name.</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="gh"># The IP address and the host name should be separated by at least one</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="gh"># space.</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="gh">#</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="gh"># Additionally, comments (such as these) may be inserted on individual</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a><span class="gh"># lines or after the machine name, denoted by a &#39;#&#39; symbol.</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="gh">#</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="gh"># For example:</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="gh">#</span>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="gh">#      102.54.94.97     rhino.acme.com          # source server</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="gh">#       38.25.63.10     x.acme.com              # x client host</span>
+<a id="__codelineno-3-18" name="__codelineno-3-18"></a>
+<a id="__codelineno-3-19" name="__codelineno-3-19"></a><span class="gh"># Localhost name resolution is handled within DNS itself.</span>
+<a id="__codelineno-3-20" name="__codelineno-3-20"></a><span class="gh">#    127.0.0.1       localhost</span>
+<a id="__codelineno-3-21" name="__codelineno-3-21"></a><span class="gh">#    ::1             localhost</span>
+<a id="__codelineno-3-22" name="__codelineno-3-22"></a>
+<a id="__codelineno-3-23" name="__codelineno-3-23"></a>127.0.0.1    flask-taxes-with-mysql        # Python course - tax app with MySQL
+<a id="__codelineno-3-24" name="__codelineno-3-24"></a>127.0.0.1    flask-taxes-withpgres        # Python course - tax app with PostgreSQL
+<a id="__codelineno-3-25" name="__codelineno-3-25"></a>127.0.0.1    date-time-server            # Python course - current time and date
+<a id="__codelineno-3-26" name="__codelineno-3-26"></a>127.0.0.1           test-project.test                # Laragon magic!
+</code></pre></div></td></tr></table></div>
 <p>We add line 25 to assign the IP address <strong>[127.0.0.1]</strong> to the virtual server <strong>[date-time-server]</strong>.</p>
 <p>Let’s check everything. We start the Apache server:</p>
 <p><img src="images/1000000000000615000002C02F914C45.png" style="width:18cm;height:8.139cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000615000002C02F914C45.png" /></p>
@@ -2137,7 +2198,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#000000">SendAdminMail </span><span style="color:#0000ff">import </span><span style="color:#000000">SendAdminMail</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#000000">Logger </span><span style="color:#0000ff">import </span><span style="color:#000000">Logger</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#000000">ImpôtsError </span><span style="color:#0000ff">import </span><span style="color:#000000">ImpôtsError</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">…</span></span>
+<span class="odt-code-line">…</span>
 </code></pre></div>
 
 <p>On line 7, we set the DBMS to PostgreSQL.</p>
@@ -2152,7 +2213,7 @@
 <span class="odt-code-line">sys.path.insert(0, script_dir)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># import the Flask application <span style="font-weight:bold">[app] </span>and give it the name <span style="font-weight:bold">[application]</span></span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">from main_withmysql import app as application</span></span>
+<span class="odt-code-line">from main_withmysql import app as application</span>
 </code></pre></div>
 
 <p>The script <strong>[main_withmysql.wsgi]</strong> will be the target executed by the Apache server in WSGI mode:</p>
@@ -2211,39 +2272,39 @@
 <span class="odt-code-line"># <span style="background-color:#fff2cc">WSGIPythonHome </span>&quot;C:/Program Files/Python38&quot;</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># HTTP URL</span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:80&gt;</span></span>
+<span class="odt-code-line">&lt;VirtualHost *:80&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will take the form /{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># with the alias /taxes, URLs will take the form /taxes/{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="background-color:#fff2cc;color:#000000">WSGIScriptAlias / </span><span style="background-color:#fff2cc;color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerName ${SITE}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line">    ServerName ${SITE}</span>
+<span class="odt-code-line">    ServerAlias *.${SITE}</span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        AllowOverride All</span></span>
-<span class="odt-code-line"><span style="color:#000000">        Require all granted</span></span>
-<span class="odt-code-line"><span style="color:#000000">    &lt;/Directory&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">        AllowOverride All</span>
+<span class="odt-code-line">        Require all granted</span>
+<span class="odt-code-line">    &lt;/Directory&gt;</span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Secure URLs with HTTPS</span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line">&lt;VirtualHost *:443&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will be in the form /{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># with the alias /taxes, URLs will be in the form /taxes/{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="background-color:#fff2cc;color:#000000">WSGIScriptAlias / </span><span style="background-color:#fff2cc;color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerName ${SITE}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line">    ServerName ${SITE}</span>
+<span class="odt-code-line">    ServerAlias *.${SITE}</span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        AllowOverride All</span></span>
-<span class="odt-code-line"><span style="color:#000000">        Require all granted</span></span>
-<span class="odt-code-line"><span style="color:#000000">    &lt;/Directory&gt;</span></span>
+<span class="odt-code-line">        AllowOverride All</span>
+<span class="odt-code-line">        Require all granted</span>
+<span class="odt-code-line">    &lt;/Directory&gt;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLEngine on</span></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLCertificateKeyFile   C:/myprograms/laragon/etc/ssl/laragon.key</span></span>
+<span class="odt-code-line">    SSLEngine on</span>
+<span class="odt-code-line">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span>
+<span class="odt-code-line">    SSLCertificateKeyFile   C:/myprograms/laragon/etc/ssl/laragon.key</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
 </code></pre></div>
 
 <ul>
@@ -2279,39 +2340,39 @@
 <span class="odt-code-line"># WSGIPythonHome &quot;C:/Program Files/Python38&quot;</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># HTTP URL</span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:80&gt;</span></span>
+<span class="odt-code-line">&lt;VirtualHost *:80&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will take the form /{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># with the alias /taxes, URLs will be in the form /taxes/{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
 <span class="odt-code-line"><span style="color:#000000">    WSGIScriptAlias / </span><span style="color:#a31515">&quot;${ROOT}</span><span style="background-color:#fff2cc;color:#a31515">/main_withpgres.wsgi</span><span style="color:#a31515">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerName ${SITE}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line">    ServerName ${SITE}</span>
+<span class="odt-code-line">    ServerAlias *.${SITE}</span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        AllowOverride All</span></span>
-<span class="odt-code-line"><span style="color:#000000">        Require all granted</span></span>
-<span class="odt-code-line"><span style="color:#000000">    &lt;/Directory&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">        AllowOverride All</span>
+<span class="odt-code-line">        Require all granted</span>
+<span class="odt-code-line">    &lt;/Directory&gt;</span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Secure URLs with HTTPS</span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line">&lt;VirtualHost *:443&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will be in the form /{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># with the alias /taxes, URLs will be in the form /taxes/{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
 <span class="odt-code-line"><span style="color:#000000">    WSGIScriptAlias / </span><span style="color:#a31515">&quot;${ROOT}</span><span style="background-color:#fff2cc;color:#a31515">/main_withpgres.wsgi</span><span style="color:#a31515">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    DocumentRoot </span><span style="color:#a31515">&quot;${ROOT}&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerName ${SITE}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    ServerAlias *.${SITE}</span></span>
+<span class="odt-code-line">    ServerName ${SITE}</span>
+<span class="odt-code-line">    ServerAlias *.${SITE}</span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;Directory </span><span style="color:#a31515">&quot;${ROOT}&quot;</span><span style="color:#000000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        AllowOverride All</span></span>
-<span class="odt-code-line"><span style="color:#000000">        Require all granted</span></span>
+<span class="odt-code-line">        AllowOverride All</span>
+<span class="odt-code-line">        Require all granted</span>
 <span class="odt-code-line"><span style="color:#000000">    &lt;/Directory&gt;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLEngine on</span></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span></span>
-<span class="odt-code-line"><span style="color:#000000">    SSLCertificateKeyFile   C:/myprograms/laragon/etc/ssl/laragon.key</span></span>
+<span class="odt-code-line">    SSLEngine on</span>
+<span class="odt-code-line">    SSLCertificateFile      C:/MyPrograms/laragon/etc/ssl/laragon.crt</span>
+<span class="odt-code-line">    SSLCertificateKeyFile   C:/myprograms/laragon/etc/ssl/laragon.key</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
 </code></pre></div>
 
 <p>We save all these files, start the Apache server and the MySQL and PostgreSQL databases. The application is configured with the URL prefix <strong>[/do]</strong> and <strong>[with_csrftoken=False]</strong> (no CSRF token) in <strong>[configs/parameters.py]</strong>. We request the URL <strong>[https://flask-impots-withmysql/do]</strong>. The server’s response is as follows:</p>
@@ -2327,23 +2388,23 @@
 <span class="odt-code-line">…</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># HTTP URL</span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:80&gt;</span></span>
+<span class="odt-code-line">&lt;VirtualHost *:80&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will be in the form /{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># with the alias /impots, URLs will be in the form /impots/{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
 <span class="odt-code-line"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/taxes </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    …</span></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">    …</span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Secure URLs with HTTPS</span>
-<span class="odt-code-line"><span style="color:#000000">&lt;VirtualHost *:443&gt;</span></span>
+<span class="odt-code-line">&lt;VirtualHost *:443&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will be in the form /{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># with the alias /taxes, URLs will be in the form /taxes/{url_prefix}/action/...</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
 <span class="odt-code-line"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/taxes </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    …</span></span>
+<span class="odt-code-line">    …</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span>
+<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
 </code></pre></div>
 
 <ul>
@@ -2360,7 +2421,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># Flask application routes</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># application root</span>
 <span class="odt-code-line"><span style="color:#000000">    app.add_url_rule(</span><span style="background-color:#fff2cc;color:#a31515">f&#x27;</span><span style="background-color:#fff2cc;color:#000000">{prefix_url}</span><span style="color:#a31515">/&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                     view_func=routes.index)</span></span>
+<span class="odt-code-line">                     view_func=routes.index)</span>
 </code></pre></div>
 
 <p>The route on line 3 is <strong>[https://flask-impots-withmysql/impots/do]</strong> in our example. We can see that the route has been stripped of the <strong>[https://flask-impots-withmysql/impots]</strong> part to become simply <strong>[/do]</strong>. As for the <strong>[https://flask-impots-withmysql]</strong> part, this is normal; the server name is not included in the route. But we can see that it also does not include the WSGI alias <strong>[/impots]</strong>. This is an important point. Even with a WSGI alias, our initial routes remain valid.</p>
@@ -2376,7 +2437,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"><span style="color:#000000">    </span># init-session</span>
 <span class="odt-code-line"><span style="color:#000000">    app.add_url_rule(</span><span style="color:#a31515">f&#x27;</span><span style="background-color:#fff2cc;color:#000000">{prefix_url}</span><span style="background-color:#fff2cc;color:#a31515">/init-session/&lt;string:type_response&gt;</span><span style="background-color:#fff2cc;color:#000000">{csrftoken_param}</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                     view_func=routes.init_session)</span></span>
+<span class="odt-code-line">                     view_func=routes.init_session)</span>
 </code></pre></div>
 
 <p>Line 2: In our test, <strong>[csrftoken_param]</strong> is the empty string. The application does not handle a CSRF token here.</p>
@@ -2390,7 +2451,7 @@
 
 <p>Line 4: We start the action processing chain <strong>[init-session]</strong>. This chain ends as follows in <strong>[responses/HtmlResponse]</strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line"># now we need to generate the redirect URL, making sure to include the CSRF token if required</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            csrf_token = </span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span><span style="color:#000000">{generate_csrf()}</span><span style="color:#a31515">&quot;</span></span>

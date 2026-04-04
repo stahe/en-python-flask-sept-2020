@@ -1446,35 +1446,34 @@
 
 
 
-<p><a id="lesexceptions"></a>
+<p><a id="refheading352241169597484"></a>
 <a id="toc48548939"></a>
-<a id="refheading352241169597484"></a></p>
+<a id="lesexceptions"></a></p>
 <h1 id="5-exceptions">5. <span style="color: #365f91">Exceptions</span></h1>
 <p>We will now turn our attention to exceptions.</p>
 <p><img src="images/1000000100000181000000996FC8CA33.png" style="width:3.602cm;height:1.431cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000181000000996FC8CA33.png" /></p>
-<p><a id="toc48548940"></a>
-<a id="refheadingtoc2520952924280206"></a></p>
+<p><a id="refheadingtoc2520952924280206"></a>
+<a id="toc48548940"></a></p>
 <h2 id="51-script-exceptions_01">5.1. <span style="color: #4f81bd">script [exceptions_01]</span></h2>
 <p>The first script illustrates the need to handle exceptions.</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"># We intentionally cause an error</span>
-<span class="odt-code-line"><span style="color:#000000">x = 4 / 0</span></span>
-</code></pre></div>
-
-<p>We intentionally trigger an error to see what happens (<em>exceptions-01.py</em>):</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_01.py
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>Traceback (most recent call last):
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>  File &quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_01.py&quot;, line 2, in &lt;module&gt;
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    x = 4 / 0
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>ZeroDivisionError: division by zero
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>Process finished with exit code 1
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="gh"># We intentionally cause an error</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>x = 4 / 0
+</code></pre></div></td></tr></table></div>
+<p>We intentionally trigger an error to see what happens (<em>exceptions-01.py</em>):</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_01.py
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>Traceback (most recent call last):
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>  File &quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_01.py&quot;, line 2, in &lt;module&gt;
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    x = 4 / 0
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>ZeroDivisionError: division by zero
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>Process finished with exit code 1
 </code></pre></div></td></tr></table></div>
 <p>Line 4 gives us:</p>
 <ul>
@@ -1524,18 +1523,18 @@
 
 <p>where <em>MyException</em> is most often a class derived from the <em>BaseException</em> class. The parameters passed to the class constructor will be available to the <strong>except</strong> clause of exception-handling structures using the syntax <strong>[ex.args]</strong> if <strong>[ex]</strong> is the exception caught by the <strong>[except]</strong> clause.</p>
 <p>These concepts are illustrated by the following script.</p>
-<p><a id="toc48548941"></a>
-<a id="refheadingtoc2520972924280206"></a></p>
+<p><a id="refheadingtoc2520972924280206"></a>
+<a id="toc48548941"></a></p>
 <h2 id="52-script-exceptions_02">5.2. <span style="color: #4f81bd">script [exceptions_02]</span></h2>
 <p>The following script explicitly handles errors:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># exception handling</span>
-<span class="odt-code-line"><span style="color:#000000">test = 0</span></span>
+<span class="odt-code-line">test = 0</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># We trigger an error and handle it</span>
-<span class="odt-code-line"><span style="color:#000000">x = 2</span></span>
+<span class="odt-code-line">x = 2</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    x = 4 / 0</span></span>
+<span class="odt-code-line">    x = 4 / 0</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">ZeroDivisionError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># error is the caught exception</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Attempt #{attempt}: {error}&quot;</span><span style="color:#000000">)</span></span>
@@ -1543,9 +1542,9 @@
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;x={x}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># let&#x27;s try again</span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    x = 4 / 0</span></span>
+<span class="odt-code-line">    x = 4 / 0</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># We catch the most general exception</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># error is the caught exception</span>
@@ -1553,9 +1552,9 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># we can catch different types of exceptions</span>
 <span class="odt-code-line"># execution stops at the first <span style="font-weight:bold">[except] block </span>capable of handling the exception</span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    x = 4 / 0</span></span>
+<span class="odt-code-line">    x = 4 / 0</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">ValueError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># this exception does not occur here</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Attempt #{attempt}: {error}&quot;</span><span style="color:#000000">)</span></span>
@@ -1567,9 +1566,9 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;test #{test}: (ZeroDivisionError) {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Let&#x27;s try again, changing the order </span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    x = 4 / 0</span></span>
+<span class="odt-code-line">    x = 4 / 0</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">ValueError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># This exception does not occur here</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Attempt #{attempt}: {error}&quot;</span><span style="color:#000000">)</span></span>
@@ -1581,15 +1580,15 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;test #{test}: (Exception) {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># An except clause without arguments</span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    x = 4 / 0</span></span>
+<span class="odt-code-line">    x = 4 / 0</span>
 <span class="odt-code-line"><span style="color:#0000ff">except</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># we are not interested in the nature of the exception</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Test #{test}: There was a problem&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># another type of exception</span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># x cannot be converted to an integer</span>
 <span class="odt-code-line"><span style="color:#000000">    x = </span><span style="color:#2b91af">int</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">)</span></span>
@@ -1598,7 +1597,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;test #{test}: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># An exception carries information in a tuple accessible to the program</span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    x = </span><span style="color:#2b91af">int</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;x&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">ValueError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
@@ -1606,7 +1605,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Attempt #{attempt}: {error}, arguments={error.args}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># exceptions can be raised</span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">raise </span><span style="color:#2b91af">ValueError</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;param1&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;param2&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;param3&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">ValueError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
@@ -1621,7 +1620,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># we raise the MyError exception</span>
-<span class="odt-code-line"><span style="color:#000000">try += 1</span></span>
+<span class="odt-code-line">try += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">raise </span><span style="color:#2b91af">MyError</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;info1&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;info2&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;info3&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
@@ -1629,7 +1628,7 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Test #{test}: {error}, arguments={error.args}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># we raise the MyError exception with an error message</span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">raise </span><span style="color:#2b91af">MyError</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;my error message&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
@@ -1638,10 +1637,10 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the finally clause is always executed</span>
 <span class="odt-code-line"># regardless of whether an exception occurs</span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#0000ff">None</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    x = 1</span></span>
+<span class="odt-code-line">    x = 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">except</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># exception</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;test #{test}: exception&quot;</span><span style="color:#000000">)</span></span>
@@ -1649,10 +1648,10 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># executed in all cases</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;test #{test}: finally x={x}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#0000ff">None</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    x = 2 / 0</span></span>
+<span class="odt-code-line">    x = 2 / 0</span>
 <span class="odt-code-line"><span style="color:#0000ff">except</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># exception</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;test #{test}: exception&quot;</span><span style="color:#000000">)</span></span>
@@ -1661,10 +1660,10 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;test #{test}: finally x={x}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># You don&#x27;t have to include an <span style="font-weight:bold">[except] </span>clause</span>
-<span class="odt-code-line"><span style="color:#000000">trial += 1</span></span>
+<span class="odt-code-line">trial += 1</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># we cause an error</span>
-<span class="odt-code-line"><span style="color:#000000">    x = 4 / 0</span></span>
+<span class="odt-code-line">    x = 4 / 0</span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># executed in all cases</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;test #{test}: finally x={x}&quot;</span><span style="color:#000000">)</span></span>
@@ -1701,52 +1700,52 @@
 </ul>
 
 <p>The screen output is as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_02.py
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>Traceback (most recent call last):
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>  File &quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_02.py&quot;, line 136, in &lt;module&gt;
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>    x = 4 / 0
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>ZeroDivisionError: division by zero
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>test #0: division by zero
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>x=2
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>test #1: division by zero
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>Test #2: (Exception) division by zero
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>Test #3: (ZeroDivisionError) division by zero
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>Test #4: There was a problem
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>test #5: invalid literal for int() with base 10: &#39;x&#39;
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>Test #6: invalid literal for int() with base 10: &#39;x&#39;, parameters=(&quot;invalid literal for int() with base 10: &#39;x&#39;&quot;,)
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>test #7: (&#39;param1&#39;, &#39;param2&#39;, &#39;param3&#39;), parameters=(&#39;param1&#39;, &#39;param2&#39;, &#39;param3&#39;)
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a>test #8: (&#39;info1&#39;, &#39;info2&#39;, &#39;info3&#39;), parameters=(&#39;info1&#39;, &#39;info2&#39;, &#39;info3&#39;)
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>Test #9: my error message
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>test #10: finally x=1
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>test #11: exception
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a>test #11: finally x=None
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a>test #12: finally x=None
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a>
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a>Process finished with exit code 1
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_02.py
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Traceback (most recent call last):
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>  File &quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_02.py&quot;, line 136, in &lt;module&gt;
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    x = 4 / 0
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>ZeroDivisionError: division by zero
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>test #0: division by zero
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>x=2
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>test #1: division by zero
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>Test #2: (Exception) division by zero
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>Test #3: (ZeroDivisionError) division by zero
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>Test #4: There was a problem
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>test #5: invalid literal for int() with base 10: &#39;x&#39;
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>Test #6: invalid literal for int() with base 10: &#39;x&#39;, parameters=(&quot;invalid literal for int() with base 10: &#39;x&#39;&quot;,)
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>test #7: (&#39;param1&#39;, &#39;param2&#39;, &#39;param3&#39;), parameters=(&#39;param1&#39;, &#39;param2&#39;, &#39;param3&#39;)
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>test #8: (&#39;info1&#39;, &#39;info2&#39;, &#39;info3&#39;), parameters=(&#39;info1&#39;, &#39;info2&#39;, &#39;info3&#39;)
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>Test #9: my error message
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>test #10: finally x=1
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>test #11: exception
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>test #11: finally x=None
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>test #12: finally x=None
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>Process finished with exit code 1
 </code></pre></div></td></tr></table></div>
-<p><a id="toc48548942"></a>
-<a id="refheadingtoc2520992924280206"></a></p>
+<p><a id="refheadingtoc2520992924280206"></a>
+<a id="toc48548942"></a></p>
 <h2 id="53-script-exceptions_03">5.3. <span style="color: #4f81bd">script [exceptions_03]</span></h2>
 <p>This new script illustrates how exceptions are propagated up the chain of calling functions:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1779,7 +1778,7 @@
 <span class="odt-code-line"># Exceptions propagate up the chain of called methods</span>
 <span class="odt-code-line"># until a method catches it. Here, it will be main</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(f1(4))</span></span>
+<span class="odt-code-line">    print(f1(4))</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;type: {type(error)}, arguments: {error.args}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
@@ -1811,12 +1810,12 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># ---------- main</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(f4(4))</span></span>
+<span class="odt-code-line">    print(f4(4))</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the exception</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;type: {type(error)}, arguments: {error.args}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># we can trace the exception stack</span>
-<span class="odt-code-line"><span style="color:#000000">    err = error</span></span>
+<span class="odt-code-line">    err = error</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display the error message</span>
 <span class="odt-code-line"><span style="color:#000000">    print(err.args</span><span style="font-weight:bold;color:#000000">[0]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Is an exception encapsulated?</span>
@@ -1840,21 +1839,21 @@
 </ul>
 
 <p>The screen output is as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span>
-<span class="normal"><a href="#__codelineno-2-7">7</a></span>
-<span class="normal"><a href="#__codelineno-2-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_03.py
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>type: &lt;class &#39;<span class="gs">__main__</span>.MyError&#39;&gt;, arguments: (&#39;exception in f3&#39;,)
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>type: &lt;class &#39;<span class="gs">__main__</span>.MyError&#39;&gt;, arguments: (&#39;exception in f4&#39;, MyError(&#39;exception in f5&#39;, MyError(&#39;exception in f6&#39;)))
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>exception in f4
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>exception in f5
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>exception in f6
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>Process finished with exit code 0
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span>
+<span class="normal"><a href="#__codelineno-3-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_03.py
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>type: &lt;class &#39;<span class="gs">__main__</span>.MyError&#39;&gt;, arguments: (&#39;exception in f3&#39;,)
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>type: &lt;class &#39;<span class="gs">__main__</span>.MyError&#39;&gt;, arguments: (&#39;exception in f4&#39;, MyError(&#39;exception in f5&#39;, MyError(&#39;exception in f6&#39;)))
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>exception in f4
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>exception in f5
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>exception in f6
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>Process finished with exit code 0
 </code></pre></div></td></tr></table></div>
 
 

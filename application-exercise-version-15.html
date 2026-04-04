@@ -1518,8 +1518,8 @@
 
 
 
-<p><a id="toc48549324"></a>
-<a id="exercicedapplication11"></a></p>
+<p><a id="exercicedapplication11"></a>
+<a id="toc48549324"></a></p>
 <h1 id="35-application-exercise-version-15">35. <span style="color: #365f91">Application exercise: version 15</span></h1>
 <p><a id="toc48549325"></a></p>
 <h2 id="351-introduction">35.1. <span style="color: #4f81bd">Introduction</span></h2>
@@ -1843,7 +1843,7 @@
 <span class="odt-code-line">    <span style="color:#008000"># HTML views and their models depend on the state returned by the controller</span></span>
 <span class="odt-code-line">    <span style="color:#008000"># ASV actions (Action Show view)</span></span>
 <span class="odt-code-line">    asv = <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#008000"># Authentication view</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;states&quot;</span><span style="font-weight:bold">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">1100</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /display-authentication-view</span></span>
@@ -1906,7 +1906,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">    <span style="color:#008000"># ADS (Action Do Something) actions</span></span>
 <span class="odt-code-line">    ads = <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;statuses&quot;</span><span style="font-weight:bold">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#098658">400</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /successful session end</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            ]</span>,</span>
@@ -2347,7 +2347,7 @@
 <span class="odt-code-line"><span style="color:#000000">            csrf_token = </span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span><span style="color:#000000">{generate_csrf()}</span><span style="color:#a31515">&quot;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            csrf_token = </span><span style="color:#a31515">&quot;&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span></span>
+<span class="odt-code-line">        </span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># Redirect response</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">redirect(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{ads</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;to&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}{csrf_token}</span><span style="color:#a31515">&quot;</span><span style="color:#000000">), status.HTTP_302_FOUND</span></span>
 </code></pre></div>

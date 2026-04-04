@@ -1529,8 +1529,8 @@
 
 
 
-<p><a id="toc48549313"></a>
-<a id="exercicedapplication10"></a></p>
+<p><a id="exercicedapplication10"></a>
+<a id="toc48549313"></a></p>
 <h1 id="34-practical-exercise-version-14">34. <span style="color: #365f91">Practical Exercise: Version 14</span></h1>
 <p>The <strong>[http-servers/09]</strong> folder for version 14 is obtained by copying the <strong>[http-servers/08]</strong> folder from version 13.</p>
 <p><a id="toc48549314"></a></p>
@@ -1601,7 +1601,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;redis&quot;</span><span style="color:#000000">: {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;host&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;127.0.0.1&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;port&quot;</span><span style="color:#000000">:</span><span style="color:#098658"> 6379</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># CSRF token</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;with_csrftoken&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">False</span><span style="color:#000000">,</span></span>
 </code></pre></div>
@@ -1695,9 +1695,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;alert alert-primary&quot; </span><span style="color:#000000">role=</span><span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;h4&gt;</span><span style="color:#000000">Please log in</span><span style="color:#800000">&lt;/h4&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/form&gt;</span></span>
+<span class="odt-code-line">&lt;/form&gt;</span>
 </code></pre></div>
 
 <ul>
@@ -1705,15 +1705,11 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">[/authenticate-user/Ijk4NjQ2ZDdjZjI0ZDJiYTVjZTZjYmFhZGNjMjE3Y2U5M2I3ODI0NzYi.Xy5Okg.n-kSR_nslkndfT7AFVy2UDtdb8c]</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[/authenticate-user/Ijk4NjQ2ZDdjZjI0ZDJiYTVjZTZjYmFhZGNjMjE3Y2U5M2I3ODI0NzYi.Xy5Okg.n-kSR_nslkndfT7AFVy2UDtdb8c]
 </code></pre></div>
-
 <p>or</p>
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">[/authenticate-user]</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>[/authenticate-user]
 </code></pre></div>
-
 <p>depending on whether the application has been configured to use CSRF tokens;</p>
 <p><u><strong>The tax calculation fragment</strong> </u><strong>[v-calcul-impot.html]</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
@@ -1726,25 +1722,25 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>…</span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/form&gt;</span></span>
+<span class="odt-code-line">&lt;/form&gt;</span>
 </code></pre></div>
 
 <p><u><strong>The simulations section</strong> </u><strong>[v-liste-simulations.html]</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line">{% if model.simulations is undefined or model.simulations|length==0 %}</span>
-<span class="odt-code-line"><span style="color:#008000">&lt;!-- message on blue background --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- message on blue background --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;div </span>class=<span style="color:#0000ff">&quot;alert alert-primary&quot; </span>role=<span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;h4&gt;</span>Your simulation list is empty<span style="color:#800000">&lt;/h4&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/div&gt;</span></span>
+<span class="odt-code-line">&lt;/div&gt;</span>
 <span class="odt-code-line">{% endif %}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">{% if model.simulations is defined and model.simulations.length!=0 %}</span>
-<span class="odt-code-line"><span style="color:#008000">&lt;!-- message on blue background --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- message on blue background --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;div </span>class=<span style="color:#0000ff">&quot;alert alert-primary&quot; </span>role=<span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;h4&gt;</span>List of your simulations<span style="color:#800000">&lt;/h4&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/div&gt;</span></span>
+<span class="odt-code-line">&lt;/div&gt;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">&lt;!-- table of simulations --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- table of simulations --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;table </span>class=<span style="color:#0000ff">&quot;table table-sm table-hover table-striped&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#008000">…</span></span>
 <span class="odt-code-line">    <span style="color:#008000">&lt;!-- table body (displayed data) --&gt;</span></span>
@@ -1778,7 +1774,7 @@
 <span class="odt-code-line">    {% endfor %}</span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;/tr&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;/tbody&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/table&gt;</span></span>
+<span class="odt-code-line">&lt;/table&gt;</span>
 <span class="odt-code-line">{% endif %}</span>
 </code></pre></div>
 
@@ -1787,10 +1783,10 @@
 <span class="odt-code-line">&lt;!-- Bootstrap menu --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;nav </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;nav flex-column&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Displaying a list of HTML links --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    {% for optionMenu in model.optionsMenu %}</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
-<span class="odt-code-line"><span style="color:#000000">    {% endfor %}</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/nav&gt;</span></span>
+<span class="odt-code-line">    {% for optionMenu in model.optionsMenu %}</span>
+<span class="odt-code-line">    </span>
+<span class="odt-code-line">    {% endfor %}</span>
+<span class="odt-code-line">&lt;/nav&gt;</span>
 </code></pre></div>
 
 <p><a id="toc48549320"></a></p>
@@ -1877,7 +1873,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line">…</span>
 <span class="odt-code-line"># the main thread no longer needs the logger</span>
-<span class="odt-code-line"><span style="color:#000000">logger.close()</span></span>
+<span class="odt-code-line">logger.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># if there was an error, stop</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span><span style="color:#000000">error:</span></span>
@@ -1890,10 +1886,10 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">import </span><span style="color:#000000">routes_without_csrftoken </span><span style="color:#0000ff">as </span><span style="color:#000000">routes</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Configure routes</span>
-<span class="odt-code-line"><span style="color:#000000">routes.config = config</span></span>
+<span class="odt-code-line">routes.config = config</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Start the Flask application</span>
-<span class="odt-code-line"><span style="color:#000000">routes.execute(__name__)</span></span>
+<span class="odt-code-line">routes.execute(__name__)</span>
 </code></pre></div>
 
 <ul>
@@ -2157,8 +2153,8 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Execute the request</span>
 <span class="odt-code-line"><span style="color:#000000">        response = </span><span style="background-color:#fff2cc;color:#000000">requests.request</span><span style="color:#000000">(method,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                    url_service,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                    data=data_value,</span></span>
+<span class="odt-code-line">                                    url_service,</span>
+<span class="odt-code-line">                                    data=data_value,</span>
 <span class="odt-code-line"><span style="color:#000000">                                    json=json_value,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                    </span><span style="color:#0000ff">cookies=self</span><span style="color:#000000">.__cookies,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                    </span><span style="background-color:#fff2cc;color:#0000ff">allow_redirects=True</span><span style="color:#000000">)</span></span>
@@ -2173,7 +2169,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># result</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if self</span><span style="color:#000000">.__session_type == </span><span style="color:#a31515">&quot;json&quot;</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            result = json.loads(response.text)</span></span>
+<span class="odt-code-line">            result = json.loads(response.text)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:  </span># xml</span>
 <span class="odt-code-line"><span style="color:#000000">            result = xmltodict.parse(response.text</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#098658">39</span><span style="font-weight:bold;color:#000000">:]</span><span style="color:#000000">)</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;root&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"></span>
@@ -2186,7 +2182,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">self</span><span style="color:#000000">.__csrf_token = result.get(</span><span style="color:#a31515">&#x27;csrf_token&#x27;</span><span style="color:#000000">, </span><span style="color:#0000ff">None</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># status code</span>
-<span class="odt-code-line"><span style="color:#000000">        status_code = response.status_code</span></span>
+<span class="odt-code-line">        status_code = response.status_code</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># if status code is not 200 OK</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">status_code != status.HTTP_200_OK:</span></span>
@@ -2195,7 +2191,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># return the result</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">result</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;response&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span></span>
+<span class="odt-code-line">    </span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">init_session(self, session_type: str):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># Note the session type</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.__session_type = session_type</span></span>
@@ -2208,7 +2204,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># execute request</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.get_response(</span><span style="color:#a31515">&quot;GET&quot;</span><span style="color:#000000">, url_service)</span></span>
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">…</span>
 </code></pre></div>
 
 <ul>
@@ -2298,7 +2294,7 @@
 <span class="odt-code-line">2020-08-08 16:33:23.429127, Thread-1 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">authenticate-user</span>&quot;, &quot;status&quot;: 200, &quot;response&quot;: &quot;Authentication successful&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjIxNmU4MDQyZDFmZmIyZDlmZjE4MzNlNDUzYzFjMGYxMWYxYzEwNGYi.Xy63sw.fgs6Cm2owsJf4NjTm7gKrVESabI&quot;}</span>
 <span class="odt-code-line">2020-08-08 16:33:23.429127, Thread-2: {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">end-session</span>&quot;, &quot;status&quot;: 400, &quot;response&quot;: &quot;session reset&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjU1YjlmZDA0OWRhNTJlODFmYjgyYjlhM2ExYWNhZmUzNTk2NjA5NGIi.Xy63sw.nyNSvkcG6iG0oIMBjtYPo8ySgdw&quot;}</span>
 <span class="odt-code-line">2020-08-08 16:33:23.438519, Thread-2: Tax calculation for the 2 taxpayers completed</span>
-<span class="odt-code-line">2020-08-08 16:33:23.443033, Thread-4: {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">calculate-taxes</span>&quot;, &quot;status&quot;: 1500, &quot;response&quot;: <span style="font-weight:bold">[{&quot;married&quot;: &quot;yes&quot;, &quot;children&quot;: 3, &quot;salary&quot;: 200000, &quot;tax&quot;: 42842, &quot;surcharge&quot;: 17283, &quot;rate&quot;: 0.41, &quot;discount&quot;: 0, &quot;reduction&quot;: 0, &quot;id&quot;: 1}]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;ImY5YzQyMjlkYzcyYmM4YmZiMGI0NWY5MjE4MzIzNDExZjc0MGQ3MWQi.Xy63sw.q6olg7IP_g2ro_RBFRCX1BX90g8&quot;}</span>
+<span class="odt-code-line">2020-08-08 16:33:23.443033, Thread-4: {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">calculate-taxes</span>&quot;, &quot;status&quot;: 1500, &quot;response&quot;: <span style="font-weight:bold">[{&quot;married&quot;: &quot;yes&quot;, &quot;children&quot;: 3, &quot;salary&quot;: 200000, &quot;tax&quot;: 42842, &quot;surcharge&quot;: 17283, &quot;rate&quot;: </span><span style="font-weight:bold">0.41, &quot;discount&quot;: 0, &quot;reduction&quot;: 0, &quot;id&quot;: 1}]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;ImY5YzQyMjlkYzcyYmM4YmZiMGI0NWY5MjE4MzIzNDExZjc0MGQ3MWQi.Xy63sw.q6olg7IP_g2ro_RBFRCX1BX90g8&quot;}</span>
 <span class="odt-code-line">2020-08-08 16:33:23.446510, Thread-3: {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">calculate-taxes</span>&quot;, &quot;status&quot;: 1500, &quot;response&quot;: <span style="font-weight:bold">[{&quot;married&quot;: &quot;yes&quot;, &quot;children&quot;: 5, &quot;salary&quot;: 100000, &quot;tax&quot;: 4230, &quot;surcharge&quot;: 0, &quot;rate&quot;: 0.14, &quot;discount&quot;: 0, &quot;reduction&quot;: 0, &quot;id&quot;: 1}, {&quot;married&quot;: &quot;no&quot;, &quot;children&quot;: 0, &quot;salary&quot;: 100000, &quot;tax&quot;: 22986, &quot;surcharge&quot;: 0, &quot;rate&quot;: 0.41, &quot;discount&quot;: 0, &quot;reduction&quot;: 0, &quot;id&quot;: 2}, {&quot;married&quot;: &quot;yes&quot;, &quot;children&quot;: 2, &quot;salary&quot;: 30000, &quot;tax&quot;: 0, &quot;surcharge&quot;: 0, &quot;rate&quot;: 0.0, &quot;discount&quot;: 0, &quot;reduction&quot;: 0, &quot;id&quot;: 3}, {&quot;married&quot;: &quot;no&quot;, &quot;children&quot;: 0, &quot;salary&quot;: 200000, &quot;tax&quot;: 64210, &quot;surcharge&quot;: 7498, &quot;rate&quot;: 0.45, &quot;discount&quot;: 0, &quot;reduction&quot;: 0, &quot;id&quot;: 4}]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjkxZGNlN2YyMmUxMjQ0M2Y0MTdjNDQ4ZmQ1MDMxZjkwNjBhNzAzZjMi.Xy63sw.-6buL11No3UJBlElpW4tX4B-lp0&quot;}</span>
 <span class="odt-code-line">2020-08-08 16:33:23.453477, Thread-1: {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">calculate-taxes</span>&quot;, &quot;status&quot;: 1500, &quot;response&quot;: <span style="font-weight:bold">[{&quot;married&quot;: &quot;yes&quot;, &quot;children&quot;: 2, &quot;salary&quot;: 55555, &quot;tax&quot;: 2814, &quot;surcharge&quot;: 0, &quot;rate&quot;: 0.14, &quot;discount&quot;: 0, &quot;reduction&quot;: 0, &quot;id&quot;: 1}, {&quot;married&quot;: &quot;yes&quot;, &quot;children&quot;: 2, &quot;salary&quot;: 50000, &quot;tax&quot;: 1384, &quot;surcharge&quot;: 0, &quot;rate&quot;: 0.14, &quot;discount&quot;: 384, &quot;reduction&quot;: 347, &quot;id&quot;: 2}, {&quot;married&quot;: &quot;yes&quot;, &quot;children&quot;: 3, &quot;salary&quot;: 50000, &quot;tax&quot;: 0, &quot;surcharge&quot;: 0, &quot;rate&quot;: 0.14, &quot;discount&quot;: 720, &quot;reduction&quot;: 0, &quot;id&quot;: 3}, {&quot;married&quot;: &quot;no&quot;, &quot;children&quot;: 2, &quot;salary&quot;: 100000, &quot;tax&quot;: 19884, &quot;surcharge&quot;: 4480, &quot;rate&quot;: 0.41, &quot;discount&quot;: 0, &quot;reduction&quot;: 0, &quot;id&quot;: 4}]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjIxNmU4MDQyZDFmZmIyZDlmZjE4MzNlNDUzYzFjMGYxMWYxYzEwNGYi.Xy63sw.fgs6Cm2owsJf4NjTm7gKrVESabI&quot;}</span>
 <span class="odt-code-line">2020-08-08 16:33:23.457912, Thread-4: {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">end-session</span>&quot;, &quot;status&quot;: 400, &quot;response&quot;: &quot;session reset&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjQ0ZDQxODgzN2M5NjRiYWI0NjA2MTk5YWFkNGFhMzY1M2IxNWMyNDIi.Xy63sw.mOa5MKXvJ-EXf_qEok-OqC5j_mg&quot;}</span>

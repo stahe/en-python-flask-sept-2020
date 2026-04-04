@@ -1468,13 +1468,13 @@
 
 
 
-<p><a id="lesfichierstexte"></a>
+<p><a id="refheadingtoc2521212924280206"></a>
 <a id="toc48548956"></a>
-<a id="refheadingtoc2521212924280206"></a></p>
+<a id="lesfichierstexte"></a></p>
 <h1 id="7-text-files">7. <span style="color: #365f91">Text files</span></h1>
 <p><img src="images/1000000100000164000001FA6815CD95.png" style="width:3.313cm;height:4.708cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000164000001FA6815CD95.png" /></p>
-<p><a id="toc48548957"></a>
-<a id="refheading382642423505"></a></p>
+<p><a id="refheading382642423505"></a>
+<a id="toc48548957"></a></p>
 <h2 id="71-script-fic_01-readingwriting-a-text-file">7.1. <span style="color: #4f81bd">Script [fic_01]: Reading/writing a text file</span></h2>
 <p>The following script illustrates an example of working with text files:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1518,7 +1518,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># close the file if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">file:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        fic.close()</span></span>
+<span class="odt-code-line">        fic.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># open it for reading</span>
 <span class="odt-code-line"><span style="color:#000000">fic = </span><span style="color:#0000ff">None</span></span>
@@ -1526,10 +1526,10 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># open the file for reading</span>
 <span class="odt-code-line"><span style="color:#000000">    fic = open(FILE_NAME, </span><span style="color:#a31515">&quot;r&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># empty dictionary at the start</span>
-<span class="odt-code-line"><span style="color:#000000">    dico = {}</span></span>
+<span class="odt-code-line">    dico = {}</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Each line is added to the dictionary <span style="font-weight:bold">[dico] </span>in the format login =&gt; uid:gid:info:dir:shell</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Read the first line, removing leading and trailing spaces</span>
-<span class="odt-code-line"><span style="color:#000000">    line = fic.readline().strip()</span></span>
+<span class="odt-code-line">    line = fic.readline().strip()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># while the line is not empty</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">while </span><span style="color:#000000">line != </span><span style="color:#a31515">&#x27;&#x27;</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># we put the line into an array</span>
@@ -1541,14 +1541,14 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># create an entry in the dictionary</span>
 <span class="odt-code-line"><span style="color:#000000">        dico</span><span style="font-weight:bold;color:#000000">[login] </span><span style="color:#000000">= info</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># read next line</span>
-<span class="odt-code-line"><span style="color:#000000">        line = fic.readline().strip()</span></span>
+<span class="odt-code-line">        line = fic.readline().strip()</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">IOError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;Error processing file {FILE_NAME}: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#6f008a">sys</span><span style="color:#000000">.exit()</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># close the file if it was opened</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">file:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        fic.close()</span></span>
+<span class="odt-code-line">        fic.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># use the dico dictionary</span>
 <span class="odt-code-line"><span style="color:#000000">display_info(dico, </span><span style="color:#a31515">&quot;login10&quot;</span><span style="color:#000000">)</span></span>
@@ -1609,8 +1609,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="toc48548958"></a>
-<a id="refheadingtoc2521232924280206"></a></p>
+<p><a id="refheadingtoc2521232924280206"></a>
+<a id="toc48548958"></a></p>
 <h2 id="72-script-fic_02-handling-utf-8-encoded-text-files">7.2. <span style="color: #4f81bd">Script [fic_02]: Handling UTF-8-encoded text files</span></h2>
 <p>In the rest of this document, we will be working exclusively with UTF-8 encoded text files. First, we will configure PyCharm:</p>
 <p><img src="images/1000000100000427000001397C0E777D.png" style="width:16.24cm;height:4.782cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000427000001397C0E777D.png" /></p>
@@ -1644,8 +1644,8 @@
 <p><strong>Results</strong></p>
 <p>When opening the <strong>[data/utf8.txt]</strong> file obtained (see line 6), the following result is obtained:</p>
 <p><img src="images/10000001000002E20000006391398D09.png" style="width:11.261cm;height:1.512cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002E20000006391398D09.png" /></p>
-<p><a id="toc48548959"></a>
-<a id="refheadingtoc2521252924280206"></a></p>
+<p><a id="refheadingtoc2521252924280206"></a>
+<a id="toc48548959"></a></p>
 <h2 id="73-script-fic_03-handling-text-files-encoded-in-iso-8859-1">7.3. <span style="color: #4f81bd">Script [fic_03]: handling text files encoded in ISO-8859-1</span></h2>
 <p>The script <strong>[fic_03]</strong> does the same thing as the script <strong>[fic_02]</strong> but encodes the text file in ISO-8859-1. We want to show the difference between the resulting files:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1680,8 +1680,8 @@
   <li>we see that in <b>[6-7]</b>, PyCharm noted that the file <b>[iso-8859-1.txt] </b>should be opened with ISO-8859-1 encoding. This is therefore an exception to the rule <b>[5]</b>;
   </li>
 </ul>
-<p><a id="toc48548960"></a>
-<a id="refheadingtoc2521272924280206"></a></p>
+<p><a id="refheadingtoc2521272924280206"></a>
+<a id="toc48548960"></a></p>
 <h2 id="74-script-json_01-working-with-a-json-file">7.4. <span style="color: #4f81bd">Script [json_01]: Working with a JSON file</span></h2>
 <p>JSON stands for JavaScript Object Notation. As the name suggests, it is a text-based representation of JavaScript objects. Here, we will use it with Python objects.</p>
 <p>The JSON file being managed <strong>[data/in.json]</strong> will look like this:</p>
@@ -1763,8 +1763,8 @@
 <p><img src="images/1000000100000409000000744C4EDB31.png" style="width:17.5cm;height:1.965cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000409000000744C4EDB31.png" /></p>
 <p>The text in the file is on a single line. However, PyCharm recognizes JSON files, and we can format them—just like Python files and others—using Ctrl-Alt-L. This gives us the following:</p>
 <p><img src="images/10000001000001E1000001CED0548C1A.png" style="width:8.22cm;height:7.895cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001E1000001CED0548C1A.png" /></p>
-<p><a id="toc48548961"></a>
-<a id="refheadingtoc2521292924280206"></a></p>
+<p><a id="refheadingtoc2521292924280206"></a>
+<a id="toc48548961"></a></p>
 <h2 id="75-script-json_02-handling-json-files-encoded-in-utf-8">7.5. <span style="color: #4f81bd">Script [json_02]: Handling JSON Files Encoded in UTF-8</span></h2>
 <p>A JSON file encoded in UTF-8 can take two forms:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1793,9 +1793,9 @@
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># close files if they are open</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">out_file1:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        out_file1.close()</span></span>
+<span class="odt-code-line">        out_file1.close()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">out_file2:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        out_file2.close()</span></span>
+<span class="odt-code-line">        out_file2.close()</span>
 <span class="odt-code-line">…</span>
 </code></pre></div>
 
@@ -1834,7 +1834,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line">…</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># reading JSON files</span></span>
+<span class="odt-code-line"># reading JSON files</span>
 <span class="odt-code-line"><span style="color:#000000">in_file1 = </span><span style="color:#0000ff">None</span></span>
 <span class="odt-code-line"><span style="color:#000000">in_file2 = </span><span style="color:#0000ff">None</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
@@ -1855,9 +1855,9 @@
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000"># close files if they are open</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">in_file1:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        in_file1.close()</span></span>
+<span class="odt-code-line">        in_file1.close()</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">in_file2:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        in_file2.close()</span></span>
+<span class="odt-code-line">        in_file2.close()</span>
 </code></pre></div>
 
 <p><strong>Notes</strong></p>

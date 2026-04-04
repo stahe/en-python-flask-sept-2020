@@ -1646,14 +1646,14 @@
 
 
 
-<p><a id="toc48549013"></a>
-<a id="lesclassesgeneriques"></a></p>
+<p><a id="lesclassesgeneriques"></a>
+<a id="toc48549013"></a></p>
 <h1 id="13-the-generic-classes-baseentity-and-myexception">13. <span style="color: #365f91">The generic classes [BaseEntity] and [MyException]</span></h1>
 <p>We will now define two classes that we will use regularly going forward.</p>
 <p><img src="images/100000000000015F000001ED11B0338D.png" style="width:4.052cm;height:5.69cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015F000001ED11B0338D.png" /></p>
-<p><a id="toc48549014"></a>
+<p><a id="lentitemyexception"></a>
 <a id="refheadingtoc5509889600925"></a>
-<a id="lentitemyexception"></a></p>
+<a id="toc48549014"></a></p>
 <h2 id="131-the-myexception-class">13.1. <span style="color: #4f81bd">The MyException class</span></h2>
 <p>The <strong>[MyException]</strong> class (MyException.py) provides a custom exception class:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1705,8 +1705,8 @@
   <li>lines 23–24: the validity of the <b>[code] </b>attribute is checked: it must be an integer greater than 0;
   </li>
 </ul>
-<p><a id="toc48549015"></a>
-<a id="laclassebaseentity"></a></p>
+<p><a id="laclassebaseentity"></a>
+<a id="toc48549015"></a></p>
 <h2 id="132-the-baseentity-class">13.2. <span style="color: #4f81bd">The [BaseEntity] class</span></h2>
 <p>The <strong>[BaseEntity]</strong> class will be the parent class of most of the classes we create to encapsulate information about an object. Moving forward, we will primarily use two types of classes:</p>
 <ul>
@@ -2016,7 +2016,7 @@
 <span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># the BaseEntity class</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/entities&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">    <span style="color:#008000"># Update the syspath</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -2047,7 +2047,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a teacher</span>
 <span class="odt-code-line"><span style="color:#000000">teacher1 = </span><span style="color:#2b91af">Teacher</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;lourou&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;paul&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 56})</span></span>
-<span class="odt-code-line"><span style="color:#000000">teacher1.show()</span></span>
+<span class="odt-code-line">teacher1.show()</span>
 </code></pre></div>
 
 <ul>
@@ -2086,7 +2086,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a teacher</span>
 <span class="odt-code-line"><span style="color:#000000">teacher1 = </span><span style="color:#2b91af">Teacher</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;lourou&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 56})</span></span>
-<span class="odt-code-line"><span style="color:#000000">teacher1.show()</span></span>
+<span class="odt-code-line">teacher1.show()</span>
 </code></pre></div>
 
 <ul>
@@ -2122,7 +2122,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a teacher</span>
 <span class="odt-code-line"><span style="color:#000000">teacher1 = </span><span style="color:#2b91af">Teacher</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;lourou&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;albert&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 56, </span><span style="color:#a31515">&quot;gender&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;M&quot;</span><span style="color:#000000">})</span></span>
-<span class="odt-code-line"><span style="color:#000000">teacher1.show()</span></span>
+<span class="odt-code-line">teacher1.show()</span>
 </code></pre></div>
 
 <ul>
@@ -2156,7 +2156,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a teacher</span>
 <span class="odt-code-line"><span style="color:#000000">teacher1 = </span><span style="color:#2b91af">Teacher</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;lourou&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;albert&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 56, </span><span style="color:#a31515">&quot;gender&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;M&quot;</span><span style="color:#000000">}, </span><span style="background-color:#fff2cc;color:#0000ff">silent=True</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">teacher1.show()</span></span>
+<span class="odt-code-line">teacher1.show()</span>
 </code></pre></div>
 
 <ul>
@@ -2172,8 +2172,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="toc48549017"></a>
-<a id="lamethodebaseentityasdict"></a></p>
+<p><a id="lamethodebaseentityasdict"></a>
+<a id="toc48549017"></a></p>
 <h3 id="1322-the-baseentityasdict-method">13.2.2. <span style="color: #4f81bd">The [BaseEntity.asdict] method</span></h3>
 <h4 id="13221-definition">13.2.2.1. <span style="color: #4f81bd">Definition</span></h4>
 <p>The <strong>[BaseEntity.asdict]</strong> method returns a dictionary whose keys are the object’s properties:</p>
@@ -2182,7 +2182,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># object attributes</span></span>
 <span class="odt-code-line"><span style="color:#000000">        attributes = </span>self<span style="color:#000000">.__dict__</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># new attributes</span></span>
-<span class="odt-code-line"><span style="color:#000000">        new_attributes = {}</span></span>
+<span class="odt-code-line">        new_attributes = {}</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># iterate over the attributes</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">for </span><span style="color:#000000">key, value </span><span style="color:#0000ff">in </span><span style="color:#000000">attributes.items():</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># if the key is explicitly requested</span></span>
@@ -2505,7 +2505,7 @@
 <span class="odt-code-line"># a teacher</span>
 <span class="odt-code-line"><span style="color:#000000">json1 = </span><span style="color:#6f008a">json</span><span style="color:#000000">.dumps({</span><span style="color:#a31515">&quot;id&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;lourou&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;paul&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;age&quot;</span><span style="color:#000000">: 56})</span></span>
 <span class="odt-code-line"><span style="color:#000000">teacher1 = </span><span style="color:#2b91af">Teacher</span><span style="color:#000000">().fromjson(json1)</span></span>
-<span class="odt-code-line"><span style="color:#000000">teacher1.show()</span></span>
+<span class="odt-code-line">teacher1.show()</span>
 </code></pre></div>
 
 <ul>
@@ -2552,7 +2552,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">att1(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">int</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#808080">self</span><span style="color:#000000">.__att1</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    @att1.setter</span></span>
+<span class="odt-code-line">    @att1.setter</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="color:#000000">att1(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">value</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">):</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> 10 &gt;= </span><span style="color:#808080">value </span><span style="color:#000000">&gt;= 1:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#808080">self</span><span style="color:#000000">.__att1 = </span><span style="color:#808080">value</span></span>
@@ -2566,24 +2566,24 @@
 <span class="odt-code-line"><span style="color:#000000">child = </span><span style="color:#2b91af">ChildEntity</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;att1&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;att2&quot;</span><span style="color:#000000">: 2})</span></span>
 <span class="odt-code-line"># Be careful with property names</span>
 <span class="odt-code-line"># these are the names used in <span style="font-weight:bold">[excluded_keys] </span>and <span style="font-weight:bold">[included_keys]</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(child.__dict__)</span></span>
+<span class="odt-code-line">print(child.__dict__)</span>
 <span class="odt-code-line"># properties not prefixed by their class</span>
-<span class="odt-code-line"><span style="color:#000000">print(child)</span></span>
+<span class="odt-code-line">print(child)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># ChildEntity instance</span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    child = </span><span style="color:#2b91af">ChildEntity</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;att1&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;att5&quot;</span><span style="color:#000000">: 5})</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(child)</span></span>
+<span class="odt-code-line">    print(child)</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># ChildEntity instance</span>
 <span class="odt-code-line"><span style="color:#000000">child = </span><span style="color:#2b91af">ChildEntity</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;att1&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;att2&quot;</span><span style="color:#000000">: 2, </span><span style="color:#a31515">&quot;att3&quot;</span><span style="color:#000000">: 3, </span><span style="color:#a31515">&quot;att4&quot;</span><span style="color:#000000">: 4})</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(child)</span></span>
+<span class="odt-code-line">print(child)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Excluding certain keys from the instance state</span>
 <span class="odt-code-line"><span style="color:#2b91af">ChildEntity</span><span style="color:#000000">.excluded_keys = </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;att3&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(child)</span></span>
+<span class="odt-code-line">print(child)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Explicitly exclude a key from the display</span>
 <span class="odt-code-line"># it is added to those excluded globally at the class level</span>
@@ -2595,13 +2595,13 @@
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    child = </span><span style="color:#2b91af">ChildEntity</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;att1&quot;</span><span style="color:#000000">: 20})</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">MyException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># ChildEntity instance</span>
 <span class="odt-code-line"><span style="color:#000000">child1 = </span><span style="color:#2b91af">ChildEntity</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;att1&quot;</span><span style="color:#000000">: 1, </span><span style="color:#a31515">&quot;att2&quot;</span><span style="color:#000000">: 2, </span><span style="color:#a31515">&quot;att3&quot;</span><span style="color:#000000">: 3, </span><span style="color:#a31515">&quot;att4&quot;</span><span style="color:#000000">: 4})</span></span>
 <span class="odt-code-line"># ChildEntity instance containing another ChildEntity instance</span>
 <span class="odt-code-line"><span style="color:#000000">child2 = </span><span style="color:#2b91af">ChildEntity</span><span style="color:#000000">().fromdict({</span><span style="color:#a31515">&quot;att1&quot;</span><span style="color:#000000">: 10, </span><span style="color:#a31515">&quot;att2&quot;</span><span style="color:#000000">: 20, </span><span style="color:#a31515">&quot;att3&quot;</span><span style="color:#000000">: 30, </span><span style="color:#a31515">&quot;att4&quot;</span><span style="color:#000000">: child1})</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(child2)</span></span>
+<span class="odt-code-line">print(child2)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># included_keys take precedence over excluded_keys, which are then ignored</span>
 <span class="odt-code-line"><span style="color:#2b91af">ChildEntity</span><span style="color:#000000">.excluded_keys = </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;_ChildEntity__att1&#x27;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&#x27;att2&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>

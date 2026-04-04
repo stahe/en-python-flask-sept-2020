@@ -1817,8 +1817,8 @@
 
 
 
-<p><a id="toc48549268"></a>
-<a id="lemodehtml"></a></p>
+<p><a id="lemodehtml"></a>
+<a id="toc48549268"></a></p>
 <h1 id="32-html-mode-in-version-12">32. <span style="color: #365f91">HTML mode in version 12</span></h1>
 <p>We mentioned at the beginning of Version 12 that we would be developing the application in several phases. We wrote:</p>
 <ul>
@@ -1835,11 +1835,11 @@
 </ul>
 
 <p>We have an operational JSON and XML server. We can now move on to the HTML server. We will see that it reuses the entire architecture developed for the JSON/XML server and adds HTML view management to it.</p>
-<p><a id="toc48549269"></a>
-<a id="toc42690917"></a>
-<a id="toc42690531"></a>
+<p><a id="refheadingtoc185731971629160"></a>
 <a id="toc42690145"></a>
-<a id="refheadingtoc185731971629160"></a></p>
+<a id="toc42690531"></a>
+<a id="toc42690917"></a>
+<a id="toc48549269"></a></p>
 <h2 id="321-mvc-architecture">32.1. <span style="color: #4f81bd">MVC Architecture</span></h2>
 <p>We will implement the MVC (Model–View–Controller) architectural pattern as follows:</p>
 <p><img src="images/100000010000033200000102272A12E0.png" style="width:13.831cm;height:4.362cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000033200000102272A12E0.png" /></p>
@@ -1970,7 +1970,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#000000">        </span># HTML views and their models depend on the status returned by the controller</span>
 <span class="odt-code-line">        <span style="color:#a31515">&quot;views&quot;</span>: <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold"># authentication view</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;states&quot;</span><span style="font-weight:bold">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold"># /init-session success</span></span>
@@ -2017,7 +2017,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># redirects</span>
 <span class="odt-code-line"><span style="color:#000000">        </span>&quot;redirects&quot;<span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;statuses&quot;</span><span style="font-weight:bold">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                    </span><span style="font-weight:bold;color:#098658">400</span><span style="font-weight:bold">,  </span><span style="font-weight:bold;color:#008000"># /end-session success</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#000000">]</span>,</span>
@@ -2052,18 +2052,18 @@
 </ul>
 
 <p>We will now present the different views.</p>
-<p><a id="refheadingtoc185733971629160"></a>
-<a id="toc48549273"></a>
-<a id="toc42690918"></a>
+<p><a id="toc42690146"></a>
 <a id="toc42690532"></a>
-<a id="toc42690146"></a></p>
+<a id="toc42690918"></a>
+<a id="toc48549273"></a>
+<a id="refheadingtoc185733971629160"></a></p>
 <h2 id="325-the-authentication-view">32.5. <span style="color: #4f81bd">The authentication view</span></h2>
 <p><img src="images/10000000000001AD000001FE58FBD27D.png" style="width:4.949cm;height:5.884cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AD000001FE58FBD27D.png" /></p>
-<p><a id="refheadingtoc185735971629160"></a>
-<a id="toc48549274"></a>
-<a id="toc42690919"></a>
+<p><a id="toc42690147"></a>
 <a id="toc42690533"></a>
-<a id="toc42690147"></a></p>
+<a id="toc42690919"></a>
+<a id="toc48549274"></a>
+<a id="refheadingtoc185735971629160"></a></p>
 <h3 id="3251-view-overview">32.5.1. <span style="color: #4f81bd">View Overview</span></h3>
 <p>The authentication view is as follows:</p>
 <p><img src="images/10000000000004F40000034B67C9D00B.png" style="width:14.651cm;height:9.74cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004F40000034B67C9D00B.png" /></p>
@@ -2171,13 +2171,13 @@
   </li>
 </ul>
 
-<p><a id="toc48549275"></a>
-<a id="toc42690920"></a>
-<a id="toc42690534"></a>
-<a id="toc42690148"></a>
-<a id="refheadingtoc1533303476773583"></a>
+<p><a id="lefragmentv-bandeauhtml"></a>
 <a id="lefragmentv-bandeauphp"></a>
-<a id="lefragmentv-bandeauhtml"></a></p>
+<a id="refheadingtoc1533303476773583"></a>
+<a id="toc42690148"></a>
+<a id="toc42690534"></a>
+<a id="toc42690920"></a>
+<a id="toc48549275"></a></p>
 <h3 id="3252-the-v-bannerhtml-fragment">32.5.2. <span style="color: #4f81bd">The [v-banner.html] fragment</span></h3>
 <p>The <strong>[v-banner.html]</strong> fragment displays the top banner of all views in the web application:</p>
 <p><img src="images/1000000100000346000000B8FFC09027.png" style="width:11.411cm;height:2.506cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000346000000B8FFC09027.png" /></p>
@@ -2218,11 +2218,11 @@
   </li>
 </ul>
 
-<p><a id="refheadingtoc185737971629160"></a>
-<a id="toc48549276"></a>
-<a id="toc42690921"></a>
+<p><a id="toc42690149"></a>
 <a id="toc42690535"></a>
-<a id="toc42690149"></a></p>
+<a id="toc42690921"></a>
+<a id="toc48549276"></a>
+<a id="refheadingtoc185737971629160"></a></p>
 <h3 id="3253-the-v-authentificationhtml-fragment">32.5.3. <span style="color: #4f81bd">The [v-authentification.html] fragment</span></h3>
 <p>The <strong>[v-authentification.html]</strong> fragment displays the web application’s authentication form:</p>
 <p><img src="images/100000000000026800000129E13D08C5.png" style="width:7.123cm;height:3.434cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026800000129E13D08C5.png" /></p>
@@ -2347,11 +2347,11 @@
 
 <p>There is one last thing to explain. In line 2, the <strong>[action=&quot;/authentifier-utilisateur&quot;]</strong> attribute defines an incomplete URL (it does not start with http://machine:port/chemin). In our example, all application URLs are of the form <strong>[http://machine:port/chemin/action/param1/param2/..],</strong> where <strong>[http://machine:port/chemin]</strong> is the <strong>root</strong> of the service URLs. In <strong>[action=&quot;/authenticate-user&quot;],</strong> we have an <strong>absolute</strong> URL, i.e., one measured from the root of the URLs. The complete URL for the POST request is therefore <strong>[http://machine:port/chemin/authentifier-utilisateur],</strong> and this is what the browser will use.</p>
 <p>Note that this fragment uses the <strong>[model.login]</strong> template.</p>
-<p><a id="refheadingtoc185739971629160"></a>
-<a id="toc48549277"></a>
-<a id="toc42690922"></a>
+<p><a id="toc42690150"></a>
 <a id="toc42690536"></a>
-<a id="toc42690150"></a></p>
+<a id="toc42690922"></a>
+<a id="toc48549277"></a>
+<a id="refheadingtoc185739971629160"></a></p>
 <h3 id="3254-visual-tests">32.5.4. <span style="color: #4f81bd">Visual Tests</span></h3>
 <p>We can test the views well before integrating them into the application. The goal here is to test their visual appearance. We will gather all the test views in the <strong>[tests_views]</strong> folder of the project:</p>
 <p><img src="images/1000000000000166000000A52B04C5B3.png" style="width:5.369cm;height:2.475cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000166000000A52B04C5B3.png" /></p>
@@ -2359,10 +2359,10 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">from </span>flask <span style="color:#0000ff">import </span>Flask, render_template, make_response</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Flask application</span></span>
+<span class="odt-code-line"># Flask application</span>
 <span class="odt-code-line">app = Flask(__name__, template_folder=<span style="color:#a31515">&quot;../templates&quot;</span>, static_folder=<span style="color:#a31515">&quot;../static&quot;</span>)</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Home URL</span></span>
+<span class="odt-code-line"># Home URL</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/&#x27;</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>index():</span>
 <span class="odt-code-line">    <span style="color:#008000"># We encapsulate the page data in a model</span></span>
@@ -2380,7 +2380,7 @@
 <span class="odt-code-line">    <span style="color:#008000"># Display the page</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>make_response(render_template(<span style="color:#a31515">&quot;views/view-authentication.html&quot;</span>, template=template))</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># main</span></span>
+<span class="odt-code-line"># main</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span>__name__ == <span style="color:#a31515">&#x27;__main__</span>&#x27;:</span>
 <span class="odt-code-line">    app.config.update(ENV=<span style="color:#a31515">&quot;development&quot;</span>, <span style="color:#0000ff">DEBUG=True</span>)</span>
 <span class="odt-code-line">    app.run()</span>
@@ -2414,11 +2414,11 @@
 <p>To run the test, we launch the script <strong>[tests_views/test_vue_authentification.py]</strong> and request the URL <strong>[/localhost:5000/]</strong>:</p>
 <p>We continue these visual tests until we are satisfied with the result.</p>
 <p><img src="images/10000000000004DE00000352D1ABD82F.png" style="width:14.37cm;height:9.804cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004DE00000352D1ABD82F.png" /></p>
-<p><a id="refheadingtoc185741971629160"></a>
-<a id="toc48549278"></a>
-<a id="toc42690923"></a>
+<p><a id="toc42690151"></a>
 <a id="toc42690537"></a>
-<a id="toc42690151"></a></p>
+<a id="toc42690923"></a>
+<a id="toc48549278"></a>
+<a id="refheadingtoc185741971629160"></a></p>
 <h3 id="3255-calculating-the-view-model">32.5.5. <span style="color: #4f81bd">Calculating the view model</span></h3>
 <p>Once the visual appearance of the view has been determined, we can proceed to calculate the view model under real-world conditions. View models will be generated by classes located in the <strong>[models_for_views]</strong> folder:</p>
 <p><img src="images/10000000000001D60000016E73E0CB38.png" style="width:5.42cm;height:4.221cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D60000016E73E0CB38.png" /></p>
@@ -2451,7 +2451,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#000000">        </span># HTML views and their models depend on the state returned by the controller</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;views&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold"># authentication view</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;statuses&quot;</span><span style="font-weight:bold;color:#000000">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold"># /init-session success</span></span>
@@ -2461,8 +2461,8 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;view_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;views/authentication-view.html&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;model_for_view&quot;</span><span style="color:#000000">: ModelForAuthentificationView()</span></span>
-<span class="odt-code-line"><span style="color:#000000">            },</span></span>
-<span class="odt-code-line"><span style="color:#000000">            {</span></span>
+<span class="odt-code-line">            },</span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="color:#000000">                </span># tax calculation view</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;statuses&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold"># /authenticate-user success</span></span>
@@ -2476,8 +2476,8 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;view_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;views/tax-calculation-view.html&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;model_for_view&quot;</span><span style="color:#000000">: ModelForCalculImpotView()</span></span>
-<span class="odt-code-line"><span style="color:#000000">            },</span></span>
-<span class="odt-code-line"><span style="color:#000000">            {</span></span>
+<span class="odt-code-line">            },</span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="color:#000000">                </span># view of the list of simulations</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;statements&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold"># /list-simulations</span></span>
@@ -2488,23 +2488,23 @@
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;view_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;views/simulation-list-view.html&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;model_for_view&quot;</span><span style="color:#000000">: ModelForListeSimulationsView()</span></span>
 <span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        ],</span></span>
+<span class="odt-code-line">        ],</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># view for unexpected errors</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;error-view&quot;</span><span style="color:#000000">: {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;view_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;views/error-view.html&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;model_for_view&quot;</span><span style="color:#000000">: ModelForErrorsView()</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># redirects</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;redirects&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;statuses&quot;</span><span style="font-weight:bold;color:#000000">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;color:#098658">400</span><span style="font-weight:bold;color:#000000">,  </span><span style="font-weight:bold"># /end-session success</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span># redirect to</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;to&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/init-session/html&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        ],</span></span>
-<span class="odt-code-line"><span style="color:#000000">    }</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ],</span>
+<span class="odt-code-line">    }</span>
 </code></pre></div>
 
 <p>It is therefore the status codes <strong>[700, 201]</strong> (lines 7 and 9) that cause the authentication view to be displayed. To understand the meaning of these codes, we can refer to the <strong>[Postman]</strong> tests performed on the JSON application:</p>
@@ -2588,11 +2588,11 @@
 <p><img src="images/100000000000015B000000ABAE6FBE71.png" style="width:4.009cm;height:1.976cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000015B000000ABAE6FBE71.png" /></p>
 <p>Let’s recall how the response type to send to the user is determined in the main script <strong>[main]</strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"><span style="color:#000000">        ….</span></span>
+<span class="odt-code-line">        ….</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># we build the response to send</span>
 <span class="odt-code-line"><span style="color:#000000">        response_builder = config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;responses&quot;</span><span style="font-weight:bold;color:#000000">][type_response]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        response, status_code = response_builder \</span></span>
-<span class="odt-code-line"><span style="color:#000000">            .build_http_response(request, session, config, status_code, result)</span></span>
+<span class="odt-code-line">        response, status_code = response_builder \</span>
+<span class="odt-code-line">            .build_http_response(request, session, config, status_code, result)</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># send the response</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">response, status_code</span></span>
 </code></pre></div>
@@ -2604,7 +2604,7 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;json&quot;</span><span style="color:#000000">: JsonResponse(),</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;html&quot;</span><span style="color:#000000">: HtmlResponse(),</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;xml&quot;</span><span style="color:#000000">: XmlResponse()</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 </code></pre></div>
 
 <p>It is therefore the <strong>[HtmlResponse]</strong> class that generates the HTML response. Its code is as follows:</p>
@@ -2692,7 +2692,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;view-errors&quot;</span><span style="color:#000000">: {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;view_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;views/error-view.html&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;model_for_view&quot;</span><span style="color:#000000">: ModelForErrorsView()</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 </code></pre></div>
 
 <ul>
@@ -2707,11 +2707,11 @@
   <li>lines 56–57: we return the HTTP response with its status code;
   </li>
 </ul>
-<p><a id="refheadingtoc185743971629160"></a>
-<a id="toc48549280"></a>
-<a id="toc42690924"></a>
+<p><a id="toc42690152"></a>
 <a id="toc42690538"></a>
-<a id="toc42690152"></a></p>
+<a id="toc42690924"></a>
+<a id="toc48549280"></a>
+<a id="refheadingtoc185743971629160"></a></p>
 <h3 id="3257-tests-postman">32.5.7. <span style="color: #4f81bd">Tests [Postman]</span></h3>
 <p>We will execute requests that return the codes <strong>[700, 201],</strong> which display the authentication view:</p>
 <ul>
@@ -2761,11 +2761,11 @@
   <li>at <b>[3]</b>, the incorrect user was displayed again;
   </li>
 </ul>
-<p><a id="refheadingtoc185745971629160"></a>
-<a id="toc48549281"></a>
-<a id="toc42690925"></a>
+<p><a id="toc42690153"></a>
 <a id="toc42690539"></a>
-<a id="toc42690153"></a></p>
+<a id="toc42690925"></a>
+<a id="toc48549281"></a>
+<a id="refheadingtoc185745971629160"></a></p>
 <h3 id="3258-conclusion">32.5.8. <span style="color: #4f81bd">Conclusion</span></h3>
 <p>We were able to test the view <strong>[vue-authentification.html]</strong> without having written the other views. This was possible because:</p>
 <ul>
@@ -2774,18 +2774,18 @@
   <li><b>[Postman] </b>allows us to send requests to the server without needing all the views. When writing controllers, you must be prepared to handle requests that no view would allow. You should never assume a priori that “this request is impossible.” You must verify;
   </li>
 </ul>
-<p><a id="refheadingtoc185747971629160"></a>
-<a id="toc48549282"></a>
-<a id="toc42690926"></a>
+<p><a id="toc42690154"></a>
 <a id="toc42690540"></a>
-<a id="toc42690154"></a></p>
+<a id="toc42690926"></a>
+<a id="toc48549282"></a>
+<a id="refheadingtoc185747971629160"></a></p>
 <h2 id="326-the-tax-calculation-view">32.6. <span style="color: #4f81bd">The tax calculation view</span></h2>
 <p><img src="images/10000000000001AA000001C5856996CF.png" style="width:4.911cm;height:5.223cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001AA000001C5856996CF.png" /></p>
-<p><a id="refheadingtoc185749971629160"></a>
-<a id="toc48549283"></a>
-<a id="toc42690927"></a>
+<p><a id="toc42690155"></a>
 <a id="toc42690541"></a>
-<a id="toc42690155"></a></p>
+<a id="toc42690927"></a>
+<a id="toc48549283"></a>
+<a id="refheadingtoc185749971629160"></a></p>
 <h3 id="3261-view-overview">32.6.1. <span style="color: #4f81bd">View Overview</span></h3>
 <p>The tax calculation view is as follows:</p>
 <p><img src="images/100000000000058F000002ED0FA4DBF4.png" style="width:16.422cm;height:8.643cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058F000002ED0FA4DBF4.png" /></p>
@@ -2804,16 +2804,16 @@
 <span class="odt-code-line">&lt;!-- HTML document --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;!doctype </span><span style="color:#ff0000">html</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#800000">&lt;html </span><span style="color:#000000">lang=</span><span style="color:#0000ff">&quot;fr&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;head&gt;</span></span>
+<span class="odt-code-line">&lt;head&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Required meta tags --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;meta </span><span style="color:#000000">charset=</span><span style="color:#0000ff">&quot;utf-8&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;meta </span><span style="color:#000000">name=</span><span style="color:#0000ff">&quot;viewport&quot; </span><span style="color:#000000">content=</span><span style="color:#0000ff">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Bootstrap CSS --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;link </span><span style="color:#000000">rel=</span><span style="color:#0000ff">&quot;stylesheet&quot; </span><span style="color:#000000">href=</span><span style="color:#0000ff">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;title&gt;</span><span style="color:#000000">Tax Application</span><span style="color:#800000">&lt;/title&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/head&gt;</span></span>
+<span class="odt-code-line">&lt;/head&gt;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;body&gt;</span></span>
+<span class="odt-code-line">&lt;body&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;container&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- banner --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    {% </span><span style="background-color:#fff2cc;color:#000000">include &quot;fragments/v-banner.html&quot; </span><span style="color:#000000">%}</span></span>
@@ -2830,14 +2830,14 @@
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- success case --&gt;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    {% if model.success %}</span></span>
+<span class="odt-code-line">    {% if model.success %}</span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- display a success alert --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;row&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;col-md-3&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span></span>
+<span class="odt-code-line">        </span>
+<span class="odt-code-line">            </span>
 <span class="odt-code-line"><span style="color:#000000">                {{template.tax}}</span><span style="color:#800000">&lt;/br&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                {{template.discount}}</span><span style="color:#800000">&lt;/br&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                {{template.reduction}}</span><span style="color:#800000">&lt;/br&gt;</span></span>
@@ -2846,9 +2846,9 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    {% endif %}</span></span>
+<span class="odt-code-line">    {% endif %}</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    {% if model.error %}</span></span>
+<span class="odt-code-line">    {% if model.error %}</span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- list of errors across 9 columns --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;row&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;col-md-3&quot;</span><span style="color:#800000">&gt;</span></span>
@@ -2856,15 +2856,15 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;col-md-9&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;alert alert-danger&quot; </span><span style="color:#000000">role=</span><span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                The following errors occurred:</span></span>
+<span class="odt-code-line">                The following errors occurred:</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#800000">&lt;ul&gt;</span><span style="color:#000000">{{template.errors | safe}}</span><span style="color:#800000">&lt;/ul&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    {% endif %}</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/body&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/html&gt;</span></span>
+<span class="odt-code-line">    {% endif %}</span>
+<span class="odt-code-line">&lt;/div&gt;</span>
+<span class="odt-code-line">&lt;/body&gt;</span>
+<span class="odt-code-line">&lt;/html&gt;</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -2882,11 +2882,11 @@
   <li>lines 48–61: if the tax calculation fails <b>[model.error=True]</b>, then an error message is displayed in a pink container (lines 55–58). This frame is in the third Bootstrap row of the view (line 50) and occupies nine columns (line 54) to the right of three empty columns (lines 51–53). This frame will therefore also be below the tax calculation form;
   </li>
 </ul>
-<p><a id="refheadingtoc185751971629160"></a>
-<a id="toc48549284"></a>
-<a id="toc42690928"></a>
+<p><a id="toc42690156"></a>
 <a id="toc42690542"></a>
-<a id="toc42690156"></a></p>
+<a id="toc42690928"></a>
+<a id="toc48549284"></a>
+<a id="refheadingtoc185751971629160"></a></p>
 <h3 id="3262-the-fragment-v-calcul-impothtml">32.6.2. <span style="color: #4f81bd">The fragment [v-calcul-impot.html]</span></h3>
 <p>The fragment <strong>[v-calcul-impot.html]</strong> displays the tax calculation form of the web application:</p>
 <p>The code for the <strong>[v-calcul-impot.html]</strong> fragment is as follows:</p>
@@ -2911,13 +2911,13 @@
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;form-check&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#800000">&lt;input </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;form-check-input&quot; </span><span style="color:#000000">type=</span><span style="color:#0000ff">&quot;radio&quot; </span><span style="color:#000000">name=</span><span style="color:#0000ff">&quot;married&quot; </span><span style="color:#000000">id=</span><span style="color:#0000ff">&quot;gridRadios1&quot; </span><span style="color:#000000">value=</span><span style="color:#0000ff">&quot;yes&quot; </span><span style="color:#ff0000">{{model.checkedYes}}</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#800000">&lt;label </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;form-check-label&quot; </span><span style="color:#000000">for=</span><span style="color:#0000ff">&quot;gridRadios1&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                        Yes</span></span>
+<span class="odt-code-line">                        Yes</span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#800000">&lt;/label&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;form-check&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#800000">&lt;input </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;form-check-input&quot; </span><span style="color:#000000">type=</span><span style="color:#0000ff">&quot;radio&quot; </span><span style="color:#000000">name=</span><span style="color:#0000ff">&quot;married&quot; </span><span style="color:#000000">id=</span><span style="color:#0000ff">&quot;gridRadios2&quot; </span><span style="color:#000000">value=</span><span style="color:#0000ff">&quot;no&quot; </span><span style="color:#ff0000">{{template.checkedNo}}</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#800000">&lt;label </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;form-check-label&quot; </span><span style="color:#000000">for=</span><span style="color:#0000ff">&quot;gridRadios2&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                        No</span></span>
+<span class="odt-code-line">                        No</span>
 <span class="odt-code-line"><span style="color:#000000">                    </span><span style="color:#800000">&lt;/label&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800000">&lt;/div&gt;</span></span>
@@ -2949,7 +2949,7 @@
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/fieldset&gt;</span></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/form&gt;</span></span>
+<span class="odt-code-line">&lt;/form&gt;</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -3020,13 +3020,13 @@
 </ul>
 
 <p><img src="images/10000000000000710000005EBB2E0843.png" style="width:1.311cm;height:1.092cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000710000005EBB2E0843.png" /></p>
-<p><a id="toc48549285"></a>
-<a id="toc42690929"></a>
-<a id="toc42690543"></a>
-<a id="toc42690157"></a>
-<a id="refheadingtoc1533323476773583"></a>
+<p><a id="lefragmentv-menuhtml"></a>
 <a id="lefragmentv-menuphp"></a>
-<a id="lefragmentv-menuhtml"></a></p>
+<a id="refheadingtoc1533323476773583"></a>
+<a id="toc42690157"></a>
+<a id="toc42690543"></a>
+<a id="toc42690929"></a>
+<a id="toc48549285"></a></p>
 <h3 id="3263-the-v-menuhtml-fragment">32.6.3. <span style="color: #4f81bd">The [v-menu.html] fragment</span></h3>
 <p>This fragment displays a menu to the left of the tax calculation form:</p>
 <p><img src="images/100000000000017C000001142B3219CB.png" style="width:4.39cm;height:3.189cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017C000001142B3219CB.png" /></p>
@@ -3035,10 +3035,10 @@
 <span class="odt-code-line">&lt;!-- Bootstrap menu --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;nav </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;nav flex-column&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- display a list of HTML links --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    {% for optionMenu in model.optionsMenu %}</span></span>
+<span class="odt-code-line">    {% for optionMenu in model.optionsMenu %}</span>
 <span class="odt-code-line"><span style="color:#000000">      /</span><span style="color:#0000ff">a</span><span style="color:#000000">{{optionMenu.text}}</span><span style="color:#800000">&lt;/a&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    {% endfor %}</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/nav&gt;</span></span>
+<span class="odt-code-line">    {% endfor %}</span>
+<span class="odt-code-line">&lt;/nav&gt;</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -3058,20 +3058,18 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span style="font-weight:bold">[‘List of simulations’:’/list-simulations’,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">‘End session’:’/end-session’]</span></span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>[‘List of simulations’:’/list-simulations’,
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>‘End session’:’/end-session’]
 </code></pre></div>
-
 <ul>
   <li>Lines 2, 7: The CSS classes <b>[nav, flex-column, nav-link] </b>are Bootstrap classes that define the menu’s appearance;
   </li>
 </ul>
-<p><a id="refheadingtoc185753971629160"></a>
-<a id="toc48549286"></a>
-<a id="toc42690930"></a>
+<p><a id="toc42690158"></a>
 <a id="toc42690544"></a>
-<a id="toc42690158"></a></p>
+<a id="toc42690930"></a>
+<a id="toc48549286"></a>
+<a id="refheadingtoc185753971629160"></a></p>
 <h3 id="3264-visual-test">32.6.4. <span style="color: #4f81bd">Visual Test</span></h3>
 <p>We gather these various elements in the <strong>[Tests]</strong> folder and create a test template for the view <strong>[vue-calcul-impot.html]</strong>:</p>
 <p><img src="images/100000000000018F000000AEA1F5B5FB.png" style="width:4.6cm;height:2.006cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018F000000AEA1F5B5FB.png" /></p>
@@ -3079,10 +3077,10 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">from </span>flask <span style="color:#0000ff">import </span>Flask, render_template, make_response</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Flask application</span></span>
+<span class="odt-code-line"># Flask application</span>
 <span class="odt-code-line">app = Flask(__name__, template_folder=<span style="color:#a31515">&quot;../templates&quot;</span>, static_folder=<span style="color:#a31515">&quot;../static&quot;</span>)</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Home URL</span></span>
+<span class="odt-code-line"># Home URL</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/&#x27;</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>index():</span>
 <span class="odt-code-line">    <span style="color:#008000"># We encapsulate the page data in a model</span></span>
@@ -3114,7 +3112,7 @@
 <span class="odt-code-line">    <span style="color:#008000"># display the page</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>make_response(render_template(<span style="color:#a31515">&quot;views/tax-calculation-view.html&quot;</span>, template=template))</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># main</span></span>
+<span class="odt-code-line"># main</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span>__name__ == <span style="color:#a31515">&#x27;__main__</span>&#x27;:</span>
 <span class="odt-code-line">    app.config.update(ENV=<span style="color:#a31515">&quot;development&quot;</span>, <span style="color:#0000ff">DEBUG=True</span>)</span>
 <span class="odt-code-line">    app.run()</span>
@@ -3131,11 +3129,11 @@
 <p>When we run the test script <strong>[test_vue_calcul_impot]</strong>, we get the following result:</p>
 <p>We work on this view until we are satisfied with the visual result. We can then proceed to integrate the view into the web application currently under development.</p>
 <p><img src="images/100000000000058F000004020228DFE9.png" style="width:16.431cm;height:11.846cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058F000004020228DFE9.png" /></p>
-<p><a id="refheadingtoc185755971629160"></a>
-<a id="toc48549287"></a>
-<a id="toc42690931"></a>
+<p><a id="toc42690159"></a>
 <a id="toc42690545"></a>
-<a id="toc42690159"></a></p>
+<a id="toc42690931"></a>
+<a id="toc48549287"></a>
+<a id="refheadingtoc185755971629160"></a></p>
 <h3 id="3265-calculating-the-view-model">32.6.5. <span style="color: #4f81bd">Calculating the view model</span></h3>
 <p>Once the visual appearance of the view has been determined, we can proceed to calculate the view model under real-world conditions. Let’s review the state codes that lead to this view. They can be found in the configuration file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
@@ -3240,11 +3238,11 @@
   <li>lines 49–52: calculation of the two menu options;
   </li>
 </ul>
-<p><a id="refheadingtoc185757971629160"></a>
-<a id="toc48549288"></a>
-<a id="toc42690932"></a>
+<p><a id="toc42690160"></a>
 <a id="toc42690546"></a>
-<a id="toc42690160"></a></p>
+<a id="toc42690932"></a>
+<a id="toc48549288"></a>
+<a id="refheadingtoc185757971629160"></a></p>
 <h3 id="3266-tests-postman">32.6.6. <span style="color: #4f81bd">Tests [Postman]</span></h3>
 <p>We initialize an HTML session with the <strong>[init-session-html-700]</strong> request, then authenticate with the <strong>[authenticate-user-200]</strong> request. Next, we use the following <strong>[calculate-tax-300]</strong> request:</p>
 <p>The server response is as follows:</p>
@@ -3283,18 +3281,18 @@
   <li><b>[xx2]</b>: for unexpected errors during normal use of the application;
   </li>
 </ul>
-<p><a id="refheadingtoc185759971629160"></a>
-<a id="toc48549289"></a>
-<a id="toc42690933"></a>
+<p><a id="toc42690161"></a>
 <a id="toc42690547"></a>
-<a id="toc42690161"></a></p>
+<a id="toc42690933"></a>
+<a id="toc48549289"></a>
+<a id="refheadingtoc185759971629160"></a></p>
 <h2 id="327-the-simulation-list-view">32.7. <span style="color: #4f81bd">The simulation list view</span></h2>
 <p><img src="images/10000000000001760000018531656195.png" style="width:4.322cm;height:4.494cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001760000018531656195.png" /></p>
-<p><a id="refheadingtoc185761971629160"></a>
-<a id="toc48549290"></a>
-<a id="toc42690934"></a>
+<p><a id="toc42690162"></a>
 <a id="toc42690548"></a>
-<a id="toc42690162"></a></p>
+<a id="toc42690934"></a>
+<a id="toc48549290"></a>
+<a id="refheadingtoc185761971629160"></a></p>
 <h3 id="3271-view-overview">32.7.1. <span style="color: #4f81bd">View overview</span></h3>
 <p>The view displaying the list of simulations is as follows:</p>
 <p><img src="images/1000000000000473000001EEE8F5E474.png" style="width:13.152cm;height:5.704cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000473000001EEE8F5E474.png" /></p>
@@ -3313,34 +3311,34 @@
 <span class="odt-code-line">&lt;!-- HTML document --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;!doctype </span><span style="color:#ff0000">html</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#800000">&lt;html </span><span style="color:#000000">lang=</span><span style="color:#0000ff">&quot;fr&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;head&gt;</span></span>
+<span class="odt-code-line">&lt;head&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Required meta tags --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;meta </span><span style="color:#000000">charset=</span><span style="color:#0000ff">&quot;utf-8&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;meta </span><span style="color:#000000">name=</span><span style="color:#0000ff">&quot;viewport&quot; </span><span style="color:#000000">content=</span><span style="color:#0000ff">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Bootstrap CSS --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;link </span><span style="color:#000000">rel=</span><span style="color:#0000ff">&quot;stylesheet&quot; </span><span style="color:#000000">href=</span><span style="color:#0000ff">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;title&gt;</span><span style="color:#000000">Tax Application</span><span style="color:#800000">&lt;/title&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/head&gt;</span></span>
+<span class="odt-code-line">&lt;/head&gt;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;body&gt;</span></span>
+<span class="odt-code-line">&lt;body&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;container&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- banner --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    {% include &quot;fragments/v-banner.html&quot; %}</span></span>
+<span class="odt-code-line">    {% include &quot;fragments/v-banner.html&quot; %}</span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- two-column row --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;row&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>&lt;!-- three-column menu --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;col-md-3&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            {% include &quot;fragments/v-menu.html&quot; %}</span></span>
+<span class="odt-code-line">            {% include &quot;fragments/v-menu.html&quot; %}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>&lt;!-- 9-column list of simulations--&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">        </span></span>
-<span class="odt-code-line"><span style="color:#000000">            {% include &quot;fragments/v-simulation-list.html&quot; %}</span></span>
+<span class="odt-code-line">        </span>
+<span class="odt-code-line">            {% include &quot;fragments/v-simulation-list.html&quot; %}</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/div&gt;</span></span>
+<span class="odt-code-line">&lt;/div&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;/body&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/html&gt;</span></span>
+<span class="odt-code-line">&lt;/html&gt;</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -3364,19 +3362,19 @@
 <p>The fragment <strong>[v-liste-simulations.html]</strong> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
 <span class="odt-code-line">{% if model.simulations is undefined or model.simulations|length==0 %}</span>
-<span class="odt-code-line"><span style="color:#008000">&lt;!-- message on blue background --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- message on blue background --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;div </span>class=<span style="color:#0000ff">&quot;alert alert-primary&quot; </span>role=<span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;h4&gt;</span>Your list of simulations is empty<span style="color:#800000">&lt;/h4&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/div&gt;</span></span>
+<span class="odt-code-line">&lt;/div&gt;</span>
 <span class="odt-code-line">{% endif %}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">{% if model.simulations is defined and model.simulations.length!=0 %}</span>
-<span class="odt-code-line"><span style="color:#008000">&lt;!-- message on blue background --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- message on blue background --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;div </span>class=<span style="color:#0000ff">&quot;alert alert-primary&quot; </span>role=<span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;h4&gt;</span>List of your simulations<span style="color:#800000">&lt;/h4&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/div&gt;</span></span>
+<span class="odt-code-line">&lt;/div&gt;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000">&lt;!-- table of simulations --&gt;</span></span>
+<span class="odt-code-line">&lt;!-- table of simulations --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;table </span>class=<span style="color:#0000ff">&quot;table table-sm table-hover table-striped&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#008000">&lt;!-- headers for the six columns of the table --&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;thead&gt;</span></span>
@@ -3424,7 +3422,7 @@
 <span class="odt-code-line">    {% endfor %}</span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;/tr&gt;</span></span>
 <span class="odt-code-line">    <span style="color:#800000">&lt;/tbody&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/table&gt;</span></span>
+<span class="odt-code-line">&lt;/table&gt;</span>
 <span class="odt-code-line">{% endif %}</span>
 </code></pre></div>
 
@@ -3447,11 +3445,11 @@
   <li>line 57: a link to delete the simulation. The URL uses the number of the simulation displayed in the row;
   </li>
 </ul>
-<p><a id="refheadingtoc185763971629160"></a>
-<a id="toc48549291"></a>
-<a id="toc42690935"></a>
+<p><a id="toc42690163"></a>
 <a id="toc42690549"></a>
-<a id="toc42690163"></a></p>
+<a id="toc42690935"></a>
+<a id="toc48549291"></a>
+<a id="refheadingtoc185763971629160"></a></p>
 <h3 id="3272-visual-test">32.7.2. <span style="color: #4f81bd">Visual Test</span></h3>
 <p>We create a test script for the view <strong>[view-simulation-list.html]</strong>:</p>
 <p>The script <strong>[test_simulation_list_view]</strong> is as follows:</p>
@@ -3469,7 +3467,7 @@
 <span class="odt-code-line">    model = {}</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># we format the simulations as expected by the page</span>
 <span class="odt-code-line">    model<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;simulations&quot;</span><span style="font-weight:bold">] </span>= <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;id&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 7</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;married&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;yes&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;children&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 2</span><span style="font-weight:bold">,</span></span>
@@ -3479,8 +3477,8 @@
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;reduction&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 20</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;surcharge&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 0</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;rate&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 0.14</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        {</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">        {</span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;id&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 19</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;married&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;no&quot;</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;children&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 2</span><span style="font-weight:bold">,</span></span>
@@ -3490,8 +3488,8 @@
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;reduction&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 0</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;surcharge&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 8,400</span><span style="font-weight:bold">,</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;rate&quot;</span><span style="font-weight:bold">:</span><span style="font-weight:bold;color:#098658"> 0.45</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        }</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">        }</span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># menu</span>
 <span class="odt-code-line">    template<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;optionsMenu&quot;</span><span style="font-weight:bold">] </span>= <span style="font-weight:bold">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        {</span><span style="font-weight:bold">&quot;text&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold">&quot;Tax Calculation&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold">&quot;url&quot;</span><span style="font-weight:bold;color:#000000">: </span><span style="font-weight:bold">&#x27;/display-tax-calculation&#x27;</span><span style="font-weight:bold;color:#000000">},</span></span>
@@ -3516,11 +3514,11 @@
 <p>Let&#x27;s display this view by running this script. We get the following result:</p>
 <p><img src="images/1000000000000472000001E0EDDB4227.png" style="width:13.139cm;height:5.542cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000472000001E0EDDB4227.png" /></p>
 <p>We continue working on this view until we are satisfied with how it looks. We can then move on to integrating the view into the web application we are currently developing.</p>
-<p><a id="refheadingtoc185765971629160"></a>
-<a id="toc48549292"></a>
-<a id="toc42690936"></a>
+<p><a id="toc42690164"></a>
 <a id="toc42690550"></a>
-<a id="toc42690164"></a></p>
+<a id="toc42690936"></a>
+<a id="toc48549292"></a>
+<a id="refheadingtoc185765971629160"></a></p>
 <h3 id="3273-calculating-the-view-model">32.7.3. <span style="color: #4f81bd">Calculating the view model</span></h3>
 <p>Once the visual appearance of the view has been determined, we can proceed to calculate the view model under real-world conditions. Let’s review the state codes that lead to this view. They can be found in the configuration file:</p>
 <p><img src="images/10000000000001BB0000011328AF0953.png" style="width:5.121cm;height:3.179cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BB0000011328AF0953.png" /></p>
@@ -3576,11 +3574,11 @@
   <li>lines 15–17: the menu options to display;
   </li>
 </ul>
-<p><a id="refheadingtoc185767971629160"></a>
-<a id="toc48549293"></a>
-<a id="toc42690937"></a>
+<p><a id="toc42690165"></a>
 <a id="toc42690551"></a>
-<a id="toc42690165"></a></p>
+<a id="toc42690937"></a>
+<a id="toc48549293"></a>
+<a id="refheadingtoc185767971629160"></a></p>
 <h3 id="3274-postman-tests">32.7.4. <span style="color: #4f81bd">[Postman] Tests</span></h3>
 <p>We</p>
 <ul>
@@ -3600,18 +3598,18 @@
 <p>The result returned is a list of simulations with one simulation missing:</p>
 <p><img src="images/100000000000026E00000113514B4CA9.png" style="width:7.183cm;height:3.175cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026E00000113514B4CA9.png" /></p>
 <p><img src="images/1000000000000555000002B3D9EB2B5E.png" style="width:15.782cm;height:7.989cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000555000002B3D9EB2B5E.png" /></p>
-<p><a id="refheadingtoc185769971629160"></a>
-<a id="toc48549294"></a>
-<a id="toc42690938"></a>
+<p><a id="toc42690166"></a>
 <a id="toc42690552"></a>
-<a id="toc42690166"></a></p>
+<a id="toc42690938"></a>
+<a id="toc48549294"></a>
+<a id="refheadingtoc185769971629160"></a></p>
 <h2 id="328-viewing-unexpected-errors">32.8. <span style="color: #4f81bd">Viewing Unexpected Errors</span></h2>
 <p>Here, we refer to an unexpected error as an error that should not have occurred during normal use of the web application. For example, requesting a tax calculation without being authenticated. Nothing prevents a user from typing the URL <strong>[/tax-calculation]</strong> directly into their browser. Furthermore, as we’ve seen, they can send a POST request to the URL <strong>[/tax-calculation]</strong> without including the expected parameters. We’ve seen that our web application knew how to respond correctly to this request. We’ll call <strong>an “unexpected</strong> error” an error that shouldn’t occur within the HTML application. If it does occur, it’s likely that someone is trying to “hack” the application. For educational purposes, we’ve decided to display an error page for these cases. In reality, we could re-display the last page sent to the client. To do this, we simply need to store the last HTML response sent in the session. In the event of an unexpected error, we return this response. This way, the user will have the impression that the server is not responding to their errors since the displayed page does not change.</p>
-<p><a id="refheadingtoc185771971629160"></a>
-<a id="toc48549295"></a>
-<a id="toc42690939"></a>
+<p><a id="toc42690167"></a>
 <a id="toc42690553"></a>
-<a id="toc42690167"></a></p>
+<a id="toc42690939"></a>
+<a id="toc48549295"></a>
+<a id="refheadingtoc185771971629160"></a></p>
 <h3 id="3281-view-overview">32.8.1. <span style="color: #4f81bd">View Overview</span></h3>
 <p><img src="images/10000000000001BA0000019C1B7C0433.png" style="width:5.112cm;height:4.764cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BA0000019C1B7C0433.png" /></p>
 <p>The view that displays unexpected errors is as follows:</p>
@@ -3631,36 +3629,36 @@
 <span class="odt-code-line">&lt;!-- HTML document --&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;!doctype </span><span style="color:#ff0000">html</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#800000">&lt;html </span><span style="color:#000000">lang=</span><span style="color:#0000ff">&quot;fr&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;head&gt;</span></span>
+<span class="odt-code-line">&lt;head&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Required meta tags --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;meta </span><span style="color:#000000">charset=</span><span style="color:#0000ff">&quot;utf-8&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;meta </span><span style="color:#000000">name=</span><span style="color:#0000ff">&quot;viewport&quot; </span><span style="color:#000000">content=</span><span style="color:#0000ff">&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Bootstrap CSS --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;link </span><span style="color:#000000">rel=</span><span style="color:#0000ff">&quot;stylesheet&quot; </span><span style="color:#000000">href=</span><span style="color:#0000ff">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;title&gt;</span><span style="color:#000000">Tax App</span><span style="color:#800000">&lt;/title&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/head&gt;</span></span>
+<span class="odt-code-line">&lt;/head&gt;</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;body&gt;</span></span>
+<span class="odt-code-line">&lt;body&gt;</span>
 <span class="odt-code-line"><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;container&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- 12-column banner --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    {% include &quot;fragments/v-banner.html&quot; %}</span></span>
+<span class="odt-code-line">    {% include &quot;fragments/v-banner.html&quot; %}</span>
 <span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- two-section row --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;row&quot;</span><span style="color:#800000">&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>&lt;!-- 3-column menu --&gt;</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;col-md-3&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">            {% include &quot;fragments/v-menu.html&quot; %}</span></span>
+<span class="odt-code-line">            {% include &quot;fragments/v-menu.html&quot; %}</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span>&lt;!-- 9-column error list --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">        </span></span>
+<span class="odt-code-line">        </span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;alert alert-danger&quot; </span><span style="color:#000000">role=</span><span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">                The following unexpected errors occurred:</span></span>
+<span class="odt-code-line">                The following unexpected errors occurred:</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#800000">&lt;ul&gt;</span><span style="color:#000000">{{template.errors|safe}}</span><span style="color:#800000">&lt;/ul&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/body&gt;</span></span>
-<span class="odt-code-line"><span style="color:#800000">&lt;/html&gt;</span></span>
+<span class="odt-code-line">&lt;/div&gt;</span>
+<span class="odt-code-line">&lt;/body&gt;</span>
+<span class="odt-code-line">&lt;/html&gt;</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -3686,21 +3684,21 @@
   <li><b>[v-menu.html]</b>: in the <a href="#lefragmentv-menuphp"><u><span style="color: #0563c1">link</span></u></a> section;
   </li>
 </ul>
-<p><a id="refheadingtoc185773971629160"></a>
-<a id="toc48549296"></a>
-<a id="toc42690940"></a>
+<p><a id="toc42690168"></a>
 <a id="toc42690554"></a>
-<a id="toc42690168"></a></p>
+<a id="toc42690940"></a>
+<a id="toc48549296"></a>
+<a id="refheadingtoc185773971629160"></a></p>
 <h3 id="3282-visual-test">32.8.2. <span style="color: #4f81bd">Visual test</span></h3>
 <p>We create a test script for the <strong>[vue-erreurs.html]</strong> view:</p>
 <p><img src="images/100000000000017C000000E47829F1F3.png" style="width:4.39cm;height:2.635cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000017C000000E47829F1F3.png" /></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">from </span>flask <span style="color:#0000ff">import </span>Flask, render_template, make_response</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Flask application</span></span>
+<span class="odt-code-line"># Flask application</span>
 <span class="odt-code-line">app = Flask(__name__, template_folder=<span style="color:#a31515">&quot;../templates&quot;</span>, static_folder=<span style="color:#a31515">&quot;../static&quot;</span>)</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># Home URL</span></span>
+<span class="odt-code-line"># Home URL</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/&#x27;</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>index():</span>
 <span class="odt-code-line">    <span style="color:#008000"># We encapsulate the page data in a model</span></span>
@@ -3719,7 +3717,7 @@
 <span class="odt-code-line">    <span style="color:#008000"># Page display</span></span>
 <span class="odt-code-line">    <span style="color:#0000ff">return </span>make_response(render_template(<span style="color:#a31515">&quot;views/error-page.html&quot;</span>, template=template))</span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># main</span></span>
+<span class="odt-code-line"># main</span>
 <span class="odt-code-line"><span style="color:#0000ff">if </span>__name__ == <span style="color:#a31515">&#x27;__main__</span>&#x27;:</span>
 <span class="odt-code-line">    app.config.update(ENV=<span style="color:#a31515">&quot;development&quot;</span>, <span style="color:#0000ff">DEBUG=True</span>)</span>
 <span class="odt-code-line">    app.run()</span>
@@ -3736,18 +3734,18 @@
 <p>Let’s run this script. We get the following result:</p>
 <p>We work on this view until we are satisfied with the visual result. We can then move on to integrating the view into the web application we are currently developing.</p>
 <p><img src="images/1000000000000555000002A598BD1A27.png" style="width:15.769cm;height:7.821cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000555000002A598BD1A27.png" /></p>
-<p><a id="refheadingtoc185775971629160"></a>
-<a id="toc48549297"></a>
-<a id="toc42690941"></a>
+<p><a id="toc42690169"></a>
 <a id="toc42690555"></a>
-<a id="toc42690169"></a></p>
+<a id="toc42690941"></a>
+<a id="toc48549297"></a>
+<a id="refheadingtoc185775971629160"></a></p>
 <h3 id="3283-calculating-the-view-model">32.8.3. <span style="color: #4f81bd">Calculating the view model</span></h3>
 <p><img src="images/10000000000001BB0000010688D09B8D.png" style="width:5.112cm;height:3.023cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BB0000010688D09B8D.png" /></p>
 <p>Once the visual appearance of the view has been determined, we can proceed to calculate the view model under real-world conditions. Let’s review the state codes that lead to this view. They can be found in the configuration file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-javascript">
 <span class="odt-code-line"><span style="color:#000000">        </span># HTML views and their models depend on the state returned by the controller</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;views&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold"># authentication view</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;states&quot;</span><span style="font-weight:bold;color:#000000">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold"># /init-session success</span></span>
@@ -3759,8 +3757,8 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;view_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;views/authentication-view.html&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;model_for_view&quot;</span><span style="color:#000000">: ModelForAuthentificationView()</span></span>
-<span class="odt-code-line"><span style="color:#000000">            },</span></span>
-<span class="odt-code-line"><span style="color:#000000">            {</span></span>
+<span class="odt-code-line">            },</span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="color:#000000">                </span># tax calculation view</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;statements&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold"># /authenticate-user success</span></span>
@@ -3774,8 +3772,8 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;view_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;views/tax-calculation-view.html&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;model_for_view&quot;</span><span style="color:#000000">: ModelForCalculImpotView()</span></span>
-<span class="odt-code-line"><span style="color:#000000">            },</span></span>
-<span class="odt-code-line"><span style="color:#000000">            {</span></span>
+<span class="odt-code-line">            },</span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="color:#000000">                </span># view of the list of simulations</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;statements&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold"># /list-simulations</span></span>
@@ -3785,13 +3783,13 @@
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;view_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;views/simulation-list-view.html&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;model_for_view&quot;</span><span style="color:#000000">: ModelForListeSimulationsView()</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        ],</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ],</span>
 <span class="odt-code-line"><span style="color:#000000">        </span># unexpected error view</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;error-view&quot;</span><span style="color:#000000">: {</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;view_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;views/error-view.html&quot;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;model_for_view&quot;</span><span style="color:#000000">: ModelForErrorsView()</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
+<span class="odt-code-line">        },</span>
 </code></pre></div>
 
 <p>These are the status codes that do not lead to an HTML view in lines 3–41, which cause the unexpected errors view to be displayed.</p>
@@ -3827,11 +3825,11 @@
   <li>lines 16-197: calculation of the model <b>[model.optionsMenu] </b>used by the fragment <b>[v-menu.html]</b>;
   </li>
 </ul>
-<p><a id="refheadingtoc185777971629160"></a>
-<a id="toc48549298"></a>
-<a id="toc42690942"></a>
+<p><a id="toc42690170"></a>
 <a id="toc42690556"></a>
-<a id="toc42690170"></a></p>
+<a id="toc42690942"></a>
+<a id="toc48549298"></a>
+<a id="refheadingtoc185777971629160"></a></p>
 <h3 id="3284-tests-postman">32.8.4. <span style="color: #4f81bd">Tests [Postman]</span></h3>
 <p>We perform:</p>
 <ul>
@@ -3843,11 +3841,11 @@
 
 <p>The HTML response is then as follows:</p>
 <p><img src="images/10000000000004A00000028C171E3A1A.png" style="width:12.323cm;height:6.786cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004A00000028C171E3A1A.png" /></p>
-<p><a id="refheadingtoc185779971629160"></a>
-<a id="toc48549299"></a>
-<a id="toc42690943"></a>
+<p><a id="toc42690171"></a>
 <a id="toc42690557"></a>
-<a id="toc42690171"></a></p>
+<a id="toc42690943"></a>
+<a id="toc48549299"></a>
+<a id="refheadingtoc185779971629160"></a></p>
 <h2 id="329-implementation-of-the-application-menu-actions">32.9. <span style="color: #4f81bd">Implementation of the application menu actions</span></h2>
 <p>Here we will discuss the implementation of the menu actions. Let’s review the meaning of the links we’ve encountered</p>
 <table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>View</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Link</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Target</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>Role</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="2"><div style="margin:0 0 0.5em 0"><b>Tax Calculation</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[List of simulations]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[/list-simulations]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">Request the list of simulations</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[End of session]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[/end-session]</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="2"><div style="margin:0 0 0.5em 0"><b>List of simulations</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[Tax calculation]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[/display-tax-calculation]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">View tax calculation</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[End session]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[/end-session]</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;" rowspan="3"><div style="margin:0 0 0.5em 0"><b>Unexpected errors</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[Tax calculation]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[/display-tax-calculation]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0">View the tax calculation</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[List of simulations]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[/list-simulations]</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;">&nbsp;</td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[End session]</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><b>[/end-session]</b></div></td></tr></table>
@@ -3893,15 +3891,15 @@
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;get-admindata&quot;</span><span style="color:#000000">: GetAdminDataController(),</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># main controller</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;main-controller&quot;</span><span style="color:#000000">: MainController()</span></span>
-<span class="odt-code-line"><span style="color:#000000">        },</span></span>
-<span class="odt-code-line"><span style="color:#000000">…</span></span>
+<span class="odt-code-line">        },</span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line"><span style="color:#000000">       </span># HTML views and their models depend on the state returned by the controller</span>
 <span class="odt-code-line">        <span style="color:#a31515">&quot;views&quot;</span>: <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold"># authentication view</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">…</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            },</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">            {</span></span>
+<span class="odt-code-line">            },</span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold"># tax calculation view</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">                </span><span style="font-weight:bold;color:#a31515">&quot;reports&quot;</span><span style="font-weight:bold">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold"># /authenticate-user success</span></span>
@@ -3954,24 +3952,24 @@
   <li>line 13: view changes are simple to implement: just return a status code associated with the target view, here code 800 as seen above;
   </li>
 </ul>
-<p><a id="toc48549301"></a>
-<a id="toc42690944"></a>
-<a id="toc42690558"></a>
+<p><a id="refheadingtoc185781971629160"></a>
 <a id="toc42690172"></a>
-<a id="refheadingtoc185781971629160"></a></p>
+<a id="toc42690558"></a>
+<a id="toc42690944"></a>
+<a id="toc48549301"></a></p>
 <h3 id="3292-the-end-session-action">32.9.2. <span style="color: #4f81bd">The [/end-session] action</span></h3>
 <p>The <strong>[/end-session]</strong> action is special. It does not lead directly to a view but to a redirect. Recall that redirects are configured in the <strong>[config]</strong> file as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"><span style="color:#000000">        </span># redirects</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;redirections&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">            {</span></span>
+<span class="odt-code-line">            {</span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&quot;status&quot;</span><span style="font-weight:bold;color:#000000">: [</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                    </span><span style="font-weight:bold;color:#098658">400</span><span style="font-weight:bold;color:#000000">,  </span><span style="font-weight:bold"># /end-session successful</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">                ]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span># redirect to</span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&quot;to&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/init-session/html&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">            }</span></span>
-<span class="odt-code-line"><span style="color:#000000">        ],</span></span>
+<span class="odt-code-line">            }</span>
+<span class="odt-code-line">        ],</span>
 </code></pre></div>
 
 <p>There is only one redirect in the application:</p>
@@ -4057,7 +4055,7 @@
 <p>We have written the following route in the main script <strong>[main]</strong>:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span style="color:#0000ff">from </span>flask <span style="color:#0000ff">import </span>request, Flask, session, <span style="background-color:#fff2cc">url_for, redirect</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">…</span></span>
+<span class="odt-code-line">…</span>
 <span class="odt-code-line">…</span>
 <span class="odt-code-line">@app.route(<span style="color:#a31515">&#x27;/&#x27;</span>, methods=<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold">]</span>)</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span>index() -&gt; tuple:</span>

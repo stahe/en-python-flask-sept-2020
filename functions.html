@@ -1545,13 +1545,13 @@
 
 
 
-<p><a id="lesfonctions"></a>
+<p><a id="refheadingtoc2521012924280206"></a>
 <a id="toc48548943"></a>
-<a id="refheadingtoc2521012924280206"></a></p>
+<a id="lesfonctions"></a></p>
 <h1 id="6-functions">6. <span style="color: #365f91">Functions</span></h1>
 <p><img src="images/10000001000001D000000225461F936F.png" style="width:4.309cm;height:5.099cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001D000000225461F936F.png" /></p>
-<p><a id="toc48548944"></a>
-<a id="refheadingtoc2521032924280206"></a></p>
+<p><a id="refheadingtoc2521032924280206"></a>
+<a id="toc48548944"></a></p>
 <h2 id="61-script-fonc_01-variable-scope">6.1. <span style="color: #4f81bd">Script [fonc_01]: variable scope</span></h2>
 <p>The script <strong>[fonc_01]</strong> shows examples of variable scope between functions:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1560,9 +1560,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># Avoid using global variables</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># global variable i</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">global </span><span style="color:#000000">i</span></span>
-<span class="odt-code-line"><span style="color:#000000">    i += 1</span></span>
+<span class="odt-code-line">    i += 1</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable j</span>
-<span class="odt-code-line"><span style="color:#000000">    j = 10</span></span>
+<span class="odt-code-line">    j = 10</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;f1</span><span style="font-weight:bold;color:#a31515">[i,j]</span><span style="color:#a31515">=</span><span style="font-weight:bold;color:#a31515">[{i},{j}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
@@ -1570,29 +1570,29 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># Avoid using global variables</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># global variable i</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">global </span><span style="color:#000000">i</span></span>
-<span class="odt-code-line"><span style="color:#000000">    i += 1</span></span>
+<span class="odt-code-line">    i += 1</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable j</span>
-<span class="odt-code-line"><span style="color:#000000">    j = 20</span></span>
+<span class="odt-code-line">    j = 20</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;f2</span><span style="font-weight:bold;color:#a31515">[i,j]</span><span style="color:#a31515">=</span><span style="font-weight:bold;color:#a31515">[{i},{j}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">f3():</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable i</span>
-<span class="odt-code-line"><span style="color:#000000">    i = 1</span></span>
+<span class="odt-code-line">    i = 1</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable j</span>
-<span class="odt-code-line"><span style="color:#000000">    j = 30</span></span>
+<span class="odt-code-line">    j = 30</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;f3</span><span style="font-weight:bold;color:#a31515">[i,j]</span><span style="color:#a31515">=</span><span style="font-weight:bold;color:#a31515">[{i},{j}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># main program</span>
-<span class="odt-code-line"><span style="color:#000000">i = 0</span></span>
-<span class="odt-code-line"><span style="color:#000000">j = 0</span></span>
+<span class="odt-code-line">i = 0</span>
+<span class="odt-code-line">j = 0</span>
 <span class="odt-code-line"># these two variables will be known to a function f</span>
 <span class="odt-code-line"># only if the function explicitly declares with the `global` statement that it wants to use them</span>
 <span class="odt-code-line"><span style="color:#000000"># or if the function only reads the global variable</span></span>
-<span class="odt-code-line"><span style="color:#000000">f1()</span></span>
-<span class="odt-code-line"><span style="color:#000000">f2()</span></span>
-<span class="odt-code-line"><span style="color:#000000">f3()</span></span>
+<span class="odt-code-line">f1()</span>
+<span class="odt-code-line">f2()</span>
+<span class="odt-code-line">f3()</span>
 <span class="odt-code-line"># j hasn&#x27;t changed, but i has</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[i,j]</span><span style="color:#a31515">=</span><span style="font-weight:bold;color:#a31515">[{i},{j}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 </code></pre></div>
@@ -1613,8 +1613,8 @@
   <li>The script demonstrates the use of the variable i, declared as global in functions f1 and f2. In this case, the main program and functions f1 and f2 share the same variable i.
   </li>
 </ul>
-<p><a id="toc48548945"></a>
-<a id="refheadingtoc2521052924280206"></a></p>
+<p><a id="refheadingtoc2521052924280206"></a>
+<a id="toc48548945"></a></p>
 <h2 id="62-script-fonc_02-variable-scope">6.2. <span style="color: #4f81bd">Script [fonc_02]: variable scope</span></h2>
 <p>The script <strong>[fonc_03]</strong> builds on the script <strong>[fonc_02]</strong> and shows how to avoid using global variables:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1623,7 +1623,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable i</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#808080">i </span><span style="color:#000000">+= 1</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable j</span>
-<span class="odt-code-line"><span style="color:#000000">    j = 10</span></span>
+<span class="odt-code-line">    j = 10</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;f1</span><span style="font-weight:bold;color:#a31515">[i,j]</span><span style="color:#a31515">=</span><span style="font-weight:bold;color:#a31515">[{i},{j}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># return the modified value</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#808080">i</span></span>
@@ -1633,7 +1633,7 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable i</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#808080">i </span><span style="color:#000000">+= 1</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable j</span>
-<span class="odt-code-line"><span style="color:#000000">    j = 20</span></span>
+<span class="odt-code-line">    j = 20</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;f2</span><span style="font-weight:bold;color:#a31515">[i,j]</span><span style="color:#a31515">=</span><span style="font-weight:bold;color:#a31515">[{i},{j}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># return the modified value</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#808080">i</span></span>
@@ -1643,19 +1643,19 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable i</span>
 <span class="odt-code-line"><span style="color:#000000">    i = 1</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># local variable j</span>
-<span class="odt-code-line"><span style="color:#000000">    j = 30</span></span>
+<span class="odt-code-line">    j = 30</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;f3</span><span style="font-weight:bold;color:#a31515">[i,j]</span><span style="color:#a31515">=</span><span style="font-weight:bold;color:#a31515">[{i},{j}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># main program</span>
-<span class="odt-code-line"><span style="color:#000000">i = 0</span></span>
-<span class="odt-code-line"><span style="color:#000000">j = 0</span></span>
+<span class="odt-code-line">i = 0</span>
+<span class="odt-code-line">j = 0</span>
 <span class="odt-code-line"># these two variables will only be known to a function f</span>
 <span class="odt-code-line"># only if the function explicitly declares with the `global` statement that it wants to use them</span>
 <span class="odt-code-line"># or if the function only reads the global variable</span>
-<span class="odt-code-line"><span style="color:#000000">i = f1(i)</span></span>
-<span class="odt-code-line"><span style="color:#000000">i = f2(i)</span></span>
-<span class="odt-code-line"><span style="color:#000000">f3()</span></span>
+<span class="odt-code-line">i = f1(i)</span>
+<span class="odt-code-line">i = f2(i)</span>
+<span class="odt-code-line">f3()</span>
 <span class="odt-code-line"># j hasn&#x27;t changed, but i has changed</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[i,j]</span><span style="color:#a31515">=</span><span style="font-weight:bold;color:#a31515">[{i},{j}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 </code></pre></div>
@@ -1679,8 +1679,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="toc48548946"></a>
-<a id="refheadingtoc2521072924280206"></a></p>
+<p><a id="refheadingtoc2521072924280206"></a>
+<a id="toc48548946"></a></p>
 <h2 id="63-script-fonc_03-scope-of-variables">6.3. <span style="color: #4f81bd">Script [fonc_03]: scope of variables</span></h2>
 <p>The script <strong>[fonc_03]</strong> demonstrates a peculiarity of variables used both within a function and in the code calling it, depending on whether the variable is used for <strong>reading</strong> only within the function or not.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1715,17 +1715,17 @@
 <span class="odt-code-line">    print(<span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[f3] </span><span style="color:#a31515">i={i}&quot;</span>)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># main -----------</span></span>
-<span class="odt-code-line"><span style="color:#008000"># Global variables for functions</span></span>
+<span class="odt-code-line"># main -----------</span>
+<span class="odt-code-line"># Global variables for functions</span>
 <span class="odt-code-line">i = 10</span>
 <span class="odt-code-line">j = 20</span>
-<span class="odt-code-line"><span style="color:#008000"># call to f1</span></span>
+<span class="odt-code-line"># call to f1</span>
 <span class="odt-code-line">f1()</span>
 <span class="odt-code-line">print(<span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[main] </span><span style="color:#a31515">i={i}, j={j}&quot;</span>)</span>
-<span class="odt-code-line"><span style="color:#008000"># call to f2</span></span>
+<span class="odt-code-line"># call to f2</span>
 <span class="odt-code-line">f2()</span>
 <span class="odt-code-line">print(<span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[main] </span><span style="color:#a31515">i={i}&quot;</span>)</span>
-<span class="odt-code-line"><span style="color:#008000"># call to f3</span></span>
+<span class="odt-code-line"># call to f3</span>
 <span class="odt-code-line">f3()</span>
 <span class="odt-code-line">print(<span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[main] </span><span style="color:#a31515">i={i}&quot;</span>)</span>
 </code></pre></div>
@@ -1758,8 +1758,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="toc48548947"></a>
-<a id="refheading382622423505"></a></p>
+<p><a id="refheading382622423505"></a>
+<a id="toc48548947"></a></p>
 <h2 id="64-script-fonc_04-parameter-passing-mode">6.4. <span style="color: #4f81bd">Script [fonc_04]: parameter passing mode</span></h2>
 <p>The script is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1776,11 +1776,11 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># ------------------------ main</span>
-<span class="odt-code-line"><span style="color:#000000">x = 1</span></span>
-<span class="odt-code-line"><span style="color:#000000">f1(x)</span></span>
+<span class="odt-code-line">x = 1</span>
+<span class="odt-code-line">f1(x)</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;x={x}&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">(x, y) = (-1, -1)</span></span>
-<span class="odt-code-line"><span style="color:#000000">(x, y) = f2(x, y)</span></span>
+<span class="odt-code-line">(x, y) = (-1, -1)</span>
+<span class="odt-code-line">(x, y) = f2(x, y)</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;x={x}, y={y}&quot;</span><span style="color:#000000">)</span></span>
 </code></pre></div>
 
@@ -1812,13 +1812,13 @@
 </ul>
 
 <p>We conclude that when &quot;immutable&quot; objects are output parameters, they must be part of the results returned by the function.</p>
-<p><a id="toc48548948"></a>
-<a id="refheadingtoc2521092924280206"></a></p>
+<p><a id="refheadingtoc2521092924280206"></a>
+<a id="toc48548948"></a></p>
 <h2 id="65-script-fonc_05-order-of-functions-in-a-script">6.5. <span style="color: #4f81bd">Script [fonc_05]: Order of functions in a script</span></h2>
 <p>The script <strong>[fonc_05]</strong> shows that a function cannot be called if it has not been encountered previously in the code:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># ------------------------ main</span>
-<span class="odt-code-line"><span style="color:#000000">print(f2(100, 200))</span></span>
+<span class="odt-code-line">print(f2(100, 200))</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># function f1</span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">f1(</span><span style="color:#808080">a</span><span style="color:#000000">):</span></span>
@@ -1851,8 +1851,8 @@
 <a id="__codelineno-1-6" name="__codelineno-1-6"></a>
 <a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="n">Process</span> <span class="n">finished</span> <span class="k">with</span> <span class="n">exit</span> <span class="n">code</span> <span class="mi">1</span>
 </code></pre></div></td></tr></table></div>
-<p><a id="toc48548949"></a>
-<a id="refheadingtoc2521112924280206"></a></p>
+<p><a id="refheadingtoc2521112924280206"></a>
+<a id="toc48548949"></a></p>
 <h2 id="66-script-fonc_06-order-of-functions-in-a-script">6.6. <span style="color: #4f81bd">Script [fonc_06]: Order of functions in a script</span></h2>
 <p>The script <strong>[fonc_06]</strong> shows that what applies to the calling code does not apply to functions:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1867,7 +1867,7 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># ------------------------ main</span>
-<span class="odt-code-line"><span style="color:#000000">print(f2(100, 200))</span></span>
+<span class="odt-code-line">print(f2(100, 200))</span>
 </code></pre></div>
 
 <p><strong>Notes</strong></p>
@@ -1885,8 +1885,8 @@
 <a id="__codelineno-2-3" name="__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="nx">Process</span><span class="w"> </span><span class="nx">completed</span><span class="w"> </span><span class="kd">with</span><span class="w"> </span><span class="nx">exit</span><span class="w"> </span><span class="nx">code</span><span class="w"> </span><span class="mf">0</span>
 </code></pre></div></td></tr></table></div>
-<p><a id="toc48548950"></a>
-<a id="refheadingtoc2521132924280206"></a></p>
+<p><a id="refheadingtoc2521132924280206"></a>
+<a id="toc48548950"></a></p>
 <h2 id="67-script-fonc_07-using-modules">6.7. <span style="color: #4f81bd">Script [fonc_07]: Using Modules</span></h2>
 <p>The script <strong>[fonc_07]</strong> demonstrates how to isolate functions in a module.</p>
 <p><img src="images/10000000000001A2000001E95C62738A.png" style="width:4.821cm;height:5.639cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001A2000001E95C62738A.png" /></p>
@@ -1987,8 +1987,8 @@
 
 <p>To find the imported module <strong>[</strong><strong><span style="color: #000000">fonctions.shared.fonctions_module_01</span></strong><strong>]</strong>, the Python interpreter searches the folders in the <strong>[Python Path]</strong> for a subfolder named <strong>[fonctions]</strong>. It cannot find it anywhere. This is because the <strong>[functions]</strong> subfolder is located under the folder <strong>[C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020],</strong> which is not part of the <strong>[Python Path]</strong>.</p>
 <p>The <strong>[fonc-08]</strong> script provides a possible solution to this problem.</p>
-<p><a id="toc48548951"></a>
-<a id="refheadingtoc2521152924280206"></a></p>
+<p><a id="refheadingtoc2521152924280206"></a>
+<a id="toc48548951"></a></p>
 <h2 id="68-script-fonc_08-adding-folders-to-the-python-path">6.8. <span style="color: #4f81bd">Script [fonc_08]: Adding Folders to the [Python Path]</span></h2>
 <p>It is possible to modify the <strong>[Python Path]</strong> programmatically, as shown in the <strong>[fonc-08]</strong> script:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2009,7 +2009,7 @@
 <span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">functions_module_01 </span><span style="color:#0000ff">import </span><span style="color:#000000">f2</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># ------------------------ main</span>
-<span class="odt-code-line"><span style="color:#000000">print(f2(100, 200))</span></span>
+<span class="odt-code-line">print(f2(100, 200))</span>
 </code></pre></div>
 
 <p><strong>Notes</strong></p>
@@ -2057,8 +2057,8 @@
   <li>line 4: the function f2 was found;
   </li>
 </ul>
-<p><a id="toc48548952"></a>
-<a id="refheadingtoc2521172924280206"></a></p>
+<p><a id="refheadingtoc2521172924280206"></a>
+<a id="toc48548952"></a></p>
 <h2 id="69-script-fonc_09-declaring-parameter-types">6.9. <span style="color: #4f81bd">Script [fonc_09]: declaring parameter types</span></h2>
 <p>The <strong>[fonc_09]</strong> script shows that you can declare the type of a function’s parameters as well as that of the result. However, this declaration is only useful for documenting the function. The Python interpreter does not check whether the actual function parameters are of the expected type. However, PyCharm flags type inconsistencies between actual and formal parameters. This reason alone makes type declarations indispensable. </p>
 <p>The script is as follows:</p>
@@ -2122,8 +2122,8 @@
 <p>PyCharm nevertheless indicates that there is an issue:</p>
 <p><img src="images/10000000000002D9000001945D4D8660.png" style="width:8.41cm;height:4.66cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D9000001945D4D8660.png" /></p>
 <p>In <strong>[1]</strong>, PyCharm has highlighted the incorrect call.</p>
-<p><a id="toc48548953"></a>
-<a id="refheadingtoc2521192924280206"></a></p>
+<p><a id="refheadingtoc2521192924280206"></a>
+<a id="toc48548953"></a></p>
 <h2 id="610-script-fonc_10-named-parameters">6.10. <span style="color: #4f81bd">Script [fonc_10]: named parameters</span></h2>
 <p>To pass parameters to a function, you can use the names of its formal parameters. In this case, you are not required to follow the order of the formal parameters:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">

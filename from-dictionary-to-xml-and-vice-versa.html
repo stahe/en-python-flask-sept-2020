@@ -1376,8 +1376,8 @@
 
 
 
-<p><a id="toc48549208"></a>
-<a id="dudictionnairea"></a></p>
+<p><a id="dudictionnairea"></a>
+<a id="toc48549208"></a></p>
 <h1 id="26-from-dictionary-to-xml-and-vice-versa">26. <span style="color: #365f91">From dictionary to XML and vice versa</span></h1>
 <p>Here, we’ll explore the <strong>[xml2dict]</strong> module, which allows you to convert:</p>
 <ul>
@@ -1407,9 +1407,9 @@
 <span class="odt-code-line"><span style="color:#0000ff">import </span><span style="background-color:#bdd6ee">xmltodict</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># xmltodict.parse to convert XML to a dictionary. The dictionary must have a root</span></span>
-<span class="odt-code-line"><span style="color:#008000"># the resulting dictionary is of type OrderedDict</span></span>
-<span class="odt-code-line"><span style="color:#008000"># xmltodict.unparse to convert from a dictionary to XML</span></span>
+<span class="odt-code-line"># xmltodict.parse to convert XML to a dictionary. The dictionary must have a root</span>
+<span class="odt-code-line"># the resulting dictionary is of type OrderedDict</span>
+<span class="odt-code-line"># xmltodict.unparse to convert from a dictionary to XML</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="background-color:#bdd6ee;color:#000000">ordereddict2dict</span><span style="color:#000000">(</span><span style="color:#808080">ordered_dictionary</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#008000">…</span></span>
@@ -1429,24 +1429,24 @@
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;dict_dictionary1={</span><span style="background-color:#bdd6ee;color:#a31515">ordereddict2dict</span><span style="color:#a31515">(ordereddict_dictionary1)}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#008000"># test 1</span></span>
+<span class="odt-code-line"># test 1</span>
 <span class="odt-code-line"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 1&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;selene&quot;</span><span style="color:#000000">})</span></span>
-<span class="odt-code-line"><span style="color:#008000"># test 2</span></span>
+<span class="odt-code-line"># test 2</span>
 <span class="odt-code-line"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 2&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;family&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;father&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;andré&quot;</span><span style="color:#000000">}, </span><span style="color:#a31515">&quot;mother&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;angèle&quot;</span><span style="color:#000000">}, </span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;séléné&quot;</span><span style="color:#000000">}})</span></span>
-<span class="odt-code-line"><span style="color:#008000"># test 3</span></span>
+<span class="odt-code-line"># test 3</span>
 <span class="odt-code-line"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 3&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;family&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;last_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Selene&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;father&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Andre&quot;</span><span style="color:#000000">}, </span><span style="color:#a31515">&quot;mother&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;first_name&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;Angele&quot;</span><span style="color:#000000">},</span></span>
 <span class="odt-code-line"><span style="color:#000000">                                 </span><span style="color:#a31515">&quot;hobbies&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;singing&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;jogging&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}})</span></span>
-<span class="odt-code-line"><span style="color:#008000"># test 4</span></span>
+<span class="odt-code-line"># test 4</span>
 <span class="odt-code-line"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 4&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&#x27;response</span><span style="color:#000000">&#x27;: {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    &#x27;errors&#x27;: </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET method required with only the [married, children, salary</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#a31515">parameters&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;</span><span style="font-weight:bold;color:#a31515">[married] </span><span style="color:#a31515">parameter missing&#x27;</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#a31515">&#x27;</span><span style="font-weight:bold;color:#a31515">[children] </span><span style="color:#a31515">parameter missing&#x27;</span><span style="color:#000000">, </span><span style="color:#a31515">&#x27;</span><span style="font-weight:bold;color:#a31515">[salary] </span><span style="color:#a31515">parameter missing&#x27;</span><span style="color:#000000">]}})</span></span>
-<span class="odt-code-line"><span style="color:#008000"># test 5</span></span>
+<span class="odt-code-line"># test 5</span>
 <span class="odt-code-line"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 5&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&#x27;response</span><span style="color:#000000">&#x27;: {</span></span>
 <span class="odt-code-line"><span style="color:#000000">    &#x27;result&#x27;: {&#x27;id&#x27;: 0, &#x27;married&#x27;: </span><span style="color:#a31515">&#x27;yes&#x27;</span><span style="color:#000000">, &#x27;children&#x27;: 2, &#x27;salary&#x27;: 50000, &#x27;tax&#x27;: 1384, &#x27;discount&#x27;: 384, &#x27;surcharge&#x27;: 0,</span></span>
 <span class="odt-code-line"><span style="color:#000000">               &#x27;reduction&#x27;: 347, </span><span style="color:#a31515">&#x27;rate</span><span style="color:#000000">&#x27;: 0.14}}}}</span></span>
-<span class="odt-code-line"><span style="color:#008000"># test 6</span></span>
+<span class="odt-code-line"># test 6</span>
 <span class="odt-code-line"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 6&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;root&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&#x27;list</span><span style="color:#000000">&#x27;: </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;one&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;two&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;three&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}})</span></span>
-<span class="odt-code-line"><span style="color:#008000"># test 7</span></span>
+<span class="odt-code-line"># test 7</span>
 <span class="odt-code-line"><span style="background-color:#bdd6ee;color:#000000">transform</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;test 7&quot;</span><span style="color:#000000">, {</span><span style="color:#a31515">&quot;root&quot;</span><span style="color:#000000">: {&#x27;list&#x27;: </span><span style="font-weight:bold;color:#000000">[{</span><span style="font-weight:bold;color:#a31515">&quot;one&quot;</span><span style="font-weight:bold;color:#000000">: [10, 11]</span><span style="color:#000000">}, {</span><span style="color:#a31515">&quot;two&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[20, 21]</span><span style="color:#000000">}, {</span><span style="color:#a31515">&quot;three&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[30, 31]</span><span style="color:#000000">}]}})</span></span>
 </code></pre></div>
 
@@ -1512,11 +1512,11 @@
 <span class="odt-code-line">dict_dictionary1={&#x27;response&#x27;: {&#x27;errors&#x27;: <span style="font-weight:bold">[&#x27;GET method required with only the parameters [married, children, salary]</span>&#x27;, &#x27;parameter <span style="font-weight:bold">[married] </span>missing&#x27;, &#x27;parameter <span style="font-weight:bold">[children] </span>missing&#x27;, &#x27;parameter <span style="font-weight:bold">[salary] </span>missing&#x27;]}}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="background-color:#fff2cc">test</span> 5-------</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">dictionary={&#x27;response&#x27;: {&#x27;result&#x27;: {&#x27;id&#x27;: 0, &#x27;married&#x27;: &#x27;yes&#x27;, &#x27;children&#x27;: 2, &#x27;salary&#x27;: 50000, &#x27;tax&#x27;: 1384, &#x27;discount&#x27;: 384, &#x27;surcharge&#x27;: 0, &#x27;reduction&#x27;: 347, &#x27;rate&#x27;: 0.14}}}</span></span>
+<span class="odt-code-line">dictionary={&#x27;response&#x27;: {&#x27;result&#x27;: {&#x27;id&#x27;: 0, &#x27;married&#x27;: &#x27;yes&#x27;, &#x27;children&#x27;: 2, &#x27;salary&#x27;: 50000, &#x27;tax&#x27;: 1384, &#x27;discount&#x27;: 384, &#x27;surcharge&#x27;: 0, &#x27;reduction&#x27;: 347, &#x27;rate&#x27;: 0.14}}}</span>
 <span class="odt-code-line">xml=&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="odt-code-line">&lt;response&gt;&lt;result&gt;&lt;id&gt;0&lt;/id&gt;&lt;married&gt;yes&lt;/married&gt;&lt;children&gt;2&lt;/children&gt;&lt;salary&gt;50000&lt;/salary&gt;&lt;tax&gt;1384&lt;/tax&gt;&lt;discount&gt;384&lt;/discount&gt;&lt;surcharge&gt;0&lt;/surcharge&gt;&lt;reduction&gt;347&lt;/reduction&gt;&lt;rate&gt;0.14&lt;/rate&gt;&lt;/result&gt;&lt;/response&gt;</span>
 <span class="odt-code-line">ordereddict_dictionary1 = OrderedDict(<span style="font-weight:bold">[(&#x27;response&#x27;, OrderedDict([(&#x27;result&#x27;, OrderedDict([(&#x27;id&#x27;, &#x27;0&#x27;), (&#x27;married&#x27;, &#x27;yes&#x27;), (&#x27;children&#x27;, &#x27;2&#x27;), (&#x27;salary&#x27;, &#x27;50000&#x27;), (&#x27;tax&#x27;, &#x27;1384&#x27;), (&#x27;discount&#x27;, &#x27;384&#x27;), (&#x27;surcharge&#x27;, &#x27;0&#x27;), (&#x27;reduction&#x27;, &#x27;347&#x27;), (&#x27;rate&#x27;, &#x27;0.14&#x27;)]</span>))]))])</span>
-<span class="odt-code-line"><span style="background-color:#fff2cc">dict_dictionary1 = {&#x27;response&#x27;: {&#x27;result&#x27;: {&#x27;id&#x27;: &#x27;0&#x27;, &#x27;married&#x27;: &#x27;yes&#x27;, &#x27;children&#x27;: &#x27;2&#x27;, &#x27;salary&#x27;: &#x27;50000&#x27;, &#x27;tax&#x27;: &#x27;1384&#x27;, &#x27;discount&#x27;: &#x27;384&#x27;, &#x27;surcharge&#x27;: &#x27;0&#x27;, &#x27;reduction&#x27;: &#x27;347&#x27;, &#x27;rate&#x27;: &#x27;0.14&#x27;}}}</span></span>
+<span class="odt-code-line">dict_dictionary1 = {&#x27;response&#x27;: {&#x27;result&#x27;: {&#x27;id&#x27;: &#x27;0&#x27;, &#x27;married&#x27;: &#x27;yes&#x27;, &#x27;children&#x27;: &#x27;2&#x27;, &#x27;salary&#x27;: &#x27;50000&#x27;, &#x27;tax&#x27;: &#x27;1384&#x27;, &#x27;discount&#x27;: &#x27;384&#x27;, &#x27;surcharge&#x27;: &#x27;0&#x27;, &#x27;reduction&#x27;: &#x27;347&#x27;, &#x27;rate&#x27;: &#x27;0.14&#x27;}}}</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="background-color:#fff2cc">test</span> 6-------</span>
 <span class="odt-code-line">dictionary = {&#x27;root&#x27;: {&#x27;list&#x27;: <span style="font-weight:bold">[&#x27;one&#x27;, &#x27;two&#x27;, &#x27;three&#x27;]</span>}}</span>
@@ -1578,14 +1578,14 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># process the elements of the parameter list</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">value </span><span style="color:#0000ff">in </span><span style="color:#808080">list</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># add value to the new list</span>
-<span class="odt-code-line"><span style="color:#000000">        newlist.append(check(value))</span></span>
+<span class="odt-code-line">        newlist.append(check(value))</span>
 <span class="odt-code-line"><span style="color:#000000">    </span># return the new list</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">newlist</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">ordereddict2dict(</span><span style="color:#808080">ordered_dictionary</span><span style="color:#000000">: </span><span style="color:#2b91af">OrderedDict</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Convert OrderedDict to a dictionary recursively</span>
-<span class="odt-code-line"><span style="color:#000000">    newdict = {}</span></span>
+<span class="odt-code-line">    newdict = {}</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">key, value </span><span style="color:#0000ff">in </span><span style="color:#808080">ordered_dictionary</span><span style="color:#000000">.items():</span></span>
 <span class="odt-code-line"><span style="color:#000000">        </span># store the value in the new dictionary</span>
 <span class="odt-code-line"><span style="color:#000000">        newdict</span><span style="font-weight:bold;color:#000000">[key] </span><span style="color:#000000">= check(value)</span></span>

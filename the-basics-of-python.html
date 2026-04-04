@@ -1534,13 +1534,13 @@
 
 
 
-<p><a id="lesbasesde"></a>
+<p><a id="refheading382422423505"></a>
 <a id="toc48548922"></a>
-<a id="refheading382422423505"></a></p>
+<a id="lesbasesde"></a></p>
 <h1 id="3-the-basics-of-python">3. <span style="color: #365f91">The Basics of Python</span></h1>
 <p><img src="images/1000000100000153000001B1F1BE92A9.png" style="width:3.14cm;height:4.011cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000153000001B1F1BE92A9.png" /></p>
-<p><a id="toc48548923"></a>
-<a id="refheading382442423505"></a></p>
+<p><a id="refheading382442423505"></a>
+<a id="toc48548923"></a></p>
 <h2 id="31-script-bases_01-basic-operations">3.1. <span style="color: #4f81bd">Script [bases_01]: Basic Operations</span></h2>
 <p>The script <strong>[bases_01]</strong> introduces the basic features of Python.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -1580,7 +1580,7 @@
 <span class="odt-code-line"><span style="color:#000000">list = </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;one&quot;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&quot;two&quot;</span><span style="font-weight:bold;color:#000000">, 3, 4]</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># its number of elements</span>
-<span class="odt-code-line"><span style="color:#000000">n = len(list)</span></span>
+<span class="odt-code-line">n = len(list)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a loop</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(n):</span></span>
@@ -1590,33 +1590,33 @@
 <span class="odt-code-line"><span style="color:#000000">(string1, string2) = (</span><span style="color:#a31515">&quot;string1&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;string2&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># concatenating the two strings</span>
-<span class="odt-code-line"><span style="color:#000000">string3 = string1 + string2</span></span>
+<span class="odt-code-line">string3 = string1 + string2</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># display result</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[%s,%s,%s]</span><span style="color:#a31515">&quot; </span><span style="color:#000000">% (string1, string2, string3))</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># using the function</span>
-<span class="odt-code-line"><span style="color:#000000">display(string1)</span></span>
+<span class="odt-code-line">display(string1)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the type of a variable can be determined</span>
-<span class="odt-code-line"><span style="color:#000000">display_type(n)</span></span>
-<span class="odt-code-line"><span style="color:#000000">display_type(string1)</span></span>
-<span class="odt-code-line"><span style="color:#000000">display_type(list)</span></span>
+<span class="odt-code-line">display_type(n)</span>
+<span class="odt-code-line">display_type(string1)</span>
+<span class="odt-code-line">display_type(list)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># the type of a variable can change during execution</span>
 <span class="odt-code-line"><span style="color:#000000">n = </span><span style="color:#a31515">&quot;has changed&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">display_type(n)</span></span>
+<span class="odt-code-line">display_type(n)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a function can return a result</span>
-<span class="odt-code-line"><span style="color:#000000">res1 = f1(4)</span></span>
+<span class="odt-code-line">res1 = f1(4)</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;res1=%s&quot; </span><span style="color:#000000">% res1)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a function can return a list of values</span>
-<span class="odt-code-line"><span style="color:#000000">(res1, res2, res3) = f2()</span></span>
+<span class="odt-code-line">(res1, res2, res3) = f2()</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;(res1,res2,res3)=</span><span style="font-weight:bold;color:#a31515">[%s,%s,%s]</span><span style="color:#a31515">&quot; </span><span style="color:#000000">% (res1, res2, res3))</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># we could have stored these values in a variable</span>
-<span class="odt-code-line"><span style="color:#000000">list = f2()</span></span>
+<span class="odt-code-line">list = f2()</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(list)):</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;list</span><span style="font-weight:bold;color:#a31515">[%s]</span><span style="color:#a31515">=%s&quot; </span><span style="color:#000000">% (i, list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">))</span></span>
 <span class="odt-code-line"></span>
@@ -1633,9 +1633,9 @@
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">&quot;list</span><span style="font-weight:bold;color:#a31515">[%s]</span><span style="color:#a31515">=%s&quot; </span><span style="color:#000000">% (i, list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">))</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a while loop</span>
-<span class="odt-code-line"><span style="color:#000000">list = (8, 5, 0, -2, 3, 4)</span></span>
-<span class="odt-code-line"><span style="color:#000000">i = 0</span></span>
-<span class="odt-code-line"><span style="color:#000000">sum = 0</span></span>
+<span class="odt-code-line">list = (8, 5, 0, -2, 3, 4)</span>
+<span class="odt-code-line">i = 0</span>
+<span class="odt-code-line">sum = 0</span>
 <span class="odt-code-line"><span style="color:#0000ff">while </span><span style="color:#000000">i &lt; len(list) </span><span style="color:#0000ff">and </span><span style="color:#000000">list</span><span style="font-weight:bold;color:#000000">[i] </span><span style="color:#000000">&gt; 0:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;list</span><span style="font-weight:bold;color:#a31515">[%s]</span><span style="color:#a31515">=%s&quot; </span><span style="color:#000000">% (i, list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">))</span></span>
 <span class="odt-code-line"><span style="color:#000000">    sum += list</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">  </span> # sum = sum + list<span style="font-weight:bold">[i]</span></span>
@@ -1714,7 +1714,7 @@
 <span class="odt-code-line">list<span style="font-weight:bold">[1] </span>= two</span>
 <span class="odt-code-line">list<span style="font-weight:bold">[2] </span>= 3</span>
 <span class="odt-code-line">list<span style="font-weight:bold">[3] </span>= 4</span>
-<span class="odt-code-line"><span style="font-weight:bold">[string1, string2, string1string2]</span></span>
+<span class="odt-code-line">[string1, string2, string1string2]</span>
 <span class="odt-code-line">string = string1</span>
 <span class="odt-code-line">type<span style="font-weight:bold">[4] </span>= &lt;class &#x27;int&#x27;&gt;</span>
 <span class="odt-code-line">type<span style="font-weight:bold">[string1] </span>= &lt;class &#x27;str&#x27;&gt;</span>
@@ -1732,20 +1732,20 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="toc48548924"></a>
-<a id="refheadingtoc2520892924280206"></a></p>
+<p><a id="refheadingtoc2520892924280206"></a>
+<a id="toc48548924"></a></p>
 <h2 id="32-script-bases_02-formatted-strings">3.2. <span style="color: #4f81bd">Script [bases_02]: Formatted Strings</span></h2>
 <p>Python 3 introduced a new way to format strings:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># formatted strings</span>
 <span class="odt-code-line"># the formats are those of the C language</span>
 <span class="odt-code-line"># integer</span>
-<span class="odt-code-line"><span style="color:#000000">int1 = 10</span></span>
+<span class="odt-code-line">int1 = 10</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[int1={int1}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[int1={int1:4d}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[int1={int1:04d}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># float</span>
-<span class="odt-code-line"><span style="color:#000000">float1 = 8.2</span></span>
+<span class="odt-code-line">float1 = 8.2</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[float1={float1}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[float1={float1:8.2f}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[float1={float1:.3e}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
@@ -1757,7 +1757,7 @@
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;</span><span style="font-weight:bold;color:#a31515">[{str2:20.10s}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># Formatted strings can be assigned to variables</span>
 <span class="odt-code-line"><span style="color:#a31515">str3 = f&quot;</span><span style="font-weight:bold;color:#a31515">[{str2:20.10s}]</span><span style="color:#a31515">&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(str3)</span></span>
+<span class="odt-code-line">print(str3)</span>
 </code></pre></div>
 
 <p>The syntax for the formatted string is as follows:</p>
@@ -1792,30 +1792,40 @@
 </ul>
 
 <p>The results of the execution are as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_02.py</span>
-<span class="odt-code-line"><span style="font-weight:bold">[int1=10]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[int1=  10]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[int1=0010]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[float1=8.2]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[float1=    8.20]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[float1=8.200e+00]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[str1=abcd]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[str1=abcd    ]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[jean de fl          ]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[jean de fl          ]</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">Process finished with exit code 0</span>
-</code></pre></div>
-
-<p><a id="toc48548925"></a>
-<a id="refheading37512891295936"></a></p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_02.py
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>[int1=10]
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>[int1=  10]
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>[int1=0010]
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>[float1=8.2]
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>[float1=    8.20]
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>[float1=8.200e+00]
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>[str1=abcd]
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>[str1=abcd    ]
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>[jean de fl          ]
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>[jean de fl          ]
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>Process finished with exit code 0
+</code></pre></div></td></tr></table></div>
+<p><a id="refheading37512891295936"></a>
+<a id="toc48548925"></a></p>
 <h2 id="33-script-bases_03-type-conversions">3.3. <span style="color: #4f81bd">Script [bases_03]: Type conversions</span></h2>
 <p>Here we focus on type conversions involving data of type <strong>str</strong> (string), <strong>int</strong> (integer), <strong>float</strong> (floating-point), and <strong>bool</strong> (boolean).</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># type conversions</span>
 <span class="odt-code-line"># int --&gt; str, float, bool</span>
-<span class="odt-code-line"><span style="color:#000000">x = 4</span></span>
+<span class="odt-code-line">x = 4</span>
 <span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
 <span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">str</span><span style="color:#000000">(4)</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
@@ -1845,7 +1855,7 @@
 <span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># float --&gt; str, int, bool</span>
-<span class="odt-code-line"><span style="color:#000000">x = 4.32</span></span>
+<span class="odt-code-line">x = 4.32</span>
 <span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
 <span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">str</span><span style="color:#000000">(4.32)</span></span>
 <span class="odt-code-line"><span style="color:#000000">print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
@@ -1859,7 +1869,7 @@
 <span class="odt-code-line"><span style="color:#000000">    x = </span><span style="color:#2b91af">int</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;abc&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(x, </span><span style="color:#2b91af">type</span><span style="color:#000000">(x))</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">ValueError </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># various cases</span>
 <span class="odt-code-line"><span style="color:#000000">x = </span><span style="color:#2b91af">bool</span><span style="color:#000000">(</span><span style="color:#a31515">&quot;abc&quot;</span><span style="color:#000000">)</span></span>
@@ -1878,16 +1888,16 @@
 <span class="odt-code-line"># All data are class instances and, as such, have methods</span>
 <span class="odt-code-line"># string</span>
 <span class="odt-code-line"><span style="color:#000000">str1 = </span><span style="color:#a31515">&quot;abc&quot;</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(str1.capitalize())</span></span>
+<span class="odt-code-line">print(str1.capitalize())</span>
 <span class="odt-code-line"># integer</span>
-<span class="odt-code-line"><span style="color:#000000">int1 = 4</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(int1.bit_length())</span></span>
+<span class="odt-code-line">int1 = 4</span>
+<span class="odt-code-line">print(int1.bit_length())</span>
 <span class="odt-code-line"># boolean</span>
 <span class="odt-code-line"><span style="color:#000000">bool1 = </span><span style="color:#0000ff">True</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(bool1.conjugate())</span></span>
+<span class="odt-code-line">print(bool1.conjugate())</span>
 <span class="odt-code-line"># floating-point number</span>
-<span class="odt-code-line"><span style="color:#000000">float1 = 8.2</span></span>
-<span class="odt-code-line"><span style="color:#000000">print(float1.is_integer())</span></span>
+<span class="odt-code-line">float1 = 8.2</span>
+<span class="odt-code-line">print(float1.is_integer())</span>
 </code></pre></div>
 
 <p>Many type conversions are possible. Some may fail, such as those in lines 46–47, which attempt to convert the string &#x27;abc&#x27; into an integer. We handled the error using a <em>try/except</em> block. A general form of this block</p>
@@ -1917,88 +1927,88 @@
 </ul>
 
 <p>The screen output is as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span>
-<span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span>
-<span class="normal"><a href="#__codelineno-1-28">28</a></span>
-<span class="normal"><a href="#__codelineno-1-29">29</a></span>
-<span class="normal"><a href="#__codelineno-1-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_03.py
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>4 &lt;class &#39;int&#39;&gt;
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>4 &lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>4.0 &lt;class &#39;float&#39;&gt;
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>True &lt;class &#39;bool&#39;&gt;
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>True &lt;class &#39;bool&#39;&gt;
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>1 &lt;class &#39;int&#39;&gt;
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>1.0 &lt;class &#39;float&#39;&gt;
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>True &lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>4 &lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>4 &lt;class &#39;int&#39;&gt;
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>4.0 &lt;class &#39;float&#39;&gt;
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>True &lt;class &#39;bool&#39;&gt;
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>4.32 &lt;class &#39;float&#39;&gt;
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a>4.32 &lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>4 &lt;class &#39;int&#39;&gt;
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>True &lt;class &#39;bool&#39;&gt;
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>invalid literal for int() with base 10: &#39;abc&#39;
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a>True &lt;class &#39;bool&#39;&gt;
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a>False &lt;class &#39;bool&#39;&gt;
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a>False &lt;class &#39;bool&#39;&gt;
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a>None &lt;class &#39;NoneType&#39;&gt;
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a>False &lt;class &#39;bool&#39;&gt;
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a>False &lt;class &#39;bool&#39;&gt;
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a>Abc
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a>3
-<a id="__codelineno-1-27" name="__codelineno-1-27"></a>1
-<a id="__codelineno-1-28" name="__codelineno-1-28"></a>False
-<a id="__codelineno-1-29" name="__codelineno-1-29"></a>
-<a id="__codelineno-1-30" name="__codelineno-1-30"></a>Process finished with exit code 0
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span>
+<span class="normal"><a href="#__codelineno-2-21">21</a></span>
+<span class="normal"><a href="#__codelineno-2-22">22</a></span>
+<span class="normal"><a href="#__codelineno-2-23">23</a></span>
+<span class="normal"><a href="#__codelineno-2-24">24</a></span>
+<span class="normal"><a href="#__codelineno-2-25">25</a></span>
+<span class="normal"><a href="#__codelineno-2-26">26</a></span>
+<span class="normal"><a href="#__codelineno-2-27">27</a></span>
+<span class="normal"><a href="#__codelineno-2-28">28</a></span>
+<span class="normal"><a href="#__codelineno-2-29">29</a></span>
+<span class="normal"><a href="#__codelineno-2-30">30</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_03.py
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>4 &lt;class &#39;int&#39;&gt;
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>4 &lt;class &#39;str&#39;&gt;
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>4.0 &lt;class &#39;float&#39;&gt;
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>1 &lt;class &#39;int&#39;&gt;
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>1.0 &lt;class &#39;float&#39;&gt;
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>True &lt;class &#39;str&#39;&gt;
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>4 &lt;class &#39;str&#39;&gt;
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>4 &lt;class &#39;int&#39;&gt;
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>4.0 &lt;class &#39;float&#39;&gt;
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>4.32 &lt;class &#39;float&#39;&gt;
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>4.32 &lt;class &#39;str&#39;&gt;
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>4 &lt;class &#39;int&#39;&gt;
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a>invalid literal for int() with base 10: &#39;abc&#39;
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a>True &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a>False &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-2-21" name="__codelineno-2-21"></a>False &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-2-22" name="__codelineno-2-22"></a>None &lt;class &#39;NoneType&#39;&gt;
+<a id="__codelineno-2-23" name="__codelineno-2-23"></a>False &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-2-24" name="__codelineno-2-24"></a>False &lt;class &#39;bool&#39;&gt;
+<a id="__codelineno-2-25" name="__codelineno-2-25"></a>Abc
+<a id="__codelineno-2-26" name="__codelineno-2-26"></a>3
+<a id="__codelineno-2-27" name="__codelineno-2-27"></a>1
+<a id="__codelineno-2-28" name="__codelineno-2-28"></a>False
+<a id="__codelineno-2-29" name="__codelineno-2-29"></a>
+<a id="__codelineno-2-30" name="__codelineno-2-30"></a>Process finished with exit code 0
 </code></pre></div></td></tr></table></div>
 <p>Note that all data are objects, i.e., class instances. This means they can have methods. This is shown in lines 63–75 of the code. We are not trying here to explain what the methods do, but simply to show that they exist.</p>
-<p><a id="toc48548926"></a>
-<a id="refheadingtoc2520912924280206"></a></p>
+<p><a id="refheadingtoc2520912924280206"></a>
+<a id="toc48548926"></a></p>
 <h2 id="34-script-bases_04-variable-scope">3.4. <span style="color: #4f81bd">Script [bases_04]: variable scope</span></h2>
 <p>The script <strong>[bases_04]</strong> shows that Python does not have the concept of block-scoped variables:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># variable scope</span>
-<span class="odt-code-line"><span style="color:#000000">i = 4</span></span>
+<span class="odt-code-line">i = 4</span>
 <span class="odt-code-line"><span style="color:#0000ff">if True</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    i += 1</span></span>
-<span class="odt-code-line"><span style="color:#000000">    j = 7</span></span>
+<span class="odt-code-line">    i += 1</span>
+<span class="odt-code-line">    j = 7</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;i={i}, j={j}&quot;</span><span style="color:#000000">)</span></span>
 </code></pre></div>
 
 <p><strong>Results</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_04.py
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>i=5, j=7
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>Process finished with exit code 0
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/bases/bases_04.py
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>i=5, j=7
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>Process finished with exit code 0
 </code></pre></div></td></tr></table></div>
 <p><strong>Comments</strong></p>
 <p>The results show two things:</p>
@@ -2010,8 +2020,8 @@
 </ul>
 
 <p>In some languages, where variables are declared, a variable defined within a block (such as the one in lines 3–5) is not known outside of it. In Python, this is not the case.</p>
-<p><a id="toc48548927"></a>
-<a id="refheading382482423505"></a></p>
+<p><a id="refheading382482423505"></a>
+<a id="toc48548927"></a></p>
 <h2 id="35-script-bases_05-lists-1">3.5. <span style="color: #4f81bd">Script [bases_05]: Lists - 1</span></h2>
 <p><a id="refheading382502423505"></a>The script <strong>[bases_05]</strong> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2028,7 +2038,7 @@
 <span class="odt-code-line"># Iteration - 2</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list1 has {len(list1)} elements&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">element </span><span style="color:#0000ff">in </span><span style="color:#000000">list1:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(element)</span></span>
+<span class="odt-code-line">    print(element)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># adding two elements</span>
 <span class="odt-code-line"><span style="color:#000000">list1</span><span style="font-weight:bold;color:#000000">[len(list1):] </span><span style="color:#000000">= </span><span style="font-weight:bold;color:#000000">[10, 11]</span></span>
@@ -2084,17 +2094,17 @@
 <span class="odt-code-line">3</span>
 <span class="odt-code-line">4</span>
 <span class="odt-code-line">5</span>
-<span class="odt-code-line"><span style="font-weight:bold">[0, 10, 2, 3, 4, 5, 10, 11]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[0, 10, 2, 3, 4, 5]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[-10, -11, -12, 0, 10, 2, 3, 4, 5]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[-10, -11, -12, 100, 101, 0, 10, 2, 3, 4, 5]</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">[-10, -11, -12, 101, 0, 10, 2, 3, 4, 5]</span></span>
+<span class="odt-code-line">[0, 10, 2, 3, 4, 5, 10, 11]</span>
+<span class="odt-code-line">[0, 10, 2, 3, 4, 5]</span>
+<span class="odt-code-line">[-10, -11, -12, 0, 10, 2, 3, 4, 5]</span>
+<span class="odt-code-line">[-10, -11, -12, 100, 101, 0, 10, 2, 3, 4, 5]</span>
+<span class="odt-code-line">[-10, -11, -12, 101, 0, 10, 2, 3, 4, 5]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="toc48548928"></a>
-<a id="refheadingtoc2520932924280206"></a></p>
+<p><a id="refheadingtoc2520932924280206"></a>
+<a id="toc48548928"></a></p>
 <h2 id="36-script-bases_06-lists-2">3.6. <span style="color: #4f81bd">Script [bases_06]: lists - 2</span></h2>
 <p>The previous code can be written differently (<strong>bases_06</strong>) using certain list methods:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2114,7 +2124,7 @@
 <span class="odt-code-line"># iteration - 2</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;list1 has {len(list1)} elements&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">element </span><span style="color:#0000ff">in </span><span style="color:#000000">list1:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(element)</span></span>
+<span class="odt-code-line">    print(element)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># adding two elements</span>
 <span class="odt-code-line"><span style="color:#000000">list1.extend(</span><span style="font-weight:bold;color:#000000">[10, 11]</span><span style="color:#000000">)</span></span>
@@ -2126,12 +2136,12 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Add a tuple to the beginning of the list</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#000000">(-12, -11, -10):</span></span>
-<span class="odt-code-line"><span style="color:#000000">    list1.insert(0, i)</span></span>
+<span class="odt-code-line">    list1.insert(0, i)</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Insertion in the middle of the list</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">i </span><span style="color:#0000ff">in </span><span style="color:#000000">(101, 100):</span></span>
-<span class="odt-code-line"><span style="color:#000000">    list1.insert(3, i)</span></span>
+<span class="odt-code-line">    list1.insert(3, i)</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{list1}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># removal from the middle of the list</span>
@@ -2140,8 +2150,8 @@
 </code></pre></div>
 
 <p>The results are the same as in the previous version.</p>
-<p><a id="toc48548929"></a>
-<a id="refheading382522423505"></a></p>
+<p><a id="refheading382522423505"></a>
+<a id="toc48548929"></a></p>
 <h2 id="37-script-bases_07-the-dictionary">3.7. <span style="color: #4f81bd">script [bases_07]: the dictionary</span></h2>
 <p>The script <strong>[bases_07]</strong> shows how to define and use a dictionary, sometimes called an associative array.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2164,12 +2174,12 @@
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of dictionary keys</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;list of keys-------------&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">keys = conjoints.keys()</span></span>
+<span class="odt-code-line">keys = conjoints.keys()</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{keys}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># list of dictionary values</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;list of values------------&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">values = conjunctions.values()</span></span>
+<span class="odt-code-line">values = conjunctions.values()</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;{values}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># Search for a key</span>
@@ -2241,14 +2251,14 @@
   <li>lines 18–19: a simple type cast converts them to a <b>[list] </b>type;
   </li>
 </ul>
-<p><a id="toc48548930"></a>
-<a id="refheading382542423505"></a></p>
+<p><a id="refheading382542423505"></a>
+<a id="toc48548930"></a></p>
 <h2 id="38-script-bases_08-tuples">3.8. <span style="color: #4f81bd">script [bases_08]: tuples</span></h2>
 <p>A <strong>tuple</strong> is similar to a list but is immutable:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"># tuples</span>
 <span class="odt-code-line"># initialization</span>
-<span class="odt-code-line"><span style="color:#000000">tuple1 = (0, 1, 2, 3, 4, 5)</span></span>
+<span class="odt-code-line">tuple1 = (0, 1, 2, 3, 4, 5)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># iteration - 1</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;tuple1 has {len(tuple1)} elements&quot;</span><span style="color:#000000">)</span></span>
@@ -2258,7 +2268,7 @@
 <span class="odt-code-line"># iteration - 2</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;tuple1 has {len(tuple1)} elements&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">element </span><span style="color:#0000ff">in </span><span style="color:#000000">tuple1:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(element)</span></span>
+<span class="odt-code-line">    print(element)</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># a tuple can be displayed on a single line</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;tuple1={tuple1}&quot;</span><span style="color:#000000">)</span></span>
@@ -2298,8 +2308,8 @@
   <li>Lines 17–20 of the output: show that a tuple cannot be modified.
   </li>
 </ul>
-<p><a id="toc48548931"></a>
-<a id="refheading382562423505"></a></p>
+<p><a id="refheading382562423505"></a>
+<a id="toc48548931"></a></p>
 <h2 id="39-script-bases_09-multidimensional-lists-and-dictionaries">3.9. <span style="color: #4f81bd">Script [bases_09]: Multidimensional lists and dictionaries</span></h2>
 <p>The script <strong>[bases_09]</strong> demonstrates how to define and use a multidimensional list or dictionary:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2368,8 +2378,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="toc48548932"></a>
-<a id="refheading382582423505"></a></p>
+<p><a id="refheading382582423505"></a>
+<a id="toc48548932"></a></p>
 <h2 id="310-script-bases_10-links-between-strings-and-lists">3.10. <span style="color: #4f81bd">Script [bases_10]: Links Between Strings and Lists</span></h2>
 <p>The <strong>[bases_10]</strong> script demonstrates how to extract elements from a string separated by a common delimiter into a list.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2430,8 +2440,8 @@
 <span class="odt-code-line">Process finished with exit code 0</span>
 </code></pre></div>
 
-<p><a id="toc48548933"></a>
-<a id="refheading382602423505"></a></p>
+<p><a id="refheading382602423505"></a>
+<a id="toc48548933"></a></p>
 <h2 id="311-script-bases_11-regular-expressions">3.11. <span style="color: #4f81bd">Script [bases_11]: Regular Expressions</span></h2>
 <p>The <strong>[bases_11]</strong> script demonstrates how to use regular expressions:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
@@ -2444,9 +2454,9 @@
 <span class="odt-code-line"><span style="color:#000000">    </span># compares the string <span style="font-weight:bold">[string] </span>to the pattern <span style="font-weight:bold">[pattern]</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># display results</span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;\nResults({string},{pattern})&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    match = re.match(pattern, string)</span></span>
+<span class="odt-code-line">    match = re.match(pattern, string)</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">match:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        print(match.groups())</span></span>
+<span class="odt-code-line">        print(match.groups())</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">        print(</span><span style="color:#a31515">f&quot;The string </span><span style="font-weight:bold;color:#a31515">[{string}] </span><span style="color:#a31515">does not match the pattern </span><span style="font-weight:bold;color:#a31515">[{pattern}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"></span>

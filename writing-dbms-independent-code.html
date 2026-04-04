@@ -1376,10 +1376,10 @@
 
 
 
-<p><a id="refheading383102423505"></a>
-<a id="exo-impots-mysql"></a>
+<p><a id="ecrireducode"></a>
 <a id="toc48549070"></a>
-<a id="ecrireducode"></a></p>
+<a id="exo-impots-mysql"></a>
+<a id="refheading383102423505"></a></p>
 <h1 id="18-writing-dbms-independent-code">18. <span style="color: #365f91">Writing DBMS-Independent Code</span></h1>
 <p>We saw earlier that in some cases it was possible to easily migrate Python code written for the MySQL DBMS to code written for the PostgreSQL DBMS. In this chapter, we show how to systematize this approach. The proposed architecture is as follows:</p>
 <p><img src="images/10000000000003B4000000E6700B9C1D.png" style="width:10.95cm;height:2.656cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003B4000000E6700B9C1D.png" /></p>
@@ -1398,7 +1398,7 @@
 <span class="odt-code-line"># Displaying the table</span>
 <span class="odt-code-line"><span style="color:#0000ff">SELECT </span><span style="color:#000000">first_name, last_name, age </span><span style="color:#0000ff">FROM </span><span style="color:#000000">people</span></span>
 <span class="odt-code-line"># Intentional error</span>
-<span class="odt-code-line"><span style="color:#000000">xx</span></span>
+<span class="odt-code-line">xx</span>
 <span class="odt-code-line"># Insert three people</span>
 <span class="odt-code-line"><span style="color:#0000ff">insert into </span><span style="color:#000000">people(id, first_name, last_name, age) </span><span style="color:#0000ff">values </span><span style="color:#000000">(3, </span><span style="color:#a31515">&#x27;Pierre&#x27;</span><span style="color:#000000">,</span><span style="color:#a31515">&#x27;Nicazou&#x27;</span><span style="color:#000000">,35)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">insert into </span><span style="color:#000000">people(id, first_name, last_name, age) </span><span style="color:#0000ff">values </span><span style="color:#000000">(4, </span><span style="color:#a31515">&#x27;Geraldine&#x27;</span><span style="color:#000000">,</span><span style="color:#a31515">&#x27;Colou&#x27;</span><span style="color:#000000">,26)</span></span>
@@ -1435,7 +1435,7 @@
 <span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
 <span class="odt-code-line"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># local directories</span></span>
 <span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/shared&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    ]</span></span>
+<span class="odt-code-line">    ]</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Setting the syspath</span>
 <span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
@@ -1514,7 +1514,7 @@
 <span class="odt-code-line"># argv<span style="font-weight:bold">[0] </span>sgbd_name true / false</span>
 <span class="odt-code-line"># 3 parameters are required</span>
 <span class="odt-code-line"><span style="color:#000000">args = </span><span style="color:#6f008a">sys</span><span style="color:#000000">.argv</span></span>
-<span class="odt-code-line"><span style="color:#000000">error = len(args) != 3</span></span>
+<span class="odt-code-line">error = len(args) != 3</span>
 <span class="odt-code-line"><span style="color:#0000ff">if not </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># retrieve the two parameters we need</span>
 <span class="odt-code-line"><span style="color:#000000">    db_name = args</span><span style="font-weight:bold;color:#000000">[1]</span><span style="color:#000000">.lower()</span></span>
@@ -1552,20 +1552,20 @@
 <span class="odt-code-line"><span style="color:#000000">connection = </span><span style="color:#0000ff">None</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># connection</span>
-<span class="odt-code-line"><span style="color:#000000">    connection = sgbd_connector.connect(</span></span>
+<span class="odt-code-line">    connection = sgbd_connector.connect(</span>
 <span class="odt-code-line"><span style="color:#000000">        host=sgbd_config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;host&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        user=sgbd_config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;user&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        password=sgbd_config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;password&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span>
 <span class="odt-code-line"><span style="color:#000000">        database=sgbd_config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;database&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Execute the SQL command file</span>
 <span class="odt-code-line"><span style="color:#000000">    errors = lib.execute_file_of_commands(</span><a id="hlk44399253"></a><span style="color:#000000"> sgbd_connector, connection, commands_filename, </span><span style="color:#0000ff">tracking=True</span><span style="color:#000000">, </span><span style="color:#0000ff">stop=False</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                           with_transaction=with_transaction)</span></span>
+<span class="odt-code-line">                                           with_transaction=with_transaction)</span>
 <span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#000000">(sgbd_connector.InterfaceError, sgbd_connector.DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">    </span># Close the connection</span>
 <span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">connection:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        connection.close()</span></span>
+<span class="odt-code-line">        connection.close()</span>
 <span class="odt-code-line"></span>
 <span class="odt-code-line"># display number of errors</span>
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;--------------------------------------------------------------------&quot;</span><span style="color:#000000">)</span></span>
@@ -1574,7 +1574,7 @@
 <span class="odt-code-line"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;There were {len(errors)} error(s)&quot;</span><span style="color:#000000">)</span></span>
 <span class="odt-code-line"># display errors</span>
 <span class="odt-code-line"><span style="color:#0000ff">for </span><span style="color:#000000">error </span><span style="color:#0000ff">in </span><span style="color:#000000">errors:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(error)</span></span>
+<span class="odt-code-line">    print(error)</span>
 </code></pre></div>
 
 <p><strong>Comments</strong></p>
@@ -1633,16 +1633,16 @@
 <span class="odt-code-line"><span style="color:#000000">        </span># execute them one by one</span>
 <span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">for </span><span style="color:#000000">command </span><span style="color:#0000ff">in </span><span style="color:#808080">sql_commands</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Remove leading and trailing whitespace from the current command</span>
-<span class="odt-code-line"><span style="color:#000000">            command = command.strip()</span></span>
+<span class="odt-code-line">            command = command.strip()</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Is the command empty or a comment? If so, move on to the next command</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if </span><span style="color:#000000">command == </span><span style="color:#a31515">&#x27;&#x27; </span><span style="color:#0000ff">or </span><span style="color:#000000">command</span><span style="font-weight:bold;color:#000000">[0] </span><span style="color:#000000">== </span><span style="color:#a31515">&quot;#&quot;</span><span style="color:#000000">:</span></span>
 <span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">continue</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Execute the current command</span>
 <span class="odt-code-line"><span style="color:#000000">            error = </span><span style="color:#0000ff">None</span></span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                cursor.execute(command)</span></span>
+<span class="odt-code-line">                cursor.execute(command)</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">except </span><span style="color:#000000">(</span><span style="background-color:#fff2cc;color:#808080">db_connector</span><span style="color:#000000">.InterfaceError, </span><span style="background-color:#fff2cc;color:#808080">db_connector</span><span style="color:#000000">.DatabaseError) </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                error = error</span></span>
+<span class="odt-code-line">                error = error</span>
 <span class="odt-code-line"><span style="color:#000000">            </span># Was there an error?</span>
 <span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">…</span></span>
 <span class="odt-code-line"></span>
