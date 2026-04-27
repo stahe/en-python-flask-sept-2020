@@ -1440,37 +1440,37 @@
 <h1 id="38-practical-exercise-version-18">38. <span style="color: #365f91">Practical Exercise: Version 18</span></h1>
 <p><a id="toc48549352"></a></p>
 <h2 id="381-implementation">38.1. <span style="color: #4f81bd">Implementation</span></h2>
-<p><img src="images/1000000000000118000001AD67D1DE88.png" style="width:3.24cm;height:4.965cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000118000001AD67D1DE88.png" /></p>
+<p><img src="images/1000000000000118000001AD67D1DE88.png" width="122" height="188" style="width:3.24cm;height:4.965cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000118000001AD67D1DE88.png" /></p>
 <p>The <strong>[impots/http-servers/13]</strong> folder is initially created by copying the <strong>[impots/http-servers/12]</strong> folder and then partially modified.</p>
 <p>We start by adding a new parameter to the <strong>[configs/parameters]</strong> file:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line">…        </span>
-<span class="odt-code-line">        # csrf token</span>
-<span class="odt-code-line">        <span style="color:#a31515">&quot;with_csrftoken&quot;</span>: <span style="color:#0000ff">False</span>,</span>
-<span class="odt-code-line">        <span style="color:#008000"># supported databases MySQL (mysql), PostgreSQL (pgres)</span></span>
-<span class="odt-code-line">        <span style="color:#a31515">&quot;databases&quot;</span>: <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;mysql&quot;</span><span style="font-weight:bold">, </span><span style="font-weight:bold;color:#a31515">&quot;pgres&quot;</span><span style="font-weight:bold">]</span>,</span>
-<span class="odt-code-line">        <span style="color:#008000"># application URL prefix</span></span>
-<span class="odt-code-line">        <span style="color:#008000"># set the string to empty if no prefix is desired, or use /prefix otherwise</span></span>
-<span class="odt-code-line">        <span style="color:#a31515">&quot;prefix_url&quot;</span>: <span style="color:#a31515">&quot;/do&quot;</span>,</span>
-<span class="odt-code-line">        <span style="color:#008000"># Apache server root URL - set to an empty string for execution outside of Apache</span></span>
-<span class="odt-code-line">        <span style="background-color:#fff2cc;color:#a31515">&quot;application_root&quot;</span><span style="background-color:#fff2cc">: </span><span style="background-color:#fff2cc;color:#a31515">&quot;/taxes&quot;</span></span>
-<span class="odt-code-line">…</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">…        </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># token csrf</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;with_csrftoken&quot;</span>: <span style="color:#0000ff">False</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># bases gérées MySQL (mysql), PostgreSQL (pgres)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;databases&quot;</span>: <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;mysql&quot;</span><span style="font-weight:bold">, </span><span style="font-weight:bold;color:#a31515">&quot;pgres&quot;</span><span style="font-weight:bold">]</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># préfixe des URL de l&#x27;application</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># mettre la chaîne vide si on ne veut pas de préfixe ou /préfixe sinon</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;prefix_url&quot;</span>: <span style="color:#a31515">&quot;/do&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># url racine du serveur Apache - mettre la chaîne vide pour une exécution en-dehors d&#x27;Apache</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="background-color:#fff2cc;color:#a31515">&quot;application_root&quot;</span><span style="background-color:#fff2cc">: </span><span style="background-color:#fff2cc;color:#a31515">&quot;/impots&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#a31515">…</span></span></span>
 </code></pre></div>
 
 <p>Line 10: The <strong>[application_root]</strong> parameter will represent the WSGI alias of the Apache virtual server.</p>
 <p>With this parameter, we can correct the <strong>[responses/HtmlResponse]</strong> directive that caused the error:</p>
-<p><img src="images/100000000000016C000000C643BF36F2.png" style="width:4.21cm;height:2.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016C000000C643BF36F2.png" /></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-php">
-<span class="odt-code-line">…</span>
-<span class="odt-code-line"># now we need to generate the redirect URL without forgetting the CSRF token if it is required</span>
-<span class="odt-code-line">        <span style="color:#0000ff">if </span>config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold">]</span>:</span>
-<span class="odt-code-line">            csrf_token = <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span>{generate_csrf()}<span style="color:#a31515">&quot;</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">else</span>:</span>
-<span class="odt-code-line">            csrf_token = <span style="color:#a31515">&quot;&quot;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        # redirect response</span>
-<span class="odt-code-line">        <span style="color:#0000ff">return </span>redirect(<span style="background-color:#fff2cc;color:#0000ff">f</span><span style="background-color:#fff2cc;color:#a31515">&quot;</span><span style="background-color:#fff2cc">{config</span><span style="font-weight:bold;background-color:#fff2cc">[</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold;background-color:#fff2cc">][</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;application_root&#x27;</span><span style="font-weight:bold;background-color:#fff2cc">]</span><span style="background-color:#fff2cc">}</span>{config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;prefix_url&#x27;</span><span style="font-weight:bold">]</span>}{ads<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;to&#x27;</span><span style="font-weight:bold">]</span>}{csrf_token}<span style="color:#a31515">&quot;</span>)</span>
-<span class="odt-code-line">, status.HTTP_302_FOUND</span>
+<p><img src="images/100000000000016C000000C643BF36F2.png" width="159" height="87" style="width:4.21cm;height:2.291cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000016C000000C643BF36F2.png" /></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># now it&#x27;s time to generate the URL redirection, not forgetting the CSRF token if requested</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold">]</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            csrf_token = <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span>{generate_csrf()}<span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">else</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            csrf_token = <span style="color:#a31515">&quot;&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # redirect response</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> redirect(<span style="background-color:#fff2cc;color:#0000ff">f</span><span style="background-color:#fff2cc;color:#a31515">&quot;</span><span style="background-color:#fff2cc">{config</span><span style="font-weight:bold;background-color:#fff2cc">[</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold;background-color:#fff2cc">][</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;application_root&#x27;</span><span style="font-weight:bold;background-color:#fff2cc">]</span><span style="background-color:#fff2cc">}</span>{config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;prefix_url&#x27;</span><span style="font-weight:bold">]</span>}{ads<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;to&#x27;</span><span style="font-weight:bold">]</span>}{csrf_token}<span style="color:#a31515">&quot;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">, status.HTTP_302_FOUND</span></span>
 </code></pre></div>
 
 <ul>
@@ -1479,107 +1479,133 @@
 </ul>
 
 <p>We also need to correct all fragments so that the URLs they contain start with the application root (or WSGI alias):</p>
-<p><img src="images/10000000000001BB00000148EACBA41E.png" style="width:5.112cm;height:3.784cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BB00000148EACBA41E.png" /></p>
+<p><img src="images/10000000000001BB00000148EACBA41E.png" width="193" height="143" style="width:5.112cm;height:3.784cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001BB00000148EACBA41E.png" /></p>
 <p><strong>The [v-authentication] fragment</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
-<span class="odt-code-line">&lt;!-- HTML form - we post its values with the <span style="font-weight:bold">[authenticate-user] </span>action --&gt;</span>
-<span class="odt-code-line"><span style="color:#800000">&lt;form </span><span style="color:#000000">method=</span><span style="color:#0000ff">&quot;post&quot; </span><span style="color:#000000">action=</span><span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{model.application_root}}</span><span style="color:#0000ff">{{model.prefix_url}}/authenticate-user{{model.csrf_token}}&quot;</span></span>
-<span class="odt-code-line">&gt;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- title --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;div </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;alert alert-primary&quot; </span><span style="color:#000000">role=</span><span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#800000">&lt;h4&gt;</span><span style="color:#000000">Please log in</span><span style="color:#800000">&lt;/h4&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span>
-<span class="odt-code-line">…</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">&lt;/form&gt;</span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- form HTML - post its values with the [authenticate-user] action --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;form</span><span style="color:#000000"> </span><span style="color:#ff0000">method</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;post&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">action</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.application_root}}</span><span style="color:#0000ff">{{modèle.prefix_url}}/authentifier-utilisateur{{modèle.csrf_token}}&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;!-- title --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800000">&lt;div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;alert alert-primary&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">role</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800000">&lt;h4&gt;</span><span style="color:#000000">Veuillez vous authentifier</span><span style="color:#800000">&lt;/h4&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">…</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;/form&gt;</span></span></span>
 </code></pre></div>
 
 <p><strong>The [v-calcul-impot] fragment</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
-<span class="odt-code-line">&lt;!-- HTML form submitted --&gt;</span>
-<span class="odt-code-line"><span style="color:#800000">&lt;form </span><span style="color:#000000">method=</span><span style="color:#0000ff">&quot;post&quot; </span><span style="color:#000000">action=</span><span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{model.application_root}}</span><span style="color:#0000ff">{{model.prefix_url}}/calculate-tax{{model.csrf_token}}&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- 12-column message on a blue background --&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#800000">…</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">&lt;/form&gt;</span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- form HTML posted --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;form</span><span style="color:#000000"> </span><span style="color:#ff0000">method</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;post&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">action</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.application_root}}</span><span style="color:#0000ff">{{modèle.prefix_url}}/calculer-impot{{modèle.csrf_token}}&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;!-- 12-column message on blue background --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800000">…</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;/form&gt;</span></span></span>
 </code></pre></div>
 
 <p><strong>The [v-liste-simulations] fragment</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
-<span class="odt-code-line">…</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">{% if model.simulations is defined and model.simulations.length!=0 %}</span>
-<span class="odt-code-line"><span style="color:#008000">…</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">&lt;!-- simulation table --&gt;</span>
-<span class="odt-code-line"><span style="color:#800000">&lt;table </span>class=<span style="color:#0000ff">&quot;table table-sm table-hover table-striped&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line">    <span style="color:#008000">…</span></span>
-<span class="odt-code-line">    <span style="color:#800000">&lt;tr&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;th </span>scope=<span style="color:#0000ff">&quot;row&quot;</span><span style="color:#800000">&gt;</span>{{simulation.id}}<span style="color:#800000">&lt;/th&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.married}}<span style="color:#800000">&lt;/td&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.children}}<span style="color:#800000">&lt;/td&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.salary}}<span style="color:#800000">&lt;/td&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.tax}}<span style="color:#800000">&lt;/td&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.surcharge}}<span style="color:#800000">&lt;/td&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.discount}}<span style="color:#800000">&lt;/td&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.reduction}}<span style="color:#800000">&lt;/td&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.rate}}<span style="color:#800000">&lt;/td&gt;</span></span>
-<span class="odt-code-line">        <span style="color:#800000">&lt;td&gt;&lt;a </span>href=<span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.application_root}}</span><span style="color:#0000ff">{{modèle.prefix_url}}/supprimer-simulation/{{simulation.id}}{{modèle.csrf_token}}&quot;</span><span style="color:#800000">&gt;</span>Delete<span style="color:#800000">&lt;/a&gt;&lt;/td&gt;</span></span>
-<span class="odt-code-line">    <span style="color:#800000">&lt;/tr&gt;</span></span>
-<span class="odt-code-line">    {% endfor %}</span>
-<span class="odt-code-line">    <span style="color:#800000">&lt;/tr&gt;</span></span>
-<span class="odt-code-line">    <span style="color:#800000">&lt;/tbody&gt;</span></span>
-<span class="odt-code-line">&lt;/table&gt;</span>
-<span class="odt-code-line">{% endif %}</span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{% if modèle.simulations is defined and modèle.simulations|length!=0 %}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008000">…</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#008000">&lt;!-- simulation table --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;table</span> <span style="color:#ff0000">class</span>=<span style="color:#0000ff">&quot;table table-sm table-hover table-striped&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">…</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;tr&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;th</span> <span style="color:#ff0000">scope</span>=<span style="color:#0000ff">&quot;row&quot;</span><span style="color:#800000">&gt;</span>{{simulation.id}}<span style="color:#800000">&lt;/th&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.marié}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.enfants}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.salaire}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.impôt}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.surcôte}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.décôte}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.réduction}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.taux}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;&lt;a</span> <span style="color:#ff0000">href</span>=<span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.application_root}}</span><span style="color:#0000ff">{{modèle.prefix_url}}/supprimer-simulation/{{simulation.id}}{{modèle.csrf_token}}&quot;</span><span style="color:#800000">&gt;</span>Supprimer<span style="color:#800000">&lt;/a&gt;&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;/tr&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {% endfor %}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;/tr&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;/tbody&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;/table&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{% endif %}</span></span>
 </code></pre></div>
 
 <p><strong>The [v-menu] fragment</strong></p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-vbscript">
-<span class="odt-code-line">&lt;!-- Bootstrap menu --&gt;</span>
-<span class="odt-code-line"><span style="color:#800000">&lt;nav </span><span style="color:#000000">class=</span><span style="color:#0000ff">&quot;nav flex-column&quot;</span><span style="color:#800000">&gt;</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&lt;!-- Displaying a list of HTML links --&gt;</span>
-<span class="odt-code-line">    {% for optionMenu in model.optionsMenu %}</span>
-<span class="odt-code-line">    </span>
-<span class="odt-code-line">    {% endfor %}</span>
-<span class="odt-code-line">&lt;/nav&gt;</span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- bootstrap menu --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;nav</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;nav flex-column&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;!-- display a list of links HTML --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    {% for optionMenu in modèle.optionsMenu %}</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800000">&lt;a</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;nav-link&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">href</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.application_root}}</span><span style="color:#0000ff">{{modèle.prefix_url}}{{optionMenu.url}}{{modèle.csrf_token}}&quot;</span><span style="color:#800000">&gt;</span><span style="color:#000000">{{optionMenu.text}}</span><span style="color:#800000">&lt;/a&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    {% endfor %}</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;/nav&gt;</span></span></span>
 </code></pre></div>
 
 <p>The fragments above all use the <strong>[</strong><strong><span style="color: #0000ff"><mark style="background-color: #fff2cc">model.application_root</mark></span></strong><strong>]</strong> model. Currently, the <strong>[application_root]</strong> key does not exist in the models generated by the model classes.</p>
-<p><img src="images/10000000000001D50000011BCFEDFB3E.png" style="width:5.42cm;height:3.27cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D50000011BCFEDFB3E.png" /></p>
+<p><img src="images/10000000000001D50000011BCFEDFB3E.png" width="205" height="124" style="width:5.42cm;height:3.27cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D50000011BCFEDFB3E.png" /></p>
 <p>The <strong>[AbstractBaseModelForView]</strong> class, which is the parent class of all classes that generate a template, becomes the following:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#0000ff">from </span>abc <span style="color:#0000ff">import </span>abstractmethod</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">from </span>flask <span style="color:#0000ff">import </span>Request</span>
-<span class="odt-code-line"><span style="color:#0000ff">from </span>flask_wtf.csrf <span style="color:#0000ff">import </span>generate_csrf</span>
-<span class="odt-code-line"><span style="color:#0000ff">from </span>werkzeug.local <span style="color:#0000ff">import </span>LocalProxy</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">from </span>InterfaceModelForView <span style="color:#0000ff">import </span>InterfaceModelForView</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#0000ff">class </span>AbstractBaseModelForView(InterfaceModelForView):</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    @abstractmethod</span>
-<span class="odt-code-line">    <span style="color:#0000ff">def </span>get_model_for_view(self, request: Request, session: LocalProxy, config: dict, result: dict) -&gt; dict:</span>
-<span class="odt-code-line">        <span style="color:#0000ff">pass</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#0000ff">def </span><span style="background-color:#fff2cc">update_model</span>(self, model: dict, config: dict):</span>
-<span class="odt-code-line">        <span style="color:#008000"># Calculate the CSRF token</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">if </span>config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold">]</span>:</span>
-<span class="odt-code-line">            csrf_token = <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span>{generate_csrf()}<span style="color:#a31515">&quot;</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">else</span>:</span>
-<span class="odt-code-line">            csrf_token = <span style="color:#a31515">&quot;&quot;</span></span>
-<span class="odt-code-line">        <span style="color:#008000"># Update the model passed as a parameter</span></span>
-<span class="odt-code-line">        model.update({</span>
-<span class="odt-code-line">            <span style="color:#008000"># CSRF token</span></span>
-<span class="odt-code-line">            <span style="background-color:#fff2cc;color:#a31515">&#x27;csrf_token</span>&#x27;: csrf_token,</span>
-<span class="odt-code-line">            <span style="color:#008000"># prefix_url</span></span>
-<span class="odt-code-line">            <span style="background-color:#fff2cc;color:#a31515">&#x27;prefix_url</span>&#x27;: config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;parameters&quot;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&quot;prefix_url&quot;</span><span style="font-weight:bold">]</span>,</span>
-<span class="odt-code-line">            <span style="color:#008000"># application_root</span></span>
-<span class="odt-code-line">            <span style="background-color:#fff2cc;color:#a31515">&#x27;application_root</span>&#x27;: config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;parameters&quot;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&quot;application_root&quot;</span><span style="font-weight:bold">]</span>,</span>
-<span class="odt-code-line">        })</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span>
+<span class="normal"><a href="#__codelineno-0-29">29</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kn">from</span><span class="w"> </span><span class="nn">abc</span><span class="w"> </span><span class="kn">import</span> <span class="n">abstractmethod</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Request</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">flask_wtf.csrf</span><span class="w"> </span><span class="kn">import</span> <span class="n">generate_csrf</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="kn">from</span><span class="w"> </span><span class="nn">werkzeug.local</span><span class="w"> </span><span class="kn">import</span> <span class="n">LocalProxy</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">InterfaceModelForView</span><span class="w"> </span><span class="kn">import</span> <span class="n">InterfaceModelForView</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="k">class</span><span class="w"> </span><span class="nc">AbstractBaseModelForView</span><span class="p">(</span><span class="n">InterfaceModelForView</span><span class="p">):</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="nd">@abstractmethod</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_model_for_view</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">request</span><span class="p">:</span> <span class="n">Request</span><span class="p">,</span> <span class="n">session</span><span class="p">:</span> <span class="n">LocalProxy</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">résultat</span><span class="p">:</span> <span class="nb">dict</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="k">pass</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">update_model</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">modèle</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="nb">dict</span><span class="p">):</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>        <span class="c1">#  token calculation CSRF</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>        <span class="k">if</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;parameters&#39;</span><span class="p">][</span><span class="s1">&#39;with_csrftoken&#39;</span><span class="p">]:</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>            <span class="n">csrf_token</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;/</span><span class="si">{</span><span class="n">generate_csrf</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>            <span class="n">csrf_token</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>        <span class="c1">#  update the model passed in parameter</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>        <span class="n">modèle</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>            <span class="c1">#  csrf token</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>            <span class="s1">&#39;csrf_token&#39;</span><span class="p">:</span> <span class="n">csrf_token</span><span class="p">,</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>            <span class="c1">#  prefix_url</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>            <span class="s1">&#39;prefix_url&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;parameters&quot;</span><span class="p">][</span><span class="s2">&quot;prefix_url&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>            <span class="c1">#  application_root</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>            <span class="s1">&#39;application_root&#39;</span><span class="p">:</span> <span class="n">config</span><span class="p">[</span><span class="s2">&quot;parameters&quot;</span><span class="p">][</span><span class="s2">&quot;application_root&quot;</span><span class="p">],</span>
+<a id="__codelineno-0-29" name="__codelineno-0-29"></a>        <span class="p">})</span>
+</code></pre></div></td></tr></table></div>
 <ul>
   <li>line 15: the <b>[update_model] </b>method is responsible for adding the following to the view template:
     <ul>
@@ -1595,15 +1621,15 @@
 
 <p>The four child classes call the parent class with the following code:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line">…</span>
-<span class="odt-code-line">        <span style="color:#008000"># possible actions from the view</span></span>
-<span class="odt-code-line">        model<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;possible_actions&#x27;</span><span style="font-weight:bold">] </span>= <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;display-authentication-view&quot;</span><span style="font-weight:bold">, </span><span style="font-weight:bold;color:#a31515">&quot;authenticate-user&quot;</span><span style="font-weight:bold">]</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000"># finalize the model via the parent class</span></span>
-<span class="odt-code-line">        <span style="background-color:#fff2cc">super().update_model(model, config)</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">        <span style="color:#008000"># return the model</span></span>
-<span class="odt-code-line">        <span style="color:#0000ff">return </span>model</span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># actions possibles à partir de la vue</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        modèle<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;actions_possibles&#x27;</span><span style="font-weight:bold">]</span> = <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;afficher-vue-authentification&quot;</span><span style="font-weight:bold">, </span><span style="font-weight:bold;color:#a31515">&quot;authentifier-utilisateur&quot;</span><span style="font-weight:bold">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># finition du modèle par la classe parent</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="background-color:#fff2cc">super().update_model(modèle, config)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># on rend le modèle</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> modèle</span></span>
 </code></pre></div>
 
 <ul>
@@ -1612,44 +1638,44 @@
 </ul>
 
 <p>Version 18 is ready. We reuse the two Apache virtual servers from version 17 and modify them:</p>
-<p><img src="images/10000000000002D30000012FDB676CCF.png" style="width:8.363cm;height:3.505cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D30000012FDB676CCF.png" /></p>
+<p><img src="images/10000000000002D30000012FDB676CCF.png" width="316" height="132" style="width:8.363cm;height:3.505cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000002D30000012FDB676CCF.png" /></p>
 <p>The two <strong>[flask-impots-withXX.conf]</strong> files are modified in only one place:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
-<span class="odt-code-line"># .wsgi script directory</span>
-<span class="odt-code-line"><span style="color:#000000">define ROOT </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/http-servers/13/apache&quot;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># name of the website configured by this file</span>
-<span class="odt-code-line"># here it will be called flask-impots-withmysql</span>
-<span class="odt-code-line"># URLs will be of the form http(s)://flask-impots-withmysql/path</span>
-<span class="odt-code-line"><span style="color:#000000">define SITE </span><span style="color:#a31515">&quot;flask-impots-withmysql&quot;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># add the IP address 127.0.0.1 for the SITE &quot;flask-impots-withmysql&quot; to c:/windows/system32/drivers/etc/hosts</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># Enter the paths to the Python libraries to be used here—separate them with commas</span>
-<span class="odt-code-line"># Here are the libraries for a Python virtual environment</span>
-<span class="odt-code-line"><span style="color:#000000">WSGIPythonPath  </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages&quot;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># Python Home - required only if multiple versions of Python are installed</span>
-<span class="odt-code-line"># WSGIPythonHome &quot;C:/Program Files/Python38&quot;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># HTTP URL</span>
-<span class="odt-code-line">&lt;VirtualHost *:80&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will take the form /{url_prefix}/action/...</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># with the alias /taxes, URLs will be in the form /taxes/{url_prefix}/action/...</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
-<span class="odt-code-line"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/taxes </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span>
-<span class="odt-code-line">    …</span>
-<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># Secure URLs with HTTPS</span>
-<span class="odt-code-line">&lt;VirtualHost *:443&gt;</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># With the alias, URLs will be in the form /{url_prefix}/action/...</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># with the alias /taxes, URLs will be in the form /taxes/{url_prefix}/action/...</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># where <span style="font-weight:bold">[url_prefix] </span>is defined in parameters.py</span>
-<span class="odt-code-line"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/taxes </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span>
-<span class="odt-code-line">    ..</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">&lt;/VirtualHost&gt;</span>
+<span class="odt-code-line"><span class="odt-code-line-content"># dossier du script .wsgi</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">define ROOT </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/http-servers/</span><span style="background-color:#fff2cc;color:#a31515">13</span><span style="color:#a31515">/apache&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># nom du site web configuré par ce fichier</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ici il s&#x27;appellera flask-impots-withmysql</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># les URL seront du type http(s)://flask-impots-withmysql/path</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">define SITE </span><span style="color:#a31515">&quot;flask-impots-withmysql&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># mettre l&#x27;adresse IP 127.0.0.1 pour site SITE dans c:/windows/system32/drivers/etc/hosts</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># mettre ici les chemins des bibliothèques Python à utiliser - les séparer par des virgules</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># ici les bibliothèques d&#x27;un environnement virtuel Python</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">WSGIPythonPath  </span><span style="color:#a31515">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/venv/lib/site-packages&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># Python Home - nécessaire uniquement s&#x27;il y a plusieurs versions de Python installées</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># WSGIPythonHome &quot;C:/Program Files/Python38&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL HTTP</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">&lt;VirtualHost *:80&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># avec l&#x27;alias / les URL auront la forme /{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># avec l&#x27;alias /impots les URL auront la forme /impots/{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># où <span style="font-weight:bold">[prefixe_url]</span> est défini dans parameters.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/impots</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    …</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># URL sécurisées avec HTTPS</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">&lt;VirtualHost *:443&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># avec l&#x27;alias / les URL auront la forme /{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># avec l&#x27;alias /impots les URL auront la forme /impots/{prefixe_url}/action/...</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># où <span style="font-weight:bold">[prefixe_url]</span> est défini dans parameters.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    WSGIScriptAlias </span><span style="background-color:#fff2cc;color:#000000">/impots</span><span style="color:#000000"> </span><span style="color:#a31515">&quot;${ROOT}/main_withmysql.wsgi&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    ..</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">&lt;/VirtualHost&gt;</span></span></span>
 </code></pre></div>
 
 <ul>
@@ -1665,21 +1691,21 @@
   </li>
 </ul>
 
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"><span style="color:#000000">        </span># csrf token</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">with_csrftoken</span><span style="color:#a31515">&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">False</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># application URL prefix</span>
-<span class="odt-code-line"><span style="color:#000000">        </span># set the string to empty if no prefix is desired, or /prefix otherwise</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">prefix_url</span><span style="color:#a31515">&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/do&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># Apache server root URL - set to an empty string for execution outside of Apache</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">application_root</span><span style="color:#a31515">&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/impots&quot;</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># token csrf</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">with_csrftoken</span><span style="color:#a31515">&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">False</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># préfixe des URL de l&#x27;application</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># mettre la chaîne vide si on ne veut pas de préfixe ou /préfixe sinon</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">prefix_url</span><span style="color:#a31515">&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/do&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># url racine du serveur Apache - mettre la chaîne vide pour une exécution en-dehors d&#x27;Apache</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#a31515">&quot;</span><span style="background-color:#fff2cc;color:#a31515">application_root</span><span style="color:#a31515">&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;/impots&quot;</span></span></span>
 </code></pre></div>
 
 <p>We start the Apache server and the two DBMSs. We request the URL <strong>[https://flask-impots-withmysql/impots/do]</strong>. The server&#x27;s response is as follows:</p>
-<p><img src="images/10000000000005550000031920FB5EEA.png" style="width:15.782cm;height:9.169cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005550000031920FB5EEA.png" /></p>
+<p><img src="images/10000000000005550000031920FB5EEA.png" width="596" height="347" style="width:15.782cm;height:9.169cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005550000031920FB5EEA.png" /></p>
 <p>We successfully see the authentication page, which we were unable to access in the previous version. The rest of the application works normally.</p>
 <p>Now we test the other virtual server. We request the URL <strong>[https://flask-impots-withpgres/impots/do]</strong>. The server’s response is as follows:</p>
-<p><img src="images/10000000000005550000034336E21669.png" style="width:15.769cm;height:9.647cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005550000034336E21669.png" /></p>
+<p><img src="images/10000000000005550000034336E21669.png" width="596" height="365" style="width:15.769cm;height:9.647cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005550000034336E21669.png" /></p>
 <p>The concepts of WSGI aliases and URL prefixes serve the same purpose. One of these two concepts is redundant. Thus, to prefix Apache server URLs with the string <strong>[/impots/do]</strong>, there are three ways to do this:</p>
 <p>1 – <strong>[WGSIAlias /impots]</strong> and <strong>[prefix_url=’/do’]</strong>;</p>
 <p>2 – <strong>[WGSIAlias /]</strong> and <strong>[prefix_url=’/impots/do’]</strong>;</p>
@@ -1687,7 +1713,7 @@
 <p><a id="toc48549353"></a></p>
 <h2 id="382-console-tests">38.2. <span style="color: #4f81bd">Console tests</span></h2>
 <p>We use the client console tests <strong>[http-clients/09]</strong> again:</p>
-<p><img src="images/100000000000020E00000241F37F82D2.png" style="width:6.07cm;height:6.659cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020E00000241F37F82D2.png" /></p>
+<p><img src="images/100000000000020E00000241F37F82D2.png" width="229" height="252" style="width:6.07cm;height:6.659cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000020E00000241F37F82D2.png" /></p>
 <ul>
   <li>the server URL must be modified in configurations <b>[1] </b>and <b>[3]</b>;
   </li>
@@ -1696,23 +1722,23 @@
 </ul>
 
 <p>In the <strong>[config]</strong> files, the server URL becomes the following:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line"><span style="color:#000000">        </span>&quot;server&quot;<span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># &quot;urlServer&quot;: &quot;http://127.0.0.1:5000&quot;,</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#008000"># &quot;urlServer&quot;: &quot;http://127.0.0.1:5000/do&quot;,</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="background-color:#fff2cc">&quot;urlServer&quot;</span><span style="background-color:#fff2cc;color:#000000">: </span><span style="background-color:#fff2cc">&quot;https://flask-impots-withmysql/impots/do&quot;</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span>&quot;user&quot;<span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span>&quot;login&quot;<span style="color:#000000">: </span>&quot;admin&quot;<span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span>&quot;password&quot;<span style="color:#000000">: </span>&quot;admin&quot;</span>
-<span class="odt-code-line">            },</span>
-<span class="odt-code-line"><span style="color:#000000">            </span>&quot;url_services&quot;<span style="color:#000000">: {</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span>…</span>
-<span class="odt-code-line">            }</span>
-<span class="odt-code-line">        },</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># debug mode</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span>&quot;debug&quot;<span style="color:#000000">: </span><span style="color:#0000ff">True</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#008000"># csrf_token</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="background-color:#fff2cc">&quot;with_csrftoken&quot;</span><span style="background-color:#fff2cc;color:#000000">: </span><span style="background-color:#fff2cc;color:#0000ff">False</span><span style="background-color:#fff2cc;color:#000000">,</span></span>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span>&quot;server&quot;<span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008000"># &quot;urlServer&quot;: &quot;http://127.0.0.1:5000&quot;,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#008000"># &quot;urlServer&quot;: &quot;http://127.0.0.1:5000/do&quot;,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="background-color:#fff2cc">&quot;urlServer&quot;</span><span style="background-color:#fff2cc;color:#000000">: </span><span style="background-color:#fff2cc">&quot;https://flask-impots-withmysql/impots/do&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span>&quot;user&quot;<span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span>&quot;login&quot;<span style="color:#000000">: </span>&quot;admin&quot;<span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span>&quot;password&quot;<span style="color:#000000">: </span>&quot;admin&quot;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            },</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span>&quot;url_services&quot;<span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span>…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            }</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        },</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008000"># mode debug</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span>&quot;debug&quot;<span style="color:#000000">: </span><span style="color:#0000ff">True</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#008000"># csrf_token</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="background-color:#fff2cc">&quot;with_csrftoken&quot;</span><span style="background-color:#fff2cc;color:#000000">: </span><span style="background-color:#fff2cc;color:#0000ff">False</span><span style="background-color:#fff2cc;color:#000000">,</span></span></span>
 </code></pre></div>
 
 <ul>
@@ -1721,48 +1747,84 @@
 </ul>
 
 <p>The <strong>[ImpôtsDaoWihHttpSession]</strong> class in the <strong>[dao]</strong> layer evolves as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
-<span class="odt-code-line">…    </span>
-<span class="odt-code-line">    # request/response step</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">def </span><span style="background-color:#fff2cc;color:#000000">get_response</span><span style="color:#000000">(self, method: str, url_service: str, data_value: dict = </span><span style="color:#0000ff">None</span><span style="color:#000000">, </span><span style="color:#0000ff">json_value=None</span><span style="color:#000000">):</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[method]</span>: HTTP GET or POST method</span>
-<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[url_service]</span>: service URL</span>
-<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[data]</span>: POST parameters in x-www-form-urlencoded format</span>
-<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[json]</span>: POST parameters in JSON</span>
-<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[cookies]</span>: cookies to include in the request</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># We must have an XML or JSON session; otherwise, we won&#x27;t be able to handle the response</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if self</span><span style="color:#000000">.__session_type </span><span style="color:#0000ff">not in </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;json&#x27;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&#x27;xml&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">raise </span><span style="color:#000000">ImpôtsError(</span><span style="color:#098658">73</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;There is no valid session currently active&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># Add the CSRF token to the service URL</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if self</span><span style="color:#000000">.__csrf_token:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            url_service = </span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{url_service}</span><span style="color:#a31515">/</span><span style="color:#000000">{</span><span style="color:#0000ff">self</span><span style="color:#000000">.__csrf_token}</span><span style="color:#a31515">&quot;</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># execute the request</span>
-<span class="odt-code-line"><span style="color:#000000">        response = </span><span style="background-color:#fff2cc;color:#000000">requests</span><span style="color:#000000">.request(method,</span></span>
-<span class="odt-code-line">                                    service_url,</span>
-<span class="odt-code-line">                                    data=data_value,</span>
-<span class="odt-code-line">                                    json=json_value,</span>
-<span class="odt-code-line"><span style="color:#000000">                                    </span><span style="color:#0000ff">cookies=self</span><span style="color:#000000">.__cookies,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                    </span><span style="color:#0000ff">allow_redirects=True</span><span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">                                    </span># for the HTTPS protocol</span>
-<span class="odt-code-line"><span style="color:#000000">                                    </span><span style="background-color:#fff2cc;color:#0000ff">verify=False</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># debug mode?</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if self</span><span style="color:#000000">.__debug:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span># logger</span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">if not self</span><span style="color:#000000">.__logger:</span></span>
-<span class="odt-code-line"><span style="color:#000000">                </span><span style="color:#0000ff">self</span><span style="color:#000000">.__logger = </span><span style="color:#0000ff">self</span><span style="color:#000000">.__config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;logger&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span># logging</span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#0000ff">self</span><span style="color:#000000">.__logger.write(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{response.text}\n</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">        </span>…</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># return the result</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">result</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;response&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span>
+<span class="normal"><a href="#__codelineno-1-39">39</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="err">…</span>    
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>    <span class="c1"># étape request / response</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">get_response</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">url_service</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data_value</span><span class="p">:</span> <span class="nb">dict</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">json_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>        <span class="c1">#  [method]: HTTP GET or POST method</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>        <span class="c1">#  [url_service] : URL of service</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>        <span class="c1">#  [data]: POST parameters in x-www-form-urlencoded</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>        <span class="c1">#  [json]: POST parameters in json</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>        <span class="c1">#  [cookies]: cookies to include in the request</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a>        <span class="c1">#  you must have a XML or JSON session, otherwise you won&#39;t be able to handle the response</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__session_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;json&#39;</span><span class="p">,</span> <span class="s1">&#39;xml&#39;</span><span class="p">]:</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a>            <span class="k">raise</span> <span class="n">ImpôtsError</span><span class="p">(</span><span class="mi">73</span><span class="p">,</span> <span class="s2">&quot;il n&#39;y a pas de session valide en cours&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a>        <span class="c1">#  we add the CSRF token to the URL service token</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__csrf_token</span><span class="p">:</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>            <span class="n">url_service</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">url_service</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">__csrf_token</span><span class="si">}</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>        <span class="c1">#  query execution</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="n">method</span><span class="p">,</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>                                    <span class="n">url_service</span><span class="p">,</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>                                    <span class="n">data</span><span class="o">=</span><span class="n">data_value</span><span class="p">,</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>                                    <span class="n">json</span><span class="o">=</span><span class="n">json_value</span><span class="p">,</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>                                    <span class="n">cookies</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">__cookies</span><span class="p">,</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>                                    <span class="n">allow_redirects</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a>                                    <span class="c1">#  for the https protocol</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>                                    <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a>        <span class="c1">#  debug mode?</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">__debug</span><span class="p">:</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a>            <span class="c1">#  logger</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>            <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">__logger</span><span class="p">:</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">__logger</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">__config</span><span class="p">[</span><span class="s1">&#39;logger&#39;</span><span class="p">]</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a>            <span class="c1">#  log on</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">__logger</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">response</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a>        <span class="err">…</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a>        <span class="c1">#  we return the result</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39"></a>        <span class="k">return</span> <span class="n">résultat</span><span class="p">[</span><span class="s1">&#39;réponse&#39;</span><span class="p">]</span>
+</code></pre></div></td></tr></table></div>
 <ul>
   <li>On line 26, we add the <b>[verify=False] </b>parameter because of the HTTPS protocol used by the Apache server. The <b>[requests] </b>module (line 19) natively supports the HTTPS protocol. By default, it verifies the validity of the security certificate sent by the HTTPS server and raises an exception if the received certificate is invalid. This is the case here, where Laragon’s Apache server sends a self-signed certificate. To avoid the exception, we use the <b>[verify=False] </b>parameter to tell the <b>[requests] </b>module not to raise an exception. <b>[requests] </b>then simply displays a warning on the console.
   </li>
@@ -1804,8 +1866,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

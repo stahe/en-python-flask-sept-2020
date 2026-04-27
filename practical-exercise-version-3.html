@@ -1494,7 +1494,7 @@
 <a id="toc48548994"></a>
 <a id="version2"></a></p>
 <h1 id="11-practical-exercise-version-3">11. <span style="color: #365f91">Practical Exercise: Version 3</span></h1>
-<p><img src="images/10000000000001C4000001A288384CA3.png" style="width:4.75cm;height:4.394cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C4000001A288384CA3.png" /></p>
+<p><img src="images/10000000000001C4000001A288384CA3.png" width="180" height="166" style="width:4.75cm;height:4.394cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001C4000001A288384CA3.png" /></p>
 <p>This new version introduces two changes:</p>
 <ul>
   <li>the data required to calculate the tax, provided by the tax authority, is stored in a JSON file <b>[admindata.json]</b>:
@@ -1502,21 +1502,21 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">{</span>
-<span class="odt-code-line">    <span style="color:#2e75b6">&quot;limits&quot;</span>: <span style="font-weight:bold">[9964, 27519, 73779, 156244, 0]</span>,</span>
-<span class="odt-code-line">    <span style="color:#2e75b6">&quot;coeffR&quot;</span>: <span style="font-weight:bold">[0, 0.14, 0.3, 0.41, 0.45]</span>,</span>
-<span class="odt-code-line">    <span style="color:#2e75b6">&quot;coeffN&quot;</span>: <span style="font-weight:bold">[0, 1394.96, 5798, 13913.69, 20163.45]</span>,</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;HALF-RATE_INCOME_LIMIT&quot;<span style="color:#000000">: 1551,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;INCOME_LIMIT_SINGLE_PERSON_FOR_REDUCTION&quot;<span style="color:#000000">: 21037,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;INCOME_LIMIT_FOR_COUPLES_FOR_REDUCTION&quot;<span style="color:#000000">: 42074,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;REDUCTION_VALUE_HALF_PORTION&quot;<span style="color:#000000">: 3797,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;SINGLE_PERSON_DISCOUNT_LIMIT&quot;<span style="color:#000000">: 1196,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;COUPLE_TAX_DEDUCTION_LIMIT&quot;<span style="color:#000000">: 1970,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;TAX_THRESHOLD_FOR_COUPLES_FOR_DEDUCTION&quot;<span style="color:#000000">: 2627,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;SINGLE_TAX_THRESHOLD_FOR_DEDUCTION&quot;<span style="color:#000000">: 1595,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;MAXIMUM_10_PERCENT_DEDUCTION&quot;<span style="color:#000000">: 12502,</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span>&quot;MINIMUM_10_PERCENT_DEDUCTION&quot;<span style="color:#000000">: 437</span></span>
-<span class="odt-code-line">}</span>
+<span class="odt-code-line"><span class="odt-code-line-content">{</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#2e75b6">&quot;limites&quot;</span>: <span style="font-weight:bold">[9964, 27519, 73779, 156244, 0]</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#2e75b6">&quot;coeffR&quot;</span>: <span style="font-weight:bold">[0, 0.14, 0.3, 0.41, 0.45]</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#2e75b6">&quot;coeffN&quot;</span>: <span style="font-weight:bold">[0, 1394.96, 5798, 13913.69, 20163.45]</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;PLAFOND_QF_DEMI_PART&quot;<span style="color:#000000">: 1551,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;PLAFOND_REVENUS_CELIBATAIRE_POUR_REDUCTION&quot;<span style="color:#000000">: 21037,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;PLAFOND_REVENUS_COUPLE_POUR_REDUCTION&quot;<span style="color:#000000">: 42074,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;VALEUR_REDUC_DEMI_PART&quot;<span style="color:#000000">: 3797,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;PLAFOND_DECOTE_CELIBATAIRE&quot;<span style="color:#000000">: 1196,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;PLAFOND_DECOTE_COUPLE&quot;<span style="color:#000000">: 1970,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;PLAFOND_IMPOT_COUPLE_POUR_DECOTE&quot;<span style="color:#000000">: 2627,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;PLAFOND_IMPOT_CELIBATAIRE_POUR_DECOTE&quot;<span style="color:#000000">: 1595,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;ABATTEMENT_DIXPOURCENT_MAX&quot;<span style="color:#000000">: 12502,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&quot;ABATTEMENT_DIXPOURCENT_MIN&quot;<span style="color:#000000">: 437</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">}</span></span>
 </code></pre></div>
 
 <ul>
@@ -1525,72 +1525,94 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line">[</span>
-<span class="odt-code-line">  {</span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;married&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;yes&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;children&quot;</span><span style="font-weight:bold;color:#000000">: 2,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;salary&quot;</span><span style="font-weight:bold">: 55555,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;tax&quot;</span><span style="font-weight:bold">: 2814,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;surcharge&quot;</span><span style="font-weight:bold;color:#000000">: 0,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;discount&quot;</span><span style="font-weight:bold">: 0,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;reduction&quot;</span><span style="font-weight:bold;color:#000000">: 0,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;rate&quot;</span><span style="font-weight:bold">: 0.14</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  {</span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;married&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;yes&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;children&quot;</span><span style="font-weight:bold;color:#000000">: 2,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;salary&quot;</span><span style="font-weight:bold">: 50000,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;tax&quot;</span><span style="font-weight:bold">: 1384,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;surcharge&quot;</span><span style="font-weight:bold;color:#000000">: 0,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;discount&quot;</span><span style="font-weight:bold">: 384,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;reduction&quot;</span><span style="font-weight:bold;color:#000000">: 347,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;rate&quot;</span><span style="font-weight:bold">: 0.14</span></span>
-<span class="odt-code-line">  },</span>
-<span class="odt-code-line">  …</span>
-<span class="odt-code-line">  {</span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;married&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;yes&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;children&quot;</span><span style="font-weight:bold;color:#000000">: 3,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;salary&quot;</span><span style="font-weight:bold">: 200000,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;tax&quot;</span><span style="font-weight:bold">: 42,842,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;surcharge&quot;</span><span style="font-weight:bold">: 17,283,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;discount&quot;</span><span style="font-weight:bold">: 0,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;reduction&quot;</span><span style="font-weight:bold;color:#000000">: 0,</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;rate&quot;</span><span style="font-weight:bold">: 0.41</span></span>
-<span class="odt-code-line">  }</span>
-<span class="odt-code-line">]</span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">  {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;marié&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;oui&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;enfants&quot;</span><span style="font-weight:bold;color:#000000">: 2,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;salaire&quot;</span><span style="font-weight:bold">: 55555,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;impôt&quot;</span><span style="font-weight:bold">: 2814,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;surcôte&quot;</span><span style="font-weight:bold;color:#000000">: 0,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;décôte&quot;</span><span style="font-weight:bold">: 0,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;réduction&quot;</span><span style="font-weight:bold;color:#000000">: 0,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;taux&quot;</span><span style="font-weight:bold">: 0.14</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">  },</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">  {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;marié&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;oui&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;enfants&quot;</span><span style="font-weight:bold;color:#000000">: 2,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;salaire&quot;</span><span style="font-weight:bold">: 50000,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;impôt&quot;</span><span style="font-weight:bold">: 1384,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;surcôte&quot;</span><span style="font-weight:bold;color:#000000">: 0,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;décôte&quot;</span><span style="font-weight:bold">: 384,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;réduction&quot;</span><span style="font-weight:bold;color:#000000">: 347,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;taux&quot;</span><span style="font-weight:bold">: 0.14</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">  },</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">  …</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">  {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;marié&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;oui&quot;</span><span style="font-weight:bold">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;enfants&quot;</span><span style="font-weight:bold;color:#000000">: 3,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;salaire&quot;</span><span style="font-weight:bold">: 200000,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;impôt&quot;</span><span style="font-weight:bold">: 42842,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;surcôte&quot;</span><span style="font-weight:bold">: 17283,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;décôte&quot;</span><span style="font-weight:bold">: 0,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">    </span><span style="font-weight:bold">&quot;réduction&quot;</span><span style="font-weight:bold;color:#000000">: 0,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">    </span><span style="font-weight:bold;color:#2e75b6">&quot;taux&quot;</span><span style="font-weight:bold">: 0.41</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">  }</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">]</span></span></span>
 </code></pre></div>
 
 <p><a id="toc48548995"></a></p>
 <h2 id="111-the-configuration-script-configpy">11.1. <span style="color: #4f81bd">The configuration script [config.py]</span></h2>
 <p>The configuration script will be as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#0000ff">def </span>configure():</span>
-<span class="odt-code-line">    <span style="color:#0000ff">import </span>os</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#008000"># absolute path to this script&#x27;s directory</span></span>
-<span class="odt-code-line">    script_dir = os.path.dirname(os.path.abspath(__file__))</span>
-<span class="odt-code-line">    <span style="color:#008000"># application dependencies</span></span>
-<span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../shared&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line">    ]</span>
-<span class="odt-code-line">    <span style="color:#008000"># Application configuration</span></span>
-<span class="odt-code-line">    config = {</span>
-<span class="odt-code-line">        <span style="color:#008000"># absolute path to the taxpayers file</span></span>
-<span class="odt-code-line">        <span style="color:#a31515">&quot;taxpayersFilename&quot;</span>: <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../data/taxpayersdata.txt&quot;</span>,</span>
-<span class="odt-code-line">        <span style="color:#008000"># absolute path to the results file</span></span>
-<span class="odt-code-line">        <span style="color:#a31515">&quot;resultsFilename&quot;</span>: <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../data/results.json&quot;</span>,</span>
-<span class="odt-code-line">        <span style="color:#008000"># absolute path to the tax administration data file</span></span>
-<span class="odt-code-line">        <span style="color:#a31515">&quot;admindataFilename&quot;</span>: <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../data/admindata.json&quot;</span></span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line">    <span style="color:#008000"># update the syspath</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    set_syspath(absolute_dependencies)</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line">    <span style="color:#008000"># restore the config</span></span>
-<span class="odt-code-line">    <span style="color:#0000ff">return </span>config</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">configure</span><span class="p">():</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="c1">#  absolute path of this script&#39;s folder</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="n">script_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>    <span class="c1">#  application dependencies</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="n">absolute_dependencies</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">script_dir</span><span class="si">}</span><span class="s2">/../shared&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="p">]</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="c1">#  application configuration</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="c1">#  absolute path of the taxpayer file</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="s2">&quot;taxpayersFilename&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">script_dir</span><span class="si">}</span><span class="s2">/../data/taxpayersdata.txt&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="c1">#  absolute path of the results file</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="s2">&quot;resultsFilename&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">script_dir</span><span class="si">}</span><span class="s2">/../data/résultats.json&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>        <span class="c1">#  absolute path of tax administration data file</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>        <span class="s2">&quot;admindataFilename&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">script_dir</span><span class="si">}</span><span class="s2">/../data/admindata.json&quot;</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>    <span class="p">}</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>    <span class="c1">#  update syspath</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">myutils</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_syspath</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>    <span class="n">set_syspath</span><span class="p">(</span><span class="n">absolute_dependencies</span><span class="p">)</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="c1">#  return the config</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="k">return</span> <span class="n">config</span>
+</code></pre></div></td></tr></table></div>
 <ul>
   <li>Line 8: Add the <b>[shared] </b>folder to the Python Path. This folder contains the <b>[impôts_module_02] </b>module used by the main script;
   </li>
@@ -1599,47 +1621,82 @@
 <a id="toc48548996"></a></p>
 <h2 id="112-main-script-mainpy">11.2. <span style="color: #4f81bd">Main script [main.py]</span></h2>
 <p>The main script for version 3 is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"># configure the application</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#6f008a">config</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#6f008a">config </span><span style="color:#000000">= </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure()</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># The syspath is configured—we can now import modules</span>
-<span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">tax_module_02 </span><span style="color:#0000ff">import </span><span style="color:#000000">tax_calculation, get_admin_data, get_taxpayers_data, record_results_in_json_file</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># taxpayer file</span>
-<span class="odt-code-line"><span style="color:#000000">taxpayers_filename = </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;taxpayersFilename&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"># results file</span>
-<span class="odt-code-line"><span style="color:#000000">results_filename = </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;resultsFilename&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"># tax administration data file</span>
-<span class="odt-code-line"><span style="color:#000000">admindata_filename = </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;admindataFilename&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"># code</span>
-<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># read tax administration data</span>
-<span class="odt-code-line">    admindata = get_admindata(admindata_filename)</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># read taxpayer data</span>
-<span class="odt-code-line">    taxpayers = get_taxpayers_data(taxpayers_filename)</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># list of results</span>
-<span class="odt-code-line"><span style="color:#000000">    results = </span><span style="font-weight:bold;color:#000000">[]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># Calculate taxpayers&#x27; taxes</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">taxpayer </span><span style="color:#0000ff">in </span><span style="color:#000000">taxpayers:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># the tax calculation returns a dictionary of keys</span>
-<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[&#x27;married&#x27;, &#x27;children&#x27;, &#x27;salary&#x27;, &#x27;tax&#x27;, &#x27;surcharge&#x27;, &#x27;rebate&#x27;, &#x27;deduction&#x27;, &#x27;rate&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        result = tax_calculation(admindata, taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;married&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;children&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;salary&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># the dictionary is added to the list of results</span>
-<span class="odt-code-line">        results.append(result)</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># the results are saved</span>
-<span class="odt-code-line">    save_results_in_json_file(results_filename, results)</span>
-<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># There may be various errors: file not found, incorrect file content</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># display the error and exit the application</span>
-<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}]\n&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Job completed...&quot;</span><span style="color:#000000">)</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span>
+<span class="normal"><a href="#__codelineno-1-36">36</a></span>
+<span class="normal"><a href="#__codelineno-1-37">37</a></span>
+<span class="normal"><a href="#__codelineno-1-38">38</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#  configure the application</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">config</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">config</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">configure</span><span class="p">()</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">#  syspath is configured - imports can be made</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">impôts_module_02</span><span class="w"> </span><span class="kn">import</span> <span class="n">calcul_impôt</span><span class="p">,</span> <span class="n">get_admindata</span><span class="p">,</span> <span class="n">get_taxpayers_data</span><span class="p">,</span> <span class="n">record_results_in_json_file</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">#  taxpayer file</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">taxpayers_filename</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;taxpayersFilename&#39;</span><span class="p">]</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1">#  results file</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">results_filename</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;resultsFilename&#39;</span><span class="p">]</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="c1">#  tax administration data file</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="n">admindata_filename</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;admindataFilename&#39;</span><span class="p">]</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="c1">#  code</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>    <span class="c1">#  reading tax administration data</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>    <span class="n">admindata</span> <span class="o">=</span> <span class="n">get_admindata</span><span class="p">(</span><span class="n">admindata_filename</span><span class="p">)</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>    <span class="c1">#  reading taxpayer data</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>    <span class="n">taxpayers</span> <span class="o">=</span> <span class="n">get_taxpayers_data</span><span class="p">(</span><span class="n">taxpayers_filename</span><span class="p">)</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>    <span class="c1">#  results list</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>    <span class="c1">#  taxpayers&#39; taxes are calculated</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a>    <span class="k">for</span> <span class="n">taxpayer</span> <span class="ow">in</span> <span class="n">taxpayers</span><span class="p">:</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>        <span class="c1">#  tax calculation returns a dictionary of keys</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a>        <span class="c1">#  [&#39;married&#39;, &#39;children&#39;, &#39;salary&#39;, &#39;tax&#39;, &#39;surcôte&#39;, &#39;décôte&#39;, &#39;réduction&#39;, &#39;taux&#39;]</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a>        <span class="n">result</span> <span class="o">=</span> <span class="n">calcul_impôt</span><span class="p">(</span><span class="n">admindata</span><span class="p">,</span> <span class="n">taxpayer</span><span class="p">[</span><span class="s1">&#39;marié&#39;</span><span class="p">],</span> <span class="n">taxpayer</span><span class="p">[</span><span class="s1">&#39;enfants&#39;</span><span class="p">],</span> <span class="n">taxpayer</span><span class="p">[</span><span class="s1">&#39;salaire&#39;</span><span class="p">])</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>        <span class="c1">#  the dictionary is added to the list of results</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a>        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>    <span class="c1">#  we record the results</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a>    <span class="n">record_results_in_json_file</span><span class="p">(</span><span class="n">results_filename</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a><span class="k">except</span> <span class="ne">BaseException</span> <span class="k">as</span> <span class="n">erreur</span><span class="p">:</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a>    <span class="c1">#  there may be various errors: no file, incorrect file content</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>    <span class="c1">#  display the error and exit the application</span>
+<a id="__codelineno-1-36" name="__codelineno-1-36"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L&#39;erreur suivante s&#39;est produite : </span><span class="si">{</span><span class="n">erreur</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37"></a><span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Travail terminé...&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Notes</strong></p>
 <ul>
   <li>Lines 2–4: We configure the application, specifically its Python path;
@@ -1662,7 +1719,7 @@
 <a id="lemoduleimpotsv02modulesimpot"></a></p>
 <h2 id="113-the-module-impotsv02modulesimpots_module_02">11.3. <span style="color: #4f81bd">The module [impots<span style="color: #000000">.</span>v02<span style="color: #000000">.</span>modules<span style="color: #000000">.</span>impôts_module_02]</span></h2>
 <p>The module <strong>[</strong><strong><span style="color: #6f008a">impots</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">v02</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">modules</span></strong><strong><span style="color: #000000">.</span></strong><strong><span style="color: #6f008a">impôts_module_02</span></strong><strong>]</strong> has the following structure:</p>
-<p><img src="images/10000000000005CD000001BF94176D17.png" style="width:17.14cm;height:5.159cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005CD000001BF94176D17.png" /></p>
+<p><img src="images/10000000000005CD000001BF94176D17.png" width="648" height="195" style="width:17.14cm;height:5.159cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005CD000001BF94176D17.png" /></p>
 <ul>
   <li>The module contains functions already present in the module used by version 1, with one difference. When the version 2 module reuses a function from the version 1 module, it does so with an additional parameter: <b>[adminData] </b>(lines 29, 51, 77, 127). This parameter represents the dictionary of tax data from the JSON file <b>[adminData.json]</b>. In the Version 1 module, this data did not need to be passed to the functions because it was globally defined for them, meaning the functions were already aware of it;
   </li>
@@ -1671,26 +1728,40 @@
 <a id="toc48548998"></a></p>
 <h2 id="114-reading-data-from-the-tax-administration">11.4. <span style="color: #4f81bd">Reading data from the tax administration</span></h2>
 <p>The <strong>[</strong><strong><span style="color: #000000">get_admindata</span></strong><strong>]</strong> function is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"># reading tax administration data from a JSON file</span>
-<span class="odt-code-line"># ----------------------------------------</span>
-<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">get_admindata(</span><span style="color:#808080">admindata_filename</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># reading tax authority data</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># allow any exceptions to be raised: file not found, invalid JSON content</span>
-<span class="odt-code-line"><span style="color:#000000">    file = </span><span style="color:#0000ff">None</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># Open the JSON file for reading</span>
-<span class="odt-code-line"><span style="color:#000000">        file = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(</span><span style="color:#808080">admindata_filename</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;r&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf8&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># Load the content into a dictionary</span>
-<span class="odt-code-line"><span style="color:#000000">        admin_data = </span><span style="color:#6f008a">json</span><span style="color:#000000">.load(file)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># return the result</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">return </span><span style="color:#000000">admin_data</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># Close the file if it was opened</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">file:</span></span>
-<span class="odt-code-line">            file.close()</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#  read data from tax authorities in a jSON file</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># ----------------------------------------</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">get_admindata</span><span class="p">(</span><span class="n">admindata_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>    <span class="c1">#  reading tax administration data</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    <span class="c1">#  we let any exceptions go up: file missing, jSON content incorrect</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>    <span class="n">file</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>        <span class="c1">#  open file jSON in read mode</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>        <span class="n">file</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">admindata_filename</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>        <span class="c1">#  transfer content to a dictionary</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>        <span class="n">admin_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">file</span><span class="p">)</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>        <span class="c1">#  we return the result</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>        <span class="k">return</span> <span class="n">admin_data</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>    <span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>        <span class="c1">#  close the file if it has been opened</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>        <span class="k">if</span> <span class="n">file</span><span class="p">:</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>            <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
 <ul>
   <li>line 9: retrieve the image dictionary from the read JSON file;
   </li>
@@ -1699,22 +1770,32 @@
 <a id="toc48548999"></a></p>
 <h2 id="115-saving-the-results">11.5. <span style="color: #4f81bd">Saving the results</span></h2>
 <p>The <strong>[</strong><strong><span style="color: #000000">record_results_in_json_file</span></strong><strong>]</strong> function is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"># Writing results to a JSON file</span>
-<span class="odt-code-line"># ----------------------------------------</span>
-<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">record_results_in_json_file(</span><span style="color:#808080">results_filename</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">results</span><span style="color:#000000">: </span><span style="color:#2b91af">list</span><span style="color:#000000">):</span></span>
-<span class="odt-code-line"><span style="color:#000000">    file = </span><span style="color:#0000ff">None</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># Open the results file</span>
-<span class="odt-code-line"><span style="color:#000000">        file = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(</span><span style="color:#808080">results_filename</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;w&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf8&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># write in bulk</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#6f008a">json</span><span style="color:#000000">.dump(</span><span style="color:#808080">results</span><span style="color:#000000">, file, </span><span style="color:#0000ff">ensure_ascii=False</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># Close the file if it was opened</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#000000">file:</span></span>
-<span class="odt-code-line">            file.close()</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">#  writing results to a jSON file</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># ----------------------------------------</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">record_results_in_json_file</span><span class="p">(</span><span class="n">results_filename</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">results</span><span class="p">:</span> <span class="nb">list</span><span class="p">):</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>    <span class="n">file</span> <span class="o">=</span> <span class="kc">None</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>    <span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>        <span class="c1">#  opening the results file</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a>        <span class="n">file</span> <span class="o">=</span> <span class="n">codecs</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">results_filename</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="s2">&quot;utf8&quot;</span><span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a>        <span class="c1">#  block writing</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>        <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">results</span><span class="p">,</span> <span class="n">file</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a>    <span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a>        <span class="c1">#  close the file if it has been opened</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>        <span class="k">if</span> <span class="n">file</span><span class="p">:</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a>            <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
 <ul>
   <li>line 7: create a UTF-8 encoded file;
   </li>
@@ -1725,55 +1806,98 @@
 <a id="toc48549000"></a></p>
 <h2 id="116-function-modifications">11.6. <span style="color: #4f81bd">Function Modifications</span></h2>
 <p>Some functions now receive an additional <strong>[</strong><strong><span style="color: #808080">admin_data</span></strong><strong>]</strong> parameter. This slightly changes their syntax. Take, for example, the <strong>[</strong><strong><span style="color: #000000">calcul_impôt</span></strong><strong>]</strong> function:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"># tax calculation - step 1</span>
-<span class="odt-code-line"># ----------------------------------------</span>
-<span class="odt-code-line"><span style="color:#0000ff">def </span><span style="color:#000000">calculate_tax(</span><span style="color:#808080">admin_data</span><span style="color:#000000">: </span><span style="color:#2b91af">dict</span><span style="color:#000000">, </span><span style="color:#808080">married</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">children</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">, </span><span style="color:#808080">salary</span><span style="color:#000000">: </span><span style="color:#2b91af">int</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">dict</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># married: yes, no</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># children: number of children</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># salary: annual salary</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># limits, coeffr, coeffn: data tables used to calculate the tax</span>
-<span class="odt-code-line"><span style="color:#000000">    </span>#</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># tax calculation with children</span>
-<span class="odt-code-line"><span style="color:#000000">    result1 = tax_calculation_2(</span><span style="color:#808080">admin_data</span><span style="color:#000000">, </span><span style="color:#808080">married</span><span style="color:#000000">, </span><span style="color:#808080">children</span><span style="color:#000000">, </span><span style="color:#808080">salary</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">    tax1 = result1</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;tax&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># Tax calculation without children</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#808080">children </span><span style="color:#000000">!= 0:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        result2 = tax_calculation_2(</span><span style="color:#808080">admin_data</span><span style="color:#000000">, </span><span style="color:#808080">married</span><span style="color:#000000">, 0, </span><span style="color:#808080">salary</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        tax2 = result2</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;tax&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># apply the family quotient cap</span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">if </span><span style="color:#808080">children </span><span style="color:#000000">&lt; 3:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span># HALF-PART FAMILY QUOTIENT CAP in euros for the first 2 children</span>
-<span class="odt-code-line"><span style="color:#000000">            tax2 = tax2 - </span><span style="color:#808080">children </span><span style="color:#000000">* </span><span style="color:#808080">admin_data</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;half-share_family_quota_cap&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span># HALF-PART_FQ_CAP euros for the first 2 children, double that for subsequent children</span>
-<span class="odt-code-line"><span style="color:#000000">            tax2 = tax2 - 2 * </span><span style="color:#808080">admin_data</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;half-share_limit&#x27;</span><span style="font-weight:bold;color:#000000">] </span><span style="color:#000000">- (</span><span style="color:#808080">children </span><span style="color:#000000">- 2) * 2 * </span><span style="color:#808080">admin_data</span><span style="font-weight:bold;color:#000000">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold;color:#000000">                </span><span style="font-weight:bold;color:#a31515">&#x27;half-share_ceiling&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line">        tax2 = tax1</span>
-<span class="odt-code-line">        result2 = result1</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># we take the higher tax amount with the corresponding rate and surcharge</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">if </span><span style="color:#000000">tax1 &gt; tax2:</span></span>
-<span class="odt-code-line">        tax = tax1</span>
-<span class="odt-code-line"><span style="color:#000000">        rate = result1</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;rate&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        surcharge = result1</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;surcharge&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        surcharge = tax2 - tax1 + result2</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;surcharge&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line">        tax = tax2</span>
-<span class="odt-code-line"><span style="color:#000000">        rate = result2</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;rate&quot;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># calculate any discount</span>
-<span class="odt-code-line"><span style="color:#000000">    discount = get_discount(</span><span style="color:#808080">admin_data</span><span style="color:#000000">, </span><span style="color:#808080">married</span><span style="color:#000000">, </span><span style="color:#808080">salary</span><span style="color:#000000">, tax)</span></span>
-<span class="odt-code-line">    tax -= discount</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># calculate any tax reduction</span>
-<span class="odt-code-line"><span style="color:#000000">    tax_credit = get_tax_credit(</span><span style="color:#808080">admin_data</span><span style="color:#000000">, </span><span style="color:#808080">married</span><span style="color:#000000">, </span><span style="color:#808080">salary</span><span style="color:#000000">, </span><span style="color:#808080">children</span><span style="color:#000000">, tax)</span></span>
-<span class="odt-code-line">    tax -= reduction</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># result</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">return </span><span style="color:#000000">{</span><span style="color:#a31515">&quot;married&quot;</span><span style="color:#000000">: </span><span style="color:#808080">married</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;children&quot;</span><span style="color:#000000">: </span><span style="color:#808080">children</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;salary&quot;</span><span style="color:#000000">: </span><span style="color:#808080">salary</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;tax&quot;</span><span style="color:#000000">: </span><span style="color:#6f008a">math</span><span style="color:#000000">.floor(tax), </span><span style="color:#a31515">&quot;surcharge&quot;</span><span style="color:#000000">: surcharge,</span></span>
-<span class="odt-code-line"><span style="color:#000000">            </span><span style="color:#a31515">&quot;discount&quot;</span><span style="color:#000000">: discount, </span><span style="color:#a31515">&quot;reduction&quot;</span><span style="color:#000000">: reduction, </span><span style="color:#a31515">&quot;rate&quot;</span><span style="color:#000000">: rate}</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span>
+<span class="normal"><a href="#__codelineno-4-21">21</a></span>
+<span class="normal"><a href="#__codelineno-4-22">22</a></span>
+<span class="normal"><a href="#__codelineno-4-23">23</a></span>
+<span class="normal"><a href="#__codelineno-4-24">24</a></span>
+<span class="normal"><a href="#__codelineno-4-25">25</a></span>
+<span class="normal"><a href="#__codelineno-4-26">26</a></span>
+<span class="normal"><a href="#__codelineno-4-27">27</a></span>
+<span class="normal"><a href="#__codelineno-4-28">28</a></span>
+<span class="normal"><a href="#__codelineno-4-29">29</a></span>
+<span class="normal"><a href="#__codelineno-4-30">30</a></span>
+<span class="normal"><a href="#__codelineno-4-31">31</a></span>
+<span class="normal"><a href="#__codelineno-4-32">32</a></span>
+<span class="normal"><a href="#__codelineno-4-33">33</a></span>
+<span class="normal"><a href="#__codelineno-4-34">34</a></span>
+<span class="normal"><a href="#__codelineno-4-35">35</a></span>
+<span class="normal"><a href="#__codelineno-4-36">36</a></span>
+<span class="normal"><a href="#__codelineno-4-37">37</a></span>
+<span class="normal"><a href="#__codelineno-4-38">38</a></span>
+<span class="normal"><a href="#__codelineno-4-39">39</a></span>
+<span class="normal"><a href="#__codelineno-4-40">40</a></span>
+<span class="normal"><a href="#__codelineno-4-41">41</a></span>
+<span class="normal"><a href="#__codelineno-4-42">42</a></span>
+<span class="normal"><a href="#__codelineno-4-43">43</a></span>
+<span class="normal"><a href="#__codelineno-4-44">44</a></span>
+<span class="normal"><a href="#__codelineno-4-45">45</a></span>
+<span class="normal"><a href="#__codelineno-4-46">46</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">#  tax calculation - step 1</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1"># ----------------------------------------</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">calcul_impôt</span><span class="p">(</span><span class="n">admin_data</span><span class="p">:</span> <span class="nb">dict</span><span class="p">,</span> <span class="n">marié</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">enfants</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">salaire</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>    <span class="c1">#  married: yes, no</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>    <span class="c1">#  children: number of children</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>    <span class="c1">#  salary: annual salary</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>    <span class="c1">#  limits, coeffr, coeffn: data tables for tax calculation</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>    <span class="c1">#</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>    <span class="c1">#  tax calculation with children</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>    <span class="n">result1</span> <span class="o">=</span> <span class="n">calcul_impôt_2</span><span class="p">(</span><span class="n">admin_data</span><span class="p">,</span> <span class="n">marié</span><span class="p">,</span> <span class="n">enfants</span><span class="p">,</span> <span class="n">salaire</span><span class="p">)</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>    <span class="n">impot1</span> <span class="o">=</span> <span class="n">result1</span><span class="p">[</span><span class="s2">&quot;impôt&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>    <span class="c1">#  tax calculation without children</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>    <span class="k">if</span> <span class="n">enfants</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>        <span class="n">result2</span> <span class="o">=</span> <span class="n">calcul_impôt_2</span><span class="p">(</span><span class="n">admin_data</span><span class="p">,</span> <span class="n">marié</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">salaire</span><span class="p">)</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>        <span class="n">impot2</span> <span class="o">=</span> <span class="n">result2</span><span class="p">[</span><span class="s2">&quot;impôt&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>        <span class="c1">#  application of the family allowance ceiling</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>        <span class="k">if</span> <span class="n">enfants</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>            <span class="c1">#  PLAFOND_QF_DEMI_PART euros for the first 2 children</span>
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>            <span class="n">impot2</span> <span class="o">=</span> <span class="n">impot2</span> <span class="o">-</span> <span class="n">enfants</span> <span class="o">*</span> <span class="n">admin_data</span><span class="p">[</span><span class="s1">&#39;plafond_qf_demi_part&#39;</span><span class="p">]</span>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>        <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-4-21" name="__codelineno-4-21"></a>            <span class="c1">#  PLAFOND_QF_DEMI_PART euros for the first 2 children, double for subsequent children</span>
+<a id="__codelineno-4-22" name="__codelineno-4-22"></a>            <span class="n">impot2</span> <span class="o">=</span> <span class="n">impot2</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">admin_data</span><span class="p">[</span><span class="s1">&#39;plafond_qf_demi_part&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">enfants</span> <span class="o">-</span> <span class="mi">2</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">admin_data</span><span class="p">[</span>
+<a id="__codelineno-4-23" name="__codelineno-4-23"></a>                <span class="s1">&#39;plafond_qf_demi_part&#39;</span><span class="p">]</span>
+<a id="__codelineno-4-24" name="__codelineno-4-24"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-4-25" name="__codelineno-4-25"></a>        <span class="n">impot2</span> <span class="o">=</span> <span class="n">impot1</span>
+<a id="__codelineno-4-26" name="__codelineno-4-26"></a>        <span class="n">result2</span> <span class="o">=</span> <span class="n">result1</span>
+<a id="__codelineno-4-27" name="__codelineno-4-27"></a>
+<a id="__codelineno-4-28" name="__codelineno-4-28"></a>    <span class="c1">#  we take the highest tax with the rate and surcharge that go with it</span>
+<a id="__codelineno-4-29" name="__codelineno-4-29"></a>    <span class="k">if</span> <span class="n">impot1</span> <span class="o">&gt;</span> <span class="n">impot2</span><span class="p">:</span>
+<a id="__codelineno-4-30" name="__codelineno-4-30"></a>        <span class="n">impot</span> <span class="o">=</span> <span class="n">impot1</span>
+<a id="__codelineno-4-31" name="__codelineno-4-31"></a>        <span class="n">taux</span> <span class="o">=</span> <span class="n">result1</span><span class="p">[</span><span class="s2">&quot;taux&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-32" name="__codelineno-4-32"></a>        <span class="n">surcôte</span> <span class="o">=</span> <span class="n">result1</span><span class="p">[</span><span class="s2">&quot;surcôte&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-33" name="__codelineno-4-33"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-4-34" name="__codelineno-4-34"></a>        <span class="n">surcôte</span> <span class="o">=</span> <span class="n">impot2</span> <span class="o">-</span> <span class="n">impot1</span> <span class="o">+</span> <span class="n">result2</span><span class="p">[</span><span class="s2">&quot;surcôte&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-35" name="__codelineno-4-35"></a>        <span class="n">impot</span> <span class="o">=</span> <span class="n">impot2</span>
+<a id="__codelineno-4-36" name="__codelineno-4-36"></a>        <span class="n">taux</span> <span class="o">=</span> <span class="n">result2</span><span class="p">[</span><span class="s2">&quot;taux&quot;</span><span class="p">]</span>
+<a id="__codelineno-4-37" name="__codelineno-4-37"></a>
+<a id="__codelineno-4-38" name="__codelineno-4-38"></a>    <span class="c1">#  calculation of any discount</span>
+<a id="__codelineno-4-39" name="__codelineno-4-39"></a>    <span class="n">décôte</span> <span class="o">=</span> <span class="n">get_décôte</span><span class="p">(</span><span class="n">admin_data</span><span class="p">,</span> <span class="n">marié</span><span class="p">,</span> <span class="n">salaire</span><span class="p">,</span> <span class="n">impot</span><span class="p">)</span>
+<a id="__codelineno-4-40" name="__codelineno-4-40"></a>    <span class="n">impot</span> <span class="o">-=</span> <span class="n">décôte</span>
+<a id="__codelineno-4-41" name="__codelineno-4-41"></a>    <span class="c1">#  calculation of any tax reduction</span>
+<a id="__codelineno-4-42" name="__codelineno-4-42"></a>    <span class="n">réduction</span> <span class="o">=</span> <span class="n">get_réduction</span><span class="p">(</span><span class="n">admin_data</span><span class="p">,</span> <span class="n">marié</span><span class="p">,</span> <span class="n">salaire</span><span class="p">,</span> <span class="n">enfants</span><span class="p">,</span> <span class="n">impot</span><span class="p">)</span>
+<a id="__codelineno-4-43" name="__codelineno-4-43"></a>    <span class="n">impot</span> <span class="o">-=</span> <span class="n">réduction</span>
+<a id="__codelineno-4-44" name="__codelineno-4-44"></a>    <span class="c1">#  result</span>
+<a id="__codelineno-4-45" name="__codelineno-4-45"></a>    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;marié&quot;</span><span class="p">:</span> <span class="n">marié</span><span class="p">,</span> <span class="s2">&quot;enfants&quot;</span><span class="p">:</span> <span class="n">enfants</span><span class="p">,</span> <span class="s2">&quot;salaire&quot;</span><span class="p">:</span> <span class="n">salaire</span><span class="p">,</span> <span class="s2">&quot;impôt&quot;</span><span class="p">:</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">impot</span><span class="p">),</span> <span class="s2">&quot;surcôte&quot;</span><span class="p">:</span> <span class="n">surcôte</span><span class="p">,</span>
+<a id="__codelineno-4-46" name="__codelineno-4-46"></a>            <span class="s2">&quot;décôte&quot;</span><span class="p">:</span> <span class="n">décôte</span><span class="p">,</span> <span class="s2">&quot;réduction&quot;</span><span class="p">:</span> <span class="n">réduction</span><span class="p">,</span> <span class="s2">&quot;taux&quot;</span><span class="p">:</span> <span class="n">taux</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Notes</strong></p>
 <ul>
   <li>where <b>[calcul_tax] </b>calls other functions, it passes <b>[admin_data] </b>as the first parameter (lines 10, 14, 39, 42);
@@ -1822,8 +1946,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

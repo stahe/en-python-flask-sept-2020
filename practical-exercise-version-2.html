@@ -1379,39 +1379,64 @@
 <p><a id="toc48548993"></a>
 <a id="exercicedapplication1"></a></p>
 <h1 id="10-practical-exercise-version-2">10. <span style="color: #365f91">Practical Exercise: Version 2</span></h1>
-<p><img src="images/10000001000001CD0000019780DE825C.png" style="width:4.872cm;height:4.3cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001CD0000019780DE825C.png" /></p>
+<p><img src="images/10000001000001CD0000019780DE825C.png" width="184" height="163" style="width:4.872cm;height:4.3cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001CD0000019780DE825C.png" /></p>
 <p>This new version introduces the following <strong>[config.py]</strong> file:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span style="color:#0000ff">def </span>configure():</span>
-<span class="odt-code-line">    <span style="color:#0000ff">import </span>os</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># absolute path to this script&#x27;s directory</span>
-<span class="odt-code-line">    script_dir = os.path.dirname(os.path.abspath(__file__))</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># root directory from which certain relative paths will be measured</span>
-<span class="odt-code-line"><span style="color:#000000">    root_dir = </span>&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots&quot;</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># application dependencies</span>
-<span class="odt-code-line">    absolute_dependencies = <span style="font-weight:bold">[</span></span>
-<span class="odt-code-line"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/v01/shared&quot;</span><span style="font-weight:bold">,</span></span>
-<span class="odt-code-line">    ]</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># application configuration</span>
-<span class="odt-code-line">    config = {</span>
-<span class="odt-code-line"><span style="color:#000000">        </span># absolute path to the taxpayers file</span>
-<span class="odt-code-line"><span style="color:#000000">        </span>&quot;taxpayersFilename&quot;<span style="color:#000000">: </span><span style="color:#0000ff">f</span>&quot;<span style="color:#000000">{script_dir}</span>/../data/taxpayersdata.txt&quot;<span style="color:#000000">,</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># absolute path to the results file</span>
-<span class="odt-code-line"><span style="color:#000000">        </span>&quot;resultsFilename&quot;<span style="color:#000000">: </span><span style="color:#0000ff">f</span>&quot;<span style="color:#000000">{script_dir}</span>/../data/results.txt&quot;</span>
-<span class="odt-code-line">    }</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># update the syspath</span>
-<span class="odt-code-line">    <span style="color:#0000ff">from </span>myutils <span style="color:#0000ff">import </span>set_syspath</span>
-<span class="odt-code-line">    set_syspath(absolute_dependencies)</span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># restore the config</span>
-<span class="odt-code-line">    <span style="color:#0000ff">return </span>config</span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span>
+<span class="normal"><a href="#__codelineno-0-13">13</a></span>
+<span class="normal"><a href="#__codelineno-0-14">14</a></span>
+<span class="normal"><a href="#__codelineno-0-15">15</a></span>
+<span class="normal"><a href="#__codelineno-0-16">16</a></span>
+<span class="normal"><a href="#__codelineno-0-17">17</a></span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span>
+<span class="normal"><a href="#__codelineno-0-19">19</a></span>
+<span class="normal"><a href="#__codelineno-0-20">20</a></span>
+<span class="normal"><a href="#__codelineno-0-21">21</a></span>
+<span class="normal"><a href="#__codelineno-0-22">22</a></span>
+<span class="normal"><a href="#__codelineno-0-23">23</a></span>
+<span class="normal"><a href="#__codelineno-0-24">24</a></span>
+<span class="normal"><a href="#__codelineno-0-25">25</a></span>
+<span class="normal"><a href="#__codelineno-0-26">26</a></span>
+<span class="normal"><a href="#__codelineno-0-27">27</a></span>
+<span class="normal"><a href="#__codelineno-0-28">28</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">configure</span><span class="p">():</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="c1">#  absolute path of this script&#39;s folder</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>    <span class="n">script_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="vm">__file__</span><span class="p">))</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a>    <span class="c1">#  root from which certain relative paths are measured</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a>    <span class="n">root_dir</span> <span class="o">=</span> <span class="s2">&quot;C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots&quot;</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a>    <span class="c1">#  application dependencies</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="n">absolute_dependencies</span> <span class="o">=</span> <span class="p">[</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">root_dir</span><span class="si">}</span><span class="s2">/v01/shared&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13"></a>    <span class="p">]</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15"></a>    <span class="c1">#  application configuration</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16"></a>    <span class="n">config</span> <span class="o">=</span> <span class="p">{</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17"></a>        <span class="c1">#  absolute path of the taxpayer file</span>
+<a id="__codelineno-0-18" name="__codelineno-0-18"></a>        <span class="s2">&quot;taxpayersFilename&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">script_dir</span><span class="si">}</span><span class="s2">/../data/taxpayersdata.txt&quot;</span><span class="p">,</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19"></a>        <span class="c1">#  absolute path of the results file</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20"></a>        <span class="s2">&quot;resultsFilename&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">script_dir</span><span class="si">}</span><span class="s2">/../data/résultats.txt&quot;</span>
+<a id="__codelineno-0-21" name="__codelineno-0-21"></a>    <span class="p">}</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22"></a>
+<a id="__codelineno-0-23" name="__codelineno-0-23"></a>    <span class="c1">#  update syspath</span>
+<a id="__codelineno-0-24" name="__codelineno-0-24"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">myutils</span><span class="w"> </span><span class="kn">import</span> <span class="n">set_syspath</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25"></a>    <span class="n">set_syspath</span><span class="p">(</span><span class="n">absolute_dependencies</span><span class="p">)</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26"></a>
+<a id="__codelineno-0-27" name="__codelineno-0-27"></a>    <span class="c1">#  return the config</span>
+<a id="__codelineno-0-28" name="__codelineno-0-28"></a>    <span class="k">return</span> <span class="n">config</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Comments</strong></p>
 <ul>
   <li>line 5: We retrieve the absolute path of the folder containing the script being executed, in this case the <b>[config.py] </b>script. This gives us the absolute path of the <b>[main] </b>folder. This is also the folder containing the main script <b>[main.py]</b>;
@@ -1427,44 +1452,76 @@
 </ul>
 
 <p>The main script <strong>[main.py]</strong> is as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"># configure the application</span>
-<span class="odt-code-line"><span style="color:#0000ff">import </span><span style="color:#6f008a">config</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#6f008a">config </span><span style="color:#000000">= </span><span style="color:#6f008a">config</span><span style="color:#000000">.configure()</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># The syspath is configured—we can now import modules</span>
-<span class="odt-code-line"><span style="color:#0000ff">from </span><span style="color:#6f008a">tax_module_01 </span><span style="color:#0000ff">import </span><span style="color:#000000">tax_calculation, record_results, get_taxpayers_data</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># Taxpayers file</span>
-<span class="odt-code-line"><span style="color:#000000">taxpayers_filename = </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;taxpayersFilename&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"># results file</span>
-<span class="odt-code-line"><span style="color:#000000">results_filename = </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;resultsFilename&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"># code</span>
-<span class="odt-code-line"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># read taxpayer data</span>
-<span class="odt-code-line">    taxpayers = get_taxpayers_data(taxpayers_filename)</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># list of results</span>
-<span class="odt-code-line"><span style="color:#000000">    results = </span><span style="font-weight:bold;color:#000000">[]</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># Calculate taxpayers&#x27; taxes</span>
-<span class="odt-code-line"><span style="color:#000000">    </span><span style="color:#0000ff">for </span><span style="color:#000000">taxpayer </span><span style="color:#0000ff">in </span><span style="color:#000000">taxpayers:</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># the tax calculation returns a dictionary of keys</span>
-<span class="odt-code-line"><span style="color:#000000">        </span># <span style="font-weight:bold">[&#x27;married&#x27;, &#x27;children&#x27;, &#x27;salary&#x27;, &#x27;tax&#x27;, &#x27;surcharge&#x27;, &#x27;rebate&#x27;, &#x27;deduction&#x27;, &#x27;rate&#x27;]</span></span>
-<span class="odt-code-line"><span style="color:#000000">        result = calculate_tax(taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;married&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;children&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;salary&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#000000">        </span># the dictionary is added to the list of results</span>
-<span class="odt-code-line">        results.append(result)</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># We save the results</span>
-<span class="odt-code-line">    save_results(results_filename, results)</span>
-<span class="odt-code-line"><span style="color:#0000ff">except </span><span style="color:#2b91af">BaseException </span><span style="color:#0000ff">as </span><span style="color:#000000">error:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    </span># There may be various errors: file not found, incorrect file content</span>
-<span class="odt-code-line"><span style="color:#000000">    </span># display the error and exit the application</span>
-<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;The following error occurred: {error}]\n&quot;</span><span style="color:#000000">)</span></span>
-<span class="odt-code-line"><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span>
-<span class="odt-code-line"><span style="color:#000000">    print(</span><span style="color:#a31515">&quot;Job completed...&quot;</span><span style="color:#000000">)</span></span>
-</code></pre></div>
-
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span>
+<span class="normal"><a href="#__codelineno-1-12">12</a></span>
+<span class="normal"><a href="#__codelineno-1-13">13</a></span>
+<span class="normal"><a href="#__codelineno-1-14">14</a></span>
+<span class="normal"><a href="#__codelineno-1-15">15</a></span>
+<span class="normal"><a href="#__codelineno-1-16">16</a></span>
+<span class="normal"><a href="#__codelineno-1-17">17</a></span>
+<span class="normal"><a href="#__codelineno-1-18">18</a></span>
+<span class="normal"><a href="#__codelineno-1-19">19</a></span>
+<span class="normal"><a href="#__codelineno-1-20">20</a></span>
+<span class="normal"><a href="#__codelineno-1-21">21</a></span>
+<span class="normal"><a href="#__codelineno-1-22">22</a></span>
+<span class="normal"><a href="#__codelineno-1-23">23</a></span>
+<span class="normal"><a href="#__codelineno-1-24">24</a></span>
+<span class="normal"><a href="#__codelineno-1-25">25</a></span>
+<span class="normal"><a href="#__codelineno-1-26">26</a></span>
+<span class="normal"><a href="#__codelineno-1-27">27</a></span>
+<span class="normal"><a href="#__codelineno-1-28">28</a></span>
+<span class="normal"><a href="#__codelineno-1-29">29</a></span>
+<span class="normal"><a href="#__codelineno-1-30">30</a></span>
+<span class="normal"><a href="#__codelineno-1-31">31</a></span>
+<span class="normal"><a href="#__codelineno-1-32">32</a></span>
+<span class="normal"><a href="#__codelineno-1-33">33</a></span>
+<span class="normal"><a href="#__codelineno-1-34">34</a></span>
+<span class="normal"><a href="#__codelineno-1-35">35</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="c1">#  configure the application</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">config</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="n">config</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="n">configure</span><span class="p">()</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="c1">#  syspath is configured - imports can be made</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="kn">from</span><span class="w"> </span><span class="nn">impôts_module_01</span><span class="w"> </span><span class="kn">import</span> <span class="n">calcul_impôt</span><span class="p">,</span> <span class="n">record_results</span><span class="p">,</span> <span class="n">get_taxpayers_data</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="c1">#  taxpayer file</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="n">taxpayers_filename</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;taxpayersFilename&#39;</span><span class="p">]</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="c1">#  results file</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="n">results_filename</span> <span class="o">=</span> <span class="n">config</span><span class="p">[</span><span class="s1">&#39;resultsFilename&#39;</span><span class="p">]</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13"></a>
+<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="c1">#  code</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="k">try</span><span class="p">:</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16"></a>
+<a id="__codelineno-1-17" name="__codelineno-1-17"></a>    <span class="c1">#  reading taxpayer data</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18"></a>    <span class="n">taxpayers</span> <span class="o">=</span> <span class="n">get_taxpayers_data</span><span class="p">(</span><span class="n">taxpayers_filename</span><span class="p">)</span>
+<a id="__codelineno-1-19" name="__codelineno-1-19"></a>    <span class="c1">#  results list</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20"></a>    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21"></a>    <span class="c1">#  taxpayers&#39; taxes are calculated</span>
+<a id="__codelineno-1-22" name="__codelineno-1-22"></a>    <span class="k">for</span> <span class="n">taxpayer</span> <span class="ow">in</span> <span class="n">taxpayers</span><span class="p">:</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23"></a>        <span class="c1">#  tax calculation returns a dictionary of keys</span>
+<a id="__codelineno-1-24" name="__codelineno-1-24"></a>        <span class="c1">#  [&#39;married&#39;, &#39;children&#39;, &#39;salary&#39;, &#39;tax&#39;, &#39;surcôte&#39;, &#39;décôte&#39;, &#39;réduction&#39;, &#39;taux&#39;]</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25"></a>        <span class="n">result</span> <span class="o">=</span> <span class="n">calcul_impôt</span><span class="p">(</span><span class="n">taxpayer</span><span class="p">[</span><span class="s1">&#39;marié&#39;</span><span class="p">],</span> <span class="n">taxpayer</span><span class="p">[</span><span class="s1">&#39;enfants&#39;</span><span class="p">],</span> <span class="n">taxpayer</span><span class="p">[</span><span class="s1">&#39;salaire&#39;</span><span class="p">])</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26"></a>        <span class="c1">#  the dictionary is added to the list of results</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27"></a>        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<a id="__codelineno-1-28" name="__codelineno-1-28"></a>    <span class="c1">#  we record the results</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29"></a>    <span class="n">record_results</span><span class="p">(</span><span class="n">results_filename</span><span class="p">,</span> <span class="n">results</span><span class="p">)</span>
+<a id="__codelineno-1-30" name="__codelineno-1-30"></a><span class="k">except</span> <span class="ne">BaseException</span> <span class="k">as</span> <span class="n">erreur</span><span class="p">:</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31"></a>    <span class="c1">#  there may be various errors: no file, incorrect file content</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32"></a>    <span class="c1">#  display the error and exit the application</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;L&#39;erreur suivante s&#39;est produite : </span><span class="si">{</span><span class="n">erreur</span><span class="si">}</span><span class="s2">]</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<a id="__codelineno-1-34" name="__codelineno-1-34"></a><span class="k">finally</span><span class="p">:</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Travail terminé...&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
 <p><strong>Comments</strong></p>
 <ul>
   <li>lines 1–4: the application is configured;
@@ -1478,9 +1535,9 @@
 </ul>
 
 <p>Version 1 did not work in a Python console. In the same console, version 2 produces the following results:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="p">(</span><span class="nx">venv</span><span class="p">)</span><span class="w"> </span><span class="nx">C</span><span class="o">:</span><span class="err">\</span><span class="nx">Data</span><span class="err">\</span><span class="nx">st</span><span class="o">-</span><span class="mf">2020</span><span class="err">\</span><span class="nx">dev</span><span class="err">\</span><span class="nx">python</span><span class="err">\</span><span class="nx">cours</span><span class="o">-</span><span class="mf">2020</span><span class="err">\</span><span class="nx">python3</span><span class="o">-</span><span class="nx">flask</span><span class="o">-</span><span class="mf">2020</span><span class="err">\</span><span class="nx">impots</span><span class="err">\</span><span class="nx">v02</span><span class="o">&gt;</span><span class="nx">python</span><span class="w"> </span><span class="nx">main</span><span class="o">/</span><span class="nx">main</span><span class="p">.</span><span class="nx">py</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nx">Work</span><span class="w"> </span><span class="nx">completed</span><span class="p">...</span>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>(venv) C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\v02&gt;python main/main.py
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>Travail terminé...
 </code></pre></div></td></tr></table></div>
 <p>No errors are encountered now.</p>
 
@@ -1518,8 +1575,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the

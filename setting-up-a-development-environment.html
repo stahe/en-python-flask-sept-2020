@@ -1494,9 +1494,9 @@
 <a id="python381"></a></p>
 <h2 id="21-python-381">2.1. <span style="color: #4f81bd">Python 3.8.1</span></h2>
 <p>The examples in this document have been tested with the Python 3.8.1 interpreter available at the URL |<a href="https://www.python.org/downloads/"><u><span style="color: #0563c1">https://www.python.org/downloads/</span></u></a>| (Feb 2020) on a Windows 10 machine:</p>
-<p><img src="images/1000000100000299000001B3AECCB8A3.png" style="width:10.162cm;height:6.646cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000299000001B3AECCB8A3.png" /></p>
+<p><img src="images/1000000100000299000001B3AECCB8A3.png" width="384" height="251" style="width:10.162cm;height:6.646cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000299000001B3AECCB8A3.png" /></p>
 <p>Installing Python creates the file directory <strong>[1]</strong> and the menu <strong>[2]</strong> in the list of programs:</p>
-<p><img src="images/1000000100000274000001F46906140F.png" style="width:10.65cm;height:8.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000274000001F46906140F.png" /></p>
+<p><img src="images/1000000100000274000001F46906140F.png" width="403" height="321" style="width:10.65cm;height:8.481cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000274000001F46906140F.png" /></p>
 <ul>
   <li><b>[3-4]</b>: two interactive Python interpreters;
   </li>
@@ -1507,17 +1507,17 @@
 </ul>
 
 <p>We will not be using the interactive Python interpreter. It is simply important to know that the scripts in this document could be run using this interpreter. While it is useful for testing how a Python feature works, it is not very practical for scripts that need to be reused. Here is an example using option <strong>[4]</strong> above:</p>
-<p><img src="images/10000001000002EE000000A7D46FABF9.png" style="width:12.51cm;height:2.785cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002EE000000A7D46FABF9.png" /></p>
+<p><img src="images/10000001000002EE000000A7D46FABF9.png" width="473" height="105" style="width:12.51cm;height:2.785cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002EE000000A7D46FABF9.png" /></p>
 <p>The &gt;&gt;&gt; prompt allows you to enter a Python statement that is executed immediately. The code typed above has the following meaning:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">name</span><span class="o">=</span><span class="s2">&quot;tintin&quot;</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;name=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">name</span><span class="p">)</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">name</span><span class="o">=</span><span class="n">tintin</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">nom</span><span class="o">=</span><span class="s2">&quot;tintin&quot;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;nom=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="n">nom</span><span class="p">)</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="n">nom</span><span class="o">=</span><span class="n">tintin</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;type=</span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="nb">type</span><span class="p">(</span><span class="n">nom</span><span class="p">))</span>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="nb">type</span><span class="o">=&lt;</span><span class="k">class</span><span class="w"> </span><span class="err">&#39;</span><span class="nc">str</span><span class="s1">&#39;&gt;</span>
 <a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="o">&gt;&gt;&gt;</span>
 </code></pre></div></td></tr></table></div>
@@ -1536,9 +1536,9 @@
 </ul>
 
 <p>Now, let’s open a Windows console:</p>
-<p><img src="images/10000001000002D7000000A7880C954D.png" style="width:12.501cm;height:2.872cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002D7000000A7880C954D.png" /></p>
+<p><img src="images/10000001000002D7000000A7880C954D.png" width="472" height="109" style="width:12.501cm;height:2.872cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002D7000000A7880C954D.png" /></p>
 <p>The fact that we were able to type <strong>[python]</strong> in <strong>[1]</strong> and that the executable <strong>[python.exe]</strong> was found shows that it is in the Windows machine’s PATH. This is important because it means that Python development tools will be able to find the Python interpreter. We can verify this as follows:</p>
-<p><img src="images/100000010000035C000001143AD8F4F2.png" style="width:14.589cm;height:4.681cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000035C000001143AD8F4F2.png" /></p>
+<p><img src="images/100000010000035C000001143AD8F4F2.png" width="551" height="177" style="width:14.589cm;height:4.681cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000035C000001143AD8F4F2.png" /></p>
 <ul>
   <li>in <b>[2]</b>, we exit the Python interpreter;
   </li>
@@ -1554,24 +1554,24 @@
 <p><a id="toc48548918"></a></p>
 <h3 id="221-introduction">2.2.1. <span style="color: #4f81bd">Introduction</span></h3>
 <p>To build and run the scripts in this document, we used the <strong>[PyCharm]</strong> Community Edition editor, available (Feb 2020) at the URL |https://www.jetbrains.com/fr-fr/pycharm/download/#section=windows|:</p>
-<p><img src="images/100000010000027A0000018C9A192739.png" style="width:11.83cm;height:7.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000027A0000018C9A192739.png" /></p>
+<p><img src="images/100000010000027A0000018C9A192739.png" width="447" height="279" style="width:11.83cm;height:7.391cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000027A0000018C9A192739.png" /></p>
 <p>Download the PyCharm Community IDE <strong>[1-3]</strong> and install it.</p>
 <p>Launch the PyCharm IDE and create your first Python project:</p>
-<p><img src="images/100000010000020F000001485D7AFCD6.png" style="width:10.659cm;height:6.636cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000020F000001485D7AFCD6.png" /></p>
-<p><img src="images/10000001000002DA000001C911AADD0A.png" style="width:15.011cm;height:9.396cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002DA000001C911AADD0A.png" /></p>
+<p><img src="images/100000010000020F000001485D7AFCD6.png" width="403" height="251" style="width:10.659cm;height:6.636cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000020F000001485D7AFCD6.png" /></p>
+<p><img src="images/10000001000002DA000001C911AADD0A.png" width="567" height="355" style="width:15.011cm;height:9.396cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002DA000001C911AADD0A.png" /></p>
 <ul>
   <li>In <b>[2-4]</b>, create a new project;
   </li>
 </ul>
 
 <p>The PyCharm IDE displays the created project as follows:</p>
-<p><img src="images/10000001000004270000010CBF0658ED.png" style="width:17.962cm;height:4.528cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000004270000010CBF0658ED.png" /></p>
+<p><img src="images/10000001000004270000010CBF0658ED.png" width="679" height="171" style="width:17.962cm;height:4.528cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000004270000010CBF0658ED.png" /></p>
 <ul>
   <li>In <b>[2-3]</b>, let’s examine the IDE’s properties;
   </li>
 </ul>
 
-<p><img src="images/100000010000042700000100A569C355.png" style="width:17.521cm;height:4.219cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000042700000100A569C355.png" /></p>
+<p><img src="images/100000010000042700000100A569C355.png" width="662" height="159" style="width:17.521cm;height:4.219cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000042700000100A569C355.png" /></p>
 <ul>
   <li>in <b>[4]</b>, the Python interpreter that will be used for the project;
   </li>
@@ -1581,7 +1581,7 @@
   </li>
 </ul>
 
-<p><img src="images/1000000100000395000002910038673B.png" style="width:15.46cm;height:11.077cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000395000002910038673B.png" /></p>
+<p><img src="images/1000000100000395000002910038673B.png" width="584" height="419" style="width:15.46cm;height:11.077cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000395000002910038673B.png" /></p>
 <ul>
   <li>in <b>[7]</b>, the selected interpreter;
   </li>
@@ -1590,7 +1590,7 @@
 </ul>
 
 <p>Let’s start by creating a folder where we’ll put our first Python script:</p>
-<p><img src="images/100000010000038D000000BC8604A6B5.png" style="width:15.482cm;height:3.201cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000038D000000BC8604A6B5.png" /></p>
+<p><img src="images/100000010000038D000000BC8604A6B5.png" width="585" height="121" style="width:15.482cm;height:3.201cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000038D000000BC8604A6B5.png" /></p>
 <ul>
   <li>Right-click on the project, then <b>[1-2] </b>to create a folder;
   </li>
@@ -1599,7 +1599,7 @@
 </ul>
 
 <p>Next, let’s create a Python script:</p>
-<p><img src="images/10000001000004270000011436FF10C9.png" style="width:17.53cm;height:4.553cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000004270000011436FF10C9.png" /></p>
+<p><img src="images/10000001000004270000011436FF10C9.png" width="663" height="172" style="width:17.53cm;height:4.553cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000004270000011436FF10C9.png" /></p>
 <ul>
   <li>Right-click on the <b>[bases] </b>folder, then <b>[1-3]</b>;
   </li>
@@ -1608,7 +1608,7 @@
 </ul>
 
 <p>Let’s write our first script:</p>
-<p><img src="images/10000001000004270000014DD7E62FF3.png" style="width:17.521cm;height:5.489cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000004270000014DD7E62FF3.png" /></p>
+<p><img src="images/10000001000004270000014DD7E62FF3.png" width="662" height="207" style="width:17.521cm;height:5.489cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000004270000014DD7E62FF3.png" /></p>
 <ul>
   <li>In <b>[3]</b>, we write the following script:
   </li>
@@ -1636,7 +1636,7 @@
 </ul>
 
 <p>The script is executed by right-clicking on the code <strong>[6]</strong>:</p>
-<p><img src="images/1000000100000427000001BEEEEA8F56.png" style="width:17.521cm;height:7.35cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000427000001BEEEEA8F56.png" /></p>
+<p><img src="images/1000000100000427000001BEEEEA8F56.png" width="662" height="278" style="width:17.521cm;height:7.35cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000427000001BEEEEA8F56.png" /></p>
 <ul>
   <li>in <b>[7]</b>, the executed command;
   </li>
@@ -1645,7 +1645,7 @@
 </ul>
 
 <p>To run the script in the document, download the code from the URL |<a href="https://tahe.developpez.com/tutoriels-cours/python-flask-2020/documents/python-flask-2020.rar"><u><span style="color: #0563c1">https://tahe.developpez.com/tutoriels-cours/python-flask-2020/documents/python-flask-2020.rar</span></u></a>| and then proceed as follows in PyCharm:</p>
-<p><img src="images/1000000100000427000002222EDEA730.png" style="width:17.53cm;height:9.005cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000427000002222EDEA730.png" /></p>
+<p><img src="images/1000000100000427000002222EDEA730.png" width="663" height="340" style="width:17.53cm;height:9.005cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000427000002222EDEA730.png" /></p>
 <ul>
   <li>in <b>[1-2]</b>, open an existing project: select the folder containing the downloaded code;
   </li>
@@ -1655,7 +1655,7 @@
   </li>
 </ul>
 
-<p><img src="images/10000001000003240000010A33CB37BF.png" style="width:13.839cm;height:4.579cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003240000010A33CB37BF.png" /></p>
+<p><img src="images/10000001000003240000010A33CB37BF.png" width="523" height="173" style="width:13.839cm;height:4.579cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003240000010A33CB37BF.png" /></p>
 <ul>
   <li>in <b>[7-8]</b>, the results of the execution;
   </li>
@@ -1664,7 +1664,7 @@
 <a id="environnementvirtueldexecution"></a></p>
 <h3 id="222-virtual-execution-environment">2.2.2. <span style="color: #4f81bd">Virtual Execution Environment</span></h3>
 <p>Our work environment is now up and running. However, we will modify it to write the scripts for this course. First, let’s change the PyCharm configuration:</p>
-<p><img src="images/1000000100000426000002452F6C4184.png" style="width:17.51cm;height:9.58cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000426000002452F6C4184.png" /></p>
+<p><img src="images/1000000100000426000002452F6C4184.png" width="662" height="362" style="width:17.51cm;height:9.58cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000426000002452F6C4184.png" /></p>
 <p>In the right-hand window:</p>
 <ul>
   <li>By default, box <b>[1] </b>is checked. Uncheck it so that PyCharm does not open the last project by default but lets us choose which one to open;
@@ -1678,7 +1678,7 @@
 </ul>
 
 <p>Now let’s close PyCharm and then reopen it:</p>
-<p><img src="images/1000000100000427000001E44ED38623.png" style="width:17.521cm;height:7.978cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000427000001E44ED38623.png" /></p>
+<p><img src="images/1000000100000427000001E44ED38623.png" width="662" height="302" style="width:17.521cm;height:7.978cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000427000001E44ED38623.png" /></p>
 <ul>
   <li>In <b>[1]</b>, create a new project;
   </li>
@@ -1694,7 +1694,7 @@
   </li>
 </ul>
 
-<p><img src="images/100000010000017C0000023AE122802B.png" style="width:7.682cm;height:11.522cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000017C0000023AE122802B.png" /></p>
+<p><img src="images/100000010000017C0000023AE122802B.png" width="290" height="435" style="width:7.682cm;height:11.522cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000017C0000023AE122802B.png" /></p>
 <ul>
   <li>in <b>[7-8]</b>, the created project;
   </li>
@@ -1706,11 +1706,11 @@
 <p><a id="toc48548920"></a></p>
 <h3 id="223-git">2.2.3. <span style="color: #4f81bd">Git</span></h3>
 <p>Next, we activate a version control system. Here, we’ll use Git <strong>[1-4]</strong>:</p>
-<p><img src="images/100000010000042800000143DEC3132E.png" style="width:17.962cm;height:5.452cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000042800000143DEC3132E.png" /></p>
+<p><img src="images/100000010000042800000143DEC3132E.png" width="679" height="206" style="width:17.962cm;height:5.452cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000042800000143DEC3132E.png" /></p>
 <p>A version control system (VCS) allows you to track changes to a project. You can take snapshots, through an operation called <strong>a commit</strong>, of the project at different points in its lifecycle. If you make two commits at times T and T+1, the VCS lets you see what has changed between the two committed versions . Normally, the VCS is used by a team of developers. They commit their code once it has been thoroughly tested. From the VCS, other developers can retrieve this validated code and use it.</p>
 <p>Here, there is only one developer. Experience shows that an application may work at time T but no longer work at time T+1. In that case, we would like to go back to time T to start over from scratch. The VCS allows for this, and that is why we will use it here.</p>
 <p>We’ll show you how to do this with Git.</p>
-<p><img src="images/1000000100000456000002148875885E.png" style="width:16.902cm;height:8.1cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000456000002148875885E.png" /></p>
+<p><img src="images/1000000100000456000002148875885E.png" width="639" height="306" style="width:16.902cm;height:8.1cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000456000002148875885E.png" /></p>
 <ul>
   <li>In <b>[1]</b>, select the <b>[Git] </b>tab (bottom left);
   </li>
@@ -1736,8 +1736,8 @@
   </li>
 </ul>
 
-<p><img src="images/10000001000003E900000154A8B6254D.png" style="width:16.431cm;height:5.581cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003E900000154A8B6254D.png" /></p>
-<p><img src="images/10000001000002FB000001A553182FB3.png" style="width:13.139cm;height:7.25cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002FB000001A553182FB3.png" /></p>
+<p><img src="images/10000001000003E900000154A8B6254D.png" width="621" height="211" style="width:16.431cm;height:5.581cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003E900000154A8B6254D.png" /></p>
+<p><img src="images/10000001000002FB000001A553182FB3.png" width="497" height="274" style="width:13.139cm;height:7.25cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002FB000001A553182FB3.png" /></p>
 <ul>
   <li>After the previous step, all files in the <b>[venv] </b>folder disappear from the list of unversioned files. Only the <b>[.gitignore] </b>file that was just created remains;
   </li>
@@ -1749,18 +1749,18 @@
   </li>
 </ul>
 
-<p><img src="images/10000001000001FE000000E30821F753.png" style="width:10.41cm;height:4.634cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001FE000000E30821F753.png" /></p>
+<p><img src="images/10000001000001FE000000E30821F753.png" width="393" height="175" style="width:10.41cm;height:4.634cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001FE000000E30821F753.png" /></p>
 <ul>
   <li>in <b>[8-9]</b>, the contents of the <b>[.gitignore] </b>file: a single line with the name of the <b>[/venv] </b>folder, indicating that its contents should be ignored in the snapshots;
   </li>
 </ul>
 
 <p>Now let’s see how Git can be useful. First, we create a <strong>[git]</strong> folder (you can use any other name—it can be deleted at the end of the demonstration):</p>
-<p><img src="images/10000001000003FC0000017BDA1981DD.png" style="width:17.51cm;height:6.507cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003FC0000017BDA1981DD.png" /></p>
+<p><img src="images/10000001000003FC0000017BDA1981DD.png" width="662" height="246" style="width:17.51cm;height:6.507cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003FC0000017BDA1981DD.png" /></p>
 <ul>
   <li>in <b>[1-5]</b>, we create a <b>[git] </b>folder;
 
-<img src="images/100000010000034B0000011FE08509EA.png" style="width:15.76cm;height:5.366cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000034B0000011FE08509EA.png" />
+<img src="images/100000010000034B0000011FE08509EA.png" width="596" height="203" style="width:15.76cm;height:5.366cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000034B0000011FE08509EA.png" />
 
 
   </li>
@@ -1771,7 +1771,7 @@
   </li>
 </ul>
 
-<p><img src="images/1000000100000219000000C45A0BDAD2.png" style="width:10.993cm;height:4.013cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000219000000C45A0BDAD2.png" /></p>
+<p><img src="images/1000000100000219000000C45A0BDAD2.png" width="415" height="152" style="width:10.993cm;height:4.013cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000219000000C45A0BDAD2.png" /></p>
 <ul>
   <li>in <b>[11-12]</b>, the script contains only a comment;
   </li>
@@ -1779,9 +1779,9 @@
   </li>
 </ul>
 
-<p><img src="images/10000001000002A70000013DE8FB7512.png" style="width:11.432cm;height:5.338cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002A70000013DE8FB7512.png" /></p>
+<p><img src="images/10000001000002A70000013DE8FB7512.png" width="432" height="202" style="width:11.432cm;height:5.338cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002A70000013DE8FB7512.png" /></p>
 <p>Now, let’s commit our project. A snapshot will be taken of the two files <strong>[git_01, git_02]</strong>;</p>
-<p><img src="images/10000001000003E9000001BCB5F0C707.png" style="width:17.521cm;height:7.772cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003E9000001BCB5F0C707.png" /></p>
+<p><img src="images/10000001000003E9000001BCB5F0C707.png" width="662" height="294" style="width:17.521cm;height:7.772cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003E9000001BCB5F0C707.png" /></p>
 <ul>
   <li>In <b>[1-3]</b>, commit the project;
   </li>
@@ -1793,7 +1793,7 @@
   </li>
 </ul>
 
-<p><img src="images/10000001000003E80000017A6827943E.png" style="width:16.439cm;height:6.214cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003E80000017A6827943E.png" /></p>
+<p><img src="images/10000001000003E80000017A6827943E.png" width="621" height="235" style="width:16.439cm;height:6.214cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003E80000017A6827943E.png" /></p>
 <ul>
   <li>in <b>[1-2]</b>, confirm the commit;
   </li>
@@ -1806,17 +1806,17 @@
 </ul>
 
 <p>Now let’s create a script <strong>[git_03]</strong> in the same way:</p>
-<p><img src="images/1000000100000263000000F075443EDD.png" style="width:10.522cm;height:4.133cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000263000000F075443EDD.png" /></p>
+<p><img src="images/1000000100000263000000F075443EDD.png" width="398" height="156" style="width:10.522cm;height:4.133cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000100000263000000F075443EDD.png" /></p>
 <p>Modify the <strong>[git_02]</strong> script and delete the <strong>[git_01]</strong> script:</p>
-<p><img src="images/10000001000001E9000000D84141DF23.png" style="width:9.97cm;height:4.404cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001E9000000D84141DF23.png" /></p>
+<p><img src="images/10000001000001E9000000D84141DF23.png" width="377" height="166" style="width:9.97cm;height:4.404cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000001E9000000D84141DF23.png" /></p>
 <p>Then commit the new version:</p>
-<p><img src="images/10000001000002C6000001D5972841EE.png" style="width:11.95cm;height:7.893cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002C6000001D5972841EE.png" /></p>
+<p><img src="images/10000001000002C6000001D5972841EE.png" width="452" height="298" style="width:11.95cm;height:7.893cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000002C6000001D5972841EE.png" /></p>
 <p>Now we have two commits in the logs:</p>
-<p><img src="images/100000010000020B000001415F885B7C.png" style="width:10.612cm;height:6.512cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000020B000001415F885B7C.png" /></p>
+<p><img src="images/100000010000020B000001415F885B7C.png" width="401" height="246" style="width:10.612cm;height:6.512cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000010000020B000001415F885B7C.png" /></p>
 <p>When you select a specific commit, the project’s file tree appears to its right:</p>
-<p><img src="images/10000001000003E8000000B7E62C425B.png" style="width:17.53cm;height:3.209cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003E8000000B7E62C425B.png" /></p>
+<p><img src="images/10000001000003E8000000B7E62C425B.png" width="663" height="121" style="width:17.53cm;height:3.209cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003E8000000B7E62C425B.png" /></p>
 <p>Now suppose that the last commit has led us to a dead end and we want to revert to a state corresponding to one of the previous commits:</p>
-<p><img src="images/10000001000003940000011BCE7271AA.png" style="width:15.452cm;height:4.775cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003940000011BCE7271AA.png" /></p>
+<p><img src="images/10000001000003940000011BCE7271AA.png" width="584" height="180" style="width:15.452cm;height:4.775cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003940000011BCE7271AA.png" /></p>
 <ul>
   <li>In <b>[1-2]</b>, select the commit to which you want to revert;
   </li>
@@ -1824,7 +1824,7 @@
   </li>
 </ul>
 
-<p><img src="images/10000001000003C9000001119BD9102A.png" style="width:16.452cm;height:4.636cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003C9000001119BD9102A.png" /></p>
+<p><img src="images/10000001000003C9000001119BD9102A.png" width="622" height="175" style="width:16.452cm;height:4.636cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000001000003C9000001119BD9102A.png" /></p>
 <ul>
   <li>in <b>[6]</b>, we have recovered <b>[git_01], </b>which had been deleted;
   </li>
@@ -1833,9 +1833,9 @@
 </ul>
 
 <p>Now, let’s modify <strong>[git_02]</strong> and add <strong>[git_03] [1-4]</strong>:</p>
-<p><img src="images/10000000000006160000015FBBA841D4.png" style="width:17.962cm;height:4.046cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006160000015FBBA841D4.png" /></p>
+<p><img src="images/10000000000006160000015FBBA841D4.png" width="679" height="153" style="width:17.962cm;height:4.046cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000006160000015FBBA841D4.png" /></p>
 <p>Now, let’s repeat the process of reverting to the initial commit:</p>
-<p><img src="images/10000000000005C50000024052E9D443.png" style="width:17.069cm;height:6.657cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005C50000024052E9D443.png" /></p>
+<p><img src="images/10000000000005C50000024052E9D443.png" width="645" height="252" style="width:17.069cm;height:6.657cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000005C50000024052E9D443.png" /></p>
 <ul>
   <li>in <b>[1-4]</b>, we return to the snapshot of commit #1;
   </li>
@@ -1843,7 +1843,7 @@
   </li>
 </ul>
 
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001910000017E89B0F891.png" style="display:inline-block; margin:4px;width:4.63cm;height:4.411cm;" class="odt-zoomable" data-zoom-src="images/10000000000001910000017E89B0F891.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000035600000170968442FB.png" style="display:inline-block; margin:4px;width:9.86cm;height:4.249cm;" class="odt-zoomable" data-zoom-src="images/100000000000035600000170968442FB.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000001910000017E89B0F891.png" width="175" height="167" style="display:inline-block; margin:4px;width:4.63cm;height:4.411cm;" class="odt-zoomable" data-zoom-src="images/10000000000001910000017E89B0F891.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/100000000000035600000170968442FB.png" width="373" height="161" style="display:inline-block; margin:4px;width:9.86cm;height:4.249cm;" class="odt-zoomable" data-zoom-src="images/100000000000035600000170968442FB.png" /></td></tr></table>
 
 <ul>
   <li>in <b>[1]</b>, the file <b>[git_03] </b>is still there;
@@ -1853,27 +1853,27 @@
 </ul>
 
 <p>It’s hard to tell what this <strong>[Revert Commit]</strong> did. Now let’s commit the current state:</p>
-<p><img src="images/100000000000059C00000227B1896679.png" style="width:16.589cm;height:6.366cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000059C00000227B1896679.png" /></p>
+<p><img src="images/100000000000059C00000227B1896679.png" width="627" height="241" style="width:16.589cm;height:6.366cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000059C00000227B1896679.png" /></p>
 <ul>
   <li>In <b>[1-6]</b>, the commit;
   </li>
 </ul>
 
-<p><img src="images/100000000000047400000277A180AD71.png" style="width:13.139cm;height:7.273cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000047400000277A180AD71.png" /></p>
+<p><img src="images/100000000000047400000277A180AD71.png" width="497" height="275" style="width:13.139cm;height:7.273cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000047400000277A180AD71.png" /></p>
 <ul>
   <li>in <b>[9]</b>, we see the new commit;
   </li>
 </ul>
 
 <p>Now, let&#x27;s try to go back to commit 1 as we did before:</p>
-<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002AB000002172EBAEC02.png" style="display:inline-block; margin:4px;width:7.879cm;height:6.172cm;" class="odt-zoomable" data-zoom-src="images/10000000000002AB000002172EBAEC02.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a id="hlk43380528"></a></div><img src="images/1000000000000239000001AD423E9C95.png" style="display:inline-block; margin:4px;width:6.579cm;height:4.962cm;" class="odt-zoomable" data-zoom-src="images/1000000000000239000001AD423E9C95.png" /></td></tr></table>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><img src="images/10000000000002AB000002172EBAEC02.png" width="298" height="233" style="display:inline-block; margin:4px;width:7.879cm;height:6.172cm;" class="odt-zoomable" data-zoom-src="images/10000000000002AB000002172EBAEC02.png" /></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top;"><div style="margin:0 0 0.5em 0"><a id="hlk43380528"></a></div><img src="images/1000000000000239000001AD423E9C95.png" width="249" height="188" style="display:inline-block; margin:4px;width:6.579cm;height:4.962cm;" class="odt-zoomable" data-zoom-src="images/1000000000000239000001AD423E9C95.png" /></td></tr></table>
 
 <ul>
   <li>in <b>[1-6]</b>, we revert to commit #1 in <b>[Hard] </b>mode;
   </li>
 </ul>
 
-<p><img src="images/1000000000000356000001836041012A.png" style="width:9.871cm;height:4.473cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000356000001836041012A.png" /></p>
+<p><img src="images/1000000000000356000001836041012A.png" width="373" height="169" style="width:9.871cm;height:4.473cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000356000001836041012A.png" /></p>
 <ul>
   <li>in <b>[7-8]</b>, this time we have indeed lost all changes made since the first commit;
   </li>
@@ -1891,7 +1891,7 @@
 <p><a id="toc48548921"></a></p>
 <h2 id="23-python-coding-conventions">2.3. <span style="color: #4f81bd">Python Coding Conventions</span></h2>
 <p>You can write Python code without following coding conventions, and it will still work. But it might not be appreciated by the Python community, which has established coding conventions. These are summarized in a post at |<a href="https://stackoverflow.com/questions/159720/what-is-the-naming-convention-in-python-for-variable-and-function-names"><u><span style="color: #0563c1">https://stackoverflow.com/questions/159720/what-is-the-naming-convention-in-python-for-variable-and-function-names</span></u></a>|:</p>
-<p><img src="images/1000000000000515000001427A8507CD.png" style="width:15.041cm;height:3.724cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000515000001427A8507CD.png" /></p>
+<p><img src="images/1000000000000515000001427A8507CD.png" width="568" height="141" style="width:15.041cm;height:3.724cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000515000001427A8507CD.png" /></p>
 <ul>
   <li>the name of a module (module_name) follows a convention sometimes called <b>[snake_case]</b>: all lowercase, with words separated by underscores if necessary. This <b>[snake_case] </b>convention applies to the names of methods, packages, variables, and functions;
   </li>
@@ -1937,8 +1937,8 @@
     <div class="md-footer-meta__inner">
 
       <div>
-        <a href="https://tahe.developpez.com" target="_blank">
-          https://tahe.developpez.com
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
         </a>
         <br>
         This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
