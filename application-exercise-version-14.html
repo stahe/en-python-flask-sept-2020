@@ -1,0 +1,2380 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="An Introduction to Python 3 and the Flask Web Framework Through Examples">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/en-python-flask-sept-2020/application-exercise-version-14.html">
+      
+      
+        <link rel="prev" href="application-exercise-version-13.html">
+      
+      
+        <link rel="next" href="application-exercise-version-15.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
+    
+    
+      
+        <title>34. Application Exercise: version 14 - An Introduction to Python 3 and the Flask Web Framework Through Examples</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.618322db.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "An Introduction to Python 3 and the Flask Web Framework Through Examples";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#34-application-exercise-version-14" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-header__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            An Introduction to Python 3 and the Flask Web Framework Through Examples
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              34. Application Exercise: version 14
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="An Introduction to Python 3 and the Flask Web Framework Through Examples" class="md-nav__button md-logo" aria-label="An Introduction to Python 3 and the Flask Web Framework Through Examples" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    An Introduction to Python 3 and the Flask Web Framework Through Examples
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/en-python-flask-sept-2020" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Welcome
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foreword.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Foreword
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="setting-up-a-development-environment.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Setting up a development environment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-basics-of-python.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. The Basics of Python
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="strings.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Strings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="exceptions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Exceptions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="text-files.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Text files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. Application Exercise – version 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="imports.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. Imports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-2.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. Practical Exercise: version 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Application Exercise: version 3
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="classes-and-objects.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Classes and Objects
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-generic-classes-baseentity-and-myexception.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. The generic classes [BaseEntity] and [MyException]
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="layered-architecture-and-interface-based-programming.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. Layered Architecture and Interface-Based Programming
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise---version-4.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. Application Exercise - version 4
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-sgbd-mysql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    16. Using SGBD MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-sgbd-postgresql.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    17. Using SGBD PostgreSQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="writing-sgbd-independent-code.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    18. Writing SGBD-independent code
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="using-orm-and-sqlalchemy.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    19. Using ORM and SQLALCHEMY
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-5.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    20. Application exercise: version 5
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="internet-functions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    21. Internet functions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-services-with-the-flask-framework.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    22. Web services with the Flask framework
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practice-exercise-version-6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    23. Practice Exercise: version 6
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-7.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    24. Application exercise: version 7
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="-application-exercise-version-8.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    25.  Application exercise: version 8
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="from-the-dictionary-to-xml-and-vice-versa.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    26. From the dictionary to XML and vice versa
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-9.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    27. Application Exercise: version 9
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-10.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    28. Application exercise: version 10
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-11.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    29. Application exercise: version 11
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    30. Practical Exercise: version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="clients-web-for-the-json-and-xml-services-of-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    31. Clients web for the jSON and XML services of version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="the-html-mode-of-version-12.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    32. The HTML mode of version 12
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-13.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    33. Application exercise: version 13
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Application Exercise: version 14
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="application-exercise-version-14.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    34. Application Exercise: version 14
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#341-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.1. Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#342-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.2. Configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#343-implementation-csrf" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.3. Implementation CSRF
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="34.3. Implementation CSRF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3431-the-flask_wtf-module" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.3.1. The [flask_wtf] module
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3432-view-models" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.3.2. View Models
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3433-the-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.3.3. The Views
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3434-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.3.4. Routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3435-the-maincontroller-controller" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.3.5. The [MainController] controller
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#344-tests-with-a-browser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.4. Tests with a browser
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#345-clients-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34.5. Clients console
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-15.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    35. Application exercise: version 15
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-16.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    36. Application Exercise: version 16
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="practical-exercise-version-17.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    37. Practical exercise: version 17
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="application-exercise-version-18-.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    38. Application Exercise: version 18 
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="conclusion.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    39. Conclusion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p><span id="exercicedapplication10" name="exercicedapplication10" class="odt-bookmark-anchor"></span>
+<span id="toc48549313" name="toc48549313" class="odt-bookmark-anchor"></span></p>
+<h1 id="34-application-exercise-version-14">34. <span style="color: #365f91"><strong>Application Exercise: version 14</strong></span></h1>
+<p>The <strong>[http-servers/09]</strong> file from version 14 is obtained by copying the <strong>[http-servers/08]</strong> file from version 13.</p>
+<p><span id="toc48549314" name="toc48549314" class="odt-bookmark-anchor"></span></p>
+<h2 id="341-introduction">34.1. <span style="color: #4f81bd">Introduction</span></h2>
+<p>CSRF (Cross-Site Request Forgery) is a session hijacking technique. It is explained as follows on Wikipedia (<a href="https://fr.wikipedia.org/wiki/Cross-site_request_forgery"><u><span style="color: #0563c1">https://fr.wikipedia.org/wiki/Cross-site_request_forgery</span></u></a>):</p>
+<div style="margin:0 0 0.75em 0; background-color:#fff2cc; padding:0.35em 0.6em">Suppose Alice is the administrator of a forum and is logged in to it via a session system. Malorie is a member of the same forum and wants to delete one of the forum posts. Since she does not have the necessary permissions with her account, she uses Alice’s account via a CSRF-type attack.</div>
+
+<ol>
+  <li><div style="margin:0; background-color:#fff2cc; padding:0.35em 0.6em">Malorie manages to find out the link that allows her to delete the message in question.</div>
+  </li>
+  <li><div style="margin:0; background-color:#fff2cc; padding:0.35em 0.6em">Malorie sends Alice a message containing a pseudo-image to display (which is actually a script). The URL in the image is the link to the script that deletes the desired message.</div>
+  </li>
+  <li><div style="margin:0; background-color:#fff2cc; padding:0.35em 0.6em">Alice must have an open session in her browser for the site targeted by Malorie. This is a prerequisite for the attack to succeed silently without triggering an authentication request that would alert Alice. This session must have the necessary permissions to execute Malorie’s destructive request. It is not necessary for a browser tab to be open on the target site, nor even for the browser to be running. It is sufficient for the session to be active.</div>
+  </li>
+  <li><div style="margin:0; background-color:#fff2cc; padding:0.35em 0.6em">Alice reads Malorie’s message; her browser uses Alice’s open session and does not request interactive authentication. It attempts to retrieve the image’s content. In doing so, the browser triggers the link and deletes the message, retrieving a text-based web page as the image’s content. Since it doesn’t recognize the associated image type, it doesn’t display an image, and Alice doesn’t realize that Malorie has just made her delete a message against her will.</div>
+  </li>
+</ol>
+
+<p>Even explained this way, the CSRF technique is  difficult to understand. Let’s draw a diagram:</p>
+<p><img src="images/10000000000003E50000024D46F14920.png" width="435" height="257" style="width:11.501cm;height:6.795cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003E50000024D46F14920.png" /></p>
+<ul>
+  <li>In <b>[1-2]</b>, Alice communicates with the forum (Site A). This forum maintains a session for each user. Alice’s browser stores this session cookie locally and sends it back every time it makes a new request to Site A;
+  </li>
+  <li>In <b>[3]</b>, Malorie sends a message to Alice. Alice reads it using her browser. The message is in the format HTML and contains a link to an image on Site B. In fact, this link is a link to a script Javascript that executes once it reaches Alice’s browser;
+  </li>
+  <li>this Javascript script then sends a request to site A. Alice’s browser automatically sends the request along with the locally stored session cookie. This is where the attack occurs: Malorie has successfully queried site A using Alice’s session credentials. After that, regardless of what happens, the attack has taken place;
+  </li>
+</ul>
+
+<p>To counter this type of attack, Site A can proceed as follows:</p>
+<ul>
+  <li>With each exchange <b>[1-2] </b>with Alice, Site A sends a key, hereafter referred to as token CSRF, which Alice must return in her next request. Thus, with each request, Alice must send two pieces of information:
+    <ul>
+      <li>the session cookie;
+      </li>
+      <li>the token CSRF received in the response to her last request to Site A;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The security measure is as follows: while the browser automatically sends the session cookie back to Site A, it does not do so for the token CSRF. For this reason, the exchange between requests 6 and 7 performed by the attack script will be rejected because request 6 will not have sent the token CSRF;</p>
+<p>Site A can send Alice the token CSRF in various ways for an application HTML:</p>
+<ol>
+  <li>it can send a page HTML with every request, where all links will contain the token CSRF, for example <b>[http://siteA/chemin/csrf_token]</b>. On the next request, when Alice clicks on one of these links, Site A will simply need to retrieve the token CSRF from the URL in the request and verify that it is correct. This is what will be done here;
+  </li>
+  <li>for pages containing a form, <b>it</b> can send the form with a hidden field containing the token. This token will then be automatically submitted with the form when Alice submits the page. Site A will retrieve the token CSRF in the body of the request;
+  </li>
+  <li>other techniques are possible;
+  </li>
+</ol>
+<p><span id="toc48549315" name="toc48549315" class="odt-bookmark-anchor"></span></p>
+<h2 id="342-configuration">34.2. <span style="color: #4f81bd">Configuration</span></h2>
+<p><img src="images/1000000000000127000000E642E6C9B2.png" width="129" height="100" style="width:3.41cm;height:2.658cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000127000000E642E6C9B2.png" /></p>
+<p>We add two booleans to the application&#x27;s <strong>[parameters]</strong> configuration:</p>
+<ul>
+  <li><b>[with_redissession]</b>: When set to True, the application uses a Redis session. When set to False, the application uses a standard Flask session;
+  </li>
+  <li><b>[with_csrftoken]</b>: When set to True, the application’s URL contain a CSRF token;
+  </li>
+</ul>
+
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># thread pause time in seconds</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#a31515">&quot;sleep_time&quot;</span><span style="color:#000000">: </span><span style="color:#098658">0</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># redis server</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#a31515">&quot;with_redissession&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">True</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#a31515">&quot;redis&quot;</span><span style="color:#000000">: {</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#a31515">&quot;host&quot;</span><span style="color:#000000">: </span><span style="color:#a31515">&quot;127.0.0.1&quot;</span><span style="color:#000000">,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#a31515">&quot;port&quot;</span><span style="color:#000000">: </span><span style="color:#098658">6379</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># token csrf</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#a31515">&quot;with_csrftoken&quot;</span><span style="color:#000000">: </span><span style="color:#0000ff">False</span><span style="color:#000000">,</span></span></span>
+</code></pre></div>
+
+<p><span id="toc48549316" name="toc48549316" class="odt-bookmark-anchor"></span></p>
+<h2 id="343-implementation-csrf">34.3. <span style="color: #4f81bd">Implementation CSRF</span></h2>
+<p>We will ensure that when:</p>
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold">&#x27;parameters&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+</code></pre></div>
+
+<p>is set to <strong>[True]</strong>, the application sends web pages to the client browser whose links will contain a CSRF token.</p>
+<p><span id="toc48549317" name="toc48549317" class="odt-bookmark-anchor"></span></p>
+<h3 id="3431-the-flask_wtf-module">34.3.1. <span style="color: #4f81bd"><strong>The</strong> [flask_wtf] <strong>module</strong></span></h3>
+<p>The implementation of the CSRF token will be done using the <strong>[flask_wtf]</strong> module, which we install in a PyCharm terminal:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content">(venv) C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\packages&gt;<span style="background-color:#fff2cc">pip install flask_wtf</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Collecting flask_wtf</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+</code></pre></div>
+
+<p><span id="toc48549318" name="toc48549318" class="odt-bookmark-anchor"></span></p>
+<h3 id="3432-view-models">34.3.2. <span style="color: #4f81bd">View Models</span></h3>
+<p>We are introducing a new class in the models:</p>
+<p><img src="images/10000000000001D4000001CE1812B1F9.png" width="205" height="202" style="width:5.412cm;height:5.343cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000001D4000001CE1812B1F9.png" /></p>
+<p>The <strong>[AbstractBaseModelForView]</strong> class is as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> abc <span style="color:#0000ff">import</span> abstractmethod</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> flask <span style="color:#0000ff">import</span> Request</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> flask_wtf.csrf <span style="color:#0000ff">import</span> generate_csrf</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> werkzeug.local <span style="color:#0000ff">import</span> LocalProxy</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span> InterfaceModelForView <span style="color:#0000ff">import</span> InterfaceModelForView</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> AbstractBaseModelForView(<span style="background-color:#fff2cc">InterfaceModelForView</span>):</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    @abstractmethod</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> <span style="background-color:#fff2cc">get_model_for_view</span>(self, request: Request, session: LocalProxy, config: dict, résultat: dict) -&gt; dict:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">pass</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> <span style="background-color:#fff2cc">get_csrftoken</span>(self, config: dict):</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># csrf_token</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">if</span> config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold">]</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">return</span> <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;/</span>{generate_csrf()}<span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">else</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">return</span> <span style="color:#a31515">&quot;&quot;</span></span></span>
+</code></pre></div>
+
+<ol>
+  <li>line 9: the class <b>[AbstractBaseModelForView] </b>implements the interface <b>[InterfaceModelForView] </b>implemented by the model classes;
+  </li>
+  <li>lines 11–13: the <b>[get_model_for_view]</b> method is not implemented;
+  </li>
+  <li>lines 15–20: the <b>[get_csrftoken]</b> method generates the CSRF token if the application has been configured to use them. Depending on the case, the function returns a token preceded by a /, otherwise an empty string. The <b>[generate_csrf]</b> function has the particularity of always generating the same value for a given client request. Processing a request involves executing various functions. Using <b>[generate_csrf] </b>in these functions always generates the same value. On the next request, however, a new token CSRF is generated;
+  </li>
+</ol>
+
+<p>All M models for view V will include the token CSRF as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-java">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> ModelForAuthentificationView(<span style="background-color:#fff2cc">AbstractBaseModelForView</span>):</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> get_model_for_view(self, request: Request, session: LocalProxy, config: dict, résultat: dict) -&gt; dict:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># we encapsulate the paged data in the model</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        modèle = {}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000">…</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># csrf token</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        modèle[&#x27;csrf_token&#x27;] = super().get_csrftoken(config)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># we render the model</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> modèle</span></span>
+</code></pre></div>
+
+<ol>
+  <li>Each model class extends the base class <b>[AbstractBaseModelForView]</b>;
+  </li>
+  <li>line 8: the token CSRF is requested from the parent class. We get either an empty string or a string like <b>[/Ijk4NjQ2ZDdjZjI0ZDJiYTVjZTZjYmFhZGNjMjE3Y2U5M2I3ODI0NzYi.Xy5Okg.n-kSR_nslkndfT7AFVy2UDtdb8c]</b>;
+  </li>
+</ol>
+
+<p><span id="toc48549319" name="toc48549319" class="odt-bookmark-anchor"></span></p>
+<h3 id="3433-the-views">34.3.3. <span style="color: #4f81bd"><strong>The Views</strong></span></h3>
+<p>From what we’ve just seen, all V views will have the token CSRF in their M model. They can therefore use it in the links they contain. Let’s look at a few examples:</p>
+<p><u><strong>The authentication fragment</strong> </u><strong>[v_authentification.html]</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- form HTML - post its values with the [authenticate-user] action --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;form</span><span style="color:#000000"> </span><span style="color:#ff0000">method</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;post&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">action</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;/authentifier-utilisateur</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.csrf_token}}</span><span style="color:#0000ff">&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;!-- title --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800000">&lt;div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;alert alert-primary&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">role</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800000">&lt;h4&gt;</span><span style="color:#000000">Veuillez vous authentifier</span><span style="color:#800000">&lt;/h4&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/form&gt;</span></span>
+</code></pre></div>
+
+<ol>
+  <li>line 2: based on what we just saw, the URL for the <b>[action]</b> attribute will be:
+  </li>
+</ol>
+
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;color:#0000ff">/authentifier-utilisateur</span><span style="font-weight:bold;color:#ff0000">/</span><span style="font-weight:bold">Ijk4NjQ2ZDdjZjI0ZDJiYTVjZTZjYmFhZGNjMjE3Y2U5M2I3ODI0NzYi.Xy5Okg.n-kSR_nslkndfT7AFVy2UDtdb8c]</span></span></span>
+</code></pre></div>
+
+<p>or</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[/authentifier-utilisateur]
+</code></pre></div>
+<p>depending on whether the application has been configured to use CSRF tokens;</p>
+<p><u><strong>The tax calculation fragment</strong> </u><strong>[v-calcul-impot.html]</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- form HTML posted --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;form</span><span style="color:#000000"> </span><span style="color:#ff0000">method</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;post&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">action</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;/calculer-impot</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.csrf_token}}</span><span style="color:#0000ff">&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;!-- 12-column message on blue background --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800000">&lt;div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;col-md-12&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800000">&lt;div</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;alert alert-primary&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">role</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#800000">&lt;h4&gt;</span><span style="color:#000000">Remplissez le formulaire ci-dessous puis validez-le</span><span style="color:#800000">&lt;/h4&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#800000">&lt;/div&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800000">&lt;/div&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/form&gt;</span></span>
+</code></pre></div>
+
+<p><u><strong>The simulation fragment</strong> </u><strong>[v-liste-simulations.html]</strong></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">{% if modèle.simulations is undefined or modèle.simulations|length==0 %}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- message on blue background --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;div</span> <span style="color:#ff0000">class</span>=<span style="color:#0000ff">&quot;alert alert-primary&quot;</span> <span style="color:#ff0000">role</span>=<span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;h4&gt;</span>Votre liste de simulations est vide<span style="color:#800000">&lt;/h4&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/div&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{% endif %}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{% if modèle.simulations is defined and modèle.simulations|length!=0 %}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- message on blue background --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;div</span> <span style="color:#ff0000">class</span>=<span style="color:#0000ff">&quot;alert alert-primary&quot;</span> <span style="color:#ff0000">role</span>=<span style="color:#0000ff">&quot;alert&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;h4&gt;</span>Liste de vos simulations<span style="color:#800000">&lt;/h4&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/div&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- simulation table --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;table</span> <span style="color:#ff0000">class</span>=<span style="color:#0000ff">&quot;table table-sm table-hover table-striped&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">…</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- table body (data displayed) --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;tbody&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- display each simulation by browsing the simulation table --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {% for simulation in modèle.simulations %}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- display a table row with 6 columns - &lt;tr&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 1: row header (simulation no.) - &lt;th scope=&#x27;row&#x27; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 2: parameter value [married] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 3: parameter value [children] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 4: parameter value [salary] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 5: [tax] parameter value - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 6: parameter value [surcôte] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 7: parameter value [discount] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 8: parameter value [reduction] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 9: parameter value [rate] (of tax) - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 10: link to delete simulation - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;tr&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;th</span> <span style="color:#ff0000">scope</span>=<span style="color:#0000ff">&quot;row&quot;</span><span style="color:#800000">&gt;</span>{{simulation.id}}<span style="color:#800000">&lt;/th&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.marié}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.enfants}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.salaire}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.impôt}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.surcôte}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.décôte}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.réduction}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;</span>{{simulation.taux}}<span style="color:#800000">&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;td&gt;&lt;a</span> <span style="color:#ff0000">href</span>=<span style="color:#0000ff">&quot;/supprimer-simulation/{{simulation.id}}</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.csrf_token}}</span><span style="color:#0000ff">&quot;</span><span style="color:#800000">&gt;</span>Supprimer<span style="color:#800000">&lt;/a&gt;&lt;/td&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;/tr&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {% endfor %}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;/tr&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;/tbody&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/table&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{% endif %}</span></span>
+</code></pre></div>
+
+<p><u><strong>The</strong> </u><strong>[v-menu.html]</strong> <u><strong>menu fragment</strong></u></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- bootstrap menu --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;nav</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;nav flex-column&quot;</span><span style="color:#800000">&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;!-- display a list of links HTML --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {% for optionMenu in modèle.optionsMenu %}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#800000">&lt;a</span><span style="color:#000000"> </span><span style="color:#ff0000">class</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;nav-link&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">href</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;{{optionMenu.url}}</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.csrf_token}}</span><span style="color:#0000ff">&quot;</span><span style="color:#800000">&gt;</span><span style="color:#000000">{{optionMenu.text}}</span><span style="color:#800000">&lt;/a&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    {% endfor %}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;/nav&gt;</span></span>
+</code></pre></div>
+
+<p><span id="toc48549320" name="toc48549320" class="odt-bookmark-anchor"></span></p>
+<h3 id="3434-routes">34.3.4. <span style="color: #4f81bd">Routes</span></h3>
+<p>There are now two types of routes, depending on whether or not they use a token CSRF:</p>
+<p><img src="images/100000000000018F00000106A63E3323.png" width="174" height="114" style="width:4.613cm;height:3.029cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000018F00000106A63E3323.png" /></p>
+<ul>
+  <li><b>[routes_without_csrftoken] </b>are routes without a CSRF token. These are the routes from the previous version;
+  </li>
+  <li><b>[routes_with_csrftoken] </b>are the routes with the CSRF token.
+  </li>
+</ul>
+
+<p>In <strong>[routes_with_csrftoken]</strong>, the routes now have an additional parameter, the CSRF token:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># the front controller</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> front_controller() -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># forward the request to the main controller</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    main_controller = config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;controllers&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;main-controller&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> main_controller.execute(request, session, config)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> index() -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># redirect to /init-session/html</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> redirect(url_for(</span><span style="color:#a31515">&quot;init_session&quot;</span><span style="color:#000000">, type_response=</span><span style="color:#a31515">&quot;html&quot;</span><span style="color:#000000">, </span><span style="background-color:#fff2cc;color:#000000">csrf_token=generate_csrf()</span><span style="color:#000000">), status.HTTP_302_FOUND)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># init-session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/init-session/&lt;string:type_response</span><span style="background-color:#fff2cc;color:#a31515">&gt;/&lt;string:csrf_token&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> init_session(type_response: str, </span><span style="background-color:#fff2cc;color:#000000">csrf_token: str</span><span style="color:#000000">) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># authenticate-user</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/authentifier-utilisateur</span><span style="background-color:#fff2cc;color:#a31515">/&lt;string:csrf_token&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;POST&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> authentifier_utilisateur(</span><span style="background-color:#fff2cc;color:#000000">csrf_token: str</span><span style="color:#000000">) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># calculate-tax</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/calculer-impot</span><span style="background-color:#fff2cc;color:#a31515">/&lt;string:csrf_token&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;POST&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> calculer_impot(</span><span style="background-color:#fff2cc;color:#000000">csrf_token: str</span><span style="color:#000000">) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># batch tax calculation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/calculer-impots/</span><span style="background-color:#fff2cc;color:#a31515">&lt;string:csrf_token&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;POST&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> calculer_impots(</span><span style="background-color:#fff2cc;color:#000000">csrf_token: str</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># lister-simulations</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/lister-simulations</span><span style="background-color:#fff2cc;color:#a31515">/&lt;string:csrf_token&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> lister_simulations(</span><span style="background-color:#fff2cc;color:#000000">csrf_token: str</span><span style="color:#000000">) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># delete-simulation</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/supprimer-simulation/&lt;int:numero</span><span style="background-color:#fff2cc;color:#a31515">&gt;/&lt;string:csrf_token&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> supprimer_simulation(numero: int, </span><span style="background-color:#fff2cc;color:#000000">csrf_token: str</span><span style="color:#000000">) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># end of session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/fin-session</span><span style="background-color:#fff2cc;color:#a31515">/&lt;string:csrf_token&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> fin_session(</span><span style="background-color:#fff2cc;color:#000000">csrf_token: str</span><span style="color:#000000">) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># display-calculation-tax</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/afficher-calcul-impot</span><span style="background-color:#fff2cc;color:#a31515">/&lt;string:csrf_token&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> afficher_calcul_impot(</span><span style="background-color:#fff2cc;color:#000000">csrf_token: str</span><span style="color:#000000">) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># get-admindata</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/get-admindata</span><span style="background-color:#fff2cc;color:#a31515">/&lt;string:csrf_token&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> get_admindata(</span><span style="background-color:#fff2cc;color:#000000">csrf_token: str</span><span style="color:#000000">) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+</code></pre></div>
+
+<p>All routes now have the token CSRF in their parameters, even the route <strong>[/init-session]</strong>. This means that the client cannot launch the application by directly typing URL <strong>[/init-session/html]</strong> because the token CSRF will be missing. They must now go through the URL and <strong>[/]</strong> in lines 7–10.</p>
+<p>The route selection is made in the main script <strong>[main]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># the main thread no longer needs the logger</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">logger.close()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># if there has been an error, we stop</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">if</span><span style="color:#000000"> erreur:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    sys.exit(</span><span style="color:#098658">2</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># import routes from web application</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">if</span><span style="color:#000000"> config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">import</span><span style="color:#000000"> routes_with_csrftoken </span><span style="color:#0000ff">as</span><span style="color:#000000"> routes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">import</span><span style="color:#000000"> routes_without_csrftoken </span><span style="color:#0000ff">as</span><span style="color:#000000"> routes</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># route configuration</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">routes.config = config</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># start Flask application</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">routes.execute(__name__)</span></span>
+</code></pre></div>
+
+<ul>
+  <li>lines 9–13: route selection depending on whether the application uses CSRF tokens;
+  </li>
+</ul>
+<p><span id="toc48549321" name="toc48549321" class="odt-bookmark-anchor"></span></p>
+<h3 id="3435-the-maincontroller-controller">34.3.5. <span style="color: #4f81bd"><strong>The</strong> [MainController] <strong>controller</strong></span></h3>
+<p>For each request, the server must verify the presence of the token CSRF. We will do this in the main controller <strong>[MainController],</strong> which handles all requests:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#0000ff">from</span><span style="background-color:#fff2cc"> flask_wtf.csrf </span><span style="background-color:#fff2cc;color:#0000ff">import</span><span style="background-color:#fff2cc"> generate_csrf, validate_csrf</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">       # we process the request</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">try</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            # logger</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            logger = Logger(config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;parameters&#x27;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&#x27;logsFilename&#x27;</span><span style="font-weight:bold">]</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            …</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            # retrieve elements from path</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            params = request.path.split(<span style="color:#a31515">&#x27;/&#x27;</span>)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            # action is the 1st element</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            action = params<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#098658">1</span><span style="font-weight:bold">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            …</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="background-color:#fff2cc;color:#000000">config</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">[</span><span style="font-weight:bold;background-color:#fff2cc">&#x27;parameters&#x27;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">][</span><span style="font-weight:bold;background-color:#fff2cc">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">]</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span># the csrf_token is the last element of the path</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                csrf_token = params.pop()</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span># check token validity</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span># an exception will be thrown if the csrf_token is not the expected one</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="background-color:#fff2cc">validate_csrf</span>(csrf_token)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            …</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">except</span> <span style="background-color:#fff2cc">ValidationError</span> <span style="color:#0000ff">as</span> exception:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            # csrf token invalid</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            résultat = {<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;état&quot;</span>: <span style="color:#098658">121</span>, <span style="color:#a31515">&quot;réponse&quot;</span>: <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{exception}</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">]</span>}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            status_code = status.HTTP_400_BAD_REQUEST</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">except</span> BaseException <span style="color:#0000ff">as</span> exception:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            # other (unexpected) exceptions</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            résultat = {<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;état&quot;</span>: <span style="color:#098658">131</span>, <span style="color:#a31515">&quot;réponse&quot;</span>: <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{exception}</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">]</span>}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            status_code = status.HTTP_400_BAD_REQUEST</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">finally</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">pass</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # add the csrf_token to the result</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="background-color:#fff2cc">résultat</span><span style="font-weight:bold;background-color:#fff2cc">[</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;csrf_token&#x27;</span><span style="font-weight:bold;background-color:#fff2cc">]</span><span style="background-color:#fff2cc"> = generate_csrf()</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        # we log the result sent to the customer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        log = <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[MainController]</span><span style="color:#a31515"> </span>{résultat}\n<span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        logger.write(log)</span></span>
+</code></pre></div>
+
+<ol>
+  <li>Line 20: The token CSRF is retrieved from the URL in the <b>[http://machine :port/chemin/action/param1/param2/…/csrf_token]</b> request. The session token is always the last element of the URL;
+  </li>
+  <li>line 23: the validity of the CSRF token retrieved from the URL is verified against the CSRF token from the session. If it is invalid, the <b>[validate_csrf]</b> function throws a <b>[ValidationError]</b> exception (line 27);
+  </li>
+  <li>line 41: the token CSRF is placed in the result sent to the client. The clients, jSON, and XML will need it. In fact, these clients do not receive HTML pages with the CSRF token in the links contained within the pages. They will therefore receive it in the jSON or XML result sent by the server;
+  </li>
+</ol>
+
+<p><strong>Note</strong>: The <strong>[validate_csrf]</strong> function on line 23 does not check for an exact match. The token CSRF is stored in the session with the key <strong>[csrf_token]</strong>. Tests seem to show that a token CSRF is valid if it was generated during the session. Thus, if manually, in the URL displayed in the browser, for example (/lister-simulations/xyz), you replace the token <strong>[xyz]</strong> CSRF with another token <strong>[abc]</strong> already received during a previous action, the action <strong>[/lister-simulations]</strong> will succeed;</p>
+<p><span id="toc48549322" name="toc48549322" class="odt-bookmark-anchor"></span></p>
+<h2 id="344-tests-with-a-browser">34.4. <span style="color: #4f81bd">Tests with a browser</span></h2>
+<p>On:</p>
+<ul>
+  <li>start the server with the parameter <b>[with_csrftoken] </b>set to <b>[True]</b>;
+  </li>
+  <li>request the URL <b>[http://localhost:5000] </b>using a browser;
+  </li>
+</ul>
+
+<p><img src="images/10000000000004710000029076ACA4C7.png" width="497" height="287" style="width:13.139cm;height:7.581cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000004710000029076ACA4C7.png" /></p>
+<ol>
+  <li>in <b>[1]</b>, the token CSRF;
+  </li>
+</ol>
+
+<p>Let’s perform some operations until we have a list of simulations:</p>
+<p><img src="images/100000000000058E00000254BCAB1B42.png" width="621" height="260" style="width:16.431cm;height:6.886cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058E00000254BCAB1B42.png" /></p>
+<p>Now, let’s manually enter URL <strong>[http://localhost:5000/supprimer-simulation/1/x]</strong> to delete the simulation of id=1. We intentionally enter an incorrect token, CSRF, to see what happens. The server’s response is as follows:</p>
+<p><img src="images/100000000000058E0000021B39C49A61.png" width="620" height="235" style="width:16.409cm;height:6.219cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000058E0000021B39C49A61.png" /></p>
+<p><strong>Note 1</strong>: It is not certain that the method used here is always sufficient to counter CSRF attacks. Let’s return to the attack diagram:</p>
+<p><img src="images/10000000000003E50000024D46F14920.png" width="435" height="257" style="width:11.501cm;height:6.795cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003E50000024D46F14920.png" /></p>
+<p>If the Javascript script downloaded as <strong>[5]</strong> is capable of reading the browser history used by Alice, it will be able to retrieve the URL files executed by the browser, such as URL and <strong>[/cible/csrf_token]</strong>. It can then retrieve the session token <strong>[csrf_token]</strong> and carry out its attack in <strong>[6-7]</strong>. However, the browser only allows the history of the browser window in which the script is running to be exploited. Therefore, if Alice does not use the same window to interact with site A (<strong>[1-2])</strong> and read Malorie’s message (<strong>[3]</strong>), the attack (CSRF) will not be possible.</p>
+<p><span id="toc48549323" name="toc48549323" class="odt-bookmark-anchor"></span></p>
+<h2 id="345-clients-console">34.5. <span style="color: #4f81bd">Clients console</span></h2>
+<p>Another way to test the application’s version 14 is to reuse the tests from version 12 and adapt them to the new server.</p>
+<p><img src="images/10000000000000E4000000E6E2289AB8.png" width="99" height="100" style="width:2.632cm;height:2.655cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000000E4000000E6E2289AB8.png" /></p>
+<p>The <strong>[impots/http-clients/09]</strong> folder is initially created by copying the <strong>[impots/http-clients/07]</strong> folder. It is then modified.</p>
+<p>Let’s return to the routes that initialize a session:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># application root</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> index() -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># redirect to /init-session/html</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> redirect(url_for(</span><span style="color:#a31515">&quot;init_session&quot;</span><span style="color:#000000">, type_response=</span><span style="color:#a31515">&quot;html&quot;</span><span style="color:#000000">, csrf_token=generate_csrf()), status.HTTP_302_FOUND)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># init-session-with-csrf-token</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/init-session/&lt;string:type_response&gt;/&lt;string:csrf_token&gt;&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> init_session(type_response: str, csrf_token: str) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># execute the controller associated with the action</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> front_controller()</span></span></span>
+</code></pre></div>
+
+<p>None of these routes are suitable for initializing a jSON or XML session:</p>
+<ol>
+  <li>lines 2–5: The route <b>[/] </b>initializes a session HTML;
+  </li>
+  <li>lines 8–11: the route <b>[/init-session] </b>requires a token CSRF that we do not know;
+  </li>
+</ol>
+
+<p>We decide to add a new route to the server:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># init-session-without-csrftoken</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;</span><span style="background-color:#fff2cc;color:#a31515">/init-session-without-csrftoken/&lt;string:type_response&gt;</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> init_session_without_csrftoken(type_response: str) -&gt; tuple:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># redirect to /init-session/type_response</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="background-color:#fff2cc;color:#000000">redirect</span><span style="color:#000000">(url_for(</span><span style="color:#a31515">&quot;init_session&quot;</span><span style="color:#000000">, type_response=type_response, </span><span style="background-color:#fff2cc;color:#000000">csrf_token=generate_csrf()</span><span style="color:#000000">), status.HTTP_302_FOUND)</span></span></span>
+</code></pre></div>
+
+<ol>
+  <li>line 2: the new route. It does not expect a CSRF token. We have thus returned to the <b>[/init-session]</b> route from the previous version;
+  </li>
+  <li>lines 4–5: the client is redirected (jSON, XML, HTML) to the route <b>[/init-session], </b>which has the token CSRF in its parameters;
+  </li>
+</ol>
+
+<p>You can test this new route using a browser:</p>
+<p><img src="images/10000000000003CF000000A47ACF6ACC.png" width="426" height="72" style="width:11.269cm;height:1.896cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/10000000000003CF000000A47ACF6ACC.png" /></p>
+<p>The server&#x27;s response (configured with <strong>[with_csrftoken=True]</strong>) is as follows:</p>
+<p><img src="images/100000000000063C000000A5FABB0D6C.png" width="697" height="72" style="width:18.433cm;height:1.907cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000063C000000A5FABB0D6C.png" /></p>
+<ul>
+  <li>in <b>[1]</b>, the server was redirected to the route <b>[/init-session] </b>with token CSRF in URL;
+  </li>
+  <li>in <b>[2]</b>, the token CSRF is in the dictionary jSON sent by the server associated with the key <b>[csrf_token]</b>;
+  </li>
+</ul>
+
+<p>Let’s return to the client code:</p>
+<p><img src="images/1000000000000119000001395F3D944C.png" width="122" height="136" style="width:3.24cm;height:3.609cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000119000001395F3D944C.png" /></p>
+<p>We modify the <strong>[config]</strong> configuration as follows:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
+<span class="odt-code-line"><span class="odt-code-line-content">   config.update({</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># taxpayer file</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;taxpayersFilename&quot;</span>: <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../data/input/taxpayersdata.txt&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># results file</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;resultsFilename&quot;</span>: <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../data/output/résultats.json&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># error file</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;errorsFilename&quot;</span>: <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../data/output/errors.txt&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># log file</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;logsFilename&quot;</span>: <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../data/logs/logs.txt&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># tax calculation server</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;server&quot;</span>: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#a31515">&quot;urlServer&quot;</span>: <span style="color:#a31515">&quot;http://127.0.0.1:5000&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#a31515">&quot;user&quot;</span>: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;login&quot;</span>: <span style="color:#a31515">&quot;admin&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;password&quot;</span>: <span style="color:#a31515">&quot;admin&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#a31515">&quot;url_services&quot;</span>: {</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;calculate-tax&quot;</span>: <span style="color:#a31515">&quot;/calculer-impot&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;get-admindata&quot;</span>: <span style="color:#a31515">&quot;/get-admindata&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;calculate-tax-in-bulk-mode&quot;</span>: <span style="color:#a31515">&quot;/calculer-impots&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;init-session&quot;</span>: <span style="color:#a31515">&quot;/init-session-without-csrftoken&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;end-session&quot;</span>: <span style="color:#a31515">&quot;/fin-session&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;authenticate-user&quot;</span>: <span style="color:#a31515">&quot;/authentifier-utilisateur&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;get-simulations&quot;</span>: <span style="color:#a31515">&quot;/lister-simulations&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#a31515">&quot;delete-simulation&quot;</span>: <span style="color:#a31515">&quot;/supprimer-simulation&quot;</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        },</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># mode debug</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;debug&quot;</span>: <span style="color:#0000ff">True</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># csrf_token</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="background-color:#fff2cc;color:#a31515">&quot;with_csrftoken&quot;</span><span style="background-color:#fff2cc">: </span><span style="background-color:#fff2cc;color:#0000ff">True</span>,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    }</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    )</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># route init-session</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    url_services = config[&#x27;server&#x27;][&#x27;url_services&#x27;]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">if</span><span style="color:#000000"> config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        url_services</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold">&#x27;init-session&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000"> = </span>&#x27;/init-session-without-csrftoken&#x27;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">else</span>:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        url_services[&#x27;init-session&#x27;] = &#x27;/init-session</span></span>
+</code></pre></div>
+
+<ul>
+  <li>line 31: a boolean will indicate to the client whether the server it is addressing works with CSRF tokens or not;
+  </li>
+  <li>lines 37–40: the service token for the action is set to <b>URL</b>:
+    <ul>
+      <li>if the server uses CSRF tokens, then the service URL is <b>[/init-session-without-csrftoken]</b>;
+      </li>
+      <li>otherwise, the URL service is <b>[/init-session]</b>;
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>The route <strong>[/init-session-without-csrftoken]</strong> has been presented. It allows a client with jSON / XML to start a session with the server without possessing a CSRF token. The client will find this token in the server’s response.</p>
+<p>We then modify the <strong>[ImpôtsDaoWithHttpSession]</strong> class implementing the client&#x27;s <strong>[dao]</strong> layer:</p>
+<p><img src="images/100000000000023A0000012AE88F5267.png" width="248" height="130" style="width:6.57cm;height:3.434cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000023A0000012AE88F5267.png" /></p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content"># imports</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> json</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> requests</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">import</span><span style="color:#000000"> xmltodict</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> flask_api </span><span style="color:#0000ff">import</span><span style="color:#000000"> status</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> AbstractImpôtsDao </span><span style="color:#0000ff">import</span><span style="color:#000000"> AbstractImpôtsDao</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> AdminData </span><span style="color:#0000ff">import</span><span style="color:#000000"> AdminData</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> ImpôtsError </span><span style="color:#0000ff">import</span><span style="color:#000000"> ImpôtsError</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> InterfaceImpôtsDaoWithHttpSession </span><span style="color:#0000ff">import</span><span style="color:#000000"> InterfaceImpôtsDaoWithHttpSession</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">from</span><span style="color:#000000"> TaxPayer </span><span style="color:#0000ff">import</span><span style="color:#000000"> TaxPayer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span><span style="color:#000000"> ImpôtsDaoWithHttpSession(InterfaceImpôtsDaoWithHttpSession):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># manufacturer</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> __init__(self, config: dict):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># parent initialization</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        AbstractImpôtsDao.__init__(</span><span style="color:#0000ff">self</span><span style="color:#000000">, config)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># saving configuration items</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># config general</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.__config = config</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># server</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.__config_server = config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;server&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># services</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.__config_services = config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;server&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;url_services&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># mode debug</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.__debug = config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;debug&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># logger</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.__logger = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># cookies</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.__cookies = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># session type (json, xml)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.__session_type = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># token CSRF</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#0000ff">self</span><span style="background-color:#fff2cc;color:#000000">.__csrf_token = </span><span style="background-color:#fff2cc;color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># request / response stage</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> get_response(self, method: str, url_service: str, data_value: dict = </span><span style="color:#0000ff">None</span><span style="color:#000000">, json_value=</span><span style="color:#0000ff">None</span><span style="color:#000000">):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># [method]: HTTP GET or POST method</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># [url_service] : URL of service</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># [data]: POST parameters in x-www-form-urlencoded</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># [json]: parameters from POST to json</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># [cookies]: cookies to include in the request</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># you must have a XML or JSON session, otherwise you won&#x27;t be able to handle the response</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#0000ff">self</span><span style="color:#000000">.__session_type </span><span style="color:#0000ff">not</span><span style="color:#000000"> </span><span style="color:#0000ff">in</span><span style="color:#000000"> </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;json&#x27;</span><span style="font-weight:bold;color:#000000">, </span><span style="font-weight:bold;color:#a31515">&#x27;xml&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">raise</span><span style="color:#000000"> ImpôtsError(</span><span style="color:#098658">73</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;il n&#x27;y a pas de session valide en cours&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># we add the CSRF token to the URL service token</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#0000ff">if</span><span style="background-color:#fff2cc;color:#000000"> </span><span style="background-color:#fff2cc;color:#0000ff">self</span><span style="background-color:#fff2cc;color:#000000">.__csrf_token</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            url_service = </span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{url_service}</span><span style="color:#a31515">/</span><span style="color:#000000">{</span><span style="color:#0000ff">self</span><span style="color:#000000">.__csrf_token}</span><span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># query execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        response = </span><span style="background-color:#fff2cc;color:#000000">requests.request</span><span style="color:#000000">(method,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                                    url_service,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                                    data=data_value,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">                                    json=json_value,</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                                    cookies=</span><span style="color:#0000ff">self</span><span style="color:#000000">.__cookies,</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                                    </span><span style="background-color:#fff2cc;color:#000000">allow_redirects=</span><span style="background-color:#fff2cc;color:#0000ff">True</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># mode debug ?</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#0000ff">self</span><span style="color:#000000">.__debug:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># logger</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#0000ff">not</span><span style="color:#000000"> </span><span style="color:#0000ff">self</span><span style="color:#000000">.__logger:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#0000ff">self</span><span style="color:#000000">.__logger = </span><span style="color:#0000ff">self</span><span style="color:#000000">.__config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;logger&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># log on</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">self</span><span style="color:#000000">.__logger.write(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{response.text}\n</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># result</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#0000ff">self</span><span style="color:#000000">.__session_type == </span><span style="color:#a31515">&quot;json&quot;</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            résultat = json.loads(response.text)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        else:  # xml</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            résultat = xmltodict.parse(response.text</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#098658">39</span><span style="font-weight:bold;color:#000000">:]</span><span style="color:#000000">)</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;root&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># retrieve response cookies, if any</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> response.cookies:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">self</span><span style="color:#000000">.__cookies = response.cookies</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># we retrieve the CSRF token</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#0000ff">if</span><span style="background-color:#fff2cc;color:#000000"> </span><span style="background-color:#fff2cc;color:#0000ff">self</span><span style="background-color:#fff2cc;color:#000000">.__config</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">[</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;with_csrftoken&#x27;</span><span style="font-weight:bold;background-color:#fff2cc;color:#000000">]</span><span style="color:#000000">:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">self</span><span style="color:#000000">.__csrf_token = résultat.get(</span><span style="color:#a31515">&#x27;csrf_token&#x27;</span><span style="color:#000000">, </span><span style="color:#0000ff">None</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># status code</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        status_code = response.status_code</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># if status code other than 200 OK</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> status_code != status.HTTP_200_OK:</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">raise</span><span style="color:#000000"> ImpôtsError(</span><span style="color:#098658">35</span><span style="color:#000000">, résultat</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;réponse&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># we return the result</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> résultat</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;réponse&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> init_session(self, session_type: str):</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># note the session type</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.__session_type = session_type</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># delete the CSRF token from previous calls</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="background-color:#fff2cc;color:#0000ff">self</span><span style="background-color:#fff2cc;color:#000000">.__csrf_token</span><span style="color:#000000"> = </span><span style="color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># the URL of the init-session action is requested</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        url_service = </span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="color:#000000">{</span><span style="color:#0000ff">self</span><span style="color:#000000">.__config_server</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;urlServer&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}{</span><span style="color:#0000ff">self</span><span style="color:#000000">.__config_services</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;init-session&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}</span><span style="color:#a31515">/</span><span style="color:#000000">{session_type}</span><span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># request execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">self</span><span style="color:#000000">.get_response(</span><span style="color:#a31515">&quot;GET&quot;</span><span style="color:#000000">, url_service)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
+</code></pre></div>
+
+<ol>
+  <li>lines 38–92: management of the CSRF token occurs primarily within the <b>[get_response]</b> method;
+  </li>
+  <li>line 60: the important point is the <b>[allow_redirects=True]</b> parameter. This is its default value, but we wanted to highlight it;
+  </li>
+</ol>
+
+<p>When in <strong>[with_csrftoken=True]</strong> mode:</p>
+<ol>
+  <li>the clientss begin their dialogue with the server by calling the route <b>[/init-session_without_csftoken/type_response]</b>;
+  </li>
+  <li>the server responds to this request with a redirect to the <b>[/init-session/type_response/csrf_token]</b> route;
+  </li>
+  <li>due to the <b>[allow_redirects=True]</b> parameter, this redirection will be followed by the <b>[requests]</b> client;
+  </li>
+  <li>the token CSRF will be found in the retrieved result on lines 72 and 74 associated with the key <b>[csrf_token]</b>;
+  </li>
+</ol>
+
+<p>When in <strong>[with_csrftoken=False]</strong> mode:</p>
+<ul>
+  <li>(continued)
+    <ul>
+      <li>the clients tokens begin their dialogue with the server by calling the route <b>[/init-session /type_response]</b>;
+      </li>
+      <li>the server responds to this request with a redirect to the <b>[/init-session/type_response]</b> route;
+      </li>
+      <li>due to the <b>[allow_redirects=True]</b> parameter, this redirection will be followed by the <b>[requests]</b> client;
+      </li>
+      <li>there is no token CSRF to retrieve on lines 81–82. The property <b>[self.__csrf_token] </b>therefore remains at None (line 36);
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<ul>
+  <li>lines 51–52: for all subsequent requests, the token CSRF, if it exists, is appended to the initial route;
+  </li>
+  <li>lines 81-82: the new token generated by the server for each new client request is stored locally to be returned on line 52 for the next request;
+  </li>
+</ul>
+
+<p>Additionally, the <strong>[init_session]</strong> method changes slightly:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> init_session(self, session_type: str):</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># note the session type</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">self</span>.__session_type = session_type</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># delete the CSRF token from previous calls</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="background-color:#fff2cc;color:#0000ff">self</span><span style="background-color:#fff2cc">.__csrf_token = </span><span style="background-color:#fff2cc;color:#0000ff">None</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># the URL of the init-session action is requested</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        url_service = <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{<span style="color:#0000ff">self</span>.__config_server<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;urlServer&#x27;</span><span style="font-weight:bold">]</span>}{<span style="background-color:#fff2cc;color:#0000ff">self</span><span style="background-color:#fff2cc">.__config_services</span><span style="font-weight:bold;background-color:#fff2cc">[</span><span style="font-weight:bold;background-color:#fff2cc;color:#a31515">&#x27;init-session&#x27;</span><span style="font-weight:bold;background-color:#fff2cc">]</span><span style="background-color:#fff2cc">}</span><span style="color:#a31515">/</span>{session_type}<span style="color:#a31515">&quot;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># request execution</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">self</span>.get_response(<span style="color:#a31515">&quot;GET&quot;</span>, url_service)</span></span>
+</code></pre></div>
+
+<p>It is important to note here that we created a route named <strong>[/init-session-without-csrftoken/&lt;type-response&gt;]</strong> to initialize the client/server dialogue without a token (CSRF). However, we have seen that the <strong>[get_response]</strong> method called on line 12 of the code systematically adds the token CSRF, stored in <strong>[self.__csrf_token]</strong>, to the end of the URL service token. That is why, on line 6 of the code, we remove this token CSRF if it existed.</p>
+<p>That&#x27;s it. For testing, run:</p>
+<ol>
+  <li>clients console <b>[main, main2, main3]</b>;
+  </li>
+  <li>the test classes <b>[Test1HttpClientDaoWithSession] </b>and <b>[Test2HttpClientDaoWithSession]</b>;
+  </li>
+</ol>
+
+<p>by successively setting the configuration parameter <strong>[with_csrftoken]</strong> to True and then False.</p>
+<p><img src="images/1000000000000239000002062A0C2A4E.png" width="248" height="226" style="width:6.57cm;height:5.981cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000239000002062A0C2A4E.png" /></p>
+<p>Here is an example of the logs obtained when running the <strong>[main json]</strong> client with <strong>[with_csrftoken=True]</strong>:</p>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.317903, MainThread : début du calcul de l&#x27;taxpayers&#x27; tax</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.317903, Thread-1 : début du calcul de l&#x27;4-taxpayer tax</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.317903, Thread-2 : début du calcul de l&#x27;tax for 2 taxpayers</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.317903, Thread-3 : début du calcul de l&#x27;4-taxpayer tax</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.317903, Thread-4 : début du calcul de l&#x27;tax on 1 taxpayers</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.379221, Thread-2 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">init-session</span>&quot;, &quot;état&quot;: 700, &quot;réponse&quot;: <span style="font-weight:bold">[&quot;session démarrée avec le type de réponse json&quot;]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;ImFiZmZkYjZmMzFkZDc2YWRjNWYwOGM0NTBmMGM4ODJjYzViOWI4NGEi.Xy63sw.H5L0--yWsvfaWvggrGw78z5VnN0&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.381073, Thread-4 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">init-session</span>&quot;, &quot;état&quot;: 700, &quot;réponse&quot;: <span style="font-weight:bold">[&quot;session démarrée avec le type de réponse json&quot;]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;ImY5YzQyMjlkYzcyYmM4YmZiMGI0NWY5MjE4MzIzNDExZjc0MGQ3MWQi.Xy63sw.q6olg7IP_g2ro_RBFRCX1BX90g8&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.386982, Thread-3 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">init-session</span>&quot;, &quot;état&quot;: 700, &quot;réponse&quot;: <span style="font-weight:bold">[&quot;session démarrée avec le type de réponse json&quot;]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjkxZGNlN2YyMmUxMjQ0M2Y0MTdjNDQ4ZmQ1MDMxZjkwNjBhNzAzZjMi.Xy63sw.-6buL11No3UJBlElpW4tX4B-lp0&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.390269, Thread-1 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">init-session</span>&quot;, &quot;état&quot;: 700, &quot;réponse&quot;: <span style="font-weight:bold">[&quot;session démarrée avec le type de réponse json&quot;]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjIxNmU4MDQyZDFmZmIyZDlmZjE4MzNlNDUzYzFjMGYxMWYxYzEwNGYi.Xy63sw.fgs6Cm2owsJf4NjTm7gKrVESabI&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.413206, Thread-2 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">authentifier-utilisateur</span>&quot;, &quot;état&quot;: 200, &quot;réponse&quot;: &quot;Authentification réussie&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;ImFiZmZkYjZmMzFkZDc2YWRjNWYwOGM0NTBmMGM4ODJjYzViOWI4NGEi.Xy63sw.H5L0--yWsvfaWvggrGw78z5VnN0&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.422877, Thread-2 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">calculer-impots</span>&quot;, &quot;état&quot;: 1500, &quot;réponse&quot;: <span style="font-weight:bold">[{&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 16782, &quot;surcôte&quot;: 7176, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0, &quot;id&quot;: 1}, {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 9200, &quot;surcôte&quot;: 2180, &quot;taux&quot;: 0.3, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0, &quot;id&quot;: 2}]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;ImFiZmZkYjZmMzFkZDc2YWRjNWYwOGM0NTBmMGM4ODJjYzViOWI4NGEi.Xy63sw.H5L0--yWsvfaWvggrGw78z5VnN0&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.428622, Thread-4 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">authentifier-utilisateur</span>&quot;, &quot;état&quot;: 200, &quot;réponse&quot;: &quot;Authentification réussie&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;ImY5YzQyMjlkYzcyYmM4YmZiMGI0NWY5MjE4MzIzNDExZjc0MGQ3MWQi.Xy63sw.q6olg7IP_g2ro_RBFRCX1BX90g8&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.429127, Thread-3 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">authentifier-utilisateur</span>&quot;, &quot;état&quot;: 200, &quot;réponse&quot;: &quot;Authentification réussie&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjkxZGNlN2YyMmUxMjQ0M2Y0MTdjNDQ4ZmQ1MDMxZjkwNjBhNzAzZjMi.Xy63sw.-6buL11No3UJBlElpW4tX4B-lp0&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.429127, Thread-1 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">authentifier-utilisateur</span>&quot;, &quot;état&quot;: 200, &quot;réponse&quot;: &quot;Authentification réussie&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjIxNmU4MDQyZDFmZmIyZDlmZjE4MzNlNDUzYzFjMGYxMWYxYzEwNGYi.Xy63sw.fgs6Cm2owsJf4NjTm7gKrVESabI&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.429127, Thread-2 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">fin-session</span>&quot;, &quot;état&quot;: 400, &quot;réponse&quot;: &quot;session réinitialisée&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjU1YjlmZDA0OWRhNTJlODFmYjgyYjlhM2ExYWNhZmUzNTk2NjA5NGIi.Xy63sw.nyNSvkcG6iG0oIMBjtYPo8ySgdw&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.438519, Thread-2 : fin du calcul de l&#x27;tax for 2 taxpayers</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.443033, Thread-4 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">calculer-impots</span>&quot;, &quot;état&quot;: 1500, &quot;réponse&quot;: <span style="font-weight:bold">[{&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 42842, &quot;surcôte&quot;: 17283, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0, &quot;id&quot;: 1}]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;ImY5YzQyMjlkYzcyYmM4YmZiMGI0NWY5MjE4MzIzNDExZjc0MGQ3MWQi.Xy63sw.q6olg7IP_g2ro_RBFRCX1BX90g8&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.446510, Thread-3 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">calculer-impots</span>&quot;, &quot;état&quot;: 1500, &quot;réponse&quot;: <span style="font-weight:bold">[{&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 5, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 4230, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0, &quot;id&quot;: 1}, {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 22986, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0, &quot;id&quot;: 2}, {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 30000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.0, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0, &quot;id&quot;: 3}, {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 64210, &quot;surcôte&quot;: 7498, &quot;taux&quot;: 0.45, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0, &quot;id&quot;: 4}]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjkxZGNlN2YyMmUxMjQ0M2Y0MTdjNDQ4ZmQ1MDMxZjkwNjBhNzAzZjMi.Xy63sw.-6buL11No3UJBlElpW4tX4B-lp0&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.453477, Thread-1 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">calculer-impots</span>&quot;, &quot;état&quot;: 1500, &quot;réponse&quot;: <span style="font-weight:bold">[{&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 55555, &quot;impôt&quot;: 2814, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0, &quot;id&quot;: 1}, {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 1384, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 384, &quot;réduction&quot;: 347, &quot;id&quot;: 2}, {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 720, &quot;réduction&quot;: 0, &quot;id&quot;: 3}, {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 19884, &quot;surcôte&quot;: 4480, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0, &quot;id&quot;: 4}]</span>, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjIxNmU4MDQyZDFmZmIyZDlmZjE4MzNlNDUzYzFjMGYxMWYxYzEwNGYi.Xy63sw.fgs6Cm2owsJf4NjTm7gKrVESabI&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.457912, Thread-4 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">fin-session</span>&quot;, &quot;état&quot;: 400, &quot;réponse&quot;: &quot;session réinitialisée&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;IjQ0ZDQxODgzN2M5NjRiYWI0NjA2MTk5YWFkNGFhMzY1M2IxNWMyNDIi.Xy63sw.mOa5MKXvJ-EXf_qEok-OqC5j_mg&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.458442, Thread-4 : fin du calcul de l&#x27;tax on 1 taxpayers</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.459045, Thread-3 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">fin-session</span>&quot;, &quot;état&quot;: 400, &quot;réponse&quot;: &quot;session réinitialisée&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;ImQ0NDZlYmViYjY1ZDUxYzJhMTNmM2JiZTRkMjBjZGJkYzE0OGVkYzMi.Xy63sw.fviTJz4zFDqVLlVlkrosT_JRPww&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.459700, Thread-3 : fin du calcul de l&#x27;4-taxpayer tax</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.460492, Thread-1 : {&quot;action&quot;: &quot;<span style="background-color:#fff2cc">fin-session</span>&quot;, &quot;état&quot;: 400, &quot;réponse&quot;: &quot;session réinitialisée&quot;, &quot;<span style="background-color:#fff2cc">csrf_token</span>&quot;: &quot;Ijg3MjQ1NGUyYTUyOGEyNTdmZmNmYWZkMmU2OTgyMzUwNjI1YTlhZjIi.Xy63sw.I0xBl9Q8DzsuXPSgOdeARc_VKBA&quot;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.460492, Thread-1 : fin du calcul de l&#x27;4-taxpayer tax</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-08-08 16:33:23.460492, MainThread : fin du calcul de l&#x27;taxpayers&#x27; tax</span></span>
+</code></pre></div>
+
+<p>If we look at the CSRF tokens received in succession, we see that they are all different.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        This tutorial written by <strong>Serge Tahé</strong> is made available to the public under the terms of the
+<em>Creative Commons Attribution – Non-Commercial –
+ShareAlike 3.0 Unported</em>.
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.e71a0d61.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
