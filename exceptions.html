@@ -1459,7 +1459,7 @@
 <h2 id="51-exceptions_01-script">5.1. <span style="color: #4f81bd">[exceptions_01] <strong>script</strong></span></h2>
 <p>The first script illustrates the need to handle exceptions.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="gh"># an error is deliberately induced</span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="gh"># an error is deliberately provoked</span>
 <a id="__codelineno-0-2" name="__codelineno-0-2"></a>x = 4 / 0
 </code></pre></div></td></tr></table></div>
 <p>We intentionally trigger an error to see what happens (<em>exceptions-01.py</em>):</p>
@@ -1488,11 +1488,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">try</span>:</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    actions susceptibles de lancer une exception</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">except</span> (Ex1, Ex2…) as ex:</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    actions de gestion de l&#x27;exception [ex]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    actions de gestion de l&#x27;exception <span style="font-weight:bold">[ex]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">except</span> (Ex11, Ex12…) as ex:</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    actions de gestion de l&#x27;exception [ex]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    actions de gestion de l&#x27;exception <span style="font-weight:bold">[ex]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">finally</span>:</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">   actions toujours exécutées qu&#x27;exception or not</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">   actions toujours exécutées qu&#x27;il y ait exception ou non</span></span>
 </code></pre></div>
 
 <p>In the <strong>try block</strong>, execution of the actions stops as soon as an exception (error) occurs. In this case, execution continues with the actions in one of the <strong>except</strong> clauses:</p>
@@ -1652,7 +1652,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># executed in all cases</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;essai n° {essai} : finally x={x}&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"># we don&#x27;t have to include an except clause</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># you don&#x27;t have to include a [except] clause</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">essai += 1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># we cause an error</span></span></span>
@@ -1713,9 +1713,9 @@
 <a id="__codelineno-2-11" name="__codelineno-2-11"></a>essai n° 4 : il y a eu un problème
 <a id="__codelineno-2-12" name="__codelineno-2-12"></a>essai n° 5 : invalid literal for int() with base 10: &#39;x&#39;
 <a id="__codelineno-2-13" name="__codelineno-2-13"></a>essai n° 6 : invalid literal for int() with base 10: &#39;x&#39;, paramètres=(&quot;invalid literal for int() with base 10: &#39;x&#39;&quot;,)
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>essai n° 7 : (&#39;param1&#39;, &#39;param2&#39;, &#39;param3&#39;), parameters=(&#39;param1&#39;, &#39;param2&#39;, &#39;param3&#39;)
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>essai n° 8 : (&#39;info1&#39;, &#39;info2&#39;, &#39;info3&#39;), parameters=(&#39;info1&#39;, &#39;info2&#39;, &#39;info3&#39;)
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>essai n° 9 : mon msg d&#39;error
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>essai n° 7 : (&#39;param1&#39;, &#39;param2&#39;, &#39;param3&#39;), paramètres=(&#39;param1&#39;, &#39;param2&#39;, &#39;param3&#39;)
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>essai n° 8 : (&#39;info1&#39;, &#39;info2&#39;, &#39;info3&#39;), paramètres=(&#39;info1&#39;, &#39;info2&#39;, &#39;info3&#39;)
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>essai n° 9 : mon msg d&#39;erreur
 <a id="__codelineno-2-17" name="__codelineno-2-17"></a>essai n° 10 : finally x=1
 <a id="__codelineno-2-18" name="__codelineno-2-18"></a>essai n° 11 : exception
 <a id="__codelineno-2-19" name="__codelineno-2-19"></a>essai n° 11 : finally x=None
@@ -1821,8 +1821,8 @@
 <span class="normal"><a href="#__codelineno-3-6">6</a></span>
 <span class="normal"><a href="#__codelineno-3-7">7</a></span>
 <span class="normal"><a href="#__codelineno-3-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/exceptions/exceptions_03.py
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a>type : &lt;class &#39;<span class="gs">__main__</span>.MyError&#39;&gt;, arguments : (&#39;exception in f3&#39;,)
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>type : &lt;class &#39;<span class="gs">__main__</span>.MyError&#39;&gt;, arguments : (&#39;exception in f4&#39;, MyError(&#39;exception in f5&#39;, MyError(&#39;exception in f6&#39;)))
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>type : &lt;class &#39;<span class="gs">__main__</span>.MyError&#39;&gt;, arguments : (&#39;exception dans f3&#39;,)
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>type : &lt;class &#39;<span class="gs">__main__</span>.MyError&#39;&gt;, arguments : (&#39;exception dans f4&#39;, MyError(&#39;exception dans f5&#39;, MyError(&#39;exception dans f6&#39;)))
 <a id="__codelineno-3-4" name="__codelineno-3-4"></a>exception dans f4
 <a id="__codelineno-3-5" name="__codelineno-3-5"></a>exception dans f5
 <a id="__codelineno-3-6" name="__codelineno-3-6"></a>exception dans f6

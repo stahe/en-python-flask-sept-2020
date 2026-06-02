@@ -1886,7 +1886,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/v05/entities&quot;</span><span style="font-weight:bold">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># Logger, SendAdminMail</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/http-servers/02/utilities&quot;</span><span style="font-weight:bold">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># scripts [config_database, config_layers]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># scripts [config_database, config_layers]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        script_dir,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># controllers</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../controllers&quot;</span>,</span></span>
@@ -1957,7 +1957,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># thread pause time in seconds</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;sleep_time&quot;</span>: <span style="color:#098658">0</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># authorized shares and their controllers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># authorized shares and their auditors</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;controllers&quot;</span>: {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#008000"># initialization of a calculation session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#a31515">&quot;init-session&quot;</span>: InitSessionController(),</span></span>
@@ -2312,7 +2312,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"># the front controller</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> front_controller() -&gt; tuple:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># the request is processed</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># we process the request</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    logger = </span><span style="color:#0000ff">None</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># logger</span></span>
@@ -2356,7 +2356,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># we send the answer</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> response, status_code</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">except</span><span style="color:#000000"> BaseException </span><span style="color:#0000ff">as</span><span style="color:#000000"> erreur:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># it&#x27;s an unexpected error - log the error if possible</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># it&#x27;s an unexpected error - we log the error if possible</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> logger:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            logger.write(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span><span style="font-weight:bold;color:#a31515">[ front_controller]</span><span style="color:#a31515"> </span><span style="color:#000000">{erreur}</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># we prepare the response to the customer</span></span>
@@ -2545,7 +2545,7 @@
 
 <p>This action is linked to a controller in the <strong>[config]</strong> configuration:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># authorized shares and their auditors</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># authorized shares and their controllers</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#a31515">&quot;controllers&quot;</span><span style="color:#000000">: {</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># initialization of a calculation session</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#a31515">&quot;init-session&quot;</span><span style="color:#000000">: InitSessionController(),</span></span></span>
@@ -2634,7 +2634,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"># the front controller</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> front_controller() -&gt; tuple:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># the request is processed</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># we process the request</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    logger = </span><span style="color:#0000ff">None</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># logger</span></span>
@@ -3128,7 +3128,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">if</span> marié != <span style="color:#a31515">&quot;oui&quot;</span> <span style="color:#0000ff">and</span> marié != <span style="color:#a31515">&quot;non&quot;</span>:</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                    erreur = <span style="color:#0000ff">True</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    erreurs.append(</span><span style="color:#0000ff">f</span>&quot;valeur <span style="font-weight:bold">[</span><span style="font-weight:bold;color:#000000">{marié}</span><span style="font-weight:bold">]</span> invalide pour le paramètre <span style="font-weight:bold">[marié (oui/non)]</span>&quot;<span style="color:#000000">)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># children] parameter</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># parameter [enfants]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            enfants = post_params.get(<span style="color:#a31515">&quot;enfants&quot;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">if</span> enfants <span style="color:#0000ff">is</span> <span style="color:#0000ff">None</span>:</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                erreur = <span style="color:#0000ff">True</span></span></span>
@@ -3160,7 +3160,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">return</span> résultat, status_code</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># tAX CALCULATION</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># retrieve the [business] layer and the [adminData] dictionary</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># retrieve the [métier] layer and the [adminData] dictionary</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        métier = config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;layers&quot;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&quot;métier&quot;</span><span style="font-weight:bold">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        admin_data = config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;admindata&quot;</span><span style="font-weight:bold">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># tAX CALCULATION</span></span>
@@ -3349,7 +3349,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># retrieve elements from path</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        dummy, action, numéro = request.path.split(<span style="color:#a31515">&#x27;/&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># parameter [number] is a positive integer or zero according to its route</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># parameter [numéro] is a positive integer or zero according to its route</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        numéro = int(numéro)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># simulation id=number must exist in the simulation list</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        simulations = session.get(<span style="color:#a31515">&quot;simulations&quot;</span>, <span style="font-weight:bold">[]</span>)</span></span>
@@ -3374,8 +3374,10 @@
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>@app.route(&#39;/supprimer-simulation/&lt;int:numero&gt;&#39;, methods=[&#39;GET&#39;])
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span>&#x27;/supprimer-simulation/&lt;<span style="background-color:#fff2cc">int</span>:numero&gt;&#x27;<span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
 </code></pre></div>
+
 <p>We also know that it is an integer &gt;=0. Indeed, we cannot have a URL or <strong>[/supprimer-simulation/-4]</strong>. These are rejected by the Flask server;</p>
 <ol>
   <li>line 15: we retrieve the list of simulations from the session;
@@ -3545,7 +3547,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                       </span><span style="color:#a31515">&quot;réponse&quot;</span><span style="color:#000000">: </span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;cette action n&#x27;est possible que pour les sessions json ou xml&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                   }, status.HTTP_400_BAD_REQUEST</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">else</span><span style="color:#000000">:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># a success answer is returned</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># we give a success answer</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span><span style="color:#a31515">&quot;action&quot;</span><span style="color:#000000">: action, </span><span style="color:#a31515">&quot;état&quot;</span><span style="color:#000000">: </span><span style="color:#098658">1000</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;réponse&quot;</span><span style="color:#000000">: config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;adminData&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">.asdict()}, status.HTTP_200_OK</span></span></span>
 </code></pre></div>
 
@@ -3650,7 +3652,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">                msg_erreur = <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{erreur}<span style="color:#a31515">&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># certain keys must be present in the dictionary</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">if</span> <span style="color:#0000ff">not</span> msg_erreur:</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span># the keys [married, children, salary] must be present in the dictionary</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span># the [marié, enfants, salaire] keys must be present in the dictionary</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                keys = dict_taxpayer.keys()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                <span style="color:#0000ff">if</span> <span style="color:#a31515">&#x27;marié&#x27;</span> <span style="color:#0000ff">not</span> <span style="color:#0000ff">in</span> keys <span style="color:#0000ff">or</span> <span style="color:#a31515">&#x27;enfants&#x27;</span> <span style="color:#0000ff">not</span> <span style="color:#0000ff">in</span> keys <span style="color:#0000ff">or</span> <span style="color:#a31515">&#x27;salaire&#x27;</span> <span style="color:#0000ff">not</span> <span style="color:#0000ff">in</span> keys:</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                    msg_erreur = </span>&quot;le dictionnaire doit inclure les clés <span style="font-weight:bold">[marié, enfants, salaire]</span>&quot;</span></span>
@@ -3658,7 +3660,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">if</span> msg_erreur:</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span># we note the error in the TaxPayer itself</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                dict_taxpayer<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;erreur&#x27;</span><span style="font-weight:bold">]</span> = msg_erreur</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span># add TaxPayer to the error list</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span># add the TaxPayer to the error list</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                list_erreurs.append(dict_taxpayer)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># we&#x27;ve processed all the taxpayers - are there any mistakes?</span></span>
@@ -3672,7 +3674,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        admindata = config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;admindata&quot;</span><span style="font-weight:bold">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        métier = config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;layers&quot;</span><span style="font-weight:bold">][</span><span style="font-weight:bold;color:#a31515">&quot;métier&quot;</span><span style="font-weight:bold">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">try</span>:</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># process the TaxPayer one by one</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span># process TaxPayer one by one</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            list_taxpayers = <span style="font-weight:bold">[]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#0000ff">for</span> dict_taxpayer <span style="color:#0000ff">in</span> list_dict_taxpayers:</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span># tAX CALCULATION</span></span>

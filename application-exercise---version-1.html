@@ -1856,7 +1856,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># taxpayers&#x27; taxes are calculated</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">for</span><span style="color:#000000"> tax_payer </span><span style="color:#0000ff">in</span><span style="color:#000000"> tax_payers:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># tax calculation returns a dictionary of keys</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># [&#x27;married&#x27;, &#x27;children&#x27;, &#x27;salary&#x27;, &#x27;tax&#x27;, &#x27;surcôte&#x27;, &#x27;décôte&#x27;, &#x27;réduction&#x27;, &#x27;taux&#x27;]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># [&#x27;marié&#x27;, &#x27;enfants&#x27;, &#x27;salaire&#x27;, &#x27;impôt&#x27;, &#x27;surcôte&#x27;, &#x27;décôte&#x27;, &#x27;réduction&#x27;, &#x27;taux&#x27;]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        result = calcul_impôt(tax_payer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;marié&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, tax_payer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;enfants&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, tax_payer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;salaire&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># the dictionary is added to the list of results</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        results.append(result)</span></span>
@@ -1910,17 +1910,17 @@
 <span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 55555, &#39;impôt&#39;: 2814, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 1384, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 384, &#39;réduction&#39;: 347, &#39;taux&#39;: 0.14}
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 720, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>{&#39;married&#39;: &#39;no&#39;, &#39;children&#39;: 2, &#39;salary&#39;: 100000, &#39;tax&#39;: 19884, &#39;surcôte&#39;: 4480, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a>{&#39;married&#39;: &#39;no&#39;, &#39;children&#39;: 3, &#39;salary&#39;: 100000, &#39;tax&#39;: 16782, &#39;surcôte&#39;: 7176, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 9200, &#39;surcôte&#39;: 2180, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.3}
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 5, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 4230, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a>{&#39;married&#39;: &#39;no&#39;, &#39;children&#39;: 0, &#39;salary&#39;: 100000, &#39;tax&#39;: 22986, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 30000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0}
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a>{&#39;married&#39;: &#39;no&#39;, &#39;children&#39;: 0, &#39;salary&#39;: 200000, &#39;tax&#39;: 64210, &#39;surcôte&#39;: 7498, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.45}
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 42842, &#39;surcôte&#39;: 17283, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 55555, &#39;impôt&#39;: 2814, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 1384, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 384, &#39;réduction&#39;: 347, &#39;taux&#39;: 0.14}
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 720, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 19884, &#39;surcôte&#39;: 4480, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 16782, &#39;surcôte&#39;: 7176, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 9200, &#39;surcôte&#39;: 2180, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.3}
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 5, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 4230, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 0, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 22986, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 30000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0}
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 0, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 64210, &#39;surcôte&#39;: 7498, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.45}
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 42842, &#39;surcôte&#39;: 17283, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
 </code></pre></div></td></tr></table></div>
 <ul>
 <li>line 16: retrieve taxpayer data from <strong>[taxpayersdata.txt]</strong>. Retrieve a list of <strong>[marié, enfants, salaire]</strong> key dictionaries, where each dictionary represents a taxpayer;</li>
@@ -1963,7 +1963,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        taxpayers = </span><span style="font-weight:bold;color:#000000">[]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># open file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        file = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(</span><span style="color:#808080">taxpayers_filename</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;r&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf8&quot;</span><span style="color:#000000">)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># read the first line of the taxpayer file</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># we read the first line of the taxpayer file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ligne = file.readline().strip()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># as long as there&#x27;s a line left to operate</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">while</span><span style="color:#000000"> ligne != </span><span style="color:#a31515">&#x27;&#x27;</span><span style="color:#000000">:</span></span></span>
@@ -2124,7 +2124,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">while</span> quotient &gt; limites<span style="font-weight:bold">[i]</span>:</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        i += 1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        # because we&#x27;ve placed quotient at the end of the limit array, the previous loop</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    # cannot go beyond the limit table</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # cannot exceed the limits of the board</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    # now we can calculate the tax</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    impôt = <span style="color:#6f008a">math</span>.floor(revenu_imposable * coeffr<span style="font-weight:bold">[i]</span> - nb_parts * coeffn<span style="font-weight:bold">[i]</span>)</span></span>
@@ -2149,7 +2149,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        plafond_décôte = PLAFOND_DECOTE_COUPLE </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#808080">marié</span><span style="color:#000000"> == </span><span style="color:#a31515">&quot;oui&quot;</span><span style="color:#000000"> </span><span style="color:#0000ff">else</span><span style="color:#000000"> PLAFOND_DECOTE_CELIBATAIRE</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># theoretical discount</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        décôte = plafond_décôte - 0.75 * </span><span style="color:#808080">impots</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># the discount cannot exceed the amount of tax due</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># the discount may not exceed the amount of tax due</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> décôte &gt; </span><span style="color:#808080">impots</span><span style="color:#000000">:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            décôte = </span><span style="color:#808080">impots</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2274,30 +2274,28 @@
 <span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 55555, &#39;impôt&#39;: 2814, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 1384, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 384, &#39;réduction&#39;: 347, &#39;taux&#39;: 0.14}
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 720, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a>{&#39;married&#39;: &#39;no&#39;, &#39;children&#39;: 2, &#39;salary&#39;: 100000, &#39;tax&#39;: 19884, &#39;surcôte&#39;: 4480, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a>{&#39;married&#39;: &#39;no&#39;, &#39;children&#39;: 3, &#39;salary&#39;: 100000, &#39;tax&#39;: 16782, &#39;surcôte&#39;: 7176, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 9200, &#39;surcôte&#39;: 2180, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.3}
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 5, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 4230, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a>{&#39;married&#39;: &#39;no&#39;, &#39;children&#39;: 0, &#39;salary&#39;: 100000, &#39;tax&#39;: 22986, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 30000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0}
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a>{&#39;married&#39;: &#39;no&#39;, &#39;children&#39;: 0, &#39;salary&#39;: 200000, &#39;tax&#39;: 64210, &#39;surcôte&#39;: 7498, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.45}
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a>{&#39;married&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 42842, &#39;surcôte&#39;: 17283, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<span class="normal"><a href="#__codelineno-6-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 55555, &#39;impôt&#39;: 2814, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 1384, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 384, &#39;réduction&#39;: 347, &#39;taux&#39;: 0.14}
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 50000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 720, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 19884, &#39;surcôte&#39;: 4480, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 16782, &#39;surcôte&#39;: 7176, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 9200, &#39;surcôte&#39;: 2180, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.3}
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 5, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 4230, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.14}
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 0, &#39;salaire&#39;: 100000, &#39;impôt&#39;: 22986, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 2, &#39;salaire&#39;: 30000, &#39;impôt&#39;: 0, &#39;surcôte&#39;: 0, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0}
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a>{&#39;marié&#39;: &#39;non&#39;, &#39;enfants&#39;: 0, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 64210, &#39;surcôte&#39;: 7498, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.45}
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a>{&#39;marié&#39;: &#39;oui&#39;, &#39;enfants&#39;: 3, &#39;salaire&#39;: 200000, &#39;impôt&#39;: 42842, &#39;surcôte&#39;: 17283, &#39;décôte&#39;: 0, &#39;réduction&#39;: 0, &#39;taux&#39;: 0.41}
 </code></pre></div></td></tr></table></div>
 <p>These results match the official figures in the <a href="#chiffresofficiels"><u><span style="color: #0563c1">|Official</span></u></a> Figures| section.</p>
 <p>Now, let’s run this version in a console window:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span>
-<span class="normal"><a href="#__codelineno-7-3">3</a></span>
-<span class="normal"><a href="#__codelineno-7-4">4</a></span>
-<span class="normal"><a href="#__codelineno-7-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="p">(</span><span class="n">venv</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Data</span>\<span class="n">st</span><span class="o">-</span><span class="mi">2020</span>\<span class="n">dev</span>\<span class="n">python</span>\<span class="n">cours</span><span class="o">-</span><span class="mi">2020</span>\<span class="n">python3</span><span class="o">-</span><span class="n">flask</span><span class="o">-</span><span class="mi">2020</span>\<span class="n">impots</span>\<span class="n">v01</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a>  <span class="n">File</span> <span class="s2">&quot;main.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">4</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>    <span class="kn">from</span><span class="w"> </span><span class="nn">impots.v01.shared.impôts_module_01</span><span class="w"> </span><span class="kn">import</span> <span class="o">*</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="ne">ModuleNotFoundError</span><span class="p">:</span> <span class="n">No</span> <span class="n">module</span> <span class="n">named</span> <span class="s1">&#39;taxes</span>
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<span class="odt-code-line"><span class="odt-code-line-content">(venv) C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\v01&gt;python main.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Traceback (most recent call last):</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">  File &quot;main.py&quot;, line 4, in &lt;module&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    from impots.v01.shared.impôts_module_01 import *</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">ModuleNotFoundError: <span style="background-color:#fff2cc">No module named &#x27;impots&#x27;</span></span></span>
+</code></pre></div>
+
 <p>We encounter an error we’ve seen before: one where a module cannot be found, in this case the module <strong>[impots]</strong>. As a reminder, this means that: </p>
 <ul>
 <li>the Python interpreter has searched through the Python Path directories one by one;</li>

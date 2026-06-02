@@ -1531,7 +1531,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># configuration MVC of the [web] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">]</span> = {}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># web] layer controller configuration</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># configuration of [web] layer controllers</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">import</span> controllers</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;mvc&#x27;</span><span style="font-weight:bold">]</span>.update(controllers.configure(config))</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -1835,7 +1835,7 @@
 <p>All fragments containing URL must be modified.</p>
 <p><strong>The [v-authentification] fragment</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- form HTML - post its values with the [authenticate-user] action --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- form HTML - post values with [authentifier-utilisateur] action --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;form</span><span style="color:#000000"> </span><span style="color:#ff0000">method</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;post&quot;</span><span style="color:#000000"> </span><span style="color:#ff0000">action</span><span style="color:#000000">=</span><span style="color:#0000ff">&quot;</span><span style="background-color:#fff2cc;color:#0000ff">{{modèle.prefix_url}}</span><span style="color:#0000ff">/authentifier-utilisateur{{modèle.csrf_token}}&quot;</span><span style="color:#800000">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;!-- title --&gt;</span></span>

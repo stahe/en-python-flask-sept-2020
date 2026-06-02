@@ -1542,13 +1542,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#009010">&quot;&quot;&quot;une classe Objet vide&quot;&quot;&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"># any variable of type [Object] can have attributes by construction</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># any variable of type [Objet] can have attributes by construction</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">obj1 = </span><span style="color:#2b91af">Objet</span><span style="color:#000000">()</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">obj1.attr1 = </span><span style="color:#a31515">&quot;un&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">obj1.attr2 = 100</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># displays the</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;objet1=</span><span style="font-weight:bold;color:#a31515">[{obj1}, {type(obj1)},{id(obj1)},{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"># modifies object</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># modify object</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">obj1.attr2 += 100</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># displays the</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;objet1=</span><span style="font-weight:bold;color:#a31515">[{obj1.attr1},{obj1.attr2}]</span><span style="color:#a31515">&quot;</span><span style="color:#000000">)</span></span></span>
@@ -1593,7 +1593,7 @@
 <p><strong>Results</strong></p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_01.py</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">objet1=[&lt;__main__.Objet object at 0x0000025C3F469BB0&gt;, &lt;class &#x27;__main__.Objet&#x27;&gt;,2595221838768,un,100]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">objet1=<span style="font-weight:bold">[&lt;__main__.Objet object at 0x0000025C3F469BB0&gt;, &lt;class &#x27;__main__.Objet&#x27;&gt;,2595221838768,un,100]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">objet1=<span style="font-weight:bold">[un,200]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">objet1=<span style="font-weight:bold">[un,0]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">objet2=<span style="font-weight:bold">[un,0]</span></span></span>
@@ -1965,7 +1965,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_05.py</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">personne=<span style="font-weight:bold">[Paul,de la Hûche,48]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">L&#x27;age must be an integer &gt;=0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">L&#x27;âge doit être un entier &gt;=0</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">personne=<span style="font-weight:bold">[x,y,0]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">p.prénom=x</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">p.__prénom=Gaëlle</span></span>
@@ -2082,7 +2082,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_06.py</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">personne=<span style="font-weight:bold">[Paul,de la Hûche,48]</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">L&#x27;age must be an integer &gt;=0</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">L&#x27;âge doit être un entier &gt;=0</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">p=<span style="font-weight:bold">[x,y,0]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">p2=<span style="font-weight:bold">[x,y,0]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2300,7 +2300,7 @@
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
 <span class="normal"><a href="#__codelineno-5-3">3</a></span>
 <span class="normal"><a href="#__codelineno-5-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/01/classes_10.py
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>{&#39;_Personne__prénom&#39;: &#39;Steve&#39;, &#39;<span class="ge">_Personne__nom&#39;: &#39;Boer&#39;, &#39;_</span>Personne__âge&#39;: 22, &#39;<span class="ge">_Etudiant_</span>_formation&#39;: &#39;iup2 quality&#39;}
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>{&#39;_Personne__prénom&#39;: &#39;Steve&#39;, &#39;<span class="ge">_Personne__nom&#39;: &#39;Boer&#39;, &#39;_</span>Personne__âge&#39;: 22, &#39;<span class="ge">_Etudiant_</span>_formation&#39;: &#39;iup2 qualité&#39;}
 <a id="__codelineno-5-3" name="__codelineno-5-3"></a>
 <a id="__codelineno-5-4" name="__codelineno-5-4"></a>Process finished with exit code 0
 </code></pre></div></td></tr></table></div>

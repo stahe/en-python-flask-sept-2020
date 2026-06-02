@@ -2210,7 +2210,7 @@
   </li>
 </ul>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{{ url_for(&#39;static&#39;, filename=&#39;images/logo.jpg&#39;) }}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>{{ url_for(&#39;static&#39;, filename=&#39;images/logo.jpg&#39;) }}
 </code></pre></div>
 <p>uses Flask’s <strong>[url_for]</strong> function. Here, its value will be the URL of the <strong>[images/logo.pg]</strong> file in the <strong>[static]</strong> folder;</p>
 <ol>
@@ -2228,7 +2228,7 @@
 <p><img src="images/100000000000026800000129E13D08C5.png" width="269" height="130" style="width:7.123cm;height:3.434cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/100000000000026800000129E13D08C5.png" /></p>
 <p>The code for fragment <strong>[v-authentification.html]</strong> is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-html">
-<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- form HTML - post its values with the [authenticate-user] action --&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;!-- form HTML - post values with [authentifier-utilisateur] action --&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#800000">&lt;form</span><span style="color:#000000"> </span><span style="color:#ff0000">method</span><span style="color:#000000">=</span>&quot;post&quot;<span style="color:#000000"> </span><span style="color:#ff0000">action</span><span style="color:#000000">=</span>&quot;/authentifier-utilisateur&quot;<span style="color:#800000">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span>&lt;!-- title --&gt;</span></span>
@@ -3396,14 +3396,14 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- display a table row with 6 columns - &lt;tr&gt; tag --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 1: row header (simulation no.) - &lt;th scope=&#x27;row&#x27; tag --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 2: parameter value [married] - &lt;td&gt; tag --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 3: parameter value [children] - &lt;td&gt; tag --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 4: parameter value [salary] - &lt;td&gt; tag --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 5: [tax] parameter value - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 2: parameter value [marié] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 3: parameter value [enfants] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 4: parameter value [salaire] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 5: [impôt] (tax) parameter value - &lt;td&gt; tag --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 6: parameter value [surcôte] - &lt;td&gt; tag --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 7: parameter value [discount] - &lt;td&gt; tag --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 8: parameter value [reduction] - &lt;td&gt; tag --&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 9: parameter value [rate] (of tax) - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 7: parameter value [décôte] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 8: parameter value [réduction] - &lt;td&gt; tag --&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 9: [taux] (tax) parameter value - &lt;td&gt; tag --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000">&lt;!-- column 10: link to delete simulation - &lt;td&gt; tag --&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#800000">&lt;tr&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#800000">&lt;th</span> <span style="color:#ff0000">scope</span>=<span style="color:#0000ff">&quot;row&quot;</span><span style="color:#800000">&gt;</span>{{simulation.id}}<span style="color:#800000">&lt;/th&gt;</span></span></span>
@@ -3939,7 +3939,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># retrieve elements from path</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        dummy, action = request.path.split(<span style="color:#a31515">&#x27;/&#x27;</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># view change - just a status code to set</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># change of view - just a status code to set</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">return</span> {<span style="color:#a31515">&quot;action&quot;</span>: action, <span style="color:#a31515">&quot;état&quot;</span>: <span style="background-color:#fff2cc;color:#098658">800</span>, <span style="color:#a31515">&quot;réponse&quot;</span>: <span style="color:#a31515">&quot;&quot;</span>}, status.HTTP_200_OK</span></span>
 </code></pre></div>
 

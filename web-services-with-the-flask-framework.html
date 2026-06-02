@@ -1885,7 +1885,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;/</span>td<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>tr<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;</span>tr<span style="color:#0000ff">&gt;</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">      &lt;td&gt;Le site de Polytech&#x27;Angers&lt;/td&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span>td<span style="color:#0000ff">&gt;</span><span style="color:#000000">Le site de Polytech&#x27;Angers</span><span style="color:#0000ff">&lt;/</span>td<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">      </span><span style="color:#0000ff">&lt;</span>td<span style="color:#0000ff">&gt;&lt;</span>a<span style="color:#000000"> </span><span style="color:#ff0000">href</span><span style="color:#0000ff">=&quot;http://www.polytech-angers.fr/fr/index.html&quot;&gt;</span><span style="color:#000000">ici</span><span style="color:#0000ff">&lt;/</span>a<span style="color:#0000ff">&gt;&lt;/</span>td<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">&lt;/</span>tr<span style="color:#0000ff">&gt;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">  </span><span style="color:#0000ff">&lt;/</span>table<span style="color:#0000ff">&gt;</span></span></span>
@@ -2328,7 +2328,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> * Debugger PIN: 334-263-283</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">* Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">127.0.0.1 - - <span style="font-weight:bold">[10/Jul/2020 09:32:09]</span> &quot;GET / HTTP/1.1&quot; 200 -</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">document &lt;class &#x27;str&#x27;&gt; &lt;!DOCTYPE html&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee">document &lt;class &#x27;str&#x27;&gt;</span> &lt;!DOCTYPE html&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;html lang=&quot;fr&quot;&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;head&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span></span>
@@ -2338,7 +2338,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    &lt;b&gt;Date et heure du moment : <span style="background-color:#bdd6ee">10/07/20 09:42:33</span>&lt;/b&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;/body&gt;</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&lt;/html&gt;</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">response &lt;class &#x27;flask.wrappers.Response&#x27;&gt; &lt;Response 195 bytes [200 OK]&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#bdd6ee">response &lt;class &#x27;flask.wrappers.Response&#x27;&gt; &lt;Response 195 bytes </span><span style="font-weight:bold;background-color:#bdd6ee">[200 OK]</span><span style="background-color:#bdd6ee">&gt;</span></span></span>
 </code></pre></div>
 
 <ol>
@@ -3242,7 +3242,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/get-session&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> get_session():</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># retrieve the session and send the response</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># we retrieve the session and send the response</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    response = make_response(</span><span style="color:#6f008a">json</span><span style="color:#000000">.dumps({</span><span style="color:#a31515">&quot;nom&quot;</span><span style="color:#000000">: session</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;nom&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">}, ensure_ascii=</span><span style="color:#0000ff">False</span><span style="color:#000000">))</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    response.headers</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;Content-Type&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000"> = </span><span style="color:#a31515">&#x27;application/json; charset=utf-8&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">return</span><span style="color:#000000"> response, status.HTTP_200_OK</span></span></span>
@@ -3910,7 +3910,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"># Home URL</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> index():</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># we aim to show that the dictionary [config] is shared by all clients</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># we aim to show that the [config] dictionary is shared by all clients</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># web application</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># increment the counter</span></span></span>
@@ -3968,8 +3968,8 @@
 <span class="odt-code-line"><span class="odt-code-line-content"># Home URL</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">@app.route(</span><span style="color:#a31515">&#x27;/&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> index():</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># we aim to show that the dictionary [config] is shared by all clients</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># of the web application and must be read-only</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># we aim to show that the [config] dictionary is shared by all clients</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># of the web application and that it must be read-only</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># thread name</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#2b91af">thread_name</span><span style="color:#000000"> = </span><span style="color:#6f008a">threading</span><span style="color:#000000">.current_thread().name</span></span></span>

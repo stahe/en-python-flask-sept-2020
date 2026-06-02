@@ -1650,7 +1650,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            msg_erreur = </span><span style="color:#a31515">f&quot;{erreur}&quot;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># certain keys must be present in the dictionary</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#0000ff">not</span><span style="color:#000000"> msg_erreur:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># the keys [married, children, salary] must be present in the dictionary</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># the [marié, enfants, salaire] keys must be present in the dictionary</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            keys = dict_taxpayer.keys()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">if</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;marié&#x27;</span><span style="color:#000000"> </span><span style="color:#0000ff">not</span><span style="color:#000000"> </span><span style="color:#0000ff">in</span><span style="color:#000000"> keys </span><span style="color:#0000ff">or</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;enfants&#x27;</span><span style="color:#000000"> </span><span style="color:#0000ff">not</span><span style="color:#000000"> </span><span style="color:#0000ff">in</span><span style="color:#000000"> keys </span><span style="color:#0000ff">or</span><span style="color:#000000"> </span><span style="color:#a31515">&#x27;salaire&#x27;</span><span style="color:#000000"> </span><span style="color:#0000ff">not</span><span style="color:#000000"> </span><span style="color:#0000ff">in</span><span style="color:#000000"> keys:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                msg_erreur = </span><span style="color:#a31515">&quot;le dictionnaire doit inclure les clés </span><span style="font-weight:bold;color:#a31515">[marié, enfants, salaire]</span><span style="color:#a31515">&quot;</span></span></span>
@@ -1658,7 +1658,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> msg_erreur:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># we note the error in the TaxPayer itself</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            dict_taxpayer</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;erreur&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000"> = msg_erreur</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># add the TaxPayer to the error list</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># add TaxPayer to the error list</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            list_erreurs.append(dict_taxpayer)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># we&#x27;ve processed all the taxpayers - are there any mistakes?</span></span></span>
@@ -1682,7 +1682,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            métier.calculate_tax(taxpayer, admindata)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># the result is stored as a dictionary</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            list_taxpayers.append(taxpayer.asdict())</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># we send the response to the customer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># we send the response to the client</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> {</span><span style="color:#a31515">&quot;réponse&quot;</span><span style="color:#000000">: {</span><span style="color:#a31515">&quot;results&quot;</span><span style="color:#000000">: list_taxpayers}}, status.HTTP_200_OK</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">except</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsError</span><span style="color:#000000"> </span><span style="color:#0000ff">as</span><span style="color:#000000"> erreur:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># an error response is sent to the client</span></span></span>
@@ -2158,7 +2158,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># we let the exceptions rise</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># transform taxpayers into a list of dictionaries</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># we keep only the properties [married, children, salary]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># we keep only the [marié, enfants, salaire] properties</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        list_dict_taxpayers = </span><span style="color:#2b91af">list</span><span style="color:#000000">(</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#2b91af">map</span><span style="color:#000000">(</span><span style="color:#0000ff">lambda</span><span style="color:#000000"> </span><span style="color:#808080">taxpayer</span><span style="color:#000000">:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                </span><span style="color:#808080">taxpayer</span><span style="color:#000000">.asdict(included_keys=</span><span style="font-weight:bold;color:#000000">[</span></span></span>
@@ -2188,13 +2188,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        résultat = response.json()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># error if status code other than 200 OK</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> status_code != status.HTTP_200_OK:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># we know that the errors have been associated with the [errors] key in the response</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># we know that the errors were associated with the [erreurs] key in the response</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">raise</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsError</span><span style="color:#000000">(93, résultat</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;réponse&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;erreurs&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># we know that the result has been associated with the [results] key in the response</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        list_dict_taxpayers2 = résultat</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;réponse&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;results&#x27;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># the initial list of taxpayers is updated with the results received</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">for</span><span style="color:#000000"> i </span><span style="color:#0000ff">in</span><span style="color:#000000"> </span><span style="color:#2b91af">range</span><span style="color:#000000">(len(</span><span style="color:#808080">taxpayers</span><span style="color:#000000">)):</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># taxpayers[i] update</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># update of taxpayers[i]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#808080">taxpayers</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">.fromdict(list_dict_taxpayers2</span><span style="font-weight:bold;color:#000000">[i]</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># here the [taxpayers] parameter has been updated with the server results</span></span></span>
 </code></pre></div>
@@ -2248,7 +2248,7 @@
 <h3 id="2832-the-main-script-main">28.3.2. <span style="color: #4f81bd"><strong>The main script</strong> [main]</span></h3>
 <p>The main script <strong>[main]</strong> evolves as follows: only the function <strong>[thread_function]</strong> executed by the threads created by the client is modified. The rest of the code remains unchanged.</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
-<span class="odt-code-line"><span class="odt-code-line-content"># execute layer [dao] in a thread</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># execution of the [dao] layer in a thread</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># taxpayers is a list of taxpayers</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> thread_function(</span><span style="color:#808080">dao</span><span style="color:#000000">: </span><span style="color:#2b91af">ImpôtsDaoWithHttpClient</span><span style="color:#000000">, </span><span style="color:#808080">logger</span><span style="color:#000000">: </span><span style="color:#2b91af">Logger</span><span style="color:#000000">, </span><span style="color:#808080">taxpayers</span><span style="color:#000000">: </span><span style="color:#2b91af">list</span><span style="color:#000000">):</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># log thread start</span></span></span>
@@ -2277,25 +2277,25 @@
 </ol>
 
 <p>First, version 6. To compare the two versions, we set the server’s <strong>[sleep_time]</strong> property to zero so that there is no forced thread wait. The client logs are as follows:</p>
-<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:20:45.<span style="background-color:#bdd6ee">811347</span>, Thread-1 : début du thread <span style="font-weight:bold">[Thread-1]</span> avec 4 contribuable(s)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:20:45.811347, Thread-1 : début du calcul de l&#x27;tax from {&quot;id&quot;: 1, &quot;married&quot;: &quot;yes&quot;, &quot;children&quot;: 2, &quot;salary&quot;: 55555}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:20:45.811347, Thread-1 : début du calcul de l&#x27;impôt de {&quot;id&quot;: 1, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 55555}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">…</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:20:45.913065, Thread-3 : fin du calcul de l&#x27;tax from {&quot;id&quot;: 11, &quot;married&quot;: &quot;yes&quot;, &quot;children&quot;: 3, &quot;salary&quot;: 200000, &quot;tax&quot;: 42842, &quot;surcharge&quot;: 17283, &quot;rate&quot;: 0.41, &quot;discount&quot;: 0, &quot;reduction&quot;: 0}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:20:45.<span style="background-color:#bdd6ee">913065</span>, Thread-3 : fin du calcul de l&#x27;impôt de {&quot;id&quot;: 11, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 42842, &quot;surcôte&quot;: 17283, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:20:45.913065, Thread-3 : fin du thread <span style="font-weight:bold">[Thread-3]</span></span></span>
 </code></pre></div>
 
 <p>The client execution time to calculate the tax for 11 taxpayers is therefore <strong>[913065-811347= 101718]</strong>, i.e., approximately<mark style="background-color: #bdd6ee"> 102 milliseconds</mark>.</p>
 <p>Let’s do the same with version 10 (sleep_time from the server at zero). The client logs are then as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.871428, Thread-1 : début du calcul de l&#x27;4-taxpayer tax</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.873594, Thread-2 : début du calcul de l&#x27;tax for 3 taxpayers</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.877429, Thread-3 : début du calcul de l&#x27;tax for 3 taxpayers</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.882855, Thread-4 : début du calcul de l&#x27;tax on 1 taxpayers</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.<span style="background-color:#bdd6ee">871428</span>, Thread-1 : début du calcul de l&#x27;impôt des 4 contribuables</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.873594, Thread-2 : début du calcul de l&#x27;impôt des 3 contribuables</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.877429, Thread-3 : début du calcul de l&#x27;impôt des 3 contribuables</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.882855, Thread-4 : début du calcul de l&#x27;impôt des 1 contribuables</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.930723, Thread-2 : {&quot;réponse&quot;: {&quot;results&quot;: <span style="font-weight:bold">[{&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 16782, &quot;surcôte&quot;: 7176, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}, {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 9200, &quot;surcôte&quot;: 2180, &quot;taux&quot;: 0.3, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}, {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 5, </span><span style="font-weight:bold">&quot;salaire&quot;: 100000, &quot;impôt&quot;: 4230, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}]</span>}}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">….</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.935958, Thread-4 : fin du calcul de l&#x27;tax on 1 taxpayers</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.935958, Thread-1 : fin du calcul de l&#x27;4-taxpayer tax</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.935958, Thread-4 : fin du calcul de l&#x27;impôt des 1 contribuables</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">2020-07-28 14:25:31.<span style="background-color:#bdd6ee">935958</span>, Thread-1 : fin du calcul de l&#x27;impôt des 4 contribuables</span></span>
 </code></pre></div>
 
 <p>The client execution time to calculate the tax for 11 taxpayers is therefore <strong>[935958-871428= 64530 ns]</strong> (line 8 – line 1), i.e., approximately<mark style="background-color: #bdd6ee"> 65 milliseconds</mark>. This new version 10 thus results in a gain of approximately 57% over version 7.</p>

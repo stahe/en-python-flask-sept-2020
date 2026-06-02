@@ -1390,21 +1390,21 @@
 <p><img src="images/1000000000000168000001EBB3D4138F.png" width="157" height="214" style="width:4.159cm;height:5.673cm;" alt="Image" class="odt-zoomable" data-zoom-src="images/1000000000000168000001EBB3D4138F.png" /></p>
 <p>The <strong>[any_xx]</strong> scripts are based on the scripts already examined for SGBD, MySQL, and PostgreSQL. We will not go over all of them. We will focus on the <strong>[any_04]</strong> script, which is the most complex. Note that this script executes the SQL commands from the following <strong>[data/commandes.sql]</strong> file:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-sql">
-<span class="odt-code-line"><span class="odt-code-line-content"># delete [people] table</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># delete [personnes] table</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc;color:#0000ff">drop</span><span style="background-color:#fff2cc;color:#000000"> </span><span style="background-color:#fff2cc;color:#0000ff">table</span><span style="background-color:#fff2cc;color:#000000"> if exists personnes</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># create people table</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">create</span><span style="color:#000000"> </span><span style="color:#0000ff">table</span><span style="color:#000000"> </span><span style="color:#2b91af">personnes</span><span style="color:#000000"> (id </span><span style="color:#0000ff">int</span><span style="color:#000000"> </span><span style="color:#0000ff">primary key</span><span style="color:#000000">, prenom </span><span style="color:#0000ff">varchar</span><span style="color:#000000">(30) </span><span style="color:#0000ff">not null</span><span style="color:#000000">, nom </span><span style="color:#0000ff">varchar</span><span style="color:#000000">(30) </span><span style="color:#0000ff">not null</span><span style="color:#000000">, age </span><span style="color:#0000ff">integer</span><span style="color:#000000"> </span><span style="color:#0000ff">not null</span><span style="color:#000000">, unique (nom,prenom))</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># integration of two people</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">insert into personnes(id, prenom, nom, age) values(1, &#x27;Paul&#x27;,&#x27;Langevin&#x27;,48)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">insert into personnes(id, prenom, nom, age) values (2, &#x27;Sylvie&#x27;,&#x27;Lefur&#x27;,70)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">insert into</span><span style="color:#000000"> personnes(id, prenom, nom, age) </span><span style="color:#0000ff">values</span><span style="color:#000000">(1, </span><span style="color:#a31515">&#x27;Paul&#x27;</span><span style="color:#000000">,</span><span style="color:#a31515">&#x27;Langevin&#x27;</span><span style="color:#000000">,48)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">insert into</span><span style="color:#000000"> personnes(id, prenom, nom, age) </span><span style="color:#0000ff">values</span><span style="color:#000000"> (2, </span><span style="color:#a31515">&#x27;Sylvie&#x27;</span><span style="color:#000000">,</span><span style="color:#a31515">&#x27;Lefur&#x27;</span><span style="color:#000000">,70)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># table display</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">select</span><span style="color:#000000"> prenom, nom, age </span><span style="color:#0000ff">from</span><span style="color:#000000"> personnes</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># deliberate error</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">xx</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># integration of three people</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">insert into personnes(id, prenom, nom, age) values (3, &#x27;Pierre&#x27;,&#x27;Nicazou&#x27;,35)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">insert into personnes(id, prenom, nom, age) values (4, &#x27;Geraldine&#x27;,&#x27;Colou&#x27;,26)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">insert into personnes(id, prenom, nom, age) values (5, &#x27;Paulette&#x27;,&#x27;Girond&#x27;,56)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">insert into</span><span style="color:#000000"> personnes(id, prenom, nom, age) </span><span style="color:#0000ff">values</span><span style="color:#000000"> (3, </span><span style="color:#a31515">&#x27;Pierre&#x27;</span><span style="color:#000000">,</span><span style="color:#a31515">&#x27;Nicazou&#x27;</span><span style="color:#000000">,35)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">insert into</span><span style="color:#000000"> personnes(id, prenom, nom, age) </span><span style="color:#0000ff">values</span><span style="color:#000000"> (4, </span><span style="color:#a31515">&#x27;Geraldine&#x27;</span><span style="color:#000000">,</span><span style="color:#a31515">&#x27;Colou&#x27;</span><span style="color:#000000">,26)</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">insert into</span><span style="color:#000000"> personnes(id, prenom, nom, age) </span><span style="color:#0000ff">values</span><span style="color:#000000"> (5, </span><span style="color:#a31515">&#x27;Paulette&#x27;</span><span style="color:#000000">,</span><span style="color:#a31515">&#x27;Girond&#x27;</span><span style="color:#000000">,56)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># table display</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">select</span><span style="color:#000000"> prenom, nom, age </span><span style="color:#0000ff">from</span><span style="color:#000000"> personnes</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># list of persons in alphabetical order of surnames and, for equal surnames, in alphabetical order of first names</span></span>
@@ -1413,15 +1413,15 @@
 <span class="odt-code-line"><span class="odt-code-line-content"># then for equal ages in alphabetical order of surnames and for equal surnames in alphabetical order of first names</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">select</span><span style="color:#000000"> nom,prenom,age </span><span style="color:#0000ff">from</span><span style="color:#000000"> personnes </span><span style="color:#0000ff">where</span><span style="color:#000000"> age between 20 </span><span style="color:#0000ff">and</span><span style="color:#000000"> 40 </span><span style="color:#0000ff">order by</span><span style="color:#000000"> age </span><span style="color:#0000ff">desc</span><span style="color:#000000">, nom </span><span style="color:#0000ff">asc</span><span style="color:#000000">, prenom </span><span style="color:#0000ff">asc</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># insertion of mrs Bruneau</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">insert into personnes(id, prenom, nom, age) values(6, &#x27;Josette&#x27;,&#x27;Bruneau&#x27;,46)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">insert into</span><span style="color:#000000"> personnes(id, prenom, nom, age) </span><span style="color:#0000ff">values</span><span style="color:#000000">(6, </span><span style="color:#a31515">&#x27;Josette&#x27;</span><span style="color:#000000">,</span><span style="color:#a31515">&#x27;Bruneau&#x27;</span><span style="color:#000000">,46)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># update your age</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">update personnes set age=47 where nom=&#x27;Bruneau</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">update</span><span style="color:#000000"> personnes </span><span style="color:#0000ff">set</span><span style="color:#000000"> age=47 </span><span style="color:#0000ff">where</span><span style="color:#000000"> nom=</span><span style="color:#a31515">&#x27;Bruneau&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># list of people named Bruneau</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">select nom,prenom,age from personnes where nom=&#x27;Bruneau</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">select</span><span style="color:#000000"> nom,prenom,age </span><span style="color:#0000ff">from</span><span style="color:#000000"> personnes </span><span style="color:#0000ff">where</span><span style="color:#000000"> nom=</span><span style="color:#a31515">&#x27;Bruneau&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># deletion of Mme Bruneau</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">delete from personnes where nom=&#x27;Bruneau</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">delete</span><span style="color:#000000"> </span><span style="color:#0000ff">from</span><span style="color:#000000"> personnes </span><span style="color:#0000ff">where</span><span style="color:#000000"> nom=</span><span style="color:#a31515">&#x27;Bruneau&#x27;</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># list of people named Bruneau</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">select nom,prenom,age from personnes where nom=&#x27;Bruneau</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">select</span><span style="color:#000000"> nom,prenom,age </span><span style="color:#0000ff">from</span><span style="color:#000000"> personnes </span><span style="color:#0000ff">where</span><span style="color:#000000"> nom=</span><span style="color:#a31515">&#x27;Bruneau&#x27;</span></span></span>
 </code></pre></div>
 
 <p>We have modified line 2 so that the command behaves the same way for SGBD, MySQL, and PostgreSQL if the table <strong>[personnes]</strong> does not exist.</p>
@@ -1658,9 +1658,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 0</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[create table personnes (id int primary key, prenom varchar(30) not null, nom varchar(30) not null, age integer not null, unique (nom,prenom))]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 0</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values(1, &#x27;Paul&#x27;,&#x27;Langevin&#x27;,48)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[insert into personnes(id, prenom, nom, age) values(1, &#x27;Paul&#x27;,&#x27;Langevin&#x27;,48)]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values (2, &#x27;Sylvie&#x27;,&#x27;Lefur&#x27;,70)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[insert into personnes(id, prenom, nom, age) values (2, &#x27;Sylvie&#x27;,&#x27;Lefur&#x27;,70)]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[select prenom, nom, age from personnes]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">prenom, nom, age,</span></span>
@@ -1669,11 +1669,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">(&#x27;Sylvie&#x27;, &#x27;Lefur&#x27;, 70)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">xx : Erreur (1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#x27;xx&#x27; at line 1)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values (3, &#x27;Pierre&#x27;,&#x27;Nicazou&#x27;,35)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[insert into personnes(id, prenom, nom, age) values (3, &#x27;Pierre&#x27;,&#x27;Nicazou&#x27;,35)]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values (4, &#x27;Geraldine&#x27;,&#x27;Colou&#x27;,26)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[insert into personnes(id, prenom, nom, age) values (4, &#x27;Geraldine&#x27;,&#x27;Colou&#x27;,26)]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values (5, &#x27;Paulette&#x27;,&#x27;Girond&#x27;,56)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[insert into personnes(id, prenom, nom, age) values (5, &#x27;Paulette&#x27;,&#x27;Girond&#x27;,56)]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[select prenom, nom, age from personnes]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">prenom, nom, age,</span></span>
@@ -1699,18 +1699,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">(&#x27;Nicazou&#x27;, &#x27;Pierre&#x27;, 35)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">(&#x27;Colou&#x27;, &#x27;Geraldine&#x27;, 26)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values(6, &#x27;Josette&#x27;,&#x27;Bruneau&#x27;,46)]: Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[insert into personnes(id, prenom, nom, age) values(6, &#x27;Josette&#x27;,&#x27;Bruneau&#x27;,46)]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[update personnes set age=47 where nom=&#x27;Bruneau&#x27;] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[update personnes set age=47 where nom=&#x27;Bruneau&#x27;]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[select nom,prenom,age from personnes where nom=&#x27;Bruneau&#x27;] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[select nom,prenom,age from personnes where nom=&#x27;Bruneau&#x27;]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nom, prenom, age,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">(&#x27;Bruneau&#x27;, &#x27;Josette&#x27;, 47)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[delete from personnes where nom=&#x27;Bruneau&#x27;] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[delete from personnes where nom=&#x27;Bruneau&#x27;]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[select nom,prenom,age from personnes where nom=&#x27;Bruneau&#x27;] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[select nom,prenom,age from personnes where nom=&#x27;Bruneau&#x27;]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nom, prenom, age,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>

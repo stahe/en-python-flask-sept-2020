@@ -1549,13 +1549,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/strings/str_02.py</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;ABCD&#x27;.lower()=abcd</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;abcd&#x27;.upper()=ABCD</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">&#x27;horse[2]=e</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&#x27;cheval[2]=e</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;accented characters&#x27;[5:7]=tè</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;accented characters&#x27;[4:]=accented characters</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;accented characters&#x27;[:5]=carac</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">len(&#x27;123&#x27;)=3</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;  abcd &#x27;.strip()=[abcd]</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">&#x27;  abcd &#x27;.rstrip()=[ abcd]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&#x27;  abcd &#x27;.rstrip()=[  abcd]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;  abcd &#x27;.lstrip()=[abcd ]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">str.strip()=<span style="font-weight:bold">[abcd]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">&#x27;abcd&#x27;.replace(&#x27;a&#x27;,&#x27;x&#x27;)=xbcd</span></span>
@@ -1619,32 +1619,22 @@
 <li>lines 18-23: &#x27;latin1&#x27; is another name for the &#x27;iso-8859-1&#x27; encoding;</li>
 </ul>
 <p>The results are as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/strings/str_03.py
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>str=[hélène va au marché acheter des légumes, type=&lt;class &#39;str&#39;&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>--- utf-8
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>bytes1=b&#39;h\xc3\xa9l\x3\xa8ne goes to the market to buy l\xc3\xa9gumes&#39;, type=&lt;class &#39;bytes&#39;&gt;
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>bytes2=b&#39;h\xc3\xa9l\x3\xa8ne goes to the market to buy l\xc3\xa9gumes&#39;, type=&lt;class &#39;bytes&#39;&gt;
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>--- iso-8859-1
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>bytes1=b&#39;h\xe9l\xe8ne goes to the market to buy vegetables&#39;, type=&lt;class &#39;bytes&#39;&gt;
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>bytes2=b&#39;h\xe9l\xe8ne goes to the market to buy vegetables&#39;, type=&lt;class &#39;bytes&#39;&gt;
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>--- latin1
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>bytes1=b&#39;h\xe9l\xe8ne goes to the market to buy vegetables&#39;, type=&lt;class &#39;bytes&#39;&gt;
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>bytes2=b&#39;h\xe9l\xe8ne goes to the market to buy vegetables&#39;, type=&lt;class &#39;bytes&#39;&gt;
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>
-<a id="__codelineno-0-13" name="__codelineno-0-13"></a>Process finished with exit code 0
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/strings/str_03.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str=<span style="font-weight:bold">[hélène va au marché acheter des légumes, type=&lt;class &#x27;str&#x27;&gt;</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">--- utf-8</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes1=b&#x27;h\xc3\xa9l\xc3\xa8ne va au march\xc3\xa9 acheter des l\xc3\xa9gumes&#x27;, type=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes2=b&#x27;h\xc3\xa9l\xc3\xa8ne va au march\xc3\xa9 acheter des l\xc3\xa9gumes&#x27;, type=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">--- iso-8859-1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes1=b&#x27;h\xe9l\xe8ne va au march\xe9 acheter des l\xe9gumes&#x27;, type=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes2=b&#x27;h\xe9l\xe8ne va au march\xe9 acheter des l\xe9gumes&#x27;, type=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">--- latin1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes1=b&#x27;h\xe9l\xe8ne va au march\xe9 acheter des l\xe9gumes&#x27;, type=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes2=b&#x27;h\xe9l\xe8ne va au march\xe9 acheter des l\xe9gumes&#x27;, type=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Process finished with exit code 0</span></span>
+</code></pre></div>
+
 <p><strong>Comments</strong></p>
 <ul>
 <li><strong>line 4: we see that the accented characters have been encoded using two bytes:</strong><ul>
@@ -1714,7 +1704,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">str6 = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.decode(bytes4, </span><span style="color:#a31515">&quot;base64&quot;</span><span style="color:#000000">).decode(</span><span style="color:#a31515">&quot;utf-8&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;str6=</span><span style="font-weight:bold;color:#a31515">[{str6}]</span><span style="color:#a31515">, type(str6)={type(str6)}&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"># encoding a binary string in quoted-printable</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># quoted-printable encoding of a binary string</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">print(</span><span style="color:#a31515">&quot;---- binaire utf-8 -&gt; binaire quoted-printable&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">str7 = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.encode(bytes1, </span><span style="color:#a31515">&quot;quoted-printable&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">print(</span><span style="color:#a31515">f&quot;str7=</span><span style="font-weight:bold;color:#a31515">[{str7}]</span><span style="color:#a31515">, type(str7)={type(str7)}&quot;</span><span style="color:#000000">)</span></span></span>
@@ -1740,60 +1730,36 @@
 <li>lines 51–59: this process is repeated using &#x27;quoted-printable&#x27; encoding instead of &#x27;base64&#x27;;</li>
 </ul>
 <p>The results are as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span>
-<span class="normal"><a href="#__codelineno-1-18">18</a></span>
-<span class="normal"><a href="#__codelineno-1-19">19</a></span>
-<span class="normal"><a href="#__codelineno-1-20">20</a></span>
-<span class="normal"><a href="#__codelineno-1-21">21</a></span>
-<span class="normal"><a href="#__codelineno-1-22">22</a></span>
-<span class="normal"><a href="#__codelineno-1-23">23</a></span>
-<span class="normal"><a href="#__codelineno-1-24">24</a></span>
-<span class="normal"><a href="#__codelineno-1-25">25</a></span>
-<span class="normal"><a href="#__codelineno-1-26">26</a></span>
-<span class="normal"><a href="#__codelineno-1-27">27</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/strings/str_04.py
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>---- unicode string
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>str1=[hélène va au marché acheter des légumes], type(str1)=&lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>---- unicode string -&gt; utf-8 binary
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>bytes1=[b&#39;h\xc3\xa9l\x3\xa8ne goes to the market to buy vegetables&#39;], type(bytes1)=&lt;class &#39;bytes &gt;
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>---- binary utf-8 -&gt; unicode string
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>str2=[hélène va au marché acheter des légumes], type(str2)=&lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>str2==str1=True
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>---- unicode string -&gt; binary iso-8859-1
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>bytes2=[b&#39;hxexe9l\xe8ne goes to the market to buy vegetables&#39;], type(bytes2)=&lt;class &#39;bytes&#39;&gt;
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>---- binary iso-8859-1 -&gt; unicode string
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>str3=[hélène va au marché acheter des légumes], type(str3)=&lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>str3==str1=True
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a>--- utf-8 binary (iso-8859-1 decoding) --&gt; unicode string
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a>str4=[hÃ©lÃ¨ne va au marchÃ© acheter des lÃ©gumes], type(str4)=&lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a>---- unicode string -&gt; utf-8 binary
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a>bytes3=[b&#39;h\xc3\xa9l\x3\xa8ne goes to the market to buy vegetables&#39;], type(bytes3)=&lt;class &#39;bytes &gt;
-<a id="__codelineno-1-18" name="__codelineno-1-18"></a>---- binary utf-8 -&gt; binary base64
-<a id="__codelineno-1-19" name="__codelineno-1-19"></a>bytes4=[b&#39;aMOpbMOobmUgdmEgYXUgbWFyY2jDqSBhY2hldGVyIGRlcyBsw6lndW1lcw==&#39;], type(bytes4)=&lt;class &#39;bytes&#39;&gt;
-<a id="__codelineno-1-20" name="__codelineno-1-20"></a>---- base64 binary -&gt; utf-8 binary -&gt; unicode string
-<a id="__codelineno-1-21" name="__codelineno-1-21"></a>str6=[hélène va au marché acheter des légumes], type(str6)=&lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-22" name="__codelineno-1-22"></a>---- binary utf-8 -&gt; binary quoted-printable
-<a id="__codelineno-1-23" name="__codelineno-1-23"></a>str7=[b&#39;h=C3=A9l=C3=A8ne=20va=20au=20march=C3=A9=20acheter=20des=20l=C3=A9gumes&#39;], type(str7)=&lt;class &#39;bytes&#39;&gt;
-<a id="__codelineno-1-24" name="__codelineno-1-24"></a>---- quoted-printable binary -&gt; utf-8 binary -&gt; unicode string
-<a id="__codelineno-1-25" name="__codelineno-1-25"></a>str8=[hélène va au marché acheter des légumes], type(str8)=&lt;class &#39;str&#39;&gt;
-<a id="__codelineno-1-26" name="__codelineno-1-26"></a>
-<a id="__codelineno-1-27" name="__codelineno-1-27"></a>Process finished with exit code 0
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/strings/str_04.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- unicode string</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str1=<span style="font-weight:bold">[hélène va au marché acheter des légumes]</span>, type(str1)=&lt;class &#x27;str&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- unicode string -&gt; utf-8 binary</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes1=<span style="font-weight:bold">[b&#x27;h\xc3\xa9l\xc3\xa8ne va au march\xc3\xa9 acheter des l\xc3\xa9gumes&#x27;]</span>, type(bytes1)=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- binary utf-8 -&gt; unicode string</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str2=<span style="font-weight:bold">[hélène va au marché acheter des légumes]</span>, type(str2)=&lt;class &#x27;str&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str2==str1=True</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- unicode string -&gt; binary iso-8859-1</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes2=<span style="font-weight:bold">[b&#x27;h\xe9l\xe8ne va au march\xe9 acheter des l\xe9gumes&#x27;]</span>, type(bytes2)=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- binary iso-8859-1 -&gt; unicode string</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str3=<span style="font-weight:bold">[hélène va au marché acheter des légumes]</span>, type(str3)=&lt;class &#x27;str&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str3==str1=True</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">--- utf-8 binary (iso-8859-1 decoding) --&gt; unicode string</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str4=<span style="font-weight:bold">[hÃ©lÃ¨ne va au marchÃ© acheter des lÃ©gumes]</span>, type(str4)=&lt;class &#x27;str&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- unicode string -&gt; utf-8 binary</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes3=<span style="font-weight:bold">[b&#x27;h\xc3\xa9l\xc3\xa8ne va au march\xc3\xa9 acheter des l\xc3\xa9gumes&#x27;]</span>, type(bytes3)=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- binary utf-8 -&gt; binary base64</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">bytes4=<span style="font-weight:bold">[b&#x27;aMOpbMOobmUgdmEgYXUgbWFyY2jDqSBhY2hldGVyIGRlcyBsw6lndW1lcw==\n&#x27;]</span>, type(bytes4)=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- base64 binary -&gt; utf-8 binary -&gt; unicode string</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str6=<span style="font-weight:bold">[hélène va au marché acheter des légumes]</span>, type(str6)=&lt;class &#x27;str&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- binary utf-8 -&gt; binary quoted-printable</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str7=<span style="font-weight:bold">[b&#x27;h=C3=A9l=C3=A8ne=20va=20au=20march=C3=A9=20acheter=20des=20l=C3=A9gumes&#x27;]</span>, type(str7)=&lt;class &#x27;bytes&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">---- quoted-printable binary -&gt; utf-8 binary -&gt; unicode string</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">str8=<span style="font-weight:bold">[hélène va au marché acheter des légumes]</span>, type(str8)=&lt;class &#x27;str&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Process finished with exit code 0</span></span>
+</code></pre></div>
+
 <ul>
 <li>lines 14-15: a UTF-8 binary is decoded into a Unicode string using the wrong decoder &#x27;iso-8859-1&#x27;. As a result, some generated Unicode characters are incorrect, in this case the accented characters;</li>
 <li>lines 18-19: &#x27;base64&#x27; encoding uses 64 characters (ASCII, encoded on 7 bits) to encode any binary data. As we can see, this increases the size of the string&#x27;s binary representation;</li>

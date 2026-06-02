@@ -1677,7 +1677,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold">&quot;</span><span style="font-weight:bold;color:#000000">{root_dir}</span><span style="font-weight:bold">/impots/v05/entities&quot;</span><span style="font-weight:bold;color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># IndexController</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../controllers&quot;</span><span style="font-weight:bold">,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># scripts [config_database, config_layers]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># scripts [config_database, config_layers]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        script_dir,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    ]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># set the syspath</span></span>
@@ -2294,7 +2294,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># data recovery from tax authorities</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># config[&#x27;admindata&#x27;] will be read-only application data</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># config[‘admindata’] will be read-only application scope data</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;admindata&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000"> = </span><span style="color:#6f008a">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;layers&quot;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&quot;dao&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">.get_admindata()</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">except</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsError</span><span style="color:#000000"> </span><span style="color:#0000ff">as</span><span style="color:#000000"> erreur:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    print(</span><span style="color:#a31515">f&quot;L&#x27;erreur suivante s&#x27;est produite : {erreur}&quot;</span><span style="color:#000000">)</span></span></span>
@@ -2431,7 +2431,7 @@
 </ul>
 
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
-<span class="odt-code-line"><span class="odt-code-line-content">    config[&#x27;users&#x27;] = [</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#808080">config</span><span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;users&#x27;</span><span style="font-weight:bold">]</span> = <span style="font-weight:bold">[</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;login&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;admin&quot;</span><span style="font-weight:bold">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">            </span><span style="font-weight:bold;color:#a31515">&quot;password&quot;</span><span style="font-weight:bold">: </span><span style="font-weight:bold;color:#a31515">&quot;admin&quot;</span></span></span>
@@ -2569,11 +2569,13 @@
   </li>
 </ol>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Analyse du fichier C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\http-clients\01\main/../data/input/taxpayersdata.txt
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Ligne 15, not enough values to unpack (expected 4, got 2)
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Ligne 17, MyException[1, L&#39;entity identifier &lt;class &#39;TaxPayer.TaxPayer&#39;&gt; must be an integer &gt;=0]
+<div class="odt-code-rich" data-linenums="false" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">Analyse du fichier C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\impots\http-clients\01\main/../data/input/taxpayersdata.txt</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Ligne 15, not enough values to unpack (expected 4, got 2)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Ligne 17, MyException<span style="font-weight:bold">[1, L&#x27;identifiant d&#x27;une entité &lt;class &#x27;TaxPayer.TaxPayer&#x27;&gt; doit être un entier &gt;=0]</span></span></span>
 </code></pre></div>
+
 <ol>
   <li>(continued)
     <ol>
@@ -2828,7 +2830,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># parameter memory</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.__config_server = </span><span style="color:#808080">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;server&quot;</span><span style="font-weight:bold;color:#000000">]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># unused [AbstractImpôtsDao] method</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># unused method of [AbstractImpôtsDao]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> get_admindata(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; </span><span style="color:#2b91af">AdminData</span><span style="color:#000000">:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">pass</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2859,7 +2861,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        résultat = response.json()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># error if status code other than 200 OK</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">if</span><span style="color:#000000"> status_code != status.HTTP_200_OK:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># we know that the errors have been associated with the [errors] key in the response</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># we know that the errors were associated with the [erreurs] key in the response</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">raise</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsError</span><span style="color:#000000">(87, résultat</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;réponse&#x27;</span><span style="font-weight:bold;color:#000000">][</span><span style="font-weight:bold;color:#a31515">&#x27;erreurs&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># we know that the result has been associated with the [result] key in the response</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># modify the input parameter with this result</span></span></span>
@@ -2936,7 +2938,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">{&quot;réponse&quot;: {&quot;erreurs&quot;: <span style="font-weight:bold">[&quot;Méthode GET requise avec les seuls paramètres [marié, enfants, salaire]</span>&quot;, &quot;paramètre <span style="font-weight:bold">[marié]</span> manquant&quot;, &quot;paramètre <span style="font-weight:bold">[enfants]</span> manquant&quot;, &quot;paramètre <span style="font-weight:bold">[salaire]</span> manquant&quot;]}}</span></span>
 </code></pre></div>
 
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;id&quot;: 0, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 42842, &quot;surcôte&quot;: 17283, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;id&quot;: 0, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 42842, &quot;surcôte&quot;: 17283, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
 </code></pre></div>
 <ul>
   <li>lines 51-53: if the status code is not 200, then an exception is thrown with the error messages encapsulated in the response;
@@ -3042,45 +3044,45 @@
 </ul>
 
 <p>When this configuration is executed, the following results are obtained:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/http-clients/01/tests/TestHttpClientDao.py
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>tests en cours...
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 55555, &quot;impôt&quot;: 2814, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>....{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 64210, &quot;surcôte&quot;: 7498, &quot;taux&quot;: 0.45, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 42842, &quot;surcôte&quot;: 17283, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 1384, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 384, &quot;réduction&quot;: 347}}}
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 720, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>...{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 19884, &quot;surcôte&quot;: 4480, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 16782, &quot;surcôte&quot;: 7176, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 9200, &quot;surcôte&quot;: 2180, &quot;taux&quot;: 0.3, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 5, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 4230, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 22986, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>....
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 30000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.0, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a>----------------------------------------------------------------------
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a>Ran 11 tests in 0.130s
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a>OK
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a>Process finished with exit code 0
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span>
+<span class="normal"><a href="#__codelineno-4-18">18</a></span>
+<span class="normal"><a href="#__codelineno-4-19">19</a></span>
+<span class="normal"><a href="#__codelineno-4-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/impots/http-clients/01/tests/TestHttpClientDao.py
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>tests en cours...
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 55555, &quot;impôt&quot;: 2814, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>....{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 64210, &quot;surcôte&quot;: 7498, &quot;taux&quot;: 0.45, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 42842, &quot;surcôte&quot;: 17283, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 1384, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 384, &quot;réduction&quot;: 347}}}
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 50000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 720, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a>...{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 19884, &quot;surcôte&quot;: 4480, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 16782, &quot;surcôte&quot;: 7176, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 9200, &quot;surcôte&quot;: 2180, &quot;taux&quot;: 0.3, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 5, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 4230, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.14, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;non&quot;, &quot;enfants&quot;: 0, &quot;salaire&quot;: 100000, &quot;impôt&quot;: 22986, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a>....
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a>{&quot;réponse&quot;: {&quot;result&quot;: {&quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 2, &quot;salaire&quot;: 30000, &quot;impôt&quot;: 0, &quot;surcôte&quot;: 0, &quot;taux&quot;: 0.0, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}}}
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a>----------------------------------------------------------------------
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a>Ran 11 tests in 0.130s
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a>
+<a id="__codelineno-4-18" name="__codelineno-4-18"></a>OK
+<a id="__codelineno-4-19" name="__codelineno-4-19"></a>
+<a id="__codelineno-4-20" name="__codelineno-4-20"></a>Process finished with exit code 0
 </code></pre></div></td></tr></table></div>
 <p>All 11 tests passed.</p>
 

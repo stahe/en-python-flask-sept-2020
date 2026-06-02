@@ -1989,7 +1989,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> __init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">config</span><span style="color:#000000">: </span><span style="color:#2b91af">dict</span><span style="color:#000000">):</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[taxpayersFilename]: name of the taxpayer text file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[resultsFilename]: name of the jSON results file</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[errorsFilename]: error file name</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[errorsFilename]: the name of the error file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># save parameters</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#808080">self</span><span style="color:#000000">.</span><span style="color:#2b91af">taxpayers_filename</span><span style="color:#000000"> = </span><span style="color:#808080">config</span><span style="color:#000000">.get(</span><span style="color:#a31515">&quot;taxpayersFilename&quot;</span><span style="color:#000000">)</span></span></span>
@@ -2198,7 +2198,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># writing results to a jSON file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># taxpayers: list of objects of type TaxPayer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># (id, married, children, salary, tax, surcharge, reduction, rate)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># the [taxpayers] list is saved in text file [self.taxpayers_results_filename]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># the [taxpayers] list is saved in the [self.taxpayers_results_filename] text file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        file = </span><span style="color:#0000ff">None</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># opening the results file</span></span></span>
@@ -2268,10 +2268,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpôtsDaoWithAdminDataInJsonFile</span><span style="color:#000000">(AbstractImpôtsDao):</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># manufacturer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> __init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">config</span><span style="color:#000000">: </span><span style="color:#2b91af">dict</span><span style="color:#000000">):</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[admindataFilename]: name of jSON file containing tax administration data</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[taxpayersFilename]: name of taxpayer text file</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[admindataFilename]: the name of the jSON file containing tax administration data</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[taxpayersFilename]: name of the taxpayer text file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[resultsFilename]: name of the jSON results file</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[errorsFilename]: error file name</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[errorsFilename]: the name of the error file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># parent class initialization</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        AbstractImpôtsDao.__init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">config</span><span style="color:#000000">)</span></span></span>
@@ -2280,10 +2280,10 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># open the jSON tax data file in read mode</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            file = </span><span style="color:#6f008a">codecs</span><span style="color:#000000">.open(</span><span style="color:#808080">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&quot;admindataFilename&quot;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;r&quot;</span><span style="color:#000000">, </span><span style="color:#a31515">&quot;utf8&quot;</span><span style="color:#000000">)</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># transfer the contents of file jSON to object [AdminData]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># transfer the contents of the jSON file to a [AdminData] object</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#808080">self</span><span style="color:#000000">.admindata = AdminData().fromdict(</span><span style="color:#6f008a">json</span><span style="color:#000000">.load(file))</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">except</span><span style="color:#000000"> </span><span style="color:#2b91af">BaseException</span><span style="color:#000000"> </span><span style="color:#0000ff">as</span><span style="color:#000000"> erreur:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># we relaunch the error as type [ImpôtsError]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># we relaunch the error as a [ImpôtsError] type</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">raise</span><span style="color:#000000"> ImpôtsError(21, </span><span style="color:#a31515">f&quot;{erreur}&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># close the file if it has been opened</span></span></span>
@@ -2295,7 +2295,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># -------------</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># data recovery from tax authorities</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># the method returns an object [AdminData]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># the method returns a [AdminData] object</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> get_admindata(</span><span style="color:#808080">self</span><span style="color:#000000">) -&gt; AdminData:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">return</span><span style="color:#000000"> </span><span style="color:#808080">self</span><span style="color:#000000">.admindata</span></span></span>
 </code></pre></div>
@@ -2807,7 +2807,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Ligne 17, not enough values to unpack (expected 4, got 2)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Ligne 19, too many values to unpack (expected 4)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Ligne 21, MyException[1, L&#x27;entity identifier &lt;class &#x27;TaxPayer.TaxPayer&#x27;&gt; must be an integer &gt;=0]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Ligne 21, MyException<span style="font-weight:bold">[1, L&#x27;identifiant d&#x27;une entité &lt;class &#x27;TaxPayer.TaxPayer&#x27;&gt; doit être un entier &gt;=0]</span></span></span>
 </code></pre></div>
 
 <p>The erroneous lines were as follows:</p>
@@ -3039,7 +3039,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># code</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># layer execution [ui]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># execute [ui] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    ui.run()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">except</span><span style="color:#000000"> ImpôtsError </span><span style="color:#0000ff">as</span><span style="color:#000000"> erreur:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># the error message is displayed</span></span></span>
@@ -3060,7 +3060,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/<span style="background-color:#fff2cc">impots/v04/main/02/main.py</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Le contribuable est-il marié / pacsé (oui/non) (* pour arrêter) : <span style="background-color:#fff2cc">oui</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">Nombre d&#x27;children: 3</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Nombre d&#x27;enfants : <span style="background-color:#fff2cc">3</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Salaire annuel : <span style="background-color:#fff2cc">200000</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">Impôt du contribuable</span> = {&quot;id&quot;: 0, &quot;marié&quot;: &quot;oui&quot;, &quot;enfants&quot;: 3, &quot;salaire&quot;: 200000, &quot;impôt&quot;: 42842, &quot;surcôte&quot;: 17283, &quot;taux&quot;: 0.41, &quot;décôte&quot;: 0, &quot;réduction&quot;: 0}</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>

@@ -1553,7 +1553,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{root_dir}</span><span style="font-weight:bold;color:#a31515">/impots/http-servers/02/utilities&quot;</span><span style="font-weight:bold">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># main script folder</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        script_dir,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># configs [database, layers, parameters, controllers, views]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># configs [database, layers, parameters, controllers, views]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../configs&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># controllers</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../controllers&quot;</span>,</span></span>
@@ -1589,13 +1589,13 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold;color:#a31515">&quot;</span><span style="font-weight:bold">{script_dir}</span><span style="font-weight:bold;color:#a31515">/../entities&quot;</span><span style="font-weight:bold">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">        </span><span style="font-weight:bold;color:#008000"># layer [dao]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../layers/dao&quot;</span>,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># business] layer</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># layer [métier]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../layers/métier&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># utilities</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../utilities&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># main script folder</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        script_dir,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># configs [database, layers, parameters, controllers, views]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># configs [database, layers, parameters, controllers, views]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../configs&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># controllers</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../controllers&quot;</span>,</span></span>
@@ -2428,7 +2428,7 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># flask application routes</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># application root</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    app.add_url_rule(f&#x27;{prefix_url}/&#x27;, methods=[&#x27;GET&#x27;],</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    app.add_url_rule(</span><span style="background-color:#fff2cc;color:#0000ff">f</span><span style="background-color:#fff2cc;color:#a31515">&#x27;</span><span style="background-color:#fff2cc;color:#000000">{prefix_url}</span><span style="background-color:#fff2cc;color:#a31515">/</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                     view_func=routes.index)</span></span>
 </code></pre></div>
 
@@ -2444,7 +2444,7 @@
 <p>On line 4, we are redirected to URL from the <strong>[init_session]</strong> function. In <strong>[configs/routes.py]</strong>, this function has been associated with the <strong>[/do/init-session/html]</strong> route:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># init-session</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    app.add_url_rule(f&#x27;{prefix_url}/init-session/&lt;string:type_response&gt;{csrftoken_param}&#x27;, methods=[&#x27;GET&#x27;],</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    app.add_url_rule(</span><span style="color:#0000ff">f</span><span style="color:#a31515">&#x27;</span><span style="background-color:#fff2cc;color:#000000">{prefix_url}</span><span style="background-color:#fff2cc;color:#a31515">/init-session/&lt;string:type_response&gt;</span><span style="background-color:#fff2cc;color:#000000">{csrftoken_param}</span><span style="color:#a31515">&#x27;</span><span style="color:#000000">, methods=</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;GET&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                     view_func=routes.init_session)</span></span>
 </code></pre></div>
 

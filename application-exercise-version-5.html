@@ -1647,10 +1647,10 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># tax bracket table</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    tranches_table = Table(</span><span style="color:#a31515">&quot;tbtranches&quot;</span><span style="color:#000000">, metadata,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                           Column(&#x27;id&#x27;, Integer, primary_key=True),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                           Column(&#x27;limit&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                           Column(&#x27;coeffr&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                           Column(&#x27;coeffn&#x27;, Float, nullable=False)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                           Column(</span><span style="color:#a31515">&#x27;id&#x27;</span><span style="color:#000000">, Integer, primary_key=</span><span style="color:#0000ff">True</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                           Column(</span><span style="color:#a31515">&#x27;limite&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                           Column(</span><span style="color:#a31515">&#x27;coeffr&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                           Column(</span><span style="color:#a31515">&#x27;coeffn&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                           )</span></span>
 </code></pre></div>
 
@@ -1658,17 +1658,17 @@
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># the constants table</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    constantes_table = Table(</span><span style="color:#a31515">&quot;tbconstantes&quot;</span><span style="color:#000000">, metadata,</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;id&#x27;, Integer, primary_key=True),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;plafond_qf_demi_part&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;plafond_revenus_celibataire_pour_reduction&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;plafond_revenus_couple_pour_reduction&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;valeur_reduc_demi_part&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;plafond_decote_celibataire&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;plafond_decote_couple&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;plafond_impot_celibataire_pour_decote&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;plafond_impot_couple_pour_decote&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;abattement_dixpourcent_max&#x27;, Float, nullable=False),</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">                             Column(&#x27;abattement_dixpourcent_min&#x27;, Float, nullable=False)</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;id&#x27;</span><span style="color:#000000">, Integer, primary_key=</span><span style="color:#0000ff">True</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;plafond_qf_demi_part&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;plafond_revenus_celibataire_pour_reduction&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;plafond_revenus_couple_pour_reduction&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;valeur_reduc_demi_part&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;plafond_decote_celibataire&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;plafond_decote_couple&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;plafond_impot_celibataire_pour_decote&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;plafond_impot_couple_pour_decote&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;abattement_dixpourcent_max&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">),</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">                             Column(</span><span style="color:#a31515">&#x27;abattement_dixpourcent_min&#x27;</span><span style="color:#000000">, Float, nullable=</span><span style="color:#0000ff">False</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                             )</span></span>
 </code></pre></div>
 
@@ -1951,7 +1951,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># we relaunch the exception in another form</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">raise</span><span style="color:#000000"> ImpôtsError(17, </span><span style="color:#a31515">f&quot;{erreur}&quot;</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span><span style="color:#0000ff">finally</span><span style="color:#000000">:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># session resources are released</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">            <span style="color:#000000"># release session resources</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">            </span><span style="color:#0000ff">if</span><span style="color:#000000"> session:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">                session.close()</span></span>
 </code></pre></div>
@@ -2002,7 +2002,7 @@
 <p>The <strong>[config]</strong> file is as follows:</p>
 <div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-python">
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span> configure(config: dict) -&gt; dict:</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># [config] has the key [sgbd] worth:</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># [config] has the key [sgbd] which is worth:</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># [mysql] to manage a MySQL database</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># [pgres] to manage a PostgreSQL database</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2212,7 +2212,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">from</span> <span style="color:#6f008a">ImpotsDaoWithAdminDataInDatabase</span> <span style="color:#0000ff">import</span> ImpotsDaoWithAdminDataInDatabase</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#808080">config</span><span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;dao&quot;</span><span style="font-weight:bold">]</span> = ImpotsDaoWithAdminDataInDatabase(<span style="color:#808080">config</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    # instantiation layer [business]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # instantiation layer [métier]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">from</span> <span style="color:#6f008a">ImpôtsMétier</span> <span style="color:#0000ff">import</span> ImpôtsMétier</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#808080">config</span><span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;métier&#x27;</span><span style="font-weight:bold">]</span> = ImpôtsMétier()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2244,7 +2244,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span><span style="color:#000000"> </span><span style="color:#2b91af">ImpotsDaoWithAdminDataInDatabase</span><span style="color:#000000">(AbstractImpôtsDao):</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># manufacturer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">def</span><span style="color:#000000"> __init__(</span><span style="color:#808080">self</span><span style="color:#000000">, </span><span style="color:#808080">config</span><span style="color:#000000">: </span><span style="color:#2b91af">dict</span><span style="color:#000000">):</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[&quot;taxPayersFilename&quot;]: name of taxpayer text file</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[&quot;taxPayersFilename&quot;]: name of the taxpayer text file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[&quot;taxPayersResultsFilename&quot;]: name of the jSON results file</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[&quot;errorsFilename&quot;]: records errors found in taxPayersFilename</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#000000"># config[&quot;database&quot;]: database configuration</span></span></span>
@@ -2567,7 +2567,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">from</span> <span style="color:#6f008a">ImpotsDaoWithAdminDataInDatabase</span> <span style="color:#0000ff">import</span> ImpotsDaoWithAdminDataInDatabase</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#808080">config</span><span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&quot;dao&quot;</span><span style="font-weight:bold">]</span> = ImpotsDaoWithAdminDataInDatabase(<span style="color:#808080">config</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    # instantiation layer [business]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    # instantiation layer [métier]</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">from</span> <span style="color:#6f008a">ImpôtsMétier</span> <span style="color:#0000ff">import</span> ImpôtsMétier</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#808080">config</span><span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;métier&#x27;</span><span style="font-weight:bold">]</span> = ImpôtsMétier()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
@@ -2605,7 +2605,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># code</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># layer execution [ui]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># execute [ui] layer</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    ui.run()</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">except</span><span style="color:#000000"> ImpôtsError </span><span style="color:#0000ff">as</span><span style="color:#000000"> ex1:</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># the error message is displayed</span></span></span>

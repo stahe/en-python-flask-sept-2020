@@ -1593,7 +1593,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold;color:#0000ff">f</span><span style="font-weight:bold">&quot;</span><span style="font-weight:bold;color:#000000">{root_dir}</span><span style="font-weight:bold">/impots/http-servers/02/utilities&quot;</span><span style="font-weight:bold;color:#000000">,</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># main script folder</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        script_dir,</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># configs [database, layers, parameters, controllers, views]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold;color:#000000">        </span><span style="font-weight:bold"># configs [database, layers, parameters, controllers, views]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../configs&quot;</span>,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># controllers</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#0000ff">f</span><span style="color:#a31515">&quot;</span>{script_dir}<span style="color:#a31515">/../controllers&quot;</span>,</span></span>
@@ -1647,7 +1647,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">from</span> ModelForErreursView <span style="color:#0000ff">import</span> ModelForErreursView</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">from</span> ModelForListeSimulationsView <span style="color:#0000ff">import</span> ModelForListeSimulationsView</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># authorized shares and their controllers</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#008000"># authorized shares and their auditors</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    controllers = {</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#008000"># initialization of a calculation session</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        <span style="color:#a31515">&quot;init-session&quot;</span>: InitSessionController(),</span></span>
@@ -1904,7 +1904,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span># end</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    sys.exit(</span><span style="color:#098658">1</span><span style="color:#000000">)</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"># the client [redis] is stored in the config</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># the customer [redis] is stored in the config</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">config</span><span style="font-weight:bold;color:#000000">[</span><span style="font-weight:bold;color:#a31515">&#x27;redis_client&#x27;</span><span style="font-weight:bold;color:#000000">]</span><span style="color:#000000"> = redis_client</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># data recovery from tax authorities</span></span>
@@ -2024,7 +2024,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    # end</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    sys.exit(<span style="color:#098658">1</span>)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"># the client [redis] is stored in the config</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"># the customer [redis] is stored in the config</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">config<span style="font-weight:bold">[</span><span style="font-weight:bold;color:#a31515">&#x27;redis_client&#x27;</span><span style="font-weight:bold">]</span> = redis_client</span></span>
 </code></pre></div>
 
@@ -2198,7 +2198,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"># main application controller</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">class</span> MainController(InterfaceController):</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#0000ff">def</span> execute(self, request: LocalProxy, session: LocalProxy, config: dict) -&gt; (dict, int):</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># the request is processed</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">        </span># we process the request</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        logger = <span style="color:#0000ff">None</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        action = <span style="color:#0000ff">None</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        type_response1 = <span style="color:#0000ff">None</span></span></span>

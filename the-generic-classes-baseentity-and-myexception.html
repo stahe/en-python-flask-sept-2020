@@ -2089,7 +2089,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content">    enseignant1 = Enseignant().fromdict({&quot;id&quot;: 1, &quot;nom&quot;: &quot;lourou&quot;, &quot;prénom&quot;: &quot;albert&quot;, &quot;âge&quot;: 56, &quot;sexe&quot;: &quot;M&quot;})</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">  File &quot;C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\classes\02/entities\BaseEntity.py&quot;, line 51, in fromdict</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    raise MyException(2, f&quot;la clé <span style="font-weight:bold">[{key}]</span> n&#x27;est pas autorisée&quot;)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">MyException.MyException: MyException[2, la clé [sexe] n&#x27;is not allowed]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="background-color:#fff2cc">MyException.MyException: MyException</span><span style="font-weight:bold">[2, la clé [sexe]</span><span style="background-color:#fff2cc"> n&#x27;est pas autorisée]</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">Process finished with exit code 1</span></span>
 </code></pre></div>
@@ -2287,30 +2287,21 @@
 </code></pre></div>
 
 <p>The results of the execution are as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/02/asdict_01.py
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>&lt;class &#39;dict&#39;&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>{&#39;_BaseEntity__id&#39;: 1, &#39;<span class="ge">_Personne__nom&#39;: &#39;lourou&#39;, &#39;_</span>Personne__prénom&#39;: &#39;paul&#39;, &#39;<span class="ge">_Personne_</span>_âge&#39;: 56}
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>{&#39;id&#39;: 1, &#39;name&#39;: &#39;lourou&#39;, &#39;first name&#39;: &#39;paul&#39;, &#39;age&#39;: 56}
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>{&#39;id&#39;: 1, &#39;last name&#39;: &#39;lourou&#39;, &#39;first name&#39;: &#39;paul&#39;}
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a>{&quot;id&quot;: 1, &quot;nom&quot;: &quot;lourou&quot;, &quot;âge&quot;: 56}
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a>{&#39;id&#39;: 2, &#39;name&#39;: &#39;abélard&#39;, &#39;age&#39;: 57}
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a>{&#39;name&#39;: &#39;abélard&#39;}
-<a id="__codelineno-0-9" name="__codelineno-0-9"></a>{&#39;teachers&#39;: [{&#39;id&#39;: 1, &#39;last name&#39;: &#39;lourou&#39;, &#39;first name&#39;: &#39;paul&#39;, &#39;age&#39;: 56}, {&#39;id&#39;: 2, &#39;last name&#39;: &#39;abélard&#39;, &#39;first name&#39;: &#39;béatrice&#39;, &#39;age&#39;: 57}]}
-<a id="__codelineno-0-10" name="__codelineno-0-10"></a>{&#39;teachers&#39;: [{&#39;id&#39;: 1, &#39;last name&#39;: &#39;lourou&#39;, &#39;first name&#39;: &#39;paul&#39;, &#39;age&#39;: 56}, {&#39;id&#39;: 2, &#39;last name&#39;: &#39;abélard&#39;, &#39;first name&#39;: &#39;béatrice&#39;, &#39;age&#39;: 57}], &#39;subjects&#39;: {&#39;maths&#39;: {&#39;id&#39;: 1, &#39;last name&#39;: &#39;lourou&#39;, &#39;first name&#39;: &#39;paul&#39;, &#39;age&#39;: 56}, &#39;french&#39;: {&#39;id&#39;: 2, &#39;last name&#39;: &#39;abélard&#39;, &#39;first name&#39;: &#39;béatrice&#39;, &#39;age&#39;: 57}}
-<a id="__codelineno-0-11" name="__codelineno-0-11"></a>
-<a id="__codelineno-0-12" name="__codelineno-0-12"></a>Process finished with exit code 0
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/02/asdict_01.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">&lt;class &#x27;dict&#x27;&gt;</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;_BaseEntity__id&#x27;: 1, &#x27;_Personne__nom&#x27;: &#x27;lourou&#x27;, &#x27;_Personne__prénom&#x27;: &#x27;paul&#x27;, &#x27;_Personne__âge&#x27;: 56}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;id&#x27;: 1, &#x27;nom&#x27;: &#x27;lourou&#x27;, &#x27;prénom&#x27;: &#x27;paul&#x27;, &#x27;âge&#x27;: 56}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;id&#x27;: 1, &#x27;nom&#x27;: &#x27;lourou&#x27;, &#x27;prénom&#x27;: &#x27;paul&#x27;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&quot;id&quot;: 1, &quot;nom&quot;: &quot;lourou&quot;, &quot;âge&quot;: 56}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;id&#x27;: 2, &#x27;nom&#x27;: &#x27;abélard&#x27;, &#x27;âge&#x27;: 57}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;nom&#x27;: &#x27;abélard&#x27;}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;enseignants&#x27;: <span style="font-weight:bold">[{&#x27;id&#x27;: 1, &#x27;nom&#x27;: &#x27;lourou&#x27;, &#x27;prénom&#x27;: &#x27;paul&#x27;, &#x27;âge&#x27;: 56}, {&#x27;id&#x27;: 2, &#x27;nom&#x27;: &#x27;abélard&#x27;, &#x27;prénom&#x27;: &#x27;béatrice&#x27;, &#x27;âge&#x27;: 57}]</span>}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;enseignants&#x27;: <span style="font-weight:bold">[{&#x27;id&#x27;: 1, &#x27;nom&#x27;: &#x27;lourou&#x27;, &#x27;prénom&#x27;: &#x27;paul&#x27;, &#x27;âge&#x27;: 56}, {&#x27;id&#x27;: 2, &#x27;nom&#x27;: &#x27;abélard&#x27;, &#x27;prénom&#x27;: &#x27;béatrice&#x27;, &#x27;âge&#x27;: 57}]</span>, &#x27;matières&#x27;: {&#x27;maths&#x27;: {&#x27;id&#x27;: 1, &#x27;nom&#x27;: &#x27;lourou&#x27;, &#x27;prénom&#x27;: &#x27;paul&#x27;, &#x27;âge&#x27;: 56}, &#x27;français&#x27;: {&#x27;id&#x27;: 2, &#x27;nom&#x27;: &#x27;abélard&#x27;, &#x27;prénom&#x27;: &#x27;béatrice&#x27;, &#x27;âge&#x27;: 57}}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Process finished with exit code 0</span></span>
+</code></pre></div>
+
 <ul>
 <li>Line 4 demonstrates the advantage of the <strong>[asdict]</strong> method over using the <strong>[__dict__]</strong> property. The properties are stripped of their class prefix. This is better suited for display;</li>
 <li>There are several ways to use the <strong>[asdict]</strong> method:<ul>
@@ -2519,32 +2510,22 @@
 </code></pre></div>
 
 <p>The results of the execution are as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/02/main.py
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>{&#39;_ChildEntity__att1&#39;: 1, &#39;att2&#39;: 2}
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>{&quot;att1&quot;: 1, &quot;att2&quot;: 2}
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>MyException[2, la clé [att5] n&#39;is not allowed]
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>{&quot;att1&quot;: 1, &quot;att2&quot;: 2, &quot;att3&quot;: 3, &quot;att4&quot;: 4}
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>{&quot;att1&quot;: 1, &quot;att2&quot;: 2, &quot;att4&quot;: 4}
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>{&#39;att2&#39;: 2, &#39;att4&#39;: 4}
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a>{&quot;att1&quot;: 1, &quot;att4&quot;: 4}
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a>MyException[1, L&#39;attribute [att1] expects a value in the range [1,10] (20)]
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a>{&quot;att1&quot;: 10, &quot;att2&quot;: 20, &quot;att4&quot;: {&quot;att1&quot;: 1, &quot;att2&quot;: 2, &quot;att4&quot;: 4}}
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>{&#39;att1&#39;: 1, &#39;att3&#39;: 3}
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a>Process finished with exit code 0
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-markdown">
+<span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/classes/02/main.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;_ChildEntity__att1&#x27;: 1, &#x27;att2&#x27;: 2}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&quot;att1&quot;: 1, &quot;att2&quot;: 2}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">MyException<span style="font-weight:bold">[2, la clé [att5]</span> n&#x27;est pas autorisée]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&quot;att1&quot;: 1, &quot;att2&quot;: 2, &quot;att3&quot;: 3, &quot;att4&quot;: 4}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&quot;att1&quot;: 1, &quot;att2&quot;: 2, &quot;att4&quot;: 4}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;att2&#x27;: 2, &#x27;att4&#x27;: 4}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&quot;att1&quot;: 1, &quot;att4&quot;: 4}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">MyException<span style="font-weight:bold">[1, L&#x27;attribut [att1]</span> attend une valeur dans l&#x27;intervalle <span style="font-weight:bold">[1,10]</span> (20)]</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&quot;att1&quot;: 10, &quot;att2&quot;: 20, &quot;att4&quot;: {&quot;att1&quot;: 1, &quot;att2&quot;: 2, &quot;att4&quot;: 4}}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">{&#x27;att1&#x27;: 1, &#x27;att3&#x27;: 3}</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Process finished with exit code 0</span></span>
+</code></pre></div>
+
 <p>Note line 2 of the results: it is the property <strong>[ChildEntity.__dict__]</strong> (line 38 of the code) that allows us to determine the names of the properties to include in the lists <strong>[included_keys]</strong> and <strong>[excluded_keys]</strong>. Note, still on line 2 of the results, that depending on whether the property is defined within the class via a getter/setter or whether it was created as one would create a dictionary key, it may or may not be prefixed with the class name <strong>[ChildEntity]</strong>.</p>
 
 

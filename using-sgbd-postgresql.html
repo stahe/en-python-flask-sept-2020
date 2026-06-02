@@ -1730,7 +1730,7 @@
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/databases/postgresql/pgres_02.py
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>Connexion MySQL réussie à la base database=dbpersonnes, host=localhost sous l&#39;identity user=people, passwd=nobody
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>Connexion MySQL réussie à la base database=dbpersonnes, host=localhost sous l&#39;identité user=admpersonnes, passwd=nobody
 <a id="__codelineno-0-3" name="__codelineno-0-3"></a>Déconnexion MySQL réussie
 <a id="__codelineno-0-4" name="__codelineno-0-4"></a>
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a>Process finished with exit code 0
@@ -1743,7 +1743,7 @@
 <span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"># ---------------------------------------------------------------------------------</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#0000ff">def</span><span style="color:#000000"> connexion(</span><span style="color:#808080">host</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">database</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">login</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">, </span><span style="color:#808080">pwd</span><span style="color:#000000">: </span><span style="color:#2b91af">str</span><span style="color:#000000">):</span></span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># connects then disconnects (login,pwd) from the [database] server [host]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># connects then disconnects (login,pwd) the [database] database from the [host] server</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">    <span style="color:#000000"># throws DatabaseError exception if problem occurs</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    connexion = </span><span style="color:#0000ff">None</span></span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="color:#000000">    </span><span style="color:#0000ff">try</span><span style="color:#000000">:</span></span></span>
@@ -1792,20 +1792,16 @@
 </code></pre></div>
 
 <p>The results are as follows:</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span>
-<span class="normal"><a href="#__codelineno-1-5">5</a></span>
-<span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/databases/postgresql/pgres_02.py
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>Connexion réussie à la base database=dbpersonnes, host=localhost sous l&#39;identity user=people, passwd=nobody
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>Déconnexion réussie
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>Erreur de connexion à la base [dbpersonnes] par l&#39;user [xx/yy]
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>Process finished with exit code 0
-</code></pre></div></td></tr></table></div>
+<div class="odt-code-rich" data-linenums="true" style="counter-reset: odtline 0;"><pre><code class="language-text">
+<span class="odt-code-line"><span class="odt-code-line-content">C:\Data\st-2020\dev\python\cours-2020\python3-flask-2020\venv\Scripts\python.exe C:/Data/st-2020/dev/python/cours-2020/python3-flask-2020/databases/postgresql/pgres_02.py</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Connexion réussie à la base database=dbpersonnes, host=localhost sous l&#x27;identité user=admpersonnes, passwd=nobody</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Déconnexion réussie</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Erreur de connexion à la base <span style="font-weight:bold">[dbpersonnes]</span> par l&#x27;utilisateur <span style="font-weight:bold">[xx/yy]</span></span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"> </span></span>
+<span class="odt-code-line"><span class="odt-code-line-content">Process finished with exit code 0</span></span>
+</code></pre></div>
+
 <p><span id="refheadingtoc2522232924280206" name="refheadingtoc2522232924280206" class="odt-bookmark-anchor"></span>
 <span id="toc48549066" name="toc48549066" class="odt-bookmark-anchor"></span></p>
 <h3 id="1744-script-pgres_03">17.4.4. <span style="color: #4f81bd"><strong>script</strong> [pgres_03]</span></h3>
@@ -1870,9 +1866,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : -1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">create table personnes (id int primary key, prenom varchar(30) not null, nom varchar(30) not null, age integer not null, unique (nom,prenom))</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : -1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values(1, &#x27;Paul&#x27;,&#x27;Langevin&#x27;,48)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">insert into personnes(id, prenom, nom, age) values(1, &#x27;Paul&#x27;,&#x27;Langevin&#x27;,48)</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values (2, &#x27;Sylvie&#x27;,&#x27;Lefur&#x27;,70)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">insert into personnes(id, prenom, nom, age) values (2, &#x27;Sylvie&#x27;,&#x27;Lefur&#x27;,70)</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">select prenom, nom, age from personnes</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">prenom, nom, age,</span></span>
@@ -1884,11 +1880,11 @@
 <span class="odt-code-line"><span class="odt-code-line-content">LINE 1: xx</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">        ^</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">)</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values (3, &#x27;Pierre&#x27;,&#x27;Nicazou&#x27;,35)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">insert into personnes(id, prenom, nom, age) values (3, &#x27;Pierre&#x27;,&#x27;Nicazou&#x27;,35)</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values (4, &#x27;Geraldine&#x27;,&#x27;Colou&#x27;,26)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">insert into personnes(id, prenom, nom, age) values (4, &#x27;Geraldine&#x27;,&#x27;Colou&#x27;,26)</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values (5, &#x27;Paulette&#x27;,&#x27;Girond&#x27;,56)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">insert into personnes(id, prenom, nom, age) values (5, &#x27;Paulette&#x27;,&#x27;Girond&#x27;,56)</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">select prenom, nom, age from personnes</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">prenom, nom, age,</span></span>
@@ -1914,18 +1910,18 @@
 <span class="odt-code-line"><span class="odt-code-line-content">(&#x27;Nicazou&#x27;, &#x27;Pierre&#x27;, 35)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">(&#x27;Colou&#x27;, &#x27;Geraldine&#x27;, 26)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values(6, &#x27;Josette&#x27;,&#x27;Bruneau&#x27;,46)]: Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">insert into personnes(id, prenom, nom, age) values(6, &#x27;Josette&#x27;,&#x27;Bruneau&#x27;,46)</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[update personnes set age=47 where nom=&#x27;Bruneau&#x27;] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">update personnes set age=47 where nom=&#x27;Bruneau&#x27;</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[select nom,prenom,age from personnes where nom=&#x27;Bruneau&#x27;] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">select nom,prenom,age from personnes where nom=&#x27;Bruneau&#x27;</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nom, prenom, age,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">(&#x27;Bruneau&#x27;, &#x27;Josette&#x27;, 47)</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[delete from personnes where nom=&#x27;Bruneau&#x27;] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">delete from personnes where nom=&#x27;Bruneau&#x27;</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[select nom,prenom,age from personnes where nom=&#x27;Bruneau&#x27;] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">select nom,prenom,age from personnes where nom=&#x27;Bruneau&#x27;</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nom, prenom, age,</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">*****************</span></span>
@@ -1956,9 +1952,9 @@
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : -1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">create table personnes (id int primary key, prenom varchar(30) not null, nom varchar(30) not null, age integer not null, unique (nom,prenom))</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : -1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values(1, &#x27;Paul&#x27;,&#x27;Langevin&#x27;,48)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">insert into personnes(id, prenom, nom, age) values(1, &#x27;Paul&#x27;,&#x27;Langevin&#x27;,48)</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
-<span class="odt-code-line"><span class="odt-code-line-content">[insert into personnes(id, prenom, nom, age) values (2, &#x27;Sylvie&#x27;,&#x27;Lefur&#x27;,70)] : Successful execution</span></span>
+<span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">insert into personnes(id, prenom, nom, age) values (2, &#x27;Sylvie&#x27;,&#x27;Lefur&#x27;,70)</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">nombre de lignes modifiées : 1</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content"><span style="font-weight:bold">[</span><span style="font-weight:bold;background-color:#fff2cc">select prenom, nom, age from personnes</span><span style="font-weight:bold">]</span> : Exécution réussie</span></span>
 <span class="odt-code-line"><span class="odt-code-line-content">prenom, nom, age,</span></span>
